@@ -9,6 +9,7 @@ defaults:
   max_items_per_company: 20
   enabled: true
   collection_mode: registry_only
+  last_registry_reviewed_at: "2026-06-12"
 
 source_types:
   official_site:
@@ -43,11 +44,20 @@ sources:
         entrypoints:
           - https://www.spacex.com/updates/
           - https://www.spacex.com/launches/
+          - https://www.spacex.com/starshield/
           - https://www.starlink.com/
+          - https://www.starlink.com/updates/
+          - https://www.starlink.com/business/direct-to-cell/
+        candidate_domains:
+          - starshield.com
         discovery_queries:
           - site:spacex.com/updates SpaceX Starlink launch
           - site:starlink.com Starlink direct to cell
+          - site:spacex.com/starshield SpaceX Starshield
         verification_status: registered
+        source_notes:
+          - spacex.com and starlink.com are treated as verified official domains.
+          - starshield.com remains a candidate domain; use spacex.com/starshield as the verified SpaceX Starshield entrypoint.
       blue_origin:
         official_domains:
           - blueorigin.com
@@ -55,28 +65,51 @@ sources:
           - https://www.blueorigin.com/news
           - https://www.blueorigin.com/new-glenn
           - https://www.blueorigin.com/new-shepard
+          - https://www.blueorigin.com/blue-ring
+          - https://www.blueorigin.com/terawave
+          - https://www.blueorigin.com/engines
         discovery_queries:
           - site:blueorigin.com/news "New Glenn"
           - site:blueorigin.com/news "New Shepard"
+          - site:blueorigin.com "Blue Ring"
+          - site:blueorigin.com "TeraWave"
         verification_status: registered
+        source_notes:
+          - Blue Origin has launch, propulsion, in-space systems, and satellite-connectivity product pages relevant to satellite-chain monitoring.
       yuanxin_satellite:
         official_domains: []
         entrypoints: []
         candidate_domains:
           - spacesail.com.cn
+          - spacesail.cn
+        candidate_entrypoints:
+          - https://www.spacesail.com.cn/
+          - https://www.spacesail.cn/
         discovery_queries:
           - site:spacesail.com.cn 垣信卫星 OR 千帆星座
+          - site:spacesail.cn 垣信卫星 OR 千帆星座
           - "\"上海垣信卫星科技有限公司\" 官方"
           - "\"千帆星座\" 垣信卫星"
+          - "\"SpaceSail\" \"Qianfan\""
+          - "\"Thousand Sails\" \"SpaceSail\""
         verification_status: needs_source_owner_review
+        source_notes:
+          - Keep SpaceSail domains as candidates until source ownership is confirmed by a source owner or corporate filing.
+          - Use Shanghai municipal, Lingang, exchange, or shareholder announcements as corroborating sources when no official newsroom is available.
       china_satnet:
         official_domains: []
         entrypoints: []
+        candidate_entrypoints: []
         discovery_queries:
           - "\"中国卫星网络集团有限公司\" 官方"
           - "\"中国星网\" \"中国卫星网络集团\""
           - "\"国网星座\" \"中国星网\""
+          - "\"China Satellite Network Group\""
+          - "\"GW-A59\" \"中国星网\""
+          - "\"GW-A2\" \"中国星网\""
         verification_status: needs_source_owner_review
+        source_notes:
+          - No verified public corporate newsroom is registered here; prefer SASAC, Xiong'an, MIIT, and launch-provider announcements for official corroboration.
 
   - id: regulator_and_filing_sites
     type: official_site
@@ -86,10 +119,13 @@ sources:
     registry_status: active_metadata_only
     jurisdictions:
       US:
+        verification_status: registered
         entrypoints:
           - https://www.fcc.gov/ecfs/search/search-filings
           - https://www.faa.gov/space
           - https://www.sec.gov/edgar/search/
+          - https://www.spaceforce.mil/News/
+          - https://www.nasa.gov/news/
         company_scope:
           - spacex
           - blue_origin
@@ -98,13 +134,19 @@ sources:
           - Starlink
           - Blue Origin
           - New Glenn
+          - Starshield
+          - TeraWave
+          - Blue Ring
       CN:
+        verification_status: registered_government_sources
         entrypoints:
           - https://www.miit.gov.cn/
           - https://www.sasac.gov.cn/
           - https://www.ndrc.gov.cn/
           - https://www.shanghai.gov.cn/
+          - https://www.gzw.sh.gov.cn/
           - https://www.xiongan.gov.cn/
+          - https://www.cnsa.gov.cn/
         company_scope:
           - yuanxin_satellite
           - china_satnet
@@ -114,6 +156,82 @@ sources:
           - 中国星网
           - 中国卫星网络集团
           - 国网星座
+          - GW-A59
+          - GW-A2
+
+  - id: china_company_corroboration_sources
+    type: official_site
+    rank_group: regulator_and_filing
+    description: China government, state-owned shareholder, and public-institution pages used to corroborate entity identity and program participation.
+    enabled: true
+    registry_status: active_metadata_only
+    verification_status: registered_for_corroboration
+    source_subtype: government_news
+    company_scope:
+      - yuanxin_satellite
+      - china_satnet
+    entrypoints:
+      - https://www.gzw.sh.gov.cn/
+      - https://www.shanghai.gov.cn/
+      - https://www.xiongan.gov.cn/
+      - https://www.sasac.gov.cn/
+      - https://www.news.cn/
+    query_hints:
+      - 上海联和投资 垣信卫星
+      - 垣信卫星 千帆星座
+      - 中国卫星网络集团 中国星网
+      - 中国星网 雄安
+    source_notes:
+      - Reliable for confirming entity relationships, shareholder context, government participation, and major public announcements.
+      - Not a substitute for a verified corporate newsroom when interpreting commercial strategy.
+
+  - id: china_company_open_profile_sources
+    type: official_site
+    rank_group: search
+    description: Candidate open web profiles, recruitment pages, or domain ownership clues for companies without a verified public newsroom.
+    enabled: true
+    registry_status: discovery_only
+    verification_status: needs_manual_confirmation
+    source_subtype: search_result
+    company_scope:
+      - yuanxin_satellite
+      - china_satnet
+    candidate_entrypoints:
+      - https://www.spacesail.com.cn/
+      - https://www.spacesail.cn/
+    query_hints:
+      - 垣信卫星 官网
+      - SpaceSail official
+      - 中国卫星网络集团 官网
+      - 中国星网 招聘
+    source_notes:
+      - Use only as discovery metadata until domain ownership, corporate control, or official-publication status is manually confirmed.
+
+  - id: launch_provider_official_sites
+    type: official_site
+    rank_group: official
+    description: Official launch-provider pages that can confirm deployment events for satellite constellations.
+    enabled: true
+    registry_status: active_metadata_only
+    verification_status: registered_for_launch_confirmation
+    source_subtype: launch_provider_primary
+    company_scope:
+      - yuanxin_satellite
+      - china_satnet
+    entrypoints:
+      - https://www.casc.com.cn/
+      - https://www.spacechina.com/
+      - https://www.spacepioneer.cc/
+      - https://www.galactic-energy.cn/
+    query_hints:
+      - 千帆星座
+      - 垣信卫星
+      - 中国星网
+      - 国网星座
+      - GW-A59
+      - GW-A2
+    source_notes:
+      - Launch-provider announcements are primary for launch/deployment confirmation, but not corporate primary sources for the constellation operator.
 
   - id: gdelt_satellite_company_search
     type: gdelt
@@ -124,9 +242,9 @@ sources:
     query_template: '("{company_name}" OR {company_alias_terms}) AND (satellite OR launch OR constellation OR broadband OR space)'
     company_query_overrides:
       spacex: '(SpaceX OR Starlink OR "Falcon 9" OR Starship) AND (satellite OR launch OR constellation OR broadband)'
-      blue_origin: '("Blue Origin" OR "New Glenn" OR "New Shepard" OR "BE-4") AND (launch OR space OR satellite)'
-      yuanxin_satellite: '("垣信卫星" OR "上海垣信" OR "千帆星座" OR SpaceSail OR Spacesail OR "G60星链")'
-      china_satnet: '("中国星网" OR "中国卫星网络集团" OR "国网星座" OR Guowang OR "China SatNet")'
+      blue_origin: '("Blue Origin" OR "New Glenn" OR "New Shepard" OR "BE-4" OR "Blue Ring" OR TeraWave) AND (launch OR space OR satellite)'
+      yuanxin_satellite: '("垣信卫星" OR "上海垣信" OR "千帆星座" OR SpaceSail OR Spacesail OR "G60星链" OR "Thousand Sails")'
+      china_satnet: '("中国星网" OR "中国卫星网络集团" OR "国网星座" OR Guowang OR "China SatNet" OR "GW-A59" OR "GW-A2")'
     adapter_options:
       endpoint: reserved
       mode: dry_run
@@ -143,14 +261,17 @@ sources:
         - spacenews.com
         - spaceflightnow.com
         - nasaspaceflight.com
+        - payloadspace.com
       global_business_media:
         - reuters.com
         - bloomberg.com
+        - wsj.com
       china_space_and_business_media:
         - cs.com.cn
         - stcn.com
         - yicai.com
         - caixin.com
+        - 21jingji.com
     inclusion_rules:
       require_company_keyword: true
       require_satellite_context: true

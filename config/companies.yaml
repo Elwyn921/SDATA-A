@@ -23,6 +23,13 @@ companies:
     country_or_region: United States
     country_code: US
     headquarters: Hawthorne, California, United States
+    ownership_type: private
+    primary_programs:
+      - Starlink
+      - Starship
+      - Falcon
+      - Dragon
+      - Starshield
     sector_tags:
       - launch_services
       - reusable_launch
@@ -31,29 +38,38 @@ companies:
       - leo_constellation
       - space_transport
       - user_terminal
+      - direct_to_device
+      - national_security_space
     keywords:
       include:
         - SpaceX
         - Starlink
+        - Starshield
         - Falcon 9
         - Falcon Heavy
         - Starship
         - Super Heavy
         - Dragon
         - Starbase
+        - Transporter mission
+        - Bandwagon mission
         - satellite internet
         - direct to cell
+        - Direct to Cell
       zh_include:
         - 星链
+        - 星盾
         - 猎鹰9
         - 猎鹰重型
         - 星舰
         - 超级重型
         - 卫星互联网
         - 手机直连卫星
+        - 手机直连
       exclude_when_unqualified:
         - dragon boat
         - starship entertainment
+        - SpaceX token
     industry_chain:
       chain_roles:
         - constellation_operator
@@ -62,6 +78,7 @@ companies:
         - spacecraft_manufacturer
         - satellite_operator
         - user_terminal_provider
+        - direct_to_device_service_provider
       orbit_focus:
         - LEO
       value_chain_stage:
@@ -76,6 +93,7 @@ companies:
           - broadband_connectivity
           - mobility_connectivity
           - direct_to_device
+          - national_security_space_services
     enabled: true
     priority: high
 
@@ -87,6 +105,13 @@ companies:
     country_or_region: United States
     country_code: US
     headquarters: Kent, Washington, United States
+    ownership_type: private
+    primary_programs:
+      - New Glenn
+      - New Shepard
+      - Blue Moon
+      - Blue Ring
+      - TeraWave
     sector_tags:
       - launch_services
       - reusable_launch
@@ -95,13 +120,21 @@ companies:
       - space_transport
       - lunar_transport
       - commercial_space
+      - in_space_mobility
+      - satellite_systems
+      - satellite_connectivity
     keywords:
       include:
         - Blue Origin
         - New Glenn
+        - New Glenn 9x4
         - New Shepard
         - BE-4
+        - BE-3U
         - Blue Moon
+        - Blue Ring
+        - TeraWave
+        - Orbital Reef
         - Project Kuiper launch
         - National Security Space Launch
         - NSSL
@@ -110,6 +143,8 @@ companies:
         - 新格伦
         - 新谢泼德
         - 蓝月
+        - 蓝环
+        - 太空通信网络
         - 库iper发射
         - 国家安全太空发射
       exclude_when_unqualified:
@@ -121,6 +156,8 @@ companies:
         - launch_vehicle_manufacturer
         - propulsion_supplier
         - lunar_logistics_provider
+        - in_space_logistics_provider
+        - satellite_network_developer
       orbit_focus:
         - LEO
         - MEO
@@ -136,6 +173,9 @@ companies:
         downstream:
           - crewed_suborbital
           - lunar_transport
+          - in_space_mobility
+          - space_domain_awareness_support
+          - satellite_connectivity
     enabled: true
     priority: high
 
@@ -146,15 +186,30 @@ companies:
       - Yuanxin Satellite
       - Shanghai Yuanxin Satellite Technology
       - Shanghai SpaceSail Technologies
+      - Shanghai SpaceSail Technologies Co., Ltd.
+      - Shanghai Spacesail Technologies Co., Ltd.
       - Spacesail
       - SpaceSail
       - 千帆星座
+      - Qianfan Constellation
+      - Thousand Sails Constellation
+      - Spacesail Constellation
       - 千帆计划
       - G60星链
       - G60 Starlink
     country_or_region: China
     country_code: CN
     headquarters: Shanghai, China
+    ownership_type: state-backed_commercial
+    parent_company:
+      name: 上海联和投资有限公司
+      relationship: shareholder_or_affiliate
+      verification_status: supported_by_shanghai_sasac_source
+    primary_programs:
+      - 千帆星座
+      - 千帆计划
+      - G60星链
+      - SpaceSail Constellation
     sector_tags:
       - satellite_internet
       - leo_constellation
@@ -167,12 +222,18 @@ companies:
       include:
         - SpaceSail
         - Spacesail
+        - Spacesail Constellation
         - Yuanxin Satellite
         - Shanghai Yuanxin
         - Shanghai SpaceSail
         - Qianfan
+        - Qianfan Constellation
+        - Thousand Sails
+        - Thousand Sails Constellation
         - G60 Starlink
         - LEO broadband
+        - Ku band
+        - Q/V band
       zh_include:
         - 垣信卫星
         - 上海垣信
@@ -183,9 +244,13 @@ companies:
         - 卫星宽带
         - 卫星终端
         - 机上互联
+        - 空天地一体化
+        - Ku频段
+        - Q/V频段
       exclude_when_unqualified:
         - 千帆竞发
         - 扬帆
+        - 一帆风顺
     industry_chain:
       chain_roles:
         - constellation_operator
@@ -219,9 +284,21 @@ companies:
       - Guowang
       - 国网星座
       - GW constellation
+      - GW-A59
+      - GW-A2
     country_or_region: China
     country_code: CN
     headquarters: Xiong'an New Area, Hebei, China
+    ownership_type: central_state_owned_enterprise
+    parent_company:
+      name: 国务院国有资产监督管理委员会
+      relationship: state_owner_supervisor
+      verification_status: supported_by_sasac_and_xiongan_sources
+    primary_programs:
+      - 国网星座
+      - GW constellation
+      - GW-A59
+      - GW-A2
     sector_tags:
       - satellite_internet
       - leo_constellation
@@ -236,6 +313,8 @@ companies:
         - China Satellite Network
         - Guowang
         - GW constellation
+        - GW-A59
+        - GW-A2
         - satellite internet
       zh_include:
         - 中国星网
@@ -243,6 +322,8 @@ companies:
         - 国网星座
         - 国网卫星
         - 星网工程
+        - 卫星互联网低轨
+        - 低轨卫星互联网
         - 卫星互联网
         - 雄安新区
         - 中央企业
@@ -251,6 +332,9 @@ companies:
         - 中国卫通
         - China Satcom
         - 中国电信卫星
+        - 国家电网
+        - 国网电力
+        - 国网通信
     industry_chain:
       chain_roles:
         - constellation_operator
@@ -283,6 +367,8 @@ mapping_expansion:
     - country_or_region
     - country_code
     - headquarters
+    - ownership_type
+    - primary_programs
     - sector_tags
     - industry_chain.chain_roles
     - industry_chain.orbit_focus
@@ -292,7 +378,6 @@ mapping_expansion:
     - enabled
     - priority
   reserved_optional_fields:
-    - parent_company
     - ownership_type
     - stock_ticker
     - main_products

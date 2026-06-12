@@ -27,6 +27,36 @@ rank_groups:
     priority: 5
     notes: Search API results requiring stronger dedupe and verification.
 
+source_subtypes:
+  company_primary:
+    parent_rank_group: official
+    confidence_modifier: 0.0
+    notes: Verified company domain, newsroom, official product page, or company-owned program domain.
+  launch_provider_primary:
+    parent_rank_group: official
+    confidence_modifier: -0.03
+    notes: Official launch-provider source; primary for launch/deployment facts, secondary for operator strategy or financing.
+  regulator_record:
+    parent_rank_group: regulator_and_filing
+    confidence_modifier: 0.0
+    notes: Official licensing, filing, procurement, tender, or government notice record.
+  government_news:
+    parent_rank_group: regulator_and_filing
+    confidence_modifier: -0.02
+    notes: Government or public-institution news item; reliable for announced policy or project participation.
+  wire_copy:
+    parent_rank_group: wire_and_aggregator
+    confidence_modifier: -0.03
+    notes: Aggregated or syndicated story; prefer original URL when available.
+  curated_media_original:
+    parent_rank_group: media
+    confidence_modifier: 0.03
+    notes: Original reporting from a curated media domain.
+  search_result:
+    parent_rank_group: search
+    confidence_modifier: 0.0
+    notes: Discovery signal only until resolved to a stronger source.
+
 rank_order:
   - official
   - regulator_and_filing
@@ -56,6 +86,8 @@ rules:
       - only_search_sources_available
       - company_match_is_alias_only
       - source_language_translation_changes_meaning
+      - candidate_official_domain_without_owner_verification
+      - product_or_program_name_without_company_signal
   recency_policy:
     default_lookback_days: 7
     material_event_lookback_days: 30
@@ -65,6 +97,26 @@ rules:
     strip_tracking_params: true
     same_title_window_days: 14
     prefer_source_rank_on_duplicate: true
+  official_source_policy:
+    verified_company_domain_required_for_company_primary: true
+    candidate_domains_allowed_for_discovery: true
+    candidate_domains_allowed_for_auto_summary: false
+    launch_provider_official_allowed_for_launch_confirmation: true
+    government_site_allowed_for_entity_confirmation: true
+  verification_status_policy:
+    auto_summary_allowed:
+      - registered
+      - registered_government_sources
+      - registered_for_corroboration
+      - registered_for_launch_confirmation
+    discovery_only:
+      - query_template_only
+      - disabled_placeholder
+    manual_review_required:
+      - needs_source_owner_review
+      - needs_manual_confirmation
+      - candidate_official_domain_without_owner_verification
+    export_allowed_when_manual_review_required: false
 
 company_match_policy:
   match_fields:
@@ -72,18 +124,38 @@ company_match_policy:
     - aliases
     - keywords.include
     - keywords.zh_include
+    - primary_programs
   negative_match_fields:
     - keywords.exclude_when_unqualified
   minimum_signals:
     official_or_regulator: 1
     media_or_search: 2
+    product_or_program_only: 2
   boost_when:
     source_domain_matches_company_official_domain: 0.15
     title_contains_canonical_name: 0.1
     title_contains_constellation_name: 0.08
+    source_domain_is_verified_official: 0.12
+    regulator_or_government_source_mentions_registered_name: 0.12
   penalize_when:
     body_only_keyword_match: -0.05
     search_source_without_original_url: -0.15
+    candidate_domain_not_verified: -0.1
+    product_name_without_company_name: -0.08
+    ambiguous_short_alias: -0.12
+  ambiguous_terms:
+    - Dragon
+    - Starship
+    - Origin
+    - SpaceSail
+    - Guowang
+    - 国网
+    - 千帆
+  disambiguation_required_when:
+    - ambiguous_term_only
+    - source_rank_group_is_search
+    - source_rank_group_is_media_and_company_name_absent
+    - verification_status_requires_manual_review
 
 event_rank_hints:
   critical:
@@ -94,6 +166,7 @@ event_rank_hints:
     - financing_or_major_contract
     - service_launch
     - accident_or_safety_event
+    - national_constellation_policy
   high:
     - launch_success
     - satellite_batch_launch
@@ -101,11 +174,13 @@ event_rank_hints:
     - strategic_partnership
     - manufacturing_contract
     - terminal_or_service_update
+    - official_product_or_network_announcement
   medium:
     - product_page_update
     - executive_comment
     - conference_appearance
     - routine_launch_schedule_update
+    - official_product_page_change_without_news_release
 
 mapping_expansion:
   source: Satellite industry chain Mapping table
