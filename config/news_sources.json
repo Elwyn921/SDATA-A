@@ -1,0 +1,140 @@
+{
+  "pipeline": {
+    "name": "github-native-news-intelligence",
+    "default_language": "en",
+    "timezone": "UTC",
+    "max_items": 80,
+    "request_timeout_seconds": 20,
+    "request_retries": 2,
+    "request_backoff_seconds": 1.0,
+    "rate_limit_seconds": 0.2
+  },
+  "topics": [
+    {
+      "id": "ai",
+      "label": "AI",
+      "keywords": ["ai", "artificial intelligence", "openai", "llm", "model", "agent", "machine learning"]
+    },
+    {
+      "id": "markets",
+      "label": "Markets",
+      "keywords": ["market", "stocks", "earnings", "inflation", "fed", "rates", "funding", "ipo"]
+    },
+    {
+      "id": "geopolitics",
+      "label": "Geopolitics",
+      "keywords": ["sanctions", "election", "tariff", "trade", "policy", "security", "conflict"]
+    },
+    {
+      "id": "supply_chain",
+      "label": "Supply Chain",
+      "keywords": ["supply chain", "shipping", "logistics", "semiconductor", "manufacturing", "inventory"]
+    }
+  ],
+  "event_categories": [
+    {
+      "id": "product_launch",
+      "label": "Product Launch",
+      "keywords": ["launch", "release", "feature", "integration", "model", "upgrade", "available"]
+    },
+    {
+      "id": "funding_finance",
+      "label": "Funding & Finance",
+      "keywords": ["funding", "ipo", "earnings", "valuation", "acquisition", "merger", "market"]
+    },
+    {
+      "id": "policy_regulation",
+      "label": "Policy & Regulation",
+      "keywords": ["law", "policy", "regulation", "tariff", "sanctions", "compliance", "ruling"]
+    },
+    {
+      "id": "security_risk",
+      "label": "Security & Risk",
+      "keywords": ["security", "breach", "vulnerability", "outage", "risk", "safety", "incident"]
+    },
+    {
+      "id": "research_technical",
+      "label": "Research & Technical",
+      "keywords": ["research", "paper", "benchmark", "architecture", "technical", "developer"]
+    },
+    {
+      "id": "supply_chain_operations",
+      "label": "Supply Chain & Operations",
+      "keywords": ["supply chain", "shipping", "logistics", "manufacturing", "inventory", "semiconductor"]
+    },
+    {
+      "id": "company_strategy",
+      "label": "Company Strategy",
+      "keywords": ["partnership", "strategy", "restructuring", "layoff", "hiring", "executive"]
+    }
+  ],
+  "sources": [
+    {
+      "id": "hn",
+      "name": "Hacker News",
+      "type": "rss",
+      "url": "https://news.ycombinator.com/rss",
+      "trust_tier": 2,
+      "enabled": true
+    },
+    {
+      "id": "github_blog",
+      "name": "GitHub Blog",
+      "type": "rss",
+      "url": "https://github.blog/feed/",
+      "trust_tier": 1,
+      "enabled": true
+    },
+    {
+      "id": "mit_tech_review",
+      "name": "MIT Technology Review",
+      "type": "rss",
+      "url": "https://www.technologyreview.com/feed/",
+      "trust_tier": 1,
+      "enabled": true
+    },
+    {
+      "id": "gdelt_ai_supply_chain",
+      "name": "GDELT AI Supply Chain Search",
+      "type": "gdelt",
+      "query": "\"artificial intelligence\" \"supply chain\"",
+      "max_items": 50,
+      "trust_tier": 3,
+      "enabled": false
+    },
+    {
+      "id": "official_openai_news",
+      "name": "OpenAI News",
+      "type": "official_website",
+      "url": "https://openai.com/news/",
+      "include_patterns": ["/news/"],
+      "exclude_patterns": ["#"],
+      "same_domain": true,
+      "max_items": 20,
+      "trust_tier": 1,
+      "enabled": false
+    },
+    {
+      "id": "newsapi_ai_markets",
+      "name": "NewsAPI AI Markets",
+      "type": "newsapi",
+      "query": "(AI OR artificial intelligence) AND (markets OR earnings OR funding)",
+      "api_key_env": "NEWSAPI_KEY",
+      "language": "en",
+      "max_items": 50,
+      "trust_tier": 3,
+      "enabled": false
+    },
+    {
+      "id": "serpapi_google_news_ai",
+      "name": "SerpApi Google News AI",
+      "type": "serpapi",
+      "query": "AI agents enterprise supply chain",
+      "api_key_env": "SERPAPI_KEY",
+      "engine": "google_news",
+      "max_items": 50,
+      "trust_tier": 3,
+      "enabled": false
+    }
+  ]
+}

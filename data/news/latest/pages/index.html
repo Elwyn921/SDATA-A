@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SDATA A News Intelligence</title>
+  <style>
+    body { margin: 0; font-family: Arial, sans-serif; color: #1f2933; background: #f7f7f4; }
+    header { padding: 40px 24px 24px; background: #19324a; color: white; }
+    main { max-width: 1120px; margin: 0 auto; padding: 24px; }
+    .summary { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; margin-top: 18px; }
+    .metric, .signal { background: white; border: 1px solid #d9ded8; border-radius: 8px; padding: 16px; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 14px; }
+    .meta { display: flex; justify-content: space-between; gap: 12px; font-size: 12px; color: #59636e; text-transform: uppercase; }
+    h1 { margin: 0; font-size: 32px; letter-spacing: 0; }
+    h2 { font-size: 18px; line-height: 1.25; margin: 12px 0 8px; letter-spacing: 0; }
+    a { color: #0b5cad; text-decoration: none; }
+    p { line-height: 1.5; }
+    @media (max-width: 760px) { .summary { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>SDATA A News Intelligence</h1>
+    <p>Run 2026-06-12T07-50-55Z &middot; generated 2026-06-12T07:50:55.926271+00:00</p>
+  </header>
+  <main>
+    <section class="summary">
+      <div class="metric"><strong>2</strong><br>Total items</div>
+      <div class="metric"><strong>2</strong><br>High priority</div>
+      <div class="metric"><strong>0</strong><br>Medium priority</div>
+      <div class="metric"><strong>0</strong><br>Source errors</div>
+    </section>
+    
+    <section class="grid">
+      
+      <article class="signal">
+        <div class="meta"><span>Supply Chain &amp; Operations</span><strong>HIGH &middot; 100</strong></div>
+        <h2><a href="https://example.com/ai-supply-chain">AI agents reshape supply chain logistics</a></h2>
+        <p>New machine learning tools help manufacturing teams improve inventory and shipping visibility.</p>
+      </article>
+      <article class="signal">
+        <div class="meta"><span>Funding &amp; Finance</span><strong>HIGH &middot; 100</strong></div>
+        <h2><a href="https://example.com/rates-markets">Central bank rates move markets</a></h2>
+        <p>Investors watch inflation and earnings data before the next Fed decision.</p>
+      </article>
+    </section>
+  </main>
+</body>
+</html>

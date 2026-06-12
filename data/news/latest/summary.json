@@ -1,0 +1,18 @@
+{
+  "generated_at": "2026-06-12T07:50:55.926430+00:00",
+  "high_priority": 2,
+  "items": 2,
+  "low_priority": 0,
+  "medium_priority": 0,
+  "output_files": [
+    "items.jsonl",
+    "summary.json",
+    "report.md",
+    "weekly-report.md",
+    "news-report.xlsx",
+    "llm-input.json",
+    "pages/index.html"
+  ],
+  "run_id": "2026-06-12T07-50-55Z",
+  "source_errors": []
+}
