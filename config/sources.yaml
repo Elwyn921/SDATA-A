@@ -236,19 +236,26 @@ sources:
   - id: gdelt_satellite_company_search
     type: gdelt
     rank_group: wire_and_aggregator
-    description: Reserved GDELT document search adapter.
+    description: GDELT document search adapter for satellite company monitoring.
     enabled: true
-    registry_status: query_template_only
+    registry_status: active_gdelt_only
     query_template: '("{company_name}" OR {company_alias_terms}) AND (satellite OR launch OR constellation OR broadband OR space)'
     company_query_overrides:
       spacex: '(SpaceX OR Starlink OR "Falcon 9" OR Starship) AND (satellite OR launch OR constellation OR broadband)'
       blue_origin: '("Blue Origin" OR "New Glenn" OR "New Shepard" OR "BE-4" OR "Blue Ring" OR TeraWave) AND (launch OR space OR satellite)'
-      yuanxin_satellite: '("垣信卫星" OR "上海垣信" OR "千帆星座" OR SpaceSail OR Spacesail OR "G60星链" OR "Thousand Sails")'
-      china_satnet: '("中国星网" OR "中国卫星网络集团" OR "国网星座" OR Guowang OR "China SatNet" OR "GW-A59" OR "GW-A2")'
+      yuanxin_satellite: '(SpaceSail OR Spacesail OR "Shanghai SpaceSail" OR "Yuanxin Satellite" OR Qianfan OR "Qianfan Constellation" OR "Thousand Sails") AND (satellite OR constellation OR launch OR broadband OR space)'
+      china_satnet: '("China SatNet" OR "China Satellite Network Group" OR Guowang OR "GW-A59" OR "GW-A2") AND (satellite OR constellation OR launch OR broadband OR space)'
     adapter_options:
-      endpoint: reserved
-      mode: dry_run
-      api_calls_allowed: false
+      endpoint: https://api.gdeltproject.org/api/v2/doc/doc
+      mode: ArtList
+      format: json
+      maxrecords: 5
+      sort: HybridRel
+      timeout_seconds: 20
+      retries: 2
+      backoff_seconds: 3.0
+      rate_limit_seconds: 30.0
+      api_calls_allowed: true
 
   - id: curated_rss
     type: rss

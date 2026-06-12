@@ -77,6 +77,46 @@ class NewsItem:
 
 
 @dataclass(frozen=True)
+class RawArticle:
+    id: str
+    company_id: str
+    company_name: str
+    source_id: str
+    source_type: SourceType
+    title: str
+    url: str
+    published_at: datetime | None = None
+    language: str | None = None
+    raw_text: str | None = None
+    raw_payload: dict[str, Any] = field(default_factory=dict)
+    metadata: dict[str, Any] = field(default_factory=dict)
+
+    def to_news_item(self, source: SourceConfig, collected_at: datetime | None = None) -> NewsItem:
+        source_record = SourceRecord(
+            source_id=self.source_id,
+            source_type=self.source_type,
+            source_name=source.description or source.id,
+            rank_group=source.rank_group,
+            url=self.url,
+            collected_at=collected_at,
+            raw_payload=self.raw_payload,
+        )
+        return NewsItem(
+            id=self.id,
+            company_id=self.company_id,
+            company_name=self.company_name,
+            title=self.title,
+            url=self.url,
+            source=source_record,
+            published_at=self.published_at,
+            language=self.language,
+            raw_text=self.raw_text,
+            normalized_text=self.raw_text,
+            metadata=self.metadata,
+        )
+
+
+@dataclass(frozen=True)
 class NewsSummary:
     item_id: str
     company_id: str

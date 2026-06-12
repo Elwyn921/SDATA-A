@@ -1,15 +1,18 @@
-"""Empty main flow for the GitHub-native satellite news pipeline."""
+"""Main flow for the GitHub-native satellite news pipeline."""
 
 from __future__ import annotations
 
+import argparse
 import logging
 from dataclasses import dataclass, field
 from datetime import datetime, timezone
+from pathlib import Path
 from typing import Callable, TypeVar
 from uuid import uuid4
 
+from satellite_news.config import load_companies, load_sources
 from satellite_news.exporter import NewsExporter, NullExporter
-from satellite_news.fetcher import NullFetcher, SourceFetcher
+from satellite_news.fetcher import GDELTHTTPTransport, GDELTFetcher, NullFetcher, SourceFetcher
 from satellite_news.llm import NewsSummarizer, NullSummarizer
 from satellite_news.processing import NewsProcessor, NullProcessor
 from satellite_news.schema import (
@@ -124,10 +127,65 @@ class Pipeline:
         return tuple(items)
 
 
-def main() -> PipelineResult:
-    """CLI-safe placeholder entrypoint. Does not load config or call APIs."""
+def main(argv: tuple[str, ...] | None = None) -> PipelineResult:
+    """CLI-safe entrypoint. Defaults to dry-run and does not call external APIs."""
 
-    return Pipeline().run()
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--config-dir", type=Path, default=Path("config"))
+    parser.add_argument("--run-id", default=None)
+    parser.add_argument("--dry-run", action=argparse.BooleanOptionalAction, default=True)
+    args = parser.parse_args(argv)
+
+    companies = load_companies(args.config_dir / "companies.yaml")
+    sources = load_sources(args.config_dir / "sources.yaml")
+    context = PipelineContext(
+        run_id=args.run_id or str(uuid4()),
+        started_at=datetime.now(timezone.utc),
+        config_dir=str(args.config_dir),
+        dry_run=args.dry_run,
+    )
+    result = Pipeline(fetcher=build_gdelt_fetcher(sources)).run(
+        companies=companies,
+        sources=sources,
+        context=context,
+    )
+    print_result(result=result, companies=companies, dry_run=context.dry_run)
+    return result
+
+
+def build_gdelt_fetcher(sources: tuple[SourceConfig, ...]) -> GDELTFetcher:
+    gdelt_source = next((source for source in sources if source.type.value == "gdelt"), None)
+    options = gdelt_source.options.get("adapter_options", {}) if gdelt_source else {}
+    transport = GDELTHTTPTransport(
+        timeout_seconds=int(options.get("timeout_seconds") or 20),
+        retries=int(options.get("retries") or 2),
+        backoff_seconds=float(options.get("backoff_seconds") or 2.0),
+        rate_limit_seconds=float(options.get("rate_limit_seconds") or 3.0),
+    )
+    return GDELTFetcher(transport=transport)
+
+
+def print_result(
+    *,
+    result: PipelineResult,
+    companies: tuple[Company, ...],
+    dry_run: bool,
+) -> None:
+    mode = "DRY RUN" if dry_run else "LIVE GDELT"
+    print(f"Satellite news pipeline [{mode}] run_id={result.run_id}")
+    print(f"Total NewsItem count: {len(result.items)}")
+    for company in companies:
+        if not company.enabled:
+            continue
+        company_items = tuple(item for item in result.items if item.company_id == company.id)
+        print(f"\n## {company.canonical_name} ({company.id}) - {len(company_items)} item(s)")
+        if not company_items:
+            print("- no results")
+            continue
+        for item in company_items[:10]:
+            published = item.published_at.isoformat() if item.published_at else "unknown date"
+            print(f"- [{published}] {item.title}")
+            print(f"  {item.url}")
 
 
 if __name__ == "__main__":

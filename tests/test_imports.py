@@ -13,6 +13,7 @@ def test_public_imports():
         Pipeline,
         PipelineResult,
         PipelineStageError,
+        RawArticle,
         SourceRecord,
     )
     from satellite_news.exporter import NewsExporter, NullExporter
@@ -24,6 +25,7 @@ def test_public_imports():
     assert Pipeline
     assert PipelineStageError
     assert NewsItem
+    assert RawArticle
     assert NewsSummary
     assert PipelineResult
     assert SourceRecord
@@ -76,11 +78,11 @@ def test_schema_contracts_are_importable_and_instantiable():
     assert config.enabled is True
 
 
-def test_null_pipeline_stub_does_not_touch_network_or_llm(monkeypatch):
+def test_default_pipeline_dry_run_does_not_touch_network_or_llm(monkeypatch):
     from satellite_news.pipeline import main
 
     def fail_socket(*_args, **_kwargs):
-        raise AssertionError("architecture stub must not open network sockets")
+        raise AssertionError("dry-run pipeline must not open network sockets")
 
     monkeypatch.setattr(socket, "socket", fail_socket)
 
@@ -91,7 +93,7 @@ def test_null_pipeline_stub_does_not_touch_network_or_llm(monkeypatch):
     assert result.exports == ()
 
 
-def test_source_tree_has_no_network_or_llm_provider_imports():
+def test_source_tree_has_no_llm_provider_or_non_gdelt_network_imports():
     forbidden_roots = {
         "anthropic",
         "boto3",
@@ -100,7 +102,6 @@ def test_source_tree_has_no_network_or_llm_provider_imports():
         "openai",
         "requests",
         "socket",
-        "urllib",
     }
     imported_roots = set()
 
