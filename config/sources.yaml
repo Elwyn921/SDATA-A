@@ -1,0 +1,185 @@
+schema_version: sources.v1
+description: Source registry only. This file registers candidate sources and adapter metadata; it must not trigger crawling or API calls.
+
+defaults:
+  language:
+    - en
+    - zh
+  lookback_days: 7
+  max_items_per_company: 20
+  enabled: true
+  collection_mode: registry_only
+
+source_types:
+  official_site:
+    interface: satellite_news.fetcher.SourceFetcher
+    status: reserved_no_fetcher
+    notes: Company, regulator, government, exchange, and filing pages.
+  rss:
+    interface: satellite_news.fetcher.SourceFetcher
+    status: reserved_no_fetcher
+    notes: Curated RSS feeds to be activated by a future fetcher.
+  gdelt:
+    interface: satellite_news.fetcher.SourceFetcher
+    status: reserved_no_api_call
+    notes: Query templates only; no GDELT API invocation belongs in this agent.
+  search_api:
+    interface: satellite_news.fetcher.SourceFetcher
+    status: reserved_no_api_call
+    notes: Generic search adapter placeholder for later implementation.
+
+sources:
+  - id: official_company_sites
+    type: official_site
+    rank_group: official
+    description: Official company websites and newsroom pages.
+    enabled: true
+    registry_status: active_metadata_only
+    company_overrides:
+      spacex:
+        official_domains:
+          - spacex.com
+          - starlink.com
+        entrypoints:
+          - https://www.spacex.com/updates/
+          - https://www.spacex.com/launches/
+          - https://www.starlink.com/
+        discovery_queries:
+          - site:spacex.com/updates SpaceX Starlink launch
+          - site:starlink.com Starlink direct to cell
+        verification_status: registered
+      blue_origin:
+        official_domains:
+          - blueorigin.com
+        entrypoints:
+          - https://www.blueorigin.com/news
+          - https://www.blueorigin.com/new-glenn
+          - https://www.blueorigin.com/new-shepard
+        discovery_queries:
+          - site:blueorigin.com/news "New Glenn"
+          - site:blueorigin.com/news "New Shepard"
+        verification_status: registered
+      yuanxin_satellite:
+        official_domains: []
+        entrypoints: []
+        candidate_domains:
+          - spacesail.com.cn
+        discovery_queries:
+          - site:spacesail.com.cn 垣信卫星 OR 千帆星座
+          - "\"上海垣信卫星科技有限公司\" 官方"
+          - "\"千帆星座\" 垣信卫星"
+        verification_status: needs_source_owner_review
+      china_satnet:
+        official_domains: []
+        entrypoints: []
+        discovery_queries:
+          - "\"中国卫星网络集团有限公司\" 官方"
+          - "\"中国星网\" \"中国卫星网络集团\""
+          - "\"国网星座\" \"中国星网\""
+        verification_status: needs_source_owner_review
+
+  - id: regulator_and_filing_sites
+    type: official_site
+    rank_group: regulator_and_filing
+    description: Regulator, filing, procurement, and government notice pages for cross-checking material events.
+    enabled: true
+    registry_status: active_metadata_only
+    jurisdictions:
+      US:
+        entrypoints:
+          - https://www.fcc.gov/ecfs/search/search-filings
+          - https://www.faa.gov/space
+          - https://www.sec.gov/edgar/search/
+        company_scope:
+          - spacex
+          - blue_origin
+        query_hints:
+          - SpaceX
+          - Starlink
+          - Blue Origin
+          - New Glenn
+      CN:
+        entrypoints:
+          - https://www.miit.gov.cn/
+          - https://www.sasac.gov.cn/
+          - https://www.ndrc.gov.cn/
+          - https://www.shanghai.gov.cn/
+          - https://www.xiongan.gov.cn/
+        company_scope:
+          - yuanxin_satellite
+          - china_satnet
+        query_hints:
+          - 垣信卫星
+          - 千帆星座
+          - 中国星网
+          - 中国卫星网络集团
+          - 国网星座
+
+  - id: gdelt_satellite_company_search
+    type: gdelt
+    rank_group: wire_and_aggregator
+    description: Reserved GDELT document search adapter.
+    enabled: true
+    registry_status: query_template_only
+    query_template: '("{company_name}" OR {company_alias_terms}) AND (satellite OR launch OR constellation OR broadband OR space)'
+    company_query_overrides:
+      spacex: '(SpaceX OR Starlink OR "Falcon 9" OR Starship) AND (satellite OR launch OR constellation OR broadband)'
+      blue_origin: '("Blue Origin" OR "New Glenn" OR "New Shepard" OR "BE-4") AND (launch OR space OR satellite)'
+      yuanxin_satellite: '("垣信卫星" OR "上海垣信" OR "千帆星座" OR SpaceSail OR Spacesail OR "G60星链")'
+      china_satnet: '("中国星网" OR "中国卫星网络集团" OR "国网星座" OR Guowang OR "China SatNet")'
+    adapter_options:
+      endpoint: reserved
+      mode: dry_run
+      api_calls_allowed: false
+
+  - id: curated_rss
+    type: rss
+    rank_group: media
+    description: Reserved curated RSS feeds for aerospace and business media.
+    enabled: true
+    feeds: []
+    candidate_domains:
+      global_space_media:
+        - spacenews.com
+        - spaceflightnow.com
+        - nasaspaceflight.com
+      global_business_media:
+        - reuters.com
+        - bloomberg.com
+      china_space_and_business_media:
+        - cs.com.cn
+        - stcn.com
+        - yicai.com
+        - caixin.com
+    inclusion_rules:
+      require_company_keyword: true
+      require_satellite_context: true
+      prefer_original_reporting: true
+
+  - id: search_api_placeholder
+    type: search_api
+    rank_group: search
+    description: Reserved generic search API adapter for later use.
+    enabled: false
+    registry_status: disabled_placeholder
+    query_template: '"{company_name}" news satellite launch constellation'
+    adapter_options:
+      provider: reserved
+      mode: dry_run
+      api_calls_allowed: false
+
+mapping_expansion:
+  source: Satellite industry chain Mapping table
+  status: reserved
+  future_source_fields:
+    - company_id
+    - official_domains
+    - official_entrypoints
+    - regulator_entrypoints
+    - filing_identifiers
+    - rss_feeds
+    - search_queries
+    - source_rank_group
+    - verification_status
+    - last_verified_at
+    - notes

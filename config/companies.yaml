@@ -1,0 +1,309 @@
+schema_version: companies.v1
+description: Company registry for satellite news intelligence. This file only defines matching metadata and future Mapping-table fields.
+
+defaults:
+  enabled: true
+  priority: high
+  watch_languages:
+    - en
+    - zh
+  keyword_match:
+    case_sensitive: false
+    normalize_full_width: true
+
+companies:
+  - id: spacex
+    canonical_name: SpaceX
+    aliases:
+      - Space Exploration Technologies Corp.
+      - Space Exploration Technologies
+      - Starlink
+      - Starlink Services
+      - Starlink Internet
+    country_or_region: United States
+    country_code: US
+    headquarters: Hawthorne, California, United States
+    sector_tags:
+      - launch_services
+      - reusable_launch
+      - spacecraft_manufacturing
+      - satellite_internet
+      - leo_constellation
+      - space_transport
+      - user_terminal
+    keywords:
+      include:
+        - SpaceX
+        - Starlink
+        - Falcon 9
+        - Falcon Heavy
+        - Starship
+        - Super Heavy
+        - Dragon
+        - Starbase
+        - satellite internet
+        - direct to cell
+      zh_include:
+        - 星链
+        - 猎鹰9
+        - 猎鹰重型
+        - 星舰
+        - 超级重型
+        - 卫星互联网
+        - 手机直连卫星
+      exclude_when_unqualified:
+        - dragon boat
+        - starship entertainment
+    industry_chain:
+      chain_roles:
+        - constellation_operator
+        - launch_provider
+        - launch_vehicle_manufacturer
+        - spacecraft_manufacturer
+        - satellite_operator
+        - user_terminal_provider
+      orbit_focus:
+        - LEO
+      value_chain_stage:
+        upstream:
+          - propulsion
+          - launch_vehicle
+          - spacecraft_manufacturing
+        midstream:
+          - constellation_operations
+          - launch_operations
+        downstream:
+          - broadband_connectivity
+          - mobility_connectivity
+          - direct_to_device
+    enabled: true
+    priority: high
+
+  - id: blue_origin
+    canonical_name: Blue Origin
+    aliases:
+      - Blue Origin LLC
+      - Blue Origin Enterprises
+    country_or_region: United States
+    country_code: US
+    headquarters: Kent, Washington, United States
+    sector_tags:
+      - launch_services
+      - reusable_launch
+      - launch_vehicle_manufacturing
+      - propulsion
+      - space_transport
+      - lunar_transport
+      - commercial_space
+    keywords:
+      include:
+        - Blue Origin
+        - New Glenn
+        - New Shepard
+        - BE-4
+        - Blue Moon
+        - Project Kuiper launch
+        - National Security Space Launch
+        - NSSL
+      zh_include:
+        - 蓝色起源
+        - 新格伦
+        - 新谢泼德
+        - 蓝月
+        - 库iper发射
+        - 国家安全太空发射
+      exclude_when_unqualified:
+        - blue origin myth
+        - origin blue
+    industry_chain:
+      chain_roles:
+        - launch_provider
+        - launch_vehicle_manufacturer
+        - propulsion_supplier
+        - lunar_logistics_provider
+      orbit_focus:
+        - LEO
+        - MEO
+        - GEO
+        - cislunar
+      value_chain_stage:
+        upstream:
+          - propulsion
+          - launch_vehicle
+        midstream:
+          - launch_operations
+          - mission_services
+        downstream:
+          - crewed_suborbital
+          - lunar_transport
+    enabled: true
+    priority: high
+
+  - id: yuanxin_satellite
+    canonical_name: 垣信卫星
+    aliases:
+      - 上海垣信卫星科技有限公司
+      - Yuanxin Satellite
+      - Shanghai Yuanxin Satellite Technology
+      - Shanghai SpaceSail Technologies
+      - Spacesail
+      - SpaceSail
+      - 千帆星座
+      - 千帆计划
+      - G60星链
+      - G60 Starlink
+    country_or_region: China
+    country_code: CN
+    headquarters: Shanghai, China
+    sector_tags:
+      - satellite_internet
+      - leo_constellation
+      - constellation_operations
+      - satellite_operator
+      - ground_segment
+      - user_terminal
+      - commercial_space
+    keywords:
+      include:
+        - SpaceSail
+        - Spacesail
+        - Yuanxin Satellite
+        - Shanghai Yuanxin
+        - Shanghai SpaceSail
+        - Qianfan
+        - G60 Starlink
+        - LEO broadband
+      zh_include:
+        - 垣信卫星
+        - 上海垣信
+        - 千帆星座
+        - 千帆计划
+        - G60星链
+        - 低轨卫星互联网
+        - 卫星宽带
+        - 卫星终端
+        - 机上互联
+      exclude_when_unqualified:
+        - 千帆竞发
+        - 扬帆
+    industry_chain:
+      chain_roles:
+        - constellation_operator
+        - satellite_operator
+        - satellite_internet_service_provider
+        - ground_segment_operator
+        - user_terminal_provider
+      orbit_focus:
+        - LEO
+      value_chain_stage:
+        upstream:
+          - satellite_manufacturing_partnerships
+          - payload_procurement
+        midstream:
+          - constellation_operations
+          - ground_network
+        downstream:
+          - broadband_connectivity
+          - mobility_connectivity
+          - international_market_access
+    enabled: true
+    priority: high
+
+  - id: china_satnet
+    canonical_name: 中国星网
+    aliases:
+      - 中国卫星网络集团有限公司
+      - China Satellite Network Group
+      - China SatNet
+      - China Satellite Network Group Co., Ltd.
+      - Guowang
+      - 国网星座
+      - GW constellation
+    country_or_region: China
+    country_code: CN
+    headquarters: Xiong'an New Area, Hebei, China
+    sector_tags:
+      - satellite_internet
+      - leo_constellation
+      - state_owned_enterprise
+      - constellation_operations
+      - satellite_operator
+      - national_infrastructure
+      - space_network
+    keywords:
+      include:
+        - China SatNet
+        - China Satellite Network
+        - Guowang
+        - GW constellation
+        - satellite internet
+      zh_include:
+        - 中国星网
+        - 中国卫星网络集团
+        - 国网星座
+        - 国网卫星
+        - 星网工程
+        - 卫星互联网
+        - 雄安新区
+        - 中央企业
+        - 国资委
+      exclude_when_unqualified:
+        - 中国卫通
+        - China Satcom
+        - 中国电信卫星
+    industry_chain:
+      chain_roles:
+        - constellation_operator
+        - satellite_network_operator
+        - national_platform_coordinator
+        - satellite_internet_service_provider
+      orbit_focus:
+        - LEO
+      value_chain_stage:
+        upstream:
+          - national_constellation_planning
+          - satellite_procurement
+        midstream:
+          - constellation_operations
+          - network_operations
+        downstream:
+          - broadband_connectivity
+          - government_and_enterprise_services
+    enabled: true
+    priority: high
+
+mapping_expansion:
+  source: Satellite industry chain Mapping table
+  status: reserved
+  expected_fields:
+    - company_id
+    - canonical_name
+    - aliases
+    - keywords
+    - country_or_region
+    - country_code
+    - headquarters
+    - sector_tags
+    - industry_chain.chain_roles
+    - industry_chain.orbit_focus
+    - industry_chain.value_chain_stage.upstream
+    - industry_chain.value_chain_stage.midstream
+    - industry_chain.value_chain_stage.downstream
+    - enabled
+    - priority
+  reserved_optional_fields:
+    - parent_company
+    - ownership_type
+    - stock_ticker
+    - main_products
+    - constellation_name
+    - launch_vehicle
+    - orbit_shell
+    - frequency_band
+    - terminal_type
+    - upstream_suppliers
+    - downstream_customers
+    - partner_companies
+    - regulator_ids
+    - official_domains
+    - source_overrides

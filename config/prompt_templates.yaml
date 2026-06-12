@@ -1,0 +1,134 @@
+schema_version: prompt_templates.a6.v1
+description: >
+  A6 LLM Enrichment Agent placeholder contracts only. This file reserves the
+  future prompt and strict JSON schema shape, but it must not trigger an LLM
+  call or generate real summaries in the current phase.
+
+agent:
+  id: A6
+  name: LLM Enrichment Agent
+  stage: summarize
+  status: placeholder_only
+
+execution_policy:
+  call_llm: false
+  generate_real_summary: false
+  templates_are_contracts_only: true
+  allowed_current_action: maintain_prompt_template_structure
+
+event_categories:
+  - product_launch
+  - funding_finance
+  - policy_regulation
+  - security_risk
+  - research_technical
+  - supply_chain_operations
+  - company_strategy
+  - general_update
+
+output_contract:
+  schema_name: A6NewsEnrichment
+  strict_json: true
+  additional_properties: false
+  required:
+    - item_id
+    - company_id
+    - headline
+    - llm_summary
+    - event_category
+    - importance_score
+    - priority
+    - why_it_matters
+    - recommended_action
+    - source_urls
+    - confidence
+  properties:
+    item_id:
+      type: string
+      source: NewsItem.id
+    company_id:
+      type: string
+      source: NewsItem.company_id
+    headline:
+      type: string
+      placeholder_only: true
+    llm_summary:
+      type: string
+      placeholder_only: true
+      current_phase_value: ""
+    event_category:
+      type: enum
+      values_ref: event_categories
+    importance_score:
+      type: integer
+      minimum: 0
+      maximum: 100
+    priority:
+      type: enum
+      values:
+        - low
+        - medium
+        - high
+        - critical
+    why_it_matters:
+      type: string
+      placeholder_only: true
+      current_phase_value: ""
+    recommended_action:
+      type: string
+      placeholder_only: true
+      current_phase_value: ""
+    source_urls:
+      type: array
+      items: string
+      minimum_items: 1
+    confidence:
+      type: number
+      minimum: 0
+      maximum: 1
+
+templates:
+  enrich_news_item:
+    version: placeholder.v1
+    status: placeholder_only
+    input_schema: NewsItem
+    output_schema_ref: A6NewsEnrichment
+    system_placeholder: |
+      PLACEHOLDER ONLY.
+      Future A6 will enrich a single satellite news item and return strict JSON.
+      Current phase: do not call an LLM and do not generate real summaries.
+    user_placeholder: |
+      PLACEHOLDER ONLY.
+      Reserved future inputs:
+      - item_id: {item_id}
+      - company_id: {company_id}
+      - company_name: {company_name}
+      - title: {title}
+      - source_name: {source_name}
+      - published_at: {published_at}
+      - url: {url}
+      - normalized_text: {normalized_text}
+
+  enrich_news_batch:
+    version: placeholder.v1
+    status: placeholder_only
+    input_schema: NewsItem[]
+    output_schema_ref: A6NewsEnrichment[]
+    system_placeholder: |
+      PLACEHOLDER ONLY.
+      Future A6 will enrich a batch of satellite news items and return a JSON
+      array of A6NewsEnrichment objects.
+      Current phase: do not call an LLM and do not generate real summaries.
+    user_placeholder: |
+      PLACEHOLDER ONLY.
+      Reserved future batch input: {items_json}
+
+guardrails:
+  require_json_output: true
+  forbid_markdown_wrapping: true
+  require_source_url: true
+  no_unsourced_claims: true
+  no_real_generation_in_current_phase: true
+  language:
+    default: zh-CN
+    preserve_company_names: true

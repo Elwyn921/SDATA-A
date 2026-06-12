@@ -1,0 +1,120 @@
+schema_version: source_rank.v1
+description: Source credibility and ordering policy for downstream processing.
+
+rank_groups:
+  official:
+    weight: 1.0
+    priority: 1
+    notes: Company-owned primary source, official newsroom, product page, or verified corporate announcement.
+
+  regulator_and_filing:
+    weight: 0.98
+    priority: 2
+    notes: Regulator, government notice, filing, procurement, tender, exchange filing, license, or comparable public record.
+
+  wire_and_aggregator:
+    weight: 0.8
+    priority: 3
+    notes: GDELT, wire services, and broad news aggregators.
+
+  media:
+    weight: 0.7
+    priority: 4
+    notes: Curated domain media and business press.
+
+  search:
+    weight: 0.55
+    priority: 5
+    notes: Search API results requiring stronger dedupe and verification.
+
+rank_order:
+  - official
+  - regulator_and_filing
+  - wire_and_aggregator
+  - media
+  - search
+
+rules:
+  prefer_primary_source: true
+  require_url_for_export: true
+  require_company_match_for_export: true
+  require_satellite_context: true
+  dedupe_keys:
+    - normalized_url
+    - title_hash
+    - company_id
+  minimum_rank_group_for_auto_summary: media
+  conflict_resolution:
+    prefer:
+      - regulator_and_filing
+      - official
+      - wire_and_aggregator
+      - media
+      - search
+    require_manual_review_when:
+      - official_and_regulator_disagree
+      - only_search_sources_available
+      - company_match_is_alias_only
+      - source_language_translation_changes_meaning
+  recency_policy:
+    default_lookback_days: 7
+    material_event_lookback_days: 30
+    stale_after_days: 45
+  duplicate_policy:
+    url_canonicalization: true
+    strip_tracking_params: true
+    same_title_window_days: 14
+    prefer_source_rank_on_duplicate: true
+
+company_match_policy:
+  match_fields:
+    - canonical_name
+    - aliases
+    - keywords.include
+    - keywords.zh_include
+  negative_match_fields:
+    - keywords.exclude_when_unqualified
+  minimum_signals:
+    official_or_regulator: 1
+    media_or_search: 2
+  boost_when:
+    source_domain_matches_company_official_domain: 0.15
+    title_contains_canonical_name: 0.1
+    title_contains_constellation_name: 0.08
+  penalize_when:
+    body_only_keyword_match: -0.05
+    search_source_without_original_url: -0.15
+
+event_rank_hints:
+  critical:
+    - launch_failure
+    - launch_license
+    - regulatory_license
+    - constellation_deployment_milestone
+    - financing_or_major_contract
+    - service_launch
+    - accident_or_safety_event
+  high:
+    - launch_success
+    - satellite_batch_launch
+    - network_test
+    - strategic_partnership
+    - manufacturing_contract
+    - terminal_or_service_update
+  medium:
+    - product_page_update
+    - executive_comment
+    - conference_appearance
+    - routine_launch_schedule_update
+
+mapping_expansion:
+  source: Satellite industry chain Mapping table
+  status: reserved
+  future_rank_fields:
+    - source_rank_group
+    - company_relevance_score
+    - chain_role_relevance_score
+    - geography_relevance_score
+    - event_type
+    - event_priority
+    - verification_status

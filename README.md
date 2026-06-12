@@ -1,45 +1,72 @@
 # SDATA A
 
-SDATA A now includes a GitHub-native news intelligence pipeline. GitHub Actions can collect RSS/Atom sources on a schedule, normalize and score signals, then write the latest brief back into the repository.
+SDATA A is a GitHub-native satellite news intelligence pipeline architecture.
 
-## News Intelligence Pipeline
+The first implementation target is periodic monitoring for SpaceX, Blue Origin, 垣信卫星, and 中国星网. The design is intentionally interface-first so the project can later expand to more companies from the satellite industry chain Mapping table.
 
-- Sources and topic taxonomy: `config/news_sources.json`
-- LLM Summary & Report Agent prompt: `docs/llm-summary-report-agent-prompt.md`
-- Pipeline executable: `src/news_pipeline.py`
-- GitHub orchestration: `.github/workflows/news-intelligence.yml`
-- Latest generated outputs: `data/news/latest/`
-- Architecture notes: `docs/news-intelligence-architecture.md`
+## Scope
 
-The Summary & Report Agent contract is:
+This repository currently defines architecture, configuration contracts, shared schemas, and module interfaces only.
 
-- strict JSON output for any LLM enrichment step
-- news event classification
-- 0-100 importance scoring and priority labels
-- Excel generation: `data/news/latest/news-report.xlsx`
-- Markdown weekly report: `data/news/latest/weekly-report.md`
-- GitHub Pages-ready content: `data/news/latest/pages/index.html`
+It does not call real APIs, crawl websites, run LLM summaries, or export production reports yet.
 
-The Fetcher & Source Agent supports these source types:
+## Project Structure
 
-- `rss`, `atom`, `feed`: RSS/Atom XML feeds
-- `official_website`, `website`: same-domain official-site link extraction with include/exclude patterns
-- `gdelt`: GDELT 2.1 document API queries
-- `newsapi`: NewsAPI `/v2/everything`, using `NEWSAPI_KEY` or a per-source `api_key_env`
-- `serpapi`: SerpApi Google News search, using `SERPAPI_KEY` or a per-source `api_key_env`
-
-All fetchers emit the shared `raw_article.v1` schema before dedupe, scoring, and report generation. Request timeout, retry, exponential backoff, and global rate limiting are configured in `config/news_sources.json` under `pipeline`.
-
-Run locally with the deterministic fixture:
-
-```bash
-python3 -m pip install -r requirements-dev.txt
-python3 -m pytest
-python3 src/news_pipeline.py --config config/news_sources.json --fixture tests/fixtures/rss.xml --out data/news/latest --max-items 10
+```text
+config/
+  companies.yaml          Company registry and aliases
+  sources.yaml            Source registry and future adapter options
+  source_rank.yaml        Source credibility and ordering policy
+  prompt_templates.yaml   Prompt contracts for future LLM agents
+data/
+  news/                   Reserved output area
+src/
+  satellite_news/
+    schema.py             Unified data structures
+    pipeline.py           Empty fetch -> process -> summarize -> export flow
+    fetcher/              Fetcher interface and stub
+    processing/           Processing interface and stub
+    llm/                  LLM summarizer interface and stub
+    exporter/             Export interface and stub
+    storage/              Storage interface and stub
+tests/
+  test_imports.py         Import/static architecture contract checks
 ```
 
-Run against live sources:
+## Pipeline Contract
+
+The main flow is:
+
+```text
+fetch -> process -> summarize -> export
+```
+
+Each stage is decoupled behind a typed interface:
+
+- `SourceFetcher`: future RSS, GDELT, official-site, or search adapters
+- `NewsProcessor`: future normalization, dedupe, company matching, source ranking
+- `NewsSummarizer`: future LLM summary and event extraction
+- `NewsExporter`: future Markdown, JSON, Excel, HTML, or GitHub Pages outputs
+- `PipelineStorage`: future local file, GitHub artifact, or object storage persistence
+
+All modules exchange the unified dataclasses in `src/satellite_news/schema.py`.
+
+## Local Checks
 
 ```bash
-python3 src/news_pipeline.py --config config/news_sources.json --out data/news/latest --max-items 80
+python3 -m venv .venv
+. .venv/bin/activate
+python -m ensurepip --upgrade
+python -m pip install --upgrade pip setuptools wheel
+python -m pip install -e ".[dev]"
+python -m compileall -q src tests
+python -m pytest tests/test_imports.py tests/test_prompt_templates.py
 ```
+
+## Reserved Integrations
+
+- GitHub Actions scheduled execution
+- GDELT document search
+- LLM-based structured summaries
+- Excel report export
+- GitHub artifact and Pages publishing
