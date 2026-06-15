@@ -11,7 +11,7 @@ import urllib.parse
 import urllib.request
 from dataclasses import dataclass
 from datetime import datetime, timezone
-from typing import Any, Protocol
+from typing import Any, Callable, Protocol
 
 from satellite_news.schema import (
     Company,
@@ -73,6 +73,7 @@ class GDELTHTTPTransport:
         rate_limit_seconds: float = 3.0,
         sleep: Any = time.sleep,
         clock: Any = time.monotonic,
+        progress: Callable[[str], None] | None = None,
     ) -> None:
         self.timeout_seconds = timeout_seconds
         self.retries = max(0, retries)
@@ -80,6 +81,7 @@ class GDELTHTTPTransport:
         self.rate_limit_seconds = max(0.0, rate_limit_seconds)
         self.sleep = sleep
         self.clock = clock
+        self.progress = progress
         self._last_request_at: float | None = None
 
     def search(self, request: GDELTRequest) -> dict[str, Any]:
@@ -88,8 +90,12 @@ class GDELTHTTPTransport:
         last_error: Exception | None = None
 
         for attempt in range(self.retries + 1):
-            self._wait_for_rate_limit()
+            self._wait_for_rate_limit(request)
             try:
+                self._emit(
+                    f"[GDELT] requesting company={request.company_id} "
+                    f"attempt={attempt + 1}/{self.retries + 1}"
+                )
                 with urllib.request.urlopen(http_request, timeout=self.timeout_seconds) as response:
                     payload = response.read().decode("utf-8")
                 try:
@@ -106,11 +112,16 @@ class GDELTHTTPTransport:
                 last_error = exc
                 if attempt >= self.retries:
                     break
-                self.sleep(self._retry_delay(exc, attempt))
+                delay = self._retry_delay(exc, attempt)
+                self._emit(
+                    f"[GDELT] retrying company={request.company_id} "
+                    f"in {delay:.1f}s after {type(exc).__name__}: {exc}"
+                )
+                self.sleep(delay)
 
         raise GDELTTransportError(f"GDELT request failed: {last_error}") from last_error
 
-    def _wait_for_rate_limit(self) -> None:
+    def _wait_for_rate_limit(self, request: GDELTRequest) -> None:
         if self.rate_limit_seconds <= 0:
             self._last_request_at = self.clock()
             return
@@ -118,7 +129,9 @@ class GDELTHTTPTransport:
         if self._last_request_at is not None:
             elapsed = now - self._last_request_at
             if elapsed < self.rate_limit_seconds:
-                self.sleep(self.rate_limit_seconds - elapsed)
+                delay = self.rate_limit_seconds - elapsed
+                self._emit(f"[GDELT] waiting {delay:.1f}s before company={request.company_id}")
+                self.sleep(delay)
                 now = self.clock()
         self._last_request_at = now
 
@@ -134,6 +147,10 @@ class GDELTHTTPTransport:
             except ValueError:
                 return self.backoff_seconds * (2**attempt)
         return self.backoff_seconds * (2**attempt)
+
+    def _emit(self, message: str) -> None:
+        if self.progress:
+            self.progress(message)
 
 
 class GDELTFetcher:
@@ -169,17 +186,43 @@ class GDELTFetcher:
 
         request = self.build_request(company=company, source=source)
         if context.dry_run or not gdelt_api_calls_allowed(source) or self.transport is None:
+            record_fetch_status(
+                context,
+                company=company,
+                source=source,
+                status="dry_run",
+                item_count=0,
+                query=request.query,
+            )
             return ()
 
         try:
             payload = self.transport.search(request)
         except GDELTTransportError as exc:
             LOGGER.warning("GDELT fetch failed company_id=%s: %s", company.id, exc)
+            record_fetch_status(
+                context,
+                company=company,
+                source=source,
+                status="failed",
+                item_count=0,
+                query=request.query,
+                reason=str(exc),
+            )
             return ()
         articles = payload.get("articles", ())
         if not isinstance(articles, list):
+            record_fetch_status(
+                context,
+                company=company,
+                source=source,
+                status="failed",
+                item_count=0,
+                query=request.query,
+                reason="GDELT response did not contain an articles list.",
+            )
             return ()
-        return tuple(
+        raw_articles = tuple(
             article
             for row in articles
             if isinstance(row, dict)
@@ -188,6 +231,16 @@ class GDELTFetcher:
             ]
             if article is not None
         )
+        record_fetch_status(
+            context,
+            company=company,
+            source=source,
+            status="success" if raw_articles else "no_results",
+            item_count=len(raw_articles),
+            query=request.query,
+            reason="" if raw_articles else "GDELT returned zero usable articles.",
+        )
+        return raw_articles
 
     def fetch(
         self,
@@ -206,6 +259,31 @@ class GDELTFetcher:
 def gdelt_api_calls_allowed(source: SourceConfig) -> bool:
     adapter_options = source.options.get("adapter_options", {})
     return bool(adapter_options.get("api_calls_allowed", False))
+
+
+def record_fetch_status(
+    context: PipelineContext,
+    *,
+    company: Company,
+    source: SourceConfig,
+    status: str,
+    item_count: int,
+    query: str,
+    reason: str = "",
+) -> None:
+    statuses = context.metadata.setdefault("fetch_statuses", [])
+    statuses.append(
+        {
+            "company_id": company.id,
+            "company_name": company.canonical_name,
+            "source_id": source.id,
+            "source_type": source.type.value,
+            "status": status,
+            "item_count": item_count,
+            "reason": reason,
+            "query": query,
+        }
+    )
 
 
 def build_company_query(*, company: Company, source: SourceConfig) -> str:

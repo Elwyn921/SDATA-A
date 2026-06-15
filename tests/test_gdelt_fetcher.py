@@ -218,13 +218,46 @@ def test_gdelt_transport_failure_does_not_break_fetcher():
         source=source,
         context=context,
     ) == ()
+    assert context.metadata["fetch_statuses"][0]["status"] == "failed"
+    assert "temporary GDELT rate limit" in context.metadata["fetch_statuses"][0]["reason"]
+
+
+def test_gdelt_no_results_records_explicit_status():
+    class EmptyTransport:
+        def search(self, request):
+            return {"articles": []}
+
+    source = SourceConfig(
+        id="gdelt",
+        type=SourceType.GDELT,
+        rank_group="wire",
+        options={"adapter_options": {"api_calls_allowed": True}},
+    )
+    company = next(
+        company
+        for company in load_companies(Path("config/companies.yaml"))
+        if company.id == "spacex"
+    )
+    context = PipelineContext(
+        run_id="empty",
+        started_at=datetime.now(timezone.utc),
+        dry_run=False,
+    )
+
+    assert GDELTFetcher(transport=EmptyTransport()).fetch(
+        company=company,
+        source=source,
+        context=context,
+    ) == ()
+    assert context.metadata["fetch_statuses"][0]["status"] == "no_results"
 
 
 def test_pipeline_builds_gdelt_fetcher_from_source_options():
     fetcher = build_gdelt_fetcher(load_sources(Path("config/sources.yaml")))
 
     assert isinstance(fetcher.transport, GDELTHTTPTransport)
-    assert fetcher.transport.rate_limit_seconds == 30.0
+    assert fetcher.transport.rate_limit_seconds == 5.0
+    assert fetcher.transport.retries == 0
 
 
 def test_pipeline_maps_gdelt_results_for_all_four_companies_with_mock_transport():
@@ -272,3 +305,10 @@ def test_pipeline_maps_gdelt_results_for_all_four_companies_with_mock_transport(
         "china_satnet",
     }
     assert all(item.source.source_type is SourceType.GDELT for item in result.items)
+    assert {row["company_id"] for row in result.fetch_statuses} == {
+        "spacex",
+        "blue_origin",
+        "yuanxin_satellite",
+        "china_satnet",
+    }
+    assert {row["status"] for row in result.fetch_statuses} == {"success"}

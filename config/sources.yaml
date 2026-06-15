@@ -251,10 +251,10 @@ sources:
       format: json
       maxrecords: 5
       sort: HybridRel
-      timeout_seconds: 20
-      retries: 2
+      timeout_seconds: 15
+      retries: 0
       backoff_seconds: 3.0
-      rate_limit_seconds: 30.0
+      rate_limit_seconds: 5.0
       api_calls_allowed: true
 
   - id: curated_rss

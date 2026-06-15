@@ -155,4 +155,5 @@ class PipelineResult:
     items: tuple[NewsItem, ...] = ()
     summaries: tuple[NewsSummary, ...] = ()
     exports: tuple[ExportDocument, ...] = ()
+    fetch_statuses: tuple[dict[str, Any], ...] = ()
     warnings: tuple[str, ...] = ()

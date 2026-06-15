@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import argparse
 import logging
+import sys
 from dataclasses import dataclass, field
 from datetime import datetime, timezone
 from pathlib import Path
@@ -91,6 +92,7 @@ class Pipeline:
             items=processed_items,
             summaries=summaries,
             exports=exports,
+            fetch_statuses=tuple(context.metadata.get("fetch_statuses", ())),
         )
         self.storage.save_result(result=result, context=context)
         LOGGER.info(
@@ -157,12 +159,18 @@ def build_gdelt_fetcher(sources: tuple[SourceConfig, ...]) -> GDELTFetcher:
     gdelt_source = next((source for source in sources if source.type.value == "gdelt"), None)
     options = gdelt_source.options.get("adapter_options", {}) if gdelt_source else {}
     transport = GDELTHTTPTransport(
-        timeout_seconds=int(options.get("timeout_seconds") or 20),
-        retries=int(options.get("retries") or 2),
-        backoff_seconds=float(options.get("backoff_seconds") or 2.0),
-        rate_limit_seconds=float(options.get("rate_limit_seconds") or 3.0),
+        timeout_seconds=int(option_value(options, "timeout_seconds", 20)),
+        retries=int(option_value(options, "retries", 2)),
+        backoff_seconds=float(option_value(options, "backoff_seconds", 2.0)),
+        rate_limit_seconds=float(option_value(options, "rate_limit_seconds", 3.0)),
+        progress=lambda message: print(message, file=sys.stderr, flush=True),
     )
     return GDELTFetcher(transport=transport)
+
+
+def option_value(options: dict[str, object], key: str, default: object) -> object:
+    value = options.get(key, default)
+    return default if value is None else value
 
 
 def print_result(
@@ -174,18 +182,36 @@ def print_result(
     mode = "DRY RUN" if dry_run else "LIVE GDELT"
     print(f"Satellite news pipeline [{mode}] run_id={result.run_id}")
     print(f"Total NewsItem count: {len(result.items)}")
+    status_rows = result.fetch_statuses
     for company in companies:
         if not company.enabled:
             continue
         company_items = tuple(item for item in result.items if item.company_id == company.id)
-        print(f"\n## {company.canonical_name} ({company.id}) - {len(company_items)} item(s)")
+        status = fetch_status_for_company(status_rows, company.id)
+        status_label = status.get("status", "no_results")
+        print(
+            f"\n## {company.canonical_name} ({company.id}) "
+            f"- {status_label} - {len(company_items)} item(s)"
+        )
+        print(f"Query: {status.get('query') or '<not requested>'}")
+        reason = status.get("reason")
+        if reason:
+            print(f"Reason: {reason}")
         if not company_items:
-            print("- no results")
             continue
         for item in company_items[:10]:
             published = item.published_at.isoformat() if item.published_at else "unknown date"
             print(f"- [{published}] {item.title}")
             print(f"  {item.url}")
+
+
+def fetch_status_for_company(status_rows: object, company_id: str) -> dict[str, object]:
+    if not isinstance(status_rows, tuple):
+        return {}
+    for row in status_rows:
+        if isinstance(row, dict) and row.get("company_id") == company_id:
+            return row
+    return {}
 
 
 if __name__ == "__main__":
