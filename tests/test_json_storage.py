@@ -108,6 +108,96 @@ def test_json_file_storage_defaults_to_docs_publish_dir_for_repo_latest(tmp_path
     )
 
 
+def test_json_file_storage_keeps_stale_company_items_when_current_run_is_empty(tmp_path):
+    latest_dir = tmp_path / "data" / "news" / "latest"
+    storage = JsonFileStorage(latest_dir=latest_dir)
+    first_context = PipelineContext(
+        run_id="first-run",
+        started_at=datetime(2026, 6, 15, 8, 30, tzinfo=timezone.utc),
+        output_dir=str(latest_dir),
+        dry_run=False,
+    )
+    second_context = PipelineContext(
+        run_id="second-run",
+        started_at=datetime(2026, 6, 15, 9, 30, tzinfo=timezone.utc),
+        output_dir=str(latest_dir),
+        dry_run=False,
+    )
+    first_result = PipelineResult(
+        run_id="first-run",
+        items=(
+            make_item("spacex-item-1", "spacex", "SpaceX"),
+            make_item("blue-origin-item-1", "blue_origin", "Blue Origin"),
+        ),
+        fetch_statuses=(
+            {"company_id": "spacex", "status": "success", "item_count": 1},
+            {"company_id": "blue_origin", "status": "success", "item_count": 1},
+        ),
+    )
+    second_result = PipelineResult(
+        run_id="second-run",
+        items=(make_item("spacex-item-2", "spacex", "SpaceX"),),
+        fetch_statuses=(
+            {"company_id": "spacex", "status": "success", "item_count": 1},
+            {
+                "company_id": "blue_origin",
+                "status": "failed",
+                "item_count": 0,
+                "reason": "HTTP 429",
+            },
+        ),
+    )
+
+    storage.save_result(result=first_result, context=first_context)
+    storage.save_result(result=second_result, context=second_context)
+
+    latest_result = read_json(latest_dir / "pipeline_result.json")
+    latest_items = read_json(latest_dir / "items.json")
+    archive_result = read_json(
+        tmp_path
+        / "data"
+        / "news"
+        / "archive"
+        / "runs"
+        / "2026"
+        / "06"
+        / "15"
+        / "second-run"
+        / "pipeline_result.json"
+    )
+    blue_item = next(item for item in latest_result["items"] if item["company_id"] == "blue_origin")
+    spacex_item = next(item for item in latest_result["items"] if item["company_id"] == "spacex")
+
+    assert len(latest_result["items"]) == 2
+    assert latest_items["count"] == 2
+    assert spacex_item["fresh"] is True
+    assert spacex_item["stale"] is False
+    assert blue_item["fresh"] is False
+    assert blue_item["stale"] is True
+    assert blue_item["stale_from_run_id"] == "first-run"
+    assert blue_item["metadata"]["stale_fallback_current_run_id"] == "second-run"
+    assert latest_result["metadata"]["stale_fallback"]["fallback_company_ids"] == ["blue_origin"]
+    assert latest_result["fetch_statuses"][1]["reason"] == "HTTP 429"
+    assert len(archive_result["items"]) == 1
+    assert archive_result["items"][0]["company_id"] == "spacex"
+
+
+def make_item(item_id, company_id, company_name):
+    return NewsItem(
+        id=item_id,
+        company_id=company_id,
+        company_name=company_name,
+        title=f"{company_name} update",
+        url=f"https://example.test/{item_id}",
+        source=SourceRecord(
+            source_id="rss_provider",
+            source_type=SourceType.RSS,
+            source_name="RSS",
+            rank_group="official",
+        ),
+    )
+
+
 def read_json(path):
     with path.open("r", encoding="utf-8") as handle:
         return json.load(handle)

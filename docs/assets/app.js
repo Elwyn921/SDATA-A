@@ -32,6 +32,8 @@ const elements = {
   companyCards: document.querySelector("#company-cards"),
   newsList: document.querySelector("#news-list"),
   timeline: document.querySelector("#timeline"),
+  runStatus: document.querySelector("#run-status"),
+  providerList: document.querySelector("#provider-list"),
 };
 
 bootstrap();
@@ -88,6 +90,8 @@ function render() {
   renderCompanyCards(items, filteredItems, summariesByItem);
   renderNewsList(filteredItems, summariesByItem);
   renderTimeline(filteredItems, summariesByItem);
+  renderRunStatus(state.result);
+  renderProviderStatus(state.result.fetch_statuses ?? []);
 }
 
 function renderCompanyCards(allItems, visibleItems, summariesByItem) {
@@ -97,10 +101,7 @@ function renderCompanyCards(allItems, visibleItems, summariesByItem) {
       const companyItems = visibleItems.filter((item) => item.company_id === company.id);
       const allCompanyItems = allItems.filter((item) => item.company_id === company.id);
       const latest = sortedItems(allCompanyItems)[0];
-      const highPriority = allCompanyItems.filter((item) => {
-        const summary = summariesByItem.get(item.id);
-        return summary?.priority === "high" || summary?.priority === "critical";
-      }).length;
+      const freshness = freshnessCounts(allCompanyItems);
       const topRank = bestRank(allCompanyItems);
       const card = document.createElement("article");
       card.className = `company-card accent-${company.accent}`;
@@ -113,11 +114,11 @@ function renderCompanyCards(allItems, visibleItems, summariesByItem) {
         </div>
         <h3>${escapeHtml(company.name)}</h3>
         <div class="metric-row">
-          <div><strong>${companyItems.length}</strong><span>当前显示</span></div>
-          <div><strong>${allCompanyItems.length}</strong><span>样本总量</span></div>
-          <div><strong>${highPriority}</strong><span>高优先级</span></div>
+          <div><strong>${freshness.fresh}</strong><span>fresh</span></div>
+          <div><strong>${freshness.stale}</strong><span>stale</span></div>
+          <div><strong>${freshness.total}</strong><span>total</span></div>
         </div>
-        <p>${latest ? formatDate(latest.published_at) : "No date"} · ${escapeHtml(latest?.title ?? "No sample item")}</p>
+        <p>${companyItems.length} 条匹配当前筛选 · ${latest ? formatDate(latest.published_at) : "No date"} · ${escapeHtml(latest?.title ?? "No sample item")}</p>
       `;
       card.addEventListener("click", () => {
         state.companyId = company.id;
@@ -143,6 +144,7 @@ function renderNewsList(items, summariesByItem) {
       const summary = summariesByItem.get(item.id);
       const rankGroup = item.source.rank_group;
       const credibility = credibilityMeta[rankGroup] ?? credibilityMeta.media;
+      const freshness = freshnessState(item);
       const article = document.createElement("article");
       article.className = "news-item";
       article.innerHTML = `
@@ -150,10 +152,12 @@ function renderNewsList(items, summariesByItem) {
           <div class="news-row">
             <span class="company-pill">${escapeHtml(item.company_name)}</span>
             <span class="credibility-tag ${credibility.tone}">${credibility.label}</span>
+            <span class="freshness-tag ${freshness.className}">${freshness.label}</span>
             <span class="priority-tag priority-${summary?.priority ?? "medium"}">${summary?.priority ?? "medium"}</span>
           </div>
           <h3><a href="${escapeAttribute(item.url)}" target="_blank" rel="noreferrer">${escapeHtml(item.title)}</a></h3>
           <p>${escapeHtml(summary?.headline ?? item.metadata?.event_type ?? "Unclassified sample item")}</p>
+          ${staleDetails(item)}
           <div class="tag-row">
             ${item.tags.map((tag) => `<span>${escapeHtml(tag)}</span>`).join("")}
           </div>
@@ -189,6 +193,61 @@ function renderTimeline(items, summariesByItem) {
   elements.timeline.replaceChildren(...timelineItems);
 }
 
+function renderRunStatus(result) {
+  const staleFallback = result.metadata?.stale_fallback ?? {};
+  const counts = freshnessCounts(result.items ?? []);
+  const rows = [
+    ["run_id", result.run_id ?? "--"],
+    ["generated_at", formatFullDate(result.generated_at ?? result.finished_at ?? result.started_at)],
+    ["总新闻数", String(result.items?.length ?? 0)],
+    ["fresh", String(staleFallback.fresh_item_count ?? counts.fresh)],
+    ["stale", String(staleFallback.stale_item_count ?? counts.stale)],
+    ["fallback companies", formatList(staleFallback.fallback_company_ids ?? [])],
+  ];
+
+  elements.runStatus.replaceChildren(
+    ...rows.map(([label, value]) => {
+      const item = document.createElement("div");
+      item.className = "status-cell";
+      item.innerHTML = `<span>${escapeHtml(label)}</span><strong>${escapeHtml(value)}</strong>`;
+      return item;
+    }),
+  );
+}
+
+function renderProviderStatus(statuses) {
+  if (!statuses.length) {
+    const empty = document.createElement("div");
+    empty.className = "empty-state compact";
+    empty.textContent = "暂无 provider 状态。";
+    elements.providerList.replaceChildren(empty);
+    return;
+  }
+
+  elements.providerList.replaceChildren(
+    ...statuses.map((status) => {
+      const providerType = status.provider_type ?? status.source_type ?? "provider";
+      const providerStatus = status.provider_status ?? status.final_status ?? status.status ?? "unknown";
+      const details = [status.reason, status.error_message].filter(Boolean);
+      const row = document.createElement("details");
+      row.className = "provider-row";
+      row.innerHTML = `
+        <summary>
+          <span>${escapeHtml(status.company_name ?? status.company_id ?? "--")}</span>
+          <strong>${escapeHtml(providerLabel(providerType))}</strong>
+          <span class="provider-badge ${providerStatusClass(providerStatus)}">${escapeHtml(providerStatus)}</span>
+        </summary>
+        <div class="provider-detail">
+          <p><strong>provider_id</strong>${escapeHtml(status.provider_id ?? status.source_id ?? "--")}</p>
+          <p><strong>reason</strong>${escapeHtml(details[0] ?? "--")}</p>
+          <p><strong>error_message</strong>${escapeHtml(status.error_message ?? "--")}</p>
+        </div>
+      `;
+      return row;
+    }),
+  );
+}
+
 function companiesFromItems(items) {
   const seen = new Set();
   return items.reduce((companies, item) => {
@@ -206,6 +265,51 @@ function companiesFromItems(items) {
 
 function sortedItems(items) {
   return [...items].sort((a, b) => new Date(b.published_at ?? 0) - new Date(a.published_at ?? 0));
+}
+
+function freshnessCounts(items) {
+  return items.reduce(
+    (counts, item) => {
+      const freshness = freshnessState(item);
+      counts.total += 1;
+      if (freshness.kind === "stale") {
+        counts.stale += 1;
+      } else {
+        counts.fresh += 1;
+      }
+      return counts;
+    },
+    { fresh: 0, stale: 0, total: 0 },
+  );
+}
+
+function freshnessState(item) {
+  if (item.stale === true) {
+    return { kind: "stale", label: "历史兜底", className: "is-stale" };
+  }
+  if (item.fresh === true || item.stale === false || item.fresh === undefined) {
+    return { kind: "fresh", label: "最新", className: "is-fresh" };
+  }
+  return { kind: "unknown", label: "未知", className: "is-unknown" };
+}
+
+function staleDetails(item) {
+  if (item.stale !== true) return "";
+  const rows = [
+    ["stale_reason", item.stale_reason],
+    ["stale_as_of", item.stale_as_of],
+    ["stale_from_run_id", item.stale_from_run_id],
+  ];
+  return `
+    <dl class="stale-details">
+      ${rows
+        .map(
+          ([label, value]) =>
+            `<div><dt>${escapeHtml(label)}</dt><dd>${escapeHtml(value ?? "--")}</dd></div>`,
+        )
+        .join("")}
+    </dl>
+  `;
 }
 
 function filterItems(items) {
@@ -229,6 +333,35 @@ function formatDate(value) {
     hour: "2-digit",
     minute: "2-digit",
   }).format(new Date(value));
+}
+
+function formatFullDate(value) {
+  if (!value) return "--";
+  return new Intl.DateTimeFormat("zh-CN", {
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit",
+    hour: "2-digit",
+    minute: "2-digit",
+  }).format(new Date(value));
+}
+
+function formatList(value) {
+  if (!Array.isArray(value) || value.length === 0) return "none";
+  return value.join(", ");
+}
+
+function providerLabel(value) {
+  return String(value).replaceAll("_", " ");
+}
+
+function providerStatusClass(status) {
+  const value = String(status);
+  if (value === "success") return "provider-success";
+  if (value === "failed") return "provider-failed";
+  if (value === "rate_limited") return "provider-rate";
+  if (value.startsWith("skipped")) return "provider-skipped";
+  return "provider-unknown";
 }
 
 function escapeHtml(value) {

@@ -11,14 +11,17 @@ from pathlib import Path
 from typing import Callable, TypeVar
 from uuid import uuid4
 
-from satellite_news.config import load_companies, load_sources
+from satellite_news.config import load_companies, load_providers, load_sources
 from satellite_news.exporter import NewsExporter, NullExporter
 from satellite_news.fetcher import GDELTHTTPTransport, GDELTFetcher, NullFetcher, SourceFetcher
 from satellite_news.llm import NewsSummarizer, NullSummarizer
 from satellite_news.processing import NewsProcessor, NullProcessor
+from satellite_news.provider import build_default_provider_registry
+from satellite_news.provider.orchestrator import ProviderOrchestrator
 from satellite_news.schema import (
     Company,
     NewsItem,
+    NewsProviderConfig,
     PipelineContext,
     PipelineResult,
     PipelineStage,
@@ -48,12 +51,14 @@ class Pipeline:
     summarizer: NewsSummarizer = field(default_factory=NullSummarizer)
     exporter: NewsExporter = field(default_factory=NullExporter)
     storage: PipelineStorage = field(default_factory=NullStorage)
+    provider_orchestrator: ProviderOrchestrator | None = None
 
     def run(
         self,
         *,
         companies: tuple[Company, ...] = (),
         sources: tuple[SourceConfig, ...] = (),
+        providers: tuple[NewsProviderConfig, ...] = (),
         context: PipelineContext | None = None,
     ) -> PipelineResult:
         context = context or PipelineContext(
@@ -69,7 +74,12 @@ class Pipeline:
         )
         fetched_items = self._run_stage(
             PipelineStage.FETCH,
-            lambda: self._fetch(companies=companies, sources=sources, context=context),
+            lambda: self._fetch(
+                companies=companies,
+                sources=sources,
+                providers=providers,
+                context=context,
+            ),
         )
         processed_items = self._run_stage(
             PipelineStage.PROCESS,
@@ -116,8 +126,12 @@ class Pipeline:
         *,
         companies: tuple[Company, ...],
         sources: tuple[SourceConfig, ...],
+        providers: tuple[NewsProviderConfig, ...],
         context: PipelineContext,
     ) -> tuple[NewsItem, ...]:
+        if providers and self.provider_orchestrator is not None:
+            return self.provider_orchestrator.fetch(companies=companies, context=context)
+
         items: list[NewsItem] = []
         for company in companies:
             if not company.enabled:
@@ -142,6 +156,7 @@ def main(argv: tuple[str, ...] | None = None) -> PipelineResult:
 
     companies = load_companies(args.config_dir / "companies.yaml")
     sources = load_sources(args.config_dir / "sources.yaml")
+    providers = load_providers(args.config_dir / "sources.yaml")
     context = PipelineContext(
         run_id=args.run_id or str(uuid4()),
         started_at=datetime.now(timezone.utc),
@@ -149,12 +164,20 @@ def main(argv: tuple[str, ...] | None = None) -> PipelineResult:
         output_dir=str(args.output_dir),
         dry_run=args.dry_run,
     )
+    provider_registry = build_default_provider_registry(
+        progress=lambda message: print(message, file=sys.stderr, flush=True)
+    )
     result = Pipeline(
         fetcher=build_gdelt_fetcher(sources),
+        provider_orchestrator=ProviderOrchestrator(
+            registry=provider_registry,
+            providers=providers,
+        ),
         storage=JsonFileStorage(latest_dir=args.output_dir, publish_dir=args.publish_dir),
     ).run(
         companies=companies,
         sources=sources,
+        providers=providers,
         context=context,
     )
     print_result(result=result, companies=companies, dry_run=context.dry_run)
@@ -185,7 +208,7 @@ def print_result(
     companies: tuple[Company, ...],
     dry_run: bool,
 ) -> None:
-    mode = "DRY RUN" if dry_run else "LIVE GDELT"
+    mode = "DRY RUN" if dry_run else "LIVE PROVIDERS"
     print(f"Satellite news pipeline [{mode}] run_id={result.run_id}")
     print(f"Total NewsItem count: {len(result.items)}")
     status_rows = result.fetch_statuses
@@ -193,16 +216,35 @@ def print_result(
         if not company.enabled:
             continue
         company_items = tuple(item for item in result.items if item.company_id == company.id)
-        status = fetch_status_for_company(status_rows, company.id)
-        status_label = status.get("status", "no_results")
+        statuses = fetch_statuses_for_company(status_rows, company.id)
+        status_label = company_status_label(statuses)
         print(
             f"\n## {company.canonical_name} ({company.id}) "
             f"- {status_label} - {len(company_items)} item(s)"
         )
-        print(f"Query: {status.get('query') or '<not requested>'}")
-        reason = status.get("reason")
-        if reason:
-            print(f"Reason: {reason}")
+        for status in statuses:
+            provider_id = status.get("provider_id") or status.get("source_id") or "unknown_provider"
+            provider_status = status.get("provider_status") or status.get("final_status") or status.get("status")
+            print(
+                f"Provider {provider_id}: {provider_status} "
+                f"items={status.get('item_count', 0)} "
+                f"fallback={status.get('should_fallback', False)} "
+                f"rate_limited={status.get('rate_limited', False)} "
+                f"retries={status.get('retry_count', 0)}"
+            )
+            queries = status.get("queries")
+            if isinstance(queries, list) and queries:
+                print(
+                    f"  Queries: {len(queries)} "
+                    f"(succeeded={status.get('successful_query_count', 0)})"
+                )
+                for query in queries[:2]:
+                    print(f"    - {query}")
+                if len(queries) > 2:
+                    print(f"    - ... {len(queries) - 2} more")
+            reason = status.get("error_message") or status.get("reason")
+            if reason:
+                print(f"  Reason: {reason}")
         if not company_items:
             continue
         for item in company_items[:10]:
@@ -218,6 +260,35 @@ def fetch_status_for_company(status_rows: object, company_id: str) -> dict[str, 
         if isinstance(row, dict) and row.get("company_id") == company_id:
             return row
     return {}
+
+
+def fetch_statuses_for_company(status_rows: object, company_id: str) -> tuple[dict[str, object], ...]:
+    if not isinstance(status_rows, tuple):
+        return ()
+    return tuple(
+        row
+        for row in status_rows
+        if isinstance(row, dict) and row.get("company_id") == company_id
+    )
+
+
+def company_status_label(statuses: tuple[dict[str, object], ...]) -> str:
+    labels = {
+        str(status.get("provider_status") or status.get("final_status") or status.get("status"))
+        for status in statuses
+    }
+    labels.discard("")
+    if not labels:
+        return "no_results"
+    if "success" in labels:
+        return "success"
+    if "rate_limited" in labels:
+        return "rate_limited"
+    if labels == {"skipped_no_secret"}:
+        return "skipped_no_secret"
+    if labels <= {"no_results", "skipped_no_secret"}:
+        return "no_results"
+    return "failed"
 
 
 if __name__ == "__main__":

@@ -1,15 +1,15 @@
-name: News Intelligence Architecture Check
+name: News Intelligence Pipeline
 
 on:
   workflow_dispatch:
   schedule:
-    - cron: "17 */6 * * *"
+    - cron: "17 */3 * * *"
 
 permissions:
-  contents: read
+  contents: write
 
 jobs:
-  import-check:
+  refresh-news-data:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -28,5 +28,27 @@ jobs:
       - name: Run static syntax check
         run: python -m compileall -q src tests
 
-      - name: Run import and contract checks
-        run: python -m pytest tests/test_imports.py tests/test_prompt_templates.py
+      - name: Run tests
+        run: python -m pytest
+
+      - name: Refresh latest news data
+        env:
+          SERPAPI_KEY: ${{ secrets.SERPAPI_KEY }}
+          NEWSAPI_KEY: ${{ secrets.NEWSAPI_KEY }}
+        run: |
+          PYTHONPATH=src python3 -m satellite_news \
+            --no-dry-run \
+            --output-dir data/news/latest \
+            --publish-dir docs/data/news
+
+      - name: Commit refreshed data
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/news docs/data/news
+          if git diff --cached --quiet; then
+            echo "No data changes to commit."
+          else
+            git commit -m "chore: refresh news data"
+            git push
+          fi

@@ -22,10 +22,13 @@ class SourceType(str, Enum):
     OFFICIAL_SITE = "official_site"
     RSS = "rss"
     GDELT = "gdelt"
+    SERPAPI = "serpapi"
+    NEWSAPI = "newsapi"
     SEARCH_API = "search_api"
 
 
 Priority = Literal["low", "medium", "high", "critical"]
+FallbackMode = Literal["disabled", "on_empty", "on_error", "on_empty_or_error"]
 
 
 @dataclass(frozen=True)
@@ -46,6 +49,39 @@ class SourceConfig:
     rank_group: str
     enabled: bool = True
     description: str = ""
+    provider_id: str | None = None
+    provider_priority: int = 100
+    fallback_to: tuple[str, ...] = ()
+    options: dict[str, Any] = field(default_factory=dict)
+
+
+@dataclass(frozen=True)
+class ProviderFallbackPolicy:
+    mode: FallbackMode = "on_empty_or_error"
+    fallback_to: tuple[str, ...] = ()
+    max_fallback_depth: int = 2
+
+
+@dataclass(frozen=True)
+class CompanyProviderConfig:
+    company_id: str
+    enabled: bool = True
+    priority: int | None = None
+    query_templates: tuple[str, ...] = ()
+    entrypoints: tuple[str, ...] = ()
+    options: dict[str, Any] = field(default_factory=dict)
+
+
+@dataclass(frozen=True)
+class NewsProviderConfig:
+    id: str
+    type: SourceType
+    rank_group: str
+    enabled: bool = True
+    priority: int = 100
+    fallback: ProviderFallbackPolicy = field(default_factory=ProviderFallbackPolicy)
+    description: str = ""
+    company_overrides: dict[str, CompanyProviderConfig] = field(default_factory=dict)
     options: dict[str, Any] = field(default_factory=dict)
 
 
@@ -55,6 +91,8 @@ class SourceRecord:
     source_type: SourceType
     source_name: str
     rank_group: str
+    provider_id: str | None = None
+    provider_priority: int | None = None
     url: str | None = None
     collected_at: datetime | None = None
     raw_payload: dict[str, Any] = field(default_factory=dict)
@@ -85,6 +123,8 @@ class RawArticle:
     source_type: SourceType
     title: str
     url: str
+    provider_id: str | None = None
+    provider_priority: int | None = None
     published_at: datetime | None = None
     language: str | None = None
     raw_text: str | None = None
@@ -97,6 +137,8 @@ class RawArticle:
             source_type=self.source_type,
             source_name=source.description or source.id,
             rank_group=source.rank_group,
+            provider_id=self.provider_id or source.provider_id,
+            provider_priority=self.provider_priority or source.provider_priority,
             url=self.url,
             collected_at=collected_at,
             raw_payload=self.raw_payload,

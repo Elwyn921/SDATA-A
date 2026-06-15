@@ -1,5 +1,5 @@
 {
-  "archive_path": "data/news/archive/runs/2026/06/15/real-data-closure",
+  "archive_path": "data/news/archive/runs/2026/06/15/6698e517-6bb1-41d0-8b61-a5d7fdca963e",
   "artifact_version": 1,
   "files": {
     "fetch_statuses": "fetch_statuses.json",
@@ -9,7 +9,7 @@
     "run_metadata": "run_metadata.json",
     "summaries": "summaries.json"
   },
-  "generated_at": "2026-06-15T07:04:05.997311Z",
-  "run_id": "real-data-closure",
+  "generated_at": "2026-06-15T09:17:30.431012Z",
+  "run_id": "6698e517-6bb1-41d0-8b61-a5d7fdca963e",
   "schema_version": "satellite_news.v1"
 }

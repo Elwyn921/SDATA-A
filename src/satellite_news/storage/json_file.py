@@ -66,6 +66,7 @@ class JsonFileStorage:
         archive_run_dir = self.archive_run_dir(context=context)
         self.latest_dir.mkdir(parents=True, exist_ok=True)
         archive_run_dir.mkdir(parents=True, exist_ok=True)
+        previous_latest = read_json_if_exists(self.latest_dir / "pipeline_result.json")
 
         files = {
             "pipeline_result": "pipeline_result.json",
@@ -80,7 +81,16 @@ class JsonFileStorage:
             context=context,
             finished_at=finished_at,
         )
-        items = items_payload(result=result, context=context, generated_at=finished_at)
+        latest_pipeline_result = apply_stale_fallback(
+            current=pipeline_result,
+            previous=previous_latest,
+            generated_at=finished_at,
+        )
+        items = items_payload_from_pipeline_result(
+            pipeline_result=latest_pipeline_result,
+            context=context,
+            generated_at=finished_at,
+        )
         summaries = summaries_payload(result=result, context=context, generated_at=finished_at)
         fetch_statuses = fetch_statuses_payload(
             result=result,
@@ -92,6 +102,10 @@ class JsonFileStorage:
             context=context,
             finished_at=finished_at,
         )
+        latest_run_metadata = run_metadata_from_pipeline_result(
+            run_metadata=run_metadata,
+            pipeline_result=latest_pipeline_result,
+        )
         manifest = manifest_payload(
             context=context,
             generated_at=finished_at,
@@ -100,15 +114,24 @@ class JsonFileStorage:
         )
 
         payloads = {
-            files["pipeline_result"]: pipeline_result,
+            files["pipeline_result"]: latest_pipeline_result,
             files["items"]: items,
+            files["summaries"]: summaries,
+            files["fetch_statuses"]: fetch_statuses,
+            files["run_metadata"]: latest_run_metadata,
+            files["manifest"]: manifest,
+        }
+        for filename, payload in payloads.items():
+            write_json(self.latest_dir / filename, payload)
+        archive_payloads = {
+            files["pipeline_result"]: pipeline_result,
+            files["items"]: items_payload(result=result, context=context, generated_at=finished_at),
             files["summaries"]: summaries,
             files["fetch_statuses"]: fetch_statuses,
             files["run_metadata"]: run_metadata,
             files["manifest"]: manifest,
         }
-        for filename, payload in payloads.items():
-            write_json(self.latest_dir / filename, payload)
+        for filename, payload in archive_payloads.items():
             write_json(archive_run_dir / filename, payload)
         update_archive_index(
             archive_dir=self.archive_dir,
@@ -143,6 +166,11 @@ def pipeline_result_payload(
     context: PipelineContext,
     finished_at: datetime,
 ) -> dict[str, Any]:
+    items = serialize(result.items)
+    if isinstance(items, list):
+        for item in items:
+            if isinstance(item, dict):
+                item.setdefault("run_id", result.run_id)
     return {
         "schema_version": SCHEMA_VERSION,
         "artifact_version": ARTIFACT_VERSION,
@@ -151,7 +179,7 @@ def pipeline_result_payload(
         "finished_at": isoformat(finished_at),
         "generated_at": isoformat(finished_at),
         "dry_run": context.dry_run,
-        "items": serialize(result.items),
+        "items": items,
         "summaries": serialize(result.summaries),
         "exports": serialize(result.exports),
         "fetch_statuses": normalize_fetch_statuses(result.fetch_statuses),
@@ -172,6 +200,25 @@ def items_payload(
         "generated_at": isoformat(generated_at),
         "count": len(result.items),
         "items": serialize(result.items),
+    }
+
+
+def items_payload_from_pipeline_result(
+    *,
+    pipeline_result: dict[str, Any],
+    context: PipelineContext,
+    generated_at: datetime,
+) -> dict[str, Any]:
+    items = pipeline_result.get("items", [])
+    if not isinstance(items, list):
+        items = []
+    return {
+        "schema_version": SCHEMA_VERSION,
+        "artifact_version": ARTIFACT_VERSION,
+        "run_id": context.run_id,
+        "generated_at": isoformat(generated_at),
+        "count": len(items),
+        "items": items,
     }
 
 
@@ -206,6 +253,135 @@ def fetch_statuses_payload(
         "count": len(statuses),
         "fetch_statuses": statuses,
     }
+
+
+def apply_stale_fallback(
+    *,
+    current: dict[str, Any],
+    previous: dict[str, Any] | None,
+    generated_at: datetime,
+) -> dict[str, Any]:
+    current_items = list(current.get("items", []))
+    if not previous:
+        return mark_fresh_items(current)
+
+    previous_items = [
+        item
+        for item in previous.get("items", [])
+        if isinstance(item, dict) and item.get("company_id")
+    ]
+    previous_by_company = group_items_by_company(previous_items)
+    current_by_company = group_items_by_company(
+        item for item in current_items if isinstance(item, dict) and item.get("company_id")
+    )
+    companies = set(previous_by_company) | set(current_by_company) | status_company_ids(current)
+
+    merged_items = []
+    fallback_companies = []
+    for company_id in sorted(companies):
+        company_items = current_by_company.get(company_id, [])
+        if company_items:
+            merged_items.extend(mark_items_fresh(company_items))
+            continue
+
+        stale_items = previous_by_company.get(company_id, [])
+        if stale_items:
+            fallback_companies.append(company_id)
+            merged_items.extend(
+                mark_items_stale(
+                    items=stale_items,
+                    current_run_id=str(current.get("run_id", "")),
+                    generated_at=generated_at,
+                )
+            )
+
+    if not companies:
+        merged_items = mark_items_fresh(current_items)
+
+    merged = dict(current)
+    merged["items"] = merged_items
+    metadata = dict(merged.get("metadata", {})) if isinstance(merged.get("metadata"), dict) else {}
+    metadata["stale_fallback"] = {
+        "enabled": True,
+        "fallback_company_ids": fallback_companies,
+        "fresh_item_count": sum(1 for item in merged_items if not item.get("stale", False)),
+        "stale_item_count": sum(1 for item in merged_items if item.get("stale", False)),
+        "previous_run_id": previous.get("run_id"),
+    }
+    merged["metadata"] = metadata
+    return merged
+
+
+def mark_fresh_items(pipeline_result: dict[str, Any]) -> dict[str, Any]:
+    marked = dict(pipeline_result)
+    marked["items"] = mark_items_fresh(
+        item for item in pipeline_result.get("items", []) if isinstance(item, dict)
+    )
+    return marked
+
+
+def mark_items_fresh(items) -> list[dict[str, Any]]:
+    fresh_items = []
+    for item in items:
+        marked = dict(item)
+        marked["fresh"] = True
+        marked["stale"] = False
+        marked.pop("stale_reason", None)
+        marked.pop("stale_from_run_id", None)
+        marked.pop("stale_as_of", None)
+        fresh_items.append(marked)
+    return fresh_items
+
+
+def mark_items_stale(
+    *,
+    items: list[dict[str, Any]],
+    current_run_id: str,
+    generated_at: datetime,
+) -> list[dict[str, Any]]:
+    stale_items = []
+    for item in items:
+        marked = dict(item)
+        marked["fresh"] = False
+        marked["stale"] = True
+        marked["stale_reason"] = "current_run_company_empty"
+        marked["stale_from_run_id"] = item.get("stale_from_run_id") or item.get("run_id")
+        marked["stale_as_of"] = isoformat(generated_at)
+        metadata = (
+            dict(marked.get("metadata", {}))
+            if isinstance(marked.get("metadata"), dict)
+            else {}
+        )
+        metadata["stale_fallback_current_run_id"] = current_run_id
+        marked["metadata"] = metadata
+        stale_items.append(marked)
+    return stale_items
+
+
+def group_items_by_company(items) -> dict[str, list[dict[str, Any]]]:
+    grouped: dict[str, list[dict[str, Any]]] = {}
+    for item in items:
+        company_id = item.get("company_id")
+        if company_id:
+            grouped.setdefault(str(company_id), []).append(item)
+    return grouped
+
+
+def company_item_counts(items: list[dict[str, Any]]) -> dict[str, int]:
+    counts: dict[str, int] = {}
+    for item in items:
+        company_id = item.get("company_id")
+        if company_id:
+            counts[str(company_id)] = counts.get(str(company_id), 0) + 1
+    return counts
+
+
+def status_company_ids(pipeline_result: dict[str, Any]) -> set[str]:
+    ids = set()
+    for status in pipeline_result.get("fetch_statuses", []):
+        if isinstance(status, dict) and status.get("company_id"):
+            ids.add(str(status["company_id"]))
+    return ids
 
 
 def run_metadata_payload(
@@ -249,6 +425,28 @@ def manifest_payload(
         "archive_path": archive_run_dir.as_posix(),
         "files": files,
     }
+
+
+def run_metadata_from_pipeline_result(
+    *,
+    run_metadata: dict[str, Any],
+    pipeline_result: dict[str, Any],
+) -> dict[str, Any]:
+    updated = dict(run_metadata)
+    items = pipeline_result.get("items", [])
+    if isinstance(items, list):
+        updated["item_count"] = len(items)
+        updated["company_item_counts"] = company_item_counts(items)
+        updated["stale_item_count"] = sum(1 for item in items if item.get("stale"))
+        updated["fresh_item_count"] = sum(1 for item in items if not item.get("stale"))
+    metadata = (
+        dict(updated.get("metadata", {}))
+        if isinstance(updated.get("metadata"), dict)
+        else {}
+    )
+    metadata["latest_is_stale_safe"] = True
+    updated["metadata"] = metadata
+    return updated
 
 
 def update_archive_index(
@@ -459,6 +657,14 @@ def write_json(path: Path, payload: dict[str, Any]) -> None:
         json.dump(payload, handle, ensure_ascii=False, indent=2, sort_keys=True)
         handle.write("\n")
     shutil.move(str(temp_path), str(path))
+
+
+def read_json_if_exists(path: Path) -> dict[str, Any] | None:
+    if not path.exists():
+        return None
+    with path.open("r", encoding="utf-8") as handle:
+        payload = json.load(handle)
+    return payload if isinstance(payload, dict) else None
 
 
 def utc_now() -> datetime:

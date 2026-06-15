@@ -7,7 +7,15 @@ from typing import Any
 
 import yaml
 
-from satellite_news.schema import Company, SourceConfig, SourceType
+from satellite_news.schema import (
+    Company,
+    CompanyProviderConfig,
+    FallbackMode,
+    NewsProviderConfig,
+    ProviderFallbackPolicy,
+    SourceConfig,
+    SourceType,
+)
 
 
 def load_yaml(path: Path) -> dict[str, Any]:
@@ -50,7 +58,17 @@ def load_sources(path: Path = Path("config/sources.yaml")) -> tuple[SourceConfig
         raise ValueError("sources.yaml must define a sources list.")
 
     sources: list[SourceConfig] = []
-    core_fields = {"id", "type", "rank_group", "enabled", "description"}
+    core_fields = {
+        "id",
+        "type",
+        "rank_group",
+        "enabled",
+        "description",
+        "provider_id",
+        "provider_priority",
+        "priority",
+        "fallback_to",
+    }
     for row in rows:
         if not isinstance(row, dict):
             continue
@@ -62,7 +80,92 @@ def load_sources(path: Path = Path("config/sources.yaml")) -> tuple[SourceConfig
                 rank_group=str(row["rank_group"]),
                 enabled=bool(row.get("enabled", defaults.get("enabled", True))),
                 description=str(row.get("description", "")),
+                provider_id=row.get("provider_id"),
+                provider_priority=int(row.get("provider_priority", row.get("priority", 100))),
+                fallback_to=tuple(str(value) for value in row.get("fallback_to", ())),
                 options=options,
             )
         )
     return tuple(sources)
+
+
+def load_providers(path: Path = Path("config/sources.yaml")) -> tuple[NewsProviderConfig, ...]:
+    data = load_yaml(path)
+    defaults = data.get("provider_defaults", {})
+    rows = data.get("providers", [])
+    if not isinstance(rows, list):
+        raise ValueError("sources.yaml providers must be a list when provided.")
+
+    providers: list[NewsProviderConfig] = []
+    core_fields = {
+        "id",
+        "type",
+        "rank_group",
+        "enabled",
+        "priority",
+        "fallback",
+        "description",
+        "company_overrides",
+    }
+    for row in rows:
+        if not isinstance(row, dict):
+            continue
+        fallback_row = row.get("fallback", {})
+        if not isinstance(fallback_row, dict):
+            fallback_row = {}
+        company_rows = row.get("company_overrides", {})
+        if not isinstance(company_rows, dict):
+            company_rows = {}
+        providers.append(
+            NewsProviderConfig(
+                id=str(row["id"]),
+                type=SourceType(str(row["type"])),
+                rank_group=str(row["rank_group"]),
+                enabled=bool(row.get("enabled", defaults.get("enabled", True))),
+                priority=int(row.get("priority", defaults.get("priority", 100))),
+                fallback=ProviderFallbackPolicy(
+                    mode=parse_fallback_mode(
+                        fallback_row.get("mode", defaults.get("fallback_mode", "on_empty_or_error"))
+                    ),
+                    fallback_to=tuple(str(value) for value in fallback_row.get("to", ())),
+                    max_fallback_depth=int(fallback_row.get("max_depth", 2)),
+                ),
+                description=str(row.get("description", "")),
+                company_overrides={
+                    str(company_id): parse_company_provider_config(str(company_id), override)
+                    for company_id, override in company_rows.items()
+                    if isinstance(override, dict)
+                },
+                options={key: value for key, value in row.items() if key not in core_fields},
+            )
+        )
+    return tuple(sorted(providers, key=lambda provider: provider.priority))
+
+
+def parse_company_provider_config(
+    company_id: str,
+    row: dict[str, Any],
+) -> CompanyProviderConfig:
+    return CompanyProviderConfig(
+        company_id=company_id,
+        enabled=bool(row.get("enabled", True)),
+        priority=(
+            int(row["priority"])
+            if row.get("priority") is not None
+            else None
+        ),
+        query_templates=tuple(str(value) for value in row.get("query_templates", ())),
+        entrypoints=tuple(str(value) for value in row.get("entrypoints", ())),
+        options={
+            key: value
+            for key, value in row.items()
+            if key not in {"enabled", "priority", "query_templates", "entrypoints"}
+        },
+    )
+
+
+def parse_fallback_mode(value: object) -> FallbackMode:
+    mode = str(value)
+    if mode not in {"disabled", "on_empty", "on_error", "on_empty_or_error"}:
+        raise ValueError(f"Unsupported provider fallback mode: {mode}")
+    return mode  # type: ignore[return-value]

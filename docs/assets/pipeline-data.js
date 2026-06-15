@@ -45,12 +45,19 @@ async function loadJsonPipelineResult(url) {
 
 function normalizePipelineResult(result) {
   return {
+    schema_version: result?.schema_version,
+    artifact_version: result?.artifact_version,
     run_id: result?.run_id ?? "unknown-run",
+    started_at: result?.started_at,
+    finished_at: result?.finished_at,
+    generated_at: result?.generated_at,
+    dry_run: result?.dry_run,
     items: Array.isArray(result?.items) ? result.items : [],
     summaries: Array.isArray(result?.summaries) ? result.summaries : [],
     exports: Array.isArray(result?.exports) ? result.exports : [],
     fetch_statuses: Array.isArray(result?.fetch_statuses) ? result.fetch_statuses : [],
     warnings: Array.isArray(result?.warnings) ? result.warnings : [],
+    metadata: result?.metadata && typeof result.metadata === "object" ? result.metadata : {},
   };
 }
 

@@ -9,7 +9,383 @@ defaults:
   max_items_per_company: 20
   enabled: true
   collection_mode: registry_only
-  last_registry_reviewed_at: "2026-06-12"
+  last_registry_reviewed_at: "2026-06-15"
+
+provider_defaults:
+  enabled: true
+  priority: 100
+  fallback_mode: on_empty_or_error
+  output_schema:
+    raw: RawArticle
+    normalized: NewsItem
+
+provider_execution_policy:
+  no_real_fetch_in_a1: true
+  providers_are_contracts_only: true
+  provider_ordering: priority_ascending
+  fallback_behavior: configured_per_provider
+
+providers:
+  - id: rss_provider
+    type: rss
+    rank_group: media
+    description: Curated RSS provider contract.
+    enabled: true
+    priority: 10
+    fallback:
+      mode: on_empty_or_error
+      to:
+        - official_site_provider
+        - gdelt_provider
+      max_depth: 2
+    interface: satellite_news.provider.NewsProvider
+    output_schema:
+      raw: RawArticle
+      normalized: NewsItem
+    adapter_status: active_adapter
+    company_overrides:
+      spacex:
+        priority: 10
+        feeds:
+          - https://spacenews.com/feed/
+          - https://spaceflightnow.com/feed/
+          - https://payloadspace.com/feed/
+          - https://www.nasa.gov/news-release/feed/
+          - https://news.google.com/rss/search?q=SpaceX%20Starlink%20satellite%20launch&hl=en-US&gl=US&ceid=US:en
+        query_templates:
+          - SpaceX Starlink satellite
+          - SpaceX Starshield direct to cell
+        keywords:
+          - SpaceX
+          - Starlink
+          - Starshield
+          - Falcon 9
+          - Starship
+      blue_origin:
+        priority: 10
+        feeds:
+          - https://spacenews.com/feed/
+          - https://spaceflightnow.com/feed/
+          - https://payloadspace.com/feed/
+          - https://www.nasa.gov/news-release/feed/
+          - https://www.nasa.gov/rss/dyn/breaking_news.rss
+          - https://news.google.com/rss/search?q=Blue%20Origin%20New%20Glenn%20Blue%20Ring%20satellite&hl=en-US&gl=US&ceid=US:en
+          - https://news.google.com/rss/search?q=%22Blue%20Origin%22%20%22New%20Glenn%22&hl=en-US&gl=US&ceid=US:en
+          - https://news.google.com/rss/search?q=%22Blue%20Origin%22%20%22Blue%20Ring%22%20TeraWave&hl=en-US&gl=US&ceid=US:en
+        query_templates:
+          - Blue Origin New Glenn satellite
+          - Blue Origin Blue Ring TeraWave
+        keywords:
+          - Blue Origin
+          - New Glenn
+          - New Shepard
+          - Blue Ring
+          - TeraWave
+      yuanxin_satellite:
+        priority: 10
+        feeds:
+          - https://spacenews.com/feed/
+          - https://spaceflightnow.com/feed/
+          - https://payloadspace.com/feed/
+          - https://news.google.com/rss/search?q=%E5%9E%A3%E4%BF%A1%E5%8D%AB%E6%98%9F%20%E5%8D%83%E5%B8%86%E6%98%9F%E5%BA%A7%20SpaceSail&hl=zh-CN&gl=CN&ceid=CN:zh-Hans
+          - https://news.google.com/rss/search?q=SpaceSail%20Qianfan%20Thousand%20Sails%20satellite&hl=en-US&gl=US&ceid=US:en
+        query_templates:
+          - 垣信卫星 千帆星座
+          - SpaceSail Qianfan Thousand Sails
+        keywords:
+          - 垣信卫星
+          - 上海垣信
+          - 千帆星座
+          - SpaceSail
+          - Thousand Sails
+      china_satnet:
+        priority: 10
+        feeds:
+          - https://spacenews.com/feed/
+          - https://spaceflightnow.com/feed/
+          - https://payloadspace.com/feed/
+          - https://news.google.com/rss/search?q=%E4%B8%AD%E5%9B%BD%E6%98%9F%E7%BD%91%20%E5%9B%BD%E7%BD%91%E6%98%9F%E5%BA%A7%20%E4%B8%AD%E5%9B%BD%E5%8D%AB%E6%98%9F%E7%BD%91%E7%BB%9C%E9%9B%86%E5%9B%A2&hl=zh-CN&gl=CN&ceid=CN:zh-Hans
+          - https://news.google.com/rss/search?q=China%20SatNet%20Guowang%20satellite%20constellation&hl=en-US&gl=US&ceid=US:en
+        query_templates:
+          - 中国星网 国网星座
+          - China SatNet Guowang satellite constellation
+        keywords:
+          - 中国星网
+          - 中国卫星网络集团
+          - 国网星座
+          - China SatNet
+          - Guowang
+    feeds:
+      - https://spacenews.com/feed/
+      - https://spaceflightnow.com/feed/
+      - https://payloadspace.com/feed/
+      - https://www.nasa.gov/news-release/feed/
+    adapter_options:
+      real_fetch_enabled: true
+      timeout_seconds: 20
+      max_items: 10
+
+  - id: official_site_provider
+    type: official_site
+    rank_group: official
+    description: Official company website/newsroom provider contract.
+    enabled: true
+    priority: 20
+    fallback:
+      mode: on_empty_or_error
+      to:
+        - gdelt_provider
+      max_depth: 2
+    interface: satellite_news.provider.NewsProvider
+    output_schema:
+      raw: RawArticle
+      normalized: NewsItem
+    adapter_status: active_adapter
+    company_overrides:
+      spacex:
+        enabled: true
+        priority: 20
+        entrypoints:
+          - https://www.spacex.com/updates/
+          - https://www.spacex.com/launches/
+          - https://www.spacex.com/starshield/
+          - https://www.starlink.com/updates/
+          - https://www.starlink.com/
+        candidate_entrypoints:
+          - https://www.starlink.com/business/direct-to-cell/
+        keywords:
+          - SpaceX
+          - Starlink
+          - Starshield
+          - Falcon 9
+          - Starship
+      blue_origin:
+        enabled: true
+        priority: 20
+        verification_status: registered_limited_by_rate_limit
+        rate_limit_risk: high
+        entrypoints:
+          - https://www.blueorigin.com/news
+          - https://www.blueorigin.com/new-glenn
+          - https://www.blueorigin.com/new-shepard
+          - https://www.blueorigin.com/blue-ring
+          - https://www.blueorigin.com/terawave
+          - https://www.blueorigin.com/engines
+        official_alternates:
+          - https://www.nasa.gov/news/
+          - https://www.spaceforce.mil/News/
+          - https://www.fcc.gov/ecfs/search/search-filings
+        source_notes:
+          - blueorigin.com is the verified official source but currently returns HTTP 429 to simple provider probes.
+          - Use RSS, NASA, Space Force, and FCC alternates as lower-risk fallback/corroboration paths.
+        keywords:
+          - Blue Origin
+          - New Glenn
+          - New Shepard
+          - Blue Ring
+          - TeraWave
+      yuanxin_satellite:
+        enabled: true
+        priority: 20
+        verification_status: registered_government_sources
+        company_domain_status: candidate_only
+        entrypoints:
+          - https://www.gzw.sh.gov.cn/
+          - https://www.shanghai.gov.cn/
+          - https://www.lingang.gov.cn/
+          - https://www.stcn.com/
+          - https://www.gov.cn/
+          - https://www.cnsa.gov.cn/
+        authority_entrypoint_groups:
+          shanghai_state_assets:
+            - https://www.gzw.sh.gov.cn/
+          lingang_g60:
+            - https://www.lingang.gov.cn/
+          market_and_business_press:
+            - https://www.stcn.com/
+          national_government:
+            - https://www.gov.cn/
+            - https://www.cnsa.gov.cn/
+        candidate_entrypoints:
+          - https://www.spacesail.com.cn/
+          - https://www.spacesail.cn/
+        keywords:
+          - 垣信卫星
+          - 上海垣信
+          - 千帆星座
+          - SpaceSail
+          - 上海联和投资
+      china_satnet:
+        enabled: true
+        priority: 20
+        verification_status: registered_government_sources
+        company_domain_status: no_verified_public_company_newsroom
+        entrypoints:
+          - https://www.sasac.gov.cn/
+          - https://www.xiongan.gov.cn/
+          - https://www.news.cn/
+          - https://www.people.com.cn/
+          - https://www.gov.cn/
+          - https://www.miit.gov.cn/
+          - https://www.cnsa.gov.cn/
+        authority_entrypoint_groups:
+          state_assets:
+            - https://www.sasac.gov.cn/
+          xiongan:
+            - https://www.xiongan.gov.cn/
+          ministry:
+            - https://www.miit.gov.cn/
+          central_media:
+            - https://www.news.cn/
+            - https://www.people.com.cn/
+          national_government:
+            - https://www.gov.cn/
+            - https://www.cnsa.gov.cn/
+        keywords:
+          - 中国星网
+          - 中国卫星网络集团
+          - 国网星座
+          - China SatNet
+          - Guowang
+    adapter_options:
+      real_fetch_enabled: true
+      timeout_seconds: 20
+      max_items: 8
+
+  - id: gdelt_provider
+    type: gdelt
+    rank_group: wire_and_aggregator
+    description: GDELT document search provider contract.
+    enabled: true
+    priority: 30
+    fallback:
+      mode: on_empty_or_error
+      to:
+        - serpapi_provider
+      max_depth: 2
+    interface: satellite_news.provider.NewsProvider
+    output_schema:
+      raw: RawArticle
+      normalized: NewsItem
+    adapter_status: active_adapter
+    query_template: '("{company_name}" OR {company_alias_terms}) AND (satellite OR launch OR constellation OR broadband OR space)'
+    company_overrides:
+      spacex:
+        priority: 30
+        query_templates:
+          - '(SpaceX OR Starlink) AND (satellite OR launch OR constellation OR broadband)'
+          - '("Falcon 9" OR Starshield OR "direct to cell") AND (SpaceX OR Starlink OR satellite)'
+      blue_origin:
+        priority: 30
+        query_templates:
+          - '("Blue Origin" OR "New Glenn") AND (launch OR satellite OR space)'
+          - '("Blue Ring" OR TeraWave OR "New Shepard") AND (satellite OR communications OR space)'
+      yuanxin_satellite:
+        priority: 30
+        query_templates:
+          - '(SpaceSail OR "Yuanxin Satellite" OR Qianfan OR "千帆星座") AND (satellite OR constellation OR broadband)'
+          - '("Thousand Sails" OR "G60 Starlink" OR "上海垣信") AND (satellite OR launch OR constellation)'
+      china_satnet:
+        priority: 30
+        query_templates:
+          - '("China SatNet" OR "China Satellite Network Group" OR "中国星网" OR "国网星座") AND (satellite OR constellation OR broadband)'
+          - '(Guowang OR "GW-A59" OR "GW-A2" OR "中国卫星网络集团") AND (satellite OR launch OR constellation)'
+    adapter_options:
+      real_fetch_enabled: true
+      endpoint: https://api.gdeltproject.org/api/v2/doc/doc
+      mode: ArtList
+      format: json
+      maxrecords: 10
+      sort: HybridRel
+      timeout_seconds: 20
+      retries: 1
+      backoff_seconds: 90.0
+      rate_limit_seconds: 25.0
+
+  - id: serpapi_provider
+    type: serpapi
+    rank_group: search
+    description: SerpApi Google News provider contract.
+    enabled: true
+    priority: 40
+    fallback:
+      mode: on_empty_or_error
+      to:
+        - newsapi_provider
+      max_depth: 1
+    interface: satellite_news.provider.NewsProvider
+    output_schema:
+      raw: RawArticle
+      normalized: NewsItem
+    adapter_status: active_adapter
+    query_template: '"{company_name}" satellite news'
+    company_overrides:
+      spacex:
+        query_templates:
+          - SpaceX Starlink satellite news
+          - '"SpaceX" "Starlink" launch satellite'
+          - '"Starshield" OR "direct to cell" SpaceX'
+      blue_origin:
+        query_templates:
+          - Blue Origin New Glenn satellite news
+          - '"Blue Origin" "New Glenn" launch'
+          - '"Blue Ring" OR TeraWave "Blue Origin"'
+      yuanxin_satellite:
+        query_templates:
+          - 垣信卫星 千帆星座 新闻
+          - '"上海垣信卫星科技有限公司" OR "垣信卫星"'
+          - '"SpaceSail" "Qianfan" satellite'
+          - '"Thousand Sails" "SpaceSail" constellation'
+      china_satnet:
+        query_templates:
+          - 中国星网 国网星座 新闻
+          - '"中国卫星网络集团有限公司" OR "中国星网"'
+          - '"China SatNet" OR "China Satellite Network Group"'
+          - '"Guowang" "satellite" "constellation"'
+    adapter_options:
+      real_fetch_enabled: true
+      api_key_env: SERPAPI_KEY
+      timeout_seconds: 20
+      max_items: 10
+
+  - id: newsapi_provider
+    type: newsapi
+    rank_group: search
+    description: NewsAPI provider contract.
+    enabled: true
+    priority: 50
+    fallback:
+      mode: disabled
+      to: []
+      max_depth: 0
+    interface: satellite_news.provider.NewsProvider
+    output_schema:
+      raw: RawArticle
+      normalized: NewsItem
+    adapter_status: active_adapter
+    query_template: '"{company_name}" AND (satellite OR launch OR constellation)'
+    company_overrides:
+      spacex:
+        query_templates:
+          - '(SpaceX OR Starlink OR Starshield) AND (satellite OR launch OR constellation OR broadband)'
+          - '("Falcon 9" OR Starship OR "direct to cell") AND SpaceX'
+      blue_origin:
+        query_templates:
+          - '("Blue Origin" OR "New Glenn" OR "New Shepard") AND (launch OR satellite OR space)'
+          - '("Blue Ring" OR TeraWave OR "BE-4") AND "Blue Origin"'
+      yuanxin_satellite:
+        query_templates:
+          - '("垣信卫星" OR "上海垣信卫星科技有限公司" OR "千帆星座")'
+          - '("Yuanxin Satellite" OR SpaceSail OR Qianfan OR "Thousand Sails") AND satellite'
+      china_satnet:
+        query_templates:
+          - '("中国星网" OR "中国卫星网络集团有限公司" OR "国网星座")'
+          - '("China SatNet" OR "China Satellite Network Group" OR Guowang) AND satellite'
+    adapter_options:
+      real_fetch_enabled: true
+      api_key_env: NEWSAPI_KEY
+      timeout_seconds: 20
+      max_items: 10
 
 source_types:
   official_site:
@@ -35,6 +411,11 @@ sources:
     rank_group: official
     description: Official company websites and newsroom pages.
     enabled: true
+    provider_id: official_site_provider
+    provider_priority: 10
+    fallback_to:
+      - gdelt_provider
+      - rss_provider
     registry_status: active_metadata_only
     company_overrides:
       spacex:
@@ -78,7 +459,12 @@ sources:
           - Blue Origin has launch, propulsion, in-space systems, and satellite-connectivity product pages relevant to satellite-chain monitoring.
       yuanxin_satellite:
         official_domains: []
-        entrypoints: []
+        company_domain_status: candidate_only
+        entrypoints:
+          - https://www.gzw.sh.gov.cn/
+          - https://www.shanghai.gov.cn/
+          - https://www.gov.cn/
+          - https://www.cnsa.gov.cn/
         candidate_domains:
           - spacesail.com.cn
           - spacesail.cn
@@ -92,13 +478,21 @@ sources:
           - "\"千帆星座\" 垣信卫星"
           - "\"SpaceSail\" \"Qianfan\""
           - "\"Thousand Sails\" \"SpaceSail\""
-        verification_status: needs_source_owner_review
+        verification_status: registered_government_sources
+        company_domain_verification_status: needs_source_owner_review
         source_notes:
+          - Government and state-owned-shareholder entrypoints are authoritative corroboration sources, not a verified company newsroom.
           - Keep SpaceSail domains as candidates until source ownership is confirmed by a source owner or corporate filing.
           - Use Shanghai municipal, Lingang, exchange, or shareholder announcements as corroborating sources when no official newsroom is available.
       china_satnet:
         official_domains: []
-        entrypoints: []
+        company_domain_status: no_verified_public_company_newsroom
+        entrypoints:
+          - https://www.sasac.gov.cn/
+          - https://www.xiongan.gov.cn/
+          - https://www.gov.cn/
+          - https://www.miit.gov.cn/
+          - https://www.cnsa.gov.cn/
         candidate_entrypoints: []
         discovery_queries:
           - "\"中国卫星网络集团有限公司\" 官方"
@@ -107,8 +501,10 @@ sources:
           - "\"China Satellite Network Group\""
           - "\"GW-A59\" \"中国星网\""
           - "\"GW-A2\" \"中国星网\""
-        verification_status: needs_source_owner_review
+        verification_status: registered_government_sources
+        company_domain_verification_status: needs_source_owner_review
         source_notes:
+          - Government and Xiong'an/SASAC pages are authoritative corroboration sources, not a verified company newsroom.
           - No verified public corporate newsroom is registered here; prefer SASAC, Xiong'an, MIIT, and launch-provider announcements for official corroboration.
 
   - id: regulator_and_filing_sites
@@ -116,6 +512,10 @@ sources:
     rank_group: regulator_and_filing
     description: Regulator, filing, procurement, and government notice pages for cross-checking material events.
     enabled: true
+    provider_id: official_site_provider
+    provider_priority: 15
+    fallback_to:
+      - gdelt_provider
     registry_status: active_metadata_only
     jurisdictions:
       US:
@@ -164,6 +564,10 @@ sources:
     rank_group: regulator_and_filing
     description: China government, state-owned shareholder, and public-institution pages used to corroborate entity identity and program participation.
     enabled: true
+    provider_id: official_site_provider
+    provider_priority: 15
+    fallback_to:
+      - gdelt_provider
     registry_status: active_metadata_only
     verification_status: registered_for_corroboration
     source_subtype: government_news
@@ -190,6 +594,10 @@ sources:
     rank_group: search
     description: Candidate open web profiles, recruitment pages, or domain ownership clues for companies without a verified public newsroom.
     enabled: true
+    provider_id: serpapi_provider
+    provider_priority: 40
+    fallback_to:
+      - newsapi_provider
     registry_status: discovery_only
     verification_status: needs_manual_confirmation
     source_subtype: search_result
@@ -212,6 +620,10 @@ sources:
     rank_group: official
     description: Official launch-provider pages that can confirm deployment events for satellite constellations.
     enabled: true
+    provider_id: official_site_provider
+    provider_priority: 10
+    fallback_to:
+      - gdelt_provider
     registry_status: active_metadata_only
     verification_status: registered_for_launch_confirmation
     source_subtype: launch_provider_primary
@@ -238,23 +650,40 @@ sources:
     rank_group: wire_and_aggregator
     description: GDELT document search adapter for satellite company monitoring.
     enabled: true
+    provider_id: gdelt_provider
+    provider_priority: 20
+    fallback_to:
+      - rss_provider
+      - serpapi_provider
     registry_status: active_gdelt_only
     query_template: '("{company_name}" OR {company_alias_terms}) AND (satellite OR launch OR constellation OR broadband OR space)'
     company_query_overrides:
-      spacex: '(SpaceX OR Starlink OR "Falcon 9" OR Starship) AND (satellite OR launch OR constellation OR broadband)'
-      blue_origin: '("Blue Origin" OR "New Glenn" OR "New Shepard" OR "BE-4" OR "Blue Ring" OR TeraWave) AND (launch OR space OR satellite)'
-      yuanxin_satellite: '(SpaceSail OR Spacesail OR "Shanghai SpaceSail" OR "Yuanxin Satellite" OR Qianfan OR "Qianfan Constellation" OR "Thousand Sails") AND (satellite OR constellation OR launch OR broadband OR space)'
-      china_satnet: '("China SatNet" OR "China Satellite Network Group" OR Guowang OR "GW-A59" OR "GW-A2") AND (satellite OR constellation OR launch OR broadband OR space)'
+      spacex:
+        - '(SpaceX OR Starlink) AND (satellite OR launch OR constellation OR broadband)'
+        - '("Falcon 9" OR "Falcon Heavy" OR Starship) AND (launch OR satellite OR space)'
+        - '(Starshield OR "direct to cell" OR "direct-to-cell") AND (satellite OR SpaceX OR Starlink)'
+      blue_origin:
+        - '("Blue Origin" OR "New Glenn") AND (launch OR satellite OR space)'
+        - '("New Shepard" OR "Blue Ring" OR TeraWave) AND (space OR satellite OR communications)'
+        - '("BE-4" OR "Orbital Reef") AND ("Blue Origin" OR launch OR space)'
+      yuanxin_satellite:
+        - '(SpaceSail OR Spacesail OR "Shanghai SpaceSail") AND (satellite OR constellation OR broadband)'
+        - '("Yuanxin Satellite" OR Qianfan OR "Qianfan Constellation") AND (satellite OR launch OR constellation)'
+        - '("Thousand Sails" OR "G60 Starlink" OR "G60 satellite") AND (satellite OR broadband OR space)'
+      china_satnet:
+        - '("China SatNet" OR "China Satellite Network Group") AND (satellite OR constellation OR broadband)'
+        - '(Guowang OR "GW-A59" OR "GW-A2") AND (satellite OR constellation OR launch OR space)'
+        - '("China Satellite Network" OR "Guowang constellation") AND (satellite OR broadband OR LEO)'
     adapter_options:
       endpoint: https://api.gdeltproject.org/api/v2/doc/doc
       mode: ArtList
       format: json
-      maxrecords: 5
+      maxrecords: 10
       sort: HybridRel
-      timeout_seconds: 15
-      retries: 0
-      backoff_seconds: 3.0
-      rate_limit_seconds: 5.0
+      timeout_seconds: 20
+      retries: 1
+      backoff_seconds: 90.0
+      rate_limit_seconds: 25.0
       api_calls_allowed: true
 
   - id: curated_rss
@@ -262,7 +691,46 @@ sources:
     rank_group: media
     description: Reserved curated RSS feeds for aerospace and business media.
     enabled: true
-    feeds: []
+    provider_id: rss_provider
+    provider_priority: 30
+    fallback_to:
+      - serpapi_provider
+    feeds:
+      - https://spacenews.com/feed/
+      - https://spaceflightnow.com/feed/
+      - https://payloadspace.com/feed/
+      - https://www.nasa.gov/news-release/feed/
+      - https://news.google.com/rss/search?q=SpaceX%20Starlink%20satellite%20launch&hl=en-US&gl=US&ceid=US:en
+      - https://news.google.com/rss/search?q=Blue%20Origin%20New%20Glenn%20Blue%20Ring%20satellite&hl=en-US&gl=US&ceid=US:en
+      - https://news.google.com/rss/search?q=%E5%9E%A3%E4%BF%A1%E5%8D%AB%E6%98%9F%20%E5%8D%83%E5%B8%86%E6%98%9F%E5%BA%A7%20SpaceSail&hl=zh-CN&gl=CN&ceid=CN:zh-Hans
+      - https://news.google.com/rss/search?q=SpaceSail%20Qianfan%20Thousand%20Sails%20satellite&hl=en-US&gl=US&ceid=US:en
+      - https://news.google.com/rss/search?q=%E4%B8%AD%E5%9B%BD%E6%98%9F%E7%BD%91%20%E5%9B%BD%E7%BD%91%E6%98%9F%E5%BA%A7%20%E4%B8%AD%E5%9B%BD%E5%8D%AB%E6%98%9F%E7%BD%91%E7%BB%9C%E9%9B%86%E5%9B%A2&hl=zh-CN&gl=CN&ceid=CN:zh-Hans
+      - https://news.google.com/rss/search?q=China%20SatNet%20Guowang%20satellite%20constellation&hl=en-US&gl=US&ceid=US:en
+    company_feed_overrides:
+      spacex:
+        - https://spacenews.com/feed/
+        - https://spaceflightnow.com/feed/
+        - https://payloadspace.com/feed/
+        - https://www.nasa.gov/news-release/feed/
+        - https://news.google.com/rss/search?q=SpaceX%20Starlink%20satellite%20launch&hl=en-US&gl=US&ceid=US:en
+      blue_origin:
+        - https://spacenews.com/feed/
+        - https://spaceflightnow.com/feed/
+        - https://payloadspace.com/feed/
+        - https://www.nasa.gov/news-release/feed/
+        - https://news.google.com/rss/search?q=Blue%20Origin%20New%20Glenn%20Blue%20Ring%20satellite&hl=en-US&gl=US&ceid=US:en
+      yuanxin_satellite:
+        - https://spacenews.com/feed/
+        - https://spaceflightnow.com/feed/
+        - https://payloadspace.com/feed/
+        - https://news.google.com/rss/search?q=%E5%9E%A3%E4%BF%A1%E5%8D%AB%E6%98%9F%20%E5%8D%83%E5%B8%86%E6%98%9F%E5%BA%A7%20SpaceSail&hl=zh-CN&gl=CN&ceid=CN:zh-Hans
+        - https://news.google.com/rss/search?q=SpaceSail%20Qianfan%20Thousand%20Sails%20satellite&hl=en-US&gl=US&ceid=US:en
+      china_satnet:
+        - https://spacenews.com/feed/
+        - https://spaceflightnow.com/feed/
+        - https://payloadspace.com/feed/
+        - https://news.google.com/rss/search?q=%E4%B8%AD%E5%9B%BD%E6%98%9F%E7%BD%91%20%E5%9B%BD%E7%BD%91%E6%98%9F%E5%BA%A7%20%E4%B8%AD%E5%9B%BD%E5%8D%AB%E6%98%9F%E7%BD%91%E7%BB%9C%E9%9B%86%E5%9B%A2&hl=zh-CN&gl=CN&ceid=CN:zh-Hans
+        - https://news.google.com/rss/search?q=China%20SatNet%20Guowang%20satellite%20constellation&hl=en-US&gl=US&ceid=US:en
     candidate_domains:
       global_space_media:
         - spacenews.com
@@ -289,6 +757,10 @@ sources:
     rank_group: search
     description: Reserved generic search API adapter for later use.
     enabled: false
+    provider_id: serpapi_provider
+    provider_priority: 40
+    fallback_to:
+      - newsapi_provider
     registry_status: disabled_placeholder
     query_template: '"{company_name}" news satellite launch constellation'
     adapter_options:

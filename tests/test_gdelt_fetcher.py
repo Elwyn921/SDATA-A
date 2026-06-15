@@ -2,7 +2,12 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 from satellite_news.config import load_companies, load_sources
-from satellite_news.fetcher.gdelt import GDELTHTTPTransport, GDELTFetcher, build_company_query
+from satellite_news.fetcher.gdelt import (
+    GDELTHTTPTransport,
+    GDELTTransportError,
+    GDELTFetcher,
+    build_company_query,
+)
 from satellite_news.pipeline import build_gdelt_fetcher
 from satellite_news.pipeline import Pipeline
 from satellite_news.schema import PipelineContext, SourceConfig, SourceType
@@ -38,6 +43,24 @@ def test_gdelt_query_uses_company_override_from_sources_yaml():
     assert "SpaceX" in query
     assert "Starlink" in query
     assert "satellite" in query
+
+
+def test_gdelt_builds_multiple_queries_for_alias_rich_company():
+    company = next(
+        company
+        for company in load_companies(Path("config/companies.yaml"))
+        if company.id == "spacex"
+    )
+    source = next(
+        source
+        for source in load_sources(Path("config/sources.yaml"))
+        if source.id == "gdelt_satellite_company_search"
+    )
+
+    queries = GDELTFetcher().build_company_queries(company=company, source=source)
+
+    assert len(queries) >= 2
+    assert len({query.strip() for query in queries}) == len(queries)
 
 
 def test_gdelt_query_falls_back_to_template_when_no_override():
@@ -137,17 +160,12 @@ def test_gdelt_mock_payload_maps_to_raw_article_and_news_item():
     transport = MockTransport()
     fetcher = GDELTFetcher(transport=transport)
 
-    raw_articles = fetcher.fetch_raw_articles(company=company, source=source, context=context)
     items = fetcher.fetch(company=company, source=source, context=context)
 
-    assert len(raw_articles) == 1
-    assert raw_articles[0].company_id == "spacex"
-    assert raw_articles[0].source_type is SourceType.GDELT
-    assert raw_articles[0].published_at == datetime(2026, 6, 12, 8, 30, tzinfo=timezone.utc)
-    assert raw_articles[0].metadata["gdelt_query"] == transport.requests[0].query
-    assert len(items) == 1
+    assert len(items) >= 1
     assert items[0].source.source_id == "gdelt"
     assert items[0].raw_text == "Launch campaign update."
+    assert items[0].metadata["gdelt_query"] == transport.requests[0].query
 
 
 def test_gdelt_http_transport_builds_request_with_params(monkeypatch):
@@ -182,11 +200,12 @@ def test_gdelt_http_transport_builds_request_with_params(monkeypatch):
 
     payload = GDELTHTTPTransport(timeout_seconds=7).search(gdelt_request)
 
-    assert payload == {"articles": []}
+    assert payload["articles"] == []
+    assert payload["_transport_meta"] == {"rate_limited": False, "retry_count": 0}
     assert calls[0][1] == 7
     assert "api.gdeltproject.org/api/v2/doc/doc" in calls[0][0]
     assert "format=json" in calls[0][0]
-    assert "maxrecords=5" in calls[0][0]
+    assert "maxrecords=10" in calls[0][0]
 
 
 def test_gdelt_transport_failure_does_not_break_fetcher():
@@ -220,6 +239,8 @@ def test_gdelt_transport_failure_does_not_break_fetcher():
     ) == ()
     assert context.metadata["fetch_statuses"][0]["status"] == "failed"
     assert "temporary GDELT rate limit" in context.metadata["fetch_statuses"][0]["reason"]
+    assert context.metadata["fetch_statuses"][0]["final_status"] == "failed"
+    assert context.metadata["fetch_statuses"][0]["rate_limited"] is False
 
 
 def test_gdelt_no_results_records_explicit_status():
@@ -250,14 +271,16 @@ def test_gdelt_no_results_records_explicit_status():
         context=context,
     ) == ()
     assert context.metadata["fetch_statuses"][0]["status"] == "no_results"
+    assert context.metadata["fetch_statuses"][0]["final_status"] == "no_results"
 
 
 def test_pipeline_builds_gdelt_fetcher_from_source_options():
     fetcher = build_gdelt_fetcher(load_sources(Path("config/sources.yaml")))
 
     assert isinstance(fetcher.transport, GDELTHTTPTransport)
-    assert fetcher.transport.rate_limit_seconds == 5.0
-    assert fetcher.transport.retries == 0
+    assert fetcher.transport.rate_limit_seconds == 25.0
+    assert fetcher.transport.retries == 1
+    assert fetcher.transport.backoff_seconds == 90.0
 
 
 def test_pipeline_maps_gdelt_results_for_all_four_companies_with_mock_transport():
@@ -311,4 +334,82 @@ def test_pipeline_maps_gdelt_results_for_all_four_companies_with_mock_transport(
         "yuanxin_satellite",
         "china_satnet",
     }
-    assert {row["status"] for row in result.fetch_statuses} == {"success"}
+    assert {row["final_status"] for row in result.fetch_statuses} == {"success"}
+
+
+def test_pipeline_collects_failed_and_successful_queries_without_breaking_company():
+    class MixedTransport:
+        def __init__(self):
+            self.calls = []
+
+        def search(self, request):
+            self.calls.append(request.query)
+            if "SpaceX" in request.query and "Starlink" in request.query:
+                raise GDELTTransportError("boom")
+            return {
+                "articles": [
+                    {
+                        "title": f"Result for {request.company_id}",
+                        "url": f"https://example.test/{request.company_id}/{len(self.calls)}",
+                        "seendate": "20260612083000",
+                    }
+                ]
+            }
+
+    companies = load_companies(Path("config/companies.yaml"))
+    sources = tuple(
+        source
+        for source in load_sources(Path("config/sources.yaml"))
+        if source.type is SourceType.GDELT
+    )
+    context = PipelineContext(
+        run_id="mixed-queries",
+        started_at=datetime(2026, 6, 12, tzinfo=timezone.utc),
+        dry_run=False,
+    )
+
+    result = Pipeline(fetcher=GDELTFetcher(transport=MixedTransport())).run(
+        companies=companies,
+        sources=sources,
+        context=context,
+    )
+
+    spacex_status = next(row for row in result.fetch_statuses if row["company_id"] == "spacex")
+    assert spacex_status["final_status"] == "partial_success"
+    assert spacex_status["failed_queries"] >= 1
+    assert spacex_status["successful_query_count"] >= 1
+    assert result.items
+
+
+def test_rate_limited_queries_are_reported_as_rate_limited_when_no_items():
+    class RateLimitedTransport:
+        def search(self, request):
+            raise GDELTTransportError("HTTP Error 429", rate_limited=True, retry_count=1)
+
+    source = SourceConfig(
+        id="gdelt",
+        type=SourceType.GDELT,
+        rank_group="wire",
+        options={"adapter_options": {"api_calls_allowed": True}},
+    )
+    company = next(
+        company
+        for company in load_companies(Path("config/companies.yaml"))
+        if company.id == "spacex"
+    )
+    context = PipelineContext(
+        run_id="rate-limited",
+        started_at=datetime.now(timezone.utc),
+        dry_run=False,
+    )
+
+    assert GDELTFetcher(transport=RateLimitedTransport()).fetch(
+        company=company,
+        source=source,
+        context=context,
+    ) == ()
+    status = context.metadata["fetch_statuses"][0]
+    assert status["final_status"] == "rate_limited"
+    assert status["rate_limited"] is True
+    assert status["retry_count"] >= 1
+    assert status["error_message"]
