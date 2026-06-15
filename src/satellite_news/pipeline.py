@@ -135,6 +135,7 @@ def main(argv: tuple[str, ...] | None = None) -> PipelineResult:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--config-dir", type=Path, default=Path("config"))
     parser.add_argument("--output-dir", type=Path, default=Path("data/news/latest"))
+    parser.add_argument("--publish-dir", type=Path, default=Path("docs/data/news"))
     parser.add_argument("--run-id", default=None)
     parser.add_argument("--dry-run", action=argparse.BooleanOptionalAction, default=True)
     args = parser.parse_args(argv)
@@ -150,7 +151,7 @@ def main(argv: tuple[str, ...] | None = None) -> PipelineResult:
     )
     result = Pipeline(
         fetcher=build_gdelt_fetcher(sources),
-        storage=JsonFileStorage(latest_dir=args.output_dir),
+        storage=JsonFileStorage(latest_dir=args.output_dir, publish_dir=args.publish_dir),
     ).run(
         companies=companies,
         sources=sources,

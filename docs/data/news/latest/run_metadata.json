@@ -1,0 +1,42 @@
+{
+  "artifact_version": 1,
+  "companies": [
+    {
+      "company_id": "blue_origin",
+      "company_name": "Blue Origin",
+      "item_count": 0,
+      "status": "dry_run"
+    },
+    {
+      "company_id": "china_satnet",
+      "company_name": "中国星网",
+      "item_count": 0,
+      "status": "dry_run"
+    },
+    {
+      "company_id": "spacex",
+      "company_name": "SpaceX",
+      "item_count": 0,
+      "status": "dry_run"
+    },
+    {
+      "company_id": "yuanxin_satellite",
+      "company_name": "垣信卫星",
+      "item_count": 0,
+      "status": "dry_run"
+    }
+  ],
+  "config_dir": "config",
+  "dry_run": true,
+  "export_count": 0,
+  "fetch_status_count": 4,
+  "finished_at": "2026-06-15T07:04:05.997311Z",
+  "generated_at": "2026-06-15T07:04:05.997311Z",
+  "item_count": 0,
+  "output_dir": "data/news/latest",
+  "run_id": "real-data-closure",
+  "schema_version": "satellite_news.v1",
+  "started_at": "2026-06-15T07:04:05.996427Z",
+  "summary_count": 0,
+  "warnings": []
+}

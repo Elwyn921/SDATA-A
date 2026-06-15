@@ -86,7 +86,14 @@ def test_default_pipeline_dry_run_does_not_touch_network_or_llm(monkeypatch, tmp
 
     monkeypatch.setattr(socket, "socket", fail_socket)
 
-    result = main(("--output-dir", str(tmp_path / "latest")))
+    result = main(
+        (
+            "--output-dir",
+            str(tmp_path / "latest"),
+            "--publish-dir",
+            str(tmp_path / "docs-data"),
+        )
+    )
 
     assert result.items == ()
     assert result.summaries == ()

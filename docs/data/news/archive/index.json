@@ -1,0 +1,24 @@
+{
+  "artifact_version": 1,
+  "generated_at": "2026-06-15T07:04:05.997311Z",
+  "latest_run_id": "real-data-closure",
+  "runs": [
+    {
+      "archive_path": "data/news/archive/runs/2026/06/15/real-data-closure",
+      "companies": [
+        "blue_origin",
+        "china_satnet",
+        "spacex",
+        "yuanxin_satellite"
+      ],
+      "dry_run": true,
+      "fetch_status_count": 4,
+      "finished_at": "2026-06-15T07:04:05.997311Z",
+      "item_count": 0,
+      "run_id": "real-data-closure",
+      "started_at": "2026-06-15T07:04:05.996427Z",
+      "status": "success"
+    }
+  ],
+  "schema_version": "satellite_news.v1"
+}

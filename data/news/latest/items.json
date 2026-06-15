@@ -1,0 +1,189 @@
+{
+  "artifact_version": 1,
+  "count": 5,
+  "generated_at": "2026-06-15T07:07:56.350340Z",
+  "items": [
+    {
+      "company_id": "china_satnet",
+      "company_name": "中国星网",
+      "id": "9e40b654a76b4dcc",
+      "language": "English",
+      "metadata": {
+        "gdelt_domain": "circleid.com",
+        "gdelt_query": "(\"China SatNet\" OR \"China Satellite Network Group\" OR Guowang OR \"GW-A59\" OR \"GW-A2\") AND (satellite OR constellation OR launch OR broadband OR space)",
+        "gdelt_source_country": "",
+        "image_url": "https://circleid.com/images/member_photos/photo_7705.jpg"
+      },
+      "normalized_text": null,
+      "published_at": "2026-05-02T20:15:00Z",
+      "raw_text": null,
+      "source": {
+        "collected_at": "2026-06-15T07:07:16.033921Z",
+        "rank_group": "wire_and_aggregator",
+        "raw_payload": {
+          "domain": "circleid.com",
+          "language": "English",
+          "seendate": "20260502T201500Z",
+          "socialimage": "https://circleid.com/images/member_photos/photo_7705.jpg",
+          "sourcecountry": "United States",
+          "title": "Two Ways to Build the Internet in Space - China , Inc . vs Starlink Et Al",
+          "url": "https://circleid.com/posts/two-ways-to-build-the-internet-in-space-china-inc-vs-starlink-et-al",
+          "url_mobile": ""
+        },
+        "source_id": "gdelt_satellite_company_search",
+        "source_name": "GDELT document search adapter for satellite company monitoring.",
+        "source_type": "gdelt",
+        "url": "https://circleid.com/posts/two-ways-to-build-the-internet-in-space-china-inc-vs-starlink-et-al"
+      },
+      "tags": [],
+      "title": "Two Ways to Build the Internet in Space - China , Inc . vs Starlink Et Al",
+      "url": "https://circleid.com/posts/two-ways-to-build-the-internet-in-space-china-inc-vs-starlink-et-al"
+    },
+    {
+      "company_id": "china_satnet",
+      "company_name": "中国星网",
+      "id": "45e1da9886bd549b",
+      "language": "English",
+      "metadata": {
+        "gdelt_domain": "circleid.com",
+        "gdelt_query": "(\"China SatNet\" OR \"China Satellite Network Group\" OR Guowang OR \"GW-A59\" OR \"GW-A2\") AND (satellite OR constellation OR launch OR broadband OR space)",
+        "gdelt_source_country": "",
+        "image_url": "https://circleid.com/images/member_photos/photo_8383.jpg"
+      },
+      "normalized_text": null,
+      "published_at": "2026-04-07T17:45:00Z",
+      "raw_text": null,
+      "source": {
+        "collected_at": "2026-06-15T07:07:16.033921Z",
+        "rank_group": "wire_and_aggregator",
+        "raw_payload": {
+          "domain": "circleid.com",
+          "language": "English",
+          "seendate": "20260407T174500Z",
+          "socialimage": "https://circleid.com/images/member_photos/photo_8383.jpg",
+          "sourcecountry": "United States",
+          "title": "Filling the Sky with Satellites",
+          "url": "https://circleid.com/posts/filling-the-sky-with-satellites",
+          "url_mobile": ""
+        },
+        "source_id": "gdelt_satellite_company_search",
+        "source_name": "GDELT document search adapter for satellite company monitoring.",
+        "source_type": "gdelt",
+        "url": "https://circleid.com/posts/filling-the-sky-with-satellites"
+      },
+      "tags": [],
+      "title": "Filling the Sky with Satellites",
+      "url": "https://circleid.com/posts/filling-the-sky-with-satellites"
+    },
+    {
+      "company_id": "china_satnet",
+      "company_name": "中国星网",
+      "id": "462397dc51c62ea4",
+      "language": "English",
+      "metadata": {
+        "gdelt_domain": "spacedaily.com",
+        "gdelt_query": "(\"China SatNet\" OR \"China Satellite Network Group\" OR Guowang OR \"GW-A59\" OR \"GW-A2\") AND (satellite OR constellation OR launch OR broadband OR space)",
+        "gdelt_source_country": "",
+        "image_url": "https://spacedaily.com/wp-content/uploads/2026/06/china-just-flew-its-first-reusable-rocke.jpg"
+      },
+      "normalized_text": null,
+      "published_at": "2026-06-04T11:45:00Z",
+      "raw_text": null,
+      "source": {
+        "collected_at": "2026-06-15T07:07:16.033921Z",
+        "rank_group": "wire_and_aggregator",
+        "raw_payload": {
+          "domain": "spacedaily.com",
+          "language": "English",
+          "seendate": "20260604T114500Z",
+          "socialimage": "https://spacedaily.com/wp-content/uploads/2026/06/china-just-flew-its-first-reusable-rocke.jpg",
+          "sourcecountry": "United States",
+          "title": "In June 2026 , China rolled its brand - new Long March 12B onto a pad in the Gobi Desert , told no one , loaded the maiden flight with paying customer satellites and the rocket built to land its booster never even tried . ",
+          "url": "https://spacedaily.com/sd-in-june-2026-china-rolled-its-brand-new-long-march-12b-onto-a-pad-in-the-gobi-desert-told-no-one-loaded-the-maiden-flight-with-paying-customers-satellites-and-the-rocket-built-to-lan/",
+          "url_mobile": ""
+        },
+        "source_id": "gdelt_satellite_company_search",
+        "source_name": "GDELT document search adapter for satellite company monitoring.",
+        "source_type": "gdelt",
+        "url": "https://spacedaily.com/sd-in-june-2026-china-rolled-its-brand-new-long-march-12b-onto-a-pad-in-the-gobi-desert-told-no-one-loaded-the-maiden-flight-with-paying-customers-satellites-and-the-rocket-built-to-lan/"
+      },
+      "tags": [],
+      "title": "In June 2026 , China rolled its brand - new Long March 12B onto a pad in the Gobi Desert , told no one , loaded the maiden flight with paying customer satellites and the rocket built to land its booster never even tried .",
+      "url": "https://spacedaily.com/sd-in-june-2026-china-rolled-its-brand-new-long-march-12b-onto-a-pad-in-the-gobi-desert-told-no-one-loaded-the-maiden-flight-with-paying-customers-satellites-and-the-rocket-built-to-lan/"
+    },
+    {
+      "company_id": "china_satnet",
+      "company_name": "中国星网",
+      "id": "42b8fc63d3f7dbb9",
+      "language": "English",
+      "metadata": {
+        "gdelt_domain": "nasaspaceflight.com",
+        "gdelt_query": "(\"China SatNet\" OR \"China Satellite Network Group\" OR Guowang OR \"GW-A59\" OR \"GW-A2\") AND (satellite OR constellation OR launch OR broadband OR space)",
+        "gdelt_source_country": "",
+        "image_url": "https://www.nasaspaceflight.com/wp-content/uploads/2026/02/IMG_2706-525x350.jpeg"
+      },
+      "normalized_text": null,
+      "published_at": "2026-05-12T01:00:00Z",
+      "raw_text": null,
+      "source": {
+        "collected_at": "2026-06-15T07:07:16.033921Z",
+        "rank_group": "wire_and_aggregator",
+        "raw_payload": {
+          "domain": "nasaspaceflight.com",
+          "language": "English",
+          "seendate": "20260512T010000Z",
+          "socialimage": "https://www.nasaspaceflight.com/wp-content/uploads/2026/02/IMG_2706-525x350.jpeg",
+          "sourcecountry": "China",
+          "title": "Launch Preview : SpaceX and Chinese missions fill busy launch manifest",
+          "url": "https://www.nasaspaceflight.com/2026/05/launch-preview-051126/",
+          "url_mobile": ""
+        },
+        "source_id": "gdelt_satellite_company_search",
+        "source_name": "GDELT document search adapter for satellite company monitoring.",
+        "source_type": "gdelt",
+        "url": "https://www.nasaspaceflight.com/2026/05/launch-preview-051126/"
+      },
+      "tags": [],
+      "title": "Launch Preview : SpaceX and Chinese missions fill busy launch manifest",
+      "url": "https://www.nasaspaceflight.com/2026/05/launch-preview-051126/"
+    },
+    {
+      "company_id": "china_satnet",
+      "company_name": "中国星网",
+      "id": "258b6eed50723fc5",
+      "language": "English",
+      "metadata": {
+        "gdelt_domain": "straitstimes.com",
+        "gdelt_query": "(\"China SatNet\" OR \"China Satellite Network Group\" OR Guowang OR \"GW-A59\" OR \"GW-A2\") AND (satellite OR constellation OR launch OR broadband OR space)",
+        "gdelt_source_country": "",
+        "image_url": "https://cassette.sphdigital.com.sg/image/straitstimes/5e4d92b8b26546252c6d3f99bbbab1f458d30e56d765793fda9ccfd156e1c2d3"
+      },
+      "normalized_text": null,
+      "published_at": "2026-06-12T19:45:00Z",
+      "raw_text": null,
+      "source": {
+        "collected_at": "2026-06-15T07:07:16.033921Z",
+        "rank_group": "wire_and_aggregator",
+        "raw_payload": {
+          "domain": "straitstimes.com",
+          "language": "English",
+          "seendate": "20260612T194500Z",
+          "socialimage": "https://cassette.sphdigital.com.sg/image/straitstimes/5e4d92b8b26546252c6d3f99bbbab1f458d30e56d765793fda9ccfd156e1c2d3",
+          "sourcecountry": "Singapore",
+          "title": "SpaceX playbook set to fuel China IPO ambitions",
+          "url": "https://www.straitstimes.com/business/companies-markets/spacex-playbook-set-to-fuel-chinas-ipo-ambitions-but-tech-gap-persists",
+          "url_mobile": ""
+        },
+        "source_id": "gdelt_satellite_company_search",
+        "source_name": "GDELT document search adapter for satellite company monitoring.",
+        "source_type": "gdelt",
+        "url": "https://www.straitstimes.com/business/companies-markets/spacex-playbook-set-to-fuel-chinas-ipo-ambitions-but-tech-gap-persists"
+      },
+      "tags": [],
+      "title": "SpaceX playbook set to fuel China IPO ambitions",
+      "url": "https://www.straitstimes.com/business/companies-markets/spacex-playbook-set-to-fuel-chinas-ipo-ambitions-but-tech-gap-persists"
+    }
+  ],
+  "run_id": "gdelt-live-20260615T070716Z-68816a1b",
+  "schema_version": "satellite_news.v1"
+}

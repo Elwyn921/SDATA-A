@@ -13,6 +13,7 @@ from satellite_news.storage import JsonFileStorage
 
 def test_json_file_storage_writes_latest_and_archive_outputs(tmp_path):
     latest_dir = tmp_path / "data" / "news" / "latest"
+    publish_dir = tmp_path / "docs" / "data" / "news"
     context = PipelineContext(
         run_id="json-run",
         started_at=datetime(2026, 6, 15, 8, 30, tzinfo=timezone.utc),
@@ -57,7 +58,10 @@ def test_json_file_storage_writes_latest_and_archive_outputs(tmp_path):
         ),
     )
 
-    JsonFileStorage(latest_dir=latest_dir).save_result(result=result, context=context)
+    JsonFileStorage(latest_dir=latest_dir, publish_dir=publish_dir).save_result(
+        result=result,
+        context=context,
+    )
 
     latest_result = read_json(latest_dir / "pipeline_result.json")
     latest_items = read_json(latest_dir / "items.json")
@@ -67,6 +71,8 @@ def test_json_file_storage_writes_latest_and_archive_outputs(tmp_path):
         tmp_path / "data" / "news" / "archive" / "runs" / "2026" / "06" / "15" / "json-run"
     )
     archive_index = read_json(tmp_path / "data" / "news" / "archive" / "index.json")
+    published_result = read_json(publish_dir / "latest" / "pipeline_result.json")
+    published_archive_index = read_json(publish_dir / "archive" / "index.json")
 
     assert latest_result["schema_version"] == "satellite_news.v1"
     assert latest_result["run_id"] == "json-run"
@@ -79,6 +85,8 @@ def test_json_file_storage_writes_latest_and_archive_outputs(tmp_path):
     assert read_json(archive_run_dir / "pipeline_result.json")["run_id"] == "json-run"
     assert archive_index["latest_run_id"] == "json-run"
     assert archive_index["runs"][0]["companies"] == ["spacex"]
+    assert published_result["run_id"] == "json-run"
+    assert published_archive_index["latest_run_id"] == "json-run"
 
 
 def read_json(path):

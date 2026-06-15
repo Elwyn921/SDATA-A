@@ -1,0 +1,40 @@
+{
+  "artifact_version": 1,
+  "generated_at": "2026-06-15T07:07:56.350340Z",
+  "latest_run_id": "gdelt-live-20260615T070716Z-68816a1b",
+  "runs": [
+    {
+      "archive_path": "data/news/archive/runs/2026/06/15/gdelt-live-20260615T070716Z-68816a1b",
+      "companies": [
+        "blue_origin",
+        "china_satnet",
+        "spacex",
+        "yuanxin_satellite"
+      ],
+      "dry_run": false,
+      "fetch_status_count": 4,
+      "finished_at": "2026-06-15T07:07:56.350340Z",
+      "item_count": 5,
+      "run_id": "gdelt-live-20260615T070716Z-68816a1b",
+      "started_at": "2026-06-15T07:07:16.033921Z",
+      "status": "partial"
+    },
+    {
+      "archive_path": "data/news/archive/runs/2026/06/15/real-data-closure",
+      "companies": [
+        "blue_origin",
+        "china_satnet",
+        "spacex",
+        "yuanxin_satellite"
+      ],
+      "dry_run": true,
+      "fetch_status_count": 4,
+      "finished_at": "2026-06-15T07:04:05.997311Z",
+      "item_count": 0,
+      "run_id": "real-data-closure",
+      "started_at": "2026-06-15T07:04:05.996427Z",
+      "status": "success"
+    }
+  ],
+  "schema_version": "satellite_news.v1"
+}

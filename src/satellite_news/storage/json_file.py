@@ -24,9 +24,11 @@ class JsonFileStorage:
         *,
         latest_dir: str | Path = "data/news/latest",
         archive_dir: str | Path | None = None,
+        publish_dir: str | Path | None = None,
     ) -> None:
         self.latest_dir = Path(latest_dir)
         self.archive_dir = Path(archive_dir) if archive_dir else self.latest_dir.parent / "archive"
+        self.publish_dir = Path(publish_dir) if publish_dir else None
 
     def save_items(self, *, items, context: PipelineContext) -> None:
         now = utc_now()
@@ -115,6 +117,13 @@ class JsonFileStorage:
             archive_run_dir=archive_run_dir,
             finished_at=finished_at,
         )
+        if self.publish_dir:
+            sync_publish_outputs(
+                publish_dir=self.publish_dir,
+                latest_dir=self.latest_dir,
+                archive_dir=self.archive_dir,
+                files=files,
+            )
 
     def archive_run_dir(self, *, context: PipelineContext) -> Path:
         started_at = ensure_aware_utc(context.started_at)
@@ -308,6 +317,28 @@ def archive_index_entry(
         "status": run_status(statuses),
         "companies": sorted(company_ids(result=result, statuses=statuses)),
     }
+
+
+def sync_publish_outputs(
+    *,
+    publish_dir: Path,
+    latest_dir: Path,
+    archive_dir: Path,
+    files: dict[str, str],
+) -> None:
+    publish_latest = publish_dir / "latest"
+    publish_archive = publish_dir / "archive"
+    publish_latest.mkdir(parents=True, exist_ok=True)
+    publish_archive.mkdir(parents=True, exist_ok=True)
+
+    for filename in files.values():
+        source = latest_dir / filename
+        if source.exists():
+            shutil.copy2(source, publish_latest / filename)
+
+    archive_index = archive_dir / "index.json"
+    if archive_index.exists():
+        shutil.copy2(archive_index, publish_archive / "index.json")
 
 
 def company_rollups(
