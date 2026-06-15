@@ -17,7 +17,7 @@
         "https://news.google.com/rss/search?q=SpaceX%20Starlink%20satellite%20launch&hl=en-US&gl=US&ceid=US:en"
       ],
       "final_status": "success",
-      "finished_at": "2026-06-15T09:09:19.619634Z",
+      "finished_at": "2026-06-15T17:27:14.684494Z",
       "item_count": 10,
       "metadata": {
         "cache_status": "not_implemented",
@@ -65,7 +65,7 @@
       "error_message": null,
       "error_type": null,
       "final_status": "success",
-      "finished_at": "2026-06-15T09:09:25.978036Z",
+      "finished_at": "2026-06-15T17:27:15.257778Z",
       "item_count": 6,
       "metadata": {
         "cache_status": "not_implemented",
@@ -105,7 +105,7 @@
       "error_message": "(SpaceX OR Starlink) AND (satellite OR launch OR constellation OR broadband): GDELT request failed: HTTP Error 429: Too Many Requests",
       "error_type": null,
       "final_status": "rate_limited",
-      "finished_at": "2026-06-15T09:09:31.027191Z",
+      "finished_at": "2026-06-15T17:27:21.690404Z",
       "gdelt_final_status": "rate_limited",
       "item_count": 0,
       "metadata": {
@@ -162,7 +162,7 @@
       "error_message": "Missing required environment variable: SERPAPI_KEY",
       "error_type": null,
       "final_status": "skipped_no_secret",
-      "finished_at": "2026-06-15T09:09:31.027263Z",
+      "finished_at": "2026-06-15T17:27:21.690467Z",
       "item_count": 0,
       "metadata": {
         "cache_status": "not_implemented",
@@ -196,7 +196,7 @@
       "error_message": "Missing required environment variable: NEWSAPI_KEY",
       "error_type": null,
       "final_status": "skipped_no_secret",
-      "finished_at": "2026-06-15T09:09:31.027295Z",
+      "finished_at": "2026-06-15T17:27:21.690494Z",
       "item_count": 0,
       "metadata": {
         "cache_status": "not_implemented",
@@ -229,26 +229,32 @@
       "company_name": "Blue Origin",
       "error_message": null,
       "error_type": null,
-      "feed_count": 5,
+      "feed_count": 8,
       "feeds": [
         "https://spacenews.com/feed/",
         "https://spaceflightnow.com/feed/",
         "https://payloadspace.com/feed/",
         "https://www.nasa.gov/news-release/feed/",
-        "https://news.google.com/rss/search?q=Blue%20Origin%20New%20Glenn%20Blue%20Ring%20satellite&hl=en-US&gl=US&ceid=US:en"
+        "https://www.nasa.gov/rss/dyn/breaking_news.rss",
+        "https://news.google.com/rss/search?q=Blue%20Origin%20New%20Glenn%20Blue%20Ring%20satellite&hl=en-US&gl=US&ceid=US:en",
+        "https://news.google.com/rss/search?q=%22Blue%20Origin%22%20%22New%20Glenn%22&hl=en-US&gl=US&ceid=US:en",
+        "https://news.google.com/rss/search?q=%22Blue%20Origin%22%20%22Blue%20Ring%22%20TeraWave&hl=en-US&gl=US&ceid=US:en"
       ],
       "final_status": "success",
-      "finished_at": "2026-06-15T09:09:31.955233Z",
+      "finished_at": "2026-06-15T17:27:21.763973Z",
       "item_count": 10,
       "metadata": {
         "cache_status": "not_implemented",
-        "feed_count": 5,
+        "feed_count": 8,
         "feeds": [
           "https://spacenews.com/feed/",
           "https://spaceflightnow.com/feed/",
           "https://payloadspace.com/feed/",
           "https://www.nasa.gov/news-release/feed/",
-          "https://news.google.com/rss/search?q=Blue%20Origin%20New%20Glenn%20Blue%20Ring%20satellite&hl=en-US&gl=US&ceid=US:en"
+          "https://www.nasa.gov/rss/dyn/breaking_news.rss",
+          "https://news.google.com/rss/search?q=Blue%20Origin%20New%20Glenn%20Blue%20Ring%20satellite&hl=en-US&gl=US&ceid=US:en",
+          "https://news.google.com/rss/search?q=%22Blue%20Origin%22%20%22New%20Glenn%22&hl=en-US&gl=US&ceid=US:en",
+          "https://news.google.com/rss/search?q=%22Blue%20Origin%22%20%22Blue%20Ring%22%20TeraWave&hl=en-US&gl=US&ceid=US:en"
         ],
         "stale_fallback_available": false,
         "warning_count": 0
@@ -287,7 +293,7 @@
       "error_message": "https://www.blueorigin.com/news: HTTPError: HTTP Error 429: Too Many Requests; https://www.blueorigin.com/new-glenn: HTTPError: HTTP Error 429: Too Many Requests; https://www.blueorigin.com/new-shepard: HTTPError: HTTP Error 429: Too Many Requests",
       "error_type": "RuntimeError",
       "final_status": "failed",
-      "finished_at": "2026-06-15T09:09:35.947669Z",
+      "finished_at": "2026-06-15T17:27:22.482859Z",
       "item_count": 0,
       "metadata": {
         "cache_status": "not_implemented",
@@ -329,7 +335,7 @@
       "error_message": "(\"Blue Origin\" OR \"New Glenn\") AND (launch OR satellite OR space): GDELT request failed: HTTP Error 429: Too Many Requests",
       "error_type": null,
       "final_status": "rate_limited",
-      "finished_at": "2026-06-15T09:09:41.091460Z",
+      "finished_at": "2026-06-15T17:27:27.903884Z",
       "gdelt_final_status": "rate_limited",
       "item_count": 0,
       "metadata": {
@@ -386,7 +392,7 @@
       "error_message": "Missing required environment variable: SERPAPI_KEY",
       "error_type": null,
       "final_status": "skipped_no_secret",
-      "finished_at": "2026-06-15T09:09:41.091759Z",
+      "finished_at": "2026-06-15T17:27:27.903972Z",
       "item_count": 0,
       "metadata": {
         "cache_status": "not_implemented",
@@ -420,7 +426,7 @@
       "error_message": "Missing required environment variable: NEWSAPI_KEY",
       "error_type": null,
       "final_status": "skipped_no_secret",
-      "finished_at": "2026-06-15T09:09:41.091848Z",
+      "finished_at": "2026-06-15T17:27:27.903999Z",
       "item_count": 0,
       "metadata": {
         "cache_status": "not_implemented",
@@ -463,7 +469,7 @@
         "https://www.nasa.gov/news-release/feed/"
       ],
       "final_status": "success",
-      "finished_at": "2026-06-15T09:09:43.367917Z",
+      "finished_at": "2026-06-15T17:27:28.641219Z",
       "item_count": 10,
       "metadata": {
         "cache_status": "not_implemented",
@@ -498,49 +504,52 @@
       "warnings": []
     },
     {
-      "article_count": 0,
+      "article_count": 1,
       "company_id": "yuanxin_satellite",
       "company_name": "垣信卫星",
-      "entrypoint_count": 4,
+      "entrypoint_count": 6,
       "entrypoints": [
         "https://www.gzw.sh.gov.cn/",
         "https://www.shanghai.gov.cn/",
+        "https://www.lingang.gov.cn/",
+        "https://www.stcn.com/",
         "https://www.gov.cn/",
         "https://www.cnsa.gov.cn/"
       ],
-      "error_message": "https://www.cnsa.gov.cn/: URLError: <urlopen error EOF occurred in violation of protocol (_ssl.c:1129)>",
-      "error_type": "RuntimeError",
-      "final_status": "failed",
-      "finished_at": "2026-06-15T09:09:44.063673Z",
-      "item_count": 0,
+      "error_message": null,
+      "error_type": null,
+      "final_status": "success",
+      "finished_at": "2026-06-15T17:27:40.242718Z",
+      "item_count": 1,
       "metadata": {
         "cache_status": "not_implemented",
-        "entrypoint_count": 4,
+        "entrypoint_count": 6,
         "entrypoints": [
           "https://www.gzw.sh.gov.cn/",
           "https://www.shanghai.gov.cn/",
+          "https://www.lingang.gov.cn/",
+          "https://www.stcn.com/",
           "https://www.gov.cn/",
           "https://www.cnsa.gov.cn/"
         ],
-        "error_message": "https://www.cnsa.gov.cn/: URLError: <urlopen error EOF occurred in violation of protocol (_ssl.c:1129)>",
-        "error_type": "RuntimeError",
-        "stale_fallback_available": false
+        "stale_fallback_available": false,
+        "warning_count": 0
       },
       "provider_id": "official_site_provider",
       "provider_priority": 20,
-      "provider_status": "failed",
+      "provider_status": "success",
       "provider_type": "official_site",
       "query": null,
       "query_count": 0,
       "rank_group": "official",
       "rate_limited": false,
-      "reason": "https://www.cnsa.gov.cn/: URLError: <urlopen error EOF occurred in violation of protocol (_ssl.c:1129)>",
+      "reason": null,
       "retry_count": 0,
-      "should_fallback": true,
+      "should_fallback": false,
       "source_id": "official_site_provider",
       "source_type": "official_site",
       "started_at": null,
-      "status": "failed",
+      "status": "success",
       "successful_query_count": 0,
       "warnings": []
     },
@@ -551,7 +560,7 @@
       "error_message": "(SpaceSail OR \"Yuanxin Satellite\" OR Qianfan OR \"千帆星座\") AND (satellite OR constellation OR broadband): GDELT request failed: HTTP Error 429: Too Many Requests",
       "error_type": null,
       "final_status": "rate_limited",
-      "finished_at": "2026-06-15T09:09:47.745919Z",
+      "finished_at": "2026-06-15T17:27:45.699345Z",
       "gdelt_final_status": "rate_limited",
       "item_count": 0,
       "metadata": {
@@ -608,7 +617,7 @@
       "error_message": "Missing required environment variable: SERPAPI_KEY",
       "error_type": null,
       "final_status": "skipped_no_secret",
-      "finished_at": "2026-06-15T09:09:47.746029Z",
+      "finished_at": "2026-06-15T17:27:45.699407Z",
       "item_count": 0,
       "metadata": {
         "cache_status": "not_implemented",
@@ -642,7 +651,7 @@
       "error_message": "Missing required environment variable: NEWSAPI_KEY",
       "error_type": null,
       "final_status": "skipped_no_secret",
-      "finished_at": "2026-06-15T09:09:47.746070Z",
+      "finished_at": "2026-06-15T17:27:45.699431Z",
       "item_count": 0,
       "metadata": {
         "cache_status": "not_implemented",
@@ -685,7 +694,7 @@
         "https://www.nasa.gov/news-release/feed/"
       ],
       "final_status": "success",
-      "finished_at": "2026-06-15T09:09:50.086397Z",
+      "finished_at": "2026-06-15T17:27:46.812675Z",
       "item_count": 10,
       "metadata": {
         "cache_status": "not_implemented",
@@ -723,30 +732,34 @@
       "article_count": 0,
       "company_id": "china_satnet",
       "company_name": "中国星网",
-      "entrypoint_count": 5,
+      "entrypoint_count": 7,
       "entrypoints": [
         "https://www.sasac.gov.cn/",
         "https://www.xiongan.gov.cn/",
+        "https://www.news.cn/",
+        "https://www.people.com.cn/",
         "https://www.gov.cn/",
         "https://www.miit.gov.cn/",
         "https://www.cnsa.gov.cn/"
       ],
-      "error_message": "https://www.sasac.gov.cn/: URLError: <urlopen error EOF occurred in violation of protocol (_ssl.c:1129)>",
+      "error_message": "https://www.sasac.gov.cn/: URLError: <urlopen error [Errno 101] Network is unreachable>",
       "error_type": "RuntimeError",
       "final_status": "failed",
-      "finished_at": "2026-06-15T09:09:58.710562Z",
+      "finished_at": "2026-06-15T17:28:17.905489Z",
       "item_count": 0,
       "metadata": {
         "cache_status": "not_implemented",
-        "entrypoint_count": 5,
+        "entrypoint_count": 7,
         "entrypoints": [
           "https://www.sasac.gov.cn/",
           "https://www.xiongan.gov.cn/",
+          "https://www.news.cn/",
+          "https://www.people.com.cn/",
           "https://www.gov.cn/",
           "https://www.miit.gov.cn/",
           "https://www.cnsa.gov.cn/"
         ],
-        "error_message": "https://www.sasac.gov.cn/: URLError: <urlopen error EOF occurred in violation of protocol (_ssl.c:1129)>",
+        "error_message": "https://www.sasac.gov.cn/: URLError: <urlopen error [Errno 101] Network is unreachable>",
         "error_type": "RuntimeError",
         "stale_fallback_available": false
       },
@@ -758,7 +771,7 @@
       "query_count": 0,
       "rank_group": "official",
       "rate_limited": false,
-      "reason": "https://www.sasac.gov.cn/: URLError: <urlopen error EOF occurred in violation of protocol (_ssl.c:1129)>",
+      "reason": "https://www.sasac.gov.cn/: URLError: <urlopen error [Errno 101] Network is unreachable>",
       "retry_count": 0,
       "should_fallback": true,
       "source_id": "official_site_provider",
@@ -775,7 +788,7 @@
       "error_message": "(\"China SatNet\" OR \"China Satellite Network Group\" OR \"中国星网\" OR \"国网星座\") AND (satellite OR constellation OR broadband): GDELT request failed: GDELT response was not JSON: The specified phrase is too short.; (Guowang OR \"GW-A59\" OR \"GW-A2\" OR \"中国卫星网络集团\") AND (satellite OR launch OR constellation): GDELT request failed: HTTP Error 429: Too Many Requests",
       "error_type": null,
       "final_status": "rate_limited",
-      "finished_at": "2026-06-15T09:10:13.780420Z",
+      "finished_at": "2026-06-15T17:28:27.354002Z",
       "gdelt_final_status": "rate_limited",
       "item_count": 0,
       "metadata": {
@@ -832,7 +845,7 @@
       "error_message": "Missing required environment variable: SERPAPI_KEY",
       "error_type": null,
       "final_status": "skipped_no_secret",
-      "finished_at": "2026-06-15T09:10:13.780543Z",
+      "finished_at": "2026-06-15T17:28:27.354061Z",
       "item_count": 0,
       "metadata": {
         "cache_status": "not_implemented",
@@ -866,7 +879,7 @@
       "error_message": "Missing required environment variable: NEWSAPI_KEY",
       "error_type": null,
       "final_status": "skipped_no_secret",
-      "finished_at": "2026-06-15T09:10:13.780598Z",
+      "finished_at": "2026-06-15T17:28:27.354089Z",
       "item_count": 0,
       "metadata": {
         "cache_status": "not_implemented",
@@ -894,7 +907,7 @@
       "warnings": []
     }
   ],
-  "generated_at": "2026-06-15T09:17:30.431012Z",
-  "run_id": "6698e517-6bb1-41d0-8b61-a5d7fdca963e",
+  "generated_at": "2026-06-15T17:28:27.361237Z",
+  "run_id": "8e54542f-0f3f-4b27-af4e-c27afd35b55d",
   "schema_version": "satellite_news.v1"
 }
