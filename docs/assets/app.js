@@ -24,6 +24,7 @@ const state = {
 const elements = {
   runId: document.querySelector("#run-id"),
   itemCount: document.querySelector("#item-count"),
+  dataSource: document.querySelector("#data-source"),
   visibleCount: document.querySelector("#visible-count"),
   companyFilter: document.querySelector("#company-filter"),
   credibilityFilter: document.querySelector("#credibility-filter"),
@@ -36,7 +37,7 @@ const elements = {
 bootstrap();
 
 async function bootstrap() {
-  state.result = await loadPipelineResult({ mode: "mock" });
+  state.result = await loadPipelineResult();
   populateCompanyFilter(state.result);
   bindEvents();
   render();
@@ -81,6 +82,7 @@ function render() {
 
   elements.runId.textContent = `run_id: ${state.result.run_id}`;
   elements.itemCount.textContent = `${state.result.items.length} items`;
+  elements.dataSource.textContent = state.result.__dataSource === "json" ? "live JSON" : "mock fallback";
   elements.visibleCount.textContent = `${filteredItems.length}`;
 
   renderCompanyCards(items, filteredItems, summariesByItem);

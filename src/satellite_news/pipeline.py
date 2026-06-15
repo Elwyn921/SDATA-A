@@ -24,7 +24,7 @@ from satellite_news.schema import (
     PipelineStage,
     SourceConfig,
 )
-from satellite_news.storage import NullStorage, PipelineStorage
+from satellite_news.storage import JsonFileStorage, NullStorage, PipelineStorage
 
 
 LOGGER = logging.getLogger(__name__)
@@ -134,6 +134,7 @@ def main(argv: tuple[str, ...] | None = None) -> PipelineResult:
 
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--config-dir", type=Path, default=Path("config"))
+    parser.add_argument("--output-dir", type=Path, default=Path("data/news/latest"))
     parser.add_argument("--run-id", default=None)
     parser.add_argument("--dry-run", action=argparse.BooleanOptionalAction, default=True)
     args = parser.parse_args(argv)
@@ -144,9 +145,13 @@ def main(argv: tuple[str, ...] | None = None) -> PipelineResult:
         run_id=args.run_id or str(uuid4()),
         started_at=datetime.now(timezone.utc),
         config_dir=str(args.config_dir),
+        output_dir=str(args.output_dir),
         dry_run=args.dry_run,
     )
-    result = Pipeline(fetcher=build_gdelt_fetcher(sources)).run(
+    result = Pipeline(
+        fetcher=build_gdelt_fetcher(sources),
+        storage=JsonFileStorage(latest_dir=args.output_dir),
+    ).run(
         companies=companies,
         sources=sources,
         context=context,

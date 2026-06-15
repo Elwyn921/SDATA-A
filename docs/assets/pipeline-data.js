@@ -6,17 +6,72 @@ export const DATA_ENDPOINTS = {
 };
 
 export async function loadPipelineResult(options = {}) {
-  const mode = options.mode ?? "mock";
+  const mode = options.mode ?? "auto";
 
   if (mode === "json") {
-    const response = await fetch(options.url ?? DATA_ENDPOINTS.latestPipelineResult, {
-      headers: { accept: "application/json" },
-    });
-    if (!response.ok) {
-      throw new Error(`Unable to load PipelineResult JSON: ${response.status}`);
-    }
-    return response.json();
+    return loadJsonPipelineResult(options.url ?? DATA_ENDPOINTS.latestPipelineResult);
   }
 
-  return samplePipelineResult;
+  if (mode === "auto") {
+    try {
+      return await loadJsonPipelineResult(options.url ?? DATA_ENDPOINTS.latestPipelineResult);
+    } catch (error) {
+      console.info(`Using mock PipelineResult fallback: ${error.message}`);
+      return withDataSource(samplePipelineResult, "mock");
+    }
+  }
+
+  return withDataSource(samplePipelineResult, "mock");
+}
+
+async function loadJsonPipelineResult(url) {
+  const resolvedUrl = resolveDataUrl(url);
+
+  if (resolvedUrl.protocol === "file:") {
+    return withDataSource(await loadLocalJson(resolvedUrl), "json");
+  }
+
+  const response = await fetch(resolvedUrl.href, {
+    cache: "no-store",
+    headers: { accept: "application/json" },
+  });
+
+  if (!response.ok) {
+    throw new Error(`Unable to load PipelineResult JSON: ${response.status}`);
+  }
+
+  return withDataSource(normalizePipelineResult(await response.json()), "json");
+}
+
+function normalizePipelineResult(result) {
+  return {
+    run_id: result?.run_id ?? "unknown-run",
+    items: Array.isArray(result?.items) ? result.items : [],
+    summaries: Array.isArray(result?.summaries) ? result.summaries : [],
+    exports: Array.isArray(result?.exports) ? result.exports : [],
+    fetch_statuses: Array.isArray(result?.fetch_statuses) ? result.fetch_statuses : [],
+    warnings: Array.isArray(result?.warnings) ? result.warnings : [],
+  };
+}
+
+function withDataSource(result, source) {
+  return Object.defineProperty(result, "__dataSource", {
+    configurable: true,
+    enumerable: false,
+    value: source,
+  });
+}
+
+function resolveDataUrl(url) {
+  const base =
+    typeof document !== "undefined" && document.baseURI
+      ? document.baseURI
+      : new URL("../", import.meta.url).href;
+  return new URL(url, base);
+}
+
+async function loadLocalJson(fileUrl) {
+  const [{ readFile }] = await Promise.all([import("node:fs/promises")]);
+  const text = await readFile(fileUrl, "utf8");
+  return normalizePipelineResult(JSON.parse(text));
 }

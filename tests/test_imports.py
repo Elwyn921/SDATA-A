@@ -78,7 +78,7 @@ def test_schema_contracts_are_importable_and_instantiable():
     assert config.enabled is True
 
 
-def test_default_pipeline_dry_run_does_not_touch_network_or_llm(monkeypatch):
+def test_default_pipeline_dry_run_does_not_touch_network_or_llm(monkeypatch, tmp_path):
     from satellite_news.pipeline import main
 
     def fail_socket(*_args, **_kwargs):
@@ -86,7 +86,7 @@ def test_default_pipeline_dry_run_does_not_touch_network_or_llm(monkeypatch):
 
     monkeypatch.setattr(socket, "socket", fail_socket)
 
-    result = main()
+    result = main(("--output-dir", str(tmp_path / "latest")))
 
     assert result.items == ()
     assert result.summaries == ()
