@@ -89,6 +89,25 @@ def test_json_file_storage_writes_latest_and_archive_outputs(tmp_path):
     assert published_archive_index["latest_run_id"] == "json-run"
 
 
+def test_json_file_storage_defaults_to_docs_publish_dir_for_repo_latest(tmp_path, monkeypatch):
+    monkeypatch.chdir(tmp_path)
+    latest_dir = "data/news/latest"
+    publish_dir = tmp_path / "docs" / "data" / "news"
+    context = PipelineContext(
+        run_id="json-default-publish",
+        started_at=datetime(2026, 6, 15, 8, 30, tzinfo=timezone.utc),
+        output_dir=latest_dir,
+        dry_run=False,
+    )
+    result = PipelineResult(run_id="json-default-publish")
+
+    JsonFileStorage(latest_dir=latest_dir).save_result(result=result, context=context)
+
+    assert read_json(publish_dir / "latest" / "pipeline_result.json")["run_id"] == (
+        "json-default-publish"
+    )
+
+
 def read_json(path):
     with path.open("r", encoding="utf-8") as handle:
         return json.load(handle)

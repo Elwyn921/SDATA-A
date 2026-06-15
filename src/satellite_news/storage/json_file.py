@@ -28,7 +28,7 @@ class JsonFileStorage:
     ) -> None:
         self.latest_dir = Path(latest_dir)
         self.archive_dir = Path(archive_dir) if archive_dir else self.latest_dir.parent / "archive"
-        self.publish_dir = Path(publish_dir) if publish_dir else None
+        self.publish_dir = resolve_publish_dir(self.latest_dir, publish_dir)
 
     def save_items(self, *, items, context: PipelineContext) -> None:
         now = utc_now()
@@ -317,6 +317,17 @@ def archive_index_entry(
         "status": run_status(statuses),
         "companies": sorted(company_ids(result=result, statuses=statuses)),
     }
+
+
+def resolve_publish_dir(
+    latest_dir: Path,
+    publish_dir: str | Path | None,
+) -> Path | None:
+    if publish_dir:
+        return Path(publish_dir)
+    if latest_dir == Path("data/news/latest"):
+        return Path("docs/data/news")
+    return None
 
 
 def sync_publish_outputs(
