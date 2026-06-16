@@ -17,7 +17,7 @@
         "https://news.google.com/rss/search?q=SpaceX%20Starlink%20satellite%20launch&hl=en-US&gl=US&ceid=US:en"
       ],
       "final_status": "success",
-      "finished_at": "2026-06-16T05:33:16.474556Z",
+      "finished_at": "2026-06-16T11:34:47.698682Z",
       "item_count": 10,
       "metadata": {
         "cache_status": "not_implemented",
@@ -65,7 +65,7 @@
       "error_message": null,
       "error_type": null,
       "final_status": "success",
-      "finished_at": "2026-06-16T05:33:17.018790Z",
+      "finished_at": "2026-06-16T11:34:48.734542Z",
       "item_count": 6,
       "metadata": {
         "cache_status": "not_implemented",
@@ -105,7 +105,7 @@
       "error_message": "(SpaceX OR Starlink) AND (satellite OR launch OR constellation OR broadband): GDELT request failed: HTTP Error 429: Too Many Requests",
       "error_type": null,
       "final_status": "rate_limited",
-      "finished_at": "2026-06-16T05:33:23.846662Z",
+      "finished_at": "2026-06-16T11:34:54.703232Z",
       "gdelt_final_status": "rate_limited",
       "item_count": 0,
       "metadata": {
@@ -162,7 +162,7 @@
       "error_message": "Missing required environment variable: SERPAPI_KEY",
       "error_type": null,
       "final_status": "skipped_no_secret",
-      "finished_at": "2026-06-16T05:33:23.846869Z",
+      "finished_at": "2026-06-16T11:34:54.703295Z",
       "item_count": 0,
       "metadata": {
         "cache_status": "not_implemented",
@@ -196,7 +196,7 @@
       "error_message": "Missing required environment variable: NEWSAPI_KEY",
       "error_type": null,
       "final_status": "skipped_no_secret",
-      "finished_at": "2026-06-16T05:33:23.846899Z",
+      "finished_at": "2026-06-16T11:34:54.703316Z",
       "item_count": 0,
       "metadata": {
         "cache_status": "not_implemented",
@@ -241,7 +241,7 @@
         "https://news.google.com/rss/search?q=%22Blue%20Origin%22%20%22Blue%20Ring%22%20TeraWave&hl=en-US&gl=US&ceid=US:en"
       ],
       "final_status": "success",
-      "finished_at": "2026-06-16T05:33:23.887342Z",
+      "finished_at": "2026-06-16T11:34:54.882926Z",
       "item_count": 10,
       "metadata": {
         "cache_status": "not_implemented",
@@ -293,7 +293,7 @@
       "error_message": "https://www.blueorigin.com/news: HTTPError: HTTP Error 429: Too Many Requests; https://www.blueorigin.com/new-glenn: HTTPError: HTTP Error 429: Too Many Requests; https://www.blueorigin.com/new-shepard: HTTPError: HTTP Error 429: Too Many Requests",
       "error_type": "RuntimeError",
       "final_status": "failed",
-      "finished_at": "2026-06-16T05:33:24.232666Z",
+      "finished_at": "2026-06-16T11:34:55.724903Z",
       "item_count": 0,
       "metadata": {
         "cache_status": "not_implemented",
@@ -329,43 +329,43 @@
       "warnings": []
     },
     {
-      "article_count": 0,
+      "article_count": 10,
       "company_id": "blue_origin",
       "company_name": "Blue Origin",
-      "error_message": "(\"Blue Origin\" OR \"New Glenn\") AND (launch OR satellite OR space): GDELT request failed: HTTP Error 429: Too Many Requests",
+      "error_message": "1 query(s) failed but 1 succeeded.",
       "error_type": null,
-      "final_status": "rate_limited",
-      "finished_at": "2026-06-16T05:33:30.532197Z",
-      "gdelt_final_status": "rate_limited",
-      "item_count": 0,
+      "final_status": "success",
+      "finished_at": "2026-06-16T11:35:15.820165Z",
+      "gdelt_final_status": "partial_success",
+      "item_count": 10,
       "metadata": {
         "cache_status": "not_implemented",
         "company_id": "blue_origin",
         "company_name": "Blue Origin",
-        "error_message": "(\"Blue Origin\" OR \"New Glenn\") AND (launch OR satellite OR space): GDELT request failed: HTTP Error 429: Too Many Requests",
+        "error_message": "1 query(s) failed but 1 succeeded.",
         "failed_queries": 1,
-        "final_status": "rate_limited",
-        "gdelt_final_status": "rate_limited",
-        "item_count": 0,
-        "provider_status": "rate_limited",
+        "final_status": "partial_success",
+        "gdelt_final_status": "partial_success",
+        "item_count": 10,
+        "provider_status": "success",
         "queries": [
           "(\"Blue Origin\" OR \"New Glenn\") AND (launch OR satellite OR space)",
           "(\"Blue Ring\" OR TeraWave OR \"New Shepard\") AND (satellite OR communications OR space)"
         ],
         "query_count": 2,
         "rate_limited": true,
-        "reason": "(\"Blue Origin\" OR \"New Glenn\") AND (launch OR satellite OR space): GDELT request failed: HTTP Error 429: Too Many Requests",
+        "reason": "1 query(s) failed but 1 succeeded.",
         "retry_count": 0,
         "source_id": "gdelt_provider",
         "source_type": "gdelt",
         "stale_fallback_available": false,
-        "status": "rate_limited",
-        "successful_queries": 0,
-        "successful_query_count": 0
+        "status": "partial_success",
+        "successful_queries": 1,
+        "successful_query_count": 1
       },
       "provider_id": "gdelt_provider",
       "provider_priority": 30,
-      "provider_status": "rate_limited",
+      "provider_status": "success",
       "provider_type": "gdelt",
       "queries": [
         "(\"Blue Origin\" OR \"New Glenn\") AND (launch OR satellite OR space)",
@@ -375,14 +375,14 @@
       "query_count": 2,
       "rank_group": "wire_and_aggregator",
       "rate_limited": true,
-      "reason": "(\"Blue Origin\" OR \"New Glenn\") AND (launch OR satellite OR space): GDELT request failed: HTTP Error 429: Too Many Requests",
+      "reason": "1 query(s) failed but 1 succeeded.",
       "retry_count": 0,
-      "should_fallback": true,
+      "should_fallback": false,
       "source_id": "gdelt_provider",
       "source_type": "gdelt",
       "started_at": null,
-      "status": "rate_limited",
-      "successful_query_count": 0,
+      "status": "success",
+      "successful_query_count": 1,
       "warnings": []
     },
     {
@@ -392,7 +392,7 @@
       "error_message": "Missing required environment variable: SERPAPI_KEY",
       "error_type": null,
       "final_status": "skipped_no_secret",
-      "finished_at": "2026-06-16T05:33:30.532263Z",
+      "finished_at": "2026-06-16T11:35:15.820330Z",
       "item_count": 0,
       "metadata": {
         "cache_status": "not_implemented",
@@ -426,7 +426,7 @@
       "error_message": "Missing required environment variable: NEWSAPI_KEY",
       "error_type": null,
       "final_status": "skipped_no_secret",
-      "finished_at": "2026-06-16T05:33:30.532287Z",
+      "finished_at": "2026-06-16T11:35:15.820355Z",
       "item_count": 0,
       "metadata": {
         "cache_status": "not_implemented",
@@ -469,7 +469,7 @@
         "https://www.nasa.gov/news-release/feed/"
       ],
       "final_status": "success",
-      "finished_at": "2026-06-16T05:33:31.290754Z",
+      "finished_at": "2026-06-16T11:35:17.163081Z",
       "item_count": 10,
       "metadata": {
         "cache_status": "not_implemented",
@@ -519,7 +519,7 @@
       "error_message": "https://www.cnsa.gov.cn/: URLError: <urlopen error [Errno 104] Connection reset by peer>",
       "error_type": "RuntimeError",
       "final_status": "failed",
-      "finished_at": "2026-06-16T05:33:45.356690Z",
+      "finished_at": "2026-06-16T11:35:26.256628Z",
       "item_count": 0,
       "metadata": {
         "cache_status": "not_implemented",
@@ -561,7 +561,7 @@
       "error_message": "(SpaceSail OR \"Yuanxin Satellite\" OR Qianfan OR \"千帆星座\") AND (satellite OR constellation OR broadband): GDELT request failed: HTTP Error 429: Too Many Requests",
       "error_type": null,
       "final_status": "rate_limited",
-      "finished_at": "2026-06-16T05:33:51.602505Z",
+      "finished_at": "2026-06-16T11:35:34.321954Z",
       "gdelt_final_status": "rate_limited",
       "item_count": 0,
       "metadata": {
@@ -618,7 +618,7 @@
       "error_message": "Missing required environment variable: SERPAPI_KEY",
       "error_type": null,
       "final_status": "skipped_no_secret",
-      "finished_at": "2026-06-16T05:33:51.602558Z",
+      "finished_at": "2026-06-16T11:35:34.322013Z",
       "item_count": 0,
       "metadata": {
         "cache_status": "not_implemented",
@@ -652,7 +652,7 @@
       "error_message": "Missing required environment variable: NEWSAPI_KEY",
       "error_type": null,
       "final_status": "skipped_no_secret",
-      "finished_at": "2026-06-16T05:33:51.602584Z",
+      "finished_at": "2026-06-16T11:35:34.322038Z",
       "item_count": 0,
       "metadata": {
         "cache_status": "not_implemented",
@@ -695,7 +695,7 @@
         "https://www.nasa.gov/news-release/feed/"
       ],
       "final_status": "success",
-      "finished_at": "2026-06-16T05:33:52.543204Z",
+      "finished_at": "2026-06-16T11:35:35.860454Z",
       "item_count": 10,
       "metadata": {
         "cache_status": "not_implemented",
@@ -746,7 +746,7 @@
       "error_message": "https://www.sasac.gov.cn/: URLError: <urlopen error [Errno 101] Network is unreachable>",
       "error_type": "RuntimeError",
       "final_status": "failed",
-      "finished_at": "2026-06-16T05:34:21.577310Z",
+      "finished_at": "2026-06-16T11:36:07.433850Z",
       "item_count": 0,
       "metadata": {
         "cache_status": "not_implemented",
@@ -786,18 +786,18 @@
       "article_count": 0,
       "company_id": "china_satnet",
       "company_name": "中国星网",
-      "error_message": "(\"China SatNet\" OR \"China Satellite Network Group\" OR \"中国星网\" OR \"国网星座\") AND (satellite OR constellation OR broadband): GDELT request failed: GDELT response was not JSON: The specified phrase is too short.; (Guowang OR \"GW-A59\" OR \"GW-A2\" OR \"中国卫星网络集团\") AND (satellite OR launch OR constellation): GDELT request failed: HTTP Error 429: Too Many Requests",
+      "error_message": "(\"China SatNet\" OR \"China Satellite Network Group\" OR \"中国星网\" OR \"国网星座\") AND (satellite OR constellation OR broadband): GDELT request failed: HTTP Error 429: Too Many Requests",
       "error_type": null,
       "final_status": "rate_limited",
-      "finished_at": "2026-06-16T05:34:34.581121Z",
+      "finished_at": "2026-06-16T11:36:14.206276Z",
       "gdelt_final_status": "rate_limited",
       "item_count": 0,
       "metadata": {
         "cache_status": "not_implemented",
         "company_id": "china_satnet",
         "company_name": "中国星网",
-        "error_message": "(\"China SatNet\" OR \"China Satellite Network Group\" OR \"中国星网\" OR \"国网星座\") AND (satellite OR constellation OR broadband): GDELT request failed: GDELT response was not JSON: The specified phrase is too short.; (Guowang OR \"GW-A59\" OR \"GW-A2\" OR \"中国卫星网络集团\") AND (satellite OR launch OR constellation): GDELT request failed: HTTP Error 429: Too Many Requests",
-        "failed_queries": 2,
+        "error_message": "(\"China SatNet\" OR \"China Satellite Network Group\" OR \"中国星网\" OR \"国网星座\") AND (satellite OR constellation OR broadband): GDELT request failed: HTTP Error 429: Too Many Requests",
+        "failed_queries": 1,
         "final_status": "rate_limited",
         "gdelt_final_status": "rate_limited",
         "item_count": 0,
@@ -808,7 +808,7 @@
         ],
         "query_count": 2,
         "rate_limited": true,
-        "reason": "(\"China SatNet\" OR \"China Satellite Network Group\" OR \"中国星网\" OR \"国网星座\") AND (satellite OR constellation OR broadband): GDELT request failed: GDELT response was not JSON: The specified phrase is too short.; (Guowang OR \"GW-A59\" OR \"GW-A2\" OR \"中国卫星网络集团\") AND (satellite OR launch OR constellation): GDELT request failed: HTTP Error 429: Too Many Requests",
+        "reason": "(\"China SatNet\" OR \"China Satellite Network Group\" OR \"中国星网\" OR \"国网星座\") AND (satellite OR constellation OR broadband): GDELT request failed: HTTP Error 429: Too Many Requests",
         "retry_count": 0,
         "source_id": "gdelt_provider",
         "source_type": "gdelt",
@@ -829,7 +829,7 @@
       "query_count": 2,
       "rank_group": "wire_and_aggregator",
       "rate_limited": true,
-      "reason": "(\"China SatNet\" OR \"China Satellite Network Group\" OR \"中国星网\" OR \"国网星座\") AND (satellite OR constellation OR broadband): GDELT request failed: GDELT response was not JSON: The specified phrase is too short.; (Guowang OR \"GW-A59\" OR \"GW-A2\" OR \"中国卫星网络集团\") AND (satellite OR launch OR constellation): GDELT request failed: HTTP Error 429: Too Many Requests",
+      "reason": "(\"China SatNet\" OR \"China Satellite Network Group\" OR \"中国星网\" OR \"国网星座\") AND (satellite OR constellation OR broadband): GDELT request failed: HTTP Error 429: Too Many Requests",
       "retry_count": 0,
       "should_fallback": true,
       "source_id": "gdelt_provider",
@@ -846,7 +846,7 @@
       "error_message": "Missing required environment variable: SERPAPI_KEY",
       "error_type": null,
       "final_status": "skipped_no_secret",
-      "finished_at": "2026-06-16T05:34:34.581182Z",
+      "finished_at": "2026-06-16T11:36:14.206330Z",
       "item_count": 0,
       "metadata": {
         "cache_status": "not_implemented",
@@ -880,7 +880,7 @@
       "error_message": "Missing required environment variable: NEWSAPI_KEY",
       "error_type": null,
       "final_status": "skipped_no_secret",
-      "finished_at": "2026-06-16T05:34:34.581211Z",
+      "finished_at": "2026-06-16T11:36:14.206356Z",
       "item_count": 0,
       "metadata": {
         "cache_status": "not_implemented",
@@ -908,7 +908,7 @@
       "warnings": []
     }
   ],
-  "generated_at": "2026-06-16T05:34:34.587982Z",
-  "run_id": "bdce653c-4632-4125-bbdf-97634b4c6732",
+  "generated_at": "2026-06-16T11:36:14.216375Z",
+  "run_id": "6e973652-c4bb-48c4-971e-065f5eb2eff1",
   "schema_version": "satellite_news.v1"
 }
