@@ -1,0 +1,1472 @@
+{
+  "artifact_version": 1,
+  "count": 46,
+  "generated_at": "2026-06-16T05:34:34.587982Z",
+  "items": [
+    {
+      "company_id": "spacex",
+      "company_name": "SpaceX",
+      "id": "64739da0e0d27b19",
+      "language": null,
+      "metadata": {
+        "feed_url": "https://spacenews.com/feed/"
+      },
+      "normalized_text": "<figure><img width=\"1024\" height=\"683\" src=\"https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/IMAGE_2_Gridded_ion_thruster-scaled.jpg?fit=1024%2C683&amp;ssl=1\" class=\"attachment-rss-image-size size-rss-image-size wp-post-image\" alt=\"A gridded ion thruster at NASA’s Glenn Research Center that was used on NASA’s Double Asteroid Redirection Test (DART). Credit: NASA\" decoding=\"async\" loading=\"lazy\" srcset=\"https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/IMAGE_2_Gridded_ion_thruster-scaled.jpg?w=2560&amp;ssl=1 2560w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/IMAGE_2_Gridded_ion_thruster-scaled.jpg?resize=300%2C200&amp;ssl=1 300w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/IMAGE_2_Gridded_ion_thruster-scaled.jpg?resize=1024%2C683&amp;ssl=1 1024w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/IMAGE_2_Gridded_ion_thruster-scaled.jpg?resize=768%2C512&amp;ssl=1 768w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/IMAGE_2_Gridded_ion_thruster-scaled.jpg?resize=1536%2C1024&amp;ssl=1 1536w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/IMAGE_2_Gridded_ion_thruster-scaled.jpg?resize=2048%2C1365&amp;ssl=1 2048w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/IMAGE_2_Gridded_ion_thruster-scaled.jpg?resize=1200%2C800&amp;ssl=1 1200w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/IMAGE_2_Gridded_ion_thruster-scaled.jpg?resize=2000%2C1333&amp;ssl=1 2000w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/IMAGE_2_Gridded_ion_thruster-scaled.jpg?resize=780%2C520&amp;ssl=1 780w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/IMAGE_2_Gridded_ion_thruster-scaled.jpg?resize=400%2C267&amp;ssl=1 400w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/IMAGE_2_Gridded_ion_thruster-scaled.jpg?resize=706%2C471&amp;ssl=1 706w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/IMAGE_2_Gridded_ion_thruster-scaled.jpg?w=2340&amp;ssl=1 2340w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/IMAGE_2_Gridded_ion_thruster-scaled.jpg?fit=1024%2C683&amp;ssl=1&amp;w=370 370w\" sizes=\"(max-width: 34.9rem) calc(100vw - 2rem), (max-width: 53rem) calc(8 * (100vw / 12)), (min-width: 53rem) calc(6 * (100vw / 12)), 100vw\" /></figure>\n<p>For years, space architecture was treated mostly as a question of placement: where to put a spacecraft, and how reliably it could hold position. That framing is now too narrow. [&#8230;]</p>\n<p>The post <a href=\"https://spacenews.com/sustained-maneuver-has-a-propulsion-problem/\">Sustained maneuver has a propulsion problem</a> appeared first on <a href=\"https://spacenews.com\">SpaceNews</a>.</p>",
+      "published_at": "2026-06-15T13:00:00Z",
+      "raw_text": "<figure><img width=\"1024\" height=\"683\" src=\"https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/IMAGE_2_Gridded_ion_thruster-scaled.jpg?fit=1024%2C683&amp;ssl=1\" class=\"attachment-rss-image-size size-rss-image-size wp-post-image\" alt=\"A gridded ion thruster at NASA’s Glenn Research Center that was used on NASA’s Double Asteroid Redirection Test (DART). Credit: NASA\" decoding=\"async\" loading=\"lazy\" srcset=\"https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/IMAGE_2_Gridded_ion_thruster-scaled.jpg?w=2560&amp;ssl=1 2560w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/IMAGE_2_Gridded_ion_thruster-scaled.jpg?resize=300%2C200&amp;ssl=1 300w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/IMAGE_2_Gridded_ion_thruster-scaled.jpg?resize=1024%2C683&amp;ssl=1 1024w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/IMAGE_2_Gridded_ion_thruster-scaled.jpg?resize=768%2C512&amp;ssl=1 768w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/IMAGE_2_Gridded_ion_thruster-scaled.jpg?resize=1536%2C1024&amp;ssl=1 1536w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/IMAGE_2_Gridded_ion_thruster-scaled.jpg?resize=2048%2C1365&amp;ssl=1 2048w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/IMAGE_2_Gridded_ion_thruster-scaled.jpg?resize=1200%2C800&amp;ssl=1 1200w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/IMAGE_2_Gridded_ion_thruster-scaled.jpg?resize=2000%2C1333&amp;ssl=1 2000w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/IMAGE_2_Gridded_ion_thruster-scaled.jpg?resize=780%2C520&amp;ssl=1 780w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/IMAGE_2_Gridded_ion_thruster-scaled.jpg?resize=400%2C267&amp;ssl=1 400w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/IMAGE_2_Gridded_ion_thruster-scaled.jpg?resize=706%2C471&amp;ssl=1 706w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/IMAGE_2_Gridded_ion_thruster-scaled.jpg?w=2340&amp;ssl=1 2340w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/IMAGE_2_Gridded_ion_thruster-scaled.jpg?fit=1024%2C683&amp;ssl=1&amp;w=370 370w\" sizes=\"(max-width: 34.9rem) calc(100vw - 2rem), (max-width: 53rem) calc(8 * (100vw / 12)), (min-width: 53rem) calc(6 * (100vw / 12)), 100vw\" /></figure>\n<p>For years, space architecture was treated mostly as a question of placement: where to put a spacecraft, and how reliably it could hold position. That framing is now too narrow. [&#8230;]</p>\n<p>The post <a href=\"https://spacenews.com/sustained-maneuver-has-a-propulsion-problem/\">Sustained maneuver has a propulsion problem</a> appeared first on <a href=\"https://spacenews.com\">SpaceNews</a>.</p>",
+      "source": {
+        "collected_at": "2026-06-16T05:33:16.240140Z",
+        "provider_id": "rss_provider",
+        "provider_priority": 10,
+        "rank_group": "media",
+        "raw_payload": {
+          "feed_url": "https://spacenews.com/feed/",
+          "published_at": "Mon, 15 Jun 2026 13:00:00 +0000",
+          "summary": "<figure><img width=\"1024\" height=\"683\" src=\"https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/IMAGE_2_Gridded_ion_thruster-scaled.jpg?fit=1024%2C683&amp;ssl=1\" class=\"attachment-rss-image-size size-rss-image-size wp-post-image\" alt=\"A gridded ion thruster at NASA’s Glenn Research Center that was used on NASA’s Double Asteroid Redirection Test (DART). Credit: NASA\" decoding=\"async\" loading=\"lazy\" srcset=\"https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/IMAGE_2_Gridded_ion_thruster-scaled.jpg?w=2560&amp;ssl=1 2560w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/IMAGE_2_Gridded_ion_thruster-scaled.jpg?resize=300%2C200&amp;ssl=1 300w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/IMAGE_2_Gridded_ion_thruster-scaled.jpg?resize=1024%2C683&amp;ssl=1 1024w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/IMAGE_2_Gridded_ion_thruster-scaled.jpg?resize=768%2C512&amp;ssl=1 768w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/IMAGE_2_Gridded_ion_thruster-scaled.jpg?resize=1536%2C1024&amp;ssl=1 1536w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/IMAGE_2_Gridded_ion_thruster-scaled.jpg?resize=2048%2C1365&amp;ssl=1 2048w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/IMAGE_2_Gridded_ion_thruster-scaled.jpg?resize=1200%2C800&amp;ssl=1 1200w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/IMAGE_2_Gridded_ion_thruster-scaled.jpg?resize=2000%2C1333&amp;ssl=1 2000w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/IMAGE_2_Gridded_ion_thruster-scaled.jpg?resize=780%2C520&amp;ssl=1 780w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/IMAGE_2_Gridded_ion_thruster-scaled.jpg?resize=400%2C267&amp;ssl=1 400w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/IMAGE_2_Gridded_ion_thruster-scaled.jpg?resize=706%2C471&amp;ssl=1 706w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/IMAGE_2_Gridded_ion_thruster-scaled.jpg?w=2340&amp;ssl=1 2340w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/IMAGE_2_Gridded_ion_thruster-scaled.jpg?fit=1024%2C683&amp;ssl=1&amp;w=370 370w\" sizes=\"(max-width: 34.9rem) calc(100vw - 2rem), (max-width: 53rem) calc(8 * (100vw / 12)), (min-width: 53rem) calc(6 * (100vw / 12)), 100vw\" /></figure>\n<p>For years, space architecture was treated mostly as a question of placement: where to put a spacecraft, and how reliably it could hold position. That framing is now too narrow. [&#8230;]</p>\n<p>The post <a href=\"https://spacenews.com/sustained-maneuver-has-a-propulsion-problem/\">Sustained maneuver has a propulsion problem</a> appeared first on <a href=\"https://spacenews.com\">SpaceNews</a>.</p>",
+          "title": "Sustained maneuver has a propulsion problem",
+          "url": "https://spacenews.com/sustained-maneuver-has-a-propulsion-problem/"
+        },
+        "source_id": "rss_provider",
+        "source_name": "Curated RSS provider contract.",
+        "source_type": "rss",
+        "url": "https://spacenews.com/sustained-maneuver-has-a-propulsion-problem/"
+      },
+      "tags": [],
+      "title": "Sustained maneuver has a propulsion problem",
+      "url": "https://spacenews.com/sustained-maneuver-has-a-propulsion-problem/"
+    },
+    {
+      "company_id": "spacex",
+      "company_name": "SpaceX",
+      "id": "3c016fada51fb183",
+      "language": null,
+      "metadata": {
+        "feed_url": "https://spacenews.com/feed/"
+      },
+      "normalized_text": "<figure><img width=\"1024\" height=\"575\" src=\"https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/bluemoon-art3.jpeg?fit=1024%2C575&amp;ssl=1\" class=\"attachment-rss-image-size size-rss-image-size wp-post-image\" alt=\"Blue Moon Artemis 3\" decoding=\"async\" loading=\"lazy\" srcset=\"https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/bluemoon-art3.jpeg?w=2272&amp;ssl=1 2272w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/bluemoon-art3.jpeg?resize=300%2C168&amp;ssl=1 300w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/bluemoon-art3.jpeg?resize=1024%2C575&amp;ssl=1 1024w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/bluemoon-art3.jpeg?resize=768%2C431&amp;ssl=1 768w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/bluemoon-art3.jpeg?resize=1536%2C863&amp;ssl=1 1536w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/bluemoon-art3.jpeg?resize=2048%2C1150&amp;ssl=1 2048w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/bluemoon-art3.jpeg?resize=1200%2C674&amp;ssl=1 1200w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/bluemoon-art3.jpeg?resize=2000%2C1123&amp;ssl=1 2000w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/bluemoon-art3.jpeg?resize=780%2C438&amp;ssl=1 780w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/bluemoon-art3.jpeg?resize=400%2C225&amp;ssl=1 400w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/bluemoon-art3.jpeg?resize=706%2C397&amp;ssl=1 706w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/bluemoon-art3.jpeg?fit=1024%2C575&amp;ssl=1&amp;w=370 370w\" sizes=\"(max-width: 34.9rem) calc(100vw - 2rem), (max-width: 53rem) calc(8 * (100vw / 12)), (min-width: 53rem) calc(6 * (100vw / 12)), 100vw\" /></figure>\n<p>NASA has provided more details about the revised approaches that Blue Origin and SpaceX are taking to accelerate work on Artemis lunar landers.</p>\n<p>The post <a href=\"https://spacenews.com/revised-artemis-lunar-lander-plans-take-shape/\">Revised Artemis lunar lander plans take shape</a> appeared first on <a href=\"https://spacenews.com\">SpaceNews</a>.</p>",
+      "published_at": "2026-06-13T17:19:56Z",
+      "raw_text": "<figure><img width=\"1024\" height=\"575\" src=\"https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/bluemoon-art3.jpeg?fit=1024%2C575&amp;ssl=1\" class=\"attachment-rss-image-size size-rss-image-size wp-post-image\" alt=\"Blue Moon Artemis 3\" decoding=\"async\" loading=\"lazy\" srcset=\"https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/bluemoon-art3.jpeg?w=2272&amp;ssl=1 2272w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/bluemoon-art3.jpeg?resize=300%2C168&amp;ssl=1 300w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/bluemoon-art3.jpeg?resize=1024%2C575&amp;ssl=1 1024w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/bluemoon-art3.jpeg?resize=768%2C431&amp;ssl=1 768w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/bluemoon-art3.jpeg?resize=1536%2C863&amp;ssl=1 1536w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/bluemoon-art3.jpeg?resize=2048%2C1150&amp;ssl=1 2048w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/bluemoon-art3.jpeg?resize=1200%2C674&amp;ssl=1 1200w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/bluemoon-art3.jpeg?resize=2000%2C1123&amp;ssl=1 2000w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/bluemoon-art3.jpeg?resize=780%2C438&amp;ssl=1 780w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/bluemoon-art3.jpeg?resize=400%2C225&amp;ssl=1 400w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/bluemoon-art3.jpeg?resize=706%2C397&amp;ssl=1 706w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/bluemoon-art3.jpeg?fit=1024%2C575&amp;ssl=1&amp;w=370 370w\" sizes=\"(max-width: 34.9rem) calc(100vw - 2rem), (max-width: 53rem) calc(8 * (100vw / 12)), (min-width: 53rem) calc(6 * (100vw / 12)), 100vw\" /></figure>\n<p>NASA has provided more details about the revised approaches that Blue Origin and SpaceX are taking to accelerate work on Artemis lunar landers.</p>\n<p>The post <a href=\"https://spacenews.com/revised-artemis-lunar-lander-plans-take-shape/\">Revised Artemis lunar lander plans take shape</a> appeared first on <a href=\"https://spacenews.com\">SpaceNews</a>.</p>",
+      "source": {
+        "collected_at": "2026-06-16T05:33:16.240140Z",
+        "provider_id": "rss_provider",
+        "provider_priority": 10,
+        "rank_group": "media",
+        "raw_payload": {
+          "feed_url": "https://spacenews.com/feed/",
+          "published_at": "Sat, 13 Jun 2026 17:19:56 +0000",
+          "summary": "<figure><img width=\"1024\" height=\"575\" src=\"https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/bluemoon-art3.jpeg?fit=1024%2C575&amp;ssl=1\" class=\"attachment-rss-image-size size-rss-image-size wp-post-image\" alt=\"Blue Moon Artemis 3\" decoding=\"async\" loading=\"lazy\" srcset=\"https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/bluemoon-art3.jpeg?w=2272&amp;ssl=1 2272w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/bluemoon-art3.jpeg?resize=300%2C168&amp;ssl=1 300w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/bluemoon-art3.jpeg?resize=1024%2C575&amp;ssl=1 1024w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/bluemoon-art3.jpeg?resize=768%2C431&amp;ssl=1 768w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/bluemoon-art3.jpeg?resize=1536%2C863&amp;ssl=1 1536w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/bluemoon-art3.jpeg?resize=2048%2C1150&amp;ssl=1 2048w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/bluemoon-art3.jpeg?resize=1200%2C674&amp;ssl=1 1200w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/bluemoon-art3.jpeg?resize=2000%2C1123&amp;ssl=1 2000w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/bluemoon-art3.jpeg?resize=780%2C438&amp;ssl=1 780w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/bluemoon-art3.jpeg?resize=400%2C225&amp;ssl=1 400w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/bluemoon-art3.jpeg?resize=706%2C397&amp;ssl=1 706w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/bluemoon-art3.jpeg?fit=1024%2C575&amp;ssl=1&amp;w=370 370w\" sizes=\"(max-width: 34.9rem) calc(100vw - 2rem), (max-width: 53rem) calc(8 * (100vw / 12)), (min-width: 53rem) calc(6 * (100vw / 12)), 100vw\" /></figure>\n<p>NASA has provided more details about the revised approaches that Blue Origin and SpaceX are taking to accelerate work on Artemis lunar landers.</p>\n<p>The post <a href=\"https://spacenews.com/revised-artemis-lunar-lander-plans-take-shape/\">Revised Artemis lunar lander plans take shape</a> appeared first on <a href=\"https://spacenews.com\">SpaceNews</a>.</p>",
+          "title": "Revised Artemis lunar lander plans take shape",
+          "url": "https://spacenews.com/revised-artemis-lunar-lander-plans-take-shape/"
+        },
+        "source_id": "rss_provider",
+        "source_name": "Curated RSS provider contract.",
+        "source_type": "rss",
+        "url": "https://spacenews.com/revised-artemis-lunar-lander-plans-take-shape/"
+      },
+      "tags": [],
+      "title": "Revised Artemis lunar lander plans take shape",
+      "url": "https://spacenews.com/revised-artemis-lunar-lander-plans-take-shape/"
+    },
+    {
+      "company_id": "spacex",
+      "company_name": "SpaceX",
+      "id": "a0380e42f6893c6d",
+      "language": null,
+      "metadata": {
+        "feed_url": "https://spacenews.com/feed/"
+      },
+      "normalized_text": "<figure><img width=\"1024\" height=\"467\" src=\"https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/spacexipo-celebration.jpeg?fit=1024%2C467&amp;ssl=1\" class=\"attachment-rss-image-size size-rss-image-size wp-post-image\" alt=\"SpaceX IPO celebration\" decoding=\"async\" loading=\"lazy\" srcset=\"https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/spacexipo-celebration.jpeg?w=1440&amp;ssl=1 1440w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/spacexipo-celebration.jpeg?resize=300%2C137&amp;ssl=1 300w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/spacexipo-celebration.jpeg?resize=1024%2C467&amp;ssl=1 1024w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/spacexipo-celebration.jpeg?resize=768%2C350&amp;ssl=1 768w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/spacexipo-celebration.jpeg?resize=1200%2C548&amp;ssl=1 1200w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/spacexipo-celebration.jpeg?resize=780%2C356&amp;ssl=1 780w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/spacexipo-celebration.jpeg?resize=400%2C183&amp;ssl=1 400w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/spacexipo-celebration.jpeg?resize=706%2C322&amp;ssl=1 706w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/spacexipo-celebration.jpeg?fit=1024%2C467&amp;ssl=1&amp;w=370 370w\" sizes=\"(max-width: 34.9rem) calc(100vw - 2rem), (max-width: 53rem) calc(8 * (100vw / 12)), (min-width: 53rem) calc(6 * (100vw / 12)), 100vw\" /></figure>\n<p>SpaceX shares rose on the first day of trading as the company went public in a milestone event for both the company and the broader space industry.</p>\n<p>The post <a href=\"https://spacenews.com/spacex-shares-rise-nearly-20-in-historic-ipo/\">SpaceX shares rise nearly 20% in historic IPO</a> appeared first on <a href=\"https://spacenews.com\">SpaceNews</a>.</p>",
+      "published_at": "2026-06-12T21:06:39Z",
+      "raw_text": "<figure><img width=\"1024\" height=\"467\" src=\"https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/spacexipo-celebration.jpeg?fit=1024%2C467&amp;ssl=1\" class=\"attachment-rss-image-size size-rss-image-size wp-post-image\" alt=\"SpaceX IPO celebration\" decoding=\"async\" loading=\"lazy\" srcset=\"https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/spacexipo-celebration.jpeg?w=1440&amp;ssl=1 1440w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/spacexipo-celebration.jpeg?resize=300%2C137&amp;ssl=1 300w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/spacexipo-celebration.jpeg?resize=1024%2C467&amp;ssl=1 1024w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/spacexipo-celebration.jpeg?resize=768%2C350&amp;ssl=1 768w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/spacexipo-celebration.jpeg?resize=1200%2C548&amp;ssl=1 1200w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/spacexipo-celebration.jpeg?resize=780%2C356&amp;ssl=1 780w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/spacexipo-celebration.jpeg?resize=400%2C183&amp;ssl=1 400w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/spacexipo-celebration.jpeg?resize=706%2C322&amp;ssl=1 706w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/spacexipo-celebration.jpeg?fit=1024%2C467&amp;ssl=1&amp;w=370 370w\" sizes=\"(max-width: 34.9rem) calc(100vw - 2rem), (max-width: 53rem) calc(8 * (100vw / 12)), (min-width: 53rem) calc(6 * (100vw / 12)), 100vw\" /></figure>\n<p>SpaceX shares rose on the first day of trading as the company went public in a milestone event for both the company and the broader space industry.</p>\n<p>The post <a href=\"https://spacenews.com/spacex-shares-rise-nearly-20-in-historic-ipo/\">SpaceX shares rise nearly 20% in historic IPO</a> appeared first on <a href=\"https://spacenews.com\">SpaceNews</a>.</p>",
+      "source": {
+        "collected_at": "2026-06-16T05:33:16.240140Z",
+        "provider_id": "rss_provider",
+        "provider_priority": 10,
+        "rank_group": "media",
+        "raw_payload": {
+          "feed_url": "https://spacenews.com/feed/",
+          "published_at": "Fri, 12 Jun 2026 21:06:39 +0000",
+          "summary": "<figure><img width=\"1024\" height=\"467\" src=\"https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/spacexipo-celebration.jpeg?fit=1024%2C467&amp;ssl=1\" class=\"attachment-rss-image-size size-rss-image-size wp-post-image\" alt=\"SpaceX IPO celebration\" decoding=\"async\" loading=\"lazy\" srcset=\"https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/spacexipo-celebration.jpeg?w=1440&amp;ssl=1 1440w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/spacexipo-celebration.jpeg?resize=300%2C137&amp;ssl=1 300w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/spacexipo-celebration.jpeg?resize=1024%2C467&amp;ssl=1 1024w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/spacexipo-celebration.jpeg?resize=768%2C350&amp;ssl=1 768w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/spacexipo-celebration.jpeg?resize=1200%2C548&amp;ssl=1 1200w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/spacexipo-celebration.jpeg?resize=780%2C356&amp;ssl=1 780w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/spacexipo-celebration.jpeg?resize=400%2C183&amp;ssl=1 400w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/spacexipo-celebration.jpeg?resize=706%2C322&amp;ssl=1 706w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/spacexipo-celebration.jpeg?fit=1024%2C467&amp;ssl=1&amp;w=370 370w\" sizes=\"(max-width: 34.9rem) calc(100vw - 2rem), (max-width: 53rem) calc(8 * (100vw / 12)), (min-width: 53rem) calc(6 * (100vw / 12)), 100vw\" /></figure>\n<p>SpaceX shares rose on the first day of trading as the company went public in a milestone event for both the company and the broader space industry.</p>\n<p>The post <a href=\"https://spacenews.com/spacex-shares-rise-nearly-20-in-historic-ipo/\">SpaceX shares rise nearly 20% in historic IPO</a> appeared first on <a href=\"https://spacenews.com\">SpaceNews</a>.</p>",
+          "title": "SpaceX shares rise nearly 20% in historic IPO",
+          "url": "https://spacenews.com/spacex-shares-rise-nearly-20-in-historic-ipo/"
+        },
+        "source_id": "rss_provider",
+        "source_name": "Curated RSS provider contract.",
+        "source_type": "rss",
+        "url": "https://spacenews.com/spacex-shares-rise-nearly-20-in-historic-ipo/"
+      },
+      "tags": [],
+      "title": "SpaceX shares rise nearly 20% in historic IPO",
+      "url": "https://spacenews.com/spacex-shares-rise-nearly-20-in-historic-ipo/"
+    },
+    {
+      "company_id": "spacex",
+      "company_name": "SpaceX",
+      "id": "0bf7ad339f31f83c",
+      "language": null,
+      "metadata": {
+        "feed_url": "https://spacenews.com/feed/"
+      },
+      "normalized_text": "<figure><img width=\"1024\" height=\"561\" src=\"https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/spacexai2.jpeg?fit=1024%2C561&amp;ssl=1\" class=\"attachment-rss-image-size size-rss-image-size wp-post-image\" alt=\"AI1 SpaceX satellite\" decoding=\"async\" loading=\"lazy\" srcset=\"https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/spacexai2.jpeg?w=2000&amp;ssl=1 2000w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/spacexai2.jpeg?resize=300%2C164&amp;ssl=1 300w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/spacexai2.jpeg?resize=1024%2C561&amp;ssl=1 1024w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/spacexai2.jpeg?resize=768%2C421&amp;ssl=1 768w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/spacexai2.jpeg?resize=1536%2C842&amp;ssl=1 1536w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/spacexai2.jpeg?resize=1200%2C658&amp;ssl=1 1200w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/spacexai2.jpeg?resize=780%2C427&amp;ssl=1 780w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/spacexai2.jpeg?resize=400%2C219&amp;ssl=1 400w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/spacexai2.jpeg?resize=706%2C387&amp;ssl=1 706w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/spacexai2.jpeg?fit=1024%2C561&amp;ssl=1&amp;w=370 370w\" sizes=\"(max-width: 34.9rem) calc(100vw - 2rem), (max-width: 53rem) calc(8 * (100vw / 12)), (min-width: 53rem) calc(6 * (100vw / 12)), 100vw\" /></figure>\n<p>As SpaceX gears up to start launching orbital data center spacecraft as soon as next year, astronomers warn those satellites could cause serious interference with their observations.</p>\n<p>The post <a href=\"https://spacenews.com/astronomers-fear-orbital-data-centers-will-interfere-with-observations/\">Astronomers fear orbital data centers will interfere with observations</a> appeared first on <a href=\"https://spacenews.com\">SpaceNews</a>.</p>",
+      "published_at": "2026-06-12T19:49:45Z",
+      "raw_text": "<figure><img width=\"1024\" height=\"561\" src=\"https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/spacexai2.jpeg?fit=1024%2C561&amp;ssl=1\" class=\"attachment-rss-image-size size-rss-image-size wp-post-image\" alt=\"AI1 SpaceX satellite\" decoding=\"async\" loading=\"lazy\" srcset=\"https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/spacexai2.jpeg?w=2000&amp;ssl=1 2000w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/spacexai2.jpeg?resize=300%2C164&amp;ssl=1 300w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/spacexai2.jpeg?resize=1024%2C561&amp;ssl=1 1024w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/spacexai2.jpeg?resize=768%2C421&amp;ssl=1 768w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/spacexai2.jpeg?resize=1536%2C842&amp;ssl=1 1536w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/spacexai2.jpeg?resize=1200%2C658&amp;ssl=1 1200w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/spacexai2.jpeg?resize=780%2C427&amp;ssl=1 780w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/spacexai2.jpeg?resize=400%2C219&amp;ssl=1 400w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/spacexai2.jpeg?resize=706%2C387&amp;ssl=1 706w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/spacexai2.jpeg?fit=1024%2C561&amp;ssl=1&amp;w=370 370w\" sizes=\"(max-width: 34.9rem) calc(100vw - 2rem), (max-width: 53rem) calc(8 * (100vw / 12)), (min-width: 53rem) calc(6 * (100vw / 12)), 100vw\" /></figure>\n<p>As SpaceX gears up to start launching orbital data center spacecraft as soon as next year, astronomers warn those satellites could cause serious interference with their observations.</p>\n<p>The post <a href=\"https://spacenews.com/astronomers-fear-orbital-data-centers-will-interfere-with-observations/\">Astronomers fear orbital data centers will interfere with observations</a> appeared first on <a href=\"https://spacenews.com\">SpaceNews</a>.</p>",
+      "source": {
+        "collected_at": "2026-06-16T05:33:16.240140Z",
+        "provider_id": "rss_provider",
+        "provider_priority": 10,
+        "rank_group": "media",
+        "raw_payload": {
+          "feed_url": "https://spacenews.com/feed/",
+          "published_at": "Fri, 12 Jun 2026 19:49:45 +0000",
+          "summary": "<figure><img width=\"1024\" height=\"561\" src=\"https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/spacexai2.jpeg?fit=1024%2C561&amp;ssl=1\" class=\"attachment-rss-image-size size-rss-image-size wp-post-image\" alt=\"AI1 SpaceX satellite\" decoding=\"async\" loading=\"lazy\" srcset=\"https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/spacexai2.jpeg?w=2000&amp;ssl=1 2000w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/spacexai2.jpeg?resize=300%2C164&amp;ssl=1 300w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/spacexai2.jpeg?resize=1024%2C561&amp;ssl=1 1024w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/spacexai2.jpeg?resize=768%2C421&amp;ssl=1 768w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/spacexai2.jpeg?resize=1536%2C842&amp;ssl=1 1536w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/spacexai2.jpeg?resize=1200%2C658&amp;ssl=1 1200w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/spacexai2.jpeg?resize=780%2C427&amp;ssl=1 780w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/spacexai2.jpeg?resize=400%2C219&amp;ssl=1 400w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/spacexai2.jpeg?resize=706%2C387&amp;ssl=1 706w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/spacexai2.jpeg?fit=1024%2C561&amp;ssl=1&amp;w=370 370w\" sizes=\"(max-width: 34.9rem) calc(100vw - 2rem), (max-width: 53rem) calc(8 * (100vw / 12)), (min-width: 53rem) calc(6 * (100vw / 12)), 100vw\" /></figure>\n<p>As SpaceX gears up to start launching orbital data center spacecraft as soon as next year, astronomers warn those satellites could cause serious interference with their observations.</p>\n<p>The post <a href=\"https://spacenews.com/astronomers-fear-orbital-data-centers-will-interfere-with-observations/\">Astronomers fear orbital data centers will interfere with observations</a> appeared first on <a href=\"https://spacenews.com\">SpaceNews</a>.</p>",
+          "title": "Astronomers fear orbital data centers will interfere with observations",
+          "url": "https://spacenews.com/astronomers-fear-orbital-data-centers-will-interfere-with-observations/"
+        },
+        "source_id": "rss_provider",
+        "source_name": "Curated RSS provider contract.",
+        "source_type": "rss",
+        "url": "https://spacenews.com/astronomers-fear-orbital-data-centers-will-interfere-with-observations/"
+      },
+      "tags": [],
+      "title": "Astronomers fear orbital data centers will interfere with observations",
+      "url": "https://spacenews.com/astronomers-fear-orbital-data-centers-will-interfere-with-observations/"
+    },
+    {
+      "company_id": "spacex",
+      "company_name": "SpaceX",
+      "id": "1d6dd14f6e888a5b",
+      "language": null,
+      "metadata": {
+        "feed_url": "https://spacenews.com/feed/"
+      },
+      "normalized_text": "<figure><img width=\"1024\" height=\"768\" src=\"https://i0.wp.com/spacenews.com/wp-content/uploads/2022/01/Intelsat-1_HD-scaled.jpg?fit=1024%2C768&amp;ssl=1\" class=\"attachment-rss-image-size size-rss-image-size wp-post-image\" alt=\"\" decoding=\"async\" loading=\"lazy\" srcset=\"https://i0.wp.com/spacenews.com/wp-content/uploads/2022/01/Intelsat-1_HD-scaled.jpg?w=2560&amp;ssl=1 2560w, https://i0.wp.com/spacenews.com/wp-content/uploads/2022/01/Intelsat-1_HD-scaled.jpg?resize=600%2C450&amp;ssl=1 600w, https://i0.wp.com/spacenews.com/wp-content/uploads/2022/01/Intelsat-1_HD-scaled.jpg?resize=1024%2C768&amp;ssl=1 1024w, https://i0.wp.com/spacenews.com/wp-content/uploads/2022/01/Intelsat-1_HD-scaled.jpg?resize=300%2C225&amp;ssl=1 300w, https://i0.wp.com/spacenews.com/wp-content/uploads/2022/01/Intelsat-1_HD-scaled.jpg?resize=768%2C576&amp;ssl=1 768w, https://i0.wp.com/spacenews.com/wp-content/uploads/2022/01/Intelsat-1_HD-scaled.jpg?resize=1536%2C1152&amp;ssl=1 1536w, https://i0.wp.com/spacenews.com/wp-content/uploads/2022/01/Intelsat-1_HD-scaled.jpg?resize=2048%2C1536&amp;ssl=1 2048w, https://i0.wp.com/spacenews.com/wp-content/uploads/2022/01/Intelsat-1_HD-scaled.jpg?resize=1200%2C900&amp;ssl=1 1200w, https://i0.wp.com/spacenews.com/wp-content/uploads/2022/01/Intelsat-1_HD-scaled.jpg?resize=800%2C600&amp;ssl=1 800w, https://i0.wp.com/spacenews.com/wp-content/uploads/2022/01/Intelsat-1_HD-scaled.jpg?resize=400%2C300&amp;ssl=1 400w, https://i0.wp.com/spacenews.com/wp-content/uploads/2022/01/Intelsat-1_HD-scaled.jpg?resize=200%2C150&amp;ssl=1 200w, https://i0.wp.com/spacenews.com/wp-content/uploads/2022/01/Intelsat-1_HD-scaled.jpg?resize=1568%2C1176&amp;ssl=1 1568w, https://i0.wp.com/spacenews.com/wp-content/uploads/2022/01/Intelsat-1_HD-scaled.jpg?w=2340&amp;ssl=1 2340w, https://i0.wp.com/spacenews.com/wp-content/uploads/2022/01/Intelsat-1_HD-scaled.jpg?fit=1024%2C768&amp;ssl=1&amp;w=370 370w\" sizes=\"(max-width: 34.9rem) calc(100vw - 2rem), (max-width: 53rem) calc(8 * (100vw / 12)), (min-width: 53rem) calc(6 * (100vw / 12)), 100vw\" /></figure>\n<p>The recent cancellation of three geostationary satellites is another blow for insurers hoping their legacy cash cows would bring home much-needed income following a bruising run of claims. SES disclosed [&#8230;]</p>\n<p>The post <a href=\"https://spacenews.com/geo-cancellations-complicate-space-insurance-recovery/\">GEO cancellations complicate space insurance recovery</a> appeared first on <a href=\"https://spacenews.com\">SpaceNews</a>.</p>",
+      "published_at": "2026-06-11T13:00:00Z",
+      "raw_text": "<figure><img width=\"1024\" height=\"768\" src=\"https://i0.wp.com/spacenews.com/wp-content/uploads/2022/01/Intelsat-1_HD-scaled.jpg?fit=1024%2C768&amp;ssl=1\" class=\"attachment-rss-image-size size-rss-image-size wp-post-image\" alt=\"\" decoding=\"async\" loading=\"lazy\" srcset=\"https://i0.wp.com/spacenews.com/wp-content/uploads/2022/01/Intelsat-1_HD-scaled.jpg?w=2560&amp;ssl=1 2560w, https://i0.wp.com/spacenews.com/wp-content/uploads/2022/01/Intelsat-1_HD-scaled.jpg?resize=600%2C450&amp;ssl=1 600w, https://i0.wp.com/spacenews.com/wp-content/uploads/2022/01/Intelsat-1_HD-scaled.jpg?resize=1024%2C768&amp;ssl=1 1024w, https://i0.wp.com/spacenews.com/wp-content/uploads/2022/01/Intelsat-1_HD-scaled.jpg?resize=300%2C225&amp;ssl=1 300w, https://i0.wp.com/spacenews.com/wp-content/uploads/2022/01/Intelsat-1_HD-scaled.jpg?resize=768%2C576&amp;ssl=1 768w, https://i0.wp.com/spacenews.com/wp-content/uploads/2022/01/Intelsat-1_HD-scaled.jpg?resize=1536%2C1152&amp;ssl=1 1536w, https://i0.wp.com/spacenews.com/wp-content/uploads/2022/01/Intelsat-1_HD-scaled.jpg?resize=2048%2C1536&amp;ssl=1 2048w, https://i0.wp.com/spacenews.com/wp-content/uploads/2022/01/Intelsat-1_HD-scaled.jpg?resize=1200%2C900&amp;ssl=1 1200w, https://i0.wp.com/spacenews.com/wp-content/uploads/2022/01/Intelsat-1_HD-scaled.jpg?resize=800%2C600&amp;ssl=1 800w, https://i0.wp.com/spacenews.com/wp-content/uploads/2022/01/Intelsat-1_HD-scaled.jpg?resize=400%2C300&amp;ssl=1 400w, https://i0.wp.com/spacenews.com/wp-content/uploads/2022/01/Intelsat-1_HD-scaled.jpg?resize=200%2C150&amp;ssl=1 200w, https://i0.wp.com/spacenews.com/wp-content/uploads/2022/01/Intelsat-1_HD-scaled.jpg?resize=1568%2C1176&amp;ssl=1 1568w, https://i0.wp.com/spacenews.com/wp-content/uploads/2022/01/Intelsat-1_HD-scaled.jpg?w=2340&amp;ssl=1 2340w, https://i0.wp.com/spacenews.com/wp-content/uploads/2022/01/Intelsat-1_HD-scaled.jpg?fit=1024%2C768&amp;ssl=1&amp;w=370 370w\" sizes=\"(max-width: 34.9rem) calc(100vw - 2rem), (max-width: 53rem) calc(8 * (100vw / 12)), (min-width: 53rem) calc(6 * (100vw / 12)), 100vw\" /></figure>\n<p>The recent cancellation of three geostationary satellites is another blow for insurers hoping their legacy cash cows would bring home much-needed income following a bruising run of claims. SES disclosed [&#8230;]</p>\n<p>The post <a href=\"https://spacenews.com/geo-cancellations-complicate-space-insurance-recovery/\">GEO cancellations complicate space insurance recovery</a> appeared first on <a href=\"https://spacenews.com\">SpaceNews</a>.</p>",
+      "source": {
+        "collected_at": "2026-06-16T05:33:16.240140Z",
+        "provider_id": "rss_provider",
+        "provider_priority": 10,
+        "rank_group": "media",
+        "raw_payload": {
+          "feed_url": "https://spacenews.com/feed/",
+          "published_at": "Thu, 11 Jun 2026 13:00:00 +0000",
+          "summary": "<figure><img width=\"1024\" height=\"768\" src=\"https://i0.wp.com/spacenews.com/wp-content/uploads/2022/01/Intelsat-1_HD-scaled.jpg?fit=1024%2C768&amp;ssl=1\" class=\"attachment-rss-image-size size-rss-image-size wp-post-image\" alt=\"\" decoding=\"async\" loading=\"lazy\" srcset=\"https://i0.wp.com/spacenews.com/wp-content/uploads/2022/01/Intelsat-1_HD-scaled.jpg?w=2560&amp;ssl=1 2560w, https://i0.wp.com/spacenews.com/wp-content/uploads/2022/01/Intelsat-1_HD-scaled.jpg?resize=600%2C450&amp;ssl=1 600w, https://i0.wp.com/spacenews.com/wp-content/uploads/2022/01/Intelsat-1_HD-scaled.jpg?resize=1024%2C768&amp;ssl=1 1024w, https://i0.wp.com/spacenews.com/wp-content/uploads/2022/01/Intelsat-1_HD-scaled.jpg?resize=300%2C225&amp;ssl=1 300w, https://i0.wp.com/spacenews.com/wp-content/uploads/2022/01/Intelsat-1_HD-scaled.jpg?resize=768%2C576&amp;ssl=1 768w, https://i0.wp.com/spacenews.com/wp-content/uploads/2022/01/Intelsat-1_HD-scaled.jpg?resize=1536%2C1152&amp;ssl=1 1536w, https://i0.wp.com/spacenews.com/wp-content/uploads/2022/01/Intelsat-1_HD-scaled.jpg?resize=2048%2C1536&amp;ssl=1 2048w, https://i0.wp.com/spacenews.com/wp-content/uploads/2022/01/Intelsat-1_HD-scaled.jpg?resize=1200%2C900&amp;ssl=1 1200w, https://i0.wp.com/spacenews.com/wp-content/uploads/2022/01/Intelsat-1_HD-scaled.jpg?resize=800%2C600&amp;ssl=1 800w, https://i0.wp.com/spacenews.com/wp-content/uploads/2022/01/Intelsat-1_HD-scaled.jpg?resize=400%2C300&amp;ssl=1 400w, https://i0.wp.com/spacenews.com/wp-content/uploads/2022/01/Intelsat-1_HD-scaled.jpg?resize=200%2C150&amp;ssl=1 200w, https://i0.wp.com/spacenews.com/wp-content/uploads/2022/01/Intelsat-1_HD-scaled.jpg?resize=1568%2C1176&amp;ssl=1 1568w, https://i0.wp.com/spacenews.com/wp-content/uploads/2022/01/Intelsat-1_HD-scaled.jpg?w=2340&amp;ssl=1 2340w, https://i0.wp.com/spacenews.com/wp-content/uploads/2022/01/Intelsat-1_HD-scaled.jpg?fit=1024%2C768&amp;ssl=1&amp;w=370 370w\" sizes=\"(max-width: 34.9rem) calc(100vw - 2rem), (max-width: 53rem) calc(8 * (100vw / 12)), (min-width: 53rem) calc(6 * (100vw / 12)), 100vw\" /></figure>\n<p>The recent cancellation of three geostationary satellites is another blow for insurers hoping their legacy cash cows would bring home much-needed income following a bruising run of claims. SES disclosed [&#8230;]</p>\n<p>The post <a href=\"https://spacenews.com/geo-cancellations-complicate-space-insurance-recovery/\">GEO cancellations complicate space insurance recovery</a> appeared first on <a href=\"https://spacenews.com\">SpaceNews</a>.</p>",
+          "title": "GEO cancellations complicate space insurance recovery",
+          "url": "https://spacenews.com/geo-cancellations-complicate-space-insurance-recovery/"
+        },
+        "source_id": "rss_provider",
+        "source_name": "Curated RSS provider contract.",
+        "source_type": "rss",
+        "url": "https://spacenews.com/geo-cancellations-complicate-space-insurance-recovery/"
+      },
+      "tags": [],
+      "title": "GEO cancellations complicate space insurance recovery",
+      "url": "https://spacenews.com/geo-cancellations-complicate-space-insurance-recovery/"
+    },
+    {
+      "company_id": "spacex",
+      "company_name": "SpaceX",
+      "id": "ae32dfcd8bd18e49",
+      "language": null,
+      "metadata": {
+        "feed_url": "https://spaceflightnow.com/feed/"
+      },
+      "normalized_text": "The Starlink 17-54 mission includes the 1,500th Starlink satellite launched so far in 2026. Liftoff from pad 4E at Vandenberg Space Force Base occurred at 8:34 a.m. PDT (11:34 a.m. EDT / 1534 UTC). <a class=\"mh-excerpt-more\" href=\"https://spaceflightnow.com/2026/06/14/live-coverage-spacex-to-launch-its-first-falcon-9-rocket-since-nasdaq-debut/\" title=\"SpaceX launches its first Falcon 9 rocket since Nasdaq debut\"></a>",
+      "published_at": "2026-06-14T23:29:03Z",
+      "raw_text": "The Starlink 17-54 mission includes the 1,500th Starlink satellite launched so far in 2026. Liftoff from pad 4E at Vandenberg Space Force Base occurred at 8:34 a.m. PDT (11:34 a.m. EDT / 1534 UTC). <a class=\"mh-excerpt-more\" href=\"https://spaceflightnow.com/2026/06/14/live-coverage-spacex-to-launch-its-first-falcon-9-rocket-since-nasdaq-debut/\" title=\"SpaceX launches its first Falcon 9 rocket since Nasdaq debut\"></a>",
+      "source": {
+        "collected_at": "2026-06-16T05:33:16.240140Z",
+        "provider_id": "rss_provider",
+        "provider_priority": 10,
+        "rank_group": "media",
+        "raw_payload": {
+          "feed_url": "https://spaceflightnow.com/feed/",
+          "published_at": "Sun, 14 Jun 2026 23:29:03 +0000",
+          "summary": "The Starlink 17-54 mission includes the 1,500th Starlink satellite launched so far in 2026. Liftoff from pad 4E at Vandenberg Space Force Base occurred at 8:34 a.m. PDT (11:34 a.m. EDT / 1534 UTC). <a class=\"mh-excerpt-more\" href=\"https://spaceflightnow.com/2026/06/14/live-coverage-spacex-to-launch-its-first-falcon-9-rocket-since-nasdaq-debut/\" title=\"SpaceX launches its first Falcon 9 rocket since Nasdaq debut\"></a>",
+          "title": "SpaceX launches its first Falcon 9 rocket since Nasdaq debut",
+          "url": "https://spaceflightnow.com/2026/06/14/live-coverage-spacex-to-launch-its-first-falcon-9-rocket-since-nasdaq-debut/"
+        },
+        "source_id": "rss_provider",
+        "source_name": "Curated RSS provider contract.",
+        "source_type": "rss",
+        "url": "https://spaceflightnow.com/2026/06/14/live-coverage-spacex-to-launch-its-first-falcon-9-rocket-since-nasdaq-debut/"
+      },
+      "tags": [],
+      "title": "SpaceX launches its first Falcon 9 rocket since Nasdaq debut",
+      "url": "https://spaceflightnow.com/2026/06/14/live-coverage-spacex-to-launch-its-first-falcon-9-rocket-since-nasdaq-debut/"
+    },
+    {
+      "company_id": "spacex",
+      "company_name": "SpaceX",
+      "id": "bab4a80528e2a28a",
+      "language": null,
+      "metadata": {
+        "feed_url": "https://spaceflightnow.com/feed/"
+      },
+      "normalized_text": "The company debuted on the Nasdaq under the ticker symbol “SPCX” and began trading with a massive valuation of $1.77 trillion. Liftoff from pad 40 at Cape Canaveral Space Force Station happened at 8:37 a.m. EDT (1237 UTC). <a class=\"mh-excerpt-more\" href=\"https://spaceflightnow.com/2026/06/12/live-coverage-spacex-to-launch-final-starlink-mission-as-it-begins-publicly-trade-its-stock-on-the-nasdaq-for-the-first-time/\" title=\"SpaceX launches Starlink mission from Cape Canaveral as stock trades on the Nasdaq for first time\"></a>",
+      "published_at": "2026-06-12T02:06:09Z",
+      "raw_text": "The company debuted on the Nasdaq under the ticker symbol “SPCX” and began trading with a massive valuation of $1.77 trillion. Liftoff from pad 40 at Cape Canaveral Space Force Station happened at 8:37 a.m. EDT (1237 UTC). <a class=\"mh-excerpt-more\" href=\"https://spaceflightnow.com/2026/06/12/live-coverage-spacex-to-launch-final-starlink-mission-as-it-begins-publicly-trade-its-stock-on-the-nasdaq-for-the-first-time/\" title=\"SpaceX launches Starlink mission from Cape Canaveral as stock trades on the Nasdaq for first time\"></a>",
+      "source": {
+        "collected_at": "2026-06-16T05:33:16.240140Z",
+        "provider_id": "rss_provider",
+        "provider_priority": 10,
+        "rank_group": "media",
+        "raw_payload": {
+          "feed_url": "https://spaceflightnow.com/feed/",
+          "published_at": "Fri, 12 Jun 2026 02:06:09 +0000",
+          "summary": "The company debuted on the Nasdaq under the ticker symbol “SPCX” and began trading with a massive valuation of $1.77 trillion. Liftoff from pad 40 at Cape Canaveral Space Force Station happened at 8:37 a.m. EDT (1237 UTC). <a class=\"mh-excerpt-more\" href=\"https://spaceflightnow.com/2026/06/12/live-coverage-spacex-to-launch-final-starlink-mission-as-it-begins-publicly-trade-its-stock-on-the-nasdaq-for-the-first-time/\" title=\"SpaceX launches Starlink mission from Cape Canaveral as stock trades on the Nasdaq for first time\"></a>",
+          "title": "SpaceX launches Starlink mission from Cape Canaveral as stock trades on the Nasdaq for first time",
+          "url": "https://spaceflightnow.com/2026/06/12/live-coverage-spacex-to-launch-final-starlink-mission-as-it-begins-publicly-trade-its-stock-on-the-nasdaq-for-the-first-time/"
+        },
+        "source_id": "rss_provider",
+        "source_name": "Curated RSS provider contract.",
+        "source_type": "rss",
+        "url": "https://spaceflightnow.com/2026/06/12/live-coverage-spacex-to-launch-final-starlink-mission-as-it-begins-publicly-trade-its-stock-on-the-nasdaq-for-the-first-time/"
+      },
+      "tags": [],
+      "title": "SpaceX launches Starlink mission from Cape Canaveral as stock trades on the Nasdaq for first time",
+      "url": "https://spaceflightnow.com/2026/06/12/live-coverage-spacex-to-launch-final-starlink-mission-as-it-begins-publicly-trade-its-stock-on-the-nasdaq-for-the-first-time/"
+    },
+    {
+      "company_id": "spacex",
+      "company_name": "SpaceX",
+      "id": "34d7d805d6fb559f",
+      "language": null,
+      "metadata": {
+        "feed_url": "https://spaceflightnow.com/feed/"
+      },
+      "normalized_text": "The Falcon 9 launched a day before the company begins publicly trading on the Nasdaq. Liftoff from pad 4E at Vandenberg Space Force Base in California happened at 8:05:59 a.m. PDT (11:05:59 a.m. EDT / 1505:59 UTC). <a class=\"mh-excerpt-more\" href=\"https://spaceflightnow.com/2026/06/11/live-coverage-spacex-to-launch-24-starlink-satellites-on-falcon-9-rocket-from-vandenberg-4/\" title=\"SpaceX launches 24 Starlink satellites on Falcon 9 rocket from Vandenberg\"></a>",
+      "published_at": "2026-06-11T10:29:38Z",
+      "raw_text": "The Falcon 9 launched a day before the company begins publicly trading on the Nasdaq. Liftoff from pad 4E at Vandenberg Space Force Base in California happened at 8:05:59 a.m. PDT (11:05:59 a.m. EDT / 1505:59 UTC). <a class=\"mh-excerpt-more\" href=\"https://spaceflightnow.com/2026/06/11/live-coverage-spacex-to-launch-24-starlink-satellites-on-falcon-9-rocket-from-vandenberg-4/\" title=\"SpaceX launches 24 Starlink satellites on Falcon 9 rocket from Vandenberg\"></a>",
+      "source": {
+        "collected_at": "2026-06-16T05:33:16.240140Z",
+        "provider_id": "rss_provider",
+        "provider_priority": 10,
+        "rank_group": "media",
+        "raw_payload": {
+          "feed_url": "https://spaceflightnow.com/feed/",
+          "published_at": "Thu, 11 Jun 2026 10:29:38 +0000",
+          "summary": "The Falcon 9 launched a day before the company begins publicly trading on the Nasdaq. Liftoff from pad 4E at Vandenberg Space Force Base in California happened at 8:05:59 a.m. PDT (11:05:59 a.m. EDT / 1505:59 UTC). <a class=\"mh-excerpt-more\" href=\"https://spaceflightnow.com/2026/06/11/live-coverage-spacex-to-launch-24-starlink-satellites-on-falcon-9-rocket-from-vandenberg-4/\" title=\"SpaceX launches 24 Starlink satellites on Falcon 9 rocket from Vandenberg\"></a>",
+          "title": "SpaceX launches 24 Starlink satellites on Falcon 9 rocket from Vandenberg",
+          "url": "https://spaceflightnow.com/2026/06/11/live-coverage-spacex-to-launch-24-starlink-satellites-on-falcon-9-rocket-from-vandenberg-4/"
+        },
+        "source_id": "rss_provider",
+        "source_name": "Curated RSS provider contract.",
+        "source_type": "rss",
+        "url": "https://spaceflightnow.com/2026/06/11/live-coverage-spacex-to-launch-24-starlink-satellites-on-falcon-9-rocket-from-vandenberg-4/"
+      },
+      "tags": [],
+      "title": "SpaceX launches 24 Starlink satellites on Falcon 9 rocket from Vandenberg",
+      "url": "https://spaceflightnow.com/2026/06/11/live-coverage-spacex-to-launch-24-starlink-satellites-on-falcon-9-rocket-from-vandenberg-4/"
+    },
+    {
+      "company_id": "spacex",
+      "company_name": "SpaceX",
+      "id": "035c293aed8bb7c4",
+      "language": null,
+      "metadata": {
+        "feed_url": "https://spaceflightnow.com/feed/"
+      },
+      "normalized_text": "During an event Tuesday at the Johnson Space Center, NASA revealed the astronauts who had been selected for next year's Artemis 3 mission, a flight to test rendezvous and docking procedures in low-Earth orbit with moon landers being built by SpaceX and Blue Origin. <a class=\"mh-excerpt-more\" href=\"https://spaceflightnow.com/2026/06/10/nasa-chief-defends-selection-of-all-male-artemis-iii-crew/\" title=\"NASA chief defends selection of all-male Artemis 3 crew\"></a>",
+      "published_at": "2026-06-10T23:21:51Z",
+      "raw_text": "During an event Tuesday at the Johnson Space Center, NASA revealed the astronauts who had been selected for next year's Artemis 3 mission, a flight to test rendezvous and docking procedures in low-Earth orbit with moon landers being built by SpaceX and Blue Origin. <a class=\"mh-excerpt-more\" href=\"https://spaceflightnow.com/2026/06/10/nasa-chief-defends-selection-of-all-male-artemis-iii-crew/\" title=\"NASA chief defends selection of all-male Artemis 3 crew\"></a>",
+      "source": {
+        "collected_at": "2026-06-16T05:33:16.240140Z",
+        "provider_id": "rss_provider",
+        "provider_priority": 10,
+        "rank_group": "media",
+        "raw_payload": {
+          "feed_url": "https://spaceflightnow.com/feed/",
+          "published_at": "Wed, 10 Jun 2026 23:21:51 +0000",
+          "summary": "During an event Tuesday at the Johnson Space Center, NASA revealed the astronauts who had been selected for next year's Artemis 3 mission, a flight to test rendezvous and docking procedures in low-Earth orbit with moon landers being built by SpaceX and Blue Origin. <a class=\"mh-excerpt-more\" href=\"https://spaceflightnow.com/2026/06/10/nasa-chief-defends-selection-of-all-male-artemis-iii-crew/\" title=\"NASA chief defends selection of all-male Artemis 3 crew\"></a>",
+          "title": "NASA chief defends selection of all-male Artemis 3 crew",
+          "url": "https://spaceflightnow.com/2026/06/10/nasa-chief-defends-selection-of-all-male-artemis-iii-crew/"
+        },
+        "source_id": "rss_provider",
+        "source_name": "Curated RSS provider contract.",
+        "source_type": "rss",
+        "url": "https://spaceflightnow.com/2026/06/10/nasa-chief-defends-selection-of-all-male-artemis-iii-crew/"
+      },
+      "tags": [],
+      "title": "NASA chief defends selection of all-male Artemis 3 crew",
+      "url": "https://spaceflightnow.com/2026/06/10/nasa-chief-defends-selection-of-all-male-artemis-iii-crew/"
+    },
+    {
+      "company_id": "spacex",
+      "company_name": "SpaceX",
+      "id": "8db6456732762978",
+      "language": null,
+      "metadata": {
+        "feed_url": "https://spaceflightnow.com/feed/"
+      },
+      "normalized_text": "The crew of NASA's next Artemis moon program mission was announced Tuesday, setting the stage for a flight to Earth orbit next year to test rendezvous and docking procedures with moon landers being built by SpaceX and Blue Origin, a critical milestone before sending astronauts back to the moon for landing in 2028. <a class=\"mh-excerpt-more\" href=\"https://spaceflightnow.com/2026/06/09/73614/\" title=\"NASA names four-man crew to Artemis 3 mission\"></a>",
+      "published_at": "2026-06-09T17:48:42Z",
+      "raw_text": "The crew of NASA's next Artemis moon program mission was announced Tuesday, setting the stage for a flight to Earth orbit next year to test rendezvous and docking procedures with moon landers being built by SpaceX and Blue Origin, a critical milestone before sending astronauts back to the moon for landing in 2028. <a class=\"mh-excerpt-more\" href=\"https://spaceflightnow.com/2026/06/09/73614/\" title=\"NASA names four-man crew to Artemis 3 mission\"></a>",
+      "source": {
+        "collected_at": "2026-06-16T05:33:16.240140Z",
+        "provider_id": "rss_provider",
+        "provider_priority": 10,
+        "rank_group": "media",
+        "raw_payload": {
+          "feed_url": "https://spaceflightnow.com/feed/",
+          "published_at": "Tue, 09 Jun 2026 17:48:42 +0000",
+          "summary": "The crew of NASA's next Artemis moon program mission was announced Tuesday, setting the stage for a flight to Earth orbit next year to test rendezvous and docking procedures with moon landers being built by SpaceX and Blue Origin, a critical milestone before sending astronauts back to the moon for landing in 2028. <a class=\"mh-excerpt-more\" href=\"https://spaceflightnow.com/2026/06/09/73614/\" title=\"NASA names four-man crew to Artemis 3 mission\"></a>",
+          "title": "NASA names four-man crew to Artemis 3 mission",
+          "url": "https://spaceflightnow.com/2026/06/09/73614/"
+        },
+        "source_id": "rss_provider",
+        "source_name": "Curated RSS provider contract.",
+        "source_type": "rss",
+        "url": "https://spaceflightnow.com/2026/06/09/73614/"
+      },
+      "tags": [],
+      "title": "NASA names four-man crew to Artemis 3 mission",
+      "url": "https://spaceflightnow.com/2026/06/09/73614/"
+    },
+    {
+      "company_id": "spacex",
+      "company_name": "SpaceX",
+      "id": "3ca4b31d4e33cb85",
+      "language": null,
+      "metadata": {
+        "entrypoint": "https://www.spacex.com/updates/",
+        "official_page_kind": "entrypoint"
+      },
+      "normalized_text": "SpaceX designs, manufactures and launches advanced rockets and spacecraft. The company was founded in 2002 to revolutionize space technology, with the ultimate goal of enabling people to live on other planets.",
+      "published_at": null,
+      "raw_text": "SpaceX designs, manufactures and launches advanced rockets and spacecraft. The company was founded in 2002 to revolutionize space technology, with the ultimate goal of enabling people to live on other planets.",
+      "source": {
+        "collected_at": "2026-06-16T05:33:16.240140Z",
+        "provider_id": "official_site_provider",
+        "provider_priority": 20,
+        "rank_group": "official",
+        "raw_payload": {
+          "entrypoint": "https://www.spacex.com/updates/",
+          "title": "SpaceX"
+        },
+        "source_id": "official_site_provider",
+        "source_name": "Official company website/newsroom provider contract.",
+        "source_type": "official_site",
+        "url": "https://www.spacex.com/updates/"
+      },
+      "tags": [],
+      "title": "SpaceX",
+      "url": "https://www.spacex.com/updates/"
+    },
+    {
+      "company_id": "spacex",
+      "company_name": "SpaceX",
+      "id": "0b75d28e5cf2bbbf",
+      "language": null,
+      "metadata": {
+        "entrypoint": "https://www.spacex.com/launches/",
+        "official_page_kind": "entrypoint"
+      },
+      "normalized_text": "SpaceX designs, manufactures and launches advanced rockets and spacecraft. The company was founded in 2002 to revolutionize space technology, with the ultimate goal of enabling people to live on other planets.",
+      "published_at": null,
+      "raw_text": "SpaceX designs, manufactures and launches advanced rockets and spacecraft. The company was founded in 2002 to revolutionize space technology, with the ultimate goal of enabling people to live on other planets.",
+      "source": {
+        "collected_at": "2026-06-16T05:33:16.240140Z",
+        "provider_id": "official_site_provider",
+        "provider_priority": 20,
+        "rank_group": "official",
+        "raw_payload": {
+          "entrypoint": "https://www.spacex.com/launches/",
+          "title": "SpaceX"
+        },
+        "source_id": "official_site_provider",
+        "source_name": "Official company website/newsroom provider contract.",
+        "source_type": "official_site",
+        "url": "https://www.spacex.com/launches/"
+      },
+      "tags": [],
+      "title": "SpaceX",
+      "url": "https://www.spacex.com/launches/"
+    },
+    {
+      "company_id": "spacex",
+      "company_name": "SpaceX",
+      "id": "0bb0bb58621a9fa8",
+      "language": null,
+      "metadata": {
+        "entrypoint": "https://www.spacex.com/starshield/",
+        "official_page_kind": "entrypoint"
+      },
+      "normalized_text": "SpaceX designs, manufactures and launches advanced rockets and spacecraft. The company was founded in 2002 to revolutionize space technology, with the ultimate goal of enabling people to live on other planets.",
+      "published_at": null,
+      "raw_text": "SpaceX designs, manufactures and launches advanced rockets and spacecraft. The company was founded in 2002 to revolutionize space technology, with the ultimate goal of enabling people to live on other planets.",
+      "source": {
+        "collected_at": "2026-06-16T05:33:16.240140Z",
+        "provider_id": "official_site_provider",
+        "provider_priority": 20,
+        "rank_group": "official",
+        "raw_payload": {
+          "entrypoint": "https://www.spacex.com/starshield/",
+          "title": "SpaceX"
+        },
+        "source_id": "official_site_provider",
+        "source_name": "Official company website/newsroom provider contract.",
+        "source_type": "official_site",
+        "url": "https://www.spacex.com/starshield/"
+      },
+      "tags": [],
+      "title": "SpaceX",
+      "url": "https://www.spacex.com/starshield/"
+    },
+    {
+      "company_id": "spacex",
+      "company_name": "SpaceX",
+      "id": "e1d13030ddb2e1ec",
+      "language": null,
+      "metadata": {
+        "entrypoint": "https://www.starlink.com/updates/",
+        "official_page_kind": "entrypoint"
+      },
+      "normalized_text": "High-speed internet. Available almost anywhere on Earth.",
+      "published_at": null,
+      "raw_text": "High-speed internet. Available almost anywhere on Earth.",
+      "source": {
+        "collected_at": "2026-06-16T05:33:16.240140Z",
+        "provider_id": "official_site_provider",
+        "provider_priority": 20,
+        "rank_group": "official",
+        "raw_payload": {
+          "entrypoint": "https://www.starlink.com/updates/",
+          "title": "Starlink"
+        },
+        "source_id": "official_site_provider",
+        "source_name": "Official company website/newsroom provider contract.",
+        "source_type": "official_site",
+        "url": "https://www.starlink.com/updates/"
+      },
+      "tags": [],
+      "title": "Starlink",
+      "url": "https://www.starlink.com/updates/"
+    },
+    {
+      "company_id": "spacex",
+      "company_name": "SpaceX",
+      "id": "b87a7b396a5591a5",
+      "language": null,
+      "metadata": {
+        "entrypoint": "https://www.starlink.com/updates/",
+        "official_page_kind": "link"
+      },
+      "normalized_text": null,
+      "published_at": null,
+      "raw_text": null,
+      "source": {
+        "collected_at": "2026-06-16T05:33:16.240140Z",
+        "provider_id": "official_site_provider",
+        "provider_priority": 20,
+        "rank_group": "official",
+        "raw_payload": {
+          "entrypoint": "https://www.starlink.com/updates/",
+          "link": {
+            "href": "https://www.spacex.com/",
+            "text": "spacex.com"
+          }
+        },
+        "source_id": "official_site_provider",
+        "source_name": "Official company website/newsroom provider contract.",
+        "source_type": "official_site",
+        "url": "https://www.spacex.com/"
+      },
+      "tags": [],
+      "title": "spacex.com",
+      "url": "https://www.spacex.com/"
+    },
+    {
+      "company_id": "spacex",
+      "company_name": "SpaceX",
+      "id": "a033afdcecad67ac",
+      "language": null,
+      "metadata": {
+        "entrypoint": "https://www.starlink.com/",
+        "official_page_kind": "entrypoint"
+      },
+      "normalized_text": null,
+      "published_at": null,
+      "raw_text": null,
+      "source": {
+        "collected_at": "2026-06-16T05:33:16.240140Z",
+        "provider_id": "official_site_provider",
+        "provider_priority": 20,
+        "rank_group": "official",
+        "raw_payload": {
+          "entrypoint": "https://www.starlink.com/",
+          "title": "Starlink"
+        },
+        "source_id": "official_site_provider",
+        "source_name": "Official company website/newsroom provider contract.",
+        "source_type": "official_site",
+        "url": "https://www.starlink.com/"
+      },
+      "tags": [],
+      "title": "Starlink",
+      "url": "https://www.starlink.com/"
+    },
+    {
+      "company_id": "blue_origin",
+      "company_name": "Blue Origin",
+      "id": "59fa4d115d6d4a64",
+      "language": null,
+      "metadata": {
+        "feed_url": "https://spacenews.com/feed/"
+      },
+      "normalized_text": "<figure><img width=\"879\" height=\"642\" src=\"https://i0.wp.com/spacenews.com/wp-content/uploads/2018/02/Gilat-Optus-SC-4.jpg?fit=879%2C642&amp;ssl=1\" class=\"attachment-rss-image-size size-rss-image-size wp-post-image\" alt=\"Gilat VSAT - Optus SC 4\" decoding=\"async\" fetchpriority=\"high\" srcset=\"https://i0.wp.com/spacenews.com/wp-content/uploads/2018/02/Gilat-Optus-SC-4.jpg?w=879&amp;ssl=1 879w, https://i0.wp.com/spacenews.com/wp-content/uploads/2018/02/Gilat-Optus-SC-4.jpg?resize=300%2C219&amp;ssl=1 300w, https://i0.wp.com/spacenews.com/wp-content/uploads/2018/02/Gilat-Optus-SC-4.jpg?resize=768%2C561&amp;ssl=1 768w, https://i0.wp.com/spacenews.com/wp-content/uploads/2018/02/Gilat-Optus-SC-4.jpg?resize=400%2C292&amp;ssl=1 400w, https://i0.wp.com/spacenews.com/wp-content/uploads/2018/02/Gilat-Optus-SC-4.jpg?fit=879%2C642&amp;ssl=1&amp;w=370 370w\" sizes=\"(max-width: 34.9rem) calc(100vw - 2rem), (max-width: 53rem) calc(8 * (100vw / 12)), (min-width: 53rem) calc(6 * (100vw / 12)), 100vw\" /></figure>\n<p>Israel’s Gilat Satellite Networks plans to expand its defense capabilities by acquiring most of Comtech’s space-related communications business, six years after the U.S. company’s own takeover bid collapsed.</p>\n<p>The post <a href=\"https://spacenews.com/gilat-to-buy-comtech-satcoms-business-six-years-after-failed-merger/\">Gilat to buy Comtech satcoms business six years after failed merger</a> appeared first on <a href=\"https://spacenews.com\">SpaceNews</a>.</p>",
+      "published_at": "2026-06-15T20:54:05Z",
+      "raw_text": "<figure><img width=\"879\" height=\"642\" src=\"https://i0.wp.com/spacenews.com/wp-content/uploads/2018/02/Gilat-Optus-SC-4.jpg?fit=879%2C642&amp;ssl=1\" class=\"attachment-rss-image-size size-rss-image-size wp-post-image\" alt=\"Gilat VSAT - Optus SC 4\" decoding=\"async\" fetchpriority=\"high\" srcset=\"https://i0.wp.com/spacenews.com/wp-content/uploads/2018/02/Gilat-Optus-SC-4.jpg?w=879&amp;ssl=1 879w, https://i0.wp.com/spacenews.com/wp-content/uploads/2018/02/Gilat-Optus-SC-4.jpg?resize=300%2C219&amp;ssl=1 300w, https://i0.wp.com/spacenews.com/wp-content/uploads/2018/02/Gilat-Optus-SC-4.jpg?resize=768%2C561&amp;ssl=1 768w, https://i0.wp.com/spacenews.com/wp-content/uploads/2018/02/Gilat-Optus-SC-4.jpg?resize=400%2C292&amp;ssl=1 400w, https://i0.wp.com/spacenews.com/wp-content/uploads/2018/02/Gilat-Optus-SC-4.jpg?fit=879%2C642&amp;ssl=1&amp;w=370 370w\" sizes=\"(max-width: 34.9rem) calc(100vw - 2rem), (max-width: 53rem) calc(8 * (100vw / 12)), (min-width: 53rem) calc(6 * (100vw / 12)), 100vw\" /></figure>\n<p>Israel’s Gilat Satellite Networks plans to expand its defense capabilities by acquiring most of Comtech’s space-related communications business, six years after the U.S. company’s own takeover bid collapsed.</p>\n<p>The post <a href=\"https://spacenews.com/gilat-to-buy-comtech-satcoms-business-six-years-after-failed-merger/\">Gilat to buy Comtech satcoms business six years after failed merger</a> appeared first on <a href=\"https://spacenews.com\">SpaceNews</a>.</p>",
+      "source": {
+        "collected_at": "2026-06-16T05:33:16.240140Z",
+        "provider_id": "rss_provider",
+        "provider_priority": 10,
+        "rank_group": "media",
+        "raw_payload": {
+          "feed_url": "https://spacenews.com/feed/",
+          "published_at": "Mon, 15 Jun 2026 20:54:05 +0000",
+          "summary": "<figure><img width=\"879\" height=\"642\" src=\"https://i0.wp.com/spacenews.com/wp-content/uploads/2018/02/Gilat-Optus-SC-4.jpg?fit=879%2C642&amp;ssl=1\" class=\"attachment-rss-image-size size-rss-image-size wp-post-image\" alt=\"Gilat VSAT - Optus SC 4\" decoding=\"async\" fetchpriority=\"high\" srcset=\"https://i0.wp.com/spacenews.com/wp-content/uploads/2018/02/Gilat-Optus-SC-4.jpg?w=879&amp;ssl=1 879w, https://i0.wp.com/spacenews.com/wp-content/uploads/2018/02/Gilat-Optus-SC-4.jpg?resize=300%2C219&amp;ssl=1 300w, https://i0.wp.com/spacenews.com/wp-content/uploads/2018/02/Gilat-Optus-SC-4.jpg?resize=768%2C561&amp;ssl=1 768w, https://i0.wp.com/spacenews.com/wp-content/uploads/2018/02/Gilat-Optus-SC-4.jpg?resize=400%2C292&amp;ssl=1 400w, https://i0.wp.com/spacenews.com/wp-content/uploads/2018/02/Gilat-Optus-SC-4.jpg?fit=879%2C642&amp;ssl=1&amp;w=370 370w\" sizes=\"(max-width: 34.9rem) calc(100vw - 2rem), (max-width: 53rem) calc(8 * (100vw / 12)), (min-width: 53rem) calc(6 * (100vw / 12)), 100vw\" /></figure>\n<p>Israel’s Gilat Satellite Networks plans to expand its defense capabilities by acquiring most of Comtech’s space-related communications business, six years after the U.S. company’s own takeover bid collapsed.</p>\n<p>The post <a href=\"https://spacenews.com/gilat-to-buy-comtech-satcoms-business-six-years-after-failed-merger/\">Gilat to buy Comtech satcoms business six years after failed merger</a> appeared first on <a href=\"https://spacenews.com\">SpaceNews</a>.</p>",
+          "title": "Gilat to buy Comtech satcoms business six years after failed merger",
+          "url": "https://spacenews.com/gilat-to-buy-comtech-satcoms-business-six-years-after-failed-merger/"
+        },
+        "source_id": "rss_provider",
+        "source_name": "Curated RSS provider contract.",
+        "source_type": "rss",
+        "url": "https://spacenews.com/gilat-to-buy-comtech-satcoms-business-six-years-after-failed-merger/"
+      },
+      "tags": [],
+      "title": "Gilat to buy Comtech satcoms business six years after failed merger",
+      "url": "https://spacenews.com/gilat-to-buy-comtech-satcoms-business-six-years-after-failed-merger/"
+    },
+    {
+      "company_id": "blue_origin",
+      "company_name": "Blue Origin",
+      "id": "a484ebad1fdd6855",
+      "language": null,
+      "metadata": {
+        "feed_url": "https://spacenews.com/feed/"
+      },
+      "normalized_text": "<figure><img width=\"1024\" height=\"570\" src=\"https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/Screenshot-2026-06-15-at-3.23.31-PM.png?fit=1024%2C570&amp;ssl=1\" class=\"attachment-rss-image-size size-rss-image-size wp-post-image\" alt=\"\" decoding=\"async\" srcset=\"https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/Screenshot-2026-06-15-at-3.23.31-PM.png?w=1740&amp;ssl=1 1740w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/Screenshot-2026-06-15-at-3.23.31-PM.png?resize=300%2C167&amp;ssl=1 300w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/Screenshot-2026-06-15-at-3.23.31-PM.png?resize=1024%2C570&amp;ssl=1 1024w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/Screenshot-2026-06-15-at-3.23.31-PM.png?resize=768%2C427&amp;ssl=1 768w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/Screenshot-2026-06-15-at-3.23.31-PM.png?resize=1536%2C855&amp;ssl=1 1536w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/Screenshot-2026-06-15-at-3.23.31-PM.png?resize=1200%2C668&amp;ssl=1 1200w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/Screenshot-2026-06-15-at-3.23.31-PM.png?resize=780%2C434&amp;ssl=1 780w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/Screenshot-2026-06-15-at-3.23.31-PM.png?resize=400%2C223&amp;ssl=1 400w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/Screenshot-2026-06-15-at-3.23.31-PM.png?resize=706%2C393&amp;ssl=1 706w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/Screenshot-2026-06-15-at-3.23.31-PM.png?fit=1024%2C570&amp;ssl=1&amp;w=370 370w\" sizes=\"(max-width: 34.9rem) calc(100vw - 2rem), (max-width: 53rem) calc(8 * (100vw / 12)), (min-width: 53rem) calc(6 * (100vw / 12)), 100vw\" /></figure>\n<p>Contract brings GPS 3F orders to 14 satellites that add anti-jam features, digital payloads and upgraded civilian navigation signals</p>\n<p>The post <a href=\"https://spacenews.com/space-force-orders-two-more-gps-satellites-from-lockheed-martin-for-514-million/\">Space Force orders two more GPS satellites from Lockheed Martin for $514 million</a> appeared first on <a href=\"https://spacenews.com\">SpaceNews</a>.</p>",
+      "published_at": "2026-06-15T20:27:15Z",
+      "raw_text": "<figure><img width=\"1024\" height=\"570\" src=\"https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/Screenshot-2026-06-15-at-3.23.31-PM.png?fit=1024%2C570&amp;ssl=1\" class=\"attachment-rss-image-size size-rss-image-size wp-post-image\" alt=\"\" decoding=\"async\" srcset=\"https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/Screenshot-2026-06-15-at-3.23.31-PM.png?w=1740&amp;ssl=1 1740w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/Screenshot-2026-06-15-at-3.23.31-PM.png?resize=300%2C167&amp;ssl=1 300w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/Screenshot-2026-06-15-at-3.23.31-PM.png?resize=1024%2C570&amp;ssl=1 1024w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/Screenshot-2026-06-15-at-3.23.31-PM.png?resize=768%2C427&amp;ssl=1 768w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/Screenshot-2026-06-15-at-3.23.31-PM.png?resize=1536%2C855&amp;ssl=1 1536w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/Screenshot-2026-06-15-at-3.23.31-PM.png?resize=1200%2C668&amp;ssl=1 1200w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/Screenshot-2026-06-15-at-3.23.31-PM.png?resize=780%2C434&amp;ssl=1 780w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/Screenshot-2026-06-15-at-3.23.31-PM.png?resize=400%2C223&amp;ssl=1 400w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/Screenshot-2026-06-15-at-3.23.31-PM.png?resize=706%2C393&amp;ssl=1 706w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/Screenshot-2026-06-15-at-3.23.31-PM.png?fit=1024%2C570&amp;ssl=1&amp;w=370 370w\" sizes=\"(max-width: 34.9rem) calc(100vw - 2rem), (max-width: 53rem) calc(8 * (100vw / 12)), (min-width: 53rem) calc(6 * (100vw / 12)), 100vw\" /></figure>\n<p>Contract brings GPS 3F orders to 14 satellites that add anti-jam features, digital payloads and upgraded civilian navigation signals</p>\n<p>The post <a href=\"https://spacenews.com/space-force-orders-two-more-gps-satellites-from-lockheed-martin-for-514-million/\">Space Force orders two more GPS satellites from Lockheed Martin for $514 million</a> appeared first on <a href=\"https://spacenews.com\">SpaceNews</a>.</p>",
+      "source": {
+        "collected_at": "2026-06-16T05:33:16.240140Z",
+        "provider_id": "rss_provider",
+        "provider_priority": 10,
+        "rank_group": "media",
+        "raw_payload": {
+          "feed_url": "https://spacenews.com/feed/",
+          "published_at": "Mon, 15 Jun 2026 20:27:15 +0000",
+          "summary": "<figure><img width=\"1024\" height=\"570\" src=\"https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/Screenshot-2026-06-15-at-3.23.31-PM.png?fit=1024%2C570&amp;ssl=1\" class=\"attachment-rss-image-size size-rss-image-size wp-post-image\" alt=\"\" decoding=\"async\" srcset=\"https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/Screenshot-2026-06-15-at-3.23.31-PM.png?w=1740&amp;ssl=1 1740w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/Screenshot-2026-06-15-at-3.23.31-PM.png?resize=300%2C167&amp;ssl=1 300w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/Screenshot-2026-06-15-at-3.23.31-PM.png?resize=1024%2C570&amp;ssl=1 1024w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/Screenshot-2026-06-15-at-3.23.31-PM.png?resize=768%2C427&amp;ssl=1 768w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/Screenshot-2026-06-15-at-3.23.31-PM.png?resize=1536%2C855&amp;ssl=1 1536w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/Screenshot-2026-06-15-at-3.23.31-PM.png?resize=1200%2C668&amp;ssl=1 1200w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/Screenshot-2026-06-15-at-3.23.31-PM.png?resize=780%2C434&amp;ssl=1 780w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/Screenshot-2026-06-15-at-3.23.31-PM.png?resize=400%2C223&amp;ssl=1 400w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/Screenshot-2026-06-15-at-3.23.31-PM.png?resize=706%2C393&amp;ssl=1 706w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/Screenshot-2026-06-15-at-3.23.31-PM.png?fit=1024%2C570&amp;ssl=1&amp;w=370 370w\" sizes=\"(max-width: 34.9rem) calc(100vw - 2rem), (max-width: 53rem) calc(8 * (100vw / 12)), (min-width: 53rem) calc(6 * (100vw / 12)), 100vw\" /></figure>\n<p>Contract brings GPS 3F orders to 14 satellites that add anti-jam features, digital payloads and upgraded civilian navigation signals</p>\n<p>The post <a href=\"https://spacenews.com/space-force-orders-two-more-gps-satellites-from-lockheed-martin-for-514-million/\">Space Force orders two more GPS satellites from Lockheed Martin for $514 million</a> appeared first on <a href=\"https://spacenews.com\">SpaceNews</a>.</p>",
+          "title": "Space Force orders two more GPS satellites from Lockheed Martin for $514 million",
+          "url": "https://spacenews.com/space-force-orders-two-more-gps-satellites-from-lockheed-martin-for-514-million/"
+        },
+        "source_id": "rss_provider",
+        "source_name": "Curated RSS provider contract.",
+        "source_type": "rss",
+        "url": "https://spacenews.com/space-force-orders-two-more-gps-satellites-from-lockheed-martin-for-514-million/"
+      },
+      "tags": [],
+      "title": "Space Force orders two more GPS satellites from Lockheed Martin for $514 million",
+      "url": "https://spacenews.com/space-force-orders-two-more-gps-satellites-from-lockheed-martin-for-514-million/"
+    },
+    {
+      "company_id": "blue_origin",
+      "company_name": "Blue Origin",
+      "id": "2d71c44e188e89b1",
+      "language": null,
+      "metadata": {
+        "feed_url": "https://spacenews.com/feed/"
+      },
+      "normalized_text": "<figure><img width=\"1024\" height=\"683\" src=\"https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/HJ0n-QHXsAAz1rd-scaled.jpeg?fit=1024%2C683&amp;ssl=1\" class=\"attachment-rss-image-size size-rss-image-size wp-post-image\" alt=\"\" decoding=\"async\" srcset=\"https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/HJ0n-QHXsAAz1rd-scaled.jpeg?w=2560&amp;ssl=1 2560w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/HJ0n-QHXsAAz1rd-scaled.jpeg?resize=300%2C200&amp;ssl=1 300w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/HJ0n-QHXsAAz1rd-scaled.jpeg?resize=1024%2C683&amp;ssl=1 1024w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/HJ0n-QHXsAAz1rd-scaled.jpeg?resize=768%2C512&amp;ssl=1 768w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/HJ0n-QHXsAAz1rd-scaled.jpeg?resize=1536%2C1024&amp;ssl=1 1536w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/HJ0n-QHXsAAz1rd-scaled.jpeg?resize=2048%2C1366&amp;ssl=1 2048w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/HJ0n-QHXsAAz1rd-scaled.jpeg?resize=1200%2C800&amp;ssl=1 1200w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/HJ0n-QHXsAAz1rd-scaled.jpeg?resize=2000%2C1333&amp;ssl=1 2000w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/HJ0n-QHXsAAz1rd-scaled.jpeg?resize=780%2C520&amp;ssl=1 780w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/HJ0n-QHXsAAz1rd-scaled.jpeg?resize=400%2C267&amp;ssl=1 400w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/HJ0n-QHXsAAz1rd-scaled.jpeg?resize=706%2C471&amp;ssl=1 706w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/HJ0n-QHXsAAz1rd-scaled.jpeg?w=2340&amp;ssl=1 2340w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/HJ0n-QHXsAAz1rd-scaled.jpeg?fit=1024%2C683&amp;ssl=1&amp;w=370 370w\" sizes=\"(max-width: 34.9rem) calc(100vw - 2rem), (max-width: 53rem) calc(8 * (100vw / 12)), (min-width: 53rem) calc(6 * (100vw / 12)), 100vw\" /></figure>\n<p>The agency is seeking novel concepts to restore critical satellite services within hours or weeks</p>\n<p>The post <a href=\"https://spacenews.com/darpa-to-explore-ways-to-rapidly-rebuild-satellite-networks-if-attacked/\">DARPA to explore ways to rapidly rebuild satellite networks if attacked</a> appeared first on <a href=\"https://spacenews.com\">SpaceNews</a>.</p>",
+      "published_at": "2026-06-15T13:55:04Z",
+      "raw_text": "<figure><img width=\"1024\" height=\"683\" src=\"https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/HJ0n-QHXsAAz1rd-scaled.jpeg?fit=1024%2C683&amp;ssl=1\" class=\"attachment-rss-image-size size-rss-image-size wp-post-image\" alt=\"\" decoding=\"async\" srcset=\"https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/HJ0n-QHXsAAz1rd-scaled.jpeg?w=2560&amp;ssl=1 2560w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/HJ0n-QHXsAAz1rd-scaled.jpeg?resize=300%2C200&amp;ssl=1 300w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/HJ0n-QHXsAAz1rd-scaled.jpeg?resize=1024%2C683&amp;ssl=1 1024w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/HJ0n-QHXsAAz1rd-scaled.jpeg?resize=768%2C512&amp;ssl=1 768w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/HJ0n-QHXsAAz1rd-scaled.jpeg?resize=1536%2C1024&amp;ssl=1 1536w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/HJ0n-QHXsAAz1rd-scaled.jpeg?resize=2048%2C1366&amp;ssl=1 2048w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/HJ0n-QHXsAAz1rd-scaled.jpeg?resize=1200%2C800&amp;ssl=1 1200w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/HJ0n-QHXsAAz1rd-scaled.jpeg?resize=2000%2C1333&amp;ssl=1 2000w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/HJ0n-QHXsAAz1rd-scaled.jpeg?resize=780%2C520&amp;ssl=1 780w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/HJ0n-QHXsAAz1rd-scaled.jpeg?resize=400%2C267&amp;ssl=1 400w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/HJ0n-QHXsAAz1rd-scaled.jpeg?resize=706%2C471&amp;ssl=1 706w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/HJ0n-QHXsAAz1rd-scaled.jpeg?w=2340&amp;ssl=1 2340w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/HJ0n-QHXsAAz1rd-scaled.jpeg?fit=1024%2C683&amp;ssl=1&amp;w=370 370w\" sizes=\"(max-width: 34.9rem) calc(100vw - 2rem), (max-width: 53rem) calc(8 * (100vw / 12)), (min-width: 53rem) calc(6 * (100vw / 12)), 100vw\" /></figure>\n<p>The agency is seeking novel concepts to restore critical satellite services within hours or weeks</p>\n<p>The post <a href=\"https://spacenews.com/darpa-to-explore-ways-to-rapidly-rebuild-satellite-networks-if-attacked/\">DARPA to explore ways to rapidly rebuild satellite networks if attacked</a> appeared first on <a href=\"https://spacenews.com\">SpaceNews</a>.</p>",
+      "source": {
+        "collected_at": "2026-06-16T05:33:16.240140Z",
+        "provider_id": "rss_provider",
+        "provider_priority": 10,
+        "rank_group": "media",
+        "raw_payload": {
+          "feed_url": "https://spacenews.com/feed/",
+          "published_at": "Mon, 15 Jun 2026 13:55:04 +0000",
+          "summary": "<figure><img width=\"1024\" height=\"683\" src=\"https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/HJ0n-QHXsAAz1rd-scaled.jpeg?fit=1024%2C683&amp;ssl=1\" class=\"attachment-rss-image-size size-rss-image-size wp-post-image\" alt=\"\" decoding=\"async\" srcset=\"https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/HJ0n-QHXsAAz1rd-scaled.jpeg?w=2560&amp;ssl=1 2560w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/HJ0n-QHXsAAz1rd-scaled.jpeg?resize=300%2C200&amp;ssl=1 300w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/HJ0n-QHXsAAz1rd-scaled.jpeg?resize=1024%2C683&amp;ssl=1 1024w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/HJ0n-QHXsAAz1rd-scaled.jpeg?resize=768%2C512&amp;ssl=1 768w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/HJ0n-QHXsAAz1rd-scaled.jpeg?resize=1536%2C1024&amp;ssl=1 1536w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/HJ0n-QHXsAAz1rd-scaled.jpeg?resize=2048%2C1366&amp;ssl=1 2048w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/HJ0n-QHXsAAz1rd-scaled.jpeg?resize=1200%2C800&amp;ssl=1 1200w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/HJ0n-QHXsAAz1rd-scaled.jpeg?resize=2000%2C1333&amp;ssl=1 2000w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/HJ0n-QHXsAAz1rd-scaled.jpeg?resize=780%2C520&amp;ssl=1 780w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/HJ0n-QHXsAAz1rd-scaled.jpeg?resize=400%2C267&amp;ssl=1 400w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/HJ0n-QHXsAAz1rd-scaled.jpeg?resize=706%2C471&amp;ssl=1 706w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/HJ0n-QHXsAAz1rd-scaled.jpeg?w=2340&amp;ssl=1 2340w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/HJ0n-QHXsAAz1rd-scaled.jpeg?fit=1024%2C683&amp;ssl=1&amp;w=370 370w\" sizes=\"(max-width: 34.9rem) calc(100vw - 2rem), (max-width: 53rem) calc(8 * (100vw / 12)), (min-width: 53rem) calc(6 * (100vw / 12)), 100vw\" /></figure>\n<p>The agency is seeking novel concepts to restore critical satellite services within hours or weeks</p>\n<p>The post <a href=\"https://spacenews.com/darpa-to-explore-ways-to-rapidly-rebuild-satellite-networks-if-attacked/\">DARPA to explore ways to rapidly rebuild satellite networks if attacked</a> appeared first on <a href=\"https://spacenews.com\">SpaceNews</a>.</p>",
+          "title": "DARPA to explore ways to rapidly rebuild satellite networks if attacked",
+          "url": "https://spacenews.com/darpa-to-explore-ways-to-rapidly-rebuild-satellite-networks-if-attacked/"
+        },
+        "source_id": "rss_provider",
+        "source_name": "Curated RSS provider contract.",
+        "source_type": "rss",
+        "url": "https://spacenews.com/darpa-to-explore-ways-to-rapidly-rebuild-satellite-networks-if-attacked/"
+      },
+      "tags": [],
+      "title": "DARPA to explore ways to rapidly rebuild satellite networks if attacked",
+      "url": "https://spacenews.com/darpa-to-explore-ways-to-rapidly-rebuild-satellite-networks-if-attacked/"
+    },
+    {
+      "company_id": "blue_origin",
+      "company_name": "Blue Origin",
+      "id": "40295466a2ed9b38",
+      "language": null,
+      "metadata": {
+        "feed_url": "https://spacenews.com/feed/"
+      },
+      "normalized_text": "<figure><img width=\"1024\" height=\"567\" src=\"https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/Overview-satellite-rendering.jpg?fit=1024%2C567&amp;ssl=1\" class=\"attachment-rss-image-size size-rss-image-size wp-post-image\" alt=\"\" decoding=\"async\" loading=\"lazy\" srcset=\"https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/Overview-satellite-rendering.jpg?w=1700&amp;ssl=1 1700w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/Overview-satellite-rendering.jpg?resize=300%2C166&amp;ssl=1 300w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/Overview-satellite-rendering.jpg?resize=1024%2C567&amp;ssl=1 1024w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/Overview-satellite-rendering.jpg?resize=768%2C425&amp;ssl=1 768w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/Overview-satellite-rendering.jpg?resize=1536%2C850&amp;ssl=1 1536w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/Overview-satellite-rendering.jpg?resize=1200%2C664&amp;ssl=1 1200w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/Overview-satellite-rendering.jpg?resize=780%2C432&amp;ssl=1 780w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/Overview-satellite-rendering.jpg?resize=400%2C221&amp;ssl=1 400w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/Overview-satellite-rendering.jpg?resize=706%2C391&amp;ssl=1 706w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/Overview-satellite-rendering.jpg?fit=1024%2C567&amp;ssl=1&amp;w=370 370w\" sizes=\"(max-width: 34.9rem) calc(100vw - 2rem), (max-width: 53rem) calc(8 * (100vw / 12)), (min-width: 53rem) calc(6 * (100vw / 12)), 100vw\" /></figure>\n<p>By Marc Berte, Founder and CEO of Overview Energy AI is making energy valuable enough that we&#8217;re reconsidering where infrastructure should live. Space is increasingly where that conversation leads. Orbital [&#8230;]</p>\n<p>The post <a href=\"https://spacenews.com/whats-the-best-way-to-monetize-space-energy/\">What&#8217;s the Best Way to Monetize Space Energy?</a> appeared first on <a href=\"https://spacenews.com\">SpaceNews</a>.</p>",
+      "published_at": "2026-06-15T13:06:16Z",
+      "raw_text": "<figure><img width=\"1024\" height=\"567\" src=\"https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/Overview-satellite-rendering.jpg?fit=1024%2C567&amp;ssl=1\" class=\"attachment-rss-image-size size-rss-image-size wp-post-image\" alt=\"\" decoding=\"async\" loading=\"lazy\" srcset=\"https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/Overview-satellite-rendering.jpg?w=1700&amp;ssl=1 1700w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/Overview-satellite-rendering.jpg?resize=300%2C166&amp;ssl=1 300w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/Overview-satellite-rendering.jpg?resize=1024%2C567&amp;ssl=1 1024w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/Overview-satellite-rendering.jpg?resize=768%2C425&amp;ssl=1 768w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/Overview-satellite-rendering.jpg?resize=1536%2C850&amp;ssl=1 1536w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/Overview-satellite-rendering.jpg?resize=1200%2C664&amp;ssl=1 1200w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/Overview-satellite-rendering.jpg?resize=780%2C432&amp;ssl=1 780w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/Overview-satellite-rendering.jpg?resize=400%2C221&amp;ssl=1 400w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/Overview-satellite-rendering.jpg?resize=706%2C391&amp;ssl=1 706w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/Overview-satellite-rendering.jpg?fit=1024%2C567&amp;ssl=1&amp;w=370 370w\" sizes=\"(max-width: 34.9rem) calc(100vw - 2rem), (max-width: 53rem) calc(8 * (100vw / 12)), (min-width: 53rem) calc(6 * (100vw / 12)), 100vw\" /></figure>\n<p>By Marc Berte, Founder and CEO of Overview Energy AI is making energy valuable enough that we&#8217;re reconsidering where infrastructure should live. Space is increasingly where that conversation leads. Orbital [&#8230;]</p>\n<p>The post <a href=\"https://spacenews.com/whats-the-best-way-to-monetize-space-energy/\">What&#8217;s the Best Way to Monetize Space Energy?</a> appeared first on <a href=\"https://spacenews.com\">SpaceNews</a>.</p>",
+      "source": {
+        "collected_at": "2026-06-16T05:33:16.240140Z",
+        "provider_id": "rss_provider",
+        "provider_priority": 10,
+        "rank_group": "media",
+        "raw_payload": {
+          "feed_url": "https://spacenews.com/feed/",
+          "published_at": "Mon, 15 Jun 2026 13:06:16 +0000",
+          "summary": "<figure><img width=\"1024\" height=\"567\" src=\"https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/Overview-satellite-rendering.jpg?fit=1024%2C567&amp;ssl=1\" class=\"attachment-rss-image-size size-rss-image-size wp-post-image\" alt=\"\" decoding=\"async\" loading=\"lazy\" srcset=\"https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/Overview-satellite-rendering.jpg?w=1700&amp;ssl=1 1700w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/Overview-satellite-rendering.jpg?resize=300%2C166&amp;ssl=1 300w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/Overview-satellite-rendering.jpg?resize=1024%2C567&amp;ssl=1 1024w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/Overview-satellite-rendering.jpg?resize=768%2C425&amp;ssl=1 768w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/Overview-satellite-rendering.jpg?resize=1536%2C850&amp;ssl=1 1536w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/Overview-satellite-rendering.jpg?resize=1200%2C664&amp;ssl=1 1200w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/Overview-satellite-rendering.jpg?resize=780%2C432&amp;ssl=1 780w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/Overview-satellite-rendering.jpg?resize=400%2C221&amp;ssl=1 400w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/Overview-satellite-rendering.jpg?resize=706%2C391&amp;ssl=1 706w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/Overview-satellite-rendering.jpg?fit=1024%2C567&amp;ssl=1&amp;w=370 370w\" sizes=\"(max-width: 34.9rem) calc(100vw - 2rem), (max-width: 53rem) calc(8 * (100vw / 12)), (min-width: 53rem) calc(6 * (100vw / 12)), 100vw\" /></figure>\n<p>By Marc Berte, Founder and CEO of Overview Energy AI is making energy valuable enough that we&#8217;re reconsidering where infrastructure should live. Space is increasingly where that conversation leads. Orbital [&#8230;]</p>\n<p>The post <a href=\"https://spacenews.com/whats-the-best-way-to-monetize-space-energy/\">What&#8217;s the Best Way to Monetize Space Energy?</a> appeared first on <a href=\"https://spacenews.com\">SpaceNews</a>.</p>",
+          "title": "What’s the Best Way to Monetize Space Energy?",
+          "url": "https://spacenews.com/whats-the-best-way-to-monetize-space-energy/"
+        },
+        "source_id": "rss_provider",
+        "source_name": "Curated RSS provider contract.",
+        "source_type": "rss",
+        "url": "https://spacenews.com/whats-the-best-way-to-monetize-space-energy/"
+      },
+      "tags": [],
+      "title": "What’s the Best Way to Monetize Space Energy?",
+      "url": "https://spacenews.com/whats-the-best-way-to-monetize-space-energy/"
+    },
+    {
+      "company_id": "blue_origin",
+      "company_name": "Blue Origin",
+      "id": "4ea2b0b99862c6c0",
+      "language": null,
+      "metadata": {
+        "feed_url": "https://spacenews.com/feed/"
+      },
+      "normalized_text": "<figure><img width=\"1024\" height=\"683\" src=\"https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/IMAGE_2_Gridded_ion_thruster-scaled.jpg?fit=1024%2C683&amp;ssl=1\" class=\"attachment-rss-image-size size-rss-image-size wp-post-image\" alt=\"A gridded ion thruster at NASA’s Glenn Research Center that was used on NASA’s Double Asteroid Redirection Test (DART). Credit: NASA\" decoding=\"async\" loading=\"lazy\" srcset=\"https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/IMAGE_2_Gridded_ion_thruster-scaled.jpg?w=2560&amp;ssl=1 2560w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/IMAGE_2_Gridded_ion_thruster-scaled.jpg?resize=300%2C200&amp;ssl=1 300w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/IMAGE_2_Gridded_ion_thruster-scaled.jpg?resize=1024%2C683&amp;ssl=1 1024w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/IMAGE_2_Gridded_ion_thruster-scaled.jpg?resize=768%2C512&amp;ssl=1 768w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/IMAGE_2_Gridded_ion_thruster-scaled.jpg?resize=1536%2C1024&amp;ssl=1 1536w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/IMAGE_2_Gridded_ion_thruster-scaled.jpg?resize=2048%2C1365&amp;ssl=1 2048w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/IMAGE_2_Gridded_ion_thruster-scaled.jpg?resize=1200%2C800&amp;ssl=1 1200w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/IMAGE_2_Gridded_ion_thruster-scaled.jpg?resize=2000%2C1333&amp;ssl=1 2000w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/IMAGE_2_Gridded_ion_thruster-scaled.jpg?resize=780%2C520&amp;ssl=1 780w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/IMAGE_2_Gridded_ion_thruster-scaled.jpg?resize=400%2C267&amp;ssl=1 400w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/IMAGE_2_Gridded_ion_thruster-scaled.jpg?resize=706%2C471&amp;ssl=1 706w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/IMAGE_2_Gridded_ion_thruster-scaled.jpg?w=2340&amp;ssl=1 2340w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/IMAGE_2_Gridded_ion_thruster-scaled.jpg?fit=1024%2C683&amp;ssl=1&amp;w=370 370w\" sizes=\"(max-width: 34.9rem) calc(100vw - 2rem), (max-width: 53rem) calc(8 * (100vw / 12)), (min-width: 53rem) calc(6 * (100vw / 12)), 100vw\" /></figure>\n<p>For years, space architecture was treated mostly as a question of placement: where to put a spacecraft, and how reliably it could hold position. That framing is now too narrow. [&#8230;]</p>\n<p>The post <a href=\"https://spacenews.com/sustained-maneuver-has-a-propulsion-problem/\">Sustained maneuver has a propulsion problem</a> appeared first on <a href=\"https://spacenews.com\">SpaceNews</a>.</p>",
+      "published_at": "2026-06-15T13:00:00Z",
+      "raw_text": "<figure><img width=\"1024\" height=\"683\" src=\"https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/IMAGE_2_Gridded_ion_thruster-scaled.jpg?fit=1024%2C683&amp;ssl=1\" class=\"attachment-rss-image-size size-rss-image-size wp-post-image\" alt=\"A gridded ion thruster at NASA’s Glenn Research Center that was used on NASA’s Double Asteroid Redirection Test (DART). Credit: NASA\" decoding=\"async\" loading=\"lazy\" srcset=\"https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/IMAGE_2_Gridded_ion_thruster-scaled.jpg?w=2560&amp;ssl=1 2560w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/IMAGE_2_Gridded_ion_thruster-scaled.jpg?resize=300%2C200&amp;ssl=1 300w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/IMAGE_2_Gridded_ion_thruster-scaled.jpg?resize=1024%2C683&amp;ssl=1 1024w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/IMAGE_2_Gridded_ion_thruster-scaled.jpg?resize=768%2C512&amp;ssl=1 768w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/IMAGE_2_Gridded_ion_thruster-scaled.jpg?resize=1536%2C1024&amp;ssl=1 1536w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/IMAGE_2_Gridded_ion_thruster-scaled.jpg?resize=2048%2C1365&amp;ssl=1 2048w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/IMAGE_2_Gridded_ion_thruster-scaled.jpg?resize=1200%2C800&amp;ssl=1 1200w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/IMAGE_2_Gridded_ion_thruster-scaled.jpg?resize=2000%2C1333&amp;ssl=1 2000w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/IMAGE_2_Gridded_ion_thruster-scaled.jpg?resize=780%2C520&amp;ssl=1 780w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/IMAGE_2_Gridded_ion_thruster-scaled.jpg?resize=400%2C267&amp;ssl=1 400w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/IMAGE_2_Gridded_ion_thruster-scaled.jpg?resize=706%2C471&amp;ssl=1 706w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/IMAGE_2_Gridded_ion_thruster-scaled.jpg?w=2340&amp;ssl=1 2340w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/IMAGE_2_Gridded_ion_thruster-scaled.jpg?fit=1024%2C683&amp;ssl=1&amp;w=370 370w\" sizes=\"(max-width: 34.9rem) calc(100vw - 2rem), (max-width: 53rem) calc(8 * (100vw / 12)), (min-width: 53rem) calc(6 * (100vw / 12)), 100vw\" /></figure>\n<p>For years, space architecture was treated mostly as a question of placement: where to put a spacecraft, and how reliably it could hold position. That framing is now too narrow. [&#8230;]</p>\n<p>The post <a href=\"https://spacenews.com/sustained-maneuver-has-a-propulsion-problem/\">Sustained maneuver has a propulsion problem</a> appeared first on <a href=\"https://spacenews.com\">SpaceNews</a>.</p>",
+      "source": {
+        "collected_at": "2026-06-16T05:33:16.240140Z",
+        "provider_id": "rss_provider",
+        "provider_priority": 10,
+        "rank_group": "media",
+        "raw_payload": {
+          "feed_url": "https://spacenews.com/feed/",
+          "published_at": "Mon, 15 Jun 2026 13:00:00 +0000",
+          "summary": "<figure><img width=\"1024\" height=\"683\" src=\"https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/IMAGE_2_Gridded_ion_thruster-scaled.jpg?fit=1024%2C683&amp;ssl=1\" class=\"attachment-rss-image-size size-rss-image-size wp-post-image\" alt=\"A gridded ion thruster at NASA’s Glenn Research Center that was used on NASA’s Double Asteroid Redirection Test (DART). Credit: NASA\" decoding=\"async\" loading=\"lazy\" srcset=\"https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/IMAGE_2_Gridded_ion_thruster-scaled.jpg?w=2560&amp;ssl=1 2560w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/IMAGE_2_Gridded_ion_thruster-scaled.jpg?resize=300%2C200&amp;ssl=1 300w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/IMAGE_2_Gridded_ion_thruster-scaled.jpg?resize=1024%2C683&amp;ssl=1 1024w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/IMAGE_2_Gridded_ion_thruster-scaled.jpg?resize=768%2C512&amp;ssl=1 768w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/IMAGE_2_Gridded_ion_thruster-scaled.jpg?resize=1536%2C1024&amp;ssl=1 1536w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/IMAGE_2_Gridded_ion_thruster-scaled.jpg?resize=2048%2C1365&amp;ssl=1 2048w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/IMAGE_2_Gridded_ion_thruster-scaled.jpg?resize=1200%2C800&amp;ssl=1 1200w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/IMAGE_2_Gridded_ion_thruster-scaled.jpg?resize=2000%2C1333&amp;ssl=1 2000w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/IMAGE_2_Gridded_ion_thruster-scaled.jpg?resize=780%2C520&amp;ssl=1 780w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/IMAGE_2_Gridded_ion_thruster-scaled.jpg?resize=400%2C267&amp;ssl=1 400w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/IMAGE_2_Gridded_ion_thruster-scaled.jpg?resize=706%2C471&amp;ssl=1 706w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/IMAGE_2_Gridded_ion_thruster-scaled.jpg?w=2340&amp;ssl=1 2340w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/IMAGE_2_Gridded_ion_thruster-scaled.jpg?fit=1024%2C683&amp;ssl=1&amp;w=370 370w\" sizes=\"(max-width: 34.9rem) calc(100vw - 2rem), (max-width: 53rem) calc(8 * (100vw / 12)), (min-width: 53rem) calc(6 * (100vw / 12)), 100vw\" /></figure>\n<p>For years, space architecture was treated mostly as a question of placement: where to put a spacecraft, and how reliably it could hold position. That framing is now too narrow. [&#8230;]</p>\n<p>The post <a href=\"https://spacenews.com/sustained-maneuver-has-a-propulsion-problem/\">Sustained maneuver has a propulsion problem</a> appeared first on <a href=\"https://spacenews.com\">SpaceNews</a>.</p>",
+          "title": "Sustained maneuver has a propulsion problem",
+          "url": "https://spacenews.com/sustained-maneuver-has-a-propulsion-problem/"
+        },
+        "source_id": "rss_provider",
+        "source_name": "Curated RSS provider contract.",
+        "source_type": "rss",
+        "url": "https://spacenews.com/sustained-maneuver-has-a-propulsion-problem/"
+      },
+      "tags": [],
+      "title": "Sustained maneuver has a propulsion problem",
+      "url": "https://spacenews.com/sustained-maneuver-has-a-propulsion-problem/"
+    },
+    {
+      "company_id": "blue_origin",
+      "company_name": "Blue Origin",
+      "id": "3495aa13c2fc72d3",
+      "language": null,
+      "metadata": {
+        "feed_url": "https://spacenews.com/feed/"
+      },
+      "normalized_text": "<figure><img width=\"1024\" height=\"685\" src=\"https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/ChatGPT-Image-Jun-13-2026-at-11_55_33-AM.png?fit=1024%2C685&amp;ssl=1\" class=\"attachment-rss-image-size size-rss-image-size wp-post-image\" alt=\"\" decoding=\"async\" loading=\"lazy\" srcset=\"https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/ChatGPT-Image-Jun-13-2026-at-11_55_33-AM.png?w=1533&amp;ssl=1 1533w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/ChatGPT-Image-Jun-13-2026-at-11_55_33-AM.png?resize=300%2C201&amp;ssl=1 300w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/ChatGPT-Image-Jun-13-2026-at-11_55_33-AM.png?resize=1024%2C685&amp;ssl=1 1024w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/ChatGPT-Image-Jun-13-2026-at-11_55_33-AM.png?resize=768%2C514&amp;ssl=1 768w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/ChatGPT-Image-Jun-13-2026-at-11_55_33-AM.png?resize=1200%2C803&amp;ssl=1 1200w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/ChatGPT-Image-Jun-13-2026-at-11_55_33-AM.png?resize=780%2C522&amp;ssl=1 780w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/ChatGPT-Image-Jun-13-2026-at-11_55_33-AM.png?resize=400%2C268&amp;ssl=1 400w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/ChatGPT-Image-Jun-13-2026-at-11_55_33-AM.png?resize=706%2C473&amp;ssl=1 706w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/ChatGPT-Image-Jun-13-2026-at-11_55_33-AM.png?fit=1024%2C685&amp;ssl=1&amp;w=370 370w\" sizes=\"(max-width: 34.9rem) calc(100vw - 2rem), (max-width: 53rem) calc(8 * (100vw / 12)), (min-width: 53rem) calc(6 * (100vw / 12)), 100vw\" /></figure>\n<p>A new CSIS report says planned 2027 interceptor buys will test a supply chain still recovering from years of consolidation</p>\n<p>The post <a href=\"https://spacenews.com/missile-production-push-runs-into-solid-rocket-motor-bottleneck/\">Missile production push runs into solid rocket motor bottleneck</a> appeared first on <a href=\"https://spacenews.com\">SpaceNews</a>.</p>",
+      "published_at": "2026-06-14T04:00:00Z",
+      "raw_text": "<figure><img width=\"1024\" height=\"685\" src=\"https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/ChatGPT-Image-Jun-13-2026-at-11_55_33-AM.png?fit=1024%2C685&amp;ssl=1\" class=\"attachment-rss-image-size size-rss-image-size wp-post-image\" alt=\"\" decoding=\"async\" loading=\"lazy\" srcset=\"https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/ChatGPT-Image-Jun-13-2026-at-11_55_33-AM.png?w=1533&amp;ssl=1 1533w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/ChatGPT-Image-Jun-13-2026-at-11_55_33-AM.png?resize=300%2C201&amp;ssl=1 300w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/ChatGPT-Image-Jun-13-2026-at-11_55_33-AM.png?resize=1024%2C685&amp;ssl=1 1024w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/ChatGPT-Image-Jun-13-2026-at-11_55_33-AM.png?resize=768%2C514&amp;ssl=1 768w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/ChatGPT-Image-Jun-13-2026-at-11_55_33-AM.png?resize=1200%2C803&amp;ssl=1 1200w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/ChatGPT-Image-Jun-13-2026-at-11_55_33-AM.png?resize=780%2C522&amp;ssl=1 780w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/ChatGPT-Image-Jun-13-2026-at-11_55_33-AM.png?resize=400%2C268&amp;ssl=1 400w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/ChatGPT-Image-Jun-13-2026-at-11_55_33-AM.png?resize=706%2C473&amp;ssl=1 706w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/ChatGPT-Image-Jun-13-2026-at-11_55_33-AM.png?fit=1024%2C685&amp;ssl=1&amp;w=370 370w\" sizes=\"(max-width: 34.9rem) calc(100vw - 2rem), (max-width: 53rem) calc(8 * (100vw / 12)), (min-width: 53rem) calc(6 * (100vw / 12)), 100vw\" /></figure>\n<p>A new CSIS report says planned 2027 interceptor buys will test a supply chain still recovering from years of consolidation</p>\n<p>The post <a href=\"https://spacenews.com/missile-production-push-runs-into-solid-rocket-motor-bottleneck/\">Missile production push runs into solid rocket motor bottleneck</a> appeared first on <a href=\"https://spacenews.com\">SpaceNews</a>.</p>",
+      "source": {
+        "collected_at": "2026-06-16T05:33:16.240140Z",
+        "provider_id": "rss_provider",
+        "provider_priority": 10,
+        "rank_group": "media",
+        "raw_payload": {
+          "feed_url": "https://spacenews.com/feed/",
+          "published_at": "Sun, 14 Jun 2026 04:00:00 +0000",
+          "summary": "<figure><img width=\"1024\" height=\"685\" src=\"https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/ChatGPT-Image-Jun-13-2026-at-11_55_33-AM.png?fit=1024%2C685&amp;ssl=1\" class=\"attachment-rss-image-size size-rss-image-size wp-post-image\" alt=\"\" decoding=\"async\" loading=\"lazy\" srcset=\"https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/ChatGPT-Image-Jun-13-2026-at-11_55_33-AM.png?w=1533&amp;ssl=1 1533w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/ChatGPT-Image-Jun-13-2026-at-11_55_33-AM.png?resize=300%2C201&amp;ssl=1 300w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/ChatGPT-Image-Jun-13-2026-at-11_55_33-AM.png?resize=1024%2C685&amp;ssl=1 1024w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/ChatGPT-Image-Jun-13-2026-at-11_55_33-AM.png?resize=768%2C514&amp;ssl=1 768w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/ChatGPT-Image-Jun-13-2026-at-11_55_33-AM.png?resize=1200%2C803&amp;ssl=1 1200w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/ChatGPT-Image-Jun-13-2026-at-11_55_33-AM.png?resize=780%2C522&amp;ssl=1 780w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/ChatGPT-Image-Jun-13-2026-at-11_55_33-AM.png?resize=400%2C268&amp;ssl=1 400w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/ChatGPT-Image-Jun-13-2026-at-11_55_33-AM.png?resize=706%2C473&amp;ssl=1 706w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/ChatGPT-Image-Jun-13-2026-at-11_55_33-AM.png?fit=1024%2C685&amp;ssl=1&amp;w=370 370w\" sizes=\"(max-width: 34.9rem) calc(100vw - 2rem), (max-width: 53rem) calc(8 * (100vw / 12)), (min-width: 53rem) calc(6 * (100vw / 12)), 100vw\" /></figure>\n<p>A new CSIS report says planned 2027 interceptor buys will test a supply chain still recovering from years of consolidation</p>\n<p>The post <a href=\"https://spacenews.com/missile-production-push-runs-into-solid-rocket-motor-bottleneck/\">Missile production push runs into solid rocket motor bottleneck</a> appeared first on <a href=\"https://spacenews.com\">SpaceNews</a>.</p>",
+          "title": "Missile production push runs into solid rocket motor bottleneck",
+          "url": "https://spacenews.com/missile-production-push-runs-into-solid-rocket-motor-bottleneck/"
+        },
+        "source_id": "rss_provider",
+        "source_name": "Curated RSS provider contract.",
+        "source_type": "rss",
+        "url": "https://spacenews.com/missile-production-push-runs-into-solid-rocket-motor-bottleneck/"
+      },
+      "tags": [],
+      "title": "Missile production push runs into solid rocket motor bottleneck",
+      "url": "https://spacenews.com/missile-production-push-runs-into-solid-rocket-motor-bottleneck/"
+    },
+    {
+      "company_id": "blue_origin",
+      "company_name": "Blue Origin",
+      "id": "f496651c38bd79ea",
+      "language": null,
+      "metadata": {
+        "feed_url": "https://spacenews.com/feed/"
+      },
+      "normalized_text": "<figure><img width=\"1024\" height=\"575\" src=\"https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/bluemoon-art3.jpeg?fit=1024%2C575&amp;ssl=1\" class=\"attachment-rss-image-size size-rss-image-size wp-post-image\" alt=\"Blue Moon Artemis 3\" decoding=\"async\" loading=\"lazy\" srcset=\"https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/bluemoon-art3.jpeg?w=2272&amp;ssl=1 2272w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/bluemoon-art3.jpeg?resize=300%2C168&amp;ssl=1 300w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/bluemoon-art3.jpeg?resize=1024%2C575&amp;ssl=1 1024w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/bluemoon-art3.jpeg?resize=768%2C431&amp;ssl=1 768w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/bluemoon-art3.jpeg?resize=1536%2C863&amp;ssl=1 1536w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/bluemoon-art3.jpeg?resize=2048%2C1150&amp;ssl=1 2048w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/bluemoon-art3.jpeg?resize=1200%2C674&amp;ssl=1 1200w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/bluemoon-art3.jpeg?resize=2000%2C1123&amp;ssl=1 2000w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/bluemoon-art3.jpeg?resize=780%2C438&amp;ssl=1 780w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/bluemoon-art3.jpeg?resize=400%2C225&amp;ssl=1 400w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/bluemoon-art3.jpeg?resize=706%2C397&amp;ssl=1 706w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/bluemoon-art3.jpeg?fit=1024%2C575&amp;ssl=1&amp;w=370 370w\" sizes=\"(max-width: 34.9rem) calc(100vw - 2rem), (max-width: 53rem) calc(8 * (100vw / 12)), (min-width: 53rem) calc(6 * (100vw / 12)), 100vw\" /></figure>\n<p>NASA has provided more details about the revised approaches that Blue Origin and SpaceX are taking to accelerate work on Artemis lunar landers.</p>\n<p>The post <a href=\"https://spacenews.com/revised-artemis-lunar-lander-plans-take-shape/\">Revised Artemis lunar lander plans take shape</a> appeared first on <a href=\"https://spacenews.com\">SpaceNews</a>.</p>",
+      "published_at": "2026-06-13T17:19:56Z",
+      "raw_text": "<figure><img width=\"1024\" height=\"575\" src=\"https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/bluemoon-art3.jpeg?fit=1024%2C575&amp;ssl=1\" class=\"attachment-rss-image-size size-rss-image-size wp-post-image\" alt=\"Blue Moon Artemis 3\" decoding=\"async\" loading=\"lazy\" srcset=\"https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/bluemoon-art3.jpeg?w=2272&amp;ssl=1 2272w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/bluemoon-art3.jpeg?resize=300%2C168&amp;ssl=1 300w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/bluemoon-art3.jpeg?resize=1024%2C575&amp;ssl=1 1024w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/bluemoon-art3.jpeg?resize=768%2C431&amp;ssl=1 768w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/bluemoon-art3.jpeg?resize=1536%2C863&amp;ssl=1 1536w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/bluemoon-art3.jpeg?resize=2048%2C1150&amp;ssl=1 2048w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/bluemoon-art3.jpeg?resize=1200%2C674&amp;ssl=1 1200w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/bluemoon-art3.jpeg?resize=2000%2C1123&amp;ssl=1 2000w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/bluemoon-art3.jpeg?resize=780%2C438&amp;ssl=1 780w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/bluemoon-art3.jpeg?resize=400%2C225&amp;ssl=1 400w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/bluemoon-art3.jpeg?resize=706%2C397&amp;ssl=1 706w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/bluemoon-art3.jpeg?fit=1024%2C575&amp;ssl=1&amp;w=370 370w\" sizes=\"(max-width: 34.9rem) calc(100vw - 2rem), (max-width: 53rem) calc(8 * (100vw / 12)), (min-width: 53rem) calc(6 * (100vw / 12)), 100vw\" /></figure>\n<p>NASA has provided more details about the revised approaches that Blue Origin and SpaceX are taking to accelerate work on Artemis lunar landers.</p>\n<p>The post <a href=\"https://spacenews.com/revised-artemis-lunar-lander-plans-take-shape/\">Revised Artemis lunar lander plans take shape</a> appeared first on <a href=\"https://spacenews.com\">SpaceNews</a>.</p>",
+      "source": {
+        "collected_at": "2026-06-16T05:33:16.240140Z",
+        "provider_id": "rss_provider",
+        "provider_priority": 10,
+        "rank_group": "media",
+        "raw_payload": {
+          "feed_url": "https://spacenews.com/feed/",
+          "published_at": "Sat, 13 Jun 2026 17:19:56 +0000",
+          "summary": "<figure><img width=\"1024\" height=\"575\" src=\"https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/bluemoon-art3.jpeg?fit=1024%2C575&amp;ssl=1\" class=\"attachment-rss-image-size size-rss-image-size wp-post-image\" alt=\"Blue Moon Artemis 3\" decoding=\"async\" loading=\"lazy\" srcset=\"https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/bluemoon-art3.jpeg?w=2272&amp;ssl=1 2272w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/bluemoon-art3.jpeg?resize=300%2C168&amp;ssl=1 300w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/bluemoon-art3.jpeg?resize=1024%2C575&amp;ssl=1 1024w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/bluemoon-art3.jpeg?resize=768%2C431&amp;ssl=1 768w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/bluemoon-art3.jpeg?resize=1536%2C863&amp;ssl=1 1536w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/bluemoon-art3.jpeg?resize=2048%2C1150&amp;ssl=1 2048w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/bluemoon-art3.jpeg?resize=1200%2C674&amp;ssl=1 1200w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/bluemoon-art3.jpeg?resize=2000%2C1123&amp;ssl=1 2000w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/bluemoon-art3.jpeg?resize=780%2C438&amp;ssl=1 780w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/bluemoon-art3.jpeg?resize=400%2C225&amp;ssl=1 400w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/bluemoon-art3.jpeg?resize=706%2C397&amp;ssl=1 706w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/bluemoon-art3.jpeg?fit=1024%2C575&amp;ssl=1&amp;w=370 370w\" sizes=\"(max-width: 34.9rem) calc(100vw - 2rem), (max-width: 53rem) calc(8 * (100vw / 12)), (min-width: 53rem) calc(6 * (100vw / 12)), 100vw\" /></figure>\n<p>NASA has provided more details about the revised approaches that Blue Origin and SpaceX are taking to accelerate work on Artemis lunar landers.</p>\n<p>The post <a href=\"https://spacenews.com/revised-artemis-lunar-lander-plans-take-shape/\">Revised Artemis lunar lander plans take shape</a> appeared first on <a href=\"https://spacenews.com\">SpaceNews</a>.</p>",
+          "title": "Revised Artemis lunar lander plans take shape",
+          "url": "https://spacenews.com/revised-artemis-lunar-lander-plans-take-shape/"
+        },
+        "source_id": "rss_provider",
+        "source_name": "Curated RSS provider contract.",
+        "source_type": "rss",
+        "url": "https://spacenews.com/revised-artemis-lunar-lander-plans-take-shape/"
+      },
+      "tags": [],
+      "title": "Revised Artemis lunar lander plans take shape",
+      "url": "https://spacenews.com/revised-artemis-lunar-lander-plans-take-shape/"
+    },
+    {
+      "company_id": "blue_origin",
+      "company_name": "Blue Origin",
+      "id": "9c786ca9e9f08fd3",
+      "language": null,
+      "metadata": {
+        "feed_url": "https://spacenews.com/feed/"
+      },
+      "normalized_text": "<figure><img width=\"1024\" height=\"467\" src=\"https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/spacexipo-celebration.jpeg?fit=1024%2C467&amp;ssl=1\" class=\"attachment-rss-image-size size-rss-image-size wp-post-image\" alt=\"SpaceX IPO celebration\" decoding=\"async\" loading=\"lazy\" srcset=\"https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/spacexipo-celebration.jpeg?w=1440&amp;ssl=1 1440w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/spacexipo-celebration.jpeg?resize=300%2C137&amp;ssl=1 300w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/spacexipo-celebration.jpeg?resize=1024%2C467&amp;ssl=1 1024w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/spacexipo-celebration.jpeg?resize=768%2C350&amp;ssl=1 768w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/spacexipo-celebration.jpeg?resize=1200%2C548&amp;ssl=1 1200w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/spacexipo-celebration.jpeg?resize=780%2C356&amp;ssl=1 780w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/spacexipo-celebration.jpeg?resize=400%2C183&amp;ssl=1 400w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/spacexipo-celebration.jpeg?resize=706%2C322&amp;ssl=1 706w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/spacexipo-celebration.jpeg?fit=1024%2C467&amp;ssl=1&amp;w=370 370w\" sizes=\"(max-width: 34.9rem) calc(100vw - 2rem), (max-width: 53rem) calc(8 * (100vw / 12)), (min-width: 53rem) calc(6 * (100vw / 12)), 100vw\" /></figure>\n<p>SpaceX shares rose on the first day of trading as the company went public in a milestone event for both the company and the broader space industry.</p>\n<p>The post <a href=\"https://spacenews.com/spacex-shares-rise-nearly-20-in-historic-ipo/\">SpaceX shares rise nearly 20% in historic IPO</a> appeared first on <a href=\"https://spacenews.com\">SpaceNews</a>.</p>",
+      "published_at": "2026-06-12T21:06:39Z",
+      "raw_text": "<figure><img width=\"1024\" height=\"467\" src=\"https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/spacexipo-celebration.jpeg?fit=1024%2C467&amp;ssl=1\" class=\"attachment-rss-image-size size-rss-image-size wp-post-image\" alt=\"SpaceX IPO celebration\" decoding=\"async\" loading=\"lazy\" srcset=\"https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/spacexipo-celebration.jpeg?w=1440&amp;ssl=1 1440w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/spacexipo-celebration.jpeg?resize=300%2C137&amp;ssl=1 300w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/spacexipo-celebration.jpeg?resize=1024%2C467&amp;ssl=1 1024w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/spacexipo-celebration.jpeg?resize=768%2C350&amp;ssl=1 768w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/spacexipo-celebration.jpeg?resize=1200%2C548&amp;ssl=1 1200w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/spacexipo-celebration.jpeg?resize=780%2C356&amp;ssl=1 780w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/spacexipo-celebration.jpeg?resize=400%2C183&amp;ssl=1 400w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/spacexipo-celebration.jpeg?resize=706%2C322&amp;ssl=1 706w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/spacexipo-celebration.jpeg?fit=1024%2C467&amp;ssl=1&amp;w=370 370w\" sizes=\"(max-width: 34.9rem) calc(100vw - 2rem), (max-width: 53rem) calc(8 * (100vw / 12)), (min-width: 53rem) calc(6 * (100vw / 12)), 100vw\" /></figure>\n<p>SpaceX shares rose on the first day of trading as the company went public in a milestone event for both the company and the broader space industry.</p>\n<p>The post <a href=\"https://spacenews.com/spacex-shares-rise-nearly-20-in-historic-ipo/\">SpaceX shares rise nearly 20% in historic IPO</a> appeared first on <a href=\"https://spacenews.com\">SpaceNews</a>.</p>",
+      "source": {
+        "collected_at": "2026-06-16T05:33:16.240140Z",
+        "provider_id": "rss_provider",
+        "provider_priority": 10,
+        "rank_group": "media",
+        "raw_payload": {
+          "feed_url": "https://spacenews.com/feed/",
+          "published_at": "Fri, 12 Jun 2026 21:06:39 +0000",
+          "summary": "<figure><img width=\"1024\" height=\"467\" src=\"https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/spacexipo-celebration.jpeg?fit=1024%2C467&amp;ssl=1\" class=\"attachment-rss-image-size size-rss-image-size wp-post-image\" alt=\"SpaceX IPO celebration\" decoding=\"async\" loading=\"lazy\" srcset=\"https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/spacexipo-celebration.jpeg?w=1440&amp;ssl=1 1440w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/spacexipo-celebration.jpeg?resize=300%2C137&amp;ssl=1 300w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/spacexipo-celebration.jpeg?resize=1024%2C467&amp;ssl=1 1024w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/spacexipo-celebration.jpeg?resize=768%2C350&amp;ssl=1 768w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/spacexipo-celebration.jpeg?resize=1200%2C548&amp;ssl=1 1200w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/spacexipo-celebration.jpeg?resize=780%2C356&amp;ssl=1 780w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/spacexipo-celebration.jpeg?resize=400%2C183&amp;ssl=1 400w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/spacexipo-celebration.jpeg?resize=706%2C322&amp;ssl=1 706w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/spacexipo-celebration.jpeg?fit=1024%2C467&amp;ssl=1&amp;w=370 370w\" sizes=\"(max-width: 34.9rem) calc(100vw - 2rem), (max-width: 53rem) calc(8 * (100vw / 12)), (min-width: 53rem) calc(6 * (100vw / 12)), 100vw\" /></figure>\n<p>SpaceX shares rose on the first day of trading as the company went public in a milestone event for both the company and the broader space industry.</p>\n<p>The post <a href=\"https://spacenews.com/spacex-shares-rise-nearly-20-in-historic-ipo/\">SpaceX shares rise nearly 20% in historic IPO</a> appeared first on <a href=\"https://spacenews.com\">SpaceNews</a>.</p>",
+          "title": "SpaceX shares rise nearly 20% in historic IPO",
+          "url": "https://spacenews.com/spacex-shares-rise-nearly-20-in-historic-ipo/"
+        },
+        "source_id": "rss_provider",
+        "source_name": "Curated RSS provider contract.",
+        "source_type": "rss",
+        "url": "https://spacenews.com/spacex-shares-rise-nearly-20-in-historic-ipo/"
+      },
+      "tags": [],
+      "title": "SpaceX shares rise nearly 20% in historic IPO",
+      "url": "https://spacenews.com/spacex-shares-rise-nearly-20-in-historic-ipo/"
+    },
+    {
+      "company_id": "blue_origin",
+      "company_name": "Blue Origin",
+      "id": "c8a32fc4ca7be6f8",
+      "language": null,
+      "metadata": {
+        "feed_url": "https://spacenews.com/feed/"
+      },
+      "normalized_text": "<figure><img width=\"1024\" height=\"488\" src=\"https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/JSAT-Comms-release.png?fit=1024%2C488&amp;ssl=1\" class=\"attachment-rss-image-size size-rss-image-size wp-post-image\" alt=\"\" decoding=\"async\" loading=\"lazy\" srcset=\"https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/JSAT-Comms-release.png?w=2048&amp;ssl=1 2048w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/JSAT-Comms-release.png?resize=300%2C143&amp;ssl=1 300w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/JSAT-Comms-release.png?resize=1024%2C488&amp;ssl=1 1024w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/JSAT-Comms-release.png?resize=768%2C366&amp;ssl=1 768w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/JSAT-Comms-release.png?resize=1536%2C732&amp;ssl=1 1536w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/JSAT-Comms-release.png?resize=1200%2C572&amp;ssl=1 1200w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/JSAT-Comms-release.png?resize=2000%2C953&amp;ssl=1 2000w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/JSAT-Comms-release.png?resize=780%2C372&amp;ssl=1 780w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/JSAT-Comms-release.png?resize=400%2C191&amp;ssl=1 400w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/JSAT-Comms-release.png?resize=706%2C336&amp;ssl=1 706w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/JSAT-Comms-release.png?fit=1024%2C488&amp;ssl=1&amp;w=370 370w\" sizes=\"(max-width: 34.9rem) calc(100vw - 2rem), (max-width: 53rem) calc(8 * (100vw / 12)), (min-width: 53rem) calc(6 * (100vw / 12)), 100vw\" /></figure>\n<p>TAMPA, Fla. — Avanti Communications is moving to close a chapter on the debt-fueled geostationary expansion that once defined the British satellite operator, with plans to sell the youngest payload [&#8230;]</p>\n<p>The post <a href=\"https://spacenews.com/avanti-trims-geo-exposure-with-hylas-3-sale/\">Avanti trims GEO exposure with Hylas-3 sale</a> appeared first on <a href=\"https://spacenews.com\">SpaceNews</a>.</p>",
+      "published_at": "2026-06-12T20:43:16Z",
+      "raw_text": "<figure><img width=\"1024\" height=\"488\" src=\"https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/JSAT-Comms-release.png?fit=1024%2C488&amp;ssl=1\" class=\"attachment-rss-image-size size-rss-image-size wp-post-image\" alt=\"\" decoding=\"async\" loading=\"lazy\" srcset=\"https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/JSAT-Comms-release.png?w=2048&amp;ssl=1 2048w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/JSAT-Comms-release.png?resize=300%2C143&amp;ssl=1 300w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/JSAT-Comms-release.png?resize=1024%2C488&amp;ssl=1 1024w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/JSAT-Comms-release.png?resize=768%2C366&amp;ssl=1 768w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/JSAT-Comms-release.png?resize=1536%2C732&amp;ssl=1 1536w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/JSAT-Comms-release.png?resize=1200%2C572&amp;ssl=1 1200w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/JSAT-Comms-release.png?resize=2000%2C953&amp;ssl=1 2000w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/JSAT-Comms-release.png?resize=780%2C372&amp;ssl=1 780w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/JSAT-Comms-release.png?resize=400%2C191&amp;ssl=1 400w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/JSAT-Comms-release.png?resize=706%2C336&amp;ssl=1 706w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/JSAT-Comms-release.png?fit=1024%2C488&amp;ssl=1&amp;w=370 370w\" sizes=\"(max-width: 34.9rem) calc(100vw - 2rem), (max-width: 53rem) calc(8 * (100vw / 12)), (min-width: 53rem) calc(6 * (100vw / 12)), 100vw\" /></figure>\n<p>TAMPA, Fla. — Avanti Communications is moving to close a chapter on the debt-fueled geostationary expansion that once defined the British satellite operator, with plans to sell the youngest payload [&#8230;]</p>\n<p>The post <a href=\"https://spacenews.com/avanti-trims-geo-exposure-with-hylas-3-sale/\">Avanti trims GEO exposure with Hylas-3 sale</a> appeared first on <a href=\"https://spacenews.com\">SpaceNews</a>.</p>",
+      "source": {
+        "collected_at": "2026-06-16T05:33:16.240140Z",
+        "provider_id": "rss_provider",
+        "provider_priority": 10,
+        "rank_group": "media",
+        "raw_payload": {
+          "feed_url": "https://spacenews.com/feed/",
+          "published_at": "Fri, 12 Jun 2026 20:43:16 +0000",
+          "summary": "<figure><img width=\"1024\" height=\"488\" src=\"https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/JSAT-Comms-release.png?fit=1024%2C488&amp;ssl=1\" class=\"attachment-rss-image-size size-rss-image-size wp-post-image\" alt=\"\" decoding=\"async\" loading=\"lazy\" srcset=\"https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/JSAT-Comms-release.png?w=2048&amp;ssl=1 2048w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/JSAT-Comms-release.png?resize=300%2C143&amp;ssl=1 300w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/JSAT-Comms-release.png?resize=1024%2C488&amp;ssl=1 1024w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/JSAT-Comms-release.png?resize=768%2C366&amp;ssl=1 768w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/JSAT-Comms-release.png?resize=1536%2C732&amp;ssl=1 1536w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/JSAT-Comms-release.png?resize=1200%2C572&amp;ssl=1 1200w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/JSAT-Comms-release.png?resize=2000%2C953&amp;ssl=1 2000w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/JSAT-Comms-release.png?resize=780%2C372&amp;ssl=1 780w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/JSAT-Comms-release.png?resize=400%2C191&amp;ssl=1 400w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/JSAT-Comms-release.png?resize=706%2C336&amp;ssl=1 706w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/JSAT-Comms-release.png?fit=1024%2C488&amp;ssl=1&amp;w=370 370w\" sizes=\"(max-width: 34.9rem) calc(100vw - 2rem), (max-width: 53rem) calc(8 * (100vw / 12)), (min-width: 53rem) calc(6 * (100vw / 12)), 100vw\" /></figure>\n<p>TAMPA, Fla. — Avanti Communications is moving to close a chapter on the debt-fueled geostationary expansion that once defined the British satellite operator, with plans to sell the youngest payload [&#8230;]</p>\n<p>The post <a href=\"https://spacenews.com/avanti-trims-geo-exposure-with-hylas-3-sale/\">Avanti trims GEO exposure with Hylas-3 sale</a> appeared first on <a href=\"https://spacenews.com\">SpaceNews</a>.</p>",
+          "title": "Avanti trims GEO exposure with Hylas-3 sale",
+          "url": "https://spacenews.com/avanti-trims-geo-exposure-with-hylas-3-sale/"
+        },
+        "source_id": "rss_provider",
+        "source_name": "Curated RSS provider contract.",
+        "source_type": "rss",
+        "url": "https://spacenews.com/avanti-trims-geo-exposure-with-hylas-3-sale/"
+      },
+      "tags": [],
+      "title": "Avanti trims GEO exposure with Hylas-3 sale",
+      "url": "https://spacenews.com/avanti-trims-geo-exposure-with-hylas-3-sale/"
+    },
+    {
+      "company_id": "blue_origin",
+      "company_name": "Blue Origin",
+      "id": "d5b1892aeda450d1",
+      "language": null,
+      "metadata": {
+        "feed_url": "https://spacenews.com/feed/"
+      },
+      "normalized_text": "<figure><img width=\"1024\" height=\"561\" src=\"https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/spacexai2.jpeg?fit=1024%2C561&amp;ssl=1\" class=\"attachment-rss-image-size size-rss-image-size wp-post-image\" alt=\"AI1 SpaceX satellite\" decoding=\"async\" loading=\"lazy\" srcset=\"https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/spacexai2.jpeg?w=2000&amp;ssl=1 2000w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/spacexai2.jpeg?resize=300%2C164&amp;ssl=1 300w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/spacexai2.jpeg?resize=1024%2C561&amp;ssl=1 1024w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/spacexai2.jpeg?resize=768%2C421&amp;ssl=1 768w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/spacexai2.jpeg?resize=1536%2C842&amp;ssl=1 1536w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/spacexai2.jpeg?resize=1200%2C658&amp;ssl=1 1200w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/spacexai2.jpeg?resize=780%2C427&amp;ssl=1 780w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/spacexai2.jpeg?resize=400%2C219&amp;ssl=1 400w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/spacexai2.jpeg?resize=706%2C387&amp;ssl=1 706w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/spacexai2.jpeg?fit=1024%2C561&amp;ssl=1&amp;w=370 370w\" sizes=\"(max-width: 34.9rem) calc(100vw - 2rem), (max-width: 53rem) calc(8 * (100vw / 12)), (min-width: 53rem) calc(6 * (100vw / 12)), 100vw\" /></figure>\n<p>As SpaceX gears up to start launching orbital data center spacecraft as soon as next year, astronomers warn those satellites could cause serious interference with their observations.</p>\n<p>The post <a href=\"https://spacenews.com/astronomers-fear-orbital-data-centers-will-interfere-with-observations/\">Astronomers fear orbital data centers will interfere with observations</a> appeared first on <a href=\"https://spacenews.com\">SpaceNews</a>.</p>",
+      "published_at": "2026-06-12T19:49:45Z",
+      "raw_text": "<figure><img width=\"1024\" height=\"561\" src=\"https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/spacexai2.jpeg?fit=1024%2C561&amp;ssl=1\" class=\"attachment-rss-image-size size-rss-image-size wp-post-image\" alt=\"AI1 SpaceX satellite\" decoding=\"async\" loading=\"lazy\" srcset=\"https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/spacexai2.jpeg?w=2000&amp;ssl=1 2000w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/spacexai2.jpeg?resize=300%2C164&amp;ssl=1 300w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/spacexai2.jpeg?resize=1024%2C561&amp;ssl=1 1024w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/spacexai2.jpeg?resize=768%2C421&amp;ssl=1 768w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/spacexai2.jpeg?resize=1536%2C842&amp;ssl=1 1536w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/spacexai2.jpeg?resize=1200%2C658&amp;ssl=1 1200w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/spacexai2.jpeg?resize=780%2C427&amp;ssl=1 780w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/spacexai2.jpeg?resize=400%2C219&amp;ssl=1 400w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/spacexai2.jpeg?resize=706%2C387&amp;ssl=1 706w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/spacexai2.jpeg?fit=1024%2C561&amp;ssl=1&amp;w=370 370w\" sizes=\"(max-width: 34.9rem) calc(100vw - 2rem), (max-width: 53rem) calc(8 * (100vw / 12)), (min-width: 53rem) calc(6 * (100vw / 12)), 100vw\" /></figure>\n<p>As SpaceX gears up to start launching orbital data center spacecraft as soon as next year, astronomers warn those satellites could cause serious interference with their observations.</p>\n<p>The post <a href=\"https://spacenews.com/astronomers-fear-orbital-data-centers-will-interfere-with-observations/\">Astronomers fear orbital data centers will interfere with observations</a> appeared first on <a href=\"https://spacenews.com\">SpaceNews</a>.</p>",
+      "source": {
+        "collected_at": "2026-06-16T05:33:16.240140Z",
+        "provider_id": "rss_provider",
+        "provider_priority": 10,
+        "rank_group": "media",
+        "raw_payload": {
+          "feed_url": "https://spacenews.com/feed/",
+          "published_at": "Fri, 12 Jun 2026 19:49:45 +0000",
+          "summary": "<figure><img width=\"1024\" height=\"561\" src=\"https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/spacexai2.jpeg?fit=1024%2C561&amp;ssl=1\" class=\"attachment-rss-image-size size-rss-image-size wp-post-image\" alt=\"AI1 SpaceX satellite\" decoding=\"async\" loading=\"lazy\" srcset=\"https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/spacexai2.jpeg?w=2000&amp;ssl=1 2000w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/spacexai2.jpeg?resize=300%2C164&amp;ssl=1 300w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/spacexai2.jpeg?resize=1024%2C561&amp;ssl=1 1024w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/spacexai2.jpeg?resize=768%2C421&amp;ssl=1 768w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/spacexai2.jpeg?resize=1536%2C842&amp;ssl=1 1536w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/spacexai2.jpeg?resize=1200%2C658&amp;ssl=1 1200w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/spacexai2.jpeg?resize=780%2C427&amp;ssl=1 780w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/spacexai2.jpeg?resize=400%2C219&amp;ssl=1 400w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/spacexai2.jpeg?resize=706%2C387&amp;ssl=1 706w, https://i0.wp.com/spacenews.com/wp-content/uploads/2026/06/spacexai2.jpeg?fit=1024%2C561&amp;ssl=1&amp;w=370 370w\" sizes=\"(max-width: 34.9rem) calc(100vw - 2rem), (max-width: 53rem) calc(8 * (100vw / 12)), (min-width: 53rem) calc(6 * (100vw / 12)), 100vw\" /></figure>\n<p>As SpaceX gears up to start launching orbital data center spacecraft as soon as next year, astronomers warn those satellites could cause serious interference with their observations.</p>\n<p>The post <a href=\"https://spacenews.com/astronomers-fear-orbital-data-centers-will-interfere-with-observations/\">Astronomers fear orbital data centers will interfere with observations</a> appeared first on <a href=\"https://spacenews.com\">SpaceNews</a>.</p>",
+          "title": "Astronomers fear orbital data centers will interfere with observations",
+          "url": "https://spacenews.com/astronomers-fear-orbital-data-centers-will-interfere-with-observations/"
+        },
+        "source_id": "rss_provider",
+        "source_name": "Curated RSS provider contract.",
+        "source_type": "rss",
+        "url": "https://spacenews.com/astronomers-fear-orbital-data-centers-will-interfere-with-observations/"
+      },
+      "tags": [],
+      "title": "Astronomers fear orbital data centers will interfere with observations",
+      "url": "https://spacenews.com/astronomers-fear-orbital-data-centers-will-interfere-with-observations/"
+    },
+    {
+      "company_id": "yuanxin_satellite",
+      "company_name": "垣信卫星",
+      "id": "a3ca29058302c03b",
+      "language": null,
+      "metadata": {
+        "feed_url": "https://news.google.com/rss/search?q=%E5%9E%A3%E4%BF%A1%E5%8D%AB%E6%98%9F%20%E5%8D%83%E5%B8%86%E6%98%9F%E5%BA%A7%20SpaceSail&hl=zh-CN&gl=CN&ceid=CN:zh-Hans"
+      },
+      "normalized_text": "<a href=\"https://news.google.com/rss/articles/CBMiUEFVX3lxTE5HY1BWeUNpWHduNy1vUkJCTnBma3JRZUFjc2paMlEwQWt3LVBnWjA1VGZQWlhmbUxIMncwY2pQYnR6YTJXSGE0UlFFbk9NWWJr?oc=5\" target=\"_blank\">景兴纸业：人民币升值+上海垣信卫星（商业航天）+宇树(人形机器人）+盛合晶微（国产半导体）+陶特容器</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">雪球</font>",
+      "published_at": "2026-01-21T08:00:00Z",
+      "raw_text": "<a href=\"https://news.google.com/rss/articles/CBMiUEFVX3lxTE5HY1BWeUNpWHduNy1vUkJCTnBma3JRZUFjc2paMlEwQWt3LVBnWjA1VGZQWlhmbUxIMncwY2pQYnR6YTJXSGE0UlFFbk9NWWJr?oc=5\" target=\"_blank\">景兴纸业：人民币升值+上海垣信卫星（商业航天）+宇树(人形机器人）+盛合晶微（国产半导体）+陶特容器</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">雪球</font>",
+      "source": {
+        "collected_at": "2026-06-16T05:33:16.240140Z",
+        "provider_id": "rss_provider",
+        "provider_priority": 10,
+        "rank_group": "media",
+        "raw_payload": {
+          "feed_url": "https://news.google.com/rss/search?q=%E5%9E%A3%E4%BF%A1%E5%8D%AB%E6%98%9F%20%E5%8D%83%E5%B8%86%E6%98%9F%E5%BA%A7%20SpaceSail&hl=zh-CN&gl=CN&ceid=CN:zh-Hans",
+          "published_at": "Wed, 21 Jan 2026 08:00:00 GMT",
+          "summary": "<a href=\"https://news.google.com/rss/articles/CBMiUEFVX3lxTE5HY1BWeUNpWHduNy1vUkJCTnBma3JRZUFjc2paMlEwQWt3LVBnWjA1VGZQWlhmbUxIMncwY2pQYnR6YTJXSGE0UlFFbk9NWWJr?oc=5\" target=\"_blank\">景兴纸业：人民币升值+上海垣信卫星（商业航天）+宇树(人形机器人）+盛合晶微（国产半导体）+陶特容器</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">雪球</font>",
+          "title": "景兴纸业：人民币升值+上海垣信卫星（商业航天）+宇树(人形机器人）+盛合晶微（国产半导体）+陶特容器 - 雪球",
+          "url": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE5HY1BWeUNpWHduNy1vUkJCTnBma3JRZUFjc2paMlEwQWt3LVBnWjA1VGZQWlhmbUxIMncwY2pQYnR6YTJXSGE0UlFFbk9NWWJr?oc=5"
+        },
+        "source_id": "rss_provider",
+        "source_name": "Curated RSS provider contract.",
+        "source_type": "rss",
+        "url": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE5HY1BWeUNpWHduNy1vUkJCTnBma3JRZUFjc2paMlEwQWt3LVBnWjA1VGZQWlhmbUxIMncwY2pQYnR6YTJXSGE0UlFFbk9NWWJr?oc=5"
+      },
+      "tags": [],
+      "title": "景兴纸业：人民币升值+上海垣信卫星（商业航天）+宇树(人形机器人）+盛合晶微（国产半导体）+陶特容器 - 雪球",
+      "url": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE5HY1BWeUNpWHduNy1vUkJCTnBma3JRZUFjc2paMlEwQWt3LVBnWjA1VGZQWlhmbUxIMncwY2pQYnR6YTJXSGE0UlFFbk9NWWJr?oc=5"
+    },
+    {
+      "company_id": "yuanxin_satellite",
+      "company_name": "垣信卫星",
+      "id": "959aededb5b473a6",
+      "language": null,
+      "metadata": {
+        "feed_url": "https://news.google.com/rss/search?q=%E5%9E%A3%E4%BF%A1%E5%8D%AB%E6%98%9F%20%E5%8D%83%E5%B8%86%E6%98%9F%E5%BA%A7%20SpaceSail&hl=zh-CN&gl=CN&ceid=CN:zh-Hans"
+      },
+      "normalized_text": "<a href=\"https://news.google.com/rss/articles/CBMiZEFVX3lxTE16eVByVXNPMi1HTVJla0xpMGpRS0g1eENRZnotYUNqbUZkZGlEbWdVQjF3S282U0tJalJGd04wV1JmemVfQ3MtWERrdjhwZFNuUkt6MGhUbzlfYXJoTzd5dnhGLWU?oc=5\" target=\"_blank\">千帆星座明年发射目标600多颗，垣信开启新一轮融资-观察者网</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">观察者网</font>",
+      "published_at": "2025-10-17T07:00:00Z",
+      "raw_text": "<a href=\"https://news.google.com/rss/articles/CBMiZEFVX3lxTE16eVByVXNPMi1HTVJla0xpMGpRS0g1eENRZnotYUNqbUZkZGlEbWdVQjF3S282U0tJalJGd04wV1JmemVfQ3MtWERrdjhwZFNuUkt6MGhUbzlfYXJoTzd5dnhGLWU?oc=5\" target=\"_blank\">千帆星座明年发射目标600多颗，垣信开启新一轮融资-观察者网</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">观察者网</font>",
+      "source": {
+        "collected_at": "2026-06-16T05:33:16.240140Z",
+        "provider_id": "rss_provider",
+        "provider_priority": 10,
+        "rank_group": "media",
+        "raw_payload": {
+          "feed_url": "https://news.google.com/rss/search?q=%E5%9E%A3%E4%BF%A1%E5%8D%AB%E6%98%9F%20%E5%8D%83%E5%B8%86%E6%98%9F%E5%BA%A7%20SpaceSail&hl=zh-CN&gl=CN&ceid=CN:zh-Hans",
+          "published_at": "Fri, 17 Oct 2025 07:00:00 GMT",
+          "summary": "<a href=\"https://news.google.com/rss/articles/CBMiZEFVX3lxTE16eVByVXNPMi1HTVJla0xpMGpRS0g1eENRZnotYUNqbUZkZGlEbWdVQjF3S282U0tJalJGd04wV1JmemVfQ3MtWERrdjhwZFNuUkt6MGhUbzlfYXJoTzd5dnhGLWU?oc=5\" target=\"_blank\">千帆星座明年发射目标600多颗，垣信开启新一轮融资-观察者网</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">观察者网</font>",
+          "title": "千帆星座明年发射目标600多颗，垣信开启新一轮融资-观察者网 - 观察者网",
+          "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE16eVByVXNPMi1HTVJla0xpMGpRS0g1eENRZnotYUNqbUZkZGlEbWdVQjF3S282U0tJalJGd04wV1JmemVfQ3MtWERrdjhwZFNuUkt6MGhUbzlfYXJoTzd5dnhGLWU?oc=5"
+        },
+        "source_id": "rss_provider",
+        "source_name": "Curated RSS provider contract.",
+        "source_type": "rss",
+        "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE16eVByVXNPMi1HTVJla0xpMGpRS0g1eENRZnotYUNqbUZkZGlEbWdVQjF3S282U0tJalJGd04wV1JmemVfQ3MtWERrdjhwZFNuUkt6MGhUbzlfYXJoTzd5dnhGLWU?oc=5"
+      },
+      "tags": [],
+      "title": "千帆星座明年发射目标600多颗，垣信开启新一轮融资-观察者网 - 观察者网",
+      "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE16eVByVXNPMi1HTVJla0xpMGpRS0g1eENRZnotYUNqbUZkZGlEbWdVQjF3S282U0tJalJGd04wV1JmemVfQ3MtWERrdjhwZFNuUkt6MGhUbzlfYXJoTzd5dnhGLWU?oc=5"
+    },
+    {
+      "company_id": "yuanxin_satellite",
+      "company_name": "垣信卫星",
+      "id": "a1df6d7a59dc3ccb",
+      "language": null,
+      "metadata": {
+        "feed_url": "https://news.google.com/rss/search?q=%E5%9E%A3%E4%BF%A1%E5%8D%AB%E6%98%9F%20%E5%8D%83%E5%B8%86%E6%98%9F%E5%BA%A7%20SpaceSail&hl=zh-CN&gl=CN&ceid=CN:zh-Hans"
+      },
+      "normalized_text": "<a href=\"https://news.google.com/rss/articles/CBMikgFBVV95cUxNZXhvRTkxZ0VnaDJxM2JKVm5kUFdURUJtWFRxN2NMbW9HSUdRcHJkeVZKQlNkcmp4a05heWl5dzd6ZFZTZjRCTU5DaE83eWRwdm0zYm9ydmxDRTBXdTVob2Nsdlk0VU9yNXFPRnRxbDJBRmRLOG1iX2ttNWxseXU5MGYyYTBnaVJlMGF1alNOWVZUZw?oc=5\" target=\"_blank\">联和投资公司下属垣信卫星完成千帆星座首次应用测试_国企动态</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">gzw.sh.gov.cn</font>",
+      "published_at": "2025-01-03T08:00:00Z",
+      "raw_text": "<a href=\"https://news.google.com/rss/articles/CBMikgFBVV95cUxNZXhvRTkxZ0VnaDJxM2JKVm5kUFdURUJtWFRxN2NMbW9HSUdRcHJkeVZKQlNkcmp4a05heWl5dzd6ZFZTZjRCTU5DaE83eWRwdm0zYm9ydmxDRTBXdTVob2Nsdlk0VU9yNXFPRnRxbDJBRmRLOG1iX2ttNWxseXU5MGYyYTBnaVJlMGF1alNOWVZUZw?oc=5\" target=\"_blank\">联和投资公司下属垣信卫星完成千帆星座首次应用测试_国企动态</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">gzw.sh.gov.cn</font>",
+      "source": {
+        "collected_at": "2026-06-16T05:33:16.240140Z",
+        "provider_id": "rss_provider",
+        "provider_priority": 10,
+        "rank_group": "media",
+        "raw_payload": {
+          "feed_url": "https://news.google.com/rss/search?q=%E5%9E%A3%E4%BF%A1%E5%8D%AB%E6%98%9F%20%E5%8D%83%E5%B8%86%E6%98%9F%E5%BA%A7%20SpaceSail&hl=zh-CN&gl=CN&ceid=CN:zh-Hans",
+          "published_at": "Fri, 03 Jan 2025 08:00:00 GMT",
+          "summary": "<a href=\"https://news.google.com/rss/articles/CBMikgFBVV95cUxNZXhvRTkxZ0VnaDJxM2JKVm5kUFdURUJtWFRxN2NMbW9HSUdRcHJkeVZKQlNkcmp4a05heWl5dzd6ZFZTZjRCTU5DaE83eWRwdm0zYm9ydmxDRTBXdTVob2Nsdlk0VU9yNXFPRnRxbDJBRmRLOG1iX2ttNWxseXU5MGYyYTBnaVJlMGF1alNOWVZUZw?oc=5\" target=\"_blank\">联和投资公司下属垣信卫星完成千帆星座首次应用测试_国企动态</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">gzw.sh.gov.cn</font>",
+          "title": "联和投资公司下属垣信卫星完成千帆星座首次应用测试_国企动态 - gzw.sh.gov.cn",
+          "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxNZXhvRTkxZ0VnaDJxM2JKVm5kUFdURUJtWFRxN2NMbW9HSUdRcHJkeVZKQlNkcmp4a05heWl5dzd6ZFZTZjRCTU5DaE83eWRwdm0zYm9ydmxDRTBXdTVob2Nsdlk0VU9yNXFPRnRxbDJBRmRLOG1iX2ttNWxseXU5MGYyYTBnaVJlMGF1alNOWVZUZw?oc=5"
+        },
+        "source_id": "rss_provider",
+        "source_name": "Curated RSS provider contract.",
+        "source_type": "rss",
+        "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxNZXhvRTkxZ0VnaDJxM2JKVm5kUFdURUJtWFRxN2NMbW9HSUdRcHJkeVZKQlNkcmp4a05heWl5dzd6ZFZTZjRCTU5DaE83eWRwdm0zYm9ydmxDRTBXdTVob2Nsdlk0VU9yNXFPRnRxbDJBRmRLOG1iX2ttNWxseXU5MGYyYTBnaVJlMGF1alNOWVZUZw?oc=5"
+      },
+      "tags": [],
+      "title": "联和投资公司下属垣信卫星完成千帆星座首次应用测试_国企动态 - gzw.sh.gov.cn",
+      "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxNZXhvRTkxZ0VnaDJxM2JKVm5kUFdURUJtWFRxN2NMbW9HSUdRcHJkeVZKQlNkcmp4a05heWl5dzd6ZFZTZjRCTU5DaE83eWRwdm0zYm9ydmxDRTBXdTVob2Nsdlk0VU9yNXFPRnRxbDJBRmRLOG1iX2ttNWxseXU5MGYyYTBnaVJlMGF1alNOWVZUZw?oc=5"
+    },
+    {
+      "company_id": "yuanxin_satellite",
+      "company_name": "垣信卫星",
+      "id": "105cf7ee69563f5f",
+      "language": null,
+      "metadata": {
+        "feed_url": "https://news.google.com/rss/search?q=%E5%9E%A3%E4%BF%A1%E5%8D%AB%E6%98%9F%20%E5%8D%83%E5%B8%86%E6%98%9F%E5%BA%A7%20SpaceSail&hl=zh-CN&gl=CN&ceid=CN:zh-Hans"
+      },
+      "normalized_text": "<a href=\"https://news.google.com/rss/articles/CBMiU0FVX3lxTFBlNzZTcmpHbEl2UldSemttMTJfVjdrbkZ1WE04c0hNT1RPTkNSMmtNMXRFRzdYU1BVdU9Ed1Z4VDBnel9OSGJycWFvMFhqV0ZValhF?oc=5\" target=\"_blank\">千帆星座“抢箭”之战：卫星组网卡脖子困局</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">华尔街见闻</font>",
+      "published_at": "2026-04-08T07:00:00Z",
+      "raw_text": "<a href=\"https://news.google.com/rss/articles/CBMiU0FVX3lxTFBlNzZTcmpHbEl2UldSemttMTJfVjdrbkZ1WE04c0hNT1RPTkNSMmtNMXRFRzdYU1BVdU9Ed1Z4VDBnel9OSGJycWFvMFhqV0ZValhF?oc=5\" target=\"_blank\">千帆星座“抢箭”之战：卫星组网卡脖子困局</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">华尔街见闻</font>",
+      "source": {
+        "collected_at": "2026-06-16T05:33:16.240140Z",
+        "provider_id": "rss_provider",
+        "provider_priority": 10,
+        "rank_group": "media",
+        "raw_payload": {
+          "feed_url": "https://news.google.com/rss/search?q=%E5%9E%A3%E4%BF%A1%E5%8D%AB%E6%98%9F%20%E5%8D%83%E5%B8%86%E6%98%9F%E5%BA%A7%20SpaceSail&hl=zh-CN&gl=CN&ceid=CN:zh-Hans",
+          "published_at": "Wed, 08 Apr 2026 07:00:00 GMT",
+          "summary": "<a href=\"https://news.google.com/rss/articles/CBMiU0FVX3lxTFBlNzZTcmpHbEl2UldSemttMTJfVjdrbkZ1WE04c0hNT1RPTkNSMmtNMXRFRzdYU1BVdU9Ed1Z4VDBnel9OSGJycWFvMFhqV0ZValhF?oc=5\" target=\"_blank\">千帆星座“抢箭”之战：卫星组网卡脖子困局</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">华尔街见闻</font>",
+          "title": "千帆星座“抢箭”之战：卫星组网卡脖子困局 - 华尔街见闻",
+          "url": "https://news.google.com/rss/articles/CBMiU0FVX3lxTFBlNzZTcmpHbEl2UldSemttMTJfVjdrbkZ1WE04c0hNT1RPTkNSMmtNMXRFRzdYU1BVdU9Ed1Z4VDBnel9OSGJycWFvMFhqV0ZValhF?oc=5"
+        },
+        "source_id": "rss_provider",
+        "source_name": "Curated RSS provider contract.",
+        "source_type": "rss",
+        "url": "https://news.google.com/rss/articles/CBMiU0FVX3lxTFBlNzZTcmpHbEl2UldSemttMTJfVjdrbkZ1WE04c0hNT1RPTkNSMmtNMXRFRzdYU1BVdU9Ed1Z4VDBnel9OSGJycWFvMFhqV0ZValhF?oc=5"
+      },
+      "tags": [],
+      "title": "千帆星座“抢箭”之战：卫星组网卡脖子困局 - 华尔街见闻",
+      "url": "https://news.google.com/rss/articles/CBMiU0FVX3lxTFBlNzZTcmpHbEl2UldSemttMTJfVjdrbkZ1WE04c0hNT1RPTkNSMmtNMXRFRzdYU1BVdU9Ed1Z4VDBnel9OSGJycWFvMFhqV0ZValhF?oc=5"
+    },
+    {
+      "company_id": "yuanxin_satellite",
+      "company_name": "垣信卫星",
+      "id": "9075924d053dc362",
+      "language": null,
+      "metadata": {
+        "feed_url": "https://news.google.com/rss/search?q=%E5%9E%A3%E4%BF%A1%E5%8D%AB%E6%98%9F%20%E5%8D%83%E5%B8%86%E6%98%9F%E5%BA%A7%20SpaceSail&hl=zh-CN&gl=CN&ceid=CN:zh-Hans"
+      },
+      "normalized_text": "<a href=\"https://news.google.com/rss/articles/CBMiUEFVX3lxTE4wYWpIbW1ndXhmd3F0bk1veEkzdHRwckREb21YLVRXbnJrSU5PYVZaUVdjQjVPdGtSNTNtWkp2TlgwWk9YTlFnTHgtdFZZQkRX?oc=5\" target=\"_blank\">独家 | “千帆星座”建设主体垣信卫星挂牌转让1.88%股权</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">搜狐网</font>",
+      "published_at": "2024-07-09T07:00:00Z",
+      "raw_text": "<a href=\"https://news.google.com/rss/articles/CBMiUEFVX3lxTE4wYWpIbW1ndXhmd3F0bk1veEkzdHRwckREb21YLVRXbnJrSU5PYVZaUVdjQjVPdGtSNTNtWkp2TlgwWk9YTlFnTHgtdFZZQkRX?oc=5\" target=\"_blank\">独家 | “千帆星座”建设主体垣信卫星挂牌转让1.88%股权</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">搜狐网</font>",
+      "source": {
+        "collected_at": "2026-06-16T05:33:16.240140Z",
+        "provider_id": "rss_provider",
+        "provider_priority": 10,
+        "rank_group": "media",
+        "raw_payload": {
+          "feed_url": "https://news.google.com/rss/search?q=%E5%9E%A3%E4%BF%A1%E5%8D%AB%E6%98%9F%20%E5%8D%83%E5%B8%86%E6%98%9F%E5%BA%A7%20SpaceSail&hl=zh-CN&gl=CN&ceid=CN:zh-Hans",
+          "published_at": "Tue, 09 Jul 2024 07:00:00 GMT",
+          "summary": "<a href=\"https://news.google.com/rss/articles/CBMiUEFVX3lxTE4wYWpIbW1ndXhmd3F0bk1veEkzdHRwckREb21YLVRXbnJrSU5PYVZaUVdjQjVPdGtSNTNtWkp2TlgwWk9YTlFnTHgtdFZZQkRX?oc=5\" target=\"_blank\">独家 | “千帆星座”建设主体垣信卫星挂牌转让1.88%股权</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">搜狐网</font>",
+          "title": "独家 | “千帆星座”建设主体垣信卫星挂牌转让1.88%股权 - 搜狐网",
+          "url": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE4wYWpIbW1ndXhmd3F0bk1veEkzdHRwckREb21YLVRXbnJrSU5PYVZaUVdjQjVPdGtSNTNtWkp2TlgwWk9YTlFnTHgtdFZZQkRX?oc=5"
+        },
+        "source_id": "rss_provider",
+        "source_name": "Curated RSS provider contract.",
+        "source_type": "rss",
+        "url": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE4wYWpIbW1ndXhmd3F0bk1veEkzdHRwckREb21YLVRXbnJrSU5PYVZaUVdjQjVPdGtSNTNtWkp2TlgwWk9YTlFnTHgtdFZZQkRX?oc=5"
+      },
+      "tags": [],
+      "title": "独家 | “千帆星座”建设主体垣信卫星挂牌转让1.88%股权 - 搜狐网",
+      "url": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE4wYWpIbW1ndXhmd3F0bk1veEkzdHRwckREb21YLVRXbnJrSU5PYVZaUVdjQjVPdGtSNTNtWkp2TlgwWk9YTlFnTHgtdFZZQkRX?oc=5"
+    },
+    {
+      "company_id": "yuanxin_satellite",
+      "company_name": "垣信卫星",
+      "id": "6e242df6cae7d954",
+      "language": null,
+      "metadata": {
+        "feed_url": "https://news.google.com/rss/search?q=%E5%9E%A3%E4%BF%A1%E5%8D%AB%E6%98%9F%20%E5%8D%83%E5%B8%86%E6%98%9F%E5%BA%A7%20SpaceSail&hl=zh-CN&gl=CN&ceid=CN:zh-Hans"
+      },
+      "normalized_text": "<a href=\"https://news.google.com/rss/articles/CBMif0FVX3lxTE82MWU5dzhiaHQ4aDBvbWZ2eEpBakFDZ0ZJSEFPa3NUN1BSMHNpbUtkaXdlSjhQeTRBME1INnVxWHFRNTRNLWMyb1NwX2FLSWROczF4U09FSXVMbkpmWWxYRHBYeEo4YTBzWTFEbzRUWmdWQnNaLVZxdjV3cUJjMGc?oc=5\" target=\"_blank\">“千帆星座”出海，我国垣信卫星与泰国国家电信达成合作</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">新浪财经</font>",
+      "published_at": "2025-04-25T07:00:00Z",
+      "raw_text": "<a href=\"https://news.google.com/rss/articles/CBMif0FVX3lxTE82MWU5dzhiaHQ4aDBvbWZ2eEpBakFDZ0ZJSEFPa3NUN1BSMHNpbUtkaXdlSjhQeTRBME1INnVxWHFRNTRNLWMyb1NwX2FLSWROczF4U09FSXVMbkpmWWxYRHBYeEo4YTBzWTFEbzRUWmdWQnNaLVZxdjV3cUJjMGc?oc=5\" target=\"_blank\">“千帆星座”出海，我国垣信卫星与泰国国家电信达成合作</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">新浪财经</font>",
+      "source": {
+        "collected_at": "2026-06-16T05:33:16.240140Z",
+        "provider_id": "rss_provider",
+        "provider_priority": 10,
+        "rank_group": "media",
+        "raw_payload": {
+          "feed_url": "https://news.google.com/rss/search?q=%E5%9E%A3%E4%BF%A1%E5%8D%AB%E6%98%9F%20%E5%8D%83%E5%B8%86%E6%98%9F%E5%BA%A7%20SpaceSail&hl=zh-CN&gl=CN&ceid=CN:zh-Hans",
+          "published_at": "Fri, 25 Apr 2025 07:00:00 GMT",
+          "summary": "<a href=\"https://news.google.com/rss/articles/CBMif0FVX3lxTE82MWU5dzhiaHQ4aDBvbWZ2eEpBakFDZ0ZJSEFPa3NUN1BSMHNpbUtkaXdlSjhQeTRBME1INnVxWHFRNTRNLWMyb1NwX2FLSWROczF4U09FSXVMbkpmWWxYRHBYeEo4YTBzWTFEbzRUWmdWQnNaLVZxdjV3cUJjMGc?oc=5\" target=\"_blank\">“千帆星座”出海，我国垣信卫星与泰国国家电信达成合作</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">新浪财经</font>",
+          "title": "“千帆星座”出海，我国垣信卫星与泰国国家电信达成合作 - 新浪财经",
+          "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE82MWU5dzhiaHQ4aDBvbWZ2eEpBakFDZ0ZJSEFPa3NUN1BSMHNpbUtkaXdlSjhQeTRBME1INnVxWHFRNTRNLWMyb1NwX2FLSWROczF4U09FSXVMbkpmWWxYRHBYeEo4YTBzWTFEbzRUWmdWQnNaLVZxdjV3cUJjMGc?oc=5"
+        },
+        "source_id": "rss_provider",
+        "source_name": "Curated RSS provider contract.",
+        "source_type": "rss",
+        "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE82MWU5dzhiaHQ4aDBvbWZ2eEpBakFDZ0ZJSEFPa3NUN1BSMHNpbUtkaXdlSjhQeTRBME1INnVxWHFRNTRNLWMyb1NwX2FLSWROczF4U09FSXVMbkpmWWxYRHBYeEo4YTBzWTFEbzRUWmdWQnNaLVZxdjV3cUJjMGc?oc=5"
+      },
+      "tags": [],
+      "title": "“千帆星座”出海，我国垣信卫星与泰国国家电信达成合作 - 新浪财经",
+      "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE82MWU5dzhiaHQ4aDBvbWZ2eEpBakFDZ0ZJSEFPa3NUN1BSMHNpbUtkaXdlSjhQeTRBME1INnVxWHFRNTRNLWMyb1NwX2FLSWROczF4U09FSXVMbkpmWWxYRHBYeEo4YTBzWTFEbzRUWmdWQnNaLVZxdjV3cUJjMGc?oc=5"
+    },
+    {
+      "company_id": "yuanxin_satellite",
+      "company_name": "垣信卫星",
+      "id": "bbb72d2273ad3764",
+      "language": null,
+      "metadata": {
+        "feed_url": "https://news.google.com/rss/search?q=%E5%9E%A3%E4%BF%A1%E5%8D%AB%E6%98%9F%20%E5%8D%83%E5%B8%86%E6%98%9F%E5%BA%A7%20SpaceSail&hl=zh-CN&gl=CN&ceid=CN:zh-Hans"
+      },
+      "normalized_text": "<a href=\"https://news.google.com/rss/articles/CBMiUEFVX3lxTE5vRmFoOEZxT1BTbGY1UThmZklwT0psZmJmTlJidEx2WE5kbnk4VGNDeEM1OHdJYzFsbmZram5oT1B0aGgtOXRhYnpydVVlNXZC?oc=5\" target=\"_blank\">垣信卫星通过“千帆星座”加速出海进程，已在巴西、马来西亚等关键市场取得突破，为中国商业卫星公司拓展海外市场提供了重要参考。</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">雪球</font>",
+      "published_at": "2025-05-07T07:00:00Z",
+      "raw_text": "<a href=\"https://news.google.com/rss/articles/CBMiUEFVX3lxTE5vRmFoOEZxT1BTbGY1UThmZklwT0psZmJmTlJidEx2WE5kbnk4VGNDeEM1OHdJYzFsbmZram5oT1B0aGgtOXRhYnpydVVlNXZC?oc=5\" target=\"_blank\">垣信卫星通过“千帆星座”加速出海进程，已在巴西、马来西亚等关键市场取得突破，为中国商业卫星公司拓展海外市场提供了重要参考。</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">雪球</font>",
+      "source": {
+        "collected_at": "2026-06-16T05:33:16.240140Z",
+        "provider_id": "rss_provider",
+        "provider_priority": 10,
+        "rank_group": "media",
+        "raw_payload": {
+          "feed_url": "https://news.google.com/rss/search?q=%E5%9E%A3%E4%BF%A1%E5%8D%AB%E6%98%9F%20%E5%8D%83%E5%B8%86%E6%98%9F%E5%BA%A7%20SpaceSail&hl=zh-CN&gl=CN&ceid=CN:zh-Hans",
+          "published_at": "Wed, 07 May 2025 07:00:00 GMT",
+          "summary": "<a href=\"https://news.google.com/rss/articles/CBMiUEFVX3lxTE5vRmFoOEZxT1BTbGY1UThmZklwT0psZmJmTlJidEx2WE5kbnk4VGNDeEM1OHdJYzFsbmZram5oT1B0aGgtOXRhYnpydVVlNXZC?oc=5\" target=\"_blank\">垣信卫星通过“千帆星座”加速出海进程，已在巴西、马来西亚等关键市场取得突破，为中国商业卫星公司拓展海外市场提供了重要参考。</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">雪球</font>",
+          "title": "垣信卫星通过“千帆星座”加速出海进程，已在巴西、马来西亚等关键市场取得突破，为中国商业卫星公司拓展海外市场提供了重要参考。 - 雪球",
+          "url": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE5vRmFoOEZxT1BTbGY1UThmZklwT0psZmJmTlJidEx2WE5kbnk4VGNDeEM1OHdJYzFsbmZram5oT1B0aGgtOXRhYnpydVVlNXZC?oc=5"
+        },
+        "source_id": "rss_provider",
+        "source_name": "Curated RSS provider contract.",
+        "source_type": "rss",
+        "url": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE5vRmFoOEZxT1BTbGY1UThmZklwT0psZmJmTlJidEx2WE5kbnk4VGNDeEM1OHdJYzFsbmZram5oT1B0aGgtOXRhYnpydVVlNXZC?oc=5"
+      },
+      "tags": [],
+      "title": "垣信卫星通过“千帆星座”加速出海进程，已在巴西、马来西亚等关键市场取得突破，为中国商业卫星公司拓展海外市场提供了重要参考。 - 雪球",
+      "url": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE5vRmFoOEZxT1BTbGY1UThmZklwT0psZmJmTlJidEx2WE5kbnk4VGNDeEM1OHdJYzFsbmZram5oT1B0aGgtOXRhYnpydVVlNXZC?oc=5"
+    },
+    {
+      "company_id": "yuanxin_satellite",
+      "company_name": "垣信卫星",
+      "id": "7bbbec60b72c2bf7",
+      "language": null,
+      "metadata": {
+        "feed_url": "https://news.google.com/rss/search?q=%E5%9E%A3%E4%BF%A1%E5%8D%AB%E6%98%9F%20%E5%8D%83%E5%B8%86%E6%98%9F%E5%BA%A7%20SpaceSail&hl=zh-CN&gl=CN&ceid=CN:zh-Hans"
+      },
+      "normalized_text": "<a href=\"https://news.google.com/rss/articles/CBMiW0FVX3lxTFBDZlQ4TWxpZUFGTFFsM1hOaXQ1MFlENktsWVQ5b1llbVFnM2VQZm1SV1pzQ3V0eDRNa3JuUmI0VGE5NC03bmZkNXFwSExhRDF2dXVBcFEtY1JLd28?oc=5\" target=\"_blank\">垣信卫星开启海外业务,千帆星座正向全球推广</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">风闻</font>",
+      "published_at": "2024-11-21T08:00:00Z",
+      "raw_text": "<a href=\"https://news.google.com/rss/articles/CBMiW0FVX3lxTFBDZlQ4TWxpZUFGTFFsM1hOaXQ1MFlENktsWVQ5b1llbVFnM2VQZm1SV1pzQ3V0eDRNa3JuUmI0VGE5NC03bmZkNXFwSExhRDF2dXVBcFEtY1JLd28?oc=5\" target=\"_blank\">垣信卫星开启海外业务,千帆星座正向全球推广</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">风闻</font>",
+      "source": {
+        "collected_at": "2026-06-16T05:33:16.240140Z",
+        "provider_id": "rss_provider",
+        "provider_priority": 10,
+        "rank_group": "media",
+        "raw_payload": {
+          "feed_url": "https://news.google.com/rss/search?q=%E5%9E%A3%E4%BF%A1%E5%8D%AB%E6%98%9F%20%E5%8D%83%E5%B8%86%E6%98%9F%E5%BA%A7%20SpaceSail&hl=zh-CN&gl=CN&ceid=CN:zh-Hans",
+          "published_at": "Thu, 21 Nov 2024 08:00:00 GMT",
+          "summary": "<a href=\"https://news.google.com/rss/articles/CBMiW0FVX3lxTFBDZlQ4TWxpZUFGTFFsM1hOaXQ1MFlENktsWVQ5b1llbVFnM2VQZm1SV1pzQ3V0eDRNa3JuUmI0VGE5NC03bmZkNXFwSExhRDF2dXVBcFEtY1JLd28?oc=5\" target=\"_blank\">垣信卫星开启海外业务,千帆星座正向全球推广</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">风闻</font>",
+          "title": "垣信卫星开启海外业务,千帆星座正向全球推广 - 风闻",
+          "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTFBDZlQ4TWxpZUFGTFFsM1hOaXQ1MFlENktsWVQ5b1llbVFnM2VQZm1SV1pzQ3V0eDRNa3JuUmI0VGE5NC03bmZkNXFwSExhRDF2dXVBcFEtY1JLd28?oc=5"
+        },
+        "source_id": "rss_provider",
+        "source_name": "Curated RSS provider contract.",
+        "source_type": "rss",
+        "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTFBDZlQ4TWxpZUFGTFFsM1hOaXQ1MFlENktsWVQ5b1llbVFnM2VQZm1SV1pzQ3V0eDRNa3JuUmI0VGE5NC03bmZkNXFwSExhRDF2dXVBcFEtY1JLd28?oc=5"
+      },
+      "tags": [],
+      "title": "垣信卫星开启海外业务,千帆星座正向全球推广 - 风闻",
+      "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTFBDZlQ4TWxpZUFGTFFsM1hOaXQ1MFlENktsWVQ5b1llbVFnM2VQZm1SV1pzQ3V0eDRNa3JuUmI0VGE5NC03bmZkNXFwSExhRDF2dXVBcFEtY1JLd28?oc=5"
+    },
+    {
+      "company_id": "yuanxin_satellite",
+      "company_name": "垣信卫星",
+      "id": "f2202b5917aeec0e",
+      "language": null,
+      "metadata": {
+        "feed_url": "https://news.google.com/rss/search?q=%E5%9E%A3%E4%BF%A1%E5%8D%AB%E6%98%9F%20%E5%8D%83%E5%B8%86%E6%98%9F%E5%BA%A7%20SpaceSail&hl=zh-CN&gl=CN&ceid=CN:zh-Hans"
+      },
+      "normalized_text": "<a href=\"https://news.google.com/rss/articles/CBMieEFVX3lxTE1DMUxfN0dEMy1FTlNyQS1pWUFlN0EtakJwb3hxdEE3ZnVCcEltUEZVV1BtaEJueUpIQXFIcXlOVlNIMnlNYmZXTWVfc1c3bFRqWDVrWTdvalpabHhGN19fUXZOZG1JTlN3RnJ6b0pBZ0xCNm1qZlpWRg?oc=5\" target=\"_blank\">低轨卫星“千帆星座”已完成五批次组网卫星发射，未来还有这些计划</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">新浪财经</font>",
+      "published_at": "2025-04-24T07:00:00Z",
+      "raw_text": "<a href=\"https://news.google.com/rss/articles/CBMieEFVX3lxTE1DMUxfN0dEMy1FTlNyQS1pWUFlN0EtakJwb3hxdEE3ZnVCcEltUEZVV1BtaEJueUpIQXFIcXlOVlNIMnlNYmZXTWVfc1c3bFRqWDVrWTdvalpabHhGN19fUXZOZG1JTlN3RnJ6b0pBZ0xCNm1qZlpWRg?oc=5\" target=\"_blank\">低轨卫星“千帆星座”已完成五批次组网卫星发射，未来还有这些计划</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">新浪财经</font>",
+      "source": {
+        "collected_at": "2026-06-16T05:33:16.240140Z",
+        "provider_id": "rss_provider",
+        "provider_priority": 10,
+        "rank_group": "media",
+        "raw_payload": {
+          "feed_url": "https://news.google.com/rss/search?q=%E5%9E%A3%E4%BF%A1%E5%8D%AB%E6%98%9F%20%E5%8D%83%E5%B8%86%E6%98%9F%E5%BA%A7%20SpaceSail&hl=zh-CN&gl=CN&ceid=CN:zh-Hans",
+          "published_at": "Thu, 24 Apr 2025 07:00:00 GMT",
+          "summary": "<a href=\"https://news.google.com/rss/articles/CBMieEFVX3lxTE1DMUxfN0dEMy1FTlNyQS1pWUFlN0EtakJwb3hxdEE3ZnVCcEltUEZVV1BtaEJueUpIQXFIcXlOVlNIMnlNYmZXTWVfc1c3bFRqWDVrWTdvalpabHhGN19fUXZOZG1JTlN3RnJ6b0pBZ0xCNm1qZlpWRg?oc=5\" target=\"_blank\">低轨卫星“千帆星座”已完成五批次组网卫星发射，未来还有这些计划</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">新浪财经</font>",
+          "title": "低轨卫星“千帆星座”已完成五批次组网卫星发射，未来还有这些计划 - 新浪财经",
+          "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTE1DMUxfN0dEMy1FTlNyQS1pWUFlN0EtakJwb3hxdEE3ZnVCcEltUEZVV1BtaEJueUpIQXFIcXlOVlNIMnlNYmZXTWVfc1c3bFRqWDVrWTdvalpabHhGN19fUXZOZG1JTlN3RnJ6b0pBZ0xCNm1qZlpWRg?oc=5"
+        },
+        "source_id": "rss_provider",
+        "source_name": "Curated RSS provider contract.",
+        "source_type": "rss",
+        "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTE1DMUxfN0dEMy1FTlNyQS1pWUFlN0EtakJwb3hxdEE3ZnVCcEltUEZVV1BtaEJueUpIQXFIcXlOVlNIMnlNYmZXTWVfc1c3bFRqWDVrWTdvalpabHhGN19fUXZOZG1JTlN3RnJ6b0pBZ0xCNm1qZlpWRg?oc=5"
+      },
+      "tags": [],
+      "title": "低轨卫星“千帆星座”已完成五批次组网卫星发射，未来还有这些计划 - 新浪财经",
+      "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTE1DMUxfN0dEMy1FTlNyQS1pWUFlN0EtakJwb3hxdEE3ZnVCcEltUEZVV1BtaEJueUpIQXFIcXlOVlNIMnlNYmZXTWVfc1c3bFRqWDVrWTdvalpabHhGN19fUXZOZG1JTlN3RnJ6b0pBZ0xCNm1qZlpWRg?oc=5"
+    },
+    {
+      "company_id": "yuanxin_satellite",
+      "company_name": "垣信卫星",
+      "id": "8d0b25abd9c056a0",
+      "language": null,
+      "metadata": {
+        "feed_url": "https://news.google.com/rss/search?q=SpaceSail%20Qianfan%20Thousand%20Sails%20satellite&hl=en-US&gl=US&ceid=US:en"
+      },
+      "normalized_text": "<a href=\"https://news.google.com/rss/articles/CBMirgFBVV95cUxPSDZ0RkVfNGhFN0x1Wjhjb0NNcnpya0N2Y3hCNkpoY19IbHNuREsxVEUxdkRyVDM1NGo1SUpaWWFIV215RS1sMV9vNFVyRFY5aDFFclFIWTNBLXVqcmhnNTVKQld4blZCZWw4RzlDVEU2d3QzSkJtcF9jdmwxcVJJSGZtTGU0SXYtaWEzU0ZyQTJrR0VKMmJpM1pURVo5VTFCem96SC1FVDNlbzJ3ZFE?oc=5\" target=\"_blank\">Qianfan constellation deployment hits 200 satellites with Long March 8 and 6A launches</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">SpaceNews</font>",
+      "published_at": "2026-06-05T07:00:00Z",
+      "raw_text": "<a href=\"https://news.google.com/rss/articles/CBMirgFBVV95cUxPSDZ0RkVfNGhFN0x1Wjhjb0NNcnpya0N2Y3hCNkpoY19IbHNuREsxVEUxdkRyVDM1NGo1SUpaWWFIV215RS1sMV9vNFVyRFY5aDFFclFIWTNBLXVqcmhnNTVKQld4blZCZWw4RzlDVEU2d3QzSkJtcF9jdmwxcVJJSGZtTGU0SXYtaWEzU0ZyQTJrR0VKMmJpM1pURVo5VTFCem96SC1FVDNlbzJ3ZFE?oc=5\" target=\"_blank\">Qianfan constellation deployment hits 200 satellites with Long March 8 and 6A launches</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">SpaceNews</font>",
+      "source": {
+        "collected_at": "2026-06-16T05:33:16.240140Z",
+        "provider_id": "rss_provider",
+        "provider_priority": 10,
+        "rank_group": "media",
+        "raw_payload": {
+          "feed_url": "https://news.google.com/rss/search?q=SpaceSail%20Qianfan%20Thousand%20Sails%20satellite&hl=en-US&gl=US&ceid=US:en",
+          "published_at": "Fri, 05 Jun 2026 07:00:00 GMT",
+          "summary": "<a href=\"https://news.google.com/rss/articles/CBMirgFBVV95cUxPSDZ0RkVfNGhFN0x1Wjhjb0NNcnpya0N2Y3hCNkpoY19IbHNuREsxVEUxdkRyVDM1NGo1SUpaWWFIV215RS1sMV9vNFVyRFY5aDFFclFIWTNBLXVqcmhnNTVKQld4blZCZWw4RzlDVEU2d3QzSkJtcF9jdmwxcVJJSGZtTGU0SXYtaWEzU0ZyQTJrR0VKMmJpM1pURVo5VTFCem96SC1FVDNlbzJ3ZFE?oc=5\" target=\"_blank\">Qianfan constellation deployment hits 200 satellites with Long March 8 and 6A launches</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">SpaceNews</font>",
+          "title": "Qianfan constellation deployment hits 200 satellites with Long March 8 and 6A launches - SpaceNews",
+          "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxPSDZ0RkVfNGhFN0x1Wjhjb0NNcnpya0N2Y3hCNkpoY19IbHNuREsxVEUxdkRyVDM1NGo1SUpaWWFIV215RS1sMV9vNFVyRFY5aDFFclFIWTNBLXVqcmhnNTVKQld4blZCZWw4RzlDVEU2d3QzSkJtcF9jdmwxcVJJSGZtTGU0SXYtaWEzU0ZyQTJrR0VKMmJpM1pURVo5VTFCem96SC1FVDNlbzJ3ZFE?oc=5"
+        },
+        "source_id": "rss_provider",
+        "source_name": "Curated RSS provider contract.",
+        "source_type": "rss",
+        "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxPSDZ0RkVfNGhFN0x1Wjhjb0NNcnpya0N2Y3hCNkpoY19IbHNuREsxVEUxdkRyVDM1NGo1SUpaWWFIV215RS1sMV9vNFVyRFY5aDFFclFIWTNBLXVqcmhnNTVKQld4blZCZWw4RzlDVEU2d3QzSkJtcF9jdmwxcVJJSGZtTGU0SXYtaWEzU0ZyQTJrR0VKMmJpM1pURVo5VTFCem96SC1FVDNlbzJ3ZFE?oc=5"
+      },
+      "tags": [],
+      "title": "Qianfan constellation deployment hits 200 satellites with Long March 8 and 6A launches - SpaceNews",
+      "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxPSDZ0RkVfNGhFN0x1Wjhjb0NNcnpya0N2Y3hCNkpoY19IbHNuREsxVEUxdkRyVDM1NGo1SUpaWWFIV215RS1sMV9vNFVyRFY5aDFFclFIWTNBLXVqcmhnNTVKQld4blZCZWw4RzlDVEU2d3QzSkJtcF9jdmwxcVJJSGZtTGU0SXYtaWEzU0ZyQTJrR0VKMmJpM1pURVo5VTFCem96SC1FVDNlbzJ3ZFE?oc=5"
+    },
+    {
+      "company_id": "china_satnet",
+      "company_name": "中国星网",
+      "id": "9acc9d1ab2d13a8e",
+      "language": null,
+      "metadata": {
+        "feed_url": "https://news.google.com/rss/search?q=%E4%B8%AD%E5%9B%BD%E6%98%9F%E7%BD%91%20%E5%9B%BD%E7%BD%91%E6%98%9F%E5%BA%A7%20%E4%B8%AD%E5%9B%BD%E5%8D%AB%E6%98%9F%E7%BD%91%E7%BB%9C%E9%9B%86%E5%9B%A2&hl=zh-CN&gl=CN&ceid=CN:zh-Hans"
+      },
+      "normalized_text": "<a href=\"https://news.google.com/rss/articles/CBMiUkFVX3lxTE9YcWpJdmRlV3NxZjNObGw5U013QW9QazRmaWJmWEg5dlZSeVV1OUhjT29jT3BjUy1LdExUY3RFdkE1ejJRU1FDLVUwSUZQMzBzVWc?oc=5\" target=\"_blank\">管理层大换血！中国星网行业格局将生变？</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">通信世界网</font>",
+      "published_at": "2025-06-26T07:00:00Z",
+      "raw_text": "<a href=\"https://news.google.com/rss/articles/CBMiUkFVX3lxTE9YcWpJdmRlV3NxZjNObGw5U013QW9QazRmaWJmWEg5dlZSeVV1OUhjT29jT3BjUy1LdExUY3RFdkE1ejJRU1FDLVUwSUZQMzBzVWc?oc=5\" target=\"_blank\">管理层大换血！中国星网行业格局将生变？</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">通信世界网</font>",
+      "source": {
+        "collected_at": "2026-06-16T05:33:16.240140Z",
+        "provider_id": "rss_provider",
+        "provider_priority": 10,
+        "rank_group": "media",
+        "raw_payload": {
+          "feed_url": "https://news.google.com/rss/search?q=%E4%B8%AD%E5%9B%BD%E6%98%9F%E7%BD%91%20%E5%9B%BD%E7%BD%91%E6%98%9F%E5%BA%A7%20%E4%B8%AD%E5%9B%BD%E5%8D%AB%E6%98%9F%E7%BD%91%E7%BB%9C%E9%9B%86%E5%9B%A2&hl=zh-CN&gl=CN&ceid=CN:zh-Hans",
+          "published_at": "Thu, 26 Jun 2025 07:00:00 GMT",
+          "summary": "<a href=\"https://news.google.com/rss/articles/CBMiUkFVX3lxTE9YcWpJdmRlV3NxZjNObGw5U013QW9QazRmaWJmWEg5dlZSeVV1OUhjT29jT3BjUy1LdExUY3RFdkE1ejJRU1FDLVUwSUZQMzBzVWc?oc=5\" target=\"_blank\">管理层大换血！中国星网行业格局将生变？</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">通信世界网</font>",
+          "title": "管理层大换血！中国星网行业格局将生变？ - 通信世界网",
+          "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE9YcWpJdmRlV3NxZjNObGw5U013QW9QazRmaWJmWEg5dlZSeVV1OUhjT29jT3BjUy1LdExUY3RFdkE1ejJRU1FDLVUwSUZQMzBzVWc?oc=5"
+        },
+        "source_id": "rss_provider",
+        "source_name": "Curated RSS provider contract.",
+        "source_type": "rss",
+        "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE9YcWpJdmRlV3NxZjNObGw5U013QW9QazRmaWJmWEg5dlZSeVV1OUhjT29jT3BjUy1LdExUY3RFdkE1ejJRU1FDLVUwSUZQMzBzVWc?oc=5"
+      },
+      "tags": [],
+      "title": "管理层大换血！中国星网行业格局将生变？ - 通信世界网",
+      "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE9YcWpJdmRlV3NxZjNObGw5U013QW9QazRmaWJmWEg5dlZSeVV1OUhjT29jT3BjUy1LdExUY3RFdkE1ejJRU1FDLVUwSUZQMzBzVWc?oc=5"
+    },
+    {
+      "company_id": "china_satnet",
+      "company_name": "中国星网",
+      "id": "0b4045fe1550a5d6",
+      "language": null,
+      "metadata": {
+        "feed_url": "https://news.google.com/rss/search?q=%E4%B8%AD%E5%9B%BD%E6%98%9F%E7%BD%91%20%E5%9B%BD%E7%BD%91%E6%98%9F%E5%BA%A7%20%E4%B8%AD%E5%9B%BD%E5%8D%AB%E6%98%9F%E7%BD%91%E7%BB%9C%E9%9B%86%E5%9B%A2&hl=zh-CN&gl=CN&ceid=CN:zh-Hans"
+      },
+      "normalized_text": "<a href=\"https://news.google.com/rss/articles/CBMiSEFVX3lxTFBpdzZINlJicjh5M3pCazllS0x3LVdNcjg1M0k3WEo3bWJTeTVVVXRicmpieEQ2eGJaRWRsV2FUMWFaV2IyZGphNA?oc=5\" target=\"_blank\">卸任中国电信总裁后 梁宝俊就任中国星网总经理</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">财联社</font>",
+      "published_at": "2025-02-11T13:49:46Z",
+      "raw_text": "<a href=\"https://news.google.com/rss/articles/CBMiSEFVX3lxTFBpdzZINlJicjh5M3pCazllS0x3LVdNcjg1M0k3WEo3bWJTeTVVVXRicmpieEQ2eGJaRWRsV2FUMWFaV2IyZGphNA?oc=5\" target=\"_blank\">卸任中国电信总裁后 梁宝俊就任中国星网总经理</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">财联社</font>",
+      "source": {
+        "collected_at": "2026-06-16T05:33:16.240140Z",
+        "provider_id": "rss_provider",
+        "provider_priority": 10,
+        "rank_group": "media",
+        "raw_payload": {
+          "feed_url": "https://news.google.com/rss/search?q=%E4%B8%AD%E5%9B%BD%E6%98%9F%E7%BD%91%20%E5%9B%BD%E7%BD%91%E6%98%9F%E5%BA%A7%20%E4%B8%AD%E5%9B%BD%E5%8D%AB%E6%98%9F%E7%BD%91%E7%BB%9C%E9%9B%86%E5%9B%A2&hl=zh-CN&gl=CN&ceid=CN:zh-Hans",
+          "published_at": "Tue, 11 Feb 2025 13:49:46 GMT",
+          "summary": "<a href=\"https://news.google.com/rss/articles/CBMiSEFVX3lxTFBpdzZINlJicjh5M3pCazllS0x3LVdNcjg1M0k3WEo3bWJTeTVVVXRicmpieEQ2eGJaRWRsV2FUMWFaV2IyZGphNA?oc=5\" target=\"_blank\">卸任中国电信总裁后 梁宝俊就任中国星网总经理</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">财联社</font>",
+          "title": "卸任中国电信总裁后 梁宝俊就任中国星网总经理 - 财联社",
+          "url": "https://news.google.com/rss/articles/CBMiSEFVX3lxTFBpdzZINlJicjh5M3pCazllS0x3LVdNcjg1M0k3WEo3bWJTeTVVVXRicmpieEQ2eGJaRWRsV2FUMWFaV2IyZGphNA?oc=5"
+        },
+        "source_id": "rss_provider",
+        "source_name": "Curated RSS provider contract.",
+        "source_type": "rss",
+        "url": "https://news.google.com/rss/articles/CBMiSEFVX3lxTFBpdzZINlJicjh5M3pCazllS0x3LVdNcjg1M0k3WEo3bWJTeTVVVXRicmpieEQ2eGJaRWRsV2FUMWFaV2IyZGphNA?oc=5"
+      },
+      "tags": [],
+      "title": "卸任中国电信总裁后 梁宝俊就任中国星网总经理 - 财联社",
+      "url": "https://news.google.com/rss/articles/CBMiSEFVX3lxTFBpdzZINlJicjh5M3pCazllS0x3LVdNcjg1M0k3WEo3bWJTeTVVVXRicmpieEQ2eGJaRWRsV2FUMWFaV2IyZGphNA?oc=5"
+    },
+    {
+      "company_id": "china_satnet",
+      "company_name": "中国星网",
+      "id": "cfdc2e044cb31d63",
+      "language": null,
+      "metadata": {
+        "feed_url": "https://news.google.com/rss/search?q=%E4%B8%AD%E5%9B%BD%E6%98%9F%E7%BD%91%20%E5%9B%BD%E7%BD%91%E6%98%9F%E5%BA%A7%20%E4%B8%AD%E5%9B%BD%E5%8D%AB%E6%98%9F%E7%BD%91%E7%BB%9C%E9%9B%86%E5%9B%A2&hl=zh-CN&gl=CN&ceid=CN:zh-Hans"
+      },
+      "normalized_text": "<a href=\"https://news.google.com/rss/articles/CBMiV0FVX3lxTE5BNnhVLTgzQUVwUGxQWGkyclJwU1BRSHhIRTFhR1d0OUIxNVU0QWRNamxnRUh0Y3dEZjc0OWdnb0FmdE9xRkd5eHFXTy16U05wbDFZSlBzSQ?oc=5\" target=\"_blank\">中国星网换帅增资 冲刺星座部署关键期</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">eeo.com.cn</font>",
+      "published_at": "2026-01-20T08:00:00Z",
+      "raw_text": "<a href=\"https://news.google.com/rss/articles/CBMiV0FVX3lxTE5BNnhVLTgzQUVwUGxQWGkyclJwU1BRSHhIRTFhR1d0OUIxNVU0QWRNamxnRUh0Y3dEZjc0OWdnb0FmdE9xRkd5eHFXTy16U05wbDFZSlBzSQ?oc=5\" target=\"_blank\">中国星网换帅增资 冲刺星座部署关键期</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">eeo.com.cn</font>",
+      "source": {
+        "collected_at": "2026-06-16T05:33:16.240140Z",
+        "provider_id": "rss_provider",
+        "provider_priority": 10,
+        "rank_group": "media",
+        "raw_payload": {
+          "feed_url": "https://news.google.com/rss/search?q=%E4%B8%AD%E5%9B%BD%E6%98%9F%E7%BD%91%20%E5%9B%BD%E7%BD%91%E6%98%9F%E5%BA%A7%20%E4%B8%AD%E5%9B%BD%E5%8D%AB%E6%98%9F%E7%BD%91%E7%BB%9C%E9%9B%86%E5%9B%A2&hl=zh-CN&gl=CN&ceid=CN:zh-Hans",
+          "published_at": "Tue, 20 Jan 2026 08:00:00 GMT",
+          "summary": "<a href=\"https://news.google.com/rss/articles/CBMiV0FVX3lxTE5BNnhVLTgzQUVwUGxQWGkyclJwU1BRSHhIRTFhR1d0OUIxNVU0QWRNamxnRUh0Y3dEZjc0OWdnb0FmdE9xRkd5eHFXTy16U05wbDFZSlBzSQ?oc=5\" target=\"_blank\">中国星网换帅增资 冲刺星座部署关键期</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">eeo.com.cn</font>",
+          "title": "中国星网换帅增资 冲刺星座部署关键期 - eeo.com.cn",
+          "url": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE5BNnhVLTgzQUVwUGxQWGkyclJwU1BRSHhIRTFhR1d0OUIxNVU0QWRNamxnRUh0Y3dEZjc0OWdnb0FmdE9xRkd5eHFXTy16U05wbDFZSlBzSQ?oc=5"
+        },
+        "source_id": "rss_provider",
+        "source_name": "Curated RSS provider contract.",
+        "source_type": "rss",
+        "url": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE5BNnhVLTgzQUVwUGxQWGkyclJwU1BRSHhIRTFhR1d0OUIxNVU0QWRNamxnRUh0Y3dEZjc0OWdnb0FmdE9xRkd5eHFXTy16U05wbDFZSlBzSQ?oc=5"
+      },
+      "tags": [],
+      "title": "中国星网换帅增资 冲刺星座部署关键期 - eeo.com.cn",
+      "url": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE5BNnhVLTgzQUVwUGxQWGkyclJwU1BRSHhIRTFhR1d0OUIxNVU0QWRNamxnRUh0Y3dEZjc0OWdnb0FmdE9xRkd5eHFXTy16U05wbDFZSlBzSQ?oc=5"
+    },
+    {
+      "company_id": "china_satnet",
+      "company_name": "中国星网",
+      "id": "047717cf1dae9ebb",
+      "language": null,
+      "metadata": {
+        "feed_url": "https://news.google.com/rss/search?q=%E4%B8%AD%E5%9B%BD%E6%98%9F%E7%BD%91%20%E5%9B%BD%E7%BD%91%E6%98%9F%E5%BA%A7%20%E4%B8%AD%E5%9B%BD%E5%8D%AB%E6%98%9F%E7%BD%91%E7%BB%9C%E9%9B%86%E5%9B%A2&hl=zh-CN&gl=CN&ceid=CN:zh-Hans"
+      },
+      "normalized_text": "<a href=\"https://news.google.com/rss/articles/CBMiZ0FVX3lxTFBuaXNMYTAxUzl1c3hhbDd6aE5UZlpaY1JGY2I0TFJIWDF5UVhWX2oyZzNmYnMwSTZJX3RhcmlkNG14a2RvTEs3d2JibUdXMVQxdXc0LW1FUXB4ZnJOSlJSdURlWnlib1U?oc=5\" target=\"_blank\">21天5次发射，中国星网为什么这么急？-白玉京-观察者网</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">观察者网</font>",
+      "published_at": "2025-08-20T07:00:00Z",
+      "raw_text": "<a href=\"https://news.google.com/rss/articles/CBMiZ0FVX3lxTFBuaXNMYTAxUzl1c3hhbDd6aE5UZlpaY1JGY2I0TFJIWDF5UVhWX2oyZzNmYnMwSTZJX3RhcmlkNG14a2RvTEs3d2JibUdXMVQxdXc0LW1FUXB4ZnJOSlJSdURlWnlib1U?oc=5\" target=\"_blank\">21天5次发射，中国星网为什么这么急？-白玉京-观察者网</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">观察者网</font>",
+      "source": {
+        "collected_at": "2026-06-16T05:33:16.240140Z",
+        "provider_id": "rss_provider",
+        "provider_priority": 10,
+        "rank_group": "media",
+        "raw_payload": {
+          "feed_url": "https://news.google.com/rss/search?q=%E4%B8%AD%E5%9B%BD%E6%98%9F%E7%BD%91%20%E5%9B%BD%E7%BD%91%E6%98%9F%E5%BA%A7%20%E4%B8%AD%E5%9B%BD%E5%8D%AB%E6%98%9F%E7%BD%91%E7%BB%9C%E9%9B%86%E5%9B%A2&hl=zh-CN&gl=CN&ceid=CN:zh-Hans",
+          "published_at": "Wed, 20 Aug 2025 07:00:00 GMT",
+          "summary": "<a href=\"https://news.google.com/rss/articles/CBMiZ0FVX3lxTFBuaXNMYTAxUzl1c3hhbDd6aE5UZlpaY1JGY2I0TFJIWDF5UVhWX2oyZzNmYnMwSTZJX3RhcmlkNG14a2RvTEs3d2JibUdXMVQxdXc0LW1FUXB4ZnJOSlJSdURlWnlib1U?oc=5\" target=\"_blank\">21天5次发射，中国星网为什么这么急？-白玉京-观察者网</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">观察者网</font>",
+          "title": "21天5次发射，中国星网为什么这么急？-白玉京-观察者网 - 观察者网",
+          "url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTFBuaXNMYTAxUzl1c3hhbDd6aE5UZlpaY1JGY2I0TFJIWDF5UVhWX2oyZzNmYnMwSTZJX3RhcmlkNG14a2RvTEs3d2JibUdXMVQxdXc0LW1FUXB4ZnJOSlJSdURlWnlib1U?oc=5"
+        },
+        "source_id": "rss_provider",
+        "source_name": "Curated RSS provider contract.",
+        "source_type": "rss",
+        "url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTFBuaXNMYTAxUzl1c3hhbDd6aE5UZlpaY1JGY2I0TFJIWDF5UVhWX2oyZzNmYnMwSTZJX3RhcmlkNG14a2RvTEs3d2JibUdXMVQxdXc0LW1FUXB4ZnJOSlJSdURlWnlib1U?oc=5"
+      },
+      "tags": [],
+      "title": "21天5次发射，中国星网为什么这么急？-白玉京-观察者网 - 观察者网",
+      "url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTFBuaXNMYTAxUzl1c3hhbDd6aE5UZlpaY1JGY2I0TFJIWDF5UVhWX2oyZzNmYnMwSTZJX3RhcmlkNG14a2RvTEs3d2JibUdXMVQxdXc0LW1FUXB4ZnJOSlJSdURlWnlib1U?oc=5"
+    },
+    {
+      "company_id": "china_satnet",
+      "company_name": "中国星网",
+      "id": "01ed8bfe93ee07bb",
+      "language": null,
+      "metadata": {
+        "feed_url": "https://news.google.com/rss/search?q=%E4%B8%AD%E5%9B%BD%E6%98%9F%E7%BD%91%20%E5%9B%BD%E7%BD%91%E6%98%9F%E5%BA%A7%20%E4%B8%AD%E5%9B%BD%E5%8D%AB%E6%98%9F%E7%BD%91%E7%BB%9C%E9%9B%86%E5%9B%A2&hl=zh-CN&gl=CN&ceid=CN:zh-Hans"
+      },
+      "normalized_text": "<a href=\"https://news.google.com/rss/articles/CBMiUkFVX3lxTFB1RWx6TGFNa0YzcVYtYnl1aXhLX29USFNyaHo1TjJQeGlONEZpc3ZWd25LRU5vS255NW82ME5wanFwZ3lzdkxDWFJmeGN5RVVWV2c?oc=5\" target=\"_blank\">中国星网，正式升空！</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">C114通信网</font>",
+      "published_at": "2024-12-17T08:00:00Z",
+      "raw_text": "<a href=\"https://news.google.com/rss/articles/CBMiUkFVX3lxTFB1RWx6TGFNa0YzcVYtYnl1aXhLX29USFNyaHo1TjJQeGlONEZpc3ZWd25LRU5vS255NW82ME5wanFwZ3lzdkxDWFJmeGN5RVVWV2c?oc=5\" target=\"_blank\">中国星网，正式升空！</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">C114通信网</font>",
+      "source": {
+        "collected_at": "2026-06-16T05:33:16.240140Z",
+        "provider_id": "rss_provider",
+        "provider_priority": 10,
+        "rank_group": "media",
+        "raw_payload": {
+          "feed_url": "https://news.google.com/rss/search?q=%E4%B8%AD%E5%9B%BD%E6%98%9F%E7%BD%91%20%E5%9B%BD%E7%BD%91%E6%98%9F%E5%BA%A7%20%E4%B8%AD%E5%9B%BD%E5%8D%AB%E6%98%9F%E7%BD%91%E7%BB%9C%E9%9B%86%E5%9B%A2&hl=zh-CN&gl=CN&ceid=CN:zh-Hans",
+          "published_at": "Tue, 17 Dec 2024 08:00:00 GMT",
+          "summary": "<a href=\"https://news.google.com/rss/articles/CBMiUkFVX3lxTFB1RWx6TGFNa0YzcVYtYnl1aXhLX29USFNyaHo1TjJQeGlONEZpc3ZWd25LRU5vS255NW82ME5wanFwZ3lzdkxDWFJmeGN5RVVWV2c?oc=5\" target=\"_blank\">中国星网，正式升空！</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">C114通信网</font>",
+          "title": "中国星网，正式升空！ - C114通信网",
+          "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTFB1RWx6TGFNa0YzcVYtYnl1aXhLX29USFNyaHo1TjJQeGlONEZpc3ZWd25LRU5vS255NW82ME5wanFwZ3lzdkxDWFJmeGN5RVVWV2c?oc=5"
+        },
+        "source_id": "rss_provider",
+        "source_name": "Curated RSS provider contract.",
+        "source_type": "rss",
+        "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTFB1RWx6TGFNa0YzcVYtYnl1aXhLX29USFNyaHo1TjJQeGlONEZpc3ZWd25LRU5vS255NW82ME5wanFwZ3lzdkxDWFJmeGN5RVVWV2c?oc=5"
+      },
+      "tags": [],
+      "title": "中国星网，正式升空！ - C114通信网",
+      "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTFB1RWx6TGFNa0YzcVYtYnl1aXhLX29USFNyaHo1TjJQeGlONEZpc3ZWd25LRU5vS255NW82ME5wanFwZ3lzdkxDWFJmeGN5RVVWV2c?oc=5"
+    },
+    {
+      "company_id": "china_satnet",
+      "company_name": "中国星网",
+      "id": "f35bb2d5427c2bb0",
+      "language": null,
+      "metadata": {
+        "feed_url": "https://news.google.com/rss/search?q=%E4%B8%AD%E5%9B%BD%E6%98%9F%E7%BD%91%20%E5%9B%BD%E7%BD%91%E6%98%9F%E5%BA%A7%20%E4%B8%AD%E5%9B%BD%E5%8D%AB%E6%98%9F%E7%BD%91%E7%BB%9C%E9%9B%86%E5%9B%A2&hl=zh-CN&gl=CN&ceid=CN:zh-Hans"
+      },
+      "normalized_text": "<a href=\"https://news.google.com/rss/articles/CBMiU0FVX3lxTE1JMGpfNFJoWjNUWUFINmZIU0xaQWY4em1ZZ09tMFFqNEFMRWllWHQ5V3Ywcl9aeUgzTlJuQXpXZXVtdWZOd01yLWpHRGw2UThEWlZj?oc=5\" target=\"_blank\">中国星网将成三大运营商共同的对手？</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">电子工程专辑</font>",
+      "published_at": "2025-09-01T07:00:00Z",
+      "raw_text": "<a href=\"https://news.google.com/rss/articles/CBMiU0FVX3lxTE1JMGpfNFJoWjNUWUFINmZIU0xaQWY4em1ZZ09tMFFqNEFMRWllWHQ5V3Ywcl9aeUgzTlJuQXpXZXVtdWZOd01yLWpHRGw2UThEWlZj?oc=5\" target=\"_blank\">中国星网将成三大运营商共同的对手？</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">电子工程专辑</font>",
+      "source": {
+        "collected_at": "2026-06-16T05:33:16.240140Z",
+        "provider_id": "rss_provider",
+        "provider_priority": 10,
+        "rank_group": "media",
+        "raw_payload": {
+          "feed_url": "https://news.google.com/rss/search?q=%E4%B8%AD%E5%9B%BD%E6%98%9F%E7%BD%91%20%E5%9B%BD%E7%BD%91%E6%98%9F%E5%BA%A7%20%E4%B8%AD%E5%9B%BD%E5%8D%AB%E6%98%9F%E7%BD%91%E7%BB%9C%E9%9B%86%E5%9B%A2&hl=zh-CN&gl=CN&ceid=CN:zh-Hans",
+          "published_at": "Mon, 01 Sep 2025 07:00:00 GMT",
+          "summary": "<a href=\"https://news.google.com/rss/articles/CBMiU0FVX3lxTE1JMGpfNFJoWjNUWUFINmZIU0xaQWY4em1ZZ09tMFFqNEFMRWllWHQ5V3Ywcl9aeUgzTlJuQXpXZXVtdWZOd01yLWpHRGw2UThEWlZj?oc=5\" target=\"_blank\">中国星网将成三大运营商共同的对手？</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">电子工程专辑</font>",
+          "title": "中国星网将成三大运营商共同的对手？ - 电子工程专辑",
+          "url": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE1JMGpfNFJoWjNUWUFINmZIU0xaQWY4em1ZZ09tMFFqNEFMRWllWHQ5V3Ywcl9aeUgzTlJuQXpXZXVtdWZOd01yLWpHRGw2UThEWlZj?oc=5"
+        },
+        "source_id": "rss_provider",
+        "source_name": "Curated RSS provider contract.",
+        "source_type": "rss",
+        "url": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE1JMGpfNFJoWjNUWUFINmZIU0xaQWY4em1ZZ09tMFFqNEFMRWllWHQ5V3Ywcl9aeUgzTlJuQXpXZXVtdWZOd01yLWpHRGw2UThEWlZj?oc=5"
+      },
+      "tags": [],
+      "title": "中国星网将成三大运营商共同的对手？ - 电子工程专辑",
+      "url": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE1JMGpfNFJoWjNUWUFINmZIU0xaQWY4em1ZZ09tMFFqNEFMRWllWHQ5V3Ywcl9aeUgzTlJuQXpXZXVtdWZOd01yLWpHRGw2UThEWlZj?oc=5"
+    },
+    {
+      "company_id": "china_satnet",
+      "company_name": "中国星网",
+      "id": "c37b8e85d21666cc",
+      "language": null,
+      "metadata": {
+        "feed_url": "https://news.google.com/rss/search?q=China%20SatNet%20Guowang%20satellite%20constellation&hl=en-US&gl=US&ceid=US:en"
+      },
+      "normalized_text": "<a href=\"https://news.google.com/rss/articles/CBMi2wFBVV95cUxPQ1czeUVVR3M3a2Z4X2pNMm04MW5EZzNSZ1MwNHdTVVhwOE9Oc1pSVVNIMUp0TjM2TWFod0k0RkVDaVVueWNZRXpJeXBBWWZnekRRZDdVQlNtVGhGZXVfTkh2N0IzX0NpVlBlZnQ0UlFzakJqelR0M29VN0YtSC10ZjRpUXI4R1JqS0t6bkxFMThMRVRHWER6WUtSMTlLX0VCb3RFT3JHa2NWZnVsRTlnY0tKZkZXWUdESnFyQ1JUSDJ5X080dEN4eUVpR0NwS2dhXzRQcEFyakZwdDQ?oc=5\" target=\"_blank\">China launches 8th batch of satellites for 13,000-strong internet megaconstellation (video)</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">Space</font>",
+      "published_at": "2025-08-13T07:00:00Z",
+      "raw_text": "<a href=\"https://news.google.com/rss/articles/CBMi2wFBVV95cUxPQ1czeUVVR3M3a2Z4X2pNMm04MW5EZzNSZ1MwNHdTVVhwOE9Oc1pSVVNIMUp0TjM2TWFod0k0RkVDaVVueWNZRXpJeXBBWWZnekRRZDdVQlNtVGhGZXVfTkh2N0IzX0NpVlBlZnQ0UlFzakJqelR0M29VN0YtSC10ZjRpUXI4R1JqS0t6bkxFMThMRVRHWER6WUtSMTlLX0VCb3RFT3JHa2NWZnVsRTlnY0tKZkZXWUdESnFyQ1JUSDJ5X080dEN4eUVpR0NwS2dhXzRQcEFyakZwdDQ?oc=5\" target=\"_blank\">China launches 8th batch of satellites for 13,000-strong internet megaconstellation (video)</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">Space</font>",
+      "source": {
+        "collected_at": "2026-06-16T05:33:16.240140Z",
+        "provider_id": "rss_provider",
+        "provider_priority": 10,
+        "rank_group": "media",
+        "raw_payload": {
+          "feed_url": "https://news.google.com/rss/search?q=China%20SatNet%20Guowang%20satellite%20constellation&hl=en-US&gl=US&ceid=US:en",
+          "published_at": "Wed, 13 Aug 2025 07:00:00 GMT",
+          "summary": "<a href=\"https://news.google.com/rss/articles/CBMi2wFBVV95cUxPQ1czeUVVR3M3a2Z4X2pNMm04MW5EZzNSZ1MwNHdTVVhwOE9Oc1pSVVNIMUp0TjM2TWFod0k0RkVDaVVueWNZRXpJeXBBWWZnekRRZDdVQlNtVGhGZXVfTkh2N0IzX0NpVlBlZnQ0UlFzakJqelR0M29VN0YtSC10ZjRpUXI4R1JqS0t6bkxFMThMRVRHWER6WUtSMTlLX0VCb3RFT3JHa2NWZnVsRTlnY0tKZkZXWUdESnFyQ1JUSDJ5X080dEN4eUVpR0NwS2dhXzRQcEFyakZwdDQ?oc=5\" target=\"_blank\">China launches 8th batch of satellites for 13,000-strong internet megaconstellation (video)</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">Space</font>",
+          "title": "China launches 8th batch of satellites for 13,000-strong internet megaconstellation (video) - Space",
+          "url": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxPQ1czeUVVR3M3a2Z4X2pNMm04MW5EZzNSZ1MwNHdTVVhwOE9Oc1pSVVNIMUp0TjM2TWFod0k0RkVDaVVueWNZRXpJeXBBWWZnekRRZDdVQlNtVGhGZXVfTkh2N0IzX0NpVlBlZnQ0UlFzakJqelR0M29VN0YtSC10ZjRpUXI4R1JqS0t6bkxFMThMRVRHWER6WUtSMTlLX0VCb3RFT3JHa2NWZnVsRTlnY0tKZkZXWUdESnFyQ1JUSDJ5X080dEN4eUVpR0NwS2dhXzRQcEFyakZwdDQ?oc=5"
+        },
+        "source_id": "rss_provider",
+        "source_name": "Curated RSS provider contract.",
+        "source_type": "rss",
+        "url": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxPQ1czeUVVR3M3a2Z4X2pNMm04MW5EZzNSZ1MwNHdTVVhwOE9Oc1pSVVNIMUp0TjM2TWFod0k0RkVDaVVueWNZRXpJeXBBWWZnekRRZDdVQlNtVGhGZXVfTkh2N0IzX0NpVlBlZnQ0UlFzakJqelR0M29VN0YtSC10ZjRpUXI4R1JqS0t6bkxFMThMRVRHWER6WUtSMTlLX0VCb3RFT3JHa2NWZnVsRTlnY0tKZkZXWUdESnFyQ1JUSDJ5X080dEN4eUVpR0NwS2dhXzRQcEFyakZwdDQ?oc=5"
+      },
+      "tags": [],
+      "title": "China launches 8th batch of satellites for 13,000-strong internet megaconstellation (video) - Space",
+      "url": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxPQ1czeUVVR3M3a2Z4X2pNMm04MW5EZzNSZ1MwNHdTVVhwOE9Oc1pSVVNIMUp0TjM2TWFod0k0RkVDaVVueWNZRXpJeXBBWWZnekRRZDdVQlNtVGhGZXVfTkh2N0IzX0NpVlBlZnQ0UlFzakJqelR0M29VN0YtSC10ZjRpUXI4R1JqS0t6bkxFMThMRVRHWER6WUtSMTlLX0VCb3RFT3JHa2NWZnVsRTlnY0tKZkZXWUdESnFyQ1JUSDJ5X080dEN4eUVpR0NwS2dhXzRQcEFyakZwdDQ?oc=5"
+    },
+    {
+      "company_id": "china_satnet",
+      "company_name": "中国星网",
+      "id": "b2c9be5a6d5b0c9d",
+      "language": null,
+      "metadata": {
+        "feed_url": "https://news.google.com/rss/search?q=China%20SatNet%20Guowang%20satellite%20constellation&hl=en-US&gl=US&ceid=US:en"
+      },
+      "normalized_text": "<a href=\"https://news.google.com/rss/articles/CBMiugFBVV95cUxPRjh0aUkyWjktYjNEZkJ6MGNHQjZ0RUk5TTZWeEZwdlRnQVpJY3NqMGpFRlJjOVpLR0tLNHpaazkwT3JGMHRiOU00YkdDRWV0T3F6Sk9kUG1nVGdQSFItY3I5RmlqNWdpTkFFYTFlQkFtaFJ1TkRTQ3VLSXlkdUM1NkpUb2QwZjNBS2N6WVpFQmFWWVVYRUVkNHV0UU54SEtueGlueWV5SUVzaWpXQnFlRGx4ZHF4UTE0bnc?oc=5\" target=\"_blank\">China’s Guowang megaconstellation is more than another version of Starlink</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">Ars Technica</font>",
+      "published_at": "2025-08-20T07:00:00Z",
+      "raw_text": "<a href=\"https://news.google.com/rss/articles/CBMiugFBVV95cUxPRjh0aUkyWjktYjNEZkJ6MGNHQjZ0RUk5TTZWeEZwdlRnQVpJY3NqMGpFRlJjOVpLR0tLNHpaazkwT3JGMHRiOU00YkdDRWV0T3F6Sk9kUG1nVGdQSFItY3I5RmlqNWdpTkFFYTFlQkFtaFJ1TkRTQ3VLSXlkdUM1NkpUb2QwZjNBS2N6WVpFQmFWWVVYRUVkNHV0UU54SEtueGlueWV5SUVzaWpXQnFlRGx4ZHF4UTE0bnc?oc=5\" target=\"_blank\">China’s Guowang megaconstellation is more than another version of Starlink</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">Ars Technica</font>",
+      "source": {
+        "collected_at": "2026-06-16T05:33:16.240140Z",
+        "provider_id": "rss_provider",
+        "provider_priority": 10,
+        "rank_group": "media",
+        "raw_payload": {
+          "feed_url": "https://news.google.com/rss/search?q=China%20SatNet%20Guowang%20satellite%20constellation&hl=en-US&gl=US&ceid=US:en",
+          "published_at": "Wed, 20 Aug 2025 07:00:00 GMT",
+          "summary": "<a href=\"https://news.google.com/rss/articles/CBMiugFBVV95cUxPRjh0aUkyWjktYjNEZkJ6MGNHQjZ0RUk5TTZWeEZwdlRnQVpJY3NqMGpFRlJjOVpLR0tLNHpaazkwT3JGMHRiOU00YkdDRWV0T3F6Sk9kUG1nVGdQSFItY3I5RmlqNWdpTkFFYTFlQkFtaFJ1TkRTQ3VLSXlkdUM1NkpUb2QwZjNBS2N6WVpFQmFWWVVYRUVkNHV0UU54SEtueGlueWV5SUVzaWpXQnFlRGx4ZHF4UTE0bnc?oc=5\" target=\"_blank\">China’s Guowang megaconstellation is more than another version of Starlink</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">Ars Technica</font>",
+          "title": "China’s Guowang megaconstellation is more than another version of Starlink - Ars Technica",
+          "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxPRjh0aUkyWjktYjNEZkJ6MGNHQjZ0RUk5TTZWeEZwdlRnQVpJY3NqMGpFRlJjOVpLR0tLNHpaazkwT3JGMHRiOU00YkdDRWV0T3F6Sk9kUG1nVGdQSFItY3I5RmlqNWdpTkFFYTFlQkFtaFJ1TkRTQ3VLSXlkdUM1NkpUb2QwZjNBS2N6WVpFQmFWWVVYRUVkNHV0UU54SEtueGlueWV5SUVzaWpXQnFlRGx4ZHF4UTE0bnc?oc=5"
+        },
+        "source_id": "rss_provider",
+        "source_name": "Curated RSS provider contract.",
+        "source_type": "rss",
+        "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxPRjh0aUkyWjktYjNEZkJ6MGNHQjZ0RUk5TTZWeEZwdlRnQVpJY3NqMGpFRlJjOVpLR0tLNHpaazkwT3JGMHRiOU00YkdDRWV0T3F6Sk9kUG1nVGdQSFItY3I5RmlqNWdpTkFFYTFlQkFtaFJ1TkRTQ3VLSXlkdUM1NkpUb2QwZjNBS2N6WVpFQmFWWVVYRUVkNHV0UU54SEtueGlueWV5SUVzaWpXQnFlRGx4ZHF4UTE0bnc?oc=5"
+      },
+      "tags": [],
+      "title": "China’s Guowang megaconstellation is more than another version of Starlink - Ars Technica",
+      "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxPRjh0aUkyWjktYjNEZkJ6MGNHQjZ0RUk5TTZWeEZwdlRnQVpJY3NqMGpFRlJjOVpLR0tLNHpaazkwT3JGMHRiOU00YkdDRWV0T3F6Sk9kUG1nVGdQSFItY3I5RmlqNWdpTkFFYTFlQkFtaFJ1TkRTQ3VLSXlkdUM1NkpUb2QwZjNBS2N6WVpFQmFWWVVYRUVkNHV0UU54SEtueGlueWV5SUVzaWpXQnFlRGx4ZHF4UTE0bnc?oc=5"
+    },
+    {
+      "company_id": "china_satnet",
+      "company_name": "中国星网",
+      "id": "c68ed3fd1a725f47",
+      "language": null,
+      "metadata": {
+        "feed_url": "https://news.google.com/rss/search?q=China%20SatNet%20Guowang%20satellite%20constellation&hl=en-US&gl=US&ceid=US:en"
+      },
+      "normalized_text": "<a href=\"https://news.google.com/rss/articles/CBMimAFBVV95cUxPSUc2WUd2bEluQWU5aGd5MHdpb04zWlRmeWxoUXZBMTRmLTlZMHk2NjRzRGFzR3V1dmc3eW5WbU1zZElMZlFkZW0zdTFNdTNfOW5yS0RWWnZ6MWJkUU83cUZNMmVodHBtdlZRS3FNcG0xTTdVZEZrLUpPS0dWc2JWZXd4REVKR2wxd0VpU05rRVR2YlRmU0VGVw?oc=5\" target=\"_blank\">Chinese LEO Satellite Internet Update: Guowang, Qianfan, and Honghu-3</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">CircleID</font>",
+      "published_at": "2025-09-03T07:00:00Z",
+      "raw_text": "<a href=\"https://news.google.com/rss/articles/CBMimAFBVV95cUxPSUc2WUd2bEluQWU5aGd5MHdpb04zWlRmeWxoUXZBMTRmLTlZMHk2NjRzRGFzR3V1dmc3eW5WbU1zZElMZlFkZW0zdTFNdTNfOW5yS0RWWnZ6MWJkUU83cUZNMmVodHBtdlZRS3FNcG0xTTdVZEZrLUpPS0dWc2JWZXd4REVKR2wxd0VpU05rRVR2YlRmU0VGVw?oc=5\" target=\"_blank\">Chinese LEO Satellite Internet Update: Guowang, Qianfan, and Honghu-3</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">CircleID</font>",
+      "source": {
+        "collected_at": "2026-06-16T05:33:16.240140Z",
+        "provider_id": "rss_provider",
+        "provider_priority": 10,
+        "rank_group": "media",
+        "raw_payload": {
+          "feed_url": "https://news.google.com/rss/search?q=China%20SatNet%20Guowang%20satellite%20constellation&hl=en-US&gl=US&ceid=US:en",
+          "published_at": "Wed, 03 Sep 2025 07:00:00 GMT",
+          "summary": "<a href=\"https://news.google.com/rss/articles/CBMimAFBVV95cUxPSUc2WUd2bEluQWU5aGd5MHdpb04zWlRmeWxoUXZBMTRmLTlZMHk2NjRzRGFzR3V1dmc3eW5WbU1zZElMZlFkZW0zdTFNdTNfOW5yS0RWWnZ6MWJkUU83cUZNMmVodHBtdlZRS3FNcG0xTTdVZEZrLUpPS0dWc2JWZXd4REVKR2wxd0VpU05rRVR2YlRmU0VGVw?oc=5\" target=\"_blank\">Chinese LEO Satellite Internet Update: Guowang, Qianfan, and Honghu-3</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">CircleID</font>",
+          "title": "Chinese LEO Satellite Internet Update: Guowang, Qianfan, and Honghu-3 - CircleID",
+          "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxPSUc2WUd2bEluQWU5aGd5MHdpb04zWlRmeWxoUXZBMTRmLTlZMHk2NjRzRGFzR3V1dmc3eW5WbU1zZElMZlFkZW0zdTFNdTNfOW5yS0RWWnZ6MWJkUU83cUZNMmVodHBtdlZRS3FNcG0xTTdVZEZrLUpPS0dWc2JWZXd4REVKR2wxd0VpU05rRVR2YlRmU0VGVw?oc=5"
+        },
+        "source_id": "rss_provider",
+        "source_name": "Curated RSS provider contract.",
+        "source_type": "rss",
+        "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxPSUc2WUd2bEluQWU5aGd5MHdpb04zWlRmeWxoUXZBMTRmLTlZMHk2NjRzRGFzR3V1dmc3eW5WbU1zZElMZlFkZW0zdTFNdTNfOW5yS0RWWnZ6MWJkUU83cUZNMmVodHBtdlZRS3FNcG0xTTdVZEZrLUpPS0dWc2JWZXd4REVKR2wxd0VpU05rRVR2YlRmU0VGVw?oc=5"
+      },
+      "tags": [],
+      "title": "Chinese LEO Satellite Internet Update: Guowang, Qianfan, and Honghu-3 - CircleID",
+      "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxPSUc2WUd2bEluQWU5aGd5MHdpb04zWlRmeWxoUXZBMTRmLTlZMHk2NjRzRGFzR3V1dmc3eW5WbU1zZElMZlFkZW0zdTFNdTNfOW5yS0RWWnZ6MWJkUU83cUZNMmVodHBtdlZRS3FNcG0xTTdVZEZrLUpPS0dWc2JWZXd4REVKR2wxd0VpU05rRVR2YlRmU0VGVw?oc=5"
+    },
+    {
+      "company_id": "china_satnet",
+      "company_name": "中国星网",
+      "id": "d07c689fbabd9621",
+      "language": null,
+      "metadata": {
+        "feed_url": "https://news.google.com/rss/search?q=China%20SatNet%20Guowang%20satellite%20constellation&hl=en-US&gl=US&ceid=US:en"
+      },
+      "normalized_text": "<a href=\"https://news.google.com/rss/articles/CBMipAFBVV95cUxPYV9HZVpUVm1OOVJ6Qkg5TVRaLVNPRkNYZjZVTzdJZTE4UXdaTTh1YUREa1lFR0ZIWE1SRmlyYVlQWUxXeEhjalVOdDBYd0R1QVBQb0lHSkI2ZmVrT25LWHFKUnp0RTFOUXRVNUJ1bnhmcTNHMXZTRlRsRk5ENnlFQlEtOU5oanljLURGN3l2bVp2Y2ZXRTJiVUhlcnlQRlhSdVYyeg?oc=5\" target=\"_blank\">China adds new satellites to Guowang constellation, eyes accelerated launch rate</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">SpaceNews</font>",
+      "published_at": "2025-07-28T07:00:00Z",
+      "raw_text": "<a href=\"https://news.google.com/rss/articles/CBMipAFBVV95cUxPYV9HZVpUVm1OOVJ6Qkg5TVRaLVNPRkNYZjZVTzdJZTE4UXdaTTh1YUREa1lFR0ZIWE1SRmlyYVlQWUxXeEhjalVOdDBYd0R1QVBQb0lHSkI2ZmVrT25LWHFKUnp0RTFOUXRVNUJ1bnhmcTNHMXZTRlRsRk5ENnlFQlEtOU5oanljLURGN3l2bVp2Y2ZXRTJiVUhlcnlQRlhSdVYyeg?oc=5\" target=\"_blank\">China adds new satellites to Guowang constellation, eyes accelerated launch rate</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">SpaceNews</font>",
+      "source": {
+        "collected_at": "2026-06-16T05:33:16.240140Z",
+        "provider_id": "rss_provider",
+        "provider_priority": 10,
+        "rank_group": "media",
+        "raw_payload": {
+          "feed_url": "https://news.google.com/rss/search?q=China%20SatNet%20Guowang%20satellite%20constellation&hl=en-US&gl=US&ceid=US:en",
+          "published_at": "Mon, 28 Jul 2025 07:00:00 GMT",
+          "summary": "<a href=\"https://news.google.com/rss/articles/CBMipAFBVV95cUxPYV9HZVpUVm1OOVJ6Qkg5TVRaLVNPRkNYZjZVTzdJZTE4UXdaTTh1YUREa1lFR0ZIWE1SRmlyYVlQWUxXeEhjalVOdDBYd0R1QVBQb0lHSkI2ZmVrT25LWHFKUnp0RTFOUXRVNUJ1bnhmcTNHMXZTRlRsRk5ENnlFQlEtOU5oanljLURGN3l2bVp2Y2ZXRTJiVUhlcnlQRlhSdVYyeg?oc=5\" target=\"_blank\">China adds new satellites to Guowang constellation, eyes accelerated launch rate</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">SpaceNews</font>",
+          "title": "China adds new satellites to Guowang constellation, eyes accelerated launch rate - SpaceNews",
+          "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxPYV9HZVpUVm1OOVJ6Qkg5TVRaLVNPRkNYZjZVTzdJZTE4UXdaTTh1YUREa1lFR0ZIWE1SRmlyYVlQWUxXeEhjalVOdDBYd0R1QVBQb0lHSkI2ZmVrT25LWHFKUnp0RTFOUXRVNUJ1bnhmcTNHMXZTRlRsRk5ENnlFQlEtOU5oanljLURGN3l2bVp2Y2ZXRTJiVUhlcnlQRlhSdVYyeg?oc=5"
+        },
+        "source_id": "rss_provider",
+        "source_name": "Curated RSS provider contract.",
+        "source_type": "rss",
+        "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxPYV9HZVpUVm1OOVJ6Qkg5TVRaLVNPRkNYZjZVTzdJZTE4UXdaTTh1YUREa1lFR0ZIWE1SRmlyYVlQWUxXeEhjalVOdDBYd0R1QVBQb0lHSkI2ZmVrT25LWHFKUnp0RTFOUXRVNUJ1bnhmcTNHMXZTRlRsRk5ENnlFQlEtOU5oanljLURGN3l2bVp2Y2ZXRTJiVUhlcnlQRlhSdVYyeg?oc=5"
+      },
+      "tags": [],
+      "title": "China adds new satellites to Guowang constellation, eyes accelerated launch rate - SpaceNews",
+      "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxPYV9HZVpUVm1OOVJ6Qkg5TVRaLVNPRkNYZjZVTzdJZTE4UXdaTTh1YUREa1lFR0ZIWE1SRmlyYVlQWUxXeEhjalVOdDBYd0R1QVBQb0lHSkI2ZmVrT25LWHFKUnp0RTFOUXRVNUJ1bnhmcTNHMXZTRlRsRk5ENnlFQlEtOU5oanljLURGN3l2bVp2Y2ZXRTJiVUhlcnlQRlhSdVYyeg?oc=5"
+    }
+  ],
+  "run_id": "bdce653c-4632-4125-bbdf-97634b4c6732",
+  "schema_version": "satellite_news.v1"
+}
