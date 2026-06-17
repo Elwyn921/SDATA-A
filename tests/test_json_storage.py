@@ -288,6 +288,109 @@ def test_json_file_storage_merges_partial_run_with_previous_latest(tmp_path):
     assert archive_result["items"][0]["id"] == "spacex-new"
 
 
+def test_json_file_storage_keeps_empty_partial_company_from_previous_latest(tmp_path):
+    latest_dir = tmp_path / "data" / "news" / "latest"
+    publish_dir = tmp_path / "docs" / "data" / "news"
+    storage = JsonFileStorage(latest_dir=latest_dir, publish_dir=publish_dir)
+    previous_context = PipelineContext(
+        run_id="previous-full-run",
+        started_at=datetime(2026, 6, 15, 8, 30, tzinfo=timezone.utc),
+        output_dir=str(latest_dir),
+        dry_run=False,
+    )
+    partial_context = PipelineContext(
+        run_id="partial-spacex-gdelt-empty",
+        started_at=datetime(2026, 6, 15, 9, 30, tzinfo=timezone.utc),
+        output_dir=str(latest_dir),
+        dry_run=False,
+        partial_run=True,
+        scheduled_slot="slot-spacex-gdelt",
+        company_id="spacex",
+        provider_id="gdelt_provider",
+        max_gdelt_queries=1,
+        merge_policy="A5_stale_latest_merge",
+    )
+    previous_result = PipelineResult(
+        run_id="previous-full-run",
+        items=(
+            make_item("spacex-old", "spacex", "SpaceX"),
+            make_item("blue-origin-old", "blue_origin", "Blue Origin"),
+            make_item("yuanxin-old", "yuanxin_satellite", "垣信卫星"),
+            make_item("satnet-old", "china_satnet", "中国星网"),
+        ),
+        fetch_statuses=(
+            {"company_id": "spacex", "status": "success", "item_count": 1},
+            {"company_id": "blue_origin", "status": "success", "item_count": 1},
+            {"company_id": "yuanxin_satellite", "status": "success", "item_count": 1},
+            {"company_id": "china_satnet", "status": "success", "item_count": 1},
+        ),
+    )
+    partial_result = PipelineResult(
+        run_id="partial-spacex-gdelt-empty",
+        items=(),
+        fetch_statuses=(
+            {
+                "company_id": "spacex",
+                "provider_id": "gdelt_provider",
+                "status": "rate_limited",
+                "item_count": 0,
+                "reason": "HTTP 429",
+            },
+        ),
+    )
+
+    storage.save_result(result=previous_result, context=previous_context)
+    previous_latest = read_json(latest_dir / "pipeline_result.json")
+    storage.save_result(result=partial_result, context=partial_context)
+
+    latest_result = read_json(latest_dir / "pipeline_result.json")
+    published_result = read_json(publish_dir / "latest" / "pipeline_result.json")
+    archive_result = read_json(
+        tmp_path
+        / "data"
+        / "news"
+        / "archive"
+        / "runs"
+        / "2026"
+        / "06"
+        / "15"
+        / "partial-spacex-gdelt-empty"
+        / "pipeline_result.json"
+    )
+    items_by_company = {
+        item["company_id"]: item
+        for item in latest_result["items"]
+    }
+    fallback = latest_result["metadata"]["stale_fallback"]
+
+    assert set(items_by_company) == {
+        "spacex",
+        "blue_origin",
+        "yuanxin_satellite",
+        "china_satnet",
+    }
+    assert items_by_company["spacex"]["id"] == "spacex-old"
+    assert items_by_company["spacex"]["stale"] is True
+    assert items_by_company["spacex"]["fresh"] is False
+    assert items_by_company["spacex"]["stale_reason"] == "partial_run_company_empty"
+    assert items_by_company["spacex"]["stale_from_run_id"] == "previous-full-run"
+    assert items_by_company["spacex"]["stale_as_of"] == previous_latest["generated_at"]
+    assert items_by_company["blue_origin"]["stale_reason"] == "partial_run_not_updated"
+    assert fallback["updated_company_ids"] == []
+    assert fallback["empty_updated_company_ids"] == ["spacex"]
+    assert fallback["retained_company_ids"] == [
+        "blue_origin",
+        "china_satnet",
+        "yuanxin_satellite",
+    ]
+    assert fallback["fresh_item_count"] == 0
+    assert fallback["stale_item_count"] == 4
+    assert fallback["previous_run_id"] == "previous-full-run"
+    assert latest_result["fetch_statuses"][0]["reason"] == "HTTP 429"
+    assert published_result["items"] == latest_result["items"]
+    assert archive_result["items"] == []
+
+
 def make_item(item_id, company_id, company_name):
     return NewsItem(
         id=item_id,

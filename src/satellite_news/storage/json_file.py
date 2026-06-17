@@ -367,12 +367,34 @@ def apply_partial_run_merge(
         current=current,
         context=context,
     )
+    fresh_updated_company_ids = {
+        company_id
+        for company_id in updated_company_ids
+        if current_by_company.get(company_id)
+    }
+    empty_updated_company_ids = {
+        company_id
+        for company_id in updated_company_ids
+        if not current_by_company.get(company_id)
+    }
     retained_company_ids = sorted(set(previous_by_company) - updated_company_ids)
     previous_generated_at = parse_datetime_string(previous.get("generated_at"))
 
     merged_items = []
-    for company_id in sorted(updated_company_ids):
+    for company_id in sorted(fresh_updated_company_ids):
         merged_items.extend(mark_items_fresh(current_by_company.get(company_id, [])))
+    for company_id in sorted(empty_updated_company_ids):
+        stale_items = previous_by_company.get(company_id, [])
+        if stale_items:
+            merged_items.extend(
+                mark_items_stale(
+                    items=stale_items,
+                    current_run_id=str(current.get("run_id", "")),
+                    generated_at=generated_at,
+                    stale_reason="partial_run_company_empty",
+                    stale_as_of=previous_generated_at or generated_at,
+                )
+            )
     for company_id in retained_company_ids:
         merged_items.extend(
             mark_items_stale(
@@ -391,9 +413,10 @@ def apply_partial_run_merge(
         "enabled": True,
         "partial_run": True,
         "scheduled_slot": context.scheduled_slot,
-        "updated_company_ids": sorted(updated_company_ids),
+        "updated_company_ids": sorted(fresh_updated_company_ids),
         "retained_company_ids": retained_company_ids,
-        "fallback_company_ids": retained_company_ids,
+        "empty_updated_company_ids": sorted(empty_updated_company_ids),
+        "fallback_company_ids": sorted(set(retained_company_ids) | empty_updated_company_ids),
         "fresh_item_count": sum(1 for item in merged_items if not item.get("stale", False)),
         "stale_item_count": sum(1 for item in merged_items if item.get("stale", False)),
         "previous_run_id": previous.get("run_id"),
