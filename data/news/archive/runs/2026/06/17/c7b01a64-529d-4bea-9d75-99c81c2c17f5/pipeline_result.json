@@ -1,6 +1,8 @@
 {
   "artifact_version": 1,
-  "count": 1,
+  "company_id": "yuanxin_satellite",
+  "dry_run": false,
+  "exports": [],
   "fetch_statuses": [
     {
       "article_count": 0,
@@ -71,7 +73,17 @@
       "warnings": []
     }
   ],
+  "finished_at": "2026-06-17T23:09:15.894393Z",
   "generated_at": "2026-06-17T23:09:15.894393Z",
+  "items": [],
+  "max_gdelt_queries": 1,
+  "merge_policy": "A5_stale_latest_merge",
+  "partial_run": true,
+  "provider_id": "gdelt_provider",
   "run_id": "c7b01a64-529d-4bea-9d75-99c81c2c17f5",
-  "schema_version": "satellite_news.v1"
+  "scheduled_slot": "gdelt-2026-06-17T2309-yuanxin_satellite",
+  "schema_version": "satellite_news.v1",
+  "started_at": "2026-06-17T23:09:06.977271Z",
+  "summaries": [],
+  "warnings": []
 }
