@@ -12,6 +12,9 @@
 # Logs
 *.log
 
+# Temporary working files
+tmp/
+
 # Dependencies and build output
 node_modules/
 dist/

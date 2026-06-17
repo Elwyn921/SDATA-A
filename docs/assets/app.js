@@ -1,13 +1,5 @@
 import { loadPipelineResult } from "./pipeline-data.js";
 
-const credibilityMeta = {
-  official: { label: "Official", tone: "official", score: 100 },
-  regulator_and_filing: { label: "Regulator", tone: "regulator", score: 98 },
-  wire_and_aggregator: { label: "Wire", tone: "wire", score: 80 },
-  media: { label: "Media", tone: "media", score: 70 },
-  search: { label: "Search", tone: "search", score: 55 },
-};
-
 const companyMeta = {
   spacex: { name: "SpaceX", region: "United States", accent: "teal" },
   blue_origin: { name: "Blue Origin", region: "United States", accent: "blue" },
@@ -15,114 +7,159 @@ const companyMeta = {
   china_satnet: { name: "中国星网", region: "China", accent: "rose" },
 };
 
+const sourceLabels = {
+  official: "Official",
+  official_site: "Official Page",
+  regulator_and_filing: "Regulator",
+  wire_and_aggregator: "Wire",
+  media: "Media",
+  search: "Search",
+  gdelt: "GDELT",
+  rss: "RSS",
+  serpapi: "SerpApi",
+  newsapi: "NewsAPI",
+};
+
+const providerOrder = ["rss", "official_site", "gdelt", "serpapi", "newsapi"];
+
 const state = {
   companyId: "all",
-  credibility: "all",
+  source: "all",
+  freshness: "all",
   result: null,
 };
 
 const elements = {
-  runId: document.querySelector("#run-id"),
-  itemCount: document.querySelector("#item-count"),
+  updatedAt: document.querySelector("#updated-at"),
+  totalCount: document.querySelector("#total-count"),
+  freshCount: document.querySelector("#fresh-count"),
+  staleCount: document.querySelector("#stale-count"),
   dataSource: document.querySelector("#data-source"),
-  visibleCount: document.querySelector("#visible-count"),
-  companyFilter: document.querySelector("#company-filter"),
-  credibilityFilter: document.querySelector("#credibility-filter"),
-  resetFilters: document.querySelector("#reset-filters"),
+  runId: document.querySelector("#run-id"),
+  staleFallback: document.querySelector("#stale-fallback-summary"),
+  companyTabs: document.querySelector("#company-tabs"),
   companyCards: document.querySelector("#company-cards"),
+  providerMatrix: document.querySelector("#provider-matrix"),
+  sourceFilter: document.querySelector("#source-filter"),
+  freshnessFilter: document.querySelector("#freshness-filter"),
+  resetFilters: document.querySelector("#reset-filters"),
+  visibleCount: document.querySelector("#visible-count"),
   newsList: document.querySelector("#news-list"),
-  timeline: document.querySelector("#timeline"),
-  runStatus: document.querySelector("#run-status"),
-  providerList: document.querySelector("#provider-list"),
+  exceptionList: document.querySelector("#exception-list"),
 };
 
 bootstrap();
 
 async function bootstrap() {
   state.result = await loadPipelineResult();
-  populateCompanyFilter(state.result);
+  populateSourceFilter(state.result.items);
   bindEvents();
   render();
 }
 
 function bindEvents() {
-  elements.companyFilter.addEventListener("change", (event) => {
-    state.companyId = event.target.value;
+  elements.sourceFilter.addEventListener("change", (event) => {
+    state.source = event.target.value;
     render();
   });
 
-  elements.credibilityFilter.addEventListener("change", (event) => {
-    state.credibility = event.target.value;
+  elements.freshnessFilter.addEventListener("change", (event) => {
+    state.freshness = event.target.value;
     render();
   });
 
   elements.resetFilters.addEventListener("click", () => {
     state.companyId = "all";
-    state.credibility = "all";
-    elements.companyFilter.value = "all";
-    elements.credibilityFilter.value = "all";
+    state.source = "all";
+    state.freshness = "all";
+    elements.sourceFilter.value = "all";
+    elements.freshnessFilter.value = "all";
     render();
   });
 }
 
-function populateCompanyFilter(result) {
-  const companies = companiesFromItems(result.items);
-  elements.companyFilter.append(
-    ...companies.map((company) => {
+function render() {
+  const items = sortedItems(state.result.items ?? []);
+  const filteredItems = filterItems(items);
+  const companies = companiesFromItems(items);
+  const counts = freshnessCounts(items);
+
+  elements.updatedAt.textContent = formatFullDate(
+    state.result.generated_at ?? state.result.finished_at ?? state.result.started_at,
+  );
+  elements.totalCount.textContent = String(items.length);
+  elements.freshCount.textContent = String(counts.fresh);
+  elements.staleCount.textContent = String(counts.stale);
+  elements.dataSource.textContent = state.result.__dataSource === "json" ? "live JSON" : "mock fallback";
+  elements.runId.textContent = state.result.run_id ?? "--";
+  elements.staleFallback.textContent = staleFallbackSummary(state.result, counts);
+  elements.visibleCount.textContent = `${filteredItems.length} shown`;
+
+  renderCompanyTabs(companies);
+  renderCompanyCards(companies, items);
+  renderProviderMatrix(companies, state.result.fetch_statuses ?? []);
+  renderNewsList(filteredItems);
+  renderExceptions(state.result.fetch_statuses ?? []);
+}
+
+function populateSourceFilter(items) {
+  const sources = [...new Set(items.map((item) => sourceKey(item)).filter(Boolean))].sort();
+  elements.sourceFilter.append(
+    ...sources.map((source) => {
       const option = document.createElement("option");
-      option.value = company.id;
-      option.textContent = company.name;
+      option.value = source;
+      option.textContent = sourceLabel(source);
       return option;
     }),
   );
 }
 
-function render() {
-  const items = sortedItems(state.result.items);
-  const filteredItems = filterItems(items);
-  const summariesByItem = new Map(state.result.summaries.map((summary) => [summary.item_id, summary]));
-
-  elements.runId.textContent = `run_id: ${state.result.run_id}`;
-  elements.itemCount.textContent = `${state.result.items.length} items`;
-  elements.dataSource.textContent = state.result.__dataSource === "json" ? "live JSON" : "mock fallback";
-  elements.visibleCount.textContent = `${filteredItems.length}`;
-
-  renderCompanyCards(items, filteredItems, summariesByItem);
-  renderNewsList(filteredItems, summariesByItem);
-  renderTimeline(filteredItems, summariesByItem);
-  renderRunStatus(state.result);
-  renderProviderStatus(state.result.fetch_statuses ?? []);
+function renderCompanyTabs(companies) {
+  const allButton = segmentButton("all", "All", state.companyId === "all");
+  const buttons = companies.map((company) =>
+    segmentButton(company.id, company.name, state.companyId === company.id),
+  );
+  elements.companyTabs.replaceChildren(allButton, ...buttons);
 }
 
-function renderCompanyCards(allItems, visibleItems, summariesByItem) {
-  const companies = companiesFromItems(allItems);
+function segmentButton(value, label, active) {
+  const button = document.createElement("button");
+  button.type = "button";
+  button.className = active ? "segment is-active" : "segment";
+  button.textContent = label;
+  button.addEventListener("click", () => {
+    state.companyId = value;
+    render();
+  });
+  return button;
+}
+
+function renderCompanyCards(companies, items) {
   elements.companyCards.replaceChildren(
     ...companies.map((company) => {
-      const companyItems = visibleItems.filter((item) => item.company_id === company.id);
-      const allCompanyItems = allItems.filter((item) => item.company_id === company.id);
-      const latest = sortedItems(allCompanyItems)[0];
-      const freshness = freshnessCounts(allCompanyItems);
-      const topRank = bestRank(allCompanyItems);
+      const companyItems = items.filter((item) => item.company_id === company.id);
+      const counts = freshnessCounts(companyItems);
+      const providers = providerSummary(state.result.fetch_statuses ?? [], company.id);
+      const latest = sortedItems(companyItems)[0];
       const card = document.createElement("article");
       card.className = `company-card accent-${company.accent}`;
       card.innerHTML = `
-        <div class="card-topline">
-          <span>${escapeHtml(company.region)}</span>
-          <span class="credibility-tag ${credibilityMeta[topRank]?.tone ?? "media"}">
-            ${credibilityMeta[topRank]?.label ?? topRank}
-          </span>
+        <div class="company-card-header">
+          <div>
+            <span>${escapeHtml(company.region)}</span>
+            <h3>${escapeHtml(company.name)}</h3>
+          </div>
+          <strong>${counts.total}</strong>
         </div>
-        <h3>${escapeHtml(company.name)}</h3>
         <div class="metric-row">
-          <div><strong>${freshness.fresh}</strong><span>fresh</span></div>
-          <div><strong>${freshness.stale}</strong><span>stale</span></div>
-          <div><strong>${freshness.total}</strong><span>total</span></div>
+          <div><strong>${counts.fresh}</strong><span>fresh</span></div>
+          <div><strong>${counts.stale}</strong><span>stale</span></div>
+          <div><strong>${providers.problem}</strong><span>issues</span></div>
         </div>
-        <p>${companyItems.length} 条匹配当前筛选 · ${latest ? formatDate(latest.published_at) : "No date"} · ${escapeHtml(latest?.title ?? "No sample item")}</p>
+        <p>${latest ? formatDate(latest.published_at) : "No date"} · ${escapeHtml(latest?.title ?? "No news in current feed")}</p>
       `;
       card.addEventListener("click", () => {
         state.companyId = company.id;
-        elements.companyFilter.value = company.id;
         render();
       });
       return card;
@@ -130,122 +167,127 @@ function renderCompanyCards(allItems, visibleItems, summariesByItem) {
   );
 }
 
-function renderNewsList(items, summariesByItem) {
-  if (items.length === 0) {
+function renderProviderMatrix(companies, statuses) {
+  const companyRows = companies.map((company) => {
+    const cells = providerOrder
+      .map((provider) => providerCell(statuses, company.id, provider))
+      .join("");
+    return `
+      <tr>
+        <th scope="row">${escapeHtml(company.name)}</th>
+        ${cells}
+      </tr>
+    `;
+  });
+
+  elements.providerMatrix.innerHTML = `
+    <thead>
+      <tr>
+        <th scope="col">Company</th>
+        ${providerOrder.map((provider) => `<th scope="col">${escapeHtml(sourceLabel(provider))}</th>`).join("")}
+      </tr>
+    </thead>
+    <tbody>${companyRows.join("")}</tbody>
+  `;
+}
+
+function providerCell(statuses, companyId, providerType) {
+  const status = statuses.find(
+    (row) => row.company_id === companyId && normalizeProvider(row.provider_type ?? row.source_type) === providerType,
+  );
+  const label = status?.provider_status ?? status?.final_status ?? status?.status ?? "missing";
+  return `<td><span class="provider-badge ${providerStatusClass(label)}">${escapeHtml(label)}</span></td>`;
+}
+
+function renderNewsList(items) {
+  if (!items.length) {
     const empty = document.createElement("div");
     empty.className = "empty-state";
-    empty.textContent = "没有匹配当前筛选条件的样本新闻。";
+    empty.innerHTML = `
+      <strong>No news items match the active filters.</strong>
+      <span>Adjust company, source, or freshness filters to widen the feed.</span>
+    `;
     elements.newsList.replaceChildren(empty);
     return;
   }
 
   elements.newsList.replaceChildren(
     ...items.map((item) => {
-      const summary = summariesByItem.get(item.id);
-      const rankGroup = item.source.rank_group;
-      const credibility = credibilityMeta[rankGroup] ?? credibilityMeta.media;
+      const source = sourceKey(item);
       const freshness = freshnessState(item);
       const article = document.createElement("article");
       article.className = "news-item";
       article.innerHTML = `
-        <div class="news-main">
-          <div class="news-row">
+        <div class="news-body">
+          <div class="news-meta">
             <span class="company-pill">${escapeHtml(item.company_name)}</span>
-            <span class="credibility-tag ${credibility.tone}">${credibility.label}</span>
+            <span class="source-badge source-${sourceTone(source)}">${escapeHtml(sourceLabel(source))}</span>
             <span class="freshness-tag ${freshness.className}">${freshness.label}</span>
-            <span class="priority-tag priority-${summary?.priority ?? "medium"}">${summary?.priority ?? "medium"}</span>
           </div>
           <h3><a href="${escapeAttribute(item.url)}" target="_blank" rel="noreferrer">${escapeHtml(item.title)}</a></h3>
-          <p>${escapeHtml(summary?.headline ?? item.metadata?.event_type ?? "Unclassified sample item")}</p>
-          ${staleDetails(item)}
-          <div class="tag-row">
-            ${item.tags.map((tag) => `<span>${escapeHtml(tag)}</span>`).join("")}
+          <div class="news-footer">
+            <span>${escapeHtml(item.source?.source_name ?? item.source?.source_id ?? "Unknown source")}</span>
+            <time datetime="${escapeAttribute(item.published_at ?? "")}">${formatFullDate(item.published_at)}</time>
           </div>
+          ${staleDetails(item)}
         </div>
-        <div class="news-aside">
-          <time datetime="${escapeAttribute(item.published_at ?? "")}">${formatDate(item.published_at)}</time>
-          <span>${escapeHtml(item.source.source_name)}</span>
-          <strong>${summary?.importance_score ?? "--"}</strong>
-        </div>
+        <a class="open-link" href="${escapeAttribute(item.url)}" target="_blank" rel="noreferrer">Open</a>
       `;
       return article;
     }),
   );
 }
 
-function renderTimeline(items, summariesByItem) {
-  const timelineItems = items.slice(0, 7).map((item) => {
-    const summary = summariesByItem.get(item.id);
-    const rankGroup = item.source.rank_group;
-    const credibility = credibilityMeta[rankGroup] ?? credibilityMeta.media;
-    const entry = document.createElement("li");
-    entry.innerHTML = `
-      <time datetime="${escapeAttribute(item.published_at ?? "")}">${formatDate(item.published_at)}</time>
-      <div>
-        <span class="timeline-company">${escapeHtml(item.company_name)}</span>
-        <strong>${escapeHtml(summary?.headline ?? item.title)}</strong>
-        <span class="credibility-tag ${credibility.tone}">${credibility.label}</span>
-      </div>
-    `;
-    return entry;
+function renderExceptions(statuses) {
+  const exceptionRows = statuses.filter((status) => {
+    const label = status.provider_status ?? status.final_status ?? status.status ?? "";
+    return (
+      label !== "success" ||
+      status.reason ||
+      status.error_message ||
+      status.rate_limited === true ||
+      status.should_fallback === true
+    );
   });
 
-  elements.timeline.replaceChildren(...timelineItems);
-}
-
-function renderRunStatus(result) {
-  const staleFallback = result.metadata?.stale_fallback ?? {};
-  const counts = freshnessCounts(result.items ?? []);
-  const rows = [
-    ["run_id", result.run_id ?? "--"],
-    ["generated_at", formatFullDate(result.generated_at ?? result.finished_at ?? result.started_at)],
-    ["总新闻数", String(result.items?.length ?? 0)],
-    ["fresh", String(staleFallback.fresh_item_count ?? counts.fresh)],
-    ["stale", String(staleFallback.stale_item_count ?? counts.stale)],
-    ["fallback companies", formatList(staleFallback.fallback_company_ids ?? [])],
-  ];
-
-  elements.runStatus.replaceChildren(
-    ...rows.map(([label, value]) => {
-      const item = document.createElement("div");
-      item.className = "status-cell";
-      item.innerHTML = `<span>${escapeHtml(label)}</span><strong>${escapeHtml(value)}</strong>`;
-      return item;
-    }),
-  );
-}
-
-function renderProviderStatus(statuses) {
-  if (!statuses.length) {
+  if (!exceptionRows.length) {
     const empty = document.createElement("div");
     empty.className = "empty-state compact";
-    empty.textContent = "暂无 provider 状态。";
-    elements.providerList.replaceChildren(empty);
+    empty.innerHTML = `<strong>No provider exceptions.</strong><span>All providers reported success for this run.</span>`;
+    elements.exceptionList.replaceChildren(empty);
     return;
   }
 
-  elements.providerList.replaceChildren(
-    ...statuses.map((status) => {
-      const providerType = status.provider_type ?? status.source_type ?? "provider";
-      const providerStatus = status.provider_status ?? status.final_status ?? status.status ?? "unknown";
-      const details = [status.reason, status.error_message].filter(Boolean);
-      const row = document.createElement("details");
-      row.className = "provider-row";
-      row.innerHTML = `
+  elements.exceptionList.replaceChildren(
+    ...exceptionRows.map((status) => {
+      const providerType = normalizeProvider(status.provider_type ?? status.source_type);
+      const label = status.provider_status ?? status.final_status ?? status.status ?? "unknown";
+      const details = document.createElement("details");
+      details.className = "exception-row";
+      details.innerHTML = `
         <summary>
           <span>${escapeHtml(status.company_name ?? status.company_id ?? "--")}</span>
-          <strong>${escapeHtml(providerLabel(providerType))}</strong>
-          <span class="provider-badge ${providerStatusClass(providerStatus)}">${escapeHtml(providerStatus)}</span>
+          <strong>${escapeHtml(sourceLabel(providerType))}</strong>
+          <span class="provider-badge ${providerStatusClass(label)}">${escapeHtml(label)}</span>
         </summary>
-        <div class="provider-detail">
-          <p><strong>provider_id</strong>${escapeHtml(status.provider_id ?? status.source_id ?? "--")}</p>
-          <p><strong>reason</strong>${escapeHtml(details[0] ?? "--")}</p>
+        <div class="exception-detail">
+          <p><strong>reason</strong>${escapeHtml(status.reason ?? "--")}</p>
           <p><strong>error_message</strong>${escapeHtml(status.error_message ?? "--")}</p>
         </div>
       `;
-      return row;
+      return details;
     }),
   );
+}
+
+function filterItems(items) {
+  return items.filter((item) => {
+    const companyMatches = state.companyId === "all" || item.company_id === state.companyId;
+    const sourceMatches = state.source === "all" || sourceKey(item) === state.source;
+    const freshness = freshnessState(item).kind;
+    const freshnessMatches = state.freshness === "all" || freshness === state.freshness;
+    return companyMatches && sourceMatches && freshnessMatches;
+  });
 }
 
 function companiesFromItems(items) {
@@ -263,20 +305,12 @@ function companiesFromItems(items) {
   }, []);
 }
 
-function sortedItems(items) {
-  return [...items].sort((a, b) => new Date(b.published_at ?? 0) - new Date(a.published_at ?? 0));
-}
-
 function freshnessCounts(items) {
   return items.reduce(
     (counts, item) => {
-      const freshness = freshnessState(item);
       counts.total += 1;
-      if (freshness.kind === "stale") {
-        counts.stale += 1;
-      } else {
-        counts.fresh += 1;
-      }
+      if (freshnessState(item).kind === "stale") counts.stale += 1;
+      else counts.fresh += 1;
       return counts;
     },
     { fresh: 0, stale: 0, total: 0 },
@@ -284,13 +318,8 @@ function freshnessCounts(items) {
 }
 
 function freshnessState(item) {
-  if (item.stale === true) {
-    return { kind: "stale", label: "历史兜底", className: "is-stale" };
-  }
-  if (item.fresh === true || item.stale === false || item.fresh === undefined) {
-    return { kind: "fresh", label: "最新", className: "is-fresh" };
-  }
-  return { kind: "unknown", label: "未知", className: "is-unknown" };
+  if (item.stale === true) return { kind: "stale", label: "Stale fallback", className: "is-stale" };
+  return { kind: "fresh", label: "Fresh", className: "is-fresh" };
 }
 
 function staleDetails(item) {
@@ -312,17 +341,62 @@ function staleDetails(item) {
   `;
 }
 
-function filterItems(items) {
-  return items.filter((item) => {
-    const companyMatches = state.companyId === "all" || item.company_id === state.companyId;
-    const credibilityMatches = state.credibility === "all" || item.source.rank_group === state.credibility;
-    return companyMatches && credibilityMatches;
-  });
+function providerSummary(statuses, companyId) {
+  const rows = statuses.filter((status) => status.company_id === companyId);
+  return rows.reduce(
+    (summary, row) => {
+      const label = row.provider_status ?? row.final_status ?? row.status ?? "unknown";
+      if (label !== "success") summary.problem += 1;
+      return summary;
+    },
+    { problem: 0 },
+  );
 }
 
-function bestRank(items) {
-  const order = ["official", "regulator_and_filing", "wire_and_aggregator", "media", "search"];
-  return order.find((rankGroup) => items.some((item) => item.source.rank_group === rankGroup)) ?? "media";
+function sourceKey(item) {
+  return normalizeProvider(item.source?.source_type ?? item.source?.rank_group ?? item.source?.source_id ?? "unknown");
+}
+
+function normalizeProvider(value) {
+  const text = String(value ?? "unknown");
+  if (text === "official_page") return "official_site";
+  return text;
+}
+
+function sourceLabel(value) {
+  const key = normalizeProvider(value);
+  return sourceLabels[key] ?? key.replaceAll("_", " ");
+}
+
+function sourceTone(source) {
+  const key = normalizeProvider(source);
+  if (key === "official_site" || key === "official") return "official";
+  if (key === "gdelt" || key === "wire_and_aggregator") return "wire";
+  if (key === "rss" || key === "media") return "media";
+  if (key === "serpapi" || key === "newsapi" || key === "search") return "search";
+  return "neutral";
+}
+
+function providerStatusClass(status) {
+  const value = String(status);
+  if (value === "success") return "provider-success";
+  if (value === "failed") return "provider-failed";
+  if (value === "rate_limited") return "provider-rate";
+  if (value.startsWith("skipped")) return "provider-skipped";
+  return "provider-unknown";
+}
+
+function staleFallbackSummary(result, counts) {
+  const fallback = result.metadata?.stale_fallback ?? {};
+  const enabled = fallback.enabled === false ? "disabled" : "enabled";
+  const fresh = fallback.fresh_item_count ?? counts.fresh;
+  const stale = fallback.stale_item_count ?? counts.stale;
+  const companies = Array.isArray(fallback.fallback_company_ids) ? fallback.fallback_company_ids.length : 0;
+  return `${enabled} · fresh ${fresh} · stale ${stale} · companies ${companies}`;
+}
+
+function sortedItems(items) {
+  return [...items].sort((a, b) => new Date(b.published_at ?? 0) - new Date(a.published_at ?? 0));
 }
 
 function formatDate(value) {
@@ -344,24 +418,6 @@ function formatFullDate(value) {
     hour: "2-digit",
     minute: "2-digit",
   }).format(new Date(value));
-}
-
-function formatList(value) {
-  if (!Array.isArray(value) || value.length === 0) return "none";
-  return value.join(", ");
-}
-
-function providerLabel(value) {
-  return String(value).replaceAll("_", " ");
-}
-
-function providerStatusClass(status) {
-  const value = String(status);
-  if (value === "success") return "provider-success";
-  if (value === "failed") return "provider-failed";
-  if (value === "rate_limited") return "provider-rate";
-  if (value.startsWith("skipped")) return "provider-skipped";
-  return "provider-unknown";
 }
 
 function escapeHtml(value) {

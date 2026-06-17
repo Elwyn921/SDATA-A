@@ -3,104 +3,115 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Satellite News Intelligence Prototype</title>
+    <title>Satellite News Intelligence Dashboard</title>
     <link rel="stylesheet" href="./assets/styles.css" />
   </head>
   <body>
     <div class="app-shell">
-      <header class="topbar">
-        <div>
-          <p class="eyebrow">A7 Export & Publishing</p>
-          <h1>四家公司新闻情报看板</h1>
+      <header class="status-bar" aria-label="Dashboard status">
+        <div class="brand-block">
+          <p class="eyebrow">SDATA A</p>
+          <h1>News Intelligence Dashboard</h1>
         </div>
-        <div class="run-meta" aria-label="Pipeline metadata">
-          <span id="run-id">run_id: --</span>
-          <span id="item-count">0 items</span>
-          <span id="data-source">loading</span>
+        <div class="status-metrics">
+          <div class="status-pill">
+            <span>Updated</span>
+            <strong id="updated-at">--</strong>
+          </div>
+          <div class="status-pill">
+            <span>Total</span>
+            <strong id="total-count">0</strong>
+          </div>
+          <div class="status-pill success">
+            <span>Fresh</span>
+            <strong id="fresh-count">0</strong>
+          </div>
+          <div class="status-pill stale">
+            <span>Stale</span>
+            <strong id="stale-count">0</strong>
+          </div>
+          <div class="status-pill">
+            <span>Source</span>
+            <strong id="data-source">loading</strong>
+          </div>
         </div>
       </header>
 
-      <main>
-        <section class="control-row" aria-label="Dashboard filters">
-          <label class="field">
-            <span>公司</span>
-            <select id="company-filter">
-              <option value="all">全部公司</option>
-            </select>
-          </label>
-          <label class="field">
-            <span>可信度</span>
-            <select id="credibility-filter">
-              <option value="all">全部来源</option>
-              <option value="official">Official</option>
-              <option value="regulator_and_filing">Regulator</option>
-              <option value="wire_and_aggregator">Wire</option>
-              <option value="media">Media</option>
-              <option value="search">Search</option>
-            </select>
-          </label>
-          <button class="ghost-button" id="reset-filters" type="button">重置</button>
+      <main class="dashboard">
+        <section class="run-strip" aria-label="Pipeline run metadata">
+          <div>
+            <span>run_id</span>
+            <strong id="run-id">--</strong>
+          </div>
+          <div>
+            <span>stale_fallback</span>
+            <strong id="stale-fallback-summary">--</strong>
+          </div>
         </section>
 
-        <section class="company-grid" id="company-cards" aria-label="Company dashboard cards"></section>
-
-        <section class="workspace-grid">
-          <section class="panel news-panel" aria-labelledby="latest-news-heading">
-            <div class="panel-heading">
-              <div>
-                <p class="eyebrow">Latest</p>
-                <h2 id="latest-news-heading">最新新闻</h2>
-              </div>
-              <span class="counter" id="visible-count">0</span>
+        <section class="section-block" aria-labelledby="company-overview-heading">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">Companies</p>
+              <h2 id="company-overview-heading">Company Overview</h2>
             </div>
+            <div class="segmented-control" id="company-tabs" aria-label="Company filter"></div>
+          </div>
+          <div class="company-grid" id="company-cards"></div>
+        </section>
+
+        <section class="section-block" aria-labelledby="provider-health-heading">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">Provider Health</p>
+              <h2 id="provider-health-heading">Provider Status Matrix</h2>
+            </div>
+          </div>
+          <div class="provider-matrix-wrap">
+            <table class="provider-matrix" id="provider-matrix"></table>
+          </div>
+        </section>
+
+        <section class="content-grid">
+          <section class="section-block news-section" aria-labelledby="news-heading">
+            <div class="section-heading">
+              <div>
+                <p class="eyebrow">Intelligence Feed</p>
+                <h2 id="news-heading">News Items</h2>
+              </div>
+              <span class="result-count" id="visible-count">0</span>
+            </div>
+
+            <div class="filter-bar" aria-label="News filters">
+              <label>
+                <span>Source</span>
+                <select id="source-filter">
+                  <option value="all">All sources</option>
+                </select>
+              </label>
+              <label>
+                <span>Freshness</span>
+                <select id="freshness-filter">
+                  <option value="all">All states</option>
+                  <option value="fresh">Fresh only</option>
+                  <option value="stale">Stale only</option>
+                </select>
+              </label>
+              <button class="ghost-button" id="reset-filters" type="button">Reset</button>
+            </div>
+
             <div class="news-list" id="news-list"></div>
           </section>
 
           <aside class="side-stack">
-            <section class="panel run-panel" aria-labelledby="run-heading">
-              <div class="panel-heading">
+            <section class="section-block" aria-labelledby="errors-heading">
+              <div class="section-heading">
                 <div>
-                  <p class="eyebrow">Run</p>
-                  <h2 id="run-heading">本轮运行</h2>
+                  <p class="eyebrow">Exceptions</p>
+                  <h2 id="errors-heading">Errors & Rate Limits</h2>
                 </div>
               </div>
-              <div class="status-grid" id="run-status"></div>
-            </section>
-
-            <section class="panel provider-panel" aria-labelledby="provider-heading">
-              <div class="panel-heading">
-                <div>
-                  <p class="eyebrow">Providers</p>
-                  <h2 id="provider-heading">Provider 状态</h2>
-                </div>
-              </div>
-              <div class="provider-list" id="provider-list"></div>
-            </section>
-
-            <section class="panel timeline-panel" aria-labelledby="timeline-heading">
-              <div class="panel-heading">
-                <div>
-                  <p class="eyebrow">Timeline</p>
-                  <h2 id="timeline-heading">时间线</h2>
-                </div>
-              </div>
-              <ol class="timeline" id="timeline"></ol>
-            </section>
-
-            <section class="panel archive-panel" aria-labelledby="archive-heading">
-              <div class="panel-heading">
-                <div>
-                  <p class="eyebrow">Archive</p>
-                  <h2 id="archive-heading">归档入口</h2>
-                </div>
-              </div>
-              <div class="archive-slot">
-                <div>
-                  <strong>data/news/archive</strong>
-                  <p>等待后续发布流程生成周报、HTML、Excel 与 JSON 索引。</p>
-                </div>
-                <button class="ghost-button" type="button" disabled>待接入</button>
-              </div>
+              <div class="exception-list" id="exception-list"></div>
             </section>
           </aside>
         </section>
