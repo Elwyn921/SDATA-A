@@ -188,6 +188,12 @@ class PipelineContext:
     config_dir: str = "config"
     output_dir: str = "data/news/latest"
     dry_run: bool = True
+    partial_run: bool = False
+    scheduled_slot: str | None = None
+    company_id: str | None = None
+    provider_id: str | None = None
+    max_gdelt_queries: int | None = None
+    merge_policy: str | None = None
     metadata: dict[str, Any] = field(default_factory=dict)
 
 

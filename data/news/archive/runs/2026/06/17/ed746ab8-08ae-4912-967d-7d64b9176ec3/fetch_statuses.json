@@ -3,7 +3,7 @@
   "count": 4,
   "fetch_statuses": [
     {
-      "article_count": 50,
+      "article_count": 10,
       "company_id": "spacex",
       "company_name": "SpaceX",
       "error_message": null,
@@ -35,8 +35,8 @@
         "https://www.bing.com/news/search?q=%E4%B8%AD%E5%9B%BD%E6%98%9F%E7%BD%91+%E5%9B%BD%E7%BD%91%E6%98%9F%E5%BA%A7&format=rss"
       ],
       "final_status": "success",
-      "finished_at": "2026-06-17T08:25:40.867778Z",
-      "item_count": 50,
+      "finished_at": "2026-06-17T08:21:30.191842Z",
+      "item_count": 10,
       "max_gdelt_queries": null,
       "merge_policy": "A5_stale_latest_merge",
       "metadata": {
@@ -99,7 +99,7 @@
       "warnings": []
     },
     {
-      "article_count": 46,
+      "article_count": 10,
       "company_id": "blue_origin",
       "company_name": "Blue Origin",
       "error_message": null,
@@ -133,8 +133,8 @@
         "https://www.bing.com/news/search?q=%E4%B8%AD%E5%9B%BD%E6%98%9F%E7%BD%91+%E5%9B%BD%E7%BD%91%E6%98%9F%E5%BA%A7&format=rss"
       ],
       "final_status": "success",
-      "finished_at": "2026-06-17T08:25:46.077904Z",
-      "item_count": 46,
+      "finished_at": "2026-06-17T08:21:30.467838Z",
+      "item_count": 10,
       "max_gdelt_queries": null,
       "merge_policy": "A5_stale_latest_merge",
       "metadata": {
@@ -199,7 +199,7 @@
       "warnings": []
     },
     {
-      "article_count": 48,
+      "article_count": 10,
       "company_id": "yuanxin_satellite",
       "company_name": "垣信卫星",
       "error_message": null,
@@ -241,8 +241,8 @@
         "https://www.bing.com/news/search?q=%E4%B8%AD%E5%9B%BD%E6%98%9F%E7%BD%91+%E5%9B%BD%E7%BD%91%E6%98%9F%E5%BA%A7&format=rss"
       ],
       "final_status": "success",
-      "finished_at": "2026-06-17T08:25:52.148984Z",
-      "item_count": 48,
+      "finished_at": "2026-06-17T08:21:34.161079Z",
+      "item_count": 10,
       "max_gdelt_queries": null,
       "merge_policy": "A5_stale_latest_merge",
       "metadata": {
@@ -315,7 +315,7 @@
       "warnings": []
     },
     {
-      "article_count": 40,
+      "article_count": 9,
       "company_id": "china_satnet",
       "company_name": "中国星网",
       "error_message": null,
@@ -356,8 +356,8 @@
         "https://www.bing.com/news/search?q=%E5%9E%A3%E4%BF%A1%E5%8D%AB%E6%98%9F+%E5%8D%83%E5%B8%86%E6%98%9F%E5%BA%A7&format=rss"
       ],
       "final_status": "success",
-      "finished_at": "2026-06-17T08:25:58.851819Z",
-      "item_count": 40,
+      "finished_at": "2026-06-17T08:21:38.467326Z",
+      "item_count": 9,
       "max_gdelt_queries": null,
       "merge_policy": "A5_stale_latest_merge",
       "metadata": {
@@ -429,7 +429,7 @@
       "warnings": []
     }
   ],
-  "generated_at": "2026-06-17T08:25:58.874004Z",
-  "run_id": "cfe5f0ff-e28f-45d8-a4f2-4882341ca522",
+  "generated_at": "2026-06-17T08:21:38.476763Z",
+  "run_id": "ed746ab8-08ae-4912-967d-7d64b9176ec3",
   "schema_version": "satellite_news.v1"
 }

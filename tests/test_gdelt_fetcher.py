@@ -413,3 +413,66 @@ def test_rate_limited_queries_are_reported_as_rate_limited_when_no_items():
     assert status["rate_limited"] is True
     assert status["retry_count"] >= 1
     assert status["error_message"]
+
+
+def test_gdelt_max_queries_limits_distributed_partial_run():
+    class CountingTransport:
+        def __init__(self):
+            self.calls = []
+
+        def search(self, request):
+            self.calls.append(request.query)
+            return {
+                "articles": [
+                    {
+                        "title": f"Result {len(self.calls)}",
+                        "url": f"https://example.test/{len(self.calls)}",
+                        "seendate": "20260612083000",
+                    }
+                ]
+            }
+
+    source = next(
+        source
+        for source in load_sources(Path("config/sources.yaml"))
+        if source.id == "gdelt_satellite_company_search"
+    )
+    company = next(
+        company
+        for company in load_companies(Path("config/companies.yaml"))
+        if company.id == "spacex"
+    )
+    context = PipelineContext(
+        run_id="partial-gdelt",
+        started_at=datetime.now(timezone.utc),
+        dry_run=False,
+        partial_run=True,
+        scheduled_slot="slot-spacex-gdelt",
+        company_id="spacex",
+        provider_id="gdelt_provider",
+        max_gdelt_queries=1,
+        merge_policy="A5_stale_latest_merge",
+        metadata={
+            "partial_run": True,
+            "scheduled_slot": "slot-spacex-gdelt",
+            "company_id": "spacex",
+            "provider_id": "gdelt_provider",
+            "max_gdelt_queries": 1,
+            "merge_policy": "A5_stale_latest_merge",
+        },
+    )
+    transport = CountingTransport()
+
+    items = GDELTFetcher(transport=transport).fetch(
+        company=company,
+        source=source,
+        context=context,
+    )
+
+    assert len(transport.calls) == 1
+    assert len(items) == 1
+    status = context.metadata["fetch_statuses"][0]
+    assert status["partial_run"] is True
+    assert status["query_count"] == 1
+    assert status["max_gdelt_queries"] == 1
+    assert status["scheduled_slot"] == "slot-spacex-gdelt"

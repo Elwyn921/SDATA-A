@@ -84,6 +84,7 @@ class JsonFileStorage:
         latest_pipeline_result = apply_stale_fallback(
             current=pipeline_result,
             previous=previous_latest,
+            context=context,
             generated_at=finished_at,
         )
         items = items_payload_from_pipeline_result(
@@ -179,6 +180,12 @@ def pipeline_result_payload(
         "finished_at": isoformat(finished_at),
         "generated_at": isoformat(finished_at),
         "dry_run": context.dry_run,
+        "partial_run": context.partial_run,
+        "scheduled_slot": context.scheduled_slot,
+        "company_id": context.company_id,
+        "provider_id": context.provider_id,
+        "max_gdelt_queries": context.max_gdelt_queries,
+        "merge_policy": context.merge_policy,
         "items": items,
         "summaries": serialize(result.summaries),
         "exports": serialize(result.exports),
@@ -259,12 +266,34 @@ def apply_stale_fallback(
     *,
     current: dict[str, Any],
     previous: dict[str, Any] | None,
+    context: PipelineContext,
     generated_at: datetime,
 ) -> dict[str, Any]:
-    current_items = list(current.get("items", []))
     if not previous:
         return mark_fresh_items(current)
 
+    if context.partial_run:
+        return apply_partial_run_merge(
+            current=current,
+            previous=previous,
+            context=context,
+            generated_at=generated_at,
+        )
+
+    return apply_full_run_stale_fallback(
+        current=current,
+        previous=previous,
+        generated_at=generated_at,
+    )
+
+
+def apply_full_run_stale_fallback(
+    *,
+    current: dict[str, Any],
+    previous: dict[str, Any],
+    generated_at: datetime,
+) -> dict[str, Any]:
+    current_items = list(current.get("items", []))
     previous_items = [
         item
         for item in previous.get("items", [])
@@ -292,6 +321,8 @@ def apply_stale_fallback(
                     items=stale_items,
                     current_run_id=str(current.get("run_id", "")),
                     generated_at=generated_at,
+                    stale_reason="current_run_company_empty",
+                    stale_as_of=generated_at,
                 )
             )
 
@@ -307,6 +338,70 @@ def apply_stale_fallback(
         "fresh_item_count": sum(1 for item in merged_items if not item.get("stale", False)),
         "stale_item_count": sum(1 for item in merged_items if item.get("stale", False)),
         "previous_run_id": previous.get("run_id"),
+        "partial_run": False,
+    }
+    merged["metadata"] = metadata
+    return merged
+
+
+def apply_partial_run_merge(
+    *,
+    current: dict[str, Any],
+    previous: dict[str, Any],
+    context: PipelineContext,
+    generated_at: datetime,
+) -> dict[str, Any]:
+    current_items = [
+        item
+        for item in current.get("items", [])
+        if isinstance(item, dict) and item.get("company_id")
+    ]
+    previous_items = [
+        item
+        for item in previous.get("items", [])
+        if isinstance(item, dict) and item.get("company_id")
+    ]
+    current_by_company = group_items_by_company(current_items)
+    previous_by_company = group_items_by_company(previous_items)
+    updated_company_ids = updated_company_ids_for_partial_run(
+        current=current,
+        context=context,
+    )
+    retained_company_ids = sorted(set(previous_by_company) - updated_company_ids)
+    previous_generated_at = parse_datetime_string(previous.get("generated_at"))
+
+    merged_items = []
+    for company_id in sorted(updated_company_ids):
+        merged_items.extend(mark_items_fresh(current_by_company.get(company_id, [])))
+    for company_id in retained_company_ids:
+        merged_items.extend(
+            mark_items_stale(
+                items=previous_by_company[company_id],
+                current_run_id=str(current.get("run_id", "")),
+                generated_at=generated_at,
+                stale_reason="partial_run_not_updated",
+                stale_as_of=previous_generated_at or generated_at,
+            )
+        )
+
+    merged = dict(current)
+    merged["items"] = merged_items
+    metadata = dict(merged.get("metadata", {})) if isinstance(merged.get("metadata"), dict) else {}
+    metadata["stale_fallback"] = {
+        "enabled": True,
+        "partial_run": True,
+        "scheduled_slot": context.scheduled_slot,
+        "updated_company_ids": sorted(updated_company_ids),
+        "retained_company_ids": retained_company_ids,
+        "fallback_company_ids": retained_company_ids,
+        "fresh_item_count": sum(1 for item in merged_items if not item.get("stale", False)),
+        "stale_item_count": sum(1 for item in merged_items if item.get("stale", False)),
+        "previous_run_id": previous.get("run_id"),
+        "provider_id": context.provider_id,
+        "company_id": context.company_id,
+        "company_ids": sorted(context_filter_values(context, "company_ids", context.company_id)),
+        "provider_ids": sorted(context_filter_values(context, "provider_ids", context.provider_id)),
+        "merge_policy": context.merge_policy,
     }
     merged["metadata"] = metadata
     return merged
@@ -338,15 +433,17 @@ def mark_items_stale(
     items: list[dict[str, Any]],
     current_run_id: str,
     generated_at: datetime,
+    stale_reason: str,
+    stale_as_of: datetime,
 ) -> list[dict[str, Any]]:
     stale_items = []
     for item in items:
         marked = dict(item)
         marked["fresh"] = False
         marked["stale"] = True
-        marked["stale_reason"] = "current_run_company_empty"
+        marked["stale_reason"] = stale_reason
         marked["stale_from_run_id"] = item.get("stale_from_run_id") or item.get("run_id")
-        marked["stale_as_of"] = isoformat(generated_at)
+        marked["stale_as_of"] = isoformat(stale_as_of)
         metadata = (
             dict(marked.get("metadata", {}))
             if isinstance(marked.get("metadata"), dict)
@@ -382,6 +479,43 @@ def status_company_ids(pipeline_result: dict[str, Any]) -> set[str]:
         if isinstance(status, dict) and status.get("company_id"):
             ids.add(str(status["company_id"]))
     return ids
+
+
+def updated_company_ids_for_partial_run(
+    *,
+    current: dict[str, Any],
+    context: PipelineContext,
+) -> set[str]:
+    ids = {str(company_id) for company_id in status_company_ids(current)}
+    ids.update(
+        str(item["company_id"])
+        for item in current.get("items", [])
+        if isinstance(item, dict) and item.get("company_id")
+    )
+    ids.update(context_filter_values(context, "company_ids", context.company_id))
+    return ids
+
+
+def context_filter_values(
+    context: PipelineContext,
+    metadata_key: str,
+    fallback_value: str | None,
+) -> set[str]:
+    metadata_values = context.metadata.get(metadata_key)
+    if isinstance(metadata_values, (list, tuple)):
+        return {str(value) for value in metadata_values if value}
+    if not fallback_value:
+        return set()
+    return {value.strip() for value in fallback_value.split(",") if value.strip()}
+
+
+def parse_datetime_string(value: object) -> datetime | None:
+    if not isinstance(value, str) or not value:
+        return None
+    try:
+        return datetime.fromisoformat(value.replace("Z", "+00:00"))
+    except ValueError:
+        return None
 
 
 def run_metadata_payload(

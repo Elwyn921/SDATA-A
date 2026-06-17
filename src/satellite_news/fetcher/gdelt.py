@@ -217,7 +217,10 @@ class GDELTFetcher:
         if source.type is not SourceType.GDELT:
             return ()
 
-        queries = build_company_queries(company=company, source=source)
+        queries = limit_gdelt_queries(
+            build_company_queries(company=company, source=source),
+            context=context,
+        )
         if context.dry_run or not gdelt_api_calls_allowed(source) or self.transport is None:
             record_fetch_status(
                 context,
@@ -361,6 +364,14 @@ def record_fetch_status(
         {
             "company_id": company.id,
             "company_name": company.canonical_name,
+            "scheduled_company_id": context.company_id or context.metadata.get("company_id"),
+            "scheduled_provider_id": context.provider_id or context.metadata.get("provider_id"),
+            "scheduled_slot": context.scheduled_slot or context.metadata.get("scheduled_slot"),
+            "partial_run": bool(context.partial_run or context.metadata.get("partial_run", False)),
+            "merge_policy": context.merge_policy or context.metadata.get("merge_policy"),
+            "max_gdelt_queries": context.max_gdelt_queries
+            if context.max_gdelt_queries is not None
+            else context.metadata.get("max_gdelt_queries"),
             "source_id": source.id,
             "source_type": source.type.value,
             "status": final_status,
@@ -377,6 +388,20 @@ def record_fetch_status(
             "queries": query_summary,
         }
     )
+
+
+def limit_gdelt_queries(
+    queries: list[str],
+    *,
+    context: PipelineContext,
+) -> list[str]:
+    limit = context.max_gdelt_queries
+    if limit is None:
+        metadata_limit = context.metadata.get("max_gdelt_queries")
+        limit = int(metadata_limit) if metadata_limit is not None else None
+    if limit is None or limit <= 0:
+        return queries
+    return queries[:limit]
 
 
 def build_company_query(*, company: Company, source: SourceConfig) -> str:

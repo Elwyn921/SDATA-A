@@ -2,7 +2,12 @@
 
 from __future__ import annotations
 
-from satellite_news.fetcher.gdelt import DEFAULT_GDELT_ENDPOINT, GDELTHTTPTransport, GDELTFetcher
+from satellite_news.fetcher.gdelt import (
+    DEFAULT_GDELT_ENDPOINT,
+    GDELTHTTPTransport,
+    GDELTFetcher,
+    limit_gdelt_queries,
+)
 from satellite_news.provider.base import company_override, dry_run_result
 from satellite_news.provider.interface import ProviderResult
 from satellite_news.schema import Company, NewsProviderConfig, PipelineContext, SourceConfig, SourceType
@@ -24,7 +29,10 @@ class GDELTProvider:
         context: PipelineContext,
     ) -> ProviderResult:
         source = gdelt_source_from_provider(company=company, provider=provider)
-        queries = self.fetcher.build_company_queries(company=company, source=source)
+        queries = limit_gdelt_queries(
+            self.fetcher.build_company_queries(company=company, source=source),
+            context=context,
+        )
         if context.dry_run:
             return dry_run_result(
                 provider=provider,
@@ -38,7 +46,25 @@ class GDELTProvider:
             config_dir=context.config_dir,
             output_dir=context.output_dir,
             dry_run=False,
-            metadata={},
+            partial_run=context.partial_run,
+            scheduled_slot=context.scheduled_slot,
+            company_id=context.company_id,
+            provider_id=context.provider_id,
+            max_gdelt_queries=context.max_gdelt_queries,
+            merge_policy=context.merge_policy,
+            metadata={
+                "partial_run": context.metadata.get("partial_run", context.partial_run),
+                "scheduled_slot": context.metadata.get("scheduled_slot", context.scheduled_slot),
+                "company_id": context.metadata.get("company_id", context.company_id),
+                "company_ids": context.metadata.get("company_ids", ()),
+                "provider_id": context.metadata.get("provider_id", context.provider_id),
+                "provider_ids": context.metadata.get("provider_ids", ()),
+                "max_gdelt_queries": context.metadata.get(
+                    "max_gdelt_queries",
+                    context.max_gdelt_queries,
+                ),
+                "merge_policy": context.metadata.get("merge_policy", context.merge_policy),
+            },
         )
         articles = self.fetcher.fetch_raw_articles(
             company=company,

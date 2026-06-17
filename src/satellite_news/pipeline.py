@@ -152,17 +152,52 @@ def main(argv: tuple[str, ...] | None = None) -> PipelineResult:
     parser.add_argument("--publish-dir", type=Path, default=Path("docs/data/news"))
     parser.add_argument("--run-id", default=None)
     parser.add_argument("--dry-run", action=argparse.BooleanOptionalAction, default=True)
+    parser.add_argument("--company-id", action="append", default=[])
+    parser.add_argument("--provider-id", action="append", default=[])
+    parser.add_argument("--scheduled-slot", default=None)
+    parser.add_argument("--max-gdelt-queries", type=int, default=None)
     args = parser.parse_args(argv)
 
-    companies = load_companies(args.config_dir / "companies.yaml")
+    requested_company_ids = normalize_filter_values(args.company_id)
+    requested_provider_ids = normalize_filter_values(args.provider_id)
+    partial_run = bool(
+        requested_company_ids
+        or requested_provider_ids
+        or args.scheduled_slot
+        or args.max_gdelt_queries is not None
+    )
+
+    companies = filter_companies(
+        load_companies(args.config_dir / "companies.yaml"),
+        requested_company_ids,
+    )
     sources = load_sources(args.config_dir / "sources.yaml")
-    providers = load_providers(args.config_dir / "sources.yaml")
+    providers = filter_providers(
+        load_providers(args.config_dir / "sources.yaml"),
+        requested_provider_ids,
+    )
     context = PipelineContext(
         run_id=args.run_id or str(uuid4()),
         started_at=datetime.now(timezone.utc),
         config_dir=str(args.config_dir),
         output_dir=str(args.output_dir),
         dry_run=args.dry_run,
+        partial_run=partial_run,
+        scheduled_slot=args.scheduled_slot,
+        company_id=",".join(requested_company_ids) if requested_company_ids else None,
+        provider_id=",".join(requested_provider_ids) if requested_provider_ids else None,
+        max_gdelt_queries=args.max_gdelt_queries,
+        merge_policy="A5_stale_latest_merge" if partial_run else None,
+        metadata={
+            "partial_run": partial_run,
+            "scheduled_slot": args.scheduled_slot,
+            "company_id": requested_company_ids[0] if len(requested_company_ids) == 1 else None,
+            "company_ids": list(requested_company_ids),
+            "provider_id": requested_provider_ids[0] if len(requested_provider_ids) == 1 else None,
+            "provider_ids": list(requested_provider_ids),
+            "max_gdelt_queries": args.max_gdelt_queries,
+            "merge_policy": "A5_stale_latest_merge" if partial_run else None,
+        },
     )
     provider_registry = build_default_provider_registry(
         progress=lambda message: print(message, file=sys.stderr, flush=True)
@@ -195,6 +230,36 @@ def build_gdelt_fetcher(sources: tuple[SourceConfig, ...]) -> GDELTFetcher:
         progress=lambda message: print(message, file=sys.stderr, flush=True),
     )
     return GDELTFetcher(transport=transport)
+
+
+def normalize_filter_values(values: list[str]) -> tuple[str, ...]:
+    normalized: list[str] = []
+    for value in values:
+        for part in str(value).split(","):
+            clean = part.strip()
+            if clean and clean not in normalized:
+                normalized.append(clean)
+    return tuple(normalized)
+
+
+def filter_companies(
+    companies: tuple[Company, ...],
+    company_ids: tuple[str, ...],
+) -> tuple[Company, ...]:
+    if not company_ids:
+        return companies
+    requested = set(company_ids)
+    return tuple(company for company in companies if company.id in requested)
+
+
+def filter_providers(
+    providers: tuple[NewsProviderConfig, ...],
+    provider_ids: tuple[str, ...],
+) -> tuple[NewsProviderConfig, ...]:
+    if not provider_ids:
+        return providers
+    requested = set(provider_ids)
+    return tuple(provider for provider in providers if provider.id in requested)
 
 
 def option_value(options: dict[str, object], key: str, default: object) -> object:

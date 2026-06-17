@@ -41,7 +41,7 @@ class ProviderOrchestrator:
             if not company.enabled:
                 continue
             company_seen = seen_urls_by_company.setdefault(company.id, set())
-            for provider_config in self.providers_for_company(company):
+            for provider_config in self.providers_for_company(company, context=context):
                 result = self.fetch_provider(
                     company=company,
                     provider_config=provider_config,
@@ -64,11 +64,17 @@ class ProviderOrchestrator:
                     break
         return tuple(items)
 
-    def providers_for_company(self, company: Company) -> tuple[NewsProviderConfig, ...]:
+    def providers_for_company(
+        self,
+        company: Company,
+        context: PipelineContext | None = None,
+    ) -> tuple[NewsProviderConfig, ...]:
+        requested_provider_ids = provider_filter_from_context(context)
         enabled = [
             provider
             for provider in self.providers
             if provider_enabled_for_company(company=company, provider=provider)
+            and (not requested_provider_ids or provider.id in requested_provider_ids)
         ]
         return tuple(
             sorted(
@@ -106,6 +112,17 @@ class ProviderOrchestrator:
             )
 
 
+def provider_filter_from_context(context: PipelineContext | None) -> set[str]:
+    if context is None:
+        return set()
+    provider_ids = context.metadata.get("provider_ids", ())
+    if isinstance(provider_ids, (list, tuple, set)):
+        return {str(value) for value in provider_ids if str(value)}
+    if context.provider_id:
+        return {value for value in context.provider_id.split(",") if value}
+    return set()
+
+
 def record_provider_status(
     *,
     context: PipelineContext,
@@ -119,6 +136,14 @@ def record_provider_status(
     status_row: dict[str, Any] = {
         "company_id": company.id,
         "company_name": company.canonical_name,
+        "scheduled_company_id": context.company_id or context.metadata.get("company_id"),
+        "scheduled_provider_id": context.provider_id or context.metadata.get("provider_id"),
+        "scheduled_slot": context.scheduled_slot or context.metadata.get("scheduled_slot"),
+        "partial_run": bool(context.partial_run or context.metadata.get("partial_run", False)),
+        "merge_policy": context.merge_policy or context.metadata.get("merge_policy"),
+        "max_gdelt_queries": context.max_gdelt_queries
+        if context.max_gdelt_queries is not None
+        else context.metadata.get("max_gdelt_queries"),
         "provider_id": provider.id,
         "provider_type": provider.type.value,
         "source_id": provider.id,
@@ -144,6 +169,14 @@ def record_provider_status(
         "metadata": {
             "cache_status": metadata.get("cache_status", "not_implemented"),
             "stale_fallback_available": bool(metadata.get("stale_fallback_available", False)),
+            "scheduled_slot": context.scheduled_slot or context.metadata.get("scheduled_slot"),
+            "company_id": context.company_id or context.metadata.get("company_id"),
+            "provider_id": context.provider_id or context.metadata.get("provider_id"),
+            "partial_run": bool(context.partial_run or context.metadata.get("partial_run", False)),
+            "merge_policy": context.merge_policy or context.metadata.get("merge_policy"),
+            "max_gdelt_queries": context.max_gdelt_queries
+            if context.max_gdelt_queries is not None
+            else context.metadata.get("max_gdelt_queries"),
             **metadata,
         },
     }

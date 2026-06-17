@@ -52,6 +52,16 @@ providers:
           - https://payloadspace.com/feed/
           - https://www.nasa.gov/news-release/feed/
           - https://news.google.com/rss/search?q=SpaceX%20Starlink%20satellite%20launch&hl=en-US&gl=US&ceid=US:en
+          - https://news.google.com/rss/search?q=SpaceX%20Starshield%20direct%20to%20cell&hl=en-US&gl=US&ceid=US:en
+          - https://news.google.com/rss/search?q=SpaceX%20Falcon%209%20Starlink%20satellites&hl=en-US&gl=US&ceid=US:en
+          - https://news.google.com/rss/search?q=site%3Aspacex.com%20SpaceX%20Starlink&hl=en-US&gl=US&ceid=US:en
+          - https://www.bing.com/news/search?q=SpaceX+Starlink&format=rss
+          - https://www.bing.com/news/search?q=SpaceX+Starshield+direct+to+cell&format=rss
+          - https://www.bing.com/news/search?q=Falcon+9+Starlink+satellites&format=rss
+          - https://feeds.arstechnica.com/arstechnica/space
+          - https://www.theregister.com/headlines.atom
+          - https://www.fierce-network.com/rss/xml
+          - https://www.fierce-wireless.com/rss/xml
         query_templates:
           - SpaceX Starlink satellite
           - SpaceX Starshield direct to cell
@@ -72,6 +82,16 @@ providers:
           - https://news.google.com/rss/search?q=Blue%20Origin%20New%20Glenn%20Blue%20Ring%20satellite&hl=en-US&gl=US&ceid=US:en
           - https://news.google.com/rss/search?q=%22Blue%20Origin%22%20%22New%20Glenn%22&hl=en-US&gl=US&ceid=US:en
           - https://news.google.com/rss/search?q=%22Blue%20Origin%22%20%22Blue%20Ring%22%20TeraWave&hl=en-US&gl=US&ceid=US:en
+          - https://news.google.com/rss/search?q=%22Blue%20Origin%22%20%22New%20Shepard%22&hl=en-US&gl=US&ceid=US:en
+          - https://news.google.com/rss/search?q=%22Blue%20Origin%22%20BE-4%20engine&hl=en-US&gl=US&ceid=US:en
+          - https://news.google.com/rss/search?q=site%3Ablueorigin.com%20%22Blue%20Origin%22&hl=en-US&gl=US&ceid=US:en
+          - https://www.bing.com/news/search?q=Blue+Origin+New+Glenn&format=rss
+          - https://www.bing.com/news/search?q=Blue+Origin+Blue+Ring+TeraWave&format=rss
+          - https://www.bing.com/news/search?q=Blue+Origin+BE-4+engine&format=rss
+          - https://feeds.arstechnica.com/arstechnica/space
+          - https://www.theregister.com/headlines.atom
+          - https://www.fierce-network.com/rss/xml
+          - https://www.fierce-wireless.com/rss/xml
         query_templates:
           - Blue Origin New Glenn satellite
           - Blue Origin Blue Ring TeraWave
@@ -87,8 +107,30 @@ providers:
           - https://spacenews.com/feed/
           - https://spaceflightnow.com/feed/
           - https://payloadspace.com/feed/
+          - https://www.nasa.gov/news-release/feed/
           - https://news.google.com/rss/search?q=%E5%9E%A3%E4%BF%A1%E5%8D%AB%E6%98%9F%20%E5%8D%83%E5%B8%86%E6%98%9F%E5%BA%A7%20SpaceSail&hl=zh-CN&gl=CN&ceid=CN:zh-Hans
+          - https://news.google.com/rss/search?q=%E5%9E%A3%E4%BF%A1%E5%8D%AB%E6%98%9F%20%E5%8D%83%E5%B8%86%E6%98%9F%E5%BA%A7&hl=zh-CN&gl=CN&ceid=CN:zh-Hans
+          - https://news.google.com/rss/search?q=%E4%B8%8A%E6%B5%B7%E5%9E%A3%E4%BF%A1%20%E5%8D%AB%E6%98%9F&hl=zh-CN&gl=CN&ceid=CN:zh-Hans
+          - https://news.google.com/rss/search?q=G60%20%E6%98%9F%E9%93%BE%20%E5%9E%A3%E4%BF%A1%E5%8D%AB%E6%98%9F&hl=zh-CN&gl=CN&ceid=CN:zh-Hans
+          - https://news.google.com/rss/search?q=%E4%BD%8E%E8%BD%A8%E5%8D%AB%E6%98%9F%E4%BA%92%E8%81%94%E7%BD%91%20%E5%8D%83%E5%B8%86%E6%98%9F%E5%BA%A7&hl=zh-CN&gl=CN&ceid=CN:zh-Hans
+          - https://news.google.com/rss/search?q=site%3Astcn.com%20%E5%9E%A3%E4%BF%A1%E5%8D%AB%E6%98%9F%20%E5%8D%83%E5%B8%86%E6%98%9F%E5%BA%A7&hl=zh-CN&gl=CN&ceid=CN:zh-Hans
+          - https://news.google.com/rss/search?q=site%3Agzw.sh.gov.cn%20%E5%9E%A3%E4%BF%A1%E5%8D%AB%E6%98%9F&hl=zh-CN&gl=CN&ceid=CN:zh-Hans
+          - https://news.google.com/rss/search?q=site%3Alingang.gov.cn%20%E5%8D%83%E5%B8%86%E6%98%9F%E5%BA%A7&hl=zh-CN&gl=CN&ceid=CN:zh-Hans
+          - https://news.google.com/rss/search?q=site%3Ashanghai.gov.cn%20%E5%9E%A3%E4%BF%A1%E5%8D%AB%E6%98%9F&hl=zh-CN&gl=CN&ceid=CN:zh-Hans
+          - https://news.google.com/rss/search?q=site%3Agov.cn%20%E5%9E%A3%E4%BF%A1%E5%8D%AB%E6%98%9F%20%E5%8D%83%E5%B8%86%E6%98%9F%E5%BA%A7&hl=zh-CN&gl=CN&ceid=CN:zh-Hans
+          - https://news.google.com/rss/search?q=site%3Acnsa.gov.cn%20%E5%8D%83%E5%B8%86%E6%98%9F%E5%BA%A7&hl=zh-CN&gl=CN&ceid=CN:zh-Hans
           - https://news.google.com/rss/search?q=SpaceSail%20Qianfan%20Thousand%20Sails%20satellite&hl=en-US&gl=US&ceid=US:en
+          - https://news.google.com/rss/search?q=SpaceSail%20Qianfan%20satellite&hl=en-US&gl=US&ceid=US:en
+          - https://news.google.com/rss/search?q=Thousand%20Sails%20SpaceSail%20constellation&hl=en-US&gl=US&ceid=US:en
+          - https://news.google.com/rss/search?q=Shanghai%20SpaceSail%20satellite&hl=en-US&gl=US&ceid=US:en
+          - https://www.bing.com/news/search?q=%E5%9E%A3%E4%BF%A1%E5%8D%AB%E6%98%9F+%E5%8D%83%E5%B8%86%E6%98%9F%E5%BA%A7&format=rss
+          - https://www.bing.com/news/search?q=%E4%B8%8A%E6%B5%B7%E5%9E%A3%E4%BF%A1+G60+%E6%98%9F%E9%93%BE&format=rss
+          - https://www.bing.com/news/search?q=SpaceSail+Qianfan+satellite&format=rss
+          - https://www.bing.com/news/search?q=%E4%BD%8E%E8%BD%A8%E5%8D%AB%E6%98%9F%E4%BA%92%E8%81%94%E7%BD%91+%E5%8D%83%E5%B8%86%E6%98%9F%E5%BA%A7&format=rss
+          - https://feeds.feedburner.com/36kr
+          - https://www.geekpark.net/rss
+          - https://www.huxiu.com/rss/0.xml
+          - https://www.fierce-network.com/rss/xml
         query_templates:
           - 垣信卫星 千帆星座
           - SpaceSail Qianfan Thousand Sails
@@ -104,8 +146,29 @@ providers:
           - https://spacenews.com/feed/
           - https://spaceflightnow.com/feed/
           - https://payloadspace.com/feed/
+          - https://www.nasa.gov/news-release/feed/
           - https://news.google.com/rss/search?q=%E4%B8%AD%E5%9B%BD%E6%98%9F%E7%BD%91%20%E5%9B%BD%E7%BD%91%E6%98%9F%E5%BA%A7%20%E4%B8%AD%E5%9B%BD%E5%8D%AB%E6%98%9F%E7%BD%91%E7%BB%9C%E9%9B%86%E5%9B%A2&hl=zh-CN&gl=CN&ceid=CN:zh-Hans
+          - https://news.google.com/rss/search?q=%E4%B8%AD%E5%9B%BD%E6%98%9F%E7%BD%91%20%E5%9B%BD%E7%BD%91%E6%98%9F%E5%BA%A7&hl=zh-CN&gl=CN&ceid=CN:zh-Hans
+          - https://news.google.com/rss/search?q=%E4%B8%AD%E5%9B%BD%E5%8D%AB%E6%98%9F%E7%BD%91%E7%BB%9C%E9%9B%86%E5%9B%A2%20%E4%B8%AD%E5%9B%BD%E6%98%9F%E7%BD%91&hl=zh-CN&gl=CN&ceid=CN:zh-Hans
+          - https://news.google.com/rss/search?q=%E5%8D%AB%E6%98%9F%E4%BA%92%E8%81%94%E7%BD%91%20%E4%BD%8E%E8%BD%A8%E6%98%9F%E5%BA%A7%20%E4%B8%AD%E5%9B%BD%E6%98%9F%E7%BD%91&hl=zh-CN&gl=CN&ceid=CN:zh-Hans
+          - https://news.google.com/rss/search?q=site%3Axiongan.gov.cn%20%E4%B8%AD%E5%9B%BD%E6%98%9F%E7%BD%91&hl=zh-CN&gl=CN&ceid=CN:zh-Hans
+          - https://news.google.com/rss/search?q=site%3Asasac.gov.cn%20%E4%B8%AD%E5%9B%BD%E5%8D%AB%E6%98%9F%E7%BD%91%E7%BB%9C%E9%9B%86%E5%9B%A2&hl=zh-CN&gl=CN&ceid=CN:zh-Hans
+          - https://news.google.com/rss/search?q=site%3Amiit.gov.cn%20%E4%B8%AD%E5%9B%BD%E6%98%9F%E7%BD%91%20%E5%8D%AB%E6%98%9F%E4%BA%92%E8%81%94%E7%BD%91&hl=zh-CN&gl=CN&ceid=CN:zh-Hans
+          - https://news.google.com/rss/search?q=site%3Anews.cn%20%E4%B8%AD%E5%9B%BD%E6%98%9F%E7%BD%91%20%E5%9B%BD%E7%BD%91%E6%98%9F%E5%BA%A7&hl=zh-CN&gl=CN&ceid=CN:zh-Hans
+          - https://news.google.com/rss/search?q=site%3Apeople.com.cn%20%E4%B8%AD%E5%9B%BD%E6%98%9F%E7%BD%91&hl=zh-CN&gl=CN&ceid=CN:zh-Hans
+          - https://news.google.com/rss/search?q=site%3Agov.cn%20%E4%B8%AD%E5%9B%BD%E6%98%9F%E7%BD%91%20%E5%8D%AB%E6%98%9F%E4%BA%92%E8%81%94%E7%BD%91&hl=zh-CN&gl=CN&ceid=CN:zh-Hans
+          - https://news.google.com/rss/search?q=site%3Acctv.com%20%E4%B8%AD%E5%9B%BD%E6%98%9F%E7%BD%91%20%E5%9B%BD%E7%BD%91%E6%98%9F%E5%BA%A7&hl=zh-CN&gl=CN&ceid=CN:zh-Hans
           - https://news.google.com/rss/search?q=China%20SatNet%20Guowang%20satellite%20constellation&hl=en-US&gl=US&ceid=US:en
+          - https://news.google.com/rss/search?q=China%20SatNet%20Guowang%20satellite&hl=en-US&gl=US&ceid=US:en
+          - https://news.google.com/rss/search?q=China%20Satellite%20Network%20Group%20constellation&hl=en-US&gl=US&ceid=US:en
+          - https://www.bing.com/news/search?q=%E4%B8%AD%E5%9B%BD%E6%98%9F%E7%BD%91+%E5%9B%BD%E7%BD%91%E6%98%9F%E5%BA%A7&format=rss
+          - https://www.bing.com/news/search?q=%E4%B8%AD%E5%9B%BD%E5%8D%AB%E6%98%9F%E7%BD%91%E7%BB%9C%E9%9B%86%E5%9B%A2+%E5%8D%AB%E6%98%9F%E4%BA%92%E8%81%94%E7%BD%91&format=rss
+          - https://www.bing.com/news/search?q=China+SatNet+Guowang+satellite+constellation&format=rss
+          - https://www.bing.com/news/search?q=%E4%BD%8E%E8%BD%A8%E6%98%9F%E5%BA%A7+%E4%B8%AD%E5%9B%BD%E6%98%9F%E7%BD%91&format=rss
+          - https://feeds.feedburner.com/36kr
+          - https://www.geekpark.net/rss
+          - https://www.huxiu.com/rss/0.xml
+          - https://www.fierce-network.com/rss/xml
         query_templates:
           - 中国星网 国网星座
           - China SatNet Guowang satellite constellation
@@ -120,10 +183,22 @@ providers:
       - https://spaceflightnow.com/feed/
       - https://payloadspace.com/feed/
       - https://www.nasa.gov/news-release/feed/
+      - https://www.nasa.gov/rss/dyn/breaking_news.rss
+      - https://feeds.arstechnica.com/arstechnica/space
+      - https://www.theregister.com/headlines.atom
+      - https://www.fierce-network.com/rss/xml
+      - https://www.fierce-wireless.com/rss/xml
+      - https://feeds.feedburner.com/36kr
+      - https://www.geekpark.net/rss
+      - https://www.huxiu.com/rss/0.xml
+      - https://news.google.com/rss/search?q=%E5%9E%A3%E4%BF%A1%E5%8D%AB%E6%98%9F%20%E5%8D%83%E5%B8%86%E6%98%9F%E5%BA%A7&hl=zh-CN&gl=CN&ceid=CN:zh-Hans
+      - https://news.google.com/rss/search?q=%E4%B8%AD%E5%9B%BD%E6%98%9F%E7%BD%91%20%E5%9B%BD%E7%BD%91%E6%98%9F%E5%BA%A7&hl=zh-CN&gl=CN&ceid=CN:zh-Hans
+      - https://www.bing.com/news/search?q=%E5%9E%A3%E4%BF%A1%E5%8D%AB%E6%98%9F+%E5%8D%83%E5%B8%86%E6%98%9F%E5%BA%A7&format=rss
+      - https://www.bing.com/news/search?q=%E4%B8%AD%E5%9B%BD%E6%98%9F%E7%BD%91+%E5%9B%BD%E7%BD%91%E6%98%9F%E5%BA%A7&format=rss
     adapter_options:
       real_fetch_enabled: true
       timeout_seconds: 20
-      max_items: 10
+      max_items: 50
 
   - id: official_site_provider
     type: official_site
@@ -712,25 +787,82 @@ sources:
         - https://spaceflightnow.com/feed/
         - https://payloadspace.com/feed/
         - https://www.nasa.gov/news-release/feed/
+        - https://www.nasa.gov/rss/dyn/breaking_news.rss
+        - https://feeds.arstechnica.com/arstechnica/space
+        - https://www.theregister.com/headlines.atom
+        - https://www.fierce-network.com/rss/xml
+        - https://www.fierce-wireless.com/rss/xml
         - https://news.google.com/rss/search?q=SpaceX%20Starlink%20satellite%20launch&hl=en-US&gl=US&ceid=US:en
+        - https://news.google.com/rss/search?q=SpaceX%20Starshield%20direct%20to%20cell&hl=en-US&gl=US&ceid=US:en
+        - https://news.google.com/rss/search?q=SpaceX%20Falcon%209%20Starlink%20satellites&hl=en-US&gl=US&ceid=US:en
+        - https://www.bing.com/news/search?q=SpaceX+Starlink&format=rss
+        - https://www.bing.com/news/search?q=SpaceX+Starshield+direct+to+cell&format=rss
+        - https://www.bing.com/news/search?q=Falcon+9+Starlink+satellites&format=rss
       blue_origin:
         - https://spacenews.com/feed/
         - https://spaceflightnow.com/feed/
         - https://payloadspace.com/feed/
         - https://www.nasa.gov/news-release/feed/
+        - https://www.nasa.gov/rss/dyn/breaking_news.rss
+        - https://feeds.arstechnica.com/arstechnica/space
+        - https://www.theregister.com/headlines.atom
+        - https://www.fierce-network.com/rss/xml
+        - https://www.fierce-wireless.com/rss/xml
         - https://news.google.com/rss/search?q=Blue%20Origin%20New%20Glenn%20Blue%20Ring%20satellite&hl=en-US&gl=US&ceid=US:en
+        - https://news.google.com/rss/search?q=%22Blue%20Origin%22%20%22New%20Glenn%22&hl=en-US&gl=US&ceid=US:en
+        - https://news.google.com/rss/search?q=%22Blue%20Origin%22%20%22Blue%20Ring%22%20TeraWave&hl=en-US&gl=US&ceid=US:en
+        - https://www.bing.com/news/search?q=Blue+Origin+New+Glenn&format=rss
+        - https://www.bing.com/news/search?q=Blue+Origin+Blue+Ring+TeraWave&format=rss
+        - https://www.bing.com/news/search?q=Blue+Origin+BE-4+engine&format=rss
       yuanxin_satellite:
         - https://spacenews.com/feed/
         - https://spaceflightnow.com/feed/
         - https://payloadspace.com/feed/
-        - https://news.google.com/rss/search?q=%E5%9E%A3%E4%BF%A1%E5%8D%AB%E6%98%9F%20%E5%8D%83%E5%B8%86%E6%98%9F%E5%BA%A7%20SpaceSail&hl=zh-CN&gl=CN&ceid=CN:zh-Hans
+        - https://www.nasa.gov/news-release/feed/
+        - https://feeds.arstechnica.com/arstechnica/space
+        - https://www.theregister.com/headlines.atom
+        - https://www.fierce-network.com/rss/xml
+        - https://www.fierce-wireless.com/rss/xml
+        - https://feeds.feedburner.com/36kr
+        - https://www.geekpark.net/rss
+        - https://www.huxiu.com/rss/0.xml
+        - https://www.stcn.com/rss
+        - https://www.ithome.com/rss/
+        - https://news.google.com/rss/search?q=%E5%9E%A3%E4%BF%A1%E5%8D%AB%E6%98%9F%20%E5%8D%83%E5%B8%86%E6%98%9F%E5%BA%A7&hl=zh-CN&gl=CN&ceid=CN:zh-Hans
+        - https://news.google.com/rss/search?q=%E4%B8%8A%E6%B5%B7%E5%9E%A3%E4%BF%A1%20%E5%8D%AB%E6%98%9F&hl=zh-CN&gl=CN&ceid=CN:zh-Hans
+        - https://news.google.com/rss/search?q=G60%20%E6%98%9F%E9%93%BE%20%E5%9E%A3%E4%BF%A1%E5%8D%AB%E6%98%9F&hl=zh-CN&gl=CN&ceid=CN:zh-Hans
+        - https://news.google.com/rss/search?q=%E4%BD%8E%E8%BD%A8%E5%8D%AB%E6%98%9F%E4%BA%92%E8%81%94%E7%BD%91%20%E5%8D%83%E5%B8%86%E6%98%9F%E5%BA%A7&hl=zh-CN&gl=CN&ceid=CN:zh-Hans
         - https://news.google.com/rss/search?q=SpaceSail%20Qianfan%20Thousand%20Sails%20satellite&hl=en-US&gl=US&ceid=US:en
+        - https://news.google.com/rss/search?q=SpaceSail%20Qianfan%20satellite&hl=en-US&gl=US&ceid=US:en
+        - https://news.google.com/rss/search?q=Thousand%20Sails%20SpaceSail%20constellation&hl=en-US&gl=US&ceid=US:en
+        - https://news.google.com/rss/search?q=Shanghai%20SpaceSail%20satellite&hl=en-US&gl=US&ceid=US:en
+        - https://www.bing.com/news/search?q=%E5%9E%A3%E4%BF%A1%E5%8D%AB%E6%98%9F+%E5%8D%83%E5%B8%86%E6%98%9F%E5%BA%A7&format=rss
+        - https://www.bing.com/news/search?q=%E4%B8%8A%E6%B5%B7%E5%9E%A3%E4%BF%A1+G60+%E6%98%9F%E9%93%BE&format=rss
+        - https://www.bing.com/news/search?q=SpaceSail+Qianfan+satellite&format=rss
+        - https://www.bing.com/news/search?q=%E4%BD%8E%E8%BD%A8%E5%8D%AB%E6%98%9F%E4%BA%92%E8%81%94%E7%BD%91+%E5%8D%83%E5%B8%86%E6%98%9F%E5%BA%A7&format=rss
       china_satnet:
         - https://spacenews.com/feed/
         - https://spaceflightnow.com/feed/
         - https://payloadspace.com/feed/
-        - https://news.google.com/rss/search?q=%E4%B8%AD%E5%9B%BD%E6%98%9F%E7%BD%91%20%E5%9B%BD%E7%BD%91%E6%98%9F%E5%BA%A7%20%E4%B8%AD%E5%9B%BD%E5%8D%AB%E6%98%9F%E7%BD%91%E7%BB%9C%E9%9B%86%E5%9B%A2&hl=zh-CN&gl=CN&ceid=CN:zh-Hans
+        - https://www.nasa.gov/news-release/feed/
+        - https://feeds.arstechnica.com/arstechnica/space
+        - https://www.theregister.com/headlines.atom
+        - https://www.fierce-network.com/rss/xml
+        - https://www.fierce-wireless.com/rss/xml
+        - https://feeds.feedburner.com/36kr
+        - https://www.geekpark.net/rss
+        - https://www.huxiu.com/rss/0.xml
+        - https://www.stcn.com/rss
+        - https://news.google.com/rss/search?q=%E4%B8%AD%E5%9B%BD%E6%98%9F%E7%BD%91%20%E5%9B%BD%E7%BD%91%E6%98%9F%E5%BA%A7&hl=zh-CN&gl=CN&ceid=CN:zh-Hans
+        - https://news.google.com/rss/search?q=%E4%B8%AD%E5%9B%BD%E5%8D%AB%E6%98%9F%E7%BD%91%E7%BB%9C%E9%9B%86%E5%9B%A2%20%E4%B8%AD%E5%9B%BD%E6%98%9F%E7%BD%91&hl=zh-CN&gl=CN&ceid=CN:zh-Hans
+        - https://news.google.com/rss/search?q=%E5%8D%AB%E6%98%9F%E4%BA%92%E8%81%94%E7%BD%91%20%E4%BD%8E%E8%BD%A8%E6%98%9F%E5%BA%A7%20%E4%B8%AD%E5%9B%BD%E6%98%9F%E7%BD%91&hl=zh-CN&gl=CN&ceid=CN:zh-Hans
         - https://news.google.com/rss/search?q=China%20SatNet%20Guowang%20satellite%20constellation&hl=en-US&gl=US&ceid=US:en
+        - https://news.google.com/rss/search?q=China%20SatNet%20Guowang%20satellite&hl=en-US&gl=US&ceid=US:en
+        - https://news.google.com/rss/search?q=China%20Satellite%20Network%20Group%20constellation&hl=en-US&gl=US&ceid=US:en
+        - https://www.bing.com/news/search?q=%E4%B8%AD%E5%9B%BD%E6%98%9F%E7%BD%91+%E5%9B%BD%E7%BD%91%E6%98%9F%E5%BA%A7&format=rss
+        - https://www.bing.com/news/search?q=%E4%B8%AD%E5%9B%BD%E5%8D%AB%E6%98%9F%E7%BD%91%E7%BB%9C%E9%9B%86%E5%9B%A2+%E5%8D%AB%E6%98%9F%E4%BA%92%E8%81%94%E7%BD%91&format=rss
+        - https://www.bing.com/news/search?q=China+SatNet+Guowang+satellite+constellation&format=rss
+        - https://www.bing.com/news/search?q=%E4%BD%8E%E8%BD%A8%E6%98%9F%E5%BA%A7+%E4%B8%AD%E5%9B%BD%E6%98%9F%E7%BD%91&format=rss
     candidate_domains:
       global_space_media:
         - spacenews.com
@@ -751,6 +883,38 @@ sources:
       require_company_keyword: true
       require_satellite_context: true
       prefer_original_reporting: true
+
+  - id: rss_source_metadata
+    type: rss
+    rank_group: media
+    description: Metadata for wide RSS pool ranking and fallback tuning.
+    enabled: true
+    provider_id: rss_provider
+    provider_priority: 30
+    fallback_to:
+      - serpapi_provider
+    registry_status: ranking_metadata_only
+    company_overrides:
+      spacex:
+        priority: 30
+        source_notes:
+          - stable: spacenews.com, nasa.gov, Google News, Bing News
+          - candidate: spaceflightnow.com, payloadspace.com, arstechnica, the register, fierce-network, fierce-wireless
+      blue_origin:
+        priority: 30
+        source_notes:
+          - stable: spacenews.com, nasa.gov, Google News, Bing News
+          - candidate: spaceflightnow.com, payloadspace.com, arstechnica, the register, fierce-network, fierce-wireless
+      yuanxin_satellite:
+        priority: 30
+        source_notes:
+          - stable: Google News, Bing News, stcn.com, 36kr, geekpark, huxiu
+          - candidate: spaceflightnow.com, payloadspace.com, arstechnica, the register, fierce-network, fierce-wireless
+      china_satnet:
+        priority: 30
+        source_notes:
+          - stable: Google News, Bing News, stcn.com, 36kr, geekpark, huxiu, xiongan/government portals
+          - candidate: spaceflightnow.com, payloadspace.com, arstechnica, the register, fierce-network, fierce-wireless
 
   - id: search_api_placeholder
     type: search_api
