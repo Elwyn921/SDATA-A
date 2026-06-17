@@ -68,6 +68,29 @@ docs/data/news/archive/index.json
 
 GDELT is a public external service. Live runs may encounter rate limits such as `HTTP 429 Too Many Requests`. The pipeline records these conditions per company in `fetch_statuses` rather than treating a single company failure as a total system failure.
 
+## Distributed GDELT Scheduling Contract
+
+The pipeline can be invoked as a low-frequency partial run:
+
+```bash
+python -m satellite_news \
+  --company-id spacex \
+  --provider-id gdelt_provider \
+  --scheduled-slot slot-2026-06-17T00-spacex-gdelt \
+  --max-gdelt-queries 1
+```
+
+This contract is designed to reduce GDELT 429 risk by spreading requests across scheduled slots. A partial run only updates the requested company/provider pair. Other companies must be preserved by the future A5 stale/latest merge layer.
+
+Every fetch status from a partial run includes:
+
+- `partial_run: true`
+- `scheduled_slot`
+- `scheduled_company_id`
+- `scheduled_provider_id`
+- `max_gdelt_queries`
+- `merge_policy: A5_stale_latest_merge`
+
 ## Reserved Extensions
 
 - RSS fetcher adapter.

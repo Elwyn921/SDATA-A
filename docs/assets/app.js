@@ -107,8 +107,7 @@ function render() {
   const filteredItems = filterItems(items);
 
   elements.dataSource.textContent = state.result.__dataSource === "json" ? "实时 JSON" : "模拟数据兜底";
-  elements.dataSource.className =
-    state.result.__dataSource === "json" ? "badge bg-green-lt" : "badge bg-yellow-lt";
+  elements.dataSource.parentElement.classList.toggle("is-live", state.result.__dataSource === "json");
   elements.updatedAt.textContent = formatFullDate(
     state.result.generated_at ?? state.result.finished_at ?? state.result.started_at,
   );
@@ -126,25 +125,22 @@ function render() {
 
 function renderKpis(items, companies, counts) {
   const kpis = [
-    ["新闻总数", items.length, "primary"],
-    ["覆盖公司", companies.length, "azure"],
-    ["最新新闻", counts.fresh, "green"],
-    ["历史兜底", counts.stale, "purple"],
-    ["最后更新", formatFullDate(state.result.generated_at), "secondary"],
+    ["新闻总数", items.length, "本轮可展示条目", "blue"],
+    ["覆盖公司", companies.length, "当前监测对象", "slate"],
+    ["最新新闻", counts.fresh, "fresh=true", "green"],
+    ["历史兜底", counts.stale, "stale=true", "purple"],
+    ["最后更新", formatFullDate(state.result.generated_at), "北京时间", "amber"],
   ];
   elements.kpiCards.replaceChildren(
-    ...kpis.map(([label, value, color]) => {
-      const col = document.createElement("div");
-      col.className = "col-sm-6 col-lg";
-      col.innerHTML = `
-        <div class="card kpi-card">
-          <div class="card-body">
-            <div class="subheader">${escapeHtml(label)}</div>
-            <div class="h2 mb-0 text-${escapeHtml(color)}">${escapeHtml(value)}</div>
-          </div>
-        </div>
+    ...kpis.map(([label, value, caption, tone]) => {
+      const card = document.createElement("article");
+      card.className = `kpi-card tone-${tone}`;
+      card.innerHTML = `
+        <div class="kpi-label">${escapeHtml(label)}</div>
+        <div class="kpi-value">${escapeHtml(value)}</div>
+        <div class="kpi-caption">${escapeHtml(caption)}</div>
       `;
-      return col;
+      return card;
     }),
   );
 }
@@ -152,34 +148,34 @@ function renderKpis(items, companies, counts) {
 function renderRunStatus(counts) {
   const fallback = state.result.metadata?.stale_fallback ?? {};
   const rows = [
-    ["生成时间", formatFullDate(state.result.generated_at ?? state.result.finished_at)],
-    ["历史兜底", fallback.enabled === false ? "已关闭" : "已启用"],
-    ["兜底公司", arraySummary(fallback.fallback_company_ids)],
-    ["最新 / 历史", `${fallback.fresh_item_count ?? counts.fresh} / ${fallback.stale_item_count ?? counts.stale}`],
+    ["生成时间", formatFullDate(state.result.generated_at ?? state.result.finished_at), "clock"],
+    ["历史兜底", fallback.enabled === false ? "已关闭" : "已启用", "shield"],
+    ["兜底公司", arraySummary(fallback.fallback_company_ids), "company"],
+    ["最新 / 历史", `${fallback.fresh_item_count ?? counts.fresh} / ${fallback.stale_item_count ?? counts.stale}`, "ratio"],
   ];
   elements.runStatus.replaceChildren(
-    ...rows.map(([label, value]) => {
-      const col = document.createElement("div");
-      col.className = "col-sm-6 col-lg-3";
-      col.innerHTML = `
-        <div class="datagrid-item">
-          <div class="datagrid-title">${escapeHtml(label)}</div>
-          <div class="datagrid-content">${escapeHtml(value)}</div>
-        </div>
+    ...rows.map(([label, value, icon]) => {
+      const item = document.createElement("div");
+      item.className = "run-status-item";
+      item.innerHTML = `
+        <span class="run-icon run-icon-${escapeHtml(icon)}"></span>
+        <span>
+          <span class="run-label">${escapeHtml(label)}</span>
+          <strong>${escapeHtml(value)}</strong>
+        </span>
       `;
-      return col;
+      return item;
     }),
   );
 }
 
 function renderCompanyTabs(companies) {
-  const rows = [{ id: "all", name: "全部公司" }, ...companies];
+  const rows = [{ id: "all", name: "全部" }, ...companies];
   elements.companyTabs.replaceChildren(
     ...rows.map((company) => {
       const item = document.createElement("li");
-      item.className = "nav-item";
       item.innerHTML = `
-        <button class="nav-link ${state.companyId === company.id ? "active" : ""}" type="button">
+        <button class="${state.companyId === company.id ? "active" : ""}" type="button">
           ${escapeHtml(company.name)}
         </button>
       `;
@@ -200,37 +196,27 @@ function renderCompanyCards(companies, items) {
       const counts = freshnessCounts(companyItems);
       const latest = sortedItems(companyItems)[0];
       const issues = providerIssues(state.result.fetch_statuses ?? [], company.id);
-      const col = document.createElement("div");
-      col.className = "col-md-6 col-xl-3";
-      col.innerHTML = `
-        <div class="card company-card h-100">
-          <div class="card-body">
-            <div class="d-flex align-items-center justify-content-between mb-3">
-              <div>
-                <div class="subheader">${escapeHtml(company.region)}</div>
-                <h3 class="card-title mb-0">${escapeHtml(company.name)}</h3>
-              </div>
-              <span class="status status-${escapeHtml(company.color)}">${counts.total}</span>
-            </div>
-            <div class="row g-2 mb-3">
-              <div class="col">
-                <div class="small text-muted">最新</div>
-                <div class="h3 text-green mb-0">${counts.fresh}</div>
-              </div>
-              <div class="col">
-                <div class="small text-muted">历史</div>
-                <div class="h3 text-purple mb-0">${counts.stale}</div>
-              </div>
-              <div class="col">
-                <div class="small text-muted">异常</div>
-                <div class="h3 text-yellow mb-0">${issues}</div>
-              </div>
-            </div>
-            <p class="text-muted small mb-0">${latest ? `${formatDate(latest.published_at)} · ${escapeHtml(latest.title)}` : "本轮暂无新闻"}</p>
+      const card = document.createElement("article");
+      card.className = `company-card company-${company.id}`;
+      card.innerHTML = `
+        <div class="company-card-top">
+          <div>
+            <div class="company-region">${escapeHtml(company.region)}</div>
+            <h3>${escapeHtml(company.name)}</h3>
           </div>
+          <span class="company-count">${counts.total}</span>
+        </div>
+        <div class="company-metrics">
+          <span><em>${counts.fresh}</em> 最新</span>
+          <span><em>${counts.stale}</em> 历史</span>
+          <span><em>${issues}</em> 异常</span>
+        </div>
+        <div class="company-latest">
+          <span>${latest ? formatDate(latest.published_at) : "--"}</span>
+          <p>${latest ? escapeHtml(latest.title) : "本轮暂无新闻"}</p>
         </div>
       `;
-      return col;
+      return card;
     }),
   );
 }
@@ -247,7 +233,7 @@ function renderProviderTable(companies, statuses) {
           return `<td>${statusBadge(label)}</td>`;
         })
         .join("");
-      return `<tr><td class="fw-bold">${escapeHtml(company.name)}</td>${cells}</tr>`;
+      return `<tr><td class="provider-company">${escapeHtml(company.name)}</td>${cells}</tr>`;
     })
     .join("");
 
@@ -276,30 +262,29 @@ function renderNewsList(items) {
   elements.newsList.replaceChildren(
     ...items.map((item) => {
       const freshness = freshnessState(item);
-      const entry = document.createElement("a");
-      entry.className = "list-group-item list-group-item-action news-row";
+      const entry = document.createElement("article");
+      entry.className = "news-row";
+      entry.tabIndex = 0;
+      entry.addEventListener("click", () => window.open(item.url, "_blank", "noopener,noreferrer"));
+      entry.addEventListener("keydown", (event) => {
+        if (event.key === "Enter") window.open(item.url, "_blank", "noopener,noreferrer");
+      });
       entry.href = item.url;
-      entry.target = "_blank";
-      entry.rel = "noreferrer";
       entry.innerHTML = `
-        <div class="row align-items-center g-3">
-          <div class="col">
-            <div class="d-flex flex-wrap gap-2 mb-2">
-              <span class="badge bg-blue-lt">${escapeHtml(item.company_name)}</span>
-              ${providerBadge(itemProvider(item))}
-              ${freshnessBadge(freshness)}
-            </div>
-            <div class="fw-bold">${escapeHtml(item.title)}</div>
-            <div class="text-muted small mt-1">
-              ${escapeHtml(item.source?.source_name ?? item.source?.source_id ?? "未知来源")} ·
-              ${formatFullDate(item.published_at)}
-            </div>
-            ${staleDetails(item)}
+        <div class="news-main">
+          <div class="news-badges">
+            <span class="news-company">${escapeHtml(item.company_name)}</span>
+            ${providerBadge(itemProvider(item))}
+            ${freshnessBadge(freshness)}
           </div>
-          <div class="col-auto">
-            <span class="btn btn-sm btn-outline-primary">打开</span>
+          <h3>${escapeHtml(item.title)}</h3>
+          <div class="news-meta">
+            <span>${escapeHtml(item.source?.source_name ?? item.source?.source_id ?? "未知来源")}</span>
+            <span>${formatFullDate(item.published_at)}</span>
           </div>
+          ${staleDetails(item)}
         </div>
+        <span class="open-link">打开</span>
       `;
       return entry;
     }),
@@ -331,8 +316,8 @@ function renderErrors(statuses) {
         <div class="accordion-item">
           <h3 class="accordion-header">
             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#${itemId}">
-              <span class="me-2">${escapeHtml(status.company_name ?? status.company_id ?? "--")}</span>
-              <span class="me-2 text-muted">${escapeHtml(providerLabel(provider))}</span>
+              <span class="diagnostic-company">${escapeHtml(status.company_name ?? status.company_id ?? "--")}</span>
+              <span class="diagnostic-provider">${escapeHtml(providerLabel(provider))}</span>
               ${statusBadge(label)}
             </button>
           </h3>
