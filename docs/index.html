@@ -3,121 +3,133 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Satellite News Intelligence Dashboard</title>
+    <title>SDATA-A 新闻情报看板</title>
+    <link rel="stylesheet" href="./assets/vendor/tabler/tabler.min.css" />
     <link rel="stylesheet" href="./assets/styles.css" />
   </head>
   <body>
-    <div class="app-shell">
-      <header class="status-bar" aria-label="Dashboard status">
-        <div class="brand-block">
-          <p class="eyebrow">SDATA A</p>
-          <h1>News Intelligence Dashboard</h1>
-        </div>
-        <div class="status-metrics">
-          <div class="status-pill">
-            <span>Updated</span>
-            <strong id="updated-at">--</strong>
+    <div class="page">
+      <header class="navbar navbar-expand-md d-print-none">
+        <div class="container-xl">
+          <div class="navbar-brand navbar-brand-autodark">
+            <span class="brand-mark">S</span>
+            <span>SDATA-A 新闻情报看板</span>
           </div>
-          <div class="status-pill">
-            <span>Total</span>
-            <strong id="total-count">0</strong>
-          </div>
-          <div class="status-pill success">
-            <span>Fresh</span>
-            <strong id="fresh-count">0</strong>
-          </div>
-          <div class="status-pill stale">
-            <span>Stale</span>
-            <strong id="stale-count">0</strong>
-          </div>
-          <div class="status-pill">
-            <span>Source</span>
-            <strong id="data-source">loading</strong>
+          <div class="navbar-nav flex-row order-md-last">
+            <span class="badge bg-green-lt" id="data-source">加载中</span>
           </div>
         </div>
       </header>
 
-      <main class="dashboard">
-        <section class="run-strip" aria-label="Pipeline run metadata">
-          <div>
-            <span>run_id</span>
-            <strong id="run-id">--</strong>
-          </div>
-          <div>
-            <span>stale_fallback</span>
-            <strong id="stale-fallback-summary">--</strong>
-          </div>
-        </section>
-
-        <section class="section-block" aria-labelledby="company-overview-heading">
-          <div class="section-heading">
-            <div>
-              <p class="eyebrow">Companies</p>
-              <h2 id="company-overview-heading">Company Overview</h2>
-            </div>
-            <div class="segmented-control" id="company-tabs" aria-label="Company filter"></div>
-          </div>
-          <div class="company-grid" id="company-cards"></div>
-        </section>
-
-        <section class="section-block" aria-labelledby="provider-health-heading">
-          <div class="section-heading">
-            <div>
-              <p class="eyebrow">Provider Health</p>
-              <h2 id="provider-health-heading">Provider Status Matrix</h2>
-            </div>
-          </div>
-          <div class="provider-matrix-wrap">
-            <table class="provider-matrix" id="provider-matrix"></table>
-          </div>
-        </section>
-
-        <section class="content-grid">
-          <section class="section-block news-section" aria-labelledby="news-heading">
-            <div class="section-heading">
-              <div>
-                <p class="eyebrow">Intelligence Feed</p>
-                <h2 id="news-heading">News Items</h2>
+      <div class="page-wrapper">
+        <div class="page-header d-print-none">
+          <div class="container-xl">
+            <div class="row g-2 align-items-center">
+              <div class="col">
+                <div class="page-pretitle">卫星公司动态监测</div>
+                <h1 class="page-title">新闻情报看板</h1>
               </div>
-              <span class="result-count" id="visible-count">0</span>
+              <div class="col-auto ms-auto">
+                <div class="text-muted small">最后更新 <strong id="updated-at">--</strong></div>
+              </div>
             </div>
+          </div>
+        </div>
 
-            <div class="filter-bar" aria-label="News filters">
-              <label>
-                <span>Source</span>
-                <select id="source-filter">
-                  <option value="all">All sources</option>
-                </select>
-              </label>
-              <label>
-                <span>Freshness</span>
-                <select id="freshness-filter">
-                  <option value="all">All states</option>
-                  <option value="fresh">Fresh only</option>
-                  <option value="stale">Stale only</option>
-                </select>
-              </label>
-              <button class="ghost-button" id="reset-filters" type="button">Reset</button>
-            </div>
+        <div class="page-body">
+          <div class="container-xl">
+            <div class="row row-cards mb-3" id="kpi-cards"></div>
 
-            <div class="news-list" id="news-list"></div>
-          </section>
-
-          <aside class="side-stack">
-            <section class="section-block" aria-labelledby="errors-heading">
-              <div class="section-heading">
+            <div class="card mb-3">
+              <div class="card-header">
                 <div>
-                  <p class="eyebrow">Exceptions</p>
-                  <h2 id="errors-heading">Errors & Rate Limits</h2>
+                  <h2 class="card-title">本轮运行状态</h2>
+                  <div class="card-subtitle" id="run-id">运行 ID：--</div>
                 </div>
               </div>
-              <div class="exception-list" id="exception-list"></div>
-            </section>
-          </aside>
-        </section>
-      </main>
+              <div class="card-body py-3">
+                <div class="row g-3" id="run-status"></div>
+              </div>
+            </div>
+
+            <div class="card mb-3">
+              <div class="card-header">
+                <h2 class="card-title">公司概览</h2>
+              </div>
+              <div class="card-body border-bottom py-2">
+                <ul class="nav nav-pills card-header-pills" id="company-tabs"></ul>
+              </div>
+              <div class="card-body">
+                <div class="row row-cards" id="company-cards"></div>
+              </div>
+            </div>
+
+            <div class="card mb-3">
+              <div class="card-header">
+                <h2 class="card-title">数据源健康状态</h2>
+              </div>
+              <div class="table-responsive">
+                <table class="table table-vcenter card-table" id="provider-table"></table>
+              </div>
+            </div>
+
+            <div class="row row-cards">
+              <div class="col-lg-8">
+                <div class="card">
+                  <div class="card-header">
+                    <div>
+                      <h2 class="card-title">新闻列表</h2>
+                      <div class="card-subtitle" id="visible-count">已显示 0 条</div>
+                    </div>
+                  </div>
+                  <div class="card-body border-bottom">
+                    <div class="row g-2 align-items-end">
+                      <div class="col-sm-4">
+                        <label class="form-label">公司</label>
+                        <select class="form-select" id="company-filter">
+                          <option value="all">全部公司</option>
+                        </select>
+                      </div>
+                      <div class="col-sm-4">
+                        <label class="form-label">数据源</label>
+                        <select class="form-select" id="provider-filter">
+                          <option value="all">全部数据源</option>
+                        </select>
+                      </div>
+                      <div class="col-sm-3">
+                        <label class="form-label">新鲜度</label>
+                        <select class="form-select" id="freshness-filter">
+                          <option value="all">全部状态</option>
+                          <option value="fresh">最新</option>
+                          <option value="stale">历史兜底</option>
+                        </select>
+                      </div>
+                      <div class="col-sm-1">
+                        <button class="btn btn-outline-secondary w-100" id="reset-filters" type="button">
+                          重置
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="list-group list-group-flush" id="news-list"></div>
+                </div>
+              </div>
+
+              <div class="col-lg-4">
+                <div class="card">
+                  <div class="card-header">
+                    <h2 class="card-title">错误与限流</h2>
+                  </div>
+                  <div class="accordion accordion-flush" id="error-accordion"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
 
+    <script src="./assets/vendor/tabler/tabler.min.js"></script>
     <script type="module" src="./assets/app.js"></script>
   </body>
 </html>
