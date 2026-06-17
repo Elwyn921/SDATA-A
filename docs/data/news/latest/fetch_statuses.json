@@ -4,21 +4,21 @@
   "fetch_statuses": [
     {
       "article_count": 0,
-      "company_id": "spacex",
-      "company_name": "SpaceX",
-      "error_message": "(SpaceX OR Starlink) AND (satellite OR launch OR constellation OR broadband): GDELT request failed: HTTP Error 429: Too Many Requests",
+      "company_id": "blue_origin",
+      "company_name": "Blue Origin",
+      "error_message": "(\"Blue Origin\" OR \"New Glenn\") AND (launch OR satellite OR space): GDELT request failed: HTTP Error 429: Too Many Requests",
       "error_type": null,
       "final_status": "rate_limited",
-      "finished_at": "2026-06-17T08:57:32.945930Z",
+      "finished_at": "2026-06-17T12:31:27.123575Z",
       "gdelt_final_status": "rate_limited",
       "item_count": 0,
       "max_gdelt_queries": 1,
       "merge_policy": "A5_stale_latest_merge",
       "metadata": {
         "cache_status": "not_implemented",
-        "company_id": "spacex",
-        "company_name": "SpaceX",
-        "error_message": "(SpaceX OR Starlink) AND (satellite OR launch OR constellation OR broadband): GDELT request failed: HTTP Error 429: Too Many Requests",
+        "company_id": "blue_origin",
+        "company_name": "Blue Origin",
+        "error_message": "(\"Blue Origin\" OR \"New Glenn\") AND (launch OR satellite OR space): GDELT request failed: HTTP Error 429: Too Many Requests",
         "failed_queries": 1,
         "final_status": "rate_limited",
         "gdelt_final_status": "rate_limited",
@@ -29,15 +29,15 @@
         "provider_id": "gdelt_provider",
         "provider_status": "rate_limited",
         "queries": [
-          "(SpaceX OR Starlink) AND (satellite OR launch OR constellation OR broadband)"
+          "(\"Blue Origin\" OR \"New Glenn\") AND (launch OR satellite OR space)"
         ],
         "query_count": 1,
         "rate_limited": true,
-        "reason": "(SpaceX OR Starlink) AND (satellite OR launch OR constellation OR broadband): GDELT request failed: HTTP Error 429: Too Many Requests",
+        "reason": "(\"Blue Origin\" OR \"New Glenn\") AND (launch OR satellite OR space): GDELT request failed: HTTP Error 429: Too Many Requests",
         "retry_count": 0,
-        "scheduled_company_id": "spacex",
+        "scheduled_company_id": "blue_origin",
         "scheduled_provider_id": "gdelt_provider",
-        "scheduled_slot": "gdelt-manual-2026-06-17-spacex",
+        "scheduled_slot": "gdelt-2026-06-17T1231-blue_origin",
         "source_id": "gdelt_provider",
         "source_type": "gdelt",
         "stale_fallback_available": false,
@@ -51,17 +51,17 @@
       "provider_status": "rate_limited",
       "provider_type": "gdelt",
       "queries": [
-        "(SpaceX OR Starlink) AND (satellite OR launch OR constellation OR broadband)"
+        "(\"Blue Origin\" OR \"New Glenn\") AND (launch OR satellite OR space)"
       ],
       "query": null,
       "query_count": 1,
       "rank_group": "wire_and_aggregator",
       "rate_limited": true,
-      "reason": "(SpaceX OR Starlink) AND (satellite OR launch OR constellation OR broadband): GDELT request failed: HTTP Error 429: Too Many Requests",
+      "reason": "(\"Blue Origin\" OR \"New Glenn\") AND (launch OR satellite OR space): GDELT request failed: HTTP Error 429: Too Many Requests",
       "retry_count": 0,
-      "scheduled_company_id": "spacex",
+      "scheduled_company_id": "blue_origin",
       "scheduled_provider_id": "gdelt_provider",
-      "scheduled_slot": "gdelt-manual-2026-06-17-spacex",
+      "scheduled_slot": "gdelt-2026-06-17T1231-blue_origin",
       "should_fallback": true,
       "source_id": "gdelt_provider",
       "source_type": "gdelt",
@@ -71,7 +71,7 @@
       "warnings": []
     }
   ],
-  "generated_at": "2026-06-17T08:57:32.946544Z",
-  "run_id": "b1c762b4-8e57-49a2-a6ba-ca8e7768cf03",
+  "generated_at": "2026-06-17T12:31:27.124344Z",
+  "run_id": "bfae531e-4218-4561-bd81-d23d8115a58b",
   "schema_version": "satellite_news.v1"
 }

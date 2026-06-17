@@ -2,8 +2,8 @@
   "artifact_version": 1,
   "companies": [
     {
-      "company_id": "spacex",
-      "company_name": "SpaceX",
+      "company_id": "blue_origin",
+      "company_name": "Blue Origin",
       "item_count": 0,
       "status": "rate_limited"
     }
@@ -11,24 +11,25 @@
   "company_item_counts": {
     "blue_origin": 46,
     "china_satnet": 40,
+    "spacex": 50,
     "yuanxin_satellite": 48
   },
   "config_dir": "config",
   "dry_run": false,
   "export_count": 0,
   "fetch_status_count": 1,
-  "finished_at": "2026-06-17T08:57:32.946544Z",
+  "finished_at": "2026-06-17T12:31:27.124344Z",
   "fresh_item_count": 0,
-  "generated_at": "2026-06-17T08:57:32.946544Z",
-  "item_count": 134,
+  "generated_at": "2026-06-17T12:31:27.124344Z",
+  "item_count": 184,
   "metadata": {
     "latest_is_stale_safe": true
   },
   "output_dir": "data/news/latest",
-  "run_id": "b1c762b4-8e57-49a2-a6ba-ca8e7768cf03",
+  "run_id": "bfae531e-4218-4561-bd81-d23d8115a58b",
   "schema_version": "satellite_news.v1",
-  "stale_item_count": 134,
-  "started_at": "2026-06-17T08:57:29.232674Z",
+  "stale_item_count": 184,
+  "started_at": "2026-06-17T12:31:14.595396Z",
   "summary_count": 0,
   "warnings": []
 }
