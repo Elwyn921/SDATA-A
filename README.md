@@ -108,11 +108,44 @@ Dry run, no external API call:
 python -m satellite_news
 ```
 
+Distributed partial dry run for one company/provider slot:
+
+```bash
+python -m satellite_news \
+  --company-id spacex \
+  --provider-id gdelt_provider \
+  --scheduled-slot slot-2026-06-17T00-spacex-gdelt \
+  --max-gdelt-queries 1
+```
+
 Live GDELT run:
 
 ```bash
 python -m satellite_news --no-dry-run
 ```
+
+## GitHub Actions Schedule
+
+The `News Intelligence Pipeline` workflow writes both repository data and Pages data:
+
+```text
+data/news/latest/
+docs/data/news/latest/
+```
+
+It uses a single `news-data-writer` concurrency group so scheduled jobs do not write
+`latest` at the same time.
+
+- RSS and official-page providers run every 3 hours with `rss_provider` and
+  `official_site_provider`.
+- GDELT runs at minute 15 and 45 every hour as a partial slot.
+- Each GDELT slot runs one company only, with `--provider-id gdelt_provider` and
+  `--max-gdelt-queries 1`.
+- Company rotation order is `spacex`, `blue_origin`, `yuanxin_satellite`,
+  `china_satnet`.
+- SerpApi and NewsAPI remain optional. If `SERPAPI_KEY` or `NEWSAPI_KEY` is not
+  configured, those providers report `skipped_no_secret` instead of failing the
+  workflow.
 
 Run checks:
 
@@ -142,7 +175,7 @@ The page labels the data source as either `live JSON` or `mock fallback`.
 ## Next Milestones
 
 1. Improve GDELT rate-limit handling and query quality.
-2. Add A4 processing: URL normalization, dedupe, company-match validation, and source-rank filtering.
-3. Add A6 LLM enrichment after data quality stabilizes.
-4. Add scheduled live fetch and automated JSON publication through GitHub Actions.
-5. Add RSS and official-source adapters after the GDELT loop is stable.
+2. Add distributed low-frequency GDELT schedules that call one `--company-id` / `--provider-id` slot at a time.
+3. Add A5 stale/latest merge so partial company runs preserve companies not updated in the current slot.
+4. Add A4 processing: URL normalization, dedupe, company-match validation, and source-rank filtering.
+5. Add A6 LLM enrichment after data quality stabilizes.

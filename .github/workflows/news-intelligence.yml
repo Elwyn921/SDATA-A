@@ -2,11 +2,33 @@ name: News Intelligence Pipeline
 
 on:
   workflow_dispatch:
+    inputs:
+      company_id:
+        description: "Optional company id for a partial run"
+        required: false
+        default: ""
+      provider_id:
+        description: "Optional provider id for a partial run"
+        required: false
+        default: ""
+      scheduled_slot:
+        description: "Optional distributed schedule slot label"
+        required: false
+        default: ""
+      max_gdelt_queries:
+        description: "Optional max GDELT queries for this slot"
+        required: false
+        default: ""
   schedule:
-    - cron: "17 */3 * * *"
+    - cron: "0 */3 * * *"
+    - cron: "15,45 * * * *"
 
 permissions:
   contents: write
+
+concurrency:
+  group: news-data-writer
+  cancel-in-progress: false
 
 jobs:
   refresh-news-data:
@@ -36,10 +58,50 @@ jobs:
           SERPAPI_KEY: ${{ secrets.SERPAPI_KEY }}
           NEWSAPI_KEY: ${{ secrets.NEWSAPI_KEY }}
         run: |
+          set -euo pipefail
+
+          EXTRA_ARGS=()
+
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            if [ -n "${{ inputs.company_id }}" ]; then
+              EXTRA_ARGS+=(--company-id "${{ inputs.company_id }}")
+            fi
+            if [ -n "${{ inputs.provider_id }}" ]; then
+              EXTRA_ARGS+=(--provider-id "${{ inputs.provider_id }}")
+            fi
+            if [ -n "${{ inputs.scheduled_slot }}" ]; then
+              EXTRA_ARGS+=(--scheduled-slot "${{ inputs.scheduled_slot }}")
+            fi
+            if [ -n "${{ inputs.max_gdelt_queries }}" ]; then
+              EXTRA_ARGS+=(--max-gdelt-queries "${{ inputs.max_gdelt_queries }}")
+            fi
+          elif [ "${{ github.event.schedule }}" = "0 */3 * * *" ]; then
+            EXTRA_ARGS+=(--provider-id rss_provider)
+            EXTRA_ARGS+=(--provider-id official_site_provider)
+            EXTRA_ARGS+=(--scheduled-slot "full-rss-official-$(date -u +'%Y-%m-%dT%H')")
+          else
+            companies=(spacex blue_origin yuanxin_satellite china_satnet)
+            utc_hour="$(date -u +'%H')"
+            utc_minute="$(date -u +'%M')"
+            half_hour=0
+            if [ "$utc_minute" -ge 30 ]; then
+              half_hour=1
+            fi
+            slot_index=$(( (10#$utc_hour * 2 + half_hour) % ${#companies[@]} ))
+            company_id="${companies[$slot_index]}"
+            scheduled_slot="gdelt-$(date -u +'%Y-%m-%dT%H%M')-${company_id}"
+
+            EXTRA_ARGS+=(--company-id "$company_id")
+            EXTRA_ARGS+=(--provider-id gdelt_provider)
+            EXTRA_ARGS+=(--scheduled-slot "$scheduled_slot")
+            EXTRA_ARGS+=(--max-gdelt-queries 1)
+          fi
+
           PYTHONPATH=src python3 -m satellite_news \
             --no-dry-run \
             --output-dir data/news/latest \
-            --publish-dir docs/data/news
+            --publish-dir docs/data/news \
+            "${EXTRA_ARGS[@]}"
 
       - name: Commit refreshed data
         run: |

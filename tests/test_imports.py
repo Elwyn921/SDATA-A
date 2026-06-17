@@ -164,6 +164,44 @@ def test_default_pipeline_dry_run_does_not_touch_network_or_llm(monkeypatch, tmp
     assert result.exports == ()
 
 
+def test_pipeline_partial_run_cli_records_distributed_schedule_metadata(monkeypatch, tmp_path):
+    from satellite_news.pipeline import main
+
+    def fail_socket(*_args, **_kwargs):
+        raise AssertionError("dry-run partial pipeline must not open network sockets")
+
+    monkeypatch.setattr(socket, "socket", fail_socket)
+
+    result = main(
+        (
+            "--company-id",
+            "spacex",
+            "--provider-id",
+            "gdelt_provider",
+            "--scheduled-slot",
+            "slot-2026-06-17T00-spacex-gdelt",
+            "--max-gdelt-queries",
+            "1",
+            "--output-dir",
+            str(tmp_path / "latest"),
+            "--publish-dir",
+            str(tmp_path / "docs-data"),
+        )
+    )
+
+    assert {row["company_id"] for row in result.fetch_statuses} == {"spacex"}
+    assert {row["provider_id"] for row in result.fetch_statuses} == {"gdelt_provider"}
+    assert len(result.fetch_statuses) == 1
+    status = result.fetch_statuses[0]
+    assert status["partial_run"] is True
+    assert status["scheduled_slot"] == "slot-2026-06-17T00-spacex-gdelt"
+    assert status["scheduled_company_id"] == "spacex"
+    assert status["scheduled_provider_id"] == "gdelt_provider"
+    assert status["max_gdelt_queries"] == 1
+    assert status["query_count"] == 1
+    assert status["merge_policy"] == "A5_stale_latest_merge"
+
+
 def test_source_tree_has_no_llm_provider_or_non_gdelt_network_imports():
     forbidden_roots = {
         "anthropic",
@@ -206,8 +244,10 @@ def test_pipeline_error_boundary_logs_stage_failure(caplog):
 def test_github_actions_refreshes_pages_data_on_safe_schedule():
     workflow = Path(".github/workflows/news-intelligence.yml").read_text(encoding="utf-8")
 
-    assert 'cron: "17 */3 * * *"' in workflow
+    assert 'cron: "0 */3 * * *"' in workflow
+    assert 'cron: "15,45 * * * *"' in workflow
     assert "permissions:\n  contents: write" in workflow
+    assert "concurrency:\n  group: news-data-writer" in workflow
     assert "python -m pip install --upgrade pip setuptools wheel" in workflow
     assert "python -m compileall -q src tests" in workflow
     assert "python -m pytest" in workflow
@@ -215,6 +255,8 @@ def test_github_actions_refreshes_pages_data_on_safe_schedule():
     assert "--no-dry-run" in workflow
     assert "--output-dir data/news/latest" in workflow
     assert "--publish-dir docs/data/news" in workflow
+    assert "--provider-id gdelt_provider" in workflow
+    assert "--max-gdelt-queries 1" in workflow
     assert "SERPAPI_KEY: ${{ secrets.SERPAPI_KEY }}" in workflow
     assert "NEWSAPI_KEY: ${{ secrets.NEWSAPI_KEY }}" in workflow
     assert "git add data/news docs/data/news" in workflow
