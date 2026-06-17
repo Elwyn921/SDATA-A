@@ -30,6 +30,12 @@ const statusLabels = {
   unknown: "未知",
 };
 
+const staleReasonLabels = {
+  partial_run_not_updated: "本轮未更新，沿用上一轮结果",
+  partial_run_company_empty: "本轮该公司无新结果，沿用上一轮结果",
+  current_run_company_empty: "本轮无结果，使用历史数据",
+};
+
 const state = {
   companyId: "all",
   provider: "all",
@@ -275,17 +281,23 @@ function renderNewsList(items) {
           <div class="news-badges">
             <span class="news-company">${escapeHtml(item.company_name)}</span>
             ${providerBadge(itemProvider(item))}
-            ${freshnessBadge(freshness)}
+            ${freshnessBadge(freshness, item)}
           </div>
           <h3>${escapeHtml(item.title)}</h3>
           <div class="news-meta">
             <span>${escapeHtml(item.source?.source_name ?? item.source?.source_id ?? "未知来源")}</span>
             <span>${formatFullDate(item.published_at)}</span>
           </div>
-          ${staleDetails(item)}
         </div>
         <span class="open-link">打开</span>
       `;
+      const staleTrigger = entry.querySelector(".stale-badge-wrap");
+      if (staleTrigger) {
+        staleTrigger.addEventListener("click", (event) => event.stopPropagation());
+        staleTrigger.addEventListener("keydown", (event) => {
+          if (event.key === "Enter" || event.key === " ") event.stopPropagation();
+        });
+      }
       return entry;
     }),
   );
@@ -385,24 +397,55 @@ function freshnessCounts(items) {
 }
 
 function freshnessState(item) {
-  if (item.stale === true) return { kind: "stale", label: "历史兜底" };
+  if (item.stale === true) return { kind: "stale", label: "使用上一轮数据" };
   return { kind: "fresh", label: "最新" };
 }
 
-function freshnessBadge(freshness) {
-  if (freshness.kind === "stale") return `<span class="badge bg-purple-lt">${freshness.label}</span>`;
+function freshnessBadge(freshness, item) {
+  if (freshness.kind === "stale") return staleBadge(item, freshness.label);
   return `<span class="badge bg-green-lt">${freshness.label}</span>`;
 }
 
-function staleDetails(item) {
-  if (item.stale !== true) return "";
+function staleBadge(item, label) {
+  const details = staleTooltipDetails(item);
   return `
-    <div class="alert alert-warning mt-2 mb-0 p-2">
-      <div><strong>兜底原因:</strong> ${escapeHtml(item.stale_reason ?? "--")}</div>
-      <div><strong>兜底时间:</strong> ${escapeHtml(item.stale_as_of ?? "--")}</div>
-      <div><strong>来源运行 ID:</strong> ${escapeHtml(item.stale_from_run_id ?? "--")}</div>
-    </div>
+    <span class="stale-badge-wrap" tabindex="0" aria-label="${escapeHtml(details.aria)}">
+      <span class="badge stale-badge">${escapeHtml(label)}</span>
+      <span class="stale-tooltip" role="tooltip">
+        <strong>使用历史结果</strong>
+        <span>${escapeHtml(details.reason)}</span>
+        <span>兜底时间：${escapeHtml(details.asOf)}</span>
+        <span>来源运行 ID：${escapeHtml(details.runId)}</span>
+      </span>
+    </span>
   `;
+}
+
+function staleTooltipDetails(item) {
+  const reason = staleReasonLabel(item.stale_reason);
+  const asOf = formatStaleAsOf(item.stale_as_of);
+  const runId = shortRunId(item.stale_from_run_id);
+  return {
+    reason,
+    asOf,
+    runId,
+    aria: `使用上一轮数据。${reason}。兜底时间：${asOf}。来源运行 ID：${runId}`,
+  };
+}
+
+function staleReasonLabel(reason) {
+  return staleReasonLabels[reason] ?? "使用历史数据";
+}
+
+function shortRunId(value) {
+  return value ? String(value).slice(0, 8) : "--";
+}
+
+function formatStaleAsOf(value) {
+  if (!value) return "--";
+  const match = String(value).match(/^(\d{4})-(\d{2})-(\d{2})T(\d{2}):(\d{2})/);
+  if (match) return `${match[1]}/${match[2]}/${match[3]} ${match[4]}:${match[5]}`;
+  return formatFullDate(value);
 }
 
 function providerIssues(statuses, companyId) {
