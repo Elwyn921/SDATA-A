@@ -1,8 +1,21 @@
 {
   "artifact_version": 1,
-  "generated_at": "2026-06-18T11:01:57.266964Z",
-  "latest_run_id": "bbb85abf-2a5a-4caf-8d2c-9b9c4c5c706b",
+  "generated_at": "2026-06-18T14:24:42.413682Z",
+  "latest_run_id": "a6f32564-4921-49bf-a6fe-10b05f53b195",
   "runs": [
+    {
+      "archive_path": "data/news/archive/runs/2026/06/18/a6f32564-4921-49bf-a6fe-10b05f53b195",
+      "companies": [
+        "spacex"
+      ],
+      "dry_run": false,
+      "fetch_status_count": 1,
+      "finished_at": "2026-06-18T14:24:42.413682Z",
+      "item_count": 0,
+      "run_id": "a6f32564-4921-49bf-a6fe-10b05f53b195",
+      "started_at": "2026-06-18T14:24:37.444458Z",
+      "status": "partial"
+    },
     {
       "archive_path": "data/news/archive/runs/2026/06/18/bbb85abf-2a5a-4caf-8d2c-9b9c4c5c706b",
       "companies": [

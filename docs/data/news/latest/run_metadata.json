@@ -2,8 +2,8 @@
   "artifact_version": 1,
   "companies": [
     {
-      "company_id": "yuanxin_satellite",
-      "company_name": "垣信卫星",
+      "company_id": "spacex",
+      "company_name": "SpaceX",
       "item_count": 0,
       "status": "rate_limited"
     }
@@ -18,18 +18,18 @@
   "dry_run": false,
   "export_count": 0,
   "fetch_status_count": 1,
-  "finished_at": "2026-06-18T11:01:57.266964Z",
+  "finished_at": "2026-06-18T14:24:42.413682Z",
   "fresh_item_count": 0,
-  "generated_at": "2026-06-18T11:01:57.266964Z",
+  "generated_at": "2026-06-18T14:24:42.413682Z",
   "item_count": 188,
   "metadata": {
     "latest_is_stale_safe": true
   },
   "output_dir": "data/news/latest",
-  "run_id": "bbb85abf-2a5a-4caf-8d2c-9b9c4c5c706b",
+  "run_id": "a6f32564-4921-49bf-a6fe-10b05f53b195",
   "schema_version": "satellite_news.v1",
   "stale_item_count": 188,
-  "started_at": "2026-06-18T11:01:46.833537Z",
+  "started_at": "2026-06-18T14:24:37.444458Z",
   "summary_count": 0,
   "warnings": []
 }

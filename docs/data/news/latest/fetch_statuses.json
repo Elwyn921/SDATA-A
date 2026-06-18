@@ -4,21 +4,21 @@
   "fetch_statuses": [
     {
       "article_count": 0,
-      "company_id": "yuanxin_satellite",
-      "company_name": "垣信卫星",
-      "error_message": "(SpaceSail OR \"Yuanxin Satellite\" OR Qianfan OR \"千帆星座\") AND (satellite OR constellation OR broadband): GDELT request failed: HTTP Error 429: Too Many Requests",
+      "company_id": "spacex",
+      "company_name": "SpaceX",
+      "error_message": "(SpaceX OR Starlink) AND (satellite OR launch OR constellation OR broadband): GDELT request failed: HTTP Error 429: Too Many Requests",
       "error_type": null,
       "final_status": "rate_limited",
-      "finished_at": "2026-06-18T11:01:57.266100Z",
+      "finished_at": "2026-06-18T14:24:42.412722Z",
       "gdelt_final_status": "rate_limited",
       "item_count": 0,
       "max_gdelt_queries": 1,
       "merge_policy": "A5_stale_latest_merge",
       "metadata": {
         "cache_status": "not_implemented",
-        "company_id": "yuanxin_satellite",
-        "company_name": "垣信卫星",
-        "error_message": "(SpaceSail OR \"Yuanxin Satellite\" OR Qianfan OR \"千帆星座\") AND (satellite OR constellation OR broadband): GDELT request failed: HTTP Error 429: Too Many Requests",
+        "company_id": "spacex",
+        "company_name": "SpaceX",
+        "error_message": "(SpaceX OR Starlink) AND (satellite OR launch OR constellation OR broadband): GDELT request failed: HTTP Error 429: Too Many Requests",
         "failed_queries": 1,
         "final_status": "rate_limited",
         "gdelt_final_status": "rate_limited",
@@ -29,15 +29,15 @@
         "provider_id": "gdelt_provider",
         "provider_status": "rate_limited",
         "queries": [
-          "(SpaceSail OR \"Yuanxin Satellite\" OR Qianfan OR \"千帆星座\") AND (satellite OR constellation OR broadband)"
+          "(SpaceX OR Starlink) AND (satellite OR launch OR constellation OR broadband)"
         ],
         "query_count": 1,
         "rate_limited": true,
-        "reason": "(SpaceSail OR \"Yuanxin Satellite\" OR Qianfan OR \"千帆星座\") AND (satellite OR constellation OR broadband): GDELT request failed: HTTP Error 429: Too Many Requests",
+        "reason": "(SpaceX OR Starlink) AND (satellite OR launch OR constellation OR broadband): GDELT request failed: HTTP Error 429: Too Many Requests",
         "retry_count": 0,
-        "scheduled_company_id": "yuanxin_satellite",
+        "scheduled_company_id": "spacex",
         "scheduled_provider_id": "gdelt_provider",
-        "scheduled_slot": "gdelt-2026-06-18T1101-yuanxin_satellite",
+        "scheduled_slot": "gdelt-2026-06-18T1424-spacex",
         "source_id": "gdelt_provider",
         "source_type": "gdelt",
         "stale_fallback_available": false,
@@ -51,17 +51,17 @@
       "provider_status": "rate_limited",
       "provider_type": "gdelt",
       "queries": [
-        "(SpaceSail OR \"Yuanxin Satellite\" OR Qianfan OR \"千帆星座\") AND (satellite OR constellation OR broadband)"
+        "(SpaceX OR Starlink) AND (satellite OR launch OR constellation OR broadband)"
       ],
       "query": null,
       "query_count": 1,
       "rank_group": "wire_and_aggregator",
       "rate_limited": true,
-      "reason": "(SpaceSail OR \"Yuanxin Satellite\" OR Qianfan OR \"千帆星座\") AND (satellite OR constellation OR broadband): GDELT request failed: HTTP Error 429: Too Many Requests",
+      "reason": "(SpaceX OR Starlink) AND (satellite OR launch OR constellation OR broadband): GDELT request failed: HTTP Error 429: Too Many Requests",
       "retry_count": 0,
-      "scheduled_company_id": "yuanxin_satellite",
+      "scheduled_company_id": "spacex",
       "scheduled_provider_id": "gdelt_provider",
-      "scheduled_slot": "gdelt-2026-06-18T1101-yuanxin_satellite",
+      "scheduled_slot": "gdelt-2026-06-18T1424-spacex",
       "should_fallback": true,
       "source_id": "gdelt_provider",
       "source_type": "gdelt",
@@ -71,7 +71,7 @@
       "warnings": []
     }
   ],
-  "generated_at": "2026-06-18T11:01:57.266964Z",
-  "run_id": "bbb85abf-2a5a-4caf-8d2c-9b9c4c5c706b",
+  "generated_at": "2026-06-18T14:24:42.413682Z",
+  "run_id": "a6f32564-4921-49bf-a6fe-10b05f53b195",
   "schema_version": "satellite_news.v1"
 }
