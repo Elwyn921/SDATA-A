@@ -1,5 +1,5 @@
 {
-  "archive_path": "data/news/archive/runs/2026/06/18/866b0e75-165c-479d-9ad0-a00e303a243f",
+  "archive_path": "data/news/archive/runs/2026/06/18/270dc206-23f2-418b-89dc-751c6640f014",
   "artifact_version": 1,
   "files": {
     "fetch_statuses": "fetch_statuses.json",
@@ -9,7 +9,7 @@
     "run_metadata": "run_metadata.json",
     "summaries": "summaries.json"
   },
-  "generated_at": "2026-06-18T20:25:15.196554Z",
-  "run_id": "866b0e75-165c-479d-9ad0-a00e303a243f",
+  "generated_at": "2026-06-18T20:39:44.578803Z",
+  "run_id": "270dc206-23f2-418b-89dc-751c6640f014",
   "schema_version": "satellite_news.v1"
 }
