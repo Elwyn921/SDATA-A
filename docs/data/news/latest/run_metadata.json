@@ -2,10 +2,10 @@
   "artifact_version": 1,
   "companies": [
     {
-      "company_id": "yuanxin_satellite",
-      "company_name": "垣信卫星",
+      "company_id": "china_satnet",
+      "company_name": "中国星网",
       "item_count": 0,
-      "status": "failed"
+      "status": "rate_limited"
     }
   ],
   "company_item_counts": {
@@ -18,18 +18,18 @@
   "dry_run": false,
   "export_count": 0,
   "fetch_status_count": 1,
-  "finished_at": "2026-06-17T23:09:15.894393Z",
+  "finished_at": "2026-06-18T01:44:14.958256Z",
   "fresh_item_count": 0,
-  "generated_at": "2026-06-17T23:09:15.894393Z",
+  "generated_at": "2026-06-18T01:44:14.958256Z",
   "item_count": 191,
   "metadata": {
     "latest_is_stale_safe": true
   },
   "output_dir": "data/news/latest",
-  "run_id": "c7b01a64-529d-4bea-9d75-99c81c2c17f5",
+  "run_id": "af65740a-265f-4967-b03e-2804e60ed357",
   "schema_version": "satellite_news.v1",
   "stale_item_count": 191,
-  "started_at": "2026-06-17T23:09:06.977271Z",
+  "started_at": "2026-06-18T01:44:07.119318Z",
   "summary_count": 0,
   "warnings": []
 }

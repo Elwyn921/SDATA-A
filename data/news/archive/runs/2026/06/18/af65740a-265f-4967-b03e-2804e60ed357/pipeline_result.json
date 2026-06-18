@@ -1,6 +1,8 @@
 {
   "artifact_version": 1,
-  "count": 1,
+  "company_id": "china_satnet",
+  "dry_run": false,
+  "exports": [],
   "fetch_statuses": [
     {
       "article_count": 0,
@@ -71,7 +73,17 @@
       "warnings": []
     }
   ],
+  "finished_at": "2026-06-18T01:44:14.958256Z",
   "generated_at": "2026-06-18T01:44:14.958256Z",
+  "items": [],
+  "max_gdelt_queries": 1,
+  "merge_policy": "A5_stale_latest_merge",
+  "partial_run": true,
+  "provider_id": "gdelt_provider",
   "run_id": "af65740a-265f-4967-b03e-2804e60ed357",
-  "schema_version": "satellite_news.v1"
+  "scheduled_slot": "gdelt-2026-06-18T0144-china_satnet",
+  "schema_version": "satellite_news.v1",
+  "started_at": "2026-06-18T01:44:07.119318Z",
+  "summaries": [],
+  "warnings": []
 }
