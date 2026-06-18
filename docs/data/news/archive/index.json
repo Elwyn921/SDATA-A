@@ -1,8 +1,21 @@
 {
   "artifact_version": 1,
-  "generated_at": "2026-06-18T10:19:54.134900Z",
-  "latest_run_id": "61af6910-dcc3-4b47-a3af-6c24e995c299",
+  "generated_at": "2026-06-18T11:01:57.266964Z",
+  "latest_run_id": "bbb85abf-2a5a-4caf-8d2c-9b9c4c5c706b",
   "runs": [
+    {
+      "archive_path": "data/news/archive/runs/2026/06/18/bbb85abf-2a5a-4caf-8d2c-9b9c4c5c706b",
+      "companies": [
+        "yuanxin_satellite"
+      ],
+      "dry_run": false,
+      "fetch_status_count": 1,
+      "finished_at": "2026-06-18T11:01:57.266964Z",
+      "item_count": 0,
+      "run_id": "bbb85abf-2a5a-4caf-8d2c-9b9c4c5c706b",
+      "started_at": "2026-06-18T11:01:46.833537Z",
+      "status": "partial"
+    },
     {
       "archive_path": "data/news/archive/runs/2026/06/18/61af6910-dcc3-4b47-a3af-6c24e995c299",
       "companies": [
