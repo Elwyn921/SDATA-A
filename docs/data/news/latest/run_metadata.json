@@ -18,18 +18,18 @@
   "dry_run": false,
   "export_count": 0,
   "fetch_status_count": 1,
-  "finished_at": "2026-06-18T20:39:44.578803Z",
+  "finished_at": "2026-06-18T22:34:18.243156Z",
   "fresh_item_count": 0,
-  "generated_at": "2026-06-18T20:39:44.578803Z",
+  "generated_at": "2026-06-18T22:34:18.243156Z",
   "item_count": 188,
   "metadata": {
     "latest_is_stale_safe": true
   },
   "output_dir": "data/news/latest",
-  "run_id": "270dc206-23f2-418b-89dc-751c6640f014",
+  "run_id": "847dea54-0211-4ad8-819f-7b3c711697ec",
   "schema_version": "satellite_news.v1",
   "stale_item_count": 188,
-  "started_at": "2026-06-18T20:39:39.144639Z",
+  "started_at": "2026-06-18T22:34:12.136930Z",
   "summary_count": 0,
   "warnings": []
 }

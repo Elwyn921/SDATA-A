@@ -9,7 +9,7 @@
       "error_message": "(\"Blue Origin\" OR \"New Glenn\") AND (launch OR satellite OR space): GDELT request failed: HTTP Error 429: Too Many Requests",
       "error_type": null,
       "final_status": "rate_limited",
-      "finished_at": "2026-06-18T20:39:44.577845Z",
+      "finished_at": "2026-06-18T22:34:18.242263Z",
       "gdelt_final_status": "rate_limited",
       "item_count": 0,
       "max_gdelt_queries": 1,
@@ -37,7 +37,7 @@
         "retry_count": 0,
         "scheduled_company_id": "blue_origin",
         "scheduled_provider_id": "gdelt_provider",
-        "scheduled_slot": "gdelt-2026-06-18T2039-blue_origin",
+        "scheduled_slot": "gdelt-2026-06-18T2234-blue_origin",
         "source_id": "gdelt_provider",
         "source_type": "gdelt",
         "stale_fallback_available": false,
@@ -61,7 +61,7 @@
       "retry_count": 0,
       "scheduled_company_id": "blue_origin",
       "scheduled_provider_id": "gdelt_provider",
-      "scheduled_slot": "gdelt-2026-06-18T2039-blue_origin",
+      "scheduled_slot": "gdelt-2026-06-18T2234-blue_origin",
       "should_fallback": true,
       "source_id": "gdelt_provider",
       "source_type": "gdelt",
@@ -71,7 +71,7 @@
       "warnings": []
     }
   ],
-  "generated_at": "2026-06-18T20:39:44.578803Z",
-  "run_id": "270dc206-23f2-418b-89dc-751c6640f014",
+  "generated_at": "2026-06-18T22:34:18.243156Z",
+  "run_id": "847dea54-0211-4ad8-819f-7b3c711697ec",
   "schema_version": "satellite_news.v1"
 }
