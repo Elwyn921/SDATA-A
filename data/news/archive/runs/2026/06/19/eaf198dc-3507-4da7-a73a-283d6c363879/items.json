@@ -2,7 +2,7 @@
   "artifact_version": 1,
   "count": 0,
   "generated_at": "2026-06-19T23:15:54.403992Z",
+  "items": [],
   "run_id": "eaf198dc-3507-4da7-a73a-283d6c363879",
-  "schema_version": "satellite_news.v1",
-  "summaries": []
+  "schema_version": "satellite_news.v1"
 }
