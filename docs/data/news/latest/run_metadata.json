@@ -2,10 +2,10 @@
   "artifact_version": 1,
   "companies": [
     {
-      "company_id": "spacex",
-      "company_name": "SpaceX",
-      "item_count": 10,
-      "status": "success"
+      "company_id": "china_satnet",
+      "company_name": "中国星网",
+      "item_count": 0,
+      "status": "failed"
     }
   ],
   "company_item_counts": {
@@ -18,18 +18,18 @@
   "dry_run": false,
   "export_count": 0,
   "fetch_status_count": 1,
-  "finished_at": "2026-06-19T20:21:56.224762Z",
-  "fresh_item_count": 10,
-  "generated_at": "2026-06-19T20:21:56.224762Z",
+  "finished_at": "2026-06-19T21:50:46.554364Z",
+  "fresh_item_count": 0,
+  "generated_at": "2026-06-19T21:50:46.554364Z",
   "item_count": 149,
   "metadata": {
     "latest_is_stale_safe": true
   },
   "output_dir": "data/news/latest",
-  "run_id": "828d0b68-fd9c-4a5a-b5a6-97bdc92db0b4",
+  "run_id": "0efac6f7-bfe0-4958-bbb6-9bbed24a6f14",
   "schema_version": "satellite_news.v1",
-  "stale_item_count": 139,
-  "started_at": "2026-06-19T20:21:41.674589Z",
+  "stale_item_count": 149,
+  "started_at": "2026-06-19T21:50:37.872663Z",
   "summary_count": 0,
   "warnings": []
 }
