@@ -8,27 +8,16 @@
       "status": "success"
     }
   ],
-  "company_item_counts": {
-    "blue_origin": 50,
-    "china_satnet": 41,
-    "spacex": 10,
-    "yuanxin_satellite": 48
-  },
   "config_dir": "config",
   "dry_run": false,
   "export_count": 0,
   "fetch_status_count": 1,
   "finished_at": "2026-06-19T20:21:56.224762Z",
-  "fresh_item_count": 10,
   "generated_at": "2026-06-19T20:21:56.224762Z",
-  "item_count": 149,
-  "metadata": {
-    "latest_is_stale_safe": true
-  },
+  "item_count": 10,
   "output_dir": "data/news/latest",
   "run_id": "828d0b68-fd9c-4a5a-b5a6-97bdc92db0b4",
   "schema_version": "satellite_news.v1",
-  "stale_item_count": 139,
   "started_at": "2026-06-19T20:21:41.674589Z",
   "summary_count": 0,
   "warnings": []
