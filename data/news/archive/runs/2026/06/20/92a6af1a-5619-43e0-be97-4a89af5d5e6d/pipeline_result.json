@@ -1,6 +1,8 @@
 {
   "artifact_version": 1,
-  "count": 1,
+  "company_id": "blue_origin",
+  "dry_run": false,
+  "exports": [],
   "fetch_statuses": [
     {
       "article_count": 0,
@@ -71,7 +73,17 @@
       "warnings": []
     }
   ],
+  "finished_at": "2026-06-20T06:42:15.850640Z",
   "generated_at": "2026-06-20T06:42:15.850640Z",
+  "items": [],
+  "max_gdelt_queries": 1,
+  "merge_policy": "A5_stale_latest_merge",
+  "partial_run": true,
+  "provider_id": "gdelt_provider",
   "run_id": "92a6af1a-5619-43e0-be97-4a89af5d5e6d",
-  "schema_version": "satellite_news.v1"
+  "scheduled_slot": "gdelt-2026-06-20T0641-blue_origin",
+  "schema_version": "satellite_news.v1",
+  "started_at": "2026-06-20T06:41:52.711310Z",
+  "summaries": [],
+  "warnings": []
 }
