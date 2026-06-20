@@ -2,8 +2,8 @@
   "artifact_version": 1,
   "companies": [
     {
-      "company_id": "blue_origin",
-      "company_name": "Blue Origin",
+      "company_id": "spacex",
+      "company_name": "SpaceX",
       "item_count": 0,
       "status": "rate_limited"
     }
@@ -18,18 +18,18 @@
   "dry_run": false,
   "export_count": 0,
   "fetch_status_count": 1,
-  "finished_at": "2026-06-20T14:32:18.840291Z",
+  "finished_at": "2026-06-20T16:08:04.923224Z",
   "fresh_item_count": 0,
-  "generated_at": "2026-06-20T14:32:18.840291Z",
+  "generated_at": "2026-06-20T16:08:04.923224Z",
   "item_count": 189,
   "metadata": {
     "latest_is_stale_safe": true
   },
   "output_dir": "data/news/latest",
-  "run_id": "c96cec13-aa1a-4954-9fbd-98155df6a336",
+  "run_id": "0e7409c5-5521-4a8d-b8c7-dfa5dd8905a5",
   "schema_version": "satellite_news.v1",
   "stale_item_count": 189,
-  "started_at": "2026-06-20T14:32:09.227621Z",
+  "started_at": "2026-06-20T16:07:58.314306Z",
   "summary_count": 0,
   "warnings": []
 }
