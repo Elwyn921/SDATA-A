@@ -1,0 +1,389 @@
+{
+  "artifact_version": 1,
+  "count": 10,
+  "generated_at": "2026-06-21T16:55:38.935761Z",
+  "items": [
+    {
+      "company_id": "blue_origin",
+      "company_name": "Blue Origin",
+      "id": "68b28cc6f6dc89ad",
+      "language": "Chinese",
+      "metadata": {
+        "gdelt_domain": "finance.sina.com.cn",
+        "gdelt_query": "(\"Blue Origin\" OR \"New Glenn\") AND (launch OR satellite OR space)",
+        "gdelt_source_country": "",
+        "image_url": "https://n.sinaimg.cn/spider20260421/303/w1125h778/20260421/edab-48c9dd1f5248df0949c46e01fa7bc2f6.jpg"
+      },
+      "normalized_text": null,
+      "published_at": "2026-04-21T03:45:00Z",
+      "raw_text": null,
+      "source": {
+        "collected_at": "2026-06-21T16:55:26.242507Z",
+        "provider_id": "gdelt_provider",
+        "provider_priority": 30,
+        "rank_group": "wire_and_aggregator",
+        "raw_payload": {
+          "domain": "finance.sina.com.cn",
+          "language": "Chinese",
+          "seendate": "20260421T034500Z",
+          "socialimage": "https://n.sinaimg.cn/spider20260421/303/w1125h778/20260421/edab-48c9dd1f5248df0949c46e01fa7bc2f6.jpg",
+          "sourcecountry": "China",
+          "title": "蓝色起源新格伦火箭发射故障致客户卫星入轨失败 ， FAA责令其停飞调查",
+          "url": "https://finance.sina.com.cn/tech/roll/2026-04-21/doc-inhvfqcm0238150.shtml",
+          "url_mobile": ""
+        },
+        "source_id": "gdelt_provider",
+        "source_name": "GDELT document search provider contract.",
+        "source_type": "gdelt",
+        "url": "https://finance.sina.com.cn/tech/roll/2026-04-21/doc-inhvfqcm0238150.shtml"
+      },
+      "tags": [],
+      "title": "蓝色起源新格伦火箭发射故障致客户卫星入轨失败 ， FAA责令其停飞调查",
+      "url": "https://finance.sina.com.cn/tech/roll/2026-04-21/doc-inhvfqcm0238150.shtml"
+    },
+    {
+      "company_id": "blue_origin",
+      "company_name": "Blue Origin",
+      "id": "4c7984ec04234bf8",
+      "language": "Chinese",
+      "metadata": {
+        "gdelt_domain": "163.com",
+        "gdelt_query": "(\"Blue Origin\" OR \"New Glenn\") AND (launch OR satellite OR space)",
+        "gdelt_source_country": "",
+        "image_url": ""
+      },
+      "normalized_text": null,
+      "published_at": "2026-04-21T01:15:00Z",
+      "raw_text": null,
+      "source": {
+        "collected_at": "2026-06-21T16:55:26.242507Z",
+        "provider_id": "gdelt_provider",
+        "provider_priority": 30,
+        "rank_group": "wire_and_aggregator",
+        "raw_payload": {
+          "domain": "163.com",
+          "language": "Chinese",
+          "seendate": "20260421T011500Z",
+          "socialimage": "",
+          "sourcecountry": "China",
+          "title": "蓝色起源新格伦火箭发射故障致客户卫星入轨失败 ， 遭FAA停飞调查",
+          "url": "https://www.163.com/dy/article/KR1CMBFD0511B8LM.html",
+          "url_mobile": "https://m.163.com/dy/article/KR1CMBFD0511B8LM.html"
+        },
+        "source_id": "gdelt_provider",
+        "source_name": "GDELT document search provider contract.",
+        "source_type": "gdelt",
+        "url": "https://www.163.com/dy/article/KR1CMBFD0511B8LM.html"
+      },
+      "tags": [],
+      "title": "蓝色起源新格伦火箭发射故障致客户卫星入轨失败 ， 遭FAA停飞调查",
+      "url": "https://www.163.com/dy/article/KR1CMBFD0511B8LM.html"
+    },
+    {
+      "company_id": "blue_origin",
+      "company_name": "Blue Origin",
+      "id": "3446f52ef4134c1d",
+      "language": "English",
+      "metadata": {
+        "gdelt_domain": "seattletimes.com",
+        "gdelt_query": "(\"Blue Origin\" OR \"New Glenn\") AND (launch OR satellite OR space)",
+        "gdelt_source_country": "",
+        "image_url": ""
+      },
+      "normalized_text": null,
+      "published_at": "2026-05-14T18:30:00Z",
+      "raw_text": null,
+      "source": {
+        "collected_at": "2026-06-21T16:55:26.242507Z",
+        "provider_id": "gdelt_provider",
+        "provider_priority": 30,
+        "rank_group": "wire_and_aggregator",
+        "raw_payload": {
+          "domain": "seattletimes.com",
+          "language": "English",
+          "seendate": "20260514T183000Z",
+          "socialimage": "",
+          "sourcecountry": "United States",
+          "title": "Why Blue Origin latest success left its biggest rocket grounded",
+          "url": "https://www.seattletimes.com/business/boeing-aerospace/why-blue-origins-latest-success-left-its-biggest-rocket-is-grounded/",
+          "url_mobile": ""
+        },
+        "source_id": "gdelt_provider",
+        "source_name": "GDELT document search provider contract.",
+        "source_type": "gdelt",
+        "url": "https://www.seattletimes.com/business/boeing-aerospace/why-blue-origins-latest-success-left-its-biggest-rocket-is-grounded/"
+      },
+      "tags": [],
+      "title": "Why Blue Origin latest success left its biggest rocket grounded",
+      "url": "https://www.seattletimes.com/business/boeing-aerospace/why-blue-origins-latest-success-left-its-biggest-rocket-is-grounded/"
+    },
+    {
+      "company_id": "blue_origin",
+      "company_name": "Blue Origin",
+      "id": "eee0c6f4ea82186a",
+      "language": "Chinese",
+      "metadata": {
+        "gdelt_domain": "finance.sina.com.cn",
+        "gdelt_query": "(\"Blue Origin\" OR \"New Glenn\") AND (launch OR satellite OR space)",
+        "gdelt_source_country": "",
+        "image_url": "https://n.sinaimg.cn/spider20260421/430/w1200h830/20260421/1cb4-73c314da91654a38b379357c26150124.png"
+      },
+      "normalized_text": null,
+      "published_at": "2026-04-21T01:15:00Z",
+      "raw_text": null,
+      "source": {
+        "collected_at": "2026-06-21T16:55:26.242507Z",
+        "provider_id": "gdelt_provider",
+        "provider_priority": 30,
+        "rank_group": "wire_and_aggregator",
+        "raw_payload": {
+          "domain": "finance.sina.com.cn",
+          "language": "Chinese",
+          "seendate": "20260421T011500Z",
+          "socialimage": "https://n.sinaimg.cn/spider20260421/430/w1200h830/20260421/1cb4-73c314da91654a38b379357c26150124.png",
+          "sourcecountry": "China",
+          "title": "蓝色起源新格伦火箭发射故障致客户卫星入轨失败 ， FAA 责令其停飞调查",
+          "url": "https://finance.sina.com.cn/tech/digi/2026-04-21/doc-inhvfivi7987638.shtml",
+          "url_mobile": ""
+        },
+        "source_id": "gdelt_provider",
+        "source_name": "GDELT document search provider contract.",
+        "source_type": "gdelt",
+        "url": "https://finance.sina.com.cn/tech/digi/2026-04-21/doc-inhvfivi7987638.shtml"
+      },
+      "tags": [],
+      "title": "蓝色起源新格伦火箭发射故障致客户卫星入轨失败 ， FAA 责令其停飞调查",
+      "url": "https://finance.sina.com.cn/tech/digi/2026-04-21/doc-inhvfivi7987638.shtml"
+    },
+    {
+      "company_id": "blue_origin",
+      "company_name": "Blue Origin",
+      "id": "c270c6144e3ffc9b",
+      "language": "Chinese",
+      "metadata": {
+        "gdelt_domain": "tech.ifeng.com",
+        "gdelt_query": "(\"Blue Origin\" OR \"New Glenn\") AND (launch OR satellite OR space)",
+        "gdelt_source_country": "",
+        "image_url": "https://x0.ifengimg.com/ucms/2026_17/3604BD7071AAFBE8EE4CFD779793E1213868EC34_size579_w1035_h582.png"
+      },
+      "normalized_text": null,
+      "published_at": "2026-04-21T02:30:00Z",
+      "raw_text": null,
+      "source": {
+        "collected_at": "2026-06-21T16:55:26.242507Z",
+        "provider_id": "gdelt_provider",
+        "provider_priority": 30,
+        "rank_group": "wire_and_aggregator",
+        "raw_payload": {
+          "domain": "tech.ifeng.com",
+          "language": "Chinese",
+          "seendate": "20260421T023000Z",
+          "socialimage": "https://x0.ifengimg.com/ucms/2026_17/3604BD7071AAFBE8EE4CFD779793E1213868EC34_size579_w1035_h582.png",
+          "sourcecountry": "China",
+          "title": "蓝色起源新格伦火箭发射故障致客户卫星入轨失败 ， FAA责令其停飞调查",
+          "url": "https://tech.ifeng.com/c/8sUv6I4SYHn",
+          "url_mobile": ""
+        },
+        "source_id": "gdelt_provider",
+        "source_name": "GDELT document search provider contract.",
+        "source_type": "gdelt",
+        "url": "https://tech.ifeng.com/c/8sUv6I4SYHn"
+      },
+      "tags": [],
+      "title": "蓝色起源新格伦火箭发射故障致客户卫星入轨失败 ， FAA责令其停飞调查",
+      "url": "https://tech.ifeng.com/c/8sUv6I4SYHn"
+    },
+    {
+      "company_id": "blue_origin",
+      "company_name": "Blue Origin",
+      "id": "c9e7569ef262f164",
+      "language": "English",
+      "metadata": {
+        "gdelt_domain": "sandiegouniontribune.com",
+        "gdelt_query": "(\"Blue Origin\" OR \"New Glenn\") AND (launch OR satellite OR space)",
+        "gdelt_source_country": "",
+        "image_url": "https://www.sandiegouniontribune.com/wp-content/uploads/2026/04/Blue_Origin_Launch_21322-1.jpg"
+      },
+      "normalized_text": null,
+      "published_at": "2026-04-20T23:15:00Z",
+      "raw_text": null,
+      "source": {
+        "collected_at": "2026-06-21T16:55:26.242507Z",
+        "provider_id": "gdelt_provider",
+        "provider_priority": 30,
+        "rank_group": "wire_and_aggregator",
+        "raw_payload": {
+          "domain": "sandiegouniontribune.com",
+          "language": "English",
+          "seendate": "20260420T231500Z",
+          "socialimage": "https://www.sandiegouniontribune.com/wp-content/uploads/2026/04/Blue_Origin_Launch_21322-1.jpg",
+          "sourcecountry": "United States",
+          "title": "Blue Origin New Glenn rocket is grounded after launching satellite into the wrong orbit",
+          "url": "https://www.sandiegouniontribune.com/2026/04/20/blue-origin-failed-launch/",
+          "url_mobile": ""
+        },
+        "source_id": "gdelt_provider",
+        "source_name": "GDELT document search provider contract.",
+        "source_type": "gdelt",
+        "url": "https://www.sandiegouniontribune.com/2026/04/20/blue-origin-failed-launch/"
+      },
+      "tags": [],
+      "title": "Blue Origin New Glenn rocket is grounded after launching satellite into the wrong orbit",
+      "url": "https://www.sandiegouniontribune.com/2026/04/20/blue-origin-failed-launch/"
+    },
+    {
+      "company_id": "blue_origin",
+      "company_name": "Blue Origin",
+      "id": "c7ca0ab3405681e3",
+      "language": "English",
+      "metadata": {
+        "gdelt_domain": "bostonherald.com",
+        "gdelt_query": "(\"Blue Origin\" OR \"New Glenn\") AND (launch OR satellite OR space)",
+        "gdelt_source_country": "",
+        "image_url": "https://www.bostonherald.com/wp-content/uploads/2026/04/Blue_Origin_Launch_21322-1.jpg"
+      },
+      "normalized_text": null,
+      "published_at": "2026-04-20T21:00:00Z",
+      "raw_text": null,
+      "source": {
+        "collected_at": "2026-06-21T16:55:26.242507Z",
+        "provider_id": "gdelt_provider",
+        "provider_priority": 30,
+        "rank_group": "wire_and_aggregator",
+        "raw_payload": {
+          "domain": "bostonherald.com",
+          "language": "English",
+          "seendate": "20260420T210000Z",
+          "socialimage": "https://www.bostonherald.com/wp-content/uploads/2026/04/Blue_Origin_Launch_21322-1.jpg",
+          "sourcecountry": "United States",
+          "title": "Blue Origin New Glenn rocket is grounded after launching satellite into the wrong orbit",
+          "url": "https://www.bostonherald.com/2026/04/20/blue-origin-failed-launch/",
+          "url_mobile": ""
+        },
+        "source_id": "gdelt_provider",
+        "source_name": "GDELT document search provider contract.",
+        "source_type": "gdelt",
+        "url": "https://www.bostonherald.com/2026/04/20/blue-origin-failed-launch/"
+      },
+      "tags": [],
+      "title": "Blue Origin New Glenn rocket is grounded after launching satellite into the wrong orbit",
+      "url": "https://www.bostonherald.com/2026/04/20/blue-origin-failed-launch/"
+    },
+    {
+      "company_id": "blue_origin",
+      "company_name": "Blue Origin",
+      "id": "f83ceb1df7aba639",
+      "language": "English",
+      "metadata": {
+        "gdelt_domain": "pilotonline.com",
+        "gdelt_query": "(\"Blue Origin\" OR \"New Glenn\") AND (launch OR satellite OR space)",
+        "gdelt_source_country": "",
+        "image_url": "https://www.pilotonline.com/wp-content/uploads/2026/04/Blue_Origin_Launch_21322-1.jpg"
+      },
+      "normalized_text": null,
+      "published_at": "2026-04-20T21:00:00Z",
+      "raw_text": null,
+      "source": {
+        "collected_at": "2026-06-21T16:55:26.242507Z",
+        "provider_id": "gdelt_provider",
+        "provider_priority": 30,
+        "rank_group": "wire_and_aggregator",
+        "raw_payload": {
+          "domain": "pilotonline.com",
+          "language": "English",
+          "seendate": "20260420T210000Z",
+          "socialimage": "https://www.pilotonline.com/wp-content/uploads/2026/04/Blue_Origin_Launch_21322-1.jpg",
+          "sourcecountry": "United States",
+          "title": "Blue Origin New Glenn rocket is grounded after launching satellite into the wrong orbit",
+          "url": "https://www.pilotonline.com/2026/04/20/blue-origin-failed-launch/",
+          "url_mobile": ""
+        },
+        "source_id": "gdelt_provider",
+        "source_name": "GDELT document search provider contract.",
+        "source_type": "gdelt",
+        "url": "https://www.pilotonline.com/2026/04/20/blue-origin-failed-launch/"
+      },
+      "tags": [],
+      "title": "Blue Origin New Glenn rocket is grounded after launching satellite into the wrong orbit",
+      "url": "https://www.pilotonline.com/2026/04/20/blue-origin-failed-launch/"
+    },
+    {
+      "company_id": "blue_origin",
+      "company_name": "Blue Origin",
+      "id": "e7fa269f3cb363e6",
+      "language": "English",
+      "metadata": {
+        "gdelt_domain": "mcall.com",
+        "gdelt_query": "(\"Blue Origin\" OR \"New Glenn\") AND (launch OR satellite OR space)",
+        "gdelt_source_country": "",
+        "image_url": "https://www.mcall.com/wp-content/uploads/2026/04/Blue_Origin_Launch_21322-1.jpg"
+      },
+      "normalized_text": null,
+      "published_at": "2026-04-20T23:30:00Z",
+      "raw_text": null,
+      "source": {
+        "collected_at": "2026-06-21T16:55:26.242507Z",
+        "provider_id": "gdelt_provider",
+        "provider_priority": 30,
+        "rank_group": "wire_and_aggregator",
+        "raw_payload": {
+          "domain": "mcall.com",
+          "language": "English",
+          "seendate": "20260420T233000Z",
+          "socialimage": "https://www.mcall.com/wp-content/uploads/2026/04/Blue_Origin_Launch_21322-1.jpg",
+          "sourcecountry": "United States",
+          "title": "Blue Origin New Glenn rocket is grounded after launching satellite into the wrong orbit",
+          "url": "https://www.mcall.com/2026/04/20/blue-origin-failed-launch/",
+          "url_mobile": ""
+        },
+        "source_id": "gdelt_provider",
+        "source_name": "GDELT document search provider contract.",
+        "source_type": "gdelt",
+        "url": "https://www.mcall.com/2026/04/20/blue-origin-failed-launch/"
+      },
+      "tags": [],
+      "title": "Blue Origin New Glenn rocket is grounded after launching satellite into the wrong orbit",
+      "url": "https://www.mcall.com/2026/04/20/blue-origin-failed-launch/"
+    },
+    {
+      "company_id": "blue_origin",
+      "company_name": "Blue Origin",
+      "id": "493bbab3d9df5f11",
+      "language": "English",
+      "metadata": {
+        "gdelt_domain": "dailycamera.com",
+        "gdelt_query": "(\"Blue Origin\" OR \"New Glenn\") AND (launch OR satellite OR space)",
+        "gdelt_source_country": "",
+        "image_url": "https://www.dailycamera.com/wp-content/uploads/2026/04/Blue_Origin_Launch_21322-1.jpg"
+      },
+      "normalized_text": null,
+      "published_at": "2026-04-20T23:45:00Z",
+      "raw_text": null,
+      "source": {
+        "collected_at": "2026-06-21T16:55:26.242507Z",
+        "provider_id": "gdelt_provider",
+        "provider_priority": 30,
+        "rank_group": "wire_and_aggregator",
+        "raw_payload": {
+          "domain": "dailycamera.com",
+          "language": "English",
+          "seendate": "20260420T234500Z",
+          "socialimage": "https://www.dailycamera.com/wp-content/uploads/2026/04/Blue_Origin_Launch_21322-1.jpg",
+          "sourcecountry": "United States",
+          "title": "Blue Origin New Glenn rocket is grounded after launching satellite into the wrong orbit",
+          "url": "https://www.dailycamera.com/2026/04/20/blue-origin-failed-launch/",
+          "url_mobile": ""
+        },
+        "source_id": "gdelt_provider",
+        "source_name": "GDELT document search provider contract.",
+        "source_type": "gdelt",
+        "url": "https://www.dailycamera.com/2026/04/20/blue-origin-failed-launch/"
+      },
+      "tags": [],
+      "title": "Blue Origin New Glenn rocket is grounded after launching satellite into the wrong orbit",
+      "url": "https://www.dailycamera.com/2026/04/20/blue-origin-failed-launch/"
+    }
+  ],
+  "run_id": "e1217da7-0485-484f-aaf1-57ce7a9f306f",
+  "schema_version": "satellite_news.v1"
+}
