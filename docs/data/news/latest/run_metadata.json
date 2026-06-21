@@ -2,10 +2,10 @@
   "artifact_version": 1,
   "companies": [
     {
-      "company_id": "blue_origin",
-      "company_name": "Blue Origin",
+      "company_id": "china_satnet",
+      "company_name": "中国星网",
       "item_count": 0,
-      "status": "rate_limited"
+      "status": "failed"
     }
   ],
   "company_item_counts": {
@@ -18,18 +18,18 @@
   "dry_run": false,
   "export_count": 0,
   "fetch_status_count": 1,
-  "finished_at": "2026-06-20T22:51:17.527989Z",
+  "finished_at": "2026-06-21T01:40:47.333568Z",
   "fresh_item_count": 0,
-  "generated_at": "2026-06-20T22:51:17.527989Z",
+  "generated_at": "2026-06-21T01:40:47.333568Z",
   "item_count": 189,
   "metadata": {
     "latest_is_stale_safe": true
   },
   "output_dir": "data/news/latest",
-  "run_id": "32f55e45-4175-4dd9-bf60-9731a21cb85a",
+  "run_id": "2b0ee3a3-cdb5-4b7c-bfca-86b0f375e2ba",
   "schema_version": "satellite_news.v1",
   "stale_item_count": 189,
-  "started_at": "2026-06-20T22:51:09.479828Z",
+  "started_at": "2026-06-21T01:40:38.384938Z",
   "summary_count": 0,
   "warnings": []
 }
