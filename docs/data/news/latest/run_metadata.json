@@ -4,26 +4,8 @@
     {
       "company_id": "blue_origin",
       "company_name": "Blue Origin",
-      "item_count": 45,
-      "status": "mixed"
-    },
-    {
-      "company_id": "china_satnet",
-      "company_name": "中国星网",
-      "item_count": 39,
-      "status": "mixed"
-    },
-    {
-      "company_id": "spacex",
-      "company_name": "SpaceX",
-      "item_count": 56,
-      "status": "success"
-    },
-    {
-      "company_id": "yuanxin_satellite",
-      "company_name": "垣信卫星",
-      "item_count": 40,
-      "status": "mixed"
+      "item_count": 0,
+      "status": "rate_limited"
     }
   ],
   "company_item_counts": {
@@ -35,19 +17,19 @@
   "config_dir": "config",
   "dry_run": false,
   "export_count": 0,
-  "fetch_status_count": 8,
-  "finished_at": "2026-06-21T22:14:42.741313Z",
-  "fresh_item_count": 180,
-  "generated_at": "2026-06-21T22:14:42.741313Z",
+  "fetch_status_count": 1,
+  "finished_at": "2026-06-21T22:36:54.129222Z",
+  "fresh_item_count": 0,
+  "generated_at": "2026-06-21T22:36:54.129222Z",
   "item_count": 180,
   "metadata": {
     "latest_is_stale_safe": true
   },
   "output_dir": "data/news/latest",
-  "run_id": "36c88699-d4ba-4dc1-8e4f-6962d25312d3",
+  "run_id": "a5ed1d91-d3c5-4990-98b0-993dcb266ee6",
   "schema_version": "satellite_news.v1",
-  "stale_item_count": 0,
-  "started_at": "2026-06-21T22:13:53.650375Z",
+  "stale_item_count": 180,
+  "started_at": "2026-06-21T22:36:48.937729Z",
   "summary_count": 0,
   "warnings": []
 }

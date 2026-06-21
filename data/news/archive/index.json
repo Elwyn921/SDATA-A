@@ -1,8 +1,21 @@
 {
   "artifact_version": 1,
-  "generated_at": "2026-06-21T22:14:42.741313Z",
-  "latest_run_id": "36c88699-d4ba-4dc1-8e4f-6962d25312d3",
+  "generated_at": "2026-06-21T22:36:54.129222Z",
+  "latest_run_id": "a5ed1d91-d3c5-4990-98b0-993dcb266ee6",
   "runs": [
+    {
+      "archive_path": "data/news/archive/runs/2026/06/21/a5ed1d91-d3c5-4990-98b0-993dcb266ee6",
+      "companies": [
+        "blue_origin"
+      ],
+      "dry_run": false,
+      "fetch_status_count": 1,
+      "finished_at": "2026-06-21T22:36:54.129222Z",
+      "item_count": 0,
+      "run_id": "a5ed1d91-d3c5-4990-98b0-993dcb266ee6",
+      "started_at": "2026-06-21T22:36:48.937729Z",
+      "status": "partial"
+    },
     {
       "archive_path": "data/news/archive/runs/2026/06/21/36c88699-d4ba-4dc1-8e4f-6962d25312d3",
       "companies": [
