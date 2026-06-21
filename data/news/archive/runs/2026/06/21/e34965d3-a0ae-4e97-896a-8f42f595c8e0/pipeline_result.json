@@ -1,6 +1,8 @@
 {
   "artifact_version": 1,
-  "count": 1,
+  "company_id": "spacex",
+  "dry_run": false,
+  "exports": [],
   "fetch_statuses": [
     {
       "article_count": 0,
@@ -71,7 +73,17 @@
       "warnings": []
     }
   ],
+  "finished_at": "2026-06-21T10:23:17.337834Z",
   "generated_at": "2026-06-21T10:23:17.337834Z",
+  "items": [],
+  "max_gdelt_queries": 1,
+  "merge_policy": "A5_stale_latest_merge",
+  "partial_run": true,
+  "provider_id": "gdelt_provider",
   "run_id": "e34965d3-a0ae-4e97-896a-8f42f595c8e0",
-  "schema_version": "satellite_news.v1"
+  "scheduled_slot": "gdelt-2026-06-21T1022-spacex",
+  "schema_version": "satellite_news.v1",
+  "started_at": "2026-06-21T10:22:54.099596Z",
+  "summaries": [],
+  "warnings": []
 }
