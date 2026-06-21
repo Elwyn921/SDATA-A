@@ -4,8 +4,8 @@
     {
       "company_id": "blue_origin",
       "company_name": "Blue Origin",
-      "item_count": 10,
-      "status": "success"
+      "item_count": 0,
+      "status": "rate_limited"
     }
   ],
   "company_item_counts": {
@@ -18,18 +18,18 @@
   "dry_run": false,
   "export_count": 0,
   "fetch_status_count": 1,
-  "finished_at": "2026-06-21T16:55:38.935761Z",
-  "fresh_item_count": 10,
-  "generated_at": "2026-06-21T16:55:38.935761Z",
+  "finished_at": "2026-06-21T18:53:13.448175Z",
+  "fresh_item_count": 0,
+  "generated_at": "2026-06-21T18:53:13.448175Z",
   "item_count": 154,
   "metadata": {
     "latest_is_stale_safe": true
   },
   "output_dir": "data/news/latest",
-  "run_id": "e1217da7-0485-484f-aaf1-57ce7a9f306f",
+  "run_id": "249a0c9f-0531-41f1-a158-e81bd861c9a3",
   "schema_version": "satellite_news.v1",
-  "stale_item_count": 144,
-  "started_at": "2026-06-21T16:55:26.242507Z",
+  "stale_item_count": 154,
+  "started_at": "2026-06-21T18:53:07.528178Z",
   "summary_count": 0,
   "warnings": []
 }
