@@ -1,8 +1,21 @@
 {
   "artifact_version": 1,
-  "generated_at": "2026-06-21T22:36:54.129222Z",
-  "latest_run_id": "a5ed1d91-d3c5-4990-98b0-993dcb266ee6",
+  "generated_at": "2026-06-21T23:58:18.563646Z",
+  "latest_run_id": "96764e0b-addb-48fc-92d0-9b7b5d70b0d9",
   "runs": [
+    {
+      "archive_path": "data/news/archive/runs/2026/06/21/96764e0b-addb-48fc-92d0-9b7b5d70b0d9",
+      "companies": [
+        "china_satnet"
+      ],
+      "dry_run": false,
+      "fetch_status_count": 1,
+      "finished_at": "2026-06-21T23:58:18.563646Z",
+      "item_count": 0,
+      "run_id": "96764e0b-addb-48fc-92d0-9b7b5d70b0d9",
+      "started_at": "2026-06-21T23:58:15.040365Z",
+      "status": "partial"
+    },
     {
       "archive_path": "data/news/archive/runs/2026/06/21/a5ed1d91-d3c5-4990-98b0-993dcb266ee6",
       "companies": [
