@@ -1,8 +1,24 @@
 {
   "artifact_version": 1,
-  "generated_at": "2026-06-22T16:18:45.915222Z",
-  "latest_run_id": "28b449d3-7cf0-407f-92d9-0821a7269793",
+  "generated_at": "2026-06-22T16:57:25.476952Z",
+  "latest_run_id": "0cb213ba-3b36-4a6a-b633-15fdd536fcd7",
   "runs": [
+    {
+      "archive_path": "data/news/archive/runs/2026/06/22/0cb213ba-3b36-4a6a-b633-15fdd536fcd7",
+      "companies": [
+        "blue_origin",
+        "china_satnet",
+        "spacex",
+        "yuanxin_satellite"
+      ],
+      "dry_run": false,
+      "fetch_status_count": 8,
+      "finished_at": "2026-06-22T16:57:25.476952Z",
+      "item_count": 193,
+      "run_id": "0cb213ba-3b36-4a6a-b633-15fdd536fcd7",
+      "started_at": "2026-06-22T16:56:36.720183Z",
+      "status": "partial"
+    },
     {
       "archive_path": "data/news/archive/runs/2026/06/22/28b449d3-7cf0-407f-92d9-0821a7269793",
       "companies": [
