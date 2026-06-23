@@ -1,0 +1,11 @@
+{
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "observable:dev": "observable preview",
+    "observable:build": "observable build"
+  },
+  "devDependencies": {
+    "@observablehq/framework": "1.13.4"
+  }
+}

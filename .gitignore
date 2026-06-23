@@ -19,6 +19,7 @@ tmp/
 node_modules/
 dist/
 build/
+observable/.observablehq/
 .venv/
 __pycache__/
 *.egg-info/

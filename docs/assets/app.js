@@ -1,13 +1,48 @@
 import { loadPipelineResult } from "./pipeline-data.js";
 
-const companyMeta = {
-  spacex: { name: "SpaceX", region: "美国", color: "azure" },
-  blue_origin: { name: "Blue Origin", region: "美国", color: "indigo" },
-  yuanxin_satellite: { name: "垣信卫星", region: "中国", color: "orange" },
-  china_satnet: { name: "中国星网", region: "中国", color: "pink" },
-};
-
-const companyOrder = ["spacex", "blue_origin", "yuanxin_satellite", "china_satnet"];
+const industryGroups = [
+  {
+    id: "satellite_platform",
+    name: "卫星平台与整星制造",
+    description: "整星研制、平台能力与卫星制造企业",
+    companies: [
+      { id: "galaxyspace", name: "银河航天", region: "中国" },
+      { id: "hongqing_technology", name: "蓝箭鸿擎", region: "中国" },
+      { id: "minospace", name: "微纳星空", region: "中国" },
+    ],
+  },
+  {
+    id: "launch_services",
+    name: "运载火箭与发射服务",
+    description: "商业火箭、发射服务与运载能力",
+    companies: [
+      { id: "landspace", name: "蓝箭航天", region: "中国" },
+      { id: "space_pioneer", name: "天兵科技", region: "中国" },
+      { id: "cas_space", name: "中科宇航", region: "中国" },
+      { id: "i_space", name: "星际荣耀", region: "中国" },
+      { id: "galactic_energy", name: "星河动力", region: "中国" },
+      { id: "yushi_space", name: "宇石空间", region: "中国" },
+    ],
+  },
+  {
+    id: "satellite_internet",
+    name: "卫星互联网服务",
+    description: "星座建设、网络运营与卫星互联网基础设施",
+    companies: [
+      { id: "yuanxin_satellite", name: "垣信卫星", region: "中国" },
+      { id: "china_satnet", name: "中国星网", region: "中国" },
+    ],
+  },
+  {
+    id: "global_majors",
+    name: "国外大厂",
+    description: "海外发射、载人航天与商业航天头部企业",
+    companies: [
+      { id: "blue_origin", name: "Blue Origin", region: "美国" },
+      { id: "spacex", name: "SpaceX", region: "美国" },
+    ],
+  },
+];
 
 const providerOrder = ["rss", "official_site", "gdelt", "serpapi", "newsapi"];
 const providerLabels = {
@@ -25,40 +60,40 @@ const statusLabels = {
   success: "成功",
   rate_limited: "限流",
   failed: "失败",
-  skipped_no_secret: "跳过：未配置密钥",
+  skipped_no_secret: "未配置密钥",
   missing: "无记录",
   unknown: "未知",
 };
 
-const staleReasonLabels = {
-  partial_run_not_updated: "本轮未更新，沿用上一轮结果",
-  partial_run_company_empty: "本轮该公司无新结果，沿用上一轮结果",
-  current_run_company_empty: "本轮无结果，使用历史数据",
-};
+const companyMeta = new Map();
+const companyToGroup = new Map();
+industryGroups.forEach((group) => {
+  group.companies.forEach((company) => {
+    companyMeta.set(company.id, { ...company, groupId: group.id, groupName: group.name });
+    companyToGroup.set(company.id, group.id);
+  });
+});
 
 const state = {
+  groupId: "all",
   companyId: "all",
-  provider: "all",
-  freshness: "all",
   result: null,
 };
 
 const elements = {
   dataSource: document.querySelector("#data-source"),
   updatedAt: document.querySelector("#updated-at"),
-  kpiCards: document.querySelector("#kpi-cards"),
-  runId: document.querySelector("#run-id"),
-  runStatus: document.querySelector("#run-status"),
-  companyTabs: document.querySelector("#company-tabs"),
+  totalCount: document.querySelector("#total-count"),
+  companyCount: document.querySelector("#company-count"),
+  industrySections: document.querySelector("#industry-sections"),
+  categoryTabs: document.querySelector("#category-tabs"),
   companyFilter: document.querySelector("#company-filter"),
-  providerFilter: document.querySelector("#provider-filter"),
-  freshnessFilter: document.querySelector("#freshness-filter"),
   resetFilters: document.querySelector("#reset-filters"),
-  companyCards: document.querySelector("#company-cards"),
-  providerTable: document.querySelector("#provider-table"),
   visibleCount: document.querySelector("#visible-count"),
   newsList: document.querySelector("#news-list"),
+  providerTable: document.querySelector("#provider-table"),
   errorAccordion: document.querySelector("#error-accordion"),
+  diagnosticsSummary: document.querySelector("#diagnostics-summary"),
 };
 
 bootstrap();
@@ -73,156 +108,186 @@ async function bootstrap() {
 function bindEvents() {
   elements.companyFilter.addEventListener("change", (event) => {
     state.companyId = event.target.value;
+    if (state.companyId !== "all") {
+      state.groupId = companyToGroup.get(state.companyId) ?? "all";
+    }
     render();
   });
-  elements.providerFilter.addEventListener("change", (event) => {
-    state.provider = event.target.value;
-    render();
-  });
-  elements.freshnessFilter.addEventListener("change", (event) => {
-    state.freshness = event.target.value;
-    render();
-  });
+
   elements.resetFilters.addEventListener("click", () => {
+    state.groupId = "all";
     state.companyId = "all";
-    state.provider = "all";
-    state.freshness = "all";
     elements.companyFilter.value = "all";
-    elements.providerFilter.value = "all";
-    elements.freshnessFilter.value = "all";
     render();
   });
 }
 
 function populateFilters() {
   const companies = companiesFromItems(state.result.items);
-  elements.companyFilter.append(
-    ...companies.map((company) => option(company.id, company.name)),
-  );
+  const knownIds = new Set();
 
-  const providers = [...new Set(state.result.items.map((item) => itemProvider(item)))].sort();
-  elements.providerFilter.append(
-    ...providers.map((provider) => option(provider, providerLabel(provider))),
-  );
+  industryGroups.forEach((group) => {
+    const optgroup = document.createElement("optgroup");
+    optgroup.label = group.name;
+    group.companies.forEach((company) => {
+      knownIds.add(company.id);
+      optgroup.append(option(company.id, company.name));
+    });
+    elements.companyFilter.append(optgroup);
+  });
+
+  const extraCompanies = companies.filter((company) => !knownIds.has(company.id));
+  if (extraCompanies.length) {
+    const optgroup = document.createElement("optgroup");
+    optgroup.label = "未分类公司";
+    extraCompanies.forEach((company) => optgroup.append(option(company.id, company.name)));
+    elements.companyFilter.append(optgroup);
+  }
 }
 
 function render() {
-  const items = sortedItems(state.result.items);
+  const items = sortedItems(state.result.items ?? []);
   const companies = companiesFromItems(items);
-  const counts = freshnessCounts(items);
+  const coveredCompanies = companies.filter((company) => company.total > 0);
   const filteredItems = filterItems(items);
 
-  elements.dataSource.textContent = state.result.__dataSource === "json" ? "实时 JSON" : "模拟数据兜底";
-  elements.dataSource.parentElement.classList.toggle("is-live", state.result.__dataSource === "json");
+  elements.dataSource.textContent = state.result.__dataSource === "json" ? "实时数据" : "示例数据";
   elements.updatedAt.textContent = formatFullDate(
     state.result.generated_at ?? state.result.finished_at ?? state.result.started_at,
   );
-  elements.runId.textContent = `运行 ID：${state.result.run_id ?? "--"}`;
+  elements.totalCount.textContent = String(items.length);
+  elements.companyCount.textContent = String(coveredCompanies.length);
   elements.visibleCount.textContent = `已显示 ${filteredItems.length} 条`;
 
-  renderKpis(items, companies, counts);
-  renderRunStatus(counts);
-  renderCompanyTabs(companies);
-  renderCompanyCards(companies, items);
-  renderProviderTable(companies, state.result.fetch_statuses ?? []);
+  renderCategoryTabs();
+  renderIndustrySections(items);
   renderNewsList(filteredItems);
-  renderErrors(state.result.fetch_statuses ?? []);
+  renderProviderTable(companies, state.result.fetch_statuses ?? []);
+  renderDiagnostics(state.result.fetch_statuses ?? [], items);
 }
 
-function renderKpis(items, companies, counts) {
-  const kpis = [
-    ["新闻总数", items.length, "本轮可展示条目", "blue"],
-    ["覆盖公司", companies.length, "当前监测对象", "slate"],
-    ["最新新闻", counts.fresh, "fresh=true", "green"],
-    ["历史兜底", counts.stale, "stale=true", "purple"],
-    ["最后更新", formatFullDate(state.result.generated_at), "北京时间", "amber"],
-  ];
-  elements.kpiCards.replaceChildren(
-    ...kpis.map(([label, value, caption, tone]) => {
-      const card = document.createElement("article");
-      card.className = `kpi-card tone-${tone}`;
-      card.innerHTML = `
-        <div class="kpi-label">${escapeHtml(label)}</div>
-        <div class="kpi-value">${escapeHtml(value)}</div>
-        <div class="kpi-caption">${escapeHtml(caption)}</div>
-      `;
-      return card;
-    }),
-  );
-}
-
-function renderRunStatus(counts) {
-  const fallback = state.result.metadata?.stale_fallback ?? {};
-  const rows = [
-    ["生成时间", formatFullDate(state.result.generated_at ?? state.result.finished_at), "clock"],
-    ["历史兜底", fallback.enabled === false ? "已关闭" : "已启用", "shield"],
-    ["兜底公司", arraySummary(fallback.fallback_company_ids), "company"],
-    ["最新 / 历史", `${fallback.fresh_item_count ?? counts.fresh} / ${fallback.stale_item_count ?? counts.stale}`, "ratio"],
-  ];
-  elements.runStatus.replaceChildren(
-    ...rows.map(([label, value, icon]) => {
-      const item = document.createElement("div");
-      item.className = "run-status-item";
-      item.innerHTML = `
-        <span class="run-icon run-icon-${escapeHtml(icon)}"></span>
-        <span>
-          <span class="run-label">${escapeHtml(label)}</span>
-          <strong>${escapeHtml(value)}</strong>
-        </span>
-      `;
-      return item;
-    }),
-  );
-}
-
-function renderCompanyTabs(companies) {
-  const rows = [{ id: "all", name: "全部" }, ...companies];
-  elements.companyTabs.replaceChildren(
-    ...rows.map((company) => {
-      const item = document.createElement("li");
-      item.innerHTML = `
-        <button class="${state.companyId === company.id ? "active" : ""}" type="button">
-          ${escapeHtml(company.name)}
-        </button>
-      `;
-      item.querySelector("button").addEventListener("click", () => {
-        state.companyId = company.id;
-        elements.companyFilter.value = company.id;
+function renderCategoryTabs() {
+  const rows = [{ id: "all", name: "全部" }, ...industryGroups];
+  elements.categoryTabs.replaceChildren(
+    ...rows.map((group) => {
+      const button = document.createElement("button");
+      button.type = "button";
+      button.className = state.groupId === group.id ? "active" : "";
+      button.textContent = group.name;
+      button.addEventListener("click", () => {
+        state.groupId = group.id;
+        state.companyId = "all";
+        elements.companyFilter.value = "all";
         render();
       });
-      return item;
+      return button;
     }),
   );
 }
 
-function renderCompanyCards(companies, items) {
-  elements.companyCards.replaceChildren(
-    ...companies.map((company) => {
-      const companyItems = items.filter((item) => item.company_id === company.id);
-      const counts = freshnessCounts(companyItems);
-      const latest = sortedItems(companyItems)[0];
-      const issues = providerIssues(state.result.fetch_statuses ?? [], company.id);
-      const card = document.createElement("article");
-      card.className = `company-card company-${company.id}`;
-      card.innerHTML = `
-        <div class="company-card-top">
+function renderIndustrySections(items) {
+  elements.industrySections.replaceChildren(
+    ...industryGroups.map((group) => {
+      const groupItems = items.filter((item) => companyToGroup.get(item.company_id) === group.id);
+      const covered = group.companies.filter((company) =>
+        groupItems.some((item) => item.company_id === company.id),
+      ).length;
+      const section = document.createElement("section");
+      section.className = "industry-section";
+      section.innerHTML = `
+        <div class="industry-heading">
           <div>
-            <div class="company-region">${escapeHtml(company.region)}</div>
-            <h3>${escapeHtml(company.name)}</h3>
+            <span>${covered}/${group.companies.length} 家覆盖</span>
+            <h2>${escapeHtml(group.name)}</h2>
+            <p>${escapeHtml(group.description)}</p>
           </div>
-          <span class="company-count">${counts.total}</span>
+          <button class="section-filter" type="button">查看该分类</button>
         </div>
-        <div class="company-metrics">
-          <span><em>${counts.fresh}</em> 最新</span>
-          <span><em>${counts.stale}</em> 历史</span>
-          <span><em>${issues}</em> 异常</span>
-        </div>
-        <div class="company-latest">
-          <span>${latest ? formatDate(latest.published_at) : "--"}</span>
-          <p>${latest ? escapeHtml(latest.title) : "本轮暂无新闻"}</p>
-        </div>
+        <div class="company-grid"></div>
       `;
-      return card;
+      section.querySelector(".section-filter").addEventListener("click", () => {
+        state.groupId = group.id;
+        state.companyId = "all";
+        elements.companyFilter.value = "all";
+        document.querySelector(".news-panel")?.scrollIntoView({ behavior: "smooth", block: "start" });
+        render();
+      });
+
+      section.querySelector(".company-grid").replaceChildren(
+        ...group.companies.map((company) => companyCard(company, items)),
+      );
+      return section;
+    }),
+  );
+}
+
+function companyCard(company, items) {
+  const companyItems = sortedItems(items.filter((item) => item.company_id === company.id));
+  const latest = companyItems[0];
+  const issues = providerIssues(state.result.fetch_statuses ?? [], company.id);
+  const card = document.createElement("article");
+  card.className = "company-card";
+  card.innerHTML = `
+    <div class="company-card-top">
+      <div>
+        <span>${escapeHtml(company.region)}</span>
+        <h3>${escapeHtml(company.name)}</h3>
+      </div>
+      <strong>${companyItems.length}</strong>
+    </div>
+    <p>${latest ? escapeHtml(latest.title) : "暂无新闻"}</p>
+    <div class="company-card-foot">
+      <span>${latest ? formatFullDate(latest.published_at) : "--"}</span>
+      <span>${issues ? `${issues} 个异常` : "数据源正常"}</span>
+    </div>
+  `;
+  card.addEventListener("click", () => {
+    state.companyId = company.id;
+    state.groupId = companyToGroup.get(company.id) ?? "all";
+    elements.companyFilter.value = company.id;
+    document.querySelector(".news-panel")?.scrollIntoView({ behavior: "smooth", block: "start" });
+    render();
+  });
+  return card;
+}
+
+function renderNewsList(items) {
+  if (!items.length) {
+    elements.newsList.innerHTML = `
+      <div class="empty">
+        <div class="empty-title">没有匹配当前筛选条件的新闻</div>
+        <p class="empty-subtitle text-muted">请调整产业链分类或公司筛选。</p>
+      </div>
+    `;
+    return;
+  }
+
+  elements.newsList.replaceChildren(
+    ...items.map((item) => {
+      const entry = document.createElement("article");
+      entry.className = "news-row";
+      entry.tabIndex = 0;
+      entry.addEventListener("click", () => window.open(item.url, "_blank", "noopener,noreferrer"));
+      entry.addEventListener("keydown", (event) => {
+        if (event.key === "Enter") window.open(item.url, "_blank", "noopener,noreferrer");
+      });
+      entry.innerHTML = `
+        <div class="news-main">
+          <div class="news-badges">
+            <span class="news-company">${escapeHtml(companyName(item.company_id, item.company_name))}</span>
+            <span class="news-sector">${escapeHtml(groupNameForCompany(item.company_id))}</span>
+            ${providerBadge(itemProvider(item))}
+            ${freshnessBadge(item)}
+          </div>
+          <h3>${escapeHtml(item.title)}</h3>
+          <div class="news-meta">
+            <span>${escapeHtml(item.source?.source_name ?? item.source?.source_id ?? "未知来源")}</span>
+            <span>${formatFullDate(item.published_at)}</span>
+          </div>
+        </div>
+        <span class="open-link">打开</span>
+      `;
+      return entry;
     }),
   );
 }
@@ -254,98 +319,39 @@ function renderProviderTable(companies, statuses) {
   `;
 }
 
-function renderNewsList(items) {
-  if (!items.length) {
-    elements.newsList.innerHTML = `
-      <div class="empty">
-        <div class="empty-title">没有匹配当前筛选条件的新闻</div>
-        <p class="empty-subtitle text-muted">请调整公司、数据源或新鲜度筛选条件。</p>
-      </div>
-    `;
-    return;
-  }
-
-  elements.newsList.replaceChildren(
-    ...items.map((item) => {
-      const freshness = freshnessState(item);
-      const entry = document.createElement("article");
-      entry.className = "news-row";
-      entry.tabIndex = 0;
-      entry.addEventListener("click", () => window.open(item.url, "_blank", "noopener,noreferrer"));
-      entry.addEventListener("keydown", (event) => {
-        if (event.key === "Enter") window.open(item.url, "_blank", "noopener,noreferrer");
-      });
-      entry.href = item.url;
-      entry.innerHTML = `
-        <div class="news-main">
-          <div class="news-badges">
-            <span class="news-company">${escapeHtml(item.company_name)}</span>
-            ${providerBadge(itemProvider(item))}
-            ${freshnessBadge(freshness, item)}
-          </div>
-          <h3>${escapeHtml(item.title)}</h3>
-          <div class="news-meta">
-            <span>${escapeHtml(item.source?.source_name ?? item.source?.source_id ?? "未知来源")}</span>
-            <span>${formatFullDate(item.published_at)}</span>
-          </div>
-        </div>
-        <span class="open-link">打开</span>
-      `;
-      const staleTrigger = entry.querySelector(".stale-badge-wrap");
-      if (staleTrigger) {
-        staleTrigger.addEventListener("click", (event) => event.stopPropagation());
-        staleTrigger.addEventListener("keydown", (event) => {
-          if (event.key === "Enter" || event.key === " ") event.stopPropagation();
-        });
-      }
-      return entry;
-    }),
-  );
-}
-
-function renderErrors(statuses) {
-  const rows = statuses.filter((status) => {
+function renderDiagnostics(statuses, items) {
+  const issueRows = statuses.filter((status) => {
     const label = status.provider_status ?? status.final_status ?? status.status ?? "";
     return label !== "success" || status.reason || status.error_message;
   });
+  const archivedCount = items.filter((item) => item.stale === true).length;
+  elements.diagnosticsSummary.textContent =
+    `${issueRows.length} 个数据源异常，${archivedCount} 条归档新闻`;
 
-  if (!rows.length) {
+  if (!issueRows.length) {
     elements.errorAccordion.innerHTML = `
-      <div class="empty">
-        <div class="empty-title">没有数据源异常</div>
-        <p class="empty-subtitle text-muted">本轮所有数据源均正常返回。</p>
-      </div>
+      <div class="diagnostic-empty">本轮未发现数据源访问异常。</div>
     `;
     return;
   }
 
-  elements.errorAccordion.innerHTML = rows
-    .map((status, index) => {
+  elements.errorAccordion.innerHTML = issueRows
+    .map((status) => {
       const label = status.provider_status ?? status.final_status ?? status.status ?? "unknown";
       const provider = normalizeProvider(status.provider_type ?? status.source_type);
-      const itemId = `error-${index}`;
       return `
-        <div class="accordion-item">
-          <h3 class="accordion-header">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#${itemId}">
-              <span class="diagnostic-company">${escapeHtml(status.company_name ?? status.company_id ?? "--")}</span>
-              <span class="diagnostic-provider">${escapeHtml(providerLabel(provider))}</span>
-              ${statusBadge(label)}
-            </button>
-          </h3>
-          <div id="${itemId}" class="accordion-collapse collapse" data-bs-parent="#error-accordion">
-            <div class="accordion-body">
-              <div class="mb-2">
-                <div class="text-muted small">原因</div>
-                <div>${escapeHtml(status.reason ?? "--")}</div>
-              </div>
-              <div>
-                <div class="text-muted small">错误信息</div>
-                <div>${escapeHtml(status.error_message ?? "--")}</div>
-              </div>
-            </div>
+        <details class="diagnostic-item">
+          <summary>
+            <span>${escapeHtml(companyName(status.company_id, status.company_name))}</span>
+            <span>${escapeHtml(providerLabel(provider))}</span>
+            ${statusBadge(label)}
+          </summary>
+          <div>
+            <p><strong>原始状态</strong>${escapeHtml(label)}</p>
+            <p><strong>原因</strong>${escapeHtml(status.reason ?? "--")}</p>
+            <p><strong>错误信息</strong>${escapeHtml(status.error_message ?? "--")}</p>
           </div>
-        </div>
+        </details>
       `;
     })
     .join("");
@@ -353,99 +359,44 @@ function renderErrors(statuses) {
 
 function filterItems(items) {
   return items.filter((item) => {
+    const groupMatches = state.groupId === "all" || companyToGroup.get(item.company_id) === state.groupId;
     const companyMatches = state.companyId === "all" || item.company_id === state.companyId;
-    const providerMatches = state.provider === "all" || itemProvider(item) === state.provider;
-    const freshnessMatches =
-      state.freshness === "all" || freshnessState(item).kind === state.freshness;
-    return companyMatches && providerMatches && freshnessMatches;
+    return groupMatches && companyMatches;
   });
 }
 
 function companiesFromItems(items) {
-  const seen = new Set();
-  const companies = companyOrder.map((id) => ({
-    id,
-    name: companyMeta[id].name,
-    region: companyMeta[id].region,
-    color: companyMeta[id].color,
-  }));
+  const rows = new Map();
 
-  companyOrder.forEach((id) => seen.add(id));
-  return items.reduce((rows, item) => {
-    if (seen.has(item.company_id)) return rows;
-    seen.add(item.company_id);
-    rows.push({
-      id: item.company_id,
-      name: companyMeta[item.company_id]?.name ?? item.company_name,
-      region: companyMeta[item.company_id]?.region ?? "未知地区",
-      color: companyMeta[item.company_id]?.color ?? "secondary",
+  industryGroups.forEach((group) => {
+    group.companies.forEach((company) => {
+      rows.set(company.id, {
+        id: company.id,
+        name: company.name,
+        region: company.region,
+        groupId: group.id,
+        groupName: group.name,
+        total: 0,
+      });
     });
-    return rows;
-  }, companies);
-}
+  });
 
-function freshnessCounts(items) {
-  return items.reduce(
-    (counts, item) => {
-      counts.total += 1;
-      if (freshnessState(item).kind === "stale") counts.stale += 1;
-      else counts.fresh += 1;
-      return counts;
-    },
-    { fresh: 0, stale: 0, total: 0 },
-  );
-}
+  items.forEach((item) => {
+    const id = item.company_id;
+    if (!rows.has(id)) {
+      rows.set(id, {
+        id,
+        name: item.company_name ?? id,
+        region: "未知地区",
+        groupId: "uncategorized",
+        groupName: "未分类",
+        total: 0,
+      });
+    }
+    rows.get(id).total += 1;
+  });
 
-function freshnessState(item) {
-  if (item.stale === true) return { kind: "stale", label: "使用上一轮数据" };
-  return { kind: "fresh", label: "最新" };
-}
-
-function freshnessBadge(freshness, item) {
-  if (freshness.kind === "stale") return staleBadge(item, freshness.label);
-  return `<span class="badge bg-green-lt">${freshness.label}</span>`;
-}
-
-function staleBadge(item, label) {
-  const details = staleTooltipDetails(item);
-  return `
-    <span class="stale-badge-wrap" tabindex="0" aria-label="${escapeHtml(details.aria)}">
-      <span class="badge stale-badge">${escapeHtml(label)}</span>
-      <span class="stale-tooltip" role="tooltip">
-        <strong>使用历史结果</strong>
-        <span>${escapeHtml(details.reason)}</span>
-        <span>兜底时间：${escapeHtml(details.asOf)}</span>
-        <span>来源运行 ID：${escapeHtml(details.runId)}</span>
-      </span>
-    </span>
-  `;
-}
-
-function staleTooltipDetails(item) {
-  const reason = staleReasonLabel(item.stale_reason);
-  const asOf = formatStaleAsOf(item.stale_as_of);
-  const runId = shortRunId(item.stale_from_run_id);
-  return {
-    reason,
-    asOf,
-    runId,
-    aria: `使用上一轮数据。${reason}。兜底时间：${asOf}。来源运行 ID：${runId}`,
-  };
-}
-
-function staleReasonLabel(reason) {
-  return staleReasonLabels[reason] ?? "使用历史数据";
-}
-
-function shortRunId(value) {
-  return value ? String(value).slice(0, 8) : "--";
-}
-
-function formatStaleAsOf(value) {
-  if (!value) return "--";
-  const match = String(value).match(/^(\d{4})-(\d{2})-(\d{2})T(\d{2}):(\d{2})/);
-  if (match) return `${match[1]}/${match[2]}/${match[3]} ${match[4]}:${match[5]}`;
-  return formatFullDate(value);
+  return [...rows.values()];
 }
 
 function providerIssues(statuses, companyId) {
@@ -453,6 +404,14 @@ function providerIssues(statuses, companyId) {
     const label = status.provider_status ?? status.final_status ?? status.status ?? "unknown";
     return status.company_id === companyId && label !== "success";
   }).length;
+}
+
+function companyName(companyId, fallback) {
+  return companyMeta.get(companyId)?.name ?? fallback ?? companyId ?? "未知公司";
+}
+
+function groupNameForCompany(companyId) {
+  return companyMeta.get(companyId)?.groupName ?? "未分类";
 }
 
 function itemProvider(item) {
@@ -469,20 +428,22 @@ function providerLabel(provider) {
 }
 
 function providerBadge(provider) {
-  return `<span class="badge bg-secondary-lt">${escapeHtml(providerLabel(provider))}</span>`;
+  return `<span class="badge provider-badge">${escapeHtml(providerLabel(provider))}</span>`;
+}
+
+function freshnessBadge(item) {
+  if (item.stale === true) return `<span class="badge archive-badge">归档</span>`;
+  return `<span class="badge fresh-badge">最新</span>`;
 }
 
 function statusBadge(status) {
   const value = String(status);
-  if (value === "success") return `<span class="badge bg-green-lt">${statusLabel(value)}</span>`;
-  if (value === "rate_limited") return `<span class="badge bg-yellow-lt">${statusLabel(value)}</span>`;
-  if (value === "failed") return `<span class="badge bg-red-lt">${statusLabel(value)}</span>`;
-  if (value.startsWith("skipped")) return `<span class="badge bg-secondary-lt">${statusLabel(value)}</span>`;
-  return `<span class="badge bg-secondary-lt">${statusLabel(value)}</span>`;
-}
-
-function statusLabel(status) {
-  return statusLabels[status] ?? String(status).replaceAll("_", " ");
+  const label = statusLabels[value] ?? value.replaceAll("_", " ");
+  if (value === "success") return `<span class="badge status-success">${escapeHtml(label)}</span>`;
+  if (value === "rate_limited") return `<span class="badge status-rate">${escapeHtml(label)}</span>`;
+  if (value === "failed") return `<span class="badge status-failed">${escapeHtml(label)}</span>`;
+  if (value.startsWith("skipped")) return `<span class="badge status-skipped">${escapeHtml(label)}</span>`;
+  return `<span class="badge status-missing">${escapeHtml(label)}</span>`;
 }
 
 function sortedItems(items) {
@@ -494,20 +455,6 @@ function option(value, label) {
   element.value = value;
   element.textContent = label;
   return element;
-}
-
-function arraySummary(value) {
-  return Array.isArray(value) && value.length ? value.join(", ") : "无";
-}
-
-function formatDate(value) {
-  if (!value) return "--";
-  return new Intl.DateTimeFormat("zh-CN", {
-    month: "2-digit",
-    day: "2-digit",
-    hour: "2-digit",
-    minute: "2-digit",
-  }).format(new Date(value));
 }
 
 function formatFullDate(value) {

@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>SDATA-A 新闻情报看板</title>
+    <title>SDATA-A 卫星产业链情报看板</title>
     <link rel="stylesheet" href="./assets/vendor/tabler/tabler.min.css" />
     <link rel="stylesheet" href="./assets/styles.css" />
   </head>
@@ -14,120 +14,71 @@
           <div class="brand-lockup">
             <span class="brand-mark">S</span>
             <div>
-              <div class="brand-title">SDATA-A</div>
-              <div class="brand-subtitle">Satellite News Intelligence</div>
+              <div class="brand-title">SDATA-A 卫星产业链情报</div>
+              <div class="brand-subtitle" id="data-source">加载中</div>
             </div>
           </div>
-          <div class="topbar-status">
-            <span class="status-dot"></span>
-            <span id="data-source">加载中</span>
+          <div class="topbar-metrics" aria-label="数据状态">
+            <span>更新时间 <strong id="updated-at">--</strong></span>
+            <span>新闻 <strong id="total-count">0</strong></span>
+            <span>覆盖公司 <strong id="company-count">0</strong></span>
           </div>
         </div>
       </header>
 
-      <div class="page-wrapper">
-        <section class="intel-hero d-print-none">
-          <div class="container-xl">
-            <div class="hero-grid">
-              <div class="hero-copy">
-                <div class="eyebrow">卫星产业链动态监测</div>
-                <h1>新闻情报工作台</h1>
-                <p>
-                  聚合 SpaceX、Blue Origin、垣信卫星、中国星网的公开新闻源，
-                  持续输出可归档、可追踪、可解释的动态情报。
-                </p>
-              </div>
-              <div class="hero-meta">
-                <div class="meta-label">最后更新</div>
-                <div class="meta-value" id="updated-at">--</div>
-                <div class="meta-caption" id="run-id">运行 ID：--</div>
+      <main class="page-body">
+        <div class="container-xl">
+          <section class="intro-strip">
+            <div>
+              <div class="eyebrow">产业链监测</div>
+              <h1>卫星产业链情报看板</h1>
+            </div>
+            <p>按整星制造、发射服务、卫星互联网与国外大厂组织新闻动态，优先呈现公司覆盖与最新情报。</p>
+          </section>
+
+          <section class="industry-sections" id="industry-sections"></section>
+
+          <section class="news-panel">
+            <div class="section-heading">
+              <div>
+                <h2>最新新闻</h2>
+                <p id="visible-count">已显示 0 条</p>
               </div>
             </div>
-          </div>
-        </section>
-
-        <div class="page-body">
-          <div class="container-xl">
-            <section class="kpi-strip" id="kpi-cards"></section>
-
-            <section class="intel-panel run-panel">
-              <div class="panel-header">
-                <div>
-                  <h2>本轮运行状态</h2>
-                  <p>数据生成、归档兜底与新鲜度概览</p>
-                </div>
+            <div class="filter-bar">
+              <div>
+                <span>产业链分类</span>
+                <div class="category-tabs" id="category-tabs"></div>
               </div>
-              <div class="run-status-grid" id="run-status"></div>
-            </section>
-
-            <section class="intel-panel company-panel">
-              <div class="panel-header panel-header-row">
-                <div>
-                  <h2>公司概览</h2>
-                  <p>按公司查看最新覆盖、兜底与异常状态</p>
-                </div>
-                <ul class="company-tabs" id="company-tabs"></ul>
-              </div>
-              <div class="company-grid" id="company-cards"></div>
-            </section>
-
-            <section class="intel-panel provider-panel">
-              <div class="panel-header">
-                <h2>数据源健康状态</h2>
-                <p>每家公司各 provider 的本轮结果</p>
-              </div>
-              <div class="provider-table-wrap">
-                <table class="provider-table" id="provider-table"></table>
-              </div>
-            </section>
-
-            <div class="content-grid">
-              <section class="intel-panel news-panel">
-                <div class="panel-header panel-header-row">
-                  <div>
-                    <h2>新闻流</h2>
-                    <p id="visible-count">已显示 0 条</p>
-                  </div>
-                </div>
-                <div class="filter-bar">
-                  <label>
-                    <span>公司</span>
-                    <select class="form-select" id="company-filter">
-                      <option value="all">全部公司</option>
-                    </select>
-                  </label>
-                  <label>
-                    <span>数据源</span>
-                    <select class="form-select" id="provider-filter">
-                      <option value="all">全部数据源</option>
-                    </select>
-                  </label>
-                  <label>
-                    <span>新鲜度</span>
-                    <select class="form-select" id="freshness-filter">
-                      <option value="all">全部状态</option>
-                      <option value="fresh">最新</option>
-                      <option value="stale">历史兜底</option>
-                    </select>
-                  </label>
-                  <button class="btn btn-outline-secondary" id="reset-filters" type="button">
-                    重置
-                  </button>
-                </div>
-                <div class="news-list" id="news-list"></div>
-              </section>
-
-              <aside class="intel-panel diagnostics-panel">
-                <div class="panel-header">
-                  <h2>异常与限流</h2>
-                  <p>429、缺密钥与源访问问题</p>
-                </div>
-                <div class="accordion accordion-flush diagnostics-list" id="error-accordion"></div>
-              </aside>
+              <label>
+                <span>公司</span>
+                <select class="form-select" id="company-filter">
+                  <option value="all">全部公司</option>
+                </select>
+              </label>
+              <button class="btn btn-outline-secondary" id="reset-filters" type="button">重置</button>
             </div>
-          </div>
+            <div class="news-list" id="news-list"></div>
+          </section>
+
+          <section class="diagnostics-panel">
+            <details>
+              <summary>
+                <span>
+                  <strong>系统诊断</strong>
+                  <em id="diagnostics-summary">数据源状态与访问异常</em>
+                </span>
+              </summary>
+              <div class="diagnostics-body">
+                <div class="provider-table-wrap">
+                  <table class="provider-table" id="provider-table"></table>
+                </div>
+                <div class="diagnostics-list" id="error-accordion"></div>
+              </div>
+            </details>
+          </section>
         </div>
-      </div>
+      </main>
     </div>
 
     <script src="./assets/vendor/tabler/tabler.min.js"></script>

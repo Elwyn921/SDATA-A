@@ -1,0 +1,53 @@
+name: Build Observable Dashboard
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+    paths:
+      - "observable/**"
+      - "observablehq.config.js"
+      - "package.json"
+      - "package-lock.json"
+      - "docs/data/news/latest/pipeline_result.json"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: observable-dashboard-build
+  cancel-in-progress: true
+
+jobs:
+  build-observable-dashboard:
+    runs-on: ubuntu-latest
+    env:
+      OBSERVABLE_TELEMETRY_DISABLE: "true"
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: npm
+
+      - name: Install frontend dependencies
+        run: npm ci
+
+      - name: Build Observable dashboard
+        run: npm run observable:build
+
+      - name: Commit built dashboard
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add docs/observable
+          if git diff --cached --quiet; then
+            echo "No Observable dashboard changes to commit."
+          else
+            git commit -m "chore: build observable dashboard"
+            git push
+          fi
