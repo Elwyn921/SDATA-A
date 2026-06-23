@@ -20,8 +20,7 @@ on:
         required: false
         default: ""
   schedule:
-    - cron: "0 */3 * * *"
-    - cron: "15,45 * * * *"
+    - cron: "0 */6 * * *"
 
 permissions:
   contents: write
@@ -75,26 +74,12 @@ jobs:
             if [ -n "${{ inputs.max_gdelt_queries }}" ]; then
               EXTRA_ARGS+=(--max-gdelt-queries "${{ inputs.max_gdelt_queries }}")
             fi
-          elif [ "${{ github.event.schedule }}" = "0 */3 * * *" ]; then
+          elif [ "${{ github.event.schedule }}" = "0 */6 * * *" ]; then
             EXTRA_ARGS+=(--provider-id rss_provider)
-            EXTRA_ARGS+=(--provider-id official_site_provider)
-            EXTRA_ARGS+=(--scheduled-slot "full-rss-official-$(date -u +'%Y-%m-%dT%H')")
+            EXTRA_ARGS+=(--scheduled-slot "rss-$(date -u +'%Y-%m-%dT%H')")
           else
-            companies=(spacex blue_origin yuanxin_satellite china_satnet)
-            utc_hour="$(date -u +'%H')"
-            utc_minute="$(date -u +'%M')"
-            half_hour=0
-            if [ "$utc_minute" -ge 30 ]; then
-              half_hour=1
-            fi
-            slot_index=$(( (10#$utc_hour * 2 + half_hour) % ${#companies[@]} ))
-            company_id="${companies[$slot_index]}"
-            scheduled_slot="gdelt-$(date -u +'%Y-%m-%dT%H%M')-${company_id}"
-
-            EXTRA_ARGS+=(--company-id "$company_id")
-            EXTRA_ARGS+=(--provider-id gdelt_provider)
-            EXTRA_ARGS+=(--scheduled-slot "$scheduled_slot")
-            EXTRA_ARGS+=(--max-gdelt-queries 1)
+            EXTRA_ARGS+=(--provider-id rss_provider)
+            EXTRA_ARGS+=(--scheduled-slot "rss-manual-fallback-$(date -u +'%Y-%m-%dT%H')")
           fi
 
           PYTHONPATH=src python3 -m satellite_news \
