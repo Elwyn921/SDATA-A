@@ -1,0 +1,96 @@
+{
+  "artifact_version": 1,
+  "companies": [
+    {
+      "company_id": "blue_origin",
+      "company_name": "Blue Origin",
+      "item_count": 50,
+      "status": "success"
+    },
+    {
+      "company_id": "cas_space",
+      "company_name": "中科宇航",
+      "item_count": 50,
+      "status": "success"
+    },
+    {
+      "company_id": "china_satnet",
+      "company_name": "中国星网",
+      "item_count": 50,
+      "status": "success"
+    },
+    {
+      "company_id": "galactic_energy",
+      "company_name": "星河动力",
+      "item_count": 50,
+      "status": "success"
+    },
+    {
+      "company_id": "galaxyspace",
+      "company_name": "银河航天",
+      "item_count": 50,
+      "status": "success"
+    },
+    {
+      "company_id": "hongqing_technology",
+      "company_name": "蓝箭鸿擎",
+      "item_count": 12,
+      "status": "success"
+    },
+    {
+      "company_id": "i_space",
+      "company_name": "星际荣耀",
+      "item_count": 50,
+      "status": "success"
+    },
+    {
+      "company_id": "landspace",
+      "company_name": "蓝箭航天",
+      "item_count": 50,
+      "status": "success"
+    },
+    {
+      "company_id": "minospace",
+      "company_name": "微纳星空",
+      "item_count": 50,
+      "status": "success"
+    },
+    {
+      "company_id": "space_pioneer",
+      "company_name": "天兵科技",
+      "item_count": 50,
+      "status": "success"
+    },
+    {
+      "company_id": "spacex",
+      "company_name": "SpaceX",
+      "item_count": 50,
+      "status": "success"
+    },
+    {
+      "company_id": "yuanxin_satellite",
+      "company_name": "垣信卫星",
+      "item_count": 50,
+      "status": "success"
+    },
+    {
+      "company_id": "yushi_space",
+      "company_name": "宇石空间",
+      "item_count": 22,
+      "status": "success"
+    }
+  ],
+  "config_dir": "config",
+  "dry_run": false,
+  "export_count": 0,
+  "fetch_status_count": 13,
+  "finished_at": "2026-06-23T08:08:31.793206Z",
+  "generated_at": "2026-06-23T08:08:31.793206Z",
+  "item_count": 584,
+  "output_dir": "data/news/latest",
+  "run_id": "43556ecc-5248-4c7e-8047-bac86066ef04",
+  "schema_version": "satellite_news.v1",
+  "started_at": "2026-06-23T08:08:30.838923Z",
+  "summary_count": 0,
+  "warnings": []
+}

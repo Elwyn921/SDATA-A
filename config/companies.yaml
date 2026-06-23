@@ -356,6 +356,603 @@ companies:
     enabled: true
     priority: high
 
+  - id: landspace
+    canonical_name: 蓝箭航天
+    aliases:
+      - 蓝箭航天空间科技股份有限公司
+      - LandSpace
+      - LandSpace Technology
+      - LandSpace Technology Corporation
+      - Zhuque
+      - 朱雀
+    country_or_region: China
+    country_code: CN
+    headquarters: Beijing, China
+    ownership_type: private_commercial
+    primary_programs:
+      - 朱雀二号
+      - 朱雀三号
+      - Zhuque-2
+      - Zhuque-3
+      - ZQ-2
+      - ZQ-3
+    sector_tags:
+      - launch_services
+      - reusable_launch
+      - launch_vehicle_manufacturing
+      - propulsion
+      - methane_launch_vehicle
+      - commercial_space
+    keywords:
+      include:
+        - LandSpace
+        - Zhuque
+        - Zhuque-2
+        - Zhuque-3
+        - ZQ-2
+        - ZQ-3
+        - methane rocket
+        - reusable rocket
+      zh_include:
+        - 蓝箭航天
+        - 蓝箭航天空间科技
+        - 朱雀二号
+        - 朱雀三号
+        - 液氧甲烷
+        - 可重复使用火箭
+        - 商业火箭
+      exclude_when_unqualified:
+        - 蓝箭
+        - 朱雀门
+        - 朱雀桥
+    industry_chain:
+      chain_roles:
+        - launch_provider
+        - launch_vehicle_manufacturer
+        - propulsion_supplier
+        - reusable_launch_developer
+      orbit_focus:
+        - LEO
+        - SSO
+      value_chain_stage:
+        upstream:
+          - propulsion
+          - launch_vehicle
+        midstream:
+          - launch_operations
+          - reusable_launch_operations
+        downstream:
+          - commercial_launch_services
+          - constellation_deployment
+    enabled: true
+    priority: high
+
+  - id: cas_space
+    canonical_name: 中科宇航
+    aliases:
+      - 中科宇航技术股份有限公司
+      - CAS Space
+      - CASSPACE
+      - Guangzhou Zhongke Aerospace Exploration Technology
+      - Kinetica
+      - Lijian
+      - 力箭
+    country_or_region: China
+    country_code: CN
+    headquarters: Guangzhou, Guangdong, China
+    ownership_type: state_backed_commercial
+    primary_programs:
+      - 力箭一号
+      - 力箭二号
+      - Lijian-1
+      - Lijian-2
+      - Kinetica-1
+      - Kinetica-2
+    sector_tags:
+      - launch_services
+      - launch_vehicle_manufacturing
+      - commercial_space
+      - space_transport
+      - state_backed_commercial
+    keywords:
+      include:
+        - CAS Space
+        - CASSPACE
+        - Lijian
+        - Kinetica
+        - Kinetica-1
+        - Kinetica-2
+      zh_include:
+        - 中科宇航
+        - 力箭
+        - 力箭一号
+        - 力箭二号
+        - 商业火箭
+        - 中国科学院力学所
+      exclude_when_unqualified:
+        - 中国科学院
+        - 中科院
+        - 力箭体育
+    industry_chain:
+      chain_roles:
+        - launch_provider
+        - launch_vehicle_manufacturer
+        - commercial_launch_operator
+      orbit_focus:
+        - LEO
+        - SSO
+      value_chain_stage:
+        upstream:
+          - launch_vehicle
+          - rocket_manufacturing
+        midstream:
+          - launch_operations
+          - payload_integration
+        downstream:
+          - commercial_launch_services
+          - space_experiment_services
+    enabled: true
+    priority: high
+
+  - id: space_pioneer
+    canonical_name: 天兵科技
+    aliases:
+      - 北京天兵科技有限公司
+      - Space Pioneer
+      - Beijing Space Pioneer Technology
+      - Tianbing Technology
+      - 天龙
+      - Tianlong
+    country_or_region: China
+    country_code: CN
+    headquarters: Beijing, China
+    ownership_type: private_commercial
+    primary_programs:
+      - 天龙二号
+      - 天龙三号
+      - Tianlong-2
+      - Tianlong-3
+      - TL-2
+      - TL-3
+    sector_tags:
+      - launch_services
+      - reusable_launch
+      - launch_vehicle_manufacturing
+      - propulsion
+      - commercial_space
+    keywords:
+      include:
+        - Space Pioneer
+        - Tianlong
+        - Tianlong-2
+        - Tianlong-3
+        - TL-2
+        - TL-3
+        - reusable rocket
+      zh_include:
+        - 天兵科技
+        - 天龙二号
+        - 天龙三号
+        - 天龙系列
+        - 可重复使用火箭
+        - 商业发射
+      exclude_when_unqualified:
+        - 天兵
+        - 天兵天将
+        - pioneer space
+    industry_chain:
+      chain_roles:
+        - launch_provider
+        - launch_vehicle_manufacturer
+        - propulsion_supplier
+        - reusable_launch_developer
+      orbit_focus:
+        - LEO
+        - SSO
+      value_chain_stage:
+        upstream:
+          - propulsion
+          - launch_vehicle
+        midstream:
+          - launch_operations
+          - payload_integration
+        downstream:
+          - commercial_launch_services
+          - constellation_deployment
+    enabled: true
+    priority: high
+
+  - id: i_space
+    canonical_name: 星际荣耀
+    aliases:
+      - 星际荣耀航天科技集团
+      - 北京星际荣耀空间科技股份有限公司
+      - i-Space
+      - iSpace
+      - Interstellar Glory
+      - Space Honor
+      - Hyperbola
+      - SQX
+    country_or_region: China
+    country_code: CN
+    headquarters: Beijing, China
+    ownership_type: private_commercial
+    primary_programs:
+      - 双曲线一号
+      - 双曲线二号
+      - Hyperbola-1
+      - Hyperbola-2
+      - SQX-1
+      - SQX-2
+    sector_tags:
+      - launch_services
+      - reusable_launch
+      - launch_vehicle_manufacturing
+      - commercial_space
+    keywords:
+      include:
+        - i-Space
+        - iSpace
+        - Interstellar Glory
+        - Space Honor
+        - Hyperbola
+        - Hyperbola-1
+        - Hyperbola-2
+        - SQX
+      zh_include:
+        - 星际荣耀
+        - 星际荣耀航天
+        - 双曲线
+        - 双曲线一号
+        - 双曲线二号
+        - 可重复使用火箭
+      exclude_when_unqualified:
+        - ispace lunar
+        - ispace inc
+        - 荣耀手机
+    industry_chain:
+      chain_roles:
+        - launch_provider
+        - launch_vehicle_manufacturer
+        - reusable_launch_developer
+      orbit_focus:
+        - LEO
+        - SSO
+      value_chain_stage:
+        upstream:
+          - launch_vehicle
+          - rocket_manufacturing
+        midstream:
+          - launch_operations
+          - reusable_launch_testing
+        downstream:
+          - commercial_launch_services
+          - constellation_deployment
+    enabled: true
+    priority: high
+
+  - id: galactic_energy
+    canonical_name: 星河动力
+    aliases:
+      - 星河动力航天
+      - 星河动力航天科技股份有限公司
+      - Galactic Energy
+      - Galactic Energy Aerospace
+      - Ceres
+      - Pallas
+    country_or_region: China
+    country_code: CN
+    headquarters: Beijing, China
+    ownership_type: private_commercial
+    primary_programs:
+      - 谷神星一号
+      - 智神星一号
+      - Ceres-1
+      - Pallas-1
+    sector_tags:
+      - launch_services
+      - reusable_launch
+      - launch_vehicle_manufacturing
+      - propulsion
+      - commercial_space
+    keywords:
+      include:
+        - Galactic Energy
+        - Galactic Energy Aerospace
+        - Ceres-1
+        - Pallas-1
+        - reusable rocket
+      zh_include:
+        - 星河动力
+        - 星河动力航天
+        - 谷神星一号
+        - 智神星一号
+        - 可重复使用火箭
+        - 商业火箭
+      exclude_when_unqualified:
+        - galactic energy game
+        - galaxy energy
+        - 星河战队
+    industry_chain:
+      chain_roles:
+        - launch_provider
+        - launch_vehicle_manufacturer
+        - propulsion_supplier
+        - reusable_launch_developer
+      orbit_focus:
+        - LEO
+        - SSO
+      value_chain_stage:
+        upstream:
+          - propulsion
+          - launch_vehicle
+        midstream:
+          - launch_operations
+          - reusable_launch_testing
+        downstream:
+          - commercial_launch_services
+          - constellation_deployment
+    enabled: true
+    priority: high
+
+  - id: yushi_space
+    canonical_name: 宇石空间
+    aliases:
+      - 北京宇石空间航天科技有限公司
+      - 宇石空间航天科技有限公司
+      - AstronStone
+      - ASTONE
+      - AS-VISION
+    country_or_region: China
+    country_code: CN
+    headquarters: Beijing, China
+    ownership_type: private_commercial
+    primary_programs:
+      - AS-1
+      - 太空安卓
+      - AS-VISION
+    sector_tags:
+      - launch_services
+      - reusable_launch
+      - launch_vehicle_manufacturing
+      - methane_launch_vehicle
+      - commercial_space
+      - early_stage_company
+    keywords:
+      include:
+        - AstronStone
+        - ASTONE
+        - AS-1
+        - reusable rocket
+        - stainless steel rocket
+      zh_include:
+        - 宇石空间
+        - 北京宇石空间
+        - AS-1
+        - 不锈钢火箭
+        - 可重复使用火箭
+        - 筷子捕获臂
+        - 太空安卓
+        - 液氧甲烷
+      exclude_when_unqualified:
+        - 玉石
+        - 陨石
+        - 宇石
+    industry_chain:
+      chain_roles:
+        - launch_provider
+        - launch_vehicle_manufacturer
+        - reusable_launch_developer
+      orbit_focus:
+        - LEO
+      value_chain_stage:
+        upstream:
+          - launch_vehicle
+          - rocket_manufacturing
+        midstream:
+          - launch_operations
+          - reusable_launch_testing
+        downstream:
+          - commercial_launch_services
+          - space_transport_platform
+    enabled: true
+    priority: medium
+
+  - id: hongqing_technology
+    canonical_name: 蓝箭鸿擎
+    aliases:
+      - 鸿擎科技
+      - 北京蓝箭鸿擎科技有限公司
+      - LandSpace Hongqing
+      - Hongqing Technology
+      - Hongqing
+      - 橄榄叶计划
+      - 鸿鹄系列
+    country_or_region: China
+    country_code: CN
+    headquarters: Beijing, China
+    ownership_type: private_commercial
+    primary_programs:
+      - 卫星组网
+      - 平板卫星
+      - 鸿鹄系列
+      - 橄榄叶计划
+    sector_tags:
+      - satellite_manufacturing
+      - satellite_internet
+      - leo_constellation
+      - satellite_payload
+      - constellation_deployment
+      - commercial_space
+    keywords:
+      include:
+        - LandSpace Hongqing
+        - Hongqing Technology
+        - Hongqing
+        - flat satellite
+        - satellite networking
+      zh_include:
+        - 蓝箭鸿擎
+        - 鸿擎科技
+        - 北京蓝箭鸿擎
+        - 卫星组网
+        - 平板卫星
+        - 星箭协同
+        - 鸿鹄系列
+        - 橄榄叶计划
+      exclude_when_unqualified:
+        - 鸿庆
+        - 红旗
+        - 擎天柱
+    industry_chain:
+      chain_roles:
+        - satellite_manufacturer
+        - constellation_solution_provider
+        - payload_supplier
+        - satellite_platform_provider
+      orbit_focus:
+        - LEO
+      value_chain_stage:
+        upstream:
+          - satellite_components
+          - satellite_platform
+        midstream:
+          - satellite_manufacturing
+          - constellation_deployment
+        downstream:
+          - satellite_internet_infrastructure
+          - constellation_services
+    enabled: true
+    priority: high
+
+  - id: galaxyspace
+    canonical_name: 银河航天
+    aliases:
+      - 银河航天科技有限公司
+      - GalaxySpace
+      - Galaxy Space
+      - GalaxySpace Limited
+      - 银河空间
+    country_or_region: China
+    country_code: CN
+    headquarters: Beijing, China
+    ownership_type: private_commercial
+    primary_programs:
+      - 低轨宽带通信卫星
+      - 卫星互联网
+      - 通信载荷
+      - 低成本卫星量产
+    sector_tags:
+      - satellite_manufacturing
+      - satellite_internet
+      - leo_constellation
+      - communications_payload
+      - satellite_platform
+      - commercial_space
+    keywords:
+      include:
+        - GalaxySpace
+        - Galaxy Space
+        - broadband satellite
+        - satellite internet
+        - communications payload
+      zh_include:
+        - 银河航天
+        - 银河空间
+        - 卫星互联网
+        - 低轨宽带通信卫星
+        - 通信载荷
+        - 卫星制造
+        - 低成本量产
+      exclude_when_unqualified:
+        - 银河
+        - galaxy phone
+        - galaxy space game
+    industry_chain:
+      chain_roles:
+        - satellite_manufacturer
+        - communications_payload_supplier
+        - satellite_platform_provider
+        - satellite_internet_solution_provider
+      orbit_focus:
+        - LEO
+      value_chain_stage:
+        upstream:
+          - payload
+          - satellite_platform
+        midstream:
+          - satellite_manufacturing
+          - constellation_deployment
+        downstream:
+          - broadband_connectivity
+          - satellite_internet_services
+    enabled: true
+    priority: high
+
+  - id: minospace
+    canonical_name: 微纳星空
+    aliases:
+      - 北京微纳星空科技股份有限公司
+      - 北京微纳星空科技有限公司
+      - MinoSpace
+      - MinoSpace Technology
+      - Minospace
+    country_or_region: China
+    country_code: CN
+    headquarters: Beijing, China
+    ownership_type: private_commercial
+    primary_programs:
+      - 商业卫星
+      - 整星研制
+      - 卫星平台
+      - 地面站产品
+    sector_tags:
+      - satellite_manufacturing
+      - satellite_platform
+      - satellite_components
+      - ground_segment
+      - commercial_space
+    keywords:
+      include:
+        - MinoSpace
+        - MinoSpace Technology
+        - commercial satellite
+        - satellite platform
+        - satellite manufacturing
+      zh_include:
+        - 微纳星空
+        - 北京微纳星空
+        - 卫星制造
+        - 商业卫星
+        - 整星研制
+        - 卫星平台
+        - 地面站
+      exclude_when_unqualified:
+        - 微纳
+        - 星空摄影
+        - mino
+    industry_chain:
+      chain_roles:
+        - satellite_manufacturer
+        - satellite_platform_provider
+        - ground_segment_supplier
+        - satellite_system_integrator
+      orbit_focus:
+        - LEO
+        - SSO
+      value_chain_stage:
+        upstream:
+          - satellite_components
+          - satellite_platform
+        midstream:
+          - satellite_manufacturing
+          - satellite_integration
+        downstream:
+          - ground_segment
+          - mission_delivery
+    enabled: true
+    priority: high
+
 mapping_expansion:
   source: Satellite industry chain Mapping table
   status: reserved

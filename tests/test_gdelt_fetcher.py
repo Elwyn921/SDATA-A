@@ -283,8 +283,15 @@ def test_pipeline_builds_gdelt_fetcher_from_source_options():
     assert fetcher.transport.backoff_seconds == 90.0
 
 
-def test_pipeline_maps_gdelt_results_for_all_four_companies_with_mock_transport():
-    class FourCompanyTransport:
+def test_pipeline_maps_gdelt_results_for_fixture_companies_with_mock_transport():
+    fixture_company_ids = {
+        "spacex",
+        "blue_origin",
+        "yuanxin_satellite",
+        "china_satnet",
+    }
+
+    class FixtureCompanyTransport:
         def search(self, request):
             title_by_company = {
                 "spacex": "SpaceX Starlink launch update",
@@ -303,37 +310,31 @@ def test_pipeline_maps_gdelt_results_for_all_four_companies_with_mock_transport(
                 ]
             }
 
-    companies = load_companies(Path("config/companies.yaml"))
+    companies = tuple(
+        company
+        for company in load_companies(Path("config/companies.yaml"))
+        if company.id in fixture_company_ids
+    )
     sources = tuple(
         source
         for source in load_sources(Path("config/sources.yaml"))
         if source.type is SourceType.GDELT
     )
     context = PipelineContext(
-        run_id="four-company-mock",
+        run_id="fixture-company-mock",
         started_at=datetime(2026, 6, 12, tzinfo=timezone.utc),
         dry_run=False,
     )
 
-    result = Pipeline(fetcher=GDELTFetcher(transport=FourCompanyTransport())).run(
+    result = Pipeline(fetcher=GDELTFetcher(transport=FixtureCompanyTransport())).run(
         companies=companies,
         sources=sources,
         context=context,
     )
 
-    assert {item.company_id for item in result.items} == {
-        "spacex",
-        "blue_origin",
-        "yuanxin_satellite",
-        "china_satnet",
-    }
+    assert {item.company_id for item in result.items} == fixture_company_ids
     assert all(item.source.source_type is SourceType.GDELT for item in result.items)
-    assert {row["company_id"] for row in result.fetch_statuses} == {
-        "spacex",
-        "blue_origin",
-        "yuanxin_satellite",
-        "china_satnet",
-    }
+    assert {row["company_id"] for row in result.fetch_statuses} == fixture_company_ids
     assert {row["final_status"] for row in result.fetch_statuses} == {"success"}
 
 

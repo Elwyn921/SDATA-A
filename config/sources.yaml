@@ -1,6 +1,5 @@
 schema_version: sources.v1
 description: Source registry only. This file registers candidate sources and adapter metadata; it must not trigger crawling or API calls.
-
 defaults:
   language:
     - en
@@ -9,8 +8,7 @@ defaults:
   max_items_per_company: 20
   enabled: true
   collection_mode: registry_only
-  last_registry_reviewed_at: "2026-06-15"
-
+  last_registry_reviewed_at: '2026-06-15'
 provider_defaults:
   enabled: true
   priority: 100
@@ -18,13 +16,11 @@ provider_defaults:
   output_schema:
     raw: RawArticle
     normalized: NewsItem
-
 provider_execution_policy:
   no_real_fetch_in_a1: true
   providers_are_contracts_only: true
   provider_ordering: priority_ascending
   fallback_behavior: configured_per_provider
-
 providers:
   - id: rss_provider
     type: rss
@@ -47,10 +43,6 @@ providers:
       spacex:
         priority: 10
         feeds:
-          - https://spacenews.com/feed/
-          - https://spaceflightnow.com/feed/
-          - https://payloadspace.com/feed/
-          - https://www.nasa.gov/news-release/feed/
           - https://news.google.com/rss/search?q=SpaceX%20Starlink%20satellite%20launch&hl=en-US&gl=US&ceid=US:en
           - https://news.google.com/rss/search?q=SpaceX%20Starshield%20direct%20to%20cell&hl=en-US&gl=US&ceid=US:en
           - https://news.google.com/rss/search?q=SpaceX%20Falcon%209%20Starlink%20satellites&hl=en-US&gl=US&ceid=US:en
@@ -58,10 +50,6 @@ providers:
           - https://www.bing.com/news/search?q=SpaceX+Starlink&format=rss
           - https://www.bing.com/news/search?q=SpaceX+Starshield+direct+to+cell&format=rss
           - https://www.bing.com/news/search?q=Falcon+9+Starlink+satellites&format=rss
-          - https://feeds.arstechnica.com/arstechnica/space
-          - https://www.theregister.com/headlines.atom
-          - https://www.fierce-network.com/rss/xml
-          - https://www.fierce-wireless.com/rss/xml
         query_templates:
           - SpaceX Starlink satellite
           - SpaceX Starshield direct to cell
@@ -71,14 +59,35 @@ providers:
           - Starshield
           - Falcon 9
           - Starship
-      blue_origin:
-        priority: 10
-        feeds:
+        disabled_feeds:
+          - https://feeds.arstechnica.com/arstechnica/space
+          - https://www.fierce-wireless.com/rss/xml
+        low_priority_feeds:
           - https://spacenews.com/feed/
           - https://spaceflightnow.com/feed/
           - https://payloadspace.com/feed/
           - https://www.nasa.gov/news-release/feed/
-          - https://www.nasa.gov/rss/dyn/breaking_news.rss
+          - https://www.theregister.com/headlines.atom
+          - https://www.fierce-network.com/rss/xml
+        match_policy: strict_company_keyword_required
+        required_keywords_any:
+          - SpaceX
+          - Starlink
+          - Starship
+          - Falcon
+          - Starshield
+        reject_if_only_generic_terms:
+          - satellite
+          - launch
+          - space
+          - NASA
+          - Artemis
+        source_notes:
+          - A3 observed generic NASA/Artemis bleed; generic industry RSS moved to low_priority_feeds.
+          - Active RSS should require SpaceX/Starlink/Starship/Falcon/Starshield, not generic satellite/launch/space terms alone.
+      blue_origin:
+        priority: 10
+        feeds:
           - https://news.google.com/rss/search?q=Blue%20Origin%20New%20Glenn%20Blue%20Ring%20satellite&hl=en-US&gl=US&ceid=US:en
           - https://news.google.com/rss/search?q=%22Blue%20Origin%22%20%22New%20Glenn%22&hl=en-US&gl=US&ceid=US:en
           - https://news.google.com/rss/search?q=%22Blue%20Origin%22%20%22Blue%20Ring%22%20TeraWave&hl=en-US&gl=US&ceid=US:en
@@ -88,10 +97,6 @@ providers:
           - https://www.bing.com/news/search?q=Blue+Origin+New+Glenn&format=rss
           - https://www.bing.com/news/search?q=Blue+Origin+Blue+Ring+TeraWave&format=rss
           - https://www.bing.com/news/search?q=Blue+Origin+BE-4+engine&format=rss
-          - https://feeds.arstechnica.com/arstechnica/space
-          - https://www.theregister.com/headlines.atom
-          - https://www.fierce-network.com/rss/xml
-          - https://www.fierce-wireless.com/rss/xml
         query_templates:
           - Blue Origin New Glenn satellite
           - Blue Origin Blue Ring TeraWave
@@ -101,6 +106,34 @@ providers:
           - New Shepard
           - Blue Ring
           - TeraWave
+          - BE-4
+        disabled_feeds:
+          - https://feeds.arstechnica.com/arstechnica/space
+          - https://www.fierce-wireless.com/rss/xml
+        low_priority_feeds:
+          - https://spacenews.com/feed/
+          - https://spaceflightnow.com/feed/
+          - https://payloadspace.com/feed/
+          - https://www.nasa.gov/news-release/feed/
+          - https://www.nasa.gov/rss/dyn/breaking_news.rss
+          - https://www.theregister.com/headlines.atom
+          - https://www.fierce-network.com/rss/xml
+        match_policy: strict_company_keyword_required
+        required_keywords_any:
+          - Blue Origin
+          - New Glenn
+          - New Shepard
+          - Blue Ring
+          - BE-4
+        reject_if_only_generic_terms:
+          - satellite
+          - launch
+          - space
+          - NASA
+          - Artemis
+        source_notes:
+          - A3 observed SpaceNews/general-space bleed; generic industry RSS moved to low_priority_feeds.
+          - Active RSS should require Blue Origin/New Glenn/New Shepard/Blue Ring/BE-4, not generic satellite/launch/space terms alone.
       yuanxin_satellite:
         priority: 10
         feeds:
@@ -123,13 +156,7 @@ providers:
           - https://news.google.com/rss/search?q=SpaceSail%20Qianfan%20satellite&hl=en-US&gl=US&ceid=US:en
           - https://news.google.com/rss/search?q=Thousand%20Sails%20SpaceSail%20constellation&hl=en-US&gl=US&ceid=US:en
           - https://news.google.com/rss/search?q=Shanghai%20SpaceSail%20satellite&hl=en-US&gl=US&ceid=US:en
-          - https://www.bing.com/news/search?q=%E5%9E%A3%E4%BF%A1%E5%8D%AB%E6%98%9F+%E5%8D%83%E5%B8%86%E6%98%9F%E5%BA%A7&format=rss
-          - https://www.bing.com/news/search?q=%E4%B8%8A%E6%B5%B7%E5%9E%A3%E4%BF%A1+G60+%E6%98%9F%E9%93%BE&format=rss
           - https://www.bing.com/news/search?q=SpaceSail+Qianfan+satellite&format=rss
-          - https://www.bing.com/news/search?q=%E4%BD%8E%E8%BD%A8%E5%8D%AB%E6%98%9F%E4%BA%92%E8%81%94%E7%BD%91+%E5%8D%83%E5%B8%86%E6%98%9F%E5%BA%A7&format=rss
-          - https://feeds.feedburner.com/36kr
-          - https://www.geekpark.net/rss
-          - https://www.huxiu.com/rss/0.xml
           - https://www.fierce-network.com/rss/xml
         query_templates:
           - 垣信卫星 千帆星座
@@ -140,6 +167,15 @@ providers:
           - 千帆星座
           - SpaceSail
           - Thousand Sails
+        fallback_feeds:
+          - https://www.bing.com/news/search?q=%E5%9E%A3%E4%BF%A1%E5%8D%AB%E6%98%9F+%E5%8D%83%E5%B8%86%E6%98%9F%E5%BA%A7&format=rss
+          - https://www.bing.com/news/search?q=%E4%B8%8A%E6%B5%B7%E5%9E%A3%E4%BF%A1+G60+%E6%98%9F%E9%93%BE&format=rss
+          - https://www.bing.com/news/search?q=%E4%BD%8E%E8%BD%A8%E5%8D%AB%E6%98%9F%E4%BA%92%E8%81%94%E7%BD%91+%E5%8D%83%E5%B8%86%E6%98%9F%E5%BA%A7&format=rss
+        fallback_feed_policy: low_priority_only; Chinese Bing News RSS returned sparse/zero results in A3 validation.
+        disabled_feeds:
+          - https://feeds.feedburner.com/36kr
+          - https://www.geekpark.net/rss
+          - https://www.huxiu.com/rss/0.xml
       china_satnet:
         priority: 10
         feeds:
@@ -161,13 +197,7 @@ providers:
           - https://news.google.com/rss/search?q=China%20SatNet%20Guowang%20satellite%20constellation&hl=en-US&gl=US&ceid=US:en
           - https://news.google.com/rss/search?q=China%20SatNet%20Guowang%20satellite&hl=en-US&gl=US&ceid=US:en
           - https://news.google.com/rss/search?q=China%20Satellite%20Network%20Group%20constellation&hl=en-US&gl=US&ceid=US:en
-          - https://www.bing.com/news/search?q=%E4%B8%AD%E5%9B%BD%E6%98%9F%E7%BD%91+%E5%9B%BD%E7%BD%91%E6%98%9F%E5%BA%A7&format=rss
-          - https://www.bing.com/news/search?q=%E4%B8%AD%E5%9B%BD%E5%8D%AB%E6%98%9F%E7%BD%91%E7%BB%9C%E9%9B%86%E5%9B%A2+%E5%8D%AB%E6%98%9F%E4%BA%92%E8%81%94%E7%BD%91&format=rss
           - https://www.bing.com/news/search?q=China+SatNet+Guowang+satellite+constellation&format=rss
-          - https://www.bing.com/news/search?q=%E4%BD%8E%E8%BD%A8%E6%98%9F%E5%BA%A7+%E4%B8%AD%E5%9B%BD%E6%98%9F%E7%BD%91&format=rss
-          - https://feeds.feedburner.com/36kr
-          - https://www.geekpark.net/rss
-          - https://www.huxiu.com/rss/0.xml
           - https://www.fierce-network.com/rss/xml
         query_templates:
           - 中国星网 国网星座
@@ -178,28 +208,387 @@ providers:
           - 国网星座
           - China SatNet
           - Guowang
-    feeds:
+        fallback_feeds:
+          - https://www.bing.com/news/search?q=%E4%B8%AD%E5%9B%BD%E6%98%9F%E7%BD%91+%E5%9B%BD%E7%BD%91%E6%98%9F%E5%BA%A7&format=rss
+          - https://www.bing.com/news/search?q=%E4%B8%AD%E5%9B%BD%E5%8D%AB%E6%98%9F%E7%BD%91%E7%BB%9C%E9%9B%86%E5%9B%A2+%E5%8D%AB%E6%98%9F%E4%BA%92%E8%81%94%E7%BD%91&format=rss
+          - https://www.bing.com/news/search?q=%E4%BD%8E%E8%BD%A8%E6%98%9F%E5%BA%A7+%E4%B8%AD%E5%9B%BD%E6%98%9F%E7%BD%91&format=rss
+        fallback_feed_policy: low_priority_only; Chinese Bing News RSS returned sparse/zero results in A3 validation.
+        disabled_feeds:
+          - https://feeds.feedburner.com/36kr
+          - https://www.geekpark.net/rss
+          - https://www.huxiu.com/rss/0.xml
+      landspace:
+        priority: 10
+        verification_status: rss_candidate_pool_registered
+        authority: mixed_media_and_search_rss
+        feeds:
+          - https://spacenews.com/feed/
+          - https://spaceflightnow.com/feed/
+          - https://payloadspace.com/feed/
+          - https://www.nasa.gov/news-release/feed/
+          - https://www.theregister.com/headlines.atom
+          - https://www.fierce-network.com/rss/xml
+          - https://news.google.com/rss/search?q=%E8%93%9D%E7%AE%AD%E8%88%AA%E5%A4%A9%20%E6%9C%B1%E9%9B%80%E4%BA%8C%E5%8F%B7%20%E6%9C%B1%E9%9B%80%E4%B8%89%E5%8F%B7&hl=zh-CN&gl=CN&ceid=CN:zh-Hans
+          - https://news.google.com/rss/search?q=LandSpace%20Zhuque%20ZQ-2%20ZQ-3&hl=en-US&gl=US&ceid=US:en
+          - https://news.google.com/rss/search?q=%E6%B6%B2%E6%B0%A7%E7%94%B2%E7%83%B7%20%E5%8F%AF%E9%87%8D%E5%A4%8D%E4%BD%BF%E7%94%A8%E7%81%AB%E7%AE%AD%20%E8%93%9D%E7%AE%AD%E8%88%AA%E5%A4%A9&hl=zh-CN&gl=CN&ceid=CN:zh-Hans
+          - https://www.bing.com/news/search?q=LandSpace+Zhuque+ZQ-2+ZQ-3&format=rss
+        query_templates:
+          - 蓝箭航天 朱雀二号 朱雀三号
+          - LandSpace Zhuque ZQ-2 ZQ-3
+        keywords:
+          - 蓝箭航天
+          - LandSpace
+          - 朱雀二号
+          - 朱雀三号
+          - ZQ-2
+          - ZQ-3
+          - 液氧甲烷
+          - 可重复使用火箭
+        source_notes:
+          - Wide-path RSS candidate pool; A3 should verify feed accessibility and dedupe behavior.
+          - Includes global space media, Chinese tech/business media, Google News RSS, and Bing News RSS.
+        fallback_feeds:
+          - https://www.bing.com/news/search?q=%E8%93%9D%E7%AE%AD%E8%88%AA%E5%A4%A9+%E6%9C%B1%E9%9B%80%E4%BA%8C%E5%8F%B7+%E6%9C%B1%E9%9B%80%E4%B8%89%E5%8F%B7&format=rss
+        fallback_feed_policy: low_priority_only; Chinese Bing News RSS returned sparse/zero results in A3 validation.
+        disabled_feeds:
+          - https://feeds.arstechnica.com/arstechnica/space
+          - https://feeds.feedburner.com/36kr
+          - https://www.geekpark.net/rss
+          - https://www.huxiu.com/rss/0.xml
+      cas_space:
+        priority: 10
+        verification_status: rss_candidate_pool_registered
+        authority: mixed_media_and_search_rss
+        feeds:
+          - https://spacenews.com/feed/
+          - https://spaceflightnow.com/feed/
+          - https://payloadspace.com/feed/
+          - https://www.nasa.gov/news-release/feed/
+          - https://www.theregister.com/headlines.atom
+          - https://www.fierce-network.com/rss/xml
+          - https://news.google.com/rss/search?q=%E4%B8%AD%E7%A7%91%E5%AE%87%E8%88%AA%20%E5%8A%9B%E7%AE%AD%E4%B8%80%E5%8F%B7%20%E5%8A%9B%E7%AE%AD%E4%BA%8C%E5%8F%B7&hl=zh-CN&gl=CN&ceid=CN:zh-Hans
+          - https://news.google.com/rss/search?q=CAS%20Space%20Lijian%20Kinetica&hl=en-US&gl=US&ceid=US:en
+          - https://news.google.com/rss/search?q=%E5%8A%9B%E7%AE%AD%20%E4%B8%AD%E7%A7%91%E5%AE%87%E8%88%AA%20%E5%95%86%E4%B8%9A%E7%81%AB%E7%AE%AD&hl=zh-CN&gl=CN&ceid=CN:zh-Hans
+          - https://www.bing.com/news/search?q=CAS+Space+Lijian+Kinetica&format=rss
+        query_templates:
+          - 中科宇航 力箭一号 力箭二号
+          - CAS Space Lijian Kinetica
+        keywords:
+          - 中科宇航
+          - CAS Space
+          - 力箭
+          - Lijian
+          - Kinetica
+          - 力箭一号
+          - 力箭二号
+        source_notes:
+          - Wide-path RSS candidate pool; A3 should verify feed accessibility and dedupe behavior.
+          - Includes global space media, Chinese tech/business media, Google News RSS, and Bing News RSS.
+        fallback_feeds:
+          - https://www.bing.com/news/search?q=%E4%B8%AD%E7%A7%91%E5%AE%87%E8%88%AA+%E5%8A%9B%E7%AE%AD%E4%B8%80%E5%8F%B7+%E5%8A%9B%E7%AE%AD%E4%BA%8C%E5%8F%B7&format=rss
+        fallback_feed_policy: low_priority_only; Chinese Bing News RSS returned sparse/zero results in A3 validation.
+        disabled_feeds:
+          - https://feeds.arstechnica.com/arstechnica/space
+          - https://feeds.feedburner.com/36kr
+          - https://www.geekpark.net/rss
+          - https://www.huxiu.com/rss/0.xml
+      space_pioneer:
+        priority: 10
+        verification_status: rss_candidate_pool_registered
+        authority: mixed_media_and_search_rss
+        feeds:
+          - https://spacenews.com/feed/
+          - https://spaceflightnow.com/feed/
+          - https://payloadspace.com/feed/
+          - https://www.nasa.gov/news-release/feed/
+          - https://www.theregister.com/headlines.atom
+          - https://www.fierce-network.com/rss/xml
+          - https://news.google.com/rss/search?q=%E5%A4%A9%E5%85%B5%E7%A7%91%E6%8A%80%20%E5%A4%A9%E9%BE%99%E4%BA%8C%E5%8F%B7%20%E5%A4%A9%E9%BE%99%E4%B8%89%E5%8F%B7&hl=zh-CN&gl=CN&ceid=CN:zh-Hans
+          - https://news.google.com/rss/search?q=Space%20Pioneer%20Tianlong%20TL-2%20TL-3&hl=en-US&gl=US&ceid=US:en
+          - https://news.google.com/rss/search?q=%E5%A4%A9%E9%BE%99%E4%B8%89%E5%8F%B7%20%E5%8F%AF%E9%87%8D%E5%A4%8D%E4%BD%BF%E7%94%A8%E7%81%AB%E7%AE%AD%20%E5%A4%A9%E5%85%B5%E7%A7%91%E6%8A%80&hl=zh-CN&gl=CN&ceid=CN:zh-Hans
+          - https://www.bing.com/news/search?q=Space+Pioneer+Tianlong+TL-2+TL-3&format=rss
+        query_templates:
+          - 天兵科技 天龙二号 天龙三号
+          - Space Pioneer Tianlong TL-2 TL-3
+        keywords:
+          - 天兵科技
+          - Space Pioneer
+          - 天龙二号
+          - 天龙三号
+          - Tianlong
+          - TL-2
+          - TL-3
+        source_notes:
+          - Wide-path RSS candidate pool; A3 should verify feed accessibility and dedupe behavior.
+          - Includes global space media, Chinese tech/business media, Google News RSS, and Bing News RSS.
+        fallback_feeds:
+          - https://www.bing.com/news/search?q=%E5%A4%A9%E5%85%B5%E7%A7%91%E6%8A%80+%E5%A4%A9%E9%BE%99%E4%BA%8C%E5%8F%B7+%E5%A4%A9%E9%BE%99%E4%B8%89%E5%8F%B7&format=rss
+        fallback_feed_policy: low_priority_only; Chinese Bing News RSS returned sparse/zero results in A3 validation.
+        disabled_feeds:
+          - https://feeds.arstechnica.com/arstechnica/space
+          - https://feeds.feedburner.com/36kr
+          - https://www.geekpark.net/rss
+          - https://www.huxiu.com/rss/0.xml
+      i_space:
+        priority: 10
+        verification_status: rss_candidate_pool_registered
+        authority: mixed_media_and_search_rss
+        feeds:
+          - https://spacenews.com/feed/
+          - https://spaceflightnow.com/feed/
+          - https://payloadspace.com/feed/
+          - https://www.nasa.gov/news-release/feed/
+          - https://www.theregister.com/headlines.atom
+          - https://www.fierce-network.com/rss/xml
+          - https://news.google.com/rss/search?q=%E6%98%9F%E9%99%85%E8%8D%A3%E8%80%80%20%E5%8F%8C%E6%9B%B2%E7%BA%BF%20%E7%81%AB%E7%AE%AD&hl=zh-CN&gl=CN&ceid=CN:zh-Hans
+          - https://news.google.com/rss/search?q=i-Space%20Hyperbola%20SQX&hl=en-US&gl=US&ceid=US:en
+          - https://news.google.com/rss/search?q=%E6%98%9F%E9%99%85%E8%8D%A3%E8%80%80%20%E5%8F%AF%E9%87%8D%E5%A4%8D%E4%BD%BF%E7%94%A8%E7%81%AB%E7%AE%AD&hl=zh-CN&gl=CN&ceid=CN:zh-Hans
+          - https://www.bing.com/news/search?q=i-Space+Hyperbola+SQX&format=rss
+        query_templates:
+          - 星际荣耀 双曲线 火箭
+          - i-Space Hyperbola SQX
+        keywords:
+          - 星际荣耀
+          - i-Space
+          - Hyperbola
+          - 双曲线
+          - SQX
+          - 可重复使用火箭
+        source_notes:
+          - Wide-path RSS candidate pool; A3 should verify feed accessibility and dedupe behavior.
+          - Includes global space media, Chinese tech/business media, Google News RSS, and Bing News RSS.
+        fallback_feeds:
+          - https://www.bing.com/news/search?q=%E6%98%9F%E9%99%85%E8%8D%A3%E8%80%80+%E5%8F%8C%E6%9B%B2%E7%BA%BF+%E7%81%AB%E7%AE%AD&format=rss
+        fallback_feed_policy: low_priority_only; Chinese Bing News RSS returned sparse/zero results in A3 validation.
+        disabled_feeds:
+          - https://feeds.arstechnica.com/arstechnica/space
+          - https://feeds.feedburner.com/36kr
+          - https://www.geekpark.net/rss
+          - https://www.huxiu.com/rss/0.xml
+      galactic_energy:
+        priority: 10
+        verification_status: rss_candidate_pool_registered
+        authority: mixed_media_and_search_rss
+        feeds:
+          - https://spacenews.com/feed/
+          - https://spaceflightnow.com/feed/
+          - https://payloadspace.com/feed/
+          - https://www.nasa.gov/news-release/feed/
+          - https://www.theregister.com/headlines.atom
+          - https://www.fierce-network.com/rss/xml
+          - https://news.google.com/rss/search?q=%E6%98%9F%E6%B2%B3%E5%8A%A8%E5%8A%9B%20%E8%B0%B7%E7%A5%9E%E6%98%9F%E4%B8%80%E5%8F%B7%20%E6%99%BA%E7%A5%9E%E6%98%9F%E4%B8%80%E5%8F%B7&hl=zh-CN&gl=CN&ceid=CN:zh-Hans
+          - https://news.google.com/rss/search?q=Galactic%20Energy%20Ceres-1%20Pallas-1&hl=en-US&gl=US&ceid=US:en
+          - https://news.google.com/rss/search?q=%E6%98%9F%E6%B2%B3%E5%8A%A8%E5%8A%9B%20%E5%8F%AF%E9%87%8D%E5%A4%8D%E4%BD%BF%E7%94%A8%E7%81%AB%E7%AE%AD&hl=zh-CN&gl=CN&ceid=CN:zh-Hans
+          - https://www.bing.com/news/search?q=Galactic+Energy+Ceres-1+Pallas-1&format=rss
+        query_templates:
+          - 星河动力 谷神星一号 智神星一号
+          - Galactic Energy Ceres-1 Pallas-1
+        keywords:
+          - 星河动力
+          - Galactic Energy
+          - 谷神星一号
+          - 智神星一号
+          - Ceres-1
+          - Pallas-1
+        source_notes:
+          - Wide-path RSS candidate pool; A3 should verify feed accessibility and dedupe behavior.
+          - Includes global space media, Chinese tech/business media, Google News RSS, and Bing News RSS.
+        fallback_feeds:
+          - https://www.bing.com/news/search?q=%E6%98%9F%E6%B2%B3%E5%8A%A8%E5%8A%9B+%E8%B0%B7%E7%A5%9E%E6%98%9F%E4%B8%80%E5%8F%B7+%E6%99%BA%E7%A5%9E%E6%98%9F%E4%B8%80%E5%8F%B7&format=rss
+        fallback_feed_policy: low_priority_only; Chinese Bing News RSS returned sparse/zero results in A3 validation.
+        disabled_feeds:
+          - https://feeds.arstechnica.com/arstechnica/space
+          - https://feeds.feedburner.com/36kr
+          - https://www.geekpark.net/rss
+          - https://www.huxiu.com/rss/0.xml
+      yushi_space:
+        priority: 20
+        verification_status: rss_candidate_pool_registered
+        authority: mixed_media_and_search_rss
+        feeds:
+          - https://spacenews.com/feed/
+          - https://spaceflightnow.com/feed/
+          - https://payloadspace.com/feed/
+          - https://www.nasa.gov/news-release/feed/
+          - https://www.theregister.com/headlines.atom
+          - https://www.fierce-network.com/rss/xml
+          - https://news.google.com/rss/search?q=%E5%AE%87%E7%9F%B3%E7%A9%BA%E9%97%B4%20AS-1%20%E4%B8%8D%E9%94%88%E9%92%A2%E7%81%AB%E7%AE%AD&hl=zh-CN&gl=CN&ceid=CN:zh-Hans
+          - https://news.google.com/rss/search?q=%E5%AE%87%E7%9F%B3%E7%A9%BA%E9%97%B4%20%E7%AD%B7%E5%AD%90%E6%8D%95%E8%8E%B7%E8%87%82%20%E5%A4%AA%E7%A9%BA%E5%AE%89%E5%8D%93&hl=zh-CN&gl=CN&ceid=CN:zh-Hans
+          - https://news.google.com/rss/search?q=AstronStone%20AS-1%20reusable%20rocket&hl=en-US&gl=US&ceid=US:en
+          - https://news.google.com/rss/search?q=site%3Astcn.com%20%E5%AE%87%E7%9F%B3%E7%A9%BA%E9%97%B4%20AS-1&hl=zh-CN&gl=CN&ceid=CN:zh-Hans
+          - https://news.google.com/rss/search?q=site%3Atmtpost.com%20%E5%AE%87%E7%9F%B3%E7%A9%BA%E9%97%B4%20AS-1&hl=zh-CN&gl=CN&ceid=CN:zh-Hans
+          - https://news.google.com/rss/search?q=site%3Aithome.com%20%E5%AE%87%E7%9F%B3%E7%A9%BA%E9%97%B4%20AS-1&hl=zh-CN&gl=CN&ceid=CN:zh-Hans
+          - https://news.google.com/rss/search?q=site%3Asina.com.cn%20%E5%AE%87%E7%9F%B3%E7%A9%BA%E9%97%B4%20AS-1&hl=zh-CN&gl=CN&ceid=CN:zh-Hans
+        query_templates:
+          - 宇石空间 AS-1 不锈钢火箭
+          - 宇石空间 太空安卓 可重复使用火箭
+        keywords:
+          - 宇石空间
+          - AS-1
+          - 不锈钢火箭
+          - 可重复使用火箭
+          - 筷子捕获臂
+          - 太空安卓
+          - AstronStone
+        source_notes:
+          - Wide-path RSS candidate pool; A3 should verify feed accessibility and dedupe behavior.
+          - Includes global space media, Chinese tech/business media, Google News RSS, and Bing News RSS.
+          - 'A2 post-A3 optimization: added targeted Google News RSS site/authority searches for better precision and official-page fallback.'
+        fallback_feeds:
+          - https://www.bing.com/news/search?q=%E5%AE%87%E7%9F%B3%E7%A9%BA%E9%97%B4+AS-1+%E4%B8%8D%E9%94%88%E9%92%A2%E7%81%AB%E7%AE%AD&format=rss
+          - https://www.bing.com/news/search?q=%E5%AE%87%E7%9F%B3%E7%A9%BA%E9%97%B4+%E7%AD%B7%E5%AD%90%E6%8D%95%E8%8E%B7%E8%87%82+%E5%A4%AA%E7%A9%BA%E5%AE%89%E5%8D%93&format=rss
+        fallback_feed_policy: low_priority_only; Chinese Bing News RSS returned sparse/zero results in A3 validation.
+        disabled_feeds:
+          - https://feeds.arstechnica.com/arstechnica/space
+          - https://feeds.feedburner.com/36kr
+          - https://www.geekpark.net/rss
+          - https://www.huxiu.com/rss/0.xml
+      hongqing_technology:
+        priority: 15
+        verification_status: rss_candidate_pool_registered
+        authority: mixed_media_and_search_rss
+        feeds:
+          - https://spacenews.com/feed/
+          - https://spaceflightnow.com/feed/
+          - https://payloadspace.com/feed/
+          - https://www.nasa.gov/news-release/feed/
+          - https://www.theregister.com/headlines.atom
+          - https://www.fierce-network.com/rss/xml
+          - https://news.google.com/rss/search?q=%E8%93%9D%E7%AE%AD%E9%B8%BF%E6%93%8E%20%E9%B8%BF%E6%93%8E%E7%A7%91%E6%8A%80%20%E5%8D%AB%E6%98%9F%E7%BB%84%E7%BD%91&hl=zh-CN&gl=CN&ceid=CN:zh-Hans
+          - https://news.google.com/rss/search?q=LandSpace%20Hongqing%20flat%20satellite&hl=en-US&gl=US&ceid=US:en
+          - https://news.google.com/rss/search?q=%E9%B8%BF%E6%93%8E%E7%A7%91%E6%8A%80%20%E6%98%9F%E7%AE%AD%E5%8D%8F%E5%90%8C%20%E5%B9%B3%E6%9D%BF%E5%8D%AB%E6%98%9F&hl=zh-CN&gl=CN&ceid=CN:zh-Hans
+          - https://www.bing.com/news/search?q=LandSpace+Hongqing+flat+satellite&format=rss
+          - https://news.google.com/rss/search?q=%E9%B8%BF%E6%93%8E%E7%A7%91%E6%8A%80%20%E5%B9%B3%E6%9D%BF%E5%8D%AB%E6%98%9F%20%E5%8D%AB%E6%98%9F%E7%BB%84%E7%BD%91&hl=zh-CN&gl=CN&ceid=CN:zh-Hans
+          - https://news.google.com/rss/search?q=site%3Ahongqing.tech%20%E9%B8%BF%E6%93%8E%E7%A7%91%E6%8A%80%20%E5%8D%AB%E6%98%9F&hl=zh-CN&gl=CN&ceid=CN:zh-Hans
+          - https://news.google.com/rss/search?q=site%3Axiongan.gov.cn%20%E9%B8%BF%E6%93%8E%E7%A7%91%E6%8A%80%20%E5%8D%AB%E6%98%9F&hl=zh-CN&gl=CN&ceid=CN:zh-Hans
+          - https://news.google.com/rss/search?q=site%3Ancsti.gov.cn%20%E9%B8%BF%E6%93%8E%E7%A7%91%E6%8A%80%20%E5%8D%AB%E6%98%9F%E4%BA%92%E8%81%94%E7%BD%91&hl=zh-CN&gl=CN&ceid=CN:zh-Hans
+          - https://news.google.com/rss/search?q=site%3Alandspace.com%20%E9%B8%BF%E6%93%8E%E7%A7%91%E6%8A%80%20%E8%93%9D%E7%AE%AD%E9%B8%BF%E6%93%8E&hl=zh-CN&gl=CN&ceid=CN:zh-Hans
+        query_templates:
+          - 蓝箭鸿擎 鸿擎科技 卫星组网
+          - LandSpace Hongqing flat satellite
+        keywords:
+          - 蓝箭鸿擎
+          - 鸿擎科技
+          - LandSpace Hongqing
+          - 卫星组网
+          - 平板卫星
+          - 星箭协同
+        source_notes:
+          - Wide-path RSS candidate pool; A3 should verify feed accessibility and dedupe behavior.
+          - Includes global space media, Chinese tech/business media, Google News RSS, and Bing News RSS.
+          - 'A2 post-A3 optimization: added targeted Google News RSS site/authority searches for better precision and official-page fallback.'
+        fallback_feeds:
+          - https://www.bing.com/news/search?q=%E8%93%9D%E7%AE%AD%E9%B8%BF%E6%93%8E+%E9%B8%BF%E6%93%8E%E7%A7%91%E6%8A%80+%E5%8D%AB%E6%98%9F%E7%BB%84%E7%BD%91&format=rss
+        fallback_feed_policy: low_priority_only; Chinese Bing News RSS returned sparse/zero results in A3 validation.
+        disabled_feeds:
+          - https://feeds.arstechnica.com/arstechnica/space
+          - https://feeds.feedburner.com/36kr
+          - https://www.geekpark.net/rss
+          - https://www.huxiu.com/rss/0.xml
+      galaxyspace:
+        priority: 10
+        verification_status: rss_candidate_pool_registered
+        authority: mixed_media_and_search_rss
+        feeds:
+          - https://spacenews.com/feed/
+          - https://spaceflightnow.com/feed/
+          - https://payloadspace.com/feed/
+          - https://www.nasa.gov/news-release/feed/
+          - https://www.theregister.com/headlines.atom
+          - https://www.fierce-network.com/rss/xml
+          - https://news.google.com/rss/search?q=%E9%93%B6%E6%B2%B3%E8%88%AA%E5%A4%A9%20%E5%8D%AB%E6%98%9F%E4%BA%92%E8%81%94%E7%BD%91%20%E4%BD%8E%E8%BD%A8%E5%AE%BD%E5%B8%A6%E9%80%9A%E4%BF%A1%E5%8D%AB%E6%98%9F&hl=zh-CN&gl=CN&ceid=CN:zh-Hans
+          - https://news.google.com/rss/search?q=GalaxySpace%20satellite%20internet%20broadband%20satellite&hl=en-US&gl=US&ceid=US:en
+          - https://news.google.com/rss/search?q=%E9%93%B6%E6%B2%B3%E8%88%AA%E5%A4%A9%20%E9%80%9A%E4%BF%A1%E8%BD%BD%E8%8D%B7%20%E5%8D%AB%E6%98%9F%E5%88%B6%E9%80%A0&hl=zh-CN&gl=CN&ceid=CN:zh-Hans
+          - https://www.bing.com/news/search?q=GalaxySpace+satellite+internet+broadband+satellite&format=rss
+          - https://news.google.com/rss/search?q=site%3Ayinhehangtian.cn%20%E9%93%B6%E6%B2%B3%E8%88%AA%E5%A4%A9&hl=zh-CN&gl=CN&ceid=CN:zh-Hans
+          - https://news.google.com/rss/search?q=site%3Anews.cn%20%E9%93%B6%E6%B2%B3%E8%88%AA%E5%A4%A9%20%E5%8D%AB%E6%98%9F%E4%BA%92%E8%81%94%E7%BD%91&hl=zh-CN&gl=CN&ceid=CN:zh-Hans
+          - https://news.google.com/rss/search?q=site%3Akw.beijing.gov.cn%20%E9%93%B6%E6%B2%B3%E8%88%AA%E5%A4%A9%20%E5%8D%AB%E6%98%9F%E4%BA%92%E8%81%94%E7%BD%91&hl=zh-CN&gl=CN&ceid=CN:zh-Hans
+          - https://news.google.com/rss/search?q=site%3Akfqgw.beijing.gov.cn%20%E9%93%B6%E6%B2%B3%E8%88%AA%E5%A4%A9%20%E5%8D%AB%E6%98%9F%E4%BA%92%E8%81%94%E7%BD%91&hl=zh-CN&gl=CN&ceid=CN:zh-Hans
+          - https://news.google.com/rss/search?q=GalaxySpace%20satellite%20internet&hl=en-US&gl=US&ceid=US:en
+        query_templates:
+          - 银河航天 卫星互联网 低轨宽带通信卫星
+          - GalaxySpace satellite internet broadband satellite
+        keywords:
+          - 银河航天
+          - GalaxySpace
+          - 卫星互联网
+          - 低轨宽带通信卫星
+          - 通信载荷
+          - 卫星制造
+        source_notes:
+          - Wide-path RSS candidate pool; A3 should verify feed accessibility and dedupe behavior.
+          - Includes global space media, Chinese tech/business media, Google News RSS, and Bing News RSS.
+          - 'A2 post-A3 optimization: added targeted Google News RSS site/authority searches for better precision and official-page fallback.'
+        fallback_feeds:
+          - https://www.bing.com/news/search?q=%E9%93%B6%E6%B2%B3%E8%88%AA%E5%A4%A9+%E5%8D%AB%E6%98%9F%E4%BA%92%E8%81%94%E7%BD%91+%E4%BD%8E%E8%BD%A8%E5%AE%BD%E5%B8%A6%E9%80%9A%E4%BF%A1%E5%8D%AB%E6%98%9F&format=rss
+        fallback_feed_policy: low_priority_only; Chinese Bing News RSS returned sparse/zero results in A3 validation.
+        disabled_feeds:
+          - https://feeds.arstechnica.com/arstechnica/space
+          - https://feeds.feedburner.com/36kr
+          - https://www.geekpark.net/rss
+          - https://www.huxiu.com/rss/0.xml
+      minospace:
+        priority: 10
+        verification_status: rss_candidate_pool_registered
+        authority: mixed_media_and_search_rss
+        feeds:
+          - https://spacenews.com/feed/
+          - https://spaceflightnow.com/feed/
+          - https://payloadspace.com/feed/
+          - https://www.nasa.gov/news-release/feed/
+          - https://www.theregister.com/headlines.atom
+          - https://www.fierce-network.com/rss/xml
+          - https://news.google.com/rss/search?q=%E5%BE%AE%E7%BA%B3%E6%98%9F%E7%A9%BA%20%E5%8D%AB%E6%98%9F%E5%88%B6%E9%80%A0%20%E6%95%B4%E6%98%9F%E7%A0%94%E5%88%B6&hl=zh-CN&gl=CN&ceid=CN:zh-Hans
+          - https://news.google.com/rss/search?q=MinoSpace%20commercial%20satellite%20manufacturer&hl=en-US&gl=US&ceid=US:en
+          - https://news.google.com/rss/search?q=%E5%BE%AE%E7%BA%B3%E6%98%9F%E7%A9%BA%20%E5%95%86%E4%B8%9A%E5%8D%AB%E6%98%9F%20%E5%8D%AB%E6%98%9F%E5%B9%B3%E5%8F%B0&hl=zh-CN&gl=CN&ceid=CN:zh-Hans
+          - https://www.bing.com/news/search?q=MinoSpace+commercial+satellite+manufacturer&format=rss
+        query_templates:
+          - 微纳星空 卫星制造 整星研制
+          - MinoSpace commercial satellite manufacturer
+        keywords:
+          - 微纳星空
+          - MinoSpace
+          - 卫星制造
+          - 商业卫星
+          - 整星研制
+          - 卫星平台
+        source_notes:
+          - Wide-path RSS candidate pool; A3 should verify feed accessibility and dedupe behavior.
+          - Includes global space media, Chinese tech/business media, Google News RSS, and Bing News RSS.
+        fallback_feeds:
+          - https://www.bing.com/news/search?q=%E5%BE%AE%E7%BA%B3%E6%98%9F%E7%A9%BA+%E5%8D%AB%E6%98%9F%E5%88%B6%E9%80%A0+%E6%95%B4%E6%98%9F%E7%A0%94%E5%88%B6&format=rss
+        fallback_feed_policy: low_priority_only; Chinese Bing News RSS returned sparse/zero results in A3 validation.
+        disabled_feeds:
+          - https://feeds.arstechnica.com/arstechnica/space
+          - https://feeds.feedburner.com/36kr
+          - https://www.geekpark.net/rss
+          - https://www.huxiu.com/rss/0.xml
+    feeds: []
+    adapter_options:
+      real_fetch_enabled: true
+      timeout_seconds: 20
+      max_items: 50
+    fallback_feeds:
+      - https://www.bing.com/news/search?q=%E5%9E%A3%E4%BF%A1%E5%8D%AB%E6%98%9F+%E5%8D%83%E5%B8%86%E6%98%9F%E5%BA%A7&format=rss
+      - https://www.bing.com/news/search?q=%E4%B8%AD%E5%9B%BD%E6%98%9F%E7%BD%91+%E5%9B%BD%E7%BD%91%E6%98%9F%E5%BA%A7&format=rss
+    fallback_feed_policy: low_priority_only; Chinese Bing News RSS returned sparse/zero results in A3 validation.
+    disabled_feeds:
+      - https://feeds.arstechnica.com/arstechnica/space
+      - https://www.fierce-wireless.com/rss/xml
+      - https://feeds.feedburner.com/36kr
+      - https://www.geekpark.net/rss
+      - https://www.huxiu.com/rss/0.xml
+    global_feed_policy: disabled_after_a3_validation; use company_overrides.feeds to avoid generic cross-company bleed.
+    low_priority_global_feeds:
       - https://spacenews.com/feed/
       - https://spaceflightnow.com/feed/
       - https://payloadspace.com/feed/
       - https://www.nasa.gov/news-release/feed/
       - https://www.nasa.gov/rss/dyn/breaking_news.rss
-      - https://feeds.arstechnica.com/arstechnica/space
       - https://www.theregister.com/headlines.atom
       - https://www.fierce-network.com/rss/xml
-      - https://www.fierce-wireless.com/rss/xml
-      - https://feeds.feedburner.com/36kr
-      - https://www.geekpark.net/rss
-      - https://www.huxiu.com/rss/0.xml
       - https://news.google.com/rss/search?q=%E5%9E%A3%E4%BF%A1%E5%8D%AB%E6%98%9F%20%E5%8D%83%E5%B8%86%E6%98%9F%E5%BA%A7&hl=zh-CN&gl=CN&ceid=CN:zh-Hans
       - https://news.google.com/rss/search?q=%E4%B8%AD%E5%9B%BD%E6%98%9F%E7%BD%91%20%E5%9B%BD%E7%BD%91%E6%98%9F%E5%BA%A7&hl=zh-CN&gl=CN&ceid=CN:zh-Hans
-      - https://www.bing.com/news/search?q=%E5%9E%A3%E4%BF%A1%E5%8D%AB%E6%98%9F+%E5%8D%83%E5%B8%86%E6%98%9F%E5%BA%A7&format=rss
-      - https://www.bing.com/news/search?q=%E4%B8%AD%E5%9B%BD%E6%98%9F%E7%BD%91+%E5%9B%BD%E7%BD%91%E6%98%9F%E5%BA%A7&format=rss
-    adapter_options:
-      real_fetch_enabled: true
-      timeout_seconds: 20
-      max_items: 50
-
   - id: official_site_provider
     type: official_site
     rank_group: official
@@ -322,11 +711,236 @@ providers:
           - 国网星座
           - China SatNet
           - Guowang
+      landspace:
+        enabled: true
+        priority: 20
+        verification_status: registered_official_domain
+        entrypoints:
+          - https://www.landspace.com/
+        candidate_entrypoints:
+          - https://www.landspace.com/news
+          - https://www.landspace.com/news/
+        official_domains:
+          - landspace.com
+        keywords:
+          - 蓝箭航天
+          - LandSpace
+          - 朱雀二号
+          - 朱雀三号
+          - ZQ-2
+          - ZQ-3
+        source_notes:
+          - Official domain registered; A3 should verify the stable newsroom/listing path.
+      cas_space:
+        enabled: true
+        priority: 20
+        verification_status: registered_official_domain
+        entrypoints:
+          - https://www.cas-space.com/
+        candidate_entrypoints:
+          - https://www.cas-space.com/news
+          - https://www.cas-space.com/news/
+        official_domains:
+          - cas-space.com
+        keywords:
+          - 中科宇航
+          - CAS Space
+          - CASSPACE
+          - 力箭
+          - Kinetica
+        source_notes:
+          - Official domain registered; A3 should verify the stable newsroom/listing path.
+      space_pioneer:
+        enabled: true
+        priority: 20
+        verification_status: registered_official_domain
+        entrypoints:
+          - https://www.spacepioneer.cc/
+        candidate_entrypoints:
+          - https://www.spacepioneer.cc/news
+          - https://www.spacepioneer.cc/news/
+        official_domains:
+          - spacepioneer.cc
+        keywords:
+          - 天兵科技
+          - Space Pioneer
+          - 天龙二号
+          - 天龙三号
+          - Tianlong
+        source_notes:
+          - Official domain registered; A3 should verify the stable newsroom/listing path.
+      i_space:
+        enabled: true
+        priority: 20
+        verification_status: registered_official_domain
+        entrypoints:
+          - https://www.i-space.com.cn/
+        candidate_entrypoints:
+          - http://www.i-space.com.cn/news
+          - https://www.i-space.com.cn/news
+        official_domains:
+          - i-space.com.cn
+        keywords:
+          - 星际荣耀
+          - i-Space
+          - Hyperbola
+          - 双曲线
+          - SQX
+        source_notes:
+          - Official domain registered with both http and https variants for A3 accessibility testing.
+          - HTTP variant returned 403 in A3 validation; keep only HTTPS as active official entrypoint.
+        low_priority_entrypoints:
+          - http://www.i-space.com.cn/
+      galactic_energy:
+        enabled: true
+        priority: 20
+        verification_status: registered_official_domain
+        entrypoints:
+          - https://www.galactic-energy.cn/
+          - http://www.galactic-energy.cn/
+        candidate_entrypoints:
+          - https://www.galactic-energy.cn/news
+          - http://www.galactic-energy.cn/news
+        official_domains:
+          - galactic-energy.cn
+        keywords:
+          - 星河动力
+          - Galactic Energy
+          - 谷神星一号
+          - 智神星一号
+          - Ceres-1
+          - Pallas-1
+        source_notes:
+          - Official domain registered with both http and https variants for A3 accessibility testing.
+      yushi_space:
+        enabled: true
+        priority: 30
+        verification_status: authority_media_registered_no_verified_company_site
+        company_domain_status: no_verified_public_company_newsroom
+        entrypoints:
+          - https://www.stcn.com/
+          - https://www.tmtpost.com/
+          - https://www.ithome.com/
+        authority_entrypoint_groups:
+          market_and_technology_media:
+            - https://www.stcn.com/
+            - https://www.tmtpost.com/
+            - https://www.ithome.com/
+            - https://finance.sina.com.cn/
+          deprioritized_non_matching_space_authorities:
+            - https://www.cmse.gov.cn/
+            - https://www.spacechina.com/
+        candidate_entrypoints: []
+        discovery_queries:
+          - '"宇石空间" "AS-1"'
+          - '"宇石空间" "太空安卓"'
+          - '"宇石空间" "不锈钢火箭"'
+          - '"AstronStone" "AS-1"'
+        keywords:
+          - 宇石空间
+          - AS-1
+          - 不锈钢火箭
+          - 太空安卓
+        source_notes:
+          - No verified public corporate newsroom is registered; use only for discovery and corroboration until a source owner confirms the official domain.
+          - cmse.gov.cn and spacechina.com were accessible but did not match company news in A3 validation; moved to deprioritized corroboration group.
+          - Use STCN/TMTPost/ITHome/Sina and targeted Google News RSS until a verified corporate newsroom is confirmed.
+      hongqing_technology:
+        enabled: true
+        priority: 25
+        verification_status: candidate_company_site_with_authority_corroboration
+        company_domain_status: candidate_only
+        entrypoints:
+          - https://www.hongqing.tech/
+          - https://hongqing.tech/news/277.html
+          - https://hongqing.tech/news/275.html
+        candidate_entrypoints:
+          - https://www.hongqing.tech/
+          - https://hongqing.tech/
+        official_domains:
+          - landspace.com
+        candidate_domains:
+          - hongqing.tech
+        keywords:
+          - 蓝箭鸿擎
+          - 鸿擎科技
+          - LandSpace Hongqing
+          - 平板卫星
+          - 卫星组网
+        source_notes:
+          - landspace.com is a related official domain for parent/affiliate context.
+          - hongqing.tech is registered as a candidate until corporate ownership and publication status are manually confirmed.
+          - LandSpace homepage alone did not provide matching Hongqing news; hongqing.tech pages and Xiong'an/NCSTI authority pages are now the primary candidates.
+        authority_entrypoint_groups:
+          company_candidate:
+            - https://www.hongqing.tech/
+            - https://hongqing.tech/news/277.html
+            - https://hongqing.tech/news/275.html
+          xiongan_and_beijing_authority:
+            - https://www.xiongan.gov.cn/
+            - https://www.ncsti.gov.cn/
+          parent_affiliate_context:
+            - https://www.landspace.com/
+      galaxyspace:
+        enabled: true
+        priority: 20
+        verification_status: registered_official_domain_replaced_after_a3_failure
+        entrypoints:
+          - https://www.yinhehangtian.cn/
+          - https://www.yinhehangtian.cn/yinheNews
+        candidate_entrypoints:
+          - https://www.galaxyspace.com/news
+          - https://www.galaxyspace.com/news/
+        official_domains:
+          - yinhehangtian.cn
+        keywords:
+          - 银河航天
+          - GalaxySpace
+          - 卫星互联网
+          - 低轨宽带通信卫星
+          - 通信载荷
+        source_notes:
+          - Official domain registered; A3 should verify the stable newsroom/listing path.
+          - A3 reported galaxyspace.com failure; use yinhehangtian.cn news center and central/government authority pages pending retest.
+        candidate_domains:
+          - galaxyspace.com
+        low_priority_entrypoints:
+          - https://www.galaxyspace.com/
+        authority_entrypoint_groups:
+          company_site:
+            - https://www.yinhehangtian.cn/
+            - https://www.yinhehangtian.cn/yinheNews
+          government_and_central_media:
+            - https://www.news.cn/
+            - https://kw.beijing.gov.cn/
+            - https://kfqgw.beijing.gov.cn/
+            - https://www.ncsti.gov.cn/
+      minospace:
+        enabled: true
+        priority: 20
+        verification_status: registered_official_domain
+        entrypoints:
+          - http://www.minospace.com/
+        candidate_entrypoints:
+          - https://www.minospace.com/news
+          - http://www.minospace.com/news
+        official_domains:
+          - minospace.com
+        keywords:
+          - 微纳星空
+          - MinoSpace
+          - 卫星制造
+          - 商业卫星
+          - 整星研制
+        source_notes:
+          - Official domain registered with both http and https variants for A3 accessibility testing.
+          - HTTPS variant failed in A3 validation; HTTP variant remains active pending retest.
+        low_priority_entrypoints:
+          - https://www.minospace.com/
     adapter_options:
       real_fetch_enabled: true
       timeout_seconds: 20
       max_items: 8
-
   - id: gdelt_provider
     type: gdelt
     rank_group: wire_and_aggregator
@@ -343,28 +957,28 @@ providers:
       raw: RawArticle
       normalized: NewsItem
     adapter_status: active_adapter
-    query_template: '("{company_name}" OR {company_alias_terms}) AND (satellite OR launch OR constellation OR broadband OR space)'
+    query_template: ("{company_name}" OR {company_alias_terms}) AND (satellite OR launch OR constellation OR broadband OR space)
     company_overrides:
       spacex:
         priority: 30
         query_templates:
-          - '(SpaceX OR Starlink) AND (satellite OR launch OR constellation OR broadband)'
-          - '("Falcon 9" OR Starshield OR "direct to cell") AND (SpaceX OR Starlink OR satellite)'
+          - (SpaceX OR Starlink) AND (satellite OR launch OR constellation OR broadband)
+          - ("Falcon 9" OR Starshield OR "direct to cell") AND (SpaceX OR Starlink OR satellite)
       blue_origin:
         priority: 30
         query_templates:
-          - '("Blue Origin" OR "New Glenn") AND (launch OR satellite OR space)'
-          - '("Blue Ring" OR TeraWave OR "New Shepard") AND (satellite OR communications OR space)'
+          - ("Blue Origin" OR "New Glenn") AND (launch OR satellite OR space)
+          - ("Blue Ring" OR TeraWave OR "New Shepard") AND (satellite OR communications OR space)
       yuanxin_satellite:
         priority: 30
         query_templates:
-          - '(SpaceSail OR "Yuanxin Satellite" OR Qianfan OR "千帆星座") AND (satellite OR constellation OR broadband)'
-          - '("Thousand Sails" OR "G60 Starlink" OR "上海垣信") AND (satellite OR launch OR constellation)'
+          - (SpaceSail OR "Yuanxin Satellite" OR Qianfan OR "千帆星座") AND (satellite OR constellation OR broadband)
+          - ("Thousand Sails" OR "G60 Starlink" OR "上海垣信") AND (satellite OR launch OR constellation)
       china_satnet:
         priority: 30
         query_templates:
-          - '("China SatNet" OR "China Satellite Network Group" OR "中国星网" OR "国网星座") AND (satellite OR constellation OR broadband)'
-          - '(Guowang OR "GW-A59" OR "GW-A2" OR "中国卫星网络集团") AND (satellite OR launch OR constellation)'
+          - ("China SatNet" OR "China Satellite Network Group" OR "中国星网" OR "国网星座") AND (satellite OR constellation OR broadband)
+          - (Guowang OR "GW-A59" OR "GW-A2" OR "中国卫星网络集团") AND (satellite OR launch OR constellation)
     adapter_options:
       real_fetch_enabled: true
       endpoint: https://api.gdeltproject.org/api/v2/doc/doc
@@ -376,7 +990,6 @@ providers:
       retries: 1
       backoff_seconds: 90.0
       rate_limit_seconds: 25.0
-
   - id: serpapi_provider
     type: serpapi
     rank_group: search
@@ -422,7 +1035,6 @@ providers:
       api_key_env: SERPAPI_KEY
       timeout_seconds: 20
       max_items: 10
-
   - id: newsapi_provider
     type: newsapi
     rank_group: search
@@ -442,26 +1054,25 @@ providers:
     company_overrides:
       spacex:
         query_templates:
-          - '(SpaceX OR Starlink OR Starshield) AND (satellite OR launch OR constellation OR broadband)'
-          - '("Falcon 9" OR Starship OR "direct to cell") AND SpaceX'
+          - (SpaceX OR Starlink OR Starshield) AND (satellite OR launch OR constellation OR broadband)
+          - ("Falcon 9" OR Starship OR "direct to cell") AND SpaceX
       blue_origin:
         query_templates:
-          - '("Blue Origin" OR "New Glenn" OR "New Shepard") AND (launch OR satellite OR space)'
-          - '("Blue Ring" OR TeraWave OR "BE-4") AND "Blue Origin"'
+          - ("Blue Origin" OR "New Glenn" OR "New Shepard") AND (launch OR satellite OR space)
+          - ("Blue Ring" OR TeraWave OR "BE-4") AND "Blue Origin"
       yuanxin_satellite:
         query_templates:
-          - '("垣信卫星" OR "上海垣信卫星科技有限公司" OR "千帆星座")'
-          - '("Yuanxin Satellite" OR SpaceSail OR Qianfan OR "Thousand Sails") AND satellite'
+          - ("垣信卫星" OR "上海垣信卫星科技有限公司" OR "千帆星座")
+          - ("Yuanxin Satellite" OR SpaceSail OR Qianfan OR "Thousand Sails") AND satellite
       china_satnet:
         query_templates:
-          - '("中国星网" OR "中国卫星网络集团有限公司" OR "国网星座")'
-          - '("China SatNet" OR "China Satellite Network Group" OR Guowang) AND satellite'
+          - ("中国星网" OR "中国卫星网络集团有限公司" OR "国网星座")
+          - ("China SatNet" OR "China Satellite Network Group" OR Guowang) AND satellite
     adapter_options:
       real_fetch_enabled: true
       api_key_env: NEWSAPI_KEY
       timeout_seconds: 20
       max_items: 10
-
 source_types:
   official_site:
     interface: satellite_news.fetcher.SourceFetcher
@@ -479,7 +1090,6 @@ source_types:
     interface: satellite_news.fetcher.SourceFetcher
     status: reserved_no_api_call
     notes: Generic search adapter placeholder for later implementation.
-
 sources:
   - id: official_company_sites
     type: official_site
@@ -501,9 +1111,8 @@ sources:
           - https://www.spacex.com/updates/
           - https://www.spacex.com/launches/
           - https://www.spacex.com/starshield/
-          - https://www.starlink.com/
           - https://www.starlink.com/updates/
-          - https://www.starlink.com/business/direct-to-cell/
+          - https://www.starlink.com/
         candidate_domains:
           - starshield.com
         discovery_queries:
@@ -549,10 +1158,10 @@ sources:
         discovery_queries:
           - site:spacesail.com.cn 垣信卫星 OR 千帆星座
           - site:spacesail.cn 垣信卫星 OR 千帆星座
-          - "\"上海垣信卫星科技有限公司\" 官方"
-          - "\"千帆星座\" 垣信卫星"
-          - "\"SpaceSail\" \"Qianfan\""
-          - "\"Thousand Sails\" \"SpaceSail\""
+          - '"上海垣信卫星科技有限公司" 官方'
+          - '"千帆星座" 垣信卫星'
+          - '"SpaceSail" "Qianfan"'
+          - '"Thousand Sails" "SpaceSail"'
         verification_status: registered_government_sources
         company_domain_verification_status: needs_source_owner_review
         source_notes:
@@ -570,18 +1179,204 @@ sources:
           - https://www.cnsa.gov.cn/
         candidate_entrypoints: []
         discovery_queries:
-          - "\"中国卫星网络集团有限公司\" 官方"
-          - "\"中国星网\" \"中国卫星网络集团\""
-          - "\"国网星座\" \"中国星网\""
-          - "\"China Satellite Network Group\""
-          - "\"GW-A59\" \"中国星网\""
-          - "\"GW-A2\" \"中国星网\""
+          - '"中国卫星网络集团有限公司" 官方'
+          - '"中国星网" "中国卫星网络集团"'
+          - '"国网星座" "中国星网"'
+          - '"China Satellite Network Group"'
+          - '"GW-A59" "中国星网"'
+          - '"GW-A2" "中国星网"'
         verification_status: registered_government_sources
         company_domain_verification_status: needs_source_owner_review
         source_notes:
           - Government and Xiong'an/SASAC pages are authoritative corroboration sources, not a verified company newsroom.
           - No verified public corporate newsroom is registered here; prefer SASAC, Xiong'an, MIIT, and launch-provider announcements for official corroboration.
-
+      landspace:
+        official_domains:
+          - landspace.com
+        entrypoints:
+          - https://www.landspace.com/
+        candidate_entrypoints:
+          - https://www.landspace.com/news
+          - https://www.landspace.com/news/
+        discovery_queries:
+          - site:landspace.com 蓝箭航天 朱雀二号
+          - site:landspace.com LandSpace Zhuque ZQ-2
+          - '"蓝箭航天" "朱雀三号"'
+        verification_status: registered_official_domain
+        source_notes:
+          - Corporate root registered as official; newsroom path is a candidate until A3 verifies page structure.
+      cas_space:
+        official_domains:
+          - cas-space.com
+        entrypoints:
+          - https://www.cas-space.com/
+        candidate_entrypoints:
+          - https://www.cas-space.com/news
+          - https://www.cas-space.com/news/
+        discovery_queries:
+          - site:cas-space.com 中科宇航 力箭
+          - site:cas-space.com CAS Space Kinetica
+          - '"中科宇航" "力箭一号"'
+        verification_status: registered_official_domain
+        source_notes:
+          - Corporate root registered as official; newsroom path is a candidate until A3 verifies page structure.
+      space_pioneer:
+        official_domains:
+          - spacepioneer.cc
+        entrypoints:
+          - https://www.spacepioneer.cc/
+        candidate_entrypoints:
+          - https://www.spacepioneer.cc/news
+          - https://www.spacepioneer.cc/news/
+        discovery_queries:
+          - site:spacepioneer.cc 天兵科技 天龙
+          - site:spacepioneer.cc Space Pioneer Tianlong
+          - '"天兵科技" "天龙三号"'
+        verification_status: registered_official_domain
+        source_notes:
+          - Corporate root registered as official; newsroom path is a candidate until A3 verifies page structure.
+      i_space:
+        official_domains:
+          - i-space.com.cn
+        entrypoints:
+          - https://www.i-space.com.cn/
+        candidate_entrypoints:
+          - http://www.i-space.com.cn/news
+          - https://www.i-space.com.cn/news
+        discovery_queries:
+          - site:i-space.com.cn 星际荣耀 双曲线
+          - site:i-space.com.cn i-Space Hyperbola
+          - '"星际荣耀" "双曲线"'
+        verification_status: registered_official_domain
+        source_notes:
+          - Official domain registered with both http and https variants for A3 accessibility testing.
+          - HTTP variant returned 403 in A3 validation; keep only HTTPS as active official entrypoint.
+        low_priority_entrypoints:
+          - http://www.i-space.com.cn/
+      galactic_energy:
+        official_domains:
+          - galactic-energy.cn
+        entrypoints:
+          - https://www.galactic-energy.cn/
+          - http://www.galactic-energy.cn/
+        candidate_entrypoints:
+          - https://www.galactic-energy.cn/news
+          - http://www.galactic-energy.cn/news
+        discovery_queries:
+          - site:galactic-energy.cn 星河动力 谷神星
+          - site:galactic-energy.cn Galactic Energy Ceres
+          - '"星河动力" "智神星一号"'
+        verification_status: registered_official_domain
+        source_notes:
+          - Corporate domain registered; keep both http and https variants for A3 reachability checks.
+      yushi_space:
+        official_domains: []
+        company_domain_status: no_verified_public_company_newsroom
+        entrypoints:
+          - https://www.stcn.com/
+          - https://www.tmtpost.com/
+          - https://www.ithome.com/
+        candidate_entrypoints: []
+        discovery_queries:
+          - '"宇石空间" "AS-1"'
+          - '"宇石空间" "太空安卓"'
+          - '"AstronStone" "AS-1"'
+        verification_status: authority_media_registered_no_verified_company_site
+        company_domain_verification_status: needs_manual_confirmation
+        source_notes:
+          - No verified public corporate newsroom is registered; use only for discovery and corroboration until a source owner confirms the official domain.
+          - cmse.gov.cn and spacechina.com were accessible but did not match company news in A3 validation; moved to deprioritized corroboration group.
+          - Use STCN/TMTPost/ITHome/Sina and targeted Google News RSS until a verified corporate newsroom is confirmed.
+        authority_entrypoint_groups:
+          market_and_technology_media:
+            - https://www.stcn.com/
+            - https://www.tmtpost.com/
+            - https://www.ithome.com/
+            - https://finance.sina.com.cn/
+          deprioritized_non_matching_space_authorities:
+            - https://www.cmse.gov.cn/
+            - https://www.spacechina.com/
+      hongqing_technology:
+        official_domains:
+          - landspace.com
+        company_domain_status: candidate_only
+        entrypoints:
+          - https://www.hongqing.tech/
+          - https://hongqing.tech/news/277.html
+          - https://hongqing.tech/news/275.html
+        candidate_domains:
+          - hongqing.tech
+        candidate_entrypoints:
+          - https://www.hongqing.tech/
+          - https://hongqing.tech/
+        discovery_queries:
+          - '"蓝箭鸿擎" "鸿擎科技"'
+          - '"鸿擎科技" "平板卫星"'
+          - '"LandSpace Hongqing"'
+        verification_status: candidate_company_site_with_authority_corroboration
+        company_domain_verification_status: needs_manual_confirmation
+        source_notes:
+          - landspace.com is a related official domain for parent/affiliate context.
+          - hongqing.tech is registered as a candidate until corporate ownership and publication status are manually confirmed.
+          - LandSpace homepage alone did not provide matching Hongqing news; hongqing.tech pages and Xiong'an/NCSTI authority pages are now the primary candidates.
+        authority_entrypoint_groups:
+          company_candidate:
+            - https://www.hongqing.tech/
+            - https://hongqing.tech/news/277.html
+            - https://hongqing.tech/news/275.html
+          xiongan_and_beijing_authority:
+            - https://www.xiongan.gov.cn/
+            - https://www.ncsti.gov.cn/
+          parent_affiliate_context:
+            - https://www.landspace.com/
+      galaxyspace:
+        official_domains:
+          - yinhehangtian.cn
+        entrypoints:
+          - https://www.yinhehangtian.cn/
+          - https://www.yinhehangtian.cn/yinheNews
+        candidate_entrypoints:
+          - https://www.galaxyspace.com/news
+          - https://www.galaxyspace.com/news/
+        discovery_queries:
+          - site:galaxyspace.com 银河航天 卫星互联网
+          - site:galaxyspace.com GalaxySpace satellite
+          - '"银河航天" "低轨宽带通信卫星"'
+        verification_status: registered_official_domain_replaced_after_a3_failure
+        source_notes:
+          - Official domain registered; A3 should verify the stable newsroom/listing path.
+          - A3 reported galaxyspace.com failure; use yinhehangtian.cn news center and central/government authority pages pending retest.
+        authority_entrypoint_groups:
+          company_site:
+            - https://www.yinhehangtian.cn/
+            - https://www.yinhehangtian.cn/yinheNews
+          government_and_central_media:
+            - https://www.news.cn/
+            - https://kw.beijing.gov.cn/
+            - https://kfqgw.beijing.gov.cn/
+            - https://www.ncsti.gov.cn/
+        candidate_domains:
+          - galaxyspace.com
+        low_priority_entrypoints:
+          - https://www.galaxyspace.com/
+      minospace:
+        official_domains:
+          - minospace.com
+        entrypoints:
+          - http://www.minospace.com/
+        candidate_entrypoints:
+          - https://www.minospace.com/news
+          - http://www.minospace.com/news
+        discovery_queries:
+          - site:minospace.com 微纳星空 卫星制造
+          - site:minospace.com MinoSpace satellite
+          - '"微纳星空" "整星研制"'
+        verification_status: registered_official_domain
+        source_notes:
+          - Official domain registered with both http and https variants for A3 accessibility testing.
+          - HTTPS variant failed in A3 validation; HTTP variant remains active pending retest.
+        low_priority_entrypoints:
+          - https://www.minospace.com/
   - id: regulator_and_filing_sites
     type: official_site
     rank_group: regulator_and_filing
@@ -625,6 +1420,15 @@ sources:
         company_scope:
           - yuanxin_satellite
           - china_satnet
+          - landspace
+          - cas_space
+          - space_pioneer
+          - i_space
+          - galactic_energy
+          - yushi_space
+          - hongqing_technology
+          - galaxyspace
+          - minospace
         query_hints:
           - 垣信卫星
           - 千帆星座
@@ -633,7 +1437,6 @@ sources:
           - 国网星座
           - GW-A59
           - GW-A2
-
   - id: china_company_corroboration_sources
     type: official_site
     rank_group: regulator_and_filing
@@ -649,21 +1452,38 @@ sources:
     company_scope:
       - yuanxin_satellite
       - china_satnet
+      - landspace
+      - cas_space
+      - space_pioneer
+      - i_space
+      - galactic_energy
+      - yushi_space
+      - hongqing_technology
+      - galaxyspace
+      - minospace
     entrypoints:
       - https://www.gzw.sh.gov.cn/
       - https://www.shanghai.gov.cn/
       - https://www.xiongan.gov.cn/
       - https://www.sasac.gov.cn/
       - https://www.news.cn/
+      - https://www.stcn.com/
+      - https://www.tmtpost.com/
+      - https://www.ithome.com/
+      - https://www.ncsti.gov.cn/
+      - https://kw.beijing.gov.cn/
+      - https://kfqgw.beijing.gov.cn/
     query_hints:
       - 上海联和投资 垣信卫星
       - 垣信卫星 千帆星座
       - 中国卫星网络集团 中国星网
       - 中国星网 雄安
+      - 宇石空间 AS-1
+      - 鸿擎科技 卫星互联网
+      - 银河航天 卫星互联网
     source_notes:
       - Reliable for confirming entity relationships, shareholder context, government participation, and major public announcements.
       - Not a substitute for a verified corporate newsroom when interpreting commercial strategy.
-
   - id: china_company_open_profile_sources
     type: official_site
     rank_group: search
@@ -679,17 +1499,30 @@ sources:
     company_scope:
       - yuanxin_satellite
       - china_satnet
+      - landspace
+      - cas_space
+      - space_pioneer
+      - i_space
+      - galactic_energy
+      - yushi_space
+      - hongqing_technology
+      - galaxyspace
+      - minospace
     candidate_entrypoints:
       - https://www.spacesail.com.cn/
       - https://www.spacesail.cn/
+      - https://www.hongqing.tech/
+      - https://www.yinhehangtian.cn/yinheNews
     query_hints:
       - 垣信卫星 官网
       - SpaceSail official
       - 中国卫星网络集团 官网
       - 中国星网 招聘
+      - 宇石空间 AS-1 官网
+      - 鸿擎科技 hongqing.tech 新闻
+      - 银河航天 yinhehangtian 新闻中心
     source_notes:
       - Use only as discovery metadata until domain ownership, corporate control, or official-publication status is manually confirmed.
-
   - id: launch_provider_official_sites
     type: official_site
     rank_group: official
@@ -719,7 +1552,6 @@ sources:
       - GW-A2
     source_notes:
       - Launch-provider announcements are primary for launch/deployment confirmation, but not corporate primary sources for the constellation operator.
-
   - id: gdelt_satellite_company_search
     type: gdelt
     rank_group: wire_and_aggregator
@@ -731,24 +1563,24 @@ sources:
       - rss_provider
       - serpapi_provider
     registry_status: active_gdelt_only
-    query_template: '("{company_name}" OR {company_alias_terms}) AND (satellite OR launch OR constellation OR broadband OR space)'
+    query_template: ("{company_name}" OR {company_alias_terms}) AND (satellite OR launch OR constellation OR broadband OR space)
     company_query_overrides:
       spacex:
-        - '(SpaceX OR Starlink) AND (satellite OR launch OR constellation OR broadband)'
-        - '("Falcon 9" OR "Falcon Heavy" OR Starship) AND (launch OR satellite OR space)'
-        - '(Starshield OR "direct to cell" OR "direct-to-cell") AND (satellite OR SpaceX OR Starlink)'
+        - (SpaceX OR Starlink) AND (satellite OR launch OR constellation OR broadband)
+        - ("Falcon 9" OR "Falcon Heavy" OR Starship) AND (launch OR satellite OR space)
+        - (Starshield OR "direct to cell" OR "direct-to-cell") AND (satellite OR SpaceX OR Starlink)
       blue_origin:
-        - '("Blue Origin" OR "New Glenn") AND (launch OR satellite OR space)'
-        - '("New Shepard" OR "Blue Ring" OR TeraWave) AND (space OR satellite OR communications)'
-        - '("BE-4" OR "Orbital Reef") AND ("Blue Origin" OR launch OR space)'
+        - ("Blue Origin" OR "New Glenn") AND (launch OR satellite OR space)
+        - ("New Shepard" OR "Blue Ring" OR TeraWave) AND (space OR satellite OR communications)
+        - ("BE-4" OR "Orbital Reef") AND ("Blue Origin" OR launch OR space)
       yuanxin_satellite:
-        - '(SpaceSail OR Spacesail OR "Shanghai SpaceSail") AND (satellite OR constellation OR broadband)'
-        - '("Yuanxin Satellite" OR Qianfan OR "Qianfan Constellation") AND (satellite OR launch OR constellation)'
-        - '("Thousand Sails" OR "G60 Starlink" OR "G60 satellite") AND (satellite OR broadband OR space)'
+        - (SpaceSail OR Spacesail OR "Shanghai SpaceSail") AND (satellite OR constellation OR broadband)
+        - ("Yuanxin Satellite" OR Qianfan OR "Qianfan Constellation") AND (satellite OR launch OR constellation)
+        - ("Thousand Sails" OR "G60 Starlink" OR "G60 satellite") AND (satellite OR broadband OR space)
       china_satnet:
-        - '("China SatNet" OR "China Satellite Network Group") AND (satellite OR constellation OR broadband)'
-        - '(Guowang OR "GW-A59" OR "GW-A2") AND (satellite OR constellation OR launch OR space)'
-        - '("China Satellite Network" OR "Guowang constellation") AND (satellite OR broadband OR LEO)'
+        - ("China SatNet" OR "China Satellite Network Group") AND (satellite OR constellation OR broadband)
+        - (Guowang OR "GW-A59" OR "GW-A2") AND (satellite OR constellation OR launch OR space)
+        - ("China Satellite Network" OR "Guowang constellation") AND (satellite OR broadband OR LEO)
     adapter_options:
       endpoint: https://api.gdeltproject.org/api/v2/doc/doc
       mode: ArtList
@@ -760,7 +1592,6 @@ sources:
       backoff_seconds: 90.0
       rate_limit_seconds: 25.0
       api_calls_allowed: true
-
   - id: curated_rss
     type: rss
     rank_group: media
@@ -788,10 +1619,8 @@ sources:
         - https://payloadspace.com/feed/
         - https://www.nasa.gov/news-release/feed/
         - https://www.nasa.gov/rss/dyn/breaking_news.rss
-        - https://feeds.arstechnica.com/arstechnica/space
         - https://www.theregister.com/headlines.atom
         - https://www.fierce-network.com/rss/xml
-        - https://www.fierce-wireless.com/rss/xml
         - https://news.google.com/rss/search?q=SpaceX%20Starlink%20satellite%20launch&hl=en-US&gl=US&ceid=US:en
         - https://news.google.com/rss/search?q=SpaceX%20Starshield%20direct%20to%20cell&hl=en-US&gl=US&ceid=US:en
         - https://news.google.com/rss/search?q=SpaceX%20Falcon%209%20Starlink%20satellites&hl=en-US&gl=US&ceid=US:en
@@ -804,10 +1633,8 @@ sources:
         - https://payloadspace.com/feed/
         - https://www.nasa.gov/news-release/feed/
         - https://www.nasa.gov/rss/dyn/breaking_news.rss
-        - https://feeds.arstechnica.com/arstechnica/space
         - https://www.theregister.com/headlines.atom
         - https://www.fierce-network.com/rss/xml
-        - https://www.fierce-wireless.com/rss/xml
         - https://news.google.com/rss/search?q=Blue%20Origin%20New%20Glenn%20Blue%20Ring%20satellite&hl=en-US&gl=US&ceid=US:en
         - https://news.google.com/rss/search?q=%22Blue%20Origin%22%20%22New%20Glenn%22&hl=en-US&gl=US&ceid=US:en
         - https://news.google.com/rss/search?q=%22Blue%20Origin%22%20%22Blue%20Ring%22%20TeraWave&hl=en-US&gl=US&ceid=US:en
@@ -819,13 +1646,8 @@ sources:
         - https://spaceflightnow.com/feed/
         - https://payloadspace.com/feed/
         - https://www.nasa.gov/news-release/feed/
-        - https://feeds.arstechnica.com/arstechnica/space
         - https://www.theregister.com/headlines.atom
         - https://www.fierce-network.com/rss/xml
-        - https://www.fierce-wireless.com/rss/xml
-        - https://feeds.feedburner.com/36kr
-        - https://www.geekpark.net/rss
-        - https://www.huxiu.com/rss/0.xml
         - https://www.stcn.com/rss
         - https://www.ithome.com/rss/
         - https://news.google.com/rss/search?q=%E5%9E%A3%E4%BF%A1%E5%8D%AB%E6%98%9F%20%E5%8D%83%E5%B8%86%E6%98%9F%E5%BA%A7&hl=zh-CN&gl=CN&ceid=CN:zh-Hans
@@ -836,22 +1658,14 @@ sources:
         - https://news.google.com/rss/search?q=SpaceSail%20Qianfan%20satellite&hl=en-US&gl=US&ceid=US:en
         - https://news.google.com/rss/search?q=Thousand%20Sails%20SpaceSail%20constellation&hl=en-US&gl=US&ceid=US:en
         - https://news.google.com/rss/search?q=Shanghai%20SpaceSail%20satellite&hl=en-US&gl=US&ceid=US:en
-        - https://www.bing.com/news/search?q=%E5%9E%A3%E4%BF%A1%E5%8D%AB%E6%98%9F+%E5%8D%83%E5%B8%86%E6%98%9F%E5%BA%A7&format=rss
-        - https://www.bing.com/news/search?q=%E4%B8%8A%E6%B5%B7%E5%9E%A3%E4%BF%A1+G60+%E6%98%9F%E9%93%BE&format=rss
         - https://www.bing.com/news/search?q=SpaceSail+Qianfan+satellite&format=rss
-        - https://www.bing.com/news/search?q=%E4%BD%8E%E8%BD%A8%E5%8D%AB%E6%98%9F%E4%BA%92%E8%81%94%E7%BD%91+%E5%8D%83%E5%B8%86%E6%98%9F%E5%BA%A7&format=rss
       china_satnet:
         - https://spacenews.com/feed/
         - https://spaceflightnow.com/feed/
         - https://payloadspace.com/feed/
         - https://www.nasa.gov/news-release/feed/
-        - https://feeds.arstechnica.com/arstechnica/space
         - https://www.theregister.com/headlines.atom
         - https://www.fierce-network.com/rss/xml
-        - https://www.fierce-wireless.com/rss/xml
-        - https://feeds.feedburner.com/36kr
-        - https://www.geekpark.net/rss
-        - https://www.huxiu.com/rss/0.xml
         - https://www.stcn.com/rss
         - https://news.google.com/rss/search?q=%E4%B8%AD%E5%9B%BD%E6%98%9F%E7%BD%91%20%E5%9B%BD%E7%BD%91%E6%98%9F%E5%BA%A7&hl=zh-CN&gl=CN&ceid=CN:zh-Hans
         - https://news.google.com/rss/search?q=%E4%B8%AD%E5%9B%BD%E5%8D%AB%E6%98%9F%E7%BD%91%E7%BB%9C%E9%9B%86%E5%9B%A2%20%E4%B8%AD%E5%9B%BD%E6%98%9F%E7%BD%91&hl=zh-CN&gl=CN&ceid=CN:zh-Hans
@@ -859,10 +1673,26 @@ sources:
         - https://news.google.com/rss/search?q=China%20SatNet%20Guowang%20satellite%20constellation&hl=en-US&gl=US&ceid=US:en
         - https://news.google.com/rss/search?q=China%20SatNet%20Guowang%20satellite&hl=en-US&gl=US&ceid=US:en
         - https://news.google.com/rss/search?q=China%20Satellite%20Network%20Group%20constellation&hl=en-US&gl=US&ceid=US:en
-        - https://www.bing.com/news/search?q=%E4%B8%AD%E5%9B%BD%E6%98%9F%E7%BD%91+%E5%9B%BD%E7%BD%91%E6%98%9F%E5%BA%A7&format=rss
-        - https://www.bing.com/news/search?q=%E4%B8%AD%E5%9B%BD%E5%8D%AB%E6%98%9F%E7%BD%91%E7%BB%9C%E9%9B%86%E5%9B%A2+%E5%8D%AB%E6%98%9F%E4%BA%92%E8%81%94%E7%BD%91&format=rss
         - https://www.bing.com/news/search?q=China+SatNet+Guowang+satellite+constellation&format=rss
-        - https://www.bing.com/news/search?q=%E4%BD%8E%E8%BD%A8%E6%98%9F%E5%BA%A7+%E4%B8%AD%E5%9B%BD%E6%98%9F%E7%BD%91&format=rss
+      yushi_space:
+        - https://news.google.com/rss/search?q=%E5%AE%87%E7%9F%B3%E7%A9%BA%E9%97%B4%20AS-1%20%E4%B8%8D%E9%94%88%E9%92%A2%E7%81%AB%E7%AE%AD&hl=zh-CN&gl=CN&ceid=CN:zh-Hans
+        - https://news.google.com/rss/search?q=site%3Astcn.com%20%E5%AE%87%E7%9F%B3%E7%A9%BA%E9%97%B4%20AS-1&hl=zh-CN&gl=CN&ceid=CN:zh-Hans
+        - https://news.google.com/rss/search?q=site%3Atmtpost.com%20%E5%AE%87%E7%9F%B3%E7%A9%BA%E9%97%B4%20AS-1&hl=zh-CN&gl=CN&ceid=CN:zh-Hans
+        - https://news.google.com/rss/search?q=site%3Aithome.com%20%E5%AE%87%E7%9F%B3%E7%A9%BA%E9%97%B4%20AS-1&hl=zh-CN&gl=CN&ceid=CN:zh-Hans
+        - https://news.google.com/rss/search?q=site%3Asina.com.cn%20%E5%AE%87%E7%9F%B3%E7%A9%BA%E9%97%B4%20AS-1&hl=zh-CN&gl=CN&ceid=CN:zh-Hans
+      hongqing_technology:
+        - https://news.google.com/rss/search?q=%E9%B8%BF%E6%93%8E%E7%A7%91%E6%8A%80%20%E5%B9%B3%E6%9D%BF%E5%8D%AB%E6%98%9F%20%E5%8D%AB%E6%98%9F%E7%BB%84%E7%BD%91&hl=zh-CN&gl=CN&ceid=CN:zh-Hans
+        - https://news.google.com/rss/search?q=site%3Ahongqing.tech%20%E9%B8%BF%E6%93%8E%E7%A7%91%E6%8A%80%20%E5%8D%AB%E6%98%9F&hl=zh-CN&gl=CN&ceid=CN:zh-Hans
+        - https://news.google.com/rss/search?q=site%3Axiongan.gov.cn%20%E9%B8%BF%E6%93%8E%E7%A7%91%E6%8A%80%20%E5%8D%AB%E6%98%9F&hl=zh-CN&gl=CN&ceid=CN:zh-Hans
+        - https://news.google.com/rss/search?q=site%3Ancsti.gov.cn%20%E9%B8%BF%E6%93%8E%E7%A7%91%E6%8A%80%20%E5%8D%AB%E6%98%9F%E4%BA%92%E8%81%94%E7%BD%91&hl=zh-CN&gl=CN&ceid=CN:zh-Hans
+        - https://news.google.com/rss/search?q=site%3Alandspace.com%20%E9%B8%BF%E6%93%8E%E7%A7%91%E6%8A%80%20%E8%93%9D%E7%AE%AD%E9%B8%BF%E6%93%8E&hl=zh-CN&gl=CN&ceid=CN:zh-Hans
+      galaxyspace:
+        - https://news.google.com/rss/search?q=%E9%93%B6%E6%B2%B3%E8%88%AA%E5%A4%A9%20%E5%8D%AB%E6%98%9F%E4%BA%92%E8%81%94%E7%BD%91%20%E4%BD%8E%E8%BD%A8%E5%AE%BD%E5%B8%A6%E9%80%9A%E4%BF%A1%E5%8D%AB%E6%98%9F&hl=zh-CN&gl=CN&ceid=CN:zh-Hans
+        - https://news.google.com/rss/search?q=site%3Ayinhehangtian.cn%20%E9%93%B6%E6%B2%B3%E8%88%AA%E5%A4%A9&hl=zh-CN&gl=CN&ceid=CN:zh-Hans
+        - https://news.google.com/rss/search?q=site%3Anews.cn%20%E9%93%B6%E6%B2%B3%E8%88%AA%E5%A4%A9%20%E5%8D%AB%E6%98%9F%E4%BA%92%E8%81%94%E7%BD%91&hl=zh-CN&gl=CN&ceid=CN:zh-Hans
+        - https://news.google.com/rss/search?q=site%3Akw.beijing.gov.cn%20%E9%93%B6%E6%B2%B3%E8%88%AA%E5%A4%A9%20%E5%8D%AB%E6%98%9F%E4%BA%92%E8%81%94%E7%BD%91&hl=zh-CN&gl=CN&ceid=CN:zh-Hans
+        - https://news.google.com/rss/search?q=site%3Akfqgw.beijing.gov.cn%20%E9%93%B6%E6%B2%B3%E8%88%AA%E5%A4%A9%20%E5%8D%AB%E6%98%9F%E4%BA%92%E8%81%94%E7%BD%91&hl=zh-CN&gl=CN&ceid=CN:zh-Hans
+        - https://news.google.com/rss/search?q=GalaxySpace%20satellite%20internet&hl=en-US&gl=US&ceid=US:en
     candidate_domains:
       global_space_media:
         - spacenews.com
@@ -883,7 +1713,35 @@ sources:
       require_company_keyword: true
       require_satellite_context: true
       prefer_original_reporting: true
-
+    fallback_company_feed_overrides:
+      yuanxin_satellite:
+        - https://www.bing.com/news/search?q=%E5%9E%A3%E4%BF%A1%E5%8D%AB%E6%98%9F+%E5%8D%83%E5%B8%86%E6%98%9F%E5%BA%A7&format=rss
+        - https://www.bing.com/news/search?q=%E4%B8%8A%E6%B5%B7%E5%9E%A3%E4%BF%A1+G60+%E6%98%9F%E9%93%BE&format=rss
+        - https://www.bing.com/news/search?q=%E4%BD%8E%E8%BD%A8%E5%8D%AB%E6%98%9F%E4%BA%92%E8%81%94%E7%BD%91+%E5%8D%83%E5%B8%86%E6%98%9F%E5%BA%A7&format=rss
+      china_satnet:
+        - https://www.bing.com/news/search?q=%E4%B8%AD%E5%9B%BD%E6%98%9F%E7%BD%91+%E5%9B%BD%E7%BD%91%E6%98%9F%E5%BA%A7&format=rss
+        - https://www.bing.com/news/search?q=%E4%B8%AD%E5%9B%BD%E5%8D%AB%E6%98%9F%E7%BD%91%E7%BB%9C%E9%9B%86%E5%9B%A2+%E5%8D%AB%E6%98%9F%E4%BA%92%E8%81%94%E7%BD%91&format=rss
+        - https://www.bing.com/news/search?q=%E4%BD%8E%E8%BD%A8%E6%98%9F%E5%BA%A7+%E4%B8%AD%E5%9B%BD%E6%98%9F%E7%BD%91&format=rss
+    disabled_company_feeds:
+      spacex:
+        - https://feeds.arstechnica.com/arstechnica/space
+        - https://www.fierce-wireless.com/rss/xml
+      blue_origin:
+        - https://feeds.arstechnica.com/arstechnica/space
+        - https://www.fierce-wireless.com/rss/xml
+      yuanxin_satellite:
+        - https://feeds.arstechnica.com/arstechnica/space
+        - https://www.fierce-wireless.com/rss/xml
+        - https://feeds.feedburner.com/36kr
+        - https://www.geekpark.net/rss
+        - https://www.huxiu.com/rss/0.xml
+      china_satnet:
+        - https://feeds.arstechnica.com/arstechnica/space
+        - https://www.fierce-wireless.com/rss/xml
+        - https://feeds.feedburner.com/36kr
+        - https://www.geekpark.net/rss
+        - https://www.huxiu.com/rss/0.xml
+    fallback_feed_policy: Chinese Bing News RSS retained only as low-priority fallback metadata after A3 sparse/zero-result validation.
   - id: rss_source_metadata
     type: rss
     rank_group: media
@@ -898,24 +1756,82 @@ sources:
       spacex:
         priority: 30
         source_notes:
-          - stable: spacenews.com, nasa.gov, Google News, Bing News
-          - candidate: spaceflightnow.com, payloadspace.com, arstechnica, the register, fierce-network, fierce-wireless
+          - 'stable: Google News company-specific RSS; English Bing retained only where query is explicit.'
+          - 'low_priority: generic space/aerospace RSS must pass strict company-keyword filters before use.'
       blue_origin:
         priority: 30
         source_notes:
-          - stable: spacenews.com, nasa.gov, Google News, Bing News
-          - candidate: spaceflightnow.com, payloadspace.com, arstechnica, the register, fierce-network, fierce-wireless
+          - 'stable: Google News company-specific RSS; English Bing retained only where query is explicit.'
+          - 'low_priority: generic space/aerospace RSS must pass strict company-keyword filters before use.'
       yuanxin_satellite:
         priority: 30
         source_notes:
-          - stable: Google News, Bing News, stcn.com, 36kr, geekpark, huxiu
-          - candidate: spaceflightnow.com, payloadspace.com, arstechnica, the register, fierce-network, fierce-wireless
+          - 'stable: Google News RSS and explicit company keyword searches.'
+          - 'fallback: Chinese Bing RSS retained only as low-priority metadata when present.'
       china_satnet:
         priority: 30
         source_notes:
-          - stable: Google News, Bing News, stcn.com, 36kr, geekpark, huxiu, xiongan/government portals
-          - candidate: spaceflightnow.com, payloadspace.com, arstechnica, the register, fierce-network, fierce-wireless
-
+          - 'stable: Google News RSS and explicit company keyword searches.'
+          - 'fallback: Chinese Bing RSS retained only as low-priority metadata when present.'
+      landspace:
+        priority: 30
+        source_notes:
+          - 'stable: Google News RSS and explicit company keyword searches.'
+          - 'fallback: Chinese Bing RSS retained only as low-priority metadata when present.'
+      cas_space:
+        priority: 30
+        source_notes:
+          - 'stable: Google News RSS and explicit company keyword searches.'
+          - 'fallback: Chinese Bing RSS retained only as low-priority metadata when present.'
+      space_pioneer:
+        priority: 30
+        source_notes:
+          - 'stable: Google News RSS and explicit company keyword searches.'
+          - 'fallback: Chinese Bing RSS retained only as low-priority metadata when present.'
+      i_space:
+        priority: 30
+        source_notes:
+          - 'stable: Google News RSS and explicit company keyword searches.'
+          - 'fallback: Chinese Bing RSS retained only as low-priority metadata when present.'
+      galactic_energy:
+        priority: 30
+        source_notes:
+          - 'stable: Google News RSS and explicit company keyword searches.'
+          - 'fallback: Chinese Bing RSS retained only as low-priority metadata when present.'
+      yushi_space:
+        priority: 40
+        source_notes:
+          - 'stable: targeted Google News RSS, including site-limited authority/company searches.'
+          - 'fallback: Chinese Bing RSS retained only as low-priority metadata.'
+      hongqing_technology:
+        priority: 35
+        source_notes:
+          - 'stable: targeted Google News RSS, including site-limited authority/company searches.'
+          - 'fallback: Chinese Bing RSS retained only as low-priority metadata.'
+      galaxyspace:
+        priority: 30
+        source_notes:
+          - 'stable: targeted Google News RSS, including site-limited authority/company searches.'
+          - 'fallback: Chinese Bing RSS retained only as low-priority metadata.'
+      minospace:
+        priority: 30
+        source_notes:
+          - 'stable: Google News RSS and explicit company keyword searches.'
+          - 'fallback: Chinese Bing RSS retained only as low-priority metadata when present.'
+    disabled_feeds:
+      - url: https://www.fierce-wireless.com/rss/xml
+        reason: DNS failed in A3 run 43556ecc-5248-4c7e-8047-bac86066ef04
+      - url: https://feeds.arstechnica.com/arstechnica/space
+        reason: 404 in A3 run 43556ecc-5248-4c7e-8047-bac86066ef04
+      - url: https://feeds.feedburner.com/36kr
+        reason: HTTP 200 but not parseable RSS in A3 run 43556ecc-5248-4c7e-8047-bac86066ef04
+      - url: https://www.geekpark.net/rss
+        reason: SSL failure in A3 run 43556ecc-5248-4c7e-8047-bac86066ef04
+      - url: https://www.huxiu.com/rss/0.xml
+        reason: 8s timeout in A3 run 43556ecc-5248-4c7e-8047-bac86066ef04
+    bing_policy:
+      chinese_bing_news_rss: fallback_low_priority_only
+      reason: A3 validation found Chinese Bing News RSS usually returned zero results; Google News RSS remains primary.
   - id: search_api_placeholder
     type: search_api
     rank_group: search
@@ -931,7 +1847,6 @@ sources:
       provider: reserved
       mode: dry_run
       api_calls_allowed: false
-
 mapping_expansion:
   source: Satellite industry chain Mapping table
   status: reserved
