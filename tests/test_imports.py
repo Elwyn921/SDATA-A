@@ -244,10 +244,15 @@ def test_pipeline_error_boundary_logs_stage_failure(caplog):
 def test_github_actions_refreshes_pages_data_on_safe_schedule():
     workflow = Path(".github/workflows/news-intelligence.yml").read_text(encoding="utf-8")
 
-    assert 'cron: "0 */3 * * *"' in workflow
-    assert 'cron: "15,45 * * * *"' in workflow
+    assert 'cron: "0 */6 * * *"' in workflow
+    assert 'cron: "0 */3 * * *"' not in workflow
+    assert 'cron: "15,45 * * * *"' not in workflow
     assert "permissions:\n  contents: write" in workflow
     assert "concurrency:\n  group: news-data-writer" in workflow
+    assert "company_id:" in workflow
+    assert "provider_id:" in workflow
+    assert "scheduled_slot:" in workflow
+    assert "max_gdelt_queries:" in workflow
     assert "python -m pip install --upgrade pip setuptools wheel" in workflow
     assert "python -m compileall -q src tests" in workflow
     assert "python -m pytest" in workflow
@@ -255,8 +260,10 @@ def test_github_actions_refreshes_pages_data_on_safe_schedule():
     assert "--no-dry-run" in workflow
     assert "--output-dir data/news/latest" in workflow
     assert "--publish-dir docs/data/news" in workflow
-    assert "--provider-id gdelt_provider" in workflow
-    assert "--max-gdelt-queries 1" in workflow
+    assert 'elif [ "${{ github.event.schedule }}" = "0 */6 * * *" ]; then' in workflow
+    assert "EXTRA_ARGS+=(--provider-id rss_provider)" in workflow
+    assert "--provider-id gdelt_provider" not in workflow
+    assert "--max-gdelt-queries 1" not in workflow
     assert "SERPAPI_KEY: ${{ secrets.SERPAPI_KEY }}" in workflow
     assert "NEWSAPI_KEY: ${{ secrets.NEWSAPI_KEY }}" in workflow
     assert "git add data/news docs/data/news" in workflow
