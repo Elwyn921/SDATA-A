@@ -16,7 +16,7 @@
     {
       "company_id": "china_satnet",
       "company_name": "中国星网",
-      "item_count": 41,
+      "item_count": 44,
       "status": "success"
     },
     {
@@ -34,13 +34,13 @@
     {
       "company_id": "hongqing_technology",
       "company_name": "蓝箭鸿擎",
-      "item_count": 27,
+      "item_count": 24,
       "status": "success"
     },
     {
       "company_id": "i_space",
       "company_name": "星际荣耀",
-      "item_count": 42,
+      "item_count": 50,
       "status": "success"
     },
     {
@@ -52,7 +52,7 @@
     {
       "company_id": "minospace",
       "company_name": "微纳星空",
-      "item_count": 44,
+      "item_count": 43,
       "status": "success"
     },
     {
@@ -76,41 +76,41 @@
     {
       "company_id": "yushi_space",
       "company_name": "宇石空间",
-      "item_count": 27,
+      "item_count": 29,
       "status": "success"
     }
   ],
   "company_item_counts": {
     "blue_origin": 50,
     "cas_space": 50,
-    "china_satnet": 41,
+    "china_satnet": 44,
     "galactic_energy": 50,
     "galaxyspace": 50,
-    "hongqing_technology": 27,
-    "i_space": 42,
+    "hongqing_technology": 24,
+    "i_space": 50,
     "landspace": 50,
-    "minospace": 44,
+    "minospace": 43,
     "space_pioneer": 49,
     "spacex": 50,
     "yuanxin_satellite": 49,
-    "yushi_space": 27
+    "yushi_space": 29
   },
   "config_dir": "config",
   "dry_run": false,
   "export_count": 0,
   "fetch_status_count": 13,
-  "finished_at": "2026-06-27T01:51:31.230076Z",
-  "fresh_item_count": 579,
-  "generated_at": "2026-06-27T01:51:31.230076Z",
-  "item_count": 579,
+  "finished_at": "2026-06-27T08:21:45.114294Z",
+  "fresh_item_count": 588,
+  "generated_at": "2026-06-27T08:21:45.114294Z",
+  "item_count": 588,
   "metadata": {
     "latest_is_stale_safe": true
   },
   "output_dir": "data/news/latest",
-  "run_id": "68b85b4c-336d-4d2e-9a9e-b574f1b498a8",
+  "run_id": "d6e8b79b-2489-423a-92c9-a6ad3394184a",
   "schema_version": "satellite_news.v1",
   "stale_item_count": 0,
-  "started_at": "2026-06-27T01:51:10.706381Z",
+  "started_at": "2026-06-27T08:21:25.919128Z",
   "summary_count": 0,
   "warnings": []
 }
