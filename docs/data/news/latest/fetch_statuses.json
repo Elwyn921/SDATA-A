@@ -19,7 +19,7 @@
         "https://www.bing.com/news/search?q=Falcon+9+Starlink+satellites&format=rss"
       ],
       "final_status": "success",
-      "finished_at": "2026-06-29T15:23:04.669708Z",
+      "finished_at": "2026-06-29T19:28:49.876843Z",
       "item_count": 50,
       "max_gdelt_queries": null,
       "merge_policy": "A5_stale_latest_merge",
@@ -40,7 +40,7 @@
         "merge_policy": "A5_stale_latest_merge",
         "partial_run": true,
         "provider_id": "rss_provider",
-        "scheduled_slot": "rss-2026-06-29T15",
+        "scheduled_slot": "rss-2026-06-29T19",
         "stale_fallback_available": false,
         "warning_count": 0
       },
@@ -57,7 +57,7 @@
       "retry_count": 0,
       "scheduled_company_id": null,
       "scheduled_provider_id": "rss_provider",
-      "scheduled_slot": "rss-2026-06-29T15",
+      "scheduled_slot": "rss-2026-06-29T19",
       "should_fallback": false,
       "source_id": "rss_provider",
       "source_type": "rss",
@@ -85,7 +85,7 @@
         "https://www.bing.com/news/search?q=Blue+Origin+BE-4+engine&format=rss"
       ],
       "final_status": "success",
-      "finished_at": "2026-06-29T15:23:05.102040Z",
+      "finished_at": "2026-06-29T19:28:50.408082Z",
       "item_count": 50,
       "max_gdelt_queries": null,
       "merge_policy": "A5_stale_latest_merge",
@@ -108,7 +108,7 @@
         "merge_policy": "A5_stale_latest_merge",
         "partial_run": true,
         "provider_id": "rss_provider",
-        "scheduled_slot": "rss-2026-06-29T15",
+        "scheduled_slot": "rss-2026-06-29T19",
         "stale_fallback_available": false,
         "warning_count": 0
       },
@@ -125,7 +125,7 @@
       "retry_count": 0,
       "scheduled_company_id": null,
       "scheduled_provider_id": "rss_provider",
-      "scheduled_slot": "rss-2026-06-29T15",
+      "scheduled_slot": "rss-2026-06-29T19",
       "should_fallback": false,
       "source_id": "rss_provider",
       "source_type": "rss",
@@ -165,7 +165,7 @@
         "https://www.fierce-network.com/rss/xml"
       ],
       "final_status": "success",
-      "finished_at": "2026-06-29T15:23:06.144695Z",
+      "finished_at": "2026-06-29T19:28:51.451465Z",
       "item_count": 48,
       "max_gdelt_queries": null,
       "merge_policy": "A5_stale_latest_merge",
@@ -200,7 +200,7 @@
         "merge_policy": "A5_stale_latest_merge",
         "partial_run": true,
         "provider_id": "rss_provider",
-        "scheduled_slot": "rss-2026-06-29T15",
+        "scheduled_slot": "rss-2026-06-29T19",
         "stale_fallback_available": false,
         "warning_count": 0
       },
@@ -217,7 +217,7 @@
       "retry_count": 0,
       "scheduled_company_id": null,
       "scheduled_provider_id": "rss_provider",
-      "scheduled_slot": "rss-2026-06-29T15",
+      "scheduled_slot": "rss-2026-06-29T19",
       "should_fallback": false,
       "source_id": "rss_provider",
       "source_type": "rss",
@@ -227,7 +227,7 @@
       "warnings": []
     },
     {
-      "article_count": 40,
+      "article_count": 41,
       "company_id": "china_satnet",
       "company_name": "中国星网",
       "error_message": null,
@@ -256,8 +256,8 @@
         "https://www.fierce-network.com/rss/xml"
       ],
       "final_status": "success",
-      "finished_at": "2026-06-29T15:23:07.564127Z",
-      "item_count": 40,
+      "finished_at": "2026-06-29T19:28:53.144632Z",
+      "item_count": 41,
       "max_gdelt_queries": null,
       "merge_policy": "A5_stale_latest_merge",
       "metadata": {
@@ -290,7 +290,7 @@
         "merge_policy": "A5_stale_latest_merge",
         "partial_run": true,
         "provider_id": "rss_provider",
-        "scheduled_slot": "rss-2026-06-29T15",
+        "scheduled_slot": "rss-2026-06-29T19",
         "stale_fallback_available": false,
         "warning_count": 0
       },
@@ -307,7 +307,7 @@
       "retry_count": 0,
       "scheduled_company_id": null,
       "scheduled_provider_id": "rss_provider",
-      "scheduled_slot": "rss-2026-06-29T15",
+      "scheduled_slot": "rss-2026-06-29T19",
       "should_fallback": false,
       "source_id": "rss_provider",
       "source_type": "rss",
@@ -336,7 +336,7 @@
         "https://www.bing.com/news/search?q=LandSpace+Zhuque+ZQ-2+ZQ-3&format=rss"
       ],
       "final_status": "success",
-      "finished_at": "2026-06-29T15:23:08.832254Z",
+      "finished_at": "2026-06-29T19:28:54.704481Z",
       "item_count": 50,
       "max_gdelt_queries": null,
       "merge_policy": "A5_stale_latest_merge",
@@ -360,7 +360,7 @@
         "merge_policy": "A5_stale_latest_merge",
         "partial_run": true,
         "provider_id": "rss_provider",
-        "scheduled_slot": "rss-2026-06-29T15",
+        "scheduled_slot": "rss-2026-06-29T19",
         "stale_fallback_available": false,
         "warning_count": 1
       },
@@ -377,7 +377,7 @@
       "retry_count": 0,
       "scheduled_company_id": null,
       "scheduled_provider_id": "rss_provider",
-      "scheduled_slot": "rss-2026-06-29T15",
+      "scheduled_slot": "rss-2026-06-29T19",
       "should_fallback": false,
       "source_id": "rss_provider",
       "source_type": "rss",
@@ -385,7 +385,7 @@
       "status": "success",
       "successful_query_count": 0,
       "warnings": [
-        "https://www.theregister.com/headlines.atom: HTTPError: HTTP Error 403: Forbidden"
+        "https://www.theregister.com/headlines.atom: ParseError: not well-formed (invalid token): line 7, column 22"
       ]
     },
     {
@@ -408,7 +408,7 @@
         "https://www.bing.com/news/search?q=CAS+Space+Lijian+Kinetica&format=rss"
       ],
       "final_status": "success",
-      "finished_at": "2026-06-29T15:23:09.898824Z",
+      "finished_at": "2026-06-29T19:28:55.795681Z",
       "item_count": 50,
       "max_gdelt_queries": null,
       "merge_policy": "A5_stale_latest_merge",
@@ -432,7 +432,7 @@
         "merge_policy": "A5_stale_latest_merge",
         "partial_run": true,
         "provider_id": "rss_provider",
-        "scheduled_slot": "rss-2026-06-29T15",
+        "scheduled_slot": "rss-2026-06-29T19",
         "stale_fallback_available": false,
         "warning_count": 1
       },
@@ -449,7 +449,7 @@
       "retry_count": 0,
       "scheduled_company_id": null,
       "scheduled_provider_id": "rss_provider",
-      "scheduled_slot": "rss-2026-06-29T15",
+      "scheduled_slot": "rss-2026-06-29T19",
       "should_fallback": false,
       "source_id": "rss_provider",
       "source_type": "rss",
@@ -457,7 +457,7 @@
       "status": "success",
       "successful_query_count": 0,
       "warnings": [
-        "https://www.theregister.com/headlines.atom: HTTPError: HTTP Error 403: Forbidden"
+        "https://www.theregister.com/headlines.atom: ParseError: not well-formed (invalid token): line 7, column 22"
       ]
     },
     {
@@ -480,7 +480,7 @@
         "https://www.bing.com/news/search?q=Space+Pioneer+Tianlong+TL-2+TL-3&format=rss"
       ],
       "final_status": "success",
-      "finished_at": "2026-06-29T15:23:11.820168Z",
+      "finished_at": "2026-06-29T19:28:57.598270Z",
       "item_count": 49,
       "max_gdelt_queries": null,
       "merge_policy": "A5_stale_latest_merge",
@@ -504,9 +504,9 @@
         "merge_policy": "A5_stale_latest_merge",
         "partial_run": true,
         "provider_id": "rss_provider",
-        "scheduled_slot": "rss-2026-06-29T15",
+        "scheduled_slot": "rss-2026-06-29T19",
         "stale_fallback_available": false,
-        "warning_count": 0
+        "warning_count": 1
       },
       "partial_run": true,
       "provider_id": "rss_provider",
@@ -521,14 +521,16 @@
       "retry_count": 0,
       "scheduled_company_id": null,
       "scheduled_provider_id": "rss_provider",
-      "scheduled_slot": "rss-2026-06-29T15",
+      "scheduled_slot": "rss-2026-06-29T19",
       "should_fallback": false,
       "source_id": "rss_provider",
       "source_type": "rss",
       "started_at": null,
       "status": "success",
       "successful_query_count": 0,
-      "warnings": []
+      "warnings": [
+        "https://www.theregister.com/headlines.atom: ParseError: not well-formed (invalid token): line 7, column 22"
+      ]
     },
     {
       "article_count": 50,
@@ -550,7 +552,7 @@
         "https://www.bing.com/news/search?q=i-Space+Hyperbola+SQX&format=rss"
       ],
       "final_status": "success",
-      "finished_at": "2026-06-29T15:23:12.767995Z",
+      "finished_at": "2026-06-29T19:28:58.651387Z",
       "item_count": 50,
       "max_gdelt_queries": null,
       "merge_policy": "A5_stale_latest_merge",
@@ -574,7 +576,7 @@
         "merge_policy": "A5_stale_latest_merge",
         "partial_run": true,
         "provider_id": "rss_provider",
-        "scheduled_slot": "rss-2026-06-29T15",
+        "scheduled_slot": "rss-2026-06-29T19",
         "stale_fallback_available": false,
         "warning_count": 1
       },
@@ -591,7 +593,7 @@
       "retry_count": 0,
       "scheduled_company_id": null,
       "scheduled_provider_id": "rss_provider",
-      "scheduled_slot": "rss-2026-06-29T15",
+      "scheduled_slot": "rss-2026-06-29T19",
       "should_fallback": false,
       "source_id": "rss_provider",
       "source_type": "rss",
@@ -599,11 +601,11 @@
       "status": "success",
       "successful_query_count": 0,
       "warnings": [
-        "https://www.theregister.com/headlines.atom: HTTPError: HTTP Error 403: Forbidden"
+        "https://www.theregister.com/headlines.atom: ParseError: not well-formed (invalid token): line 7, column 22"
       ]
     },
     {
-      "article_count": 50,
+      "article_count": 49,
       "company_id": "galactic_energy",
       "company_name": "星河动力",
       "error_message": null,
@@ -622,8 +624,8 @@
         "https://www.bing.com/news/search?q=Galactic+Energy+Ceres-1+Pallas-1&format=rss"
       ],
       "final_status": "success",
-      "finished_at": "2026-06-29T15:23:13.881616Z",
-      "item_count": 50,
+      "finished_at": "2026-06-29T19:29:00.148883Z",
+      "item_count": 49,
       "max_gdelt_queries": null,
       "merge_policy": "A5_stale_latest_merge",
       "metadata": {
@@ -646,7 +648,7 @@
         "merge_policy": "A5_stale_latest_merge",
         "partial_run": true,
         "provider_id": "rss_provider",
-        "scheduled_slot": "rss-2026-06-29T15",
+        "scheduled_slot": "rss-2026-06-29T19",
         "stale_fallback_available": false,
         "warning_count": 1
       },
@@ -663,7 +665,7 @@
       "retry_count": 0,
       "scheduled_company_id": null,
       "scheduled_provider_id": "rss_provider",
-      "scheduled_slot": "rss-2026-06-29T15",
+      "scheduled_slot": "rss-2026-06-29T19",
       "should_fallback": false,
       "source_id": "rss_provider",
       "source_type": "rss",
@@ -671,11 +673,11 @@
       "status": "success",
       "successful_query_count": 0,
       "warnings": [
-        "https://www.theregister.com/headlines.atom: HTTPError: HTTP Error 403: Forbidden"
+        "https://www.theregister.com/headlines.atom: ParseError: not well-formed (invalid token): line 7, column 22"
       ]
     },
     {
-      "article_count": 28,
+      "article_count": 27,
       "company_id": "yushi_space",
       "company_name": "宇石空间",
       "error_message": null,
@@ -697,8 +699,8 @@
         "https://news.google.com/rss/search?q=site%3Asina.com.cn%20%E5%AE%87%E7%9F%B3%E7%A9%BA%E9%97%B4%20AS-1&hl=zh-CN&gl=CN&ceid=CN:zh-Hans"
       ],
       "final_status": "success",
-      "finished_at": "2026-06-29T15:23:16.227213Z",
-      "item_count": 28,
+      "finished_at": "2026-06-29T19:29:02.946988Z",
+      "item_count": 27,
       "max_gdelt_queries": null,
       "merge_policy": "A5_stale_latest_merge",
       "metadata": {
@@ -724,7 +726,7 @@
         "merge_policy": "A5_stale_latest_merge",
         "partial_run": true,
         "provider_id": "rss_provider",
-        "scheduled_slot": "rss-2026-06-29T15",
+        "scheduled_slot": "rss-2026-06-29T19",
         "stale_fallback_available": false,
         "warning_count": 1
       },
@@ -741,7 +743,7 @@
       "retry_count": 0,
       "scheduled_company_id": null,
       "scheduled_provider_id": "rss_provider",
-      "scheduled_slot": "rss-2026-06-29T15",
+      "scheduled_slot": "rss-2026-06-29T19",
       "should_fallback": false,
       "source_id": "rss_provider",
       "source_type": "rss",
@@ -749,11 +751,11 @@
       "status": "success",
       "successful_query_count": 0,
       "warnings": [
-        "https://www.theregister.com/headlines.atom: HTTPError: HTTP Error 403: Forbidden"
+        "https://www.theregister.com/headlines.atom: ParseError: not well-formed (invalid token): line 7, column 22"
       ]
     },
     {
-      "article_count": 28,
+      "article_count": 25,
       "company_id": "hongqing_technology",
       "company_name": "蓝箭鸿擎",
       "error_message": null,
@@ -777,8 +779,8 @@
         "https://news.google.com/rss/search?q=site%3Alandspace.com%20%E9%B8%BF%E6%93%8E%E7%A7%91%E6%8A%80%20%E8%93%9D%E7%AE%AD%E9%B8%BF%E6%93%8E&hl=zh-CN&gl=CN&ceid=CN:zh-Hans"
       ],
       "final_status": "success",
-      "finished_at": "2026-06-29T15:23:19.111234Z",
-      "item_count": 28,
+      "finished_at": "2026-06-29T19:29:05.909711Z",
+      "item_count": 25,
       "max_gdelt_queries": null,
       "merge_policy": "A5_stale_latest_merge",
       "metadata": {
@@ -806,9 +808,9 @@
         "merge_policy": "A5_stale_latest_merge",
         "partial_run": true,
         "provider_id": "rss_provider",
-        "scheduled_slot": "rss-2026-06-29T15",
+        "scheduled_slot": "rss-2026-06-29T19",
         "stale_fallback_available": false,
-        "warning_count": 1
+        "warning_count": 2
       },
       "partial_run": true,
       "provider_id": "rss_provider",
@@ -823,7 +825,7 @@
       "retry_count": 0,
       "scheduled_company_id": null,
       "scheduled_provider_id": "rss_provider",
-      "scheduled_slot": "rss-2026-06-29T15",
+      "scheduled_slot": "rss-2026-06-29T19",
       "should_fallback": false,
       "source_id": "rss_provider",
       "source_type": "rss",
@@ -831,7 +833,8 @@
       "status": "success",
       "successful_query_count": 0,
       "warnings": [
-        "https://www.theregister.com/headlines.atom: HTTPError: HTTP Error 403: Forbidden"
+        "https://www.theregister.com/headlines.atom: ParseError: not well-formed (invalid token): line 7, column 22",
+        "https://www.bing.com/news/search?q=LandSpace+Hongqing+flat+satellite&format=rss: ParseError: not well-formed (invalid token): line 1, column 41"
       ]
     },
     {
@@ -859,7 +862,7 @@
         "https://news.google.com/rss/search?q=GalaxySpace%20satellite%20internet&hl=en-US&gl=US&ceid=US:en"
       ],
       "final_status": "success",
-      "finished_at": "2026-06-29T15:23:20.125005Z",
+      "finished_at": "2026-06-29T19:29:06.838558Z",
       "item_count": 50,
       "max_gdelt_queries": null,
       "merge_policy": "A5_stale_latest_merge",
@@ -888,7 +891,7 @@
         "merge_policy": "A5_stale_latest_merge",
         "partial_run": true,
         "provider_id": "rss_provider",
-        "scheduled_slot": "rss-2026-06-29T15",
+        "scheduled_slot": "rss-2026-06-29T19",
         "stale_fallback_available": false,
         "warning_count": 1
       },
@@ -905,7 +908,7 @@
       "retry_count": 0,
       "scheduled_company_id": null,
       "scheduled_provider_id": "rss_provider",
-      "scheduled_slot": "rss-2026-06-29T15",
+      "scheduled_slot": "rss-2026-06-29T19",
       "should_fallback": false,
       "source_id": "rss_provider",
       "source_type": "rss",
@@ -913,11 +916,11 @@
       "status": "success",
       "successful_query_count": 0,
       "warnings": [
-        "https://www.theregister.com/headlines.atom: HTTPError: HTTP Error 403: Forbidden"
+        "https://www.theregister.com/headlines.atom: ParseError: not well-formed (invalid token): line 7, column 22"
       ]
     },
     {
-      "article_count": 43,
+      "article_count": 44,
       "company_id": "minospace",
       "company_name": "微纳星空",
       "error_message": null,
@@ -936,8 +939,8 @@
         "https://www.bing.com/news/search?q=MinoSpace+commercial+satellite+manufacturer&format=rss"
       ],
       "final_status": "success",
-      "finished_at": "2026-06-29T15:23:21.429021Z",
-      "item_count": 43,
+      "finished_at": "2026-06-29T19:29:08.236151Z",
+      "item_count": 44,
       "max_gdelt_queries": null,
       "merge_policy": "A5_stale_latest_merge",
       "metadata": {
@@ -960,7 +963,7 @@
         "merge_policy": "A5_stale_latest_merge",
         "partial_run": true,
         "provider_id": "rss_provider",
-        "scheduled_slot": "rss-2026-06-29T15",
+        "scheduled_slot": "rss-2026-06-29T19",
         "stale_fallback_available": false,
         "warning_count": 1
       },
@@ -977,7 +980,7 @@
       "retry_count": 0,
       "scheduled_company_id": null,
       "scheduled_provider_id": "rss_provider",
-      "scheduled_slot": "rss-2026-06-29T15",
+      "scheduled_slot": "rss-2026-06-29T19",
       "should_fallback": false,
       "source_id": "rss_provider",
       "source_type": "rss",
@@ -985,11 +988,11 @@
       "status": "success",
       "successful_query_count": 0,
       "warnings": [
-        "https://www.theregister.com/headlines.atom: HTTPError: HTTP Error 403: Forbidden"
+        "https://www.theregister.com/headlines.atom: ParseError: not well-formed (invalid token): line 7, column 22"
       ]
     }
   ],
-  "generated_at": "2026-06-29T15:23:21.501300Z",
-  "run_id": "75a06121-8068-491e-8137-67fbf9c37945",
+  "generated_at": "2026-06-29T19:29:08.313528Z",
+  "run_id": "afae2fdb-33f5-4ad2-866f-da7ef3882164",
   "schema_version": "satellite_news.v1"
 }
