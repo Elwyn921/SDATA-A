@@ -1,8 +1,33 @@
 {
   "artifact_version": 1,
-  "generated_at": "2026-07-03T01:26:04.009942Z",
-  "latest_run_id": "5346d490-ae93-455c-978d-928828a30bfc",
+  "generated_at": "2026-07-03T08:42:32.279936Z",
+  "latest_run_id": "469a9f0e-460f-4281-bd9b-9dc7afa8ebe7",
   "runs": [
+    {
+      "archive_path": "data/news/archive/runs/2026/07/03/469a9f0e-460f-4281-bd9b-9dc7afa8ebe7",
+      "companies": [
+        "blue_origin",
+        "cas_space",
+        "china_satnet",
+        "galactic_energy",
+        "galaxyspace",
+        "hongqing_technology",
+        "i_space",
+        "landspace",
+        "minospace",
+        "space_pioneer",
+        "spacex",
+        "yuanxin_satellite",
+        "yushi_space"
+      ],
+      "dry_run": false,
+      "fetch_status_count": 13,
+      "finished_at": "2026-07-03T08:42:32.279936Z",
+      "item_count": 583,
+      "run_id": "469a9f0e-460f-4281-bd9b-9dc7afa8ebe7",
+      "started_at": "2026-07-03T08:42:14.781354Z",
+      "status": "success"
+    },
     {
       "archive_path": "data/news/archive/runs/2026/07/03/5346d490-ae93-455c-978d-928828a30bfc",
       "companies": [
