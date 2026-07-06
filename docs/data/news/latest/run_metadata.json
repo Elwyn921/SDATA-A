@@ -34,7 +34,7 @@
     {
       "company_id": "hongqing_technology",
       "company_name": "蓝箭鸿擎",
-      "item_count": 30,
+      "item_count": 31,
       "status": "success"
     },
     {
@@ -52,13 +52,13 @@
     {
       "company_id": "minospace",
       "company_name": "微纳星空",
-      "item_count": 42,
+      "item_count": 41,
       "status": "success"
     },
     {
       "company_id": "space_pioneer",
       "company_name": "天兵科技",
-      "item_count": 49,
+      "item_count": 48,
       "status": "success"
     },
     {
@@ -70,13 +70,13 @@
     {
       "company_id": "yuanxin_satellite",
       "company_name": "垣信卫星",
-      "item_count": 48,
+      "item_count": 47,
       "status": "success"
     },
     {
       "company_id": "yushi_space",
       "company_name": "宇石空间",
-      "item_count": 30,
+      "item_count": 28,
       "status": "success"
     }
   ],
@@ -86,31 +86,31 @@
     "china_satnet": 39,
     "galactic_energy": 50,
     "galaxyspace": 50,
-    "hongqing_technology": 30,
+    "hongqing_technology": 31,
     "i_space": 50,
     "landspace": 50,
-    "minospace": 42,
-    "space_pioneer": 49,
+    "minospace": 41,
+    "space_pioneer": 48,
     "spacex": 50,
-    "yuanxin_satellite": 48,
-    "yushi_space": 30
+    "yuanxin_satellite": 47,
+    "yushi_space": 28
   },
   "config_dir": "config",
   "dry_run": false,
   "export_count": 0,
   "fetch_status_count": 13,
-  "finished_at": "2026-07-06T09:48:15.641435Z",
-  "fresh_item_count": 588,
-  "generated_at": "2026-07-06T09:48:15.641435Z",
-  "item_count": 588,
+  "finished_at": "2026-07-06T14:49:14.291814Z",
+  "fresh_item_count": 584,
+  "generated_at": "2026-07-06T14:49:14.291814Z",
+  "item_count": 584,
   "metadata": {
     "latest_is_stale_safe": true
   },
   "output_dir": "data/news/latest",
-  "run_id": "93ea7e73-bfdd-40d0-8626-5624d96a54ce",
+  "run_id": "9e297ce1-8d64-4f60-b87b-66337292edab",
   "schema_version": "satellite_news.v1",
   "stale_item_count": 0,
-  "started_at": "2026-07-06T09:47:52.175426Z",
+  "started_at": "2026-07-06T14:48:54.022778Z",
   "summary_count": 0,
   "warnings": []
 }
