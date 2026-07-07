@@ -3,7 +3,7 @@
   "count": 13,
   "fetch_statuses": [
     {
-      "article_count": 50,
+      "article_count": 29,
       "company_id": "spacex",
       "company_name": "SpaceX",
       "error_message": null,
@@ -19,8 +19,8 @@
         "https://www.bing.com/news/search?q=Falcon+9+Starlink+satellites&format=rss"
       ],
       "final_status": "success",
-      "finished_at": "2026-07-07T13:58:46.643493Z",
-      "item_count": 50,
+      "finished_at": "2026-07-07T19:29:05.255229Z",
+      "item_count": 29,
       "max_gdelt_queries": null,
       "merge_policy": "A5_stale_latest_merge",
       "metadata": {
@@ -40,9 +40,9 @@
         "merge_policy": "A5_stale_latest_merge",
         "partial_run": true,
         "provider_id": "rss_provider",
-        "scheduled_slot": "rss-2026-07-07T13",
+        "scheduled_slot": "rss-2026-07-07T19",
         "stale_fallback_available": false,
-        "warning_count": 0
+        "warning_count": 4
       },
       "partial_run": true,
       "provider_id": "rss_provider",
@@ -57,17 +57,22 @@
       "retry_count": 0,
       "scheduled_company_id": null,
       "scheduled_provider_id": "rss_provider",
-      "scheduled_slot": "rss-2026-07-07T13",
+      "scheduled_slot": "rss-2026-07-07T19",
       "should_fallback": false,
       "source_id": "rss_provider",
       "source_type": "rss",
       "started_at": null,
       "status": "success",
       "successful_query_count": 0,
-      "warnings": []
+      "warnings": [
+        "https://news.google.com/rss/search?q=SpaceX%20Starlink%20satellite%20launch&hl=en-US&gl=US&ceid=US:en: HTTPError: HTTP Error 503: Service Unavailable",
+        "https://news.google.com/rss/search?q=SpaceX%20Starshield%20direct%20to%20cell&hl=en-US&gl=US&ceid=US:en: HTTPError: HTTP Error 503: Service Unavailable",
+        "https://news.google.com/rss/search?q=SpaceX%20Falcon%209%20Starlink%20satellites&hl=en-US&gl=US&ceid=US:en: HTTPError: HTTP Error 503: Service Unavailable",
+        "https://news.google.com/rss/search?q=site%3Aspacex.com%20SpaceX%20Starlink&hl=en-US&gl=US&ceid=US:en: HTTPError: HTTP Error 503: Service Unavailable"
+      ]
     },
     {
-      "article_count": 50,
+      "article_count": 21,
       "company_id": "blue_origin",
       "company_name": "Blue Origin",
       "error_message": null,
@@ -85,8 +90,8 @@
         "https://www.bing.com/news/search?q=Blue+Origin+BE-4+engine&format=rss"
       ],
       "final_status": "success",
-      "finished_at": "2026-07-07T13:58:47.096056Z",
-      "item_count": 50,
+      "finished_at": "2026-07-07T19:29:53.076148Z",
+      "item_count": 21,
       "max_gdelt_queries": null,
       "merge_policy": "A5_stale_latest_merge",
       "metadata": {
@@ -108,9 +113,9 @@
         "merge_policy": "A5_stale_latest_merge",
         "partial_run": true,
         "provider_id": "rss_provider",
-        "scheduled_slot": "rss-2026-07-07T13",
+        "scheduled_slot": "rss-2026-07-07T19",
         "stale_fallback_available": false,
-        "warning_count": 0
+        "warning_count": 6
       },
       "partial_run": true,
       "provider_id": "rss_provider",
@@ -125,17 +130,24 @@
       "retry_count": 0,
       "scheduled_company_id": null,
       "scheduled_provider_id": "rss_provider",
-      "scheduled_slot": "rss-2026-07-07T13",
+      "scheduled_slot": "rss-2026-07-07T19",
       "should_fallback": false,
       "source_id": "rss_provider",
       "source_type": "rss",
       "started_at": null,
       "status": "success",
       "successful_query_count": 0,
-      "warnings": []
+      "warnings": [
+        "https://news.google.com/rss/search?q=Blue%20Origin%20New%20Glenn%20Blue%20Ring%20satellite&hl=en-US&gl=US&ceid=US:en: HTTPError: HTTP Error 503: Service Unavailable",
+        "https://news.google.com/rss/search?q=%22Blue%20Origin%22%20%22New%20Glenn%22&hl=en-US&gl=US&ceid=US:en: HTTPError: HTTP Error 503: Service Unavailable",
+        "https://news.google.com/rss/search?q=%22Blue%20Origin%22%20%22Blue%20Ring%22%20TeraWave&hl=en-US&gl=US&ceid=US:en: HTTPError: HTTP Error 503: Service Unavailable",
+        "https://news.google.com/rss/search?q=%22Blue%20Origin%22%20%22New%20Shepard%22&hl=en-US&gl=US&ceid=US:en: HTTPError: HTTP Error 503: Service Unavailable",
+        "https://news.google.com/rss/search?q=%22Blue%20Origin%22%20BE-4%20engine&hl=en-US&gl=US&ceid=US:en: HTTPError: HTTP Error 503: Service Unavailable",
+        "https://news.google.com/rss/search?q=site%3Ablueorigin.com%20%22Blue%20Origin%22&hl=en-US&gl=US&ceid=US:en: HTTPError: HTTP Error 503: Service Unavailable"
+      ]
     },
     {
-      "article_count": 48,
+      "article_count": 6,
       "company_id": "yuanxin_satellite",
       "company_name": "垣信卫星",
       "error_message": null,
@@ -165,8 +177,8 @@
         "https://www.fierce-network.com/rss/xml"
       ],
       "final_status": "success",
-      "finished_at": "2026-07-07T13:58:48.400998Z",
-      "item_count": 48,
+      "finished_at": "2026-07-07T19:31:47.826150Z",
+      "item_count": 6,
       "max_gdelt_queries": null,
       "merge_policy": "A5_stale_latest_merge",
       "metadata": {
@@ -200,9 +212,9 @@
         "merge_policy": "A5_stale_latest_merge",
         "partial_run": true,
         "provider_id": "rss_provider",
-        "scheduled_slot": "rss-2026-07-07T13",
+        "scheduled_slot": "rss-2026-07-07T19",
         "stale_fallback_available": false,
-        "warning_count": 0
+        "warning_count": 15
       },
       "partial_run": true,
       "provider_id": "rss_provider",
@@ -217,17 +229,33 @@
       "retry_count": 0,
       "scheduled_company_id": null,
       "scheduled_provider_id": "rss_provider",
-      "scheduled_slot": "rss-2026-07-07T13",
+      "scheduled_slot": "rss-2026-07-07T19",
       "should_fallback": false,
       "source_id": "rss_provider",
       "source_type": "rss",
       "started_at": null,
       "status": "success",
       "successful_query_count": 0,
-      "warnings": []
+      "warnings": [
+        "https://news.google.com/rss/search?q=%E5%9E%A3%E4%BF%A1%E5%8D%AB%E6%98%9F%20%E5%8D%83%E5%B8%86%E6%98%9F%E5%BA%A7%20SpaceSail&hl=zh-CN&gl=CN&ceid=CN:zh-Hans: HTTPError: HTTP Error 503: Service Unavailable",
+        "https://news.google.com/rss/search?q=%E5%9E%A3%E4%BF%A1%E5%8D%AB%E6%98%9F%20%E5%8D%83%E5%B8%86%E6%98%9F%E5%BA%A7&hl=zh-CN&gl=CN&ceid=CN:zh-Hans: HTTPError: HTTP Error 503: Service Unavailable",
+        "https://news.google.com/rss/search?q=%E4%B8%8A%E6%B5%B7%E5%9E%A3%E4%BF%A1%20%E5%8D%AB%E6%98%9F&hl=zh-CN&gl=CN&ceid=CN:zh-Hans: HTTPError: HTTP Error 503: Service Unavailable",
+        "https://news.google.com/rss/search?q=G60%20%E6%98%9F%E9%93%BE%20%E5%9E%A3%E4%BF%A1%E5%8D%AB%E6%98%9F&hl=zh-CN&gl=CN&ceid=CN:zh-Hans: HTTPError: HTTP Error 503: Service Unavailable",
+        "https://news.google.com/rss/search?q=%E4%BD%8E%E8%BD%A8%E5%8D%AB%E6%98%9F%E4%BA%92%E8%81%94%E7%BD%91%20%E5%8D%83%E5%B8%86%E6%98%9F%E5%BA%A7&hl=zh-CN&gl=CN&ceid=CN:zh-Hans: HTTPError: HTTP Error 503: Service Unavailable",
+        "https://news.google.com/rss/search?q=site%3Astcn.com%20%E5%9E%A3%E4%BF%A1%E5%8D%AB%E6%98%9F%20%E5%8D%83%E5%B8%86%E6%98%9F%E5%BA%A7&hl=zh-CN&gl=CN&ceid=CN:zh-Hans: HTTPError: HTTP Error 503: Service Unavailable",
+        "https://news.google.com/rss/search?q=site%3Agzw.sh.gov.cn%20%E5%9E%A3%E4%BF%A1%E5%8D%AB%E6%98%9F&hl=zh-CN&gl=CN&ceid=CN:zh-Hans: HTTPError: HTTP Error 503: Service Unavailable",
+        "https://news.google.com/rss/search?q=site%3Alingang.gov.cn%20%E5%8D%83%E5%B8%86%E6%98%9F%E5%BA%A7&hl=zh-CN&gl=CN&ceid=CN:zh-Hans: HTTPError: HTTP Error 503: Service Unavailable",
+        "https://news.google.com/rss/search?q=site%3Ashanghai.gov.cn%20%E5%9E%A3%E4%BF%A1%E5%8D%AB%E6%98%9F&hl=zh-CN&gl=CN&ceid=CN:zh-Hans: HTTPError: HTTP Error 503: Service Unavailable",
+        "https://news.google.com/rss/search?q=site%3Agov.cn%20%E5%9E%A3%E4%BF%A1%E5%8D%AB%E6%98%9F%20%E5%8D%83%E5%B8%86%E6%98%9F%E5%BA%A7&hl=zh-CN&gl=CN&ceid=CN:zh-Hans: HTTPError: HTTP Error 503: Service Unavailable",
+        "https://news.google.com/rss/search?q=site%3Acnsa.gov.cn%20%E5%8D%83%E5%B8%86%E6%98%9F%E5%BA%A7&hl=zh-CN&gl=CN&ceid=CN:zh-Hans: HTTPError: HTTP Error 503: Service Unavailable",
+        "https://news.google.com/rss/search?q=SpaceSail%20Qianfan%20Thousand%20Sails%20satellite&hl=en-US&gl=US&ceid=US:en: HTTPError: HTTP Error 503: Service Unavailable",
+        "https://news.google.com/rss/search?q=SpaceSail%20Qianfan%20satellite&hl=en-US&gl=US&ceid=US:en: HTTPError: HTTP Error 503: Service Unavailable",
+        "https://news.google.com/rss/search?q=Thousand%20Sails%20SpaceSail%20constellation&hl=en-US&gl=US&ceid=US:en: HTTPError: HTTP Error 503: Service Unavailable",
+        "https://news.google.com/rss/search?q=Shanghai%20SpaceSail%20satellite&hl=en-US&gl=US&ceid=US:en: HTTPError: HTTP Error 503: Service Unavailable"
+      ]
     },
     {
-      "article_count": 39,
+      "article_count": 7,
       "company_id": "china_satnet",
       "company_name": "中国星网",
       "error_message": null,
@@ -256,8 +284,8 @@
         "https://www.fierce-network.com/rss/xml"
       ],
       "final_status": "success",
-      "finished_at": "2026-07-07T13:58:50.079667Z",
-      "item_count": 39,
+      "finished_at": "2026-07-07T19:33:34.946620Z",
+      "item_count": 7,
       "max_gdelt_queries": null,
       "merge_policy": "A5_stale_latest_merge",
       "metadata": {
@@ -290,9 +318,9 @@
         "merge_policy": "A5_stale_latest_merge",
         "partial_run": true,
         "provider_id": "rss_provider",
-        "scheduled_slot": "rss-2026-07-07T13",
+        "scheduled_slot": "rss-2026-07-07T19",
         "stale_fallback_available": false,
-        "warning_count": 0
+        "warning_count": 14
       },
       "partial_run": true,
       "provider_id": "rss_provider",
@@ -307,17 +335,32 @@
       "retry_count": 0,
       "scheduled_company_id": null,
       "scheduled_provider_id": "rss_provider",
-      "scheduled_slot": "rss-2026-07-07T13",
+      "scheduled_slot": "rss-2026-07-07T19",
       "should_fallback": false,
       "source_id": "rss_provider",
       "source_type": "rss",
       "started_at": null,
       "status": "success",
       "successful_query_count": 0,
-      "warnings": []
+      "warnings": [
+        "https://news.google.com/rss/search?q=%E4%B8%AD%E5%9B%BD%E6%98%9F%E7%BD%91%20%E5%9B%BD%E7%BD%91%E6%98%9F%E5%BA%A7%20%E4%B8%AD%E5%9B%BD%E5%8D%AB%E6%98%9F%E7%BD%91%E7%BB%9C%E9%9B%86%E5%9B%A2&hl=zh-CN&gl=CN&ceid=CN:zh-Hans: HTTPError: HTTP Error 503: Service Unavailable",
+        "https://news.google.com/rss/search?q=%E4%B8%AD%E5%9B%BD%E6%98%9F%E7%BD%91%20%E5%9B%BD%E7%BD%91%E6%98%9F%E5%BA%A7&hl=zh-CN&gl=CN&ceid=CN:zh-Hans: HTTPError: HTTP Error 503: Service Unavailable",
+        "https://news.google.com/rss/search?q=%E4%B8%AD%E5%9B%BD%E5%8D%AB%E6%98%9F%E7%BD%91%E7%BB%9C%E9%9B%86%E5%9B%A2%20%E4%B8%AD%E5%9B%BD%E6%98%9F%E7%BD%91&hl=zh-CN&gl=CN&ceid=CN:zh-Hans: HTTPError: HTTP Error 503: Service Unavailable",
+        "https://news.google.com/rss/search?q=%E5%8D%AB%E6%98%9F%E4%BA%92%E8%81%94%E7%BD%91%20%E4%BD%8E%E8%BD%A8%E6%98%9F%E5%BA%A7%20%E4%B8%AD%E5%9B%BD%E6%98%9F%E7%BD%91&hl=zh-CN&gl=CN&ceid=CN:zh-Hans: HTTPError: HTTP Error 503: Service Unavailable",
+        "https://news.google.com/rss/search?q=site%3Axiongan.gov.cn%20%E4%B8%AD%E5%9B%BD%E6%98%9F%E7%BD%91&hl=zh-CN&gl=CN&ceid=CN:zh-Hans: HTTPError: HTTP Error 503: Service Unavailable",
+        "https://news.google.com/rss/search?q=site%3Asasac.gov.cn%20%E4%B8%AD%E5%9B%BD%E5%8D%AB%E6%98%9F%E7%BD%91%E7%BB%9C%E9%9B%86%E5%9B%A2&hl=zh-CN&gl=CN&ceid=CN:zh-Hans: HTTPError: HTTP Error 503: Service Unavailable",
+        "https://news.google.com/rss/search?q=site%3Amiit.gov.cn%20%E4%B8%AD%E5%9B%BD%E6%98%9F%E7%BD%91%20%E5%8D%AB%E6%98%9F%E4%BA%92%E8%81%94%E7%BD%91&hl=zh-CN&gl=CN&ceid=CN:zh-Hans: HTTPError: HTTP Error 503: Service Unavailable",
+        "https://news.google.com/rss/search?q=site%3Anews.cn%20%E4%B8%AD%E5%9B%BD%E6%98%9F%E7%BD%91%20%E5%9B%BD%E7%BD%91%E6%98%9F%E5%BA%A7&hl=zh-CN&gl=CN&ceid=CN:zh-Hans: HTTPError: HTTP Error 503: Service Unavailable",
+        "https://news.google.com/rss/search?q=site%3Apeople.com.cn%20%E4%B8%AD%E5%9B%BD%E6%98%9F%E7%BD%91&hl=zh-CN&gl=CN&ceid=CN:zh-Hans: HTTPError: HTTP Error 503: Service Unavailable",
+        "https://news.google.com/rss/search?q=site%3Agov.cn%20%E4%B8%AD%E5%9B%BD%E6%98%9F%E7%BD%91%20%E5%8D%AB%E6%98%9F%E4%BA%92%E8%81%94%E7%BD%91&hl=zh-CN&gl=CN&ceid=CN:zh-Hans: HTTPError: HTTP Error 503: Service Unavailable",
+        "https://news.google.com/rss/search?q=site%3Acctv.com%20%E4%B8%AD%E5%9B%BD%E6%98%9F%E7%BD%91%20%E5%9B%BD%E7%BD%91%E6%98%9F%E5%BA%A7&hl=zh-CN&gl=CN&ceid=CN:zh-Hans: HTTPError: HTTP Error 503: Service Unavailable",
+        "https://news.google.com/rss/search?q=China%20SatNet%20Guowang%20satellite%20constellation&hl=en-US&gl=US&ceid=US:en: HTTPError: HTTP Error 503: Service Unavailable",
+        "https://news.google.com/rss/search?q=China%20SatNet%20Guowang%20satellite&hl=en-US&gl=US&ceid=US:en: HTTPError: HTTP Error 503: Service Unavailable",
+        "https://news.google.com/rss/search?q=China%20Satellite%20Network%20Group%20constellation&hl=en-US&gl=US&ceid=US:en: HTTPError: HTTP Error 503: Service Unavailable"
+      ]
     },
     {
-      "article_count": 50,
+      "article_count": 8,
       "company_id": "landspace",
       "company_name": "蓝箭航天",
       "error_message": null,
@@ -336,8 +379,8 @@
         "https://www.bing.com/news/search?q=LandSpace+Zhuque+ZQ-2+ZQ-3&format=rss"
       ],
       "final_status": "success",
-      "finished_at": "2026-07-07T13:58:51.531806Z",
-      "item_count": 50,
+      "finished_at": "2026-07-07T19:33:57.268424Z",
+      "item_count": 8,
       "max_gdelt_queries": null,
       "merge_policy": "A5_stale_latest_merge",
       "metadata": {
@@ -360,9 +403,9 @@
         "merge_policy": "A5_stale_latest_merge",
         "partial_run": true,
         "provider_id": "rss_provider",
-        "scheduled_slot": "rss-2026-07-07T13",
+        "scheduled_slot": "rss-2026-07-07T19",
         "stale_fallback_available": false,
-        "warning_count": 1
+        "warning_count": 3
       },
       "partial_run": true,
       "provider_id": "rss_provider",
@@ -377,7 +420,7 @@
       "retry_count": 0,
       "scheduled_company_id": null,
       "scheduled_provider_id": "rss_provider",
-      "scheduled_slot": "rss-2026-07-07T13",
+      "scheduled_slot": "rss-2026-07-07T19",
       "should_fallback": false,
       "source_id": "rss_provider",
       "source_type": "rss",
@@ -385,11 +428,13 @@
       "status": "success",
       "successful_query_count": 0,
       "warnings": [
-        "https://www.theregister.com/headlines.atom: ParseError: not well-formed (invalid token): line 7, column 22"
+        "https://news.google.com/rss/search?q=%E8%93%9D%E7%AE%AD%E8%88%AA%E5%A4%A9%20%E6%9C%B1%E9%9B%80%E4%BA%8C%E5%8F%B7%20%E6%9C%B1%E9%9B%80%E4%B8%89%E5%8F%B7&hl=zh-CN&gl=CN&ceid=CN:zh-Hans: HTTPError: HTTP Error 503: Service Unavailable",
+        "https://news.google.com/rss/search?q=LandSpace%20Zhuque%20ZQ-2%20ZQ-3&hl=en-US&gl=US&ceid=US:en: HTTPError: HTTP Error 503: Service Unavailable",
+        "https://news.google.com/rss/search?q=%E6%B6%B2%E6%B0%A7%E7%94%B2%E7%83%B7%20%E5%8F%AF%E9%87%8D%E5%A4%8D%E4%BD%BF%E7%94%A8%E7%81%AB%E7%AE%AD%20%E8%93%9D%E7%AE%AD%E8%88%AA%E5%A4%A9&hl=zh-CN&gl=CN&ceid=CN:zh-Hans: HTTPError: HTTP Error 503: Service Unavailable"
       ]
     },
     {
-      "article_count": 50,
+      "article_count": 12,
       "company_id": "cas_space",
       "company_name": "中科宇航",
       "error_message": null,
@@ -408,8 +453,8 @@
         "https://www.bing.com/news/search?q=CAS+Space+Lijian+Kinetica&format=rss"
       ],
       "final_status": "success",
-      "finished_at": "2026-07-07T13:58:52.530724Z",
-      "item_count": 50,
+      "finished_at": "2026-07-07T19:34:22.293461Z",
+      "item_count": 12,
       "max_gdelt_queries": null,
       "merge_policy": "A5_stale_latest_merge",
       "metadata": {
@@ -432,9 +477,9 @@
         "merge_policy": "A5_stale_latest_merge",
         "partial_run": true,
         "provider_id": "rss_provider",
-        "scheduled_slot": "rss-2026-07-07T13",
+        "scheduled_slot": "rss-2026-07-07T19",
         "stale_fallback_available": false,
-        "warning_count": 1
+        "warning_count": 3
       },
       "partial_run": true,
       "provider_id": "rss_provider",
@@ -449,7 +494,7 @@
       "retry_count": 0,
       "scheduled_company_id": null,
       "scheduled_provider_id": "rss_provider",
-      "scheduled_slot": "rss-2026-07-07T13",
+      "scheduled_slot": "rss-2026-07-07T19",
       "should_fallback": false,
       "source_id": "rss_provider",
       "source_type": "rss",
@@ -457,11 +502,13 @@
       "status": "success",
       "successful_query_count": 0,
       "warnings": [
-        "https://www.theregister.com/headlines.atom: ParseError: not well-formed (invalid token): line 7, column 22"
+        "https://news.google.com/rss/search?q=%E4%B8%AD%E7%A7%91%E5%AE%87%E8%88%AA%20%E5%8A%9B%E7%AE%AD%E4%B8%80%E5%8F%B7%20%E5%8A%9B%E7%AE%AD%E4%BA%8C%E5%8F%B7&hl=zh-CN&gl=CN&ceid=CN:zh-Hans: HTTPError: HTTP Error 503: Service Unavailable",
+        "https://news.google.com/rss/search?q=CAS%20Space%20Lijian%20Kinetica&hl=en-US&gl=US&ceid=US:en: HTTPError: HTTP Error 503: Service Unavailable",
+        "https://news.google.com/rss/search?q=%E5%8A%9B%E7%AE%AD%20%E4%B8%AD%E7%A7%91%E5%AE%87%E8%88%AA%20%E5%95%86%E4%B8%9A%E7%81%AB%E7%AE%AD&hl=zh-CN&gl=CN&ceid=CN:zh-Hans: HTTPError: HTTP Error 503: Service Unavailable"
       ]
     },
     {
-      "article_count": 47,
+      "article_count": 6,
       "company_id": "space_pioneer",
       "company_name": "天兵科技",
       "error_message": null,
@@ -480,8 +527,8 @@
         "https://www.bing.com/news/search?q=Space+Pioneer+Tianlong+TL-2+TL-3&format=rss"
       ],
       "final_status": "success",
-      "finished_at": "2026-07-07T13:58:54.232870Z",
-      "item_count": 47,
+      "finished_at": "2026-07-07T19:34:44.676106Z",
+      "item_count": 6,
       "max_gdelt_queries": null,
       "merge_policy": "A5_stale_latest_merge",
       "metadata": {
@@ -504,9 +551,9 @@
         "merge_policy": "A5_stale_latest_merge",
         "partial_run": true,
         "provider_id": "rss_provider",
-        "scheduled_slot": "rss-2026-07-07T13",
+        "scheduled_slot": "rss-2026-07-07T19",
         "stale_fallback_available": false,
-        "warning_count": 1
+        "warning_count": 3
       },
       "partial_run": true,
       "provider_id": "rss_provider",
@@ -521,7 +568,7 @@
       "retry_count": 0,
       "scheduled_company_id": null,
       "scheduled_provider_id": "rss_provider",
-      "scheduled_slot": "rss-2026-07-07T13",
+      "scheduled_slot": "rss-2026-07-07T19",
       "should_fallback": false,
       "source_id": "rss_provider",
       "source_type": "rss",
@@ -529,11 +576,13 @@
       "status": "success",
       "successful_query_count": 0,
       "warnings": [
-        "https://www.theregister.com/headlines.atom: ParseError: not well-formed (invalid token): line 7, column 22"
+        "https://news.google.com/rss/search?q=%E5%A4%A9%E5%85%B5%E7%A7%91%E6%8A%80%20%E5%A4%A9%E9%BE%99%E4%BA%8C%E5%8F%B7%20%E5%A4%A9%E9%BE%99%E4%B8%89%E5%8F%B7&hl=zh-CN&gl=CN&ceid=CN:zh-Hans: HTTPError: HTTP Error 503: Service Unavailable",
+        "https://news.google.com/rss/search?q=Space%20Pioneer%20Tianlong%20TL-2%20TL-3&hl=en-US&gl=US&ceid=US:en: HTTPError: HTTP Error 503: Service Unavailable",
+        "https://news.google.com/rss/search?q=%E5%A4%A9%E9%BE%99%E4%B8%89%E5%8F%B7%20%E5%8F%AF%E9%87%8D%E5%A4%8D%E4%BD%BF%E7%94%A8%E7%81%AB%E7%AE%AD%20%E5%A4%A9%E5%85%B5%E7%A7%91%E6%8A%80&hl=zh-CN&gl=CN&ceid=CN:zh-Hans: HTTPError: HTTP Error 503: Service Unavailable"
       ]
     },
     {
-      "article_count": 50,
+      "article_count": 3,
       "company_id": "i_space",
       "company_name": "星际荣耀",
       "error_message": null,
@@ -552,8 +601,8 @@
         "https://www.bing.com/news/search?q=i-Space+Hyperbola+SQX&format=rss"
       ],
       "final_status": "success",
-      "finished_at": "2026-07-07T13:58:55.294831Z",
-      "item_count": 50,
+      "finished_at": "2026-07-07T19:35:07.180549Z",
+      "item_count": 3,
       "max_gdelt_queries": null,
       "merge_policy": "A5_stale_latest_merge",
       "metadata": {
@@ -576,9 +625,9 @@
         "merge_policy": "A5_stale_latest_merge",
         "partial_run": true,
         "provider_id": "rss_provider",
-        "scheduled_slot": "rss-2026-07-07T13",
+        "scheduled_slot": "rss-2026-07-07T19",
         "stale_fallback_available": false,
-        "warning_count": 1
+        "warning_count": 3
       },
       "partial_run": true,
       "provider_id": "rss_provider",
@@ -593,7 +642,7 @@
       "retry_count": 0,
       "scheduled_company_id": null,
       "scheduled_provider_id": "rss_provider",
-      "scheduled_slot": "rss-2026-07-07T13",
+      "scheduled_slot": "rss-2026-07-07T19",
       "should_fallback": false,
       "source_id": "rss_provider",
       "source_type": "rss",
@@ -601,11 +650,13 @@
       "status": "success",
       "successful_query_count": 0,
       "warnings": [
-        "https://www.theregister.com/headlines.atom: ParseError: not well-formed (invalid token): line 7, column 22"
+        "https://news.google.com/rss/search?q=%E6%98%9F%E9%99%85%E8%8D%A3%E8%80%80%20%E5%8F%8C%E6%9B%B2%E7%BA%BF%20%E7%81%AB%E7%AE%AD&hl=zh-CN&gl=CN&ceid=CN:zh-Hans: HTTPError: HTTP Error 503: Service Unavailable",
+        "https://news.google.com/rss/search?q=i-Space%20Hyperbola%20SQX&hl=en-US&gl=US&ceid=US:en: HTTPError: HTTP Error 503: Service Unavailable",
+        "https://news.google.com/rss/search?q=%E6%98%9F%E9%99%85%E8%8D%A3%E8%80%80%20%E5%8F%AF%E9%87%8D%E5%A4%8D%E4%BD%BF%E7%94%A8%E7%81%AB%E7%AE%AD&hl=zh-CN&gl=CN&ceid=CN:zh-Hans: HTTPError: HTTP Error 503: Service Unavailable"
       ]
     },
     {
-      "article_count": 50,
+      "article_count": 8,
       "company_id": "galactic_energy",
       "company_name": "星河动力",
       "error_message": null,
@@ -624,8 +675,8 @@
         "https://www.bing.com/news/search?q=Galactic+Energy+Ceres-1+Pallas-1&format=rss"
       ],
       "final_status": "success",
-      "finished_at": "2026-07-07T13:58:56.395799Z",
-      "item_count": 50,
+      "finished_at": "2026-07-07T19:35:36.636239Z",
+      "item_count": 8,
       "max_gdelt_queries": null,
       "merge_policy": "A5_stale_latest_merge",
       "metadata": {
@@ -648,9 +699,9 @@
         "merge_policy": "A5_stale_latest_merge",
         "partial_run": true,
         "provider_id": "rss_provider",
-        "scheduled_slot": "rss-2026-07-07T13",
+        "scheduled_slot": "rss-2026-07-07T19",
         "stale_fallback_available": false,
-        "warning_count": 1
+        "warning_count": 3
       },
       "partial_run": true,
       "provider_id": "rss_provider",
@@ -665,7 +716,7 @@
       "retry_count": 0,
       "scheduled_company_id": null,
       "scheduled_provider_id": "rss_provider",
-      "scheduled_slot": "rss-2026-07-07T13",
+      "scheduled_slot": "rss-2026-07-07T19",
       "should_fallback": false,
       "source_id": "rss_provider",
       "source_type": "rss",
@@ -673,15 +724,17 @@
       "status": "success",
       "successful_query_count": 0,
       "warnings": [
-        "https://www.theregister.com/headlines.atom: ParseError: not well-formed (invalid token): line 7, column 22"
+        "https://news.google.com/rss/search?q=%E6%98%9F%E6%B2%B3%E5%8A%A8%E5%8A%9B%20%E8%B0%B7%E7%A5%9E%E6%98%9F%E4%B8%80%E5%8F%B7%20%E6%99%BA%E7%A5%9E%E6%98%9F%E4%B8%80%E5%8F%B7&hl=zh-CN&gl=CN&ceid=CN:zh-Hans: HTTPError: HTTP Error 503: Service Unavailable",
+        "https://news.google.com/rss/search?q=Galactic%20Energy%20Ceres-1%20Pallas-1&hl=en-US&gl=US&ceid=US:en: HTTPError: HTTP Error 503: Service Unavailable",
+        "https://news.google.com/rss/search?q=%E6%98%9F%E6%B2%B3%E5%8A%A8%E5%8A%9B%20%E5%8F%AF%E9%87%8D%E5%A4%8D%E4%BD%BF%E7%94%A8%E7%81%AB%E7%AE%AD&hl=zh-CN&gl=CN&ceid=CN:zh-Hans: HTTPError: HTTP Error 503: Service Unavailable"
       ]
     },
     {
-      "article_count": 28,
+      "article_count": 0,
       "company_id": "yushi_space",
       "company_name": "宇石空间",
-      "error_message": null,
-      "error_type": null,
+      "error_message": "https://news.google.com/rss/search?q=%E5%AE%87%E7%9F%B3%E7%A9%BA%E9%97%B4%20AS-1%20%E4%B8%8D%E9%94%88%E9%92%A2%E7%81%AB%E7%AE%AD&hl=zh-CN&gl=CN&ceid=CN:zh-Hans: HTTPError: HTTP Error 503: Service Unavailable; https://news.google.com/rss/search?q=%E5%AE%87%E7%9F%B3%E7%A9%BA%E9%97%B4%20%E7%AD%B7%E5%AD%90%E6%8D%95%E8%8E%B7%E8%87%82%20%E5%A4%AA%E7%A9%BA%E5%AE%89%E5%8D%93&hl=zh-CN&gl=CN&ceid=CN:zh-Hans: HTTPError: HTTP Error 503: Service Unavailable; https://news.google.com/rss/search?q=AstronStone%20AS-1%20reusable%20rocket&hl=en-US&gl=US&ceid=US:en: HTTPError: HTTP Error 503: Service Unavailable",
+      "error_type": "RuntimeError",
       "feed_count": 13,
       "feeds": [
         "https://spacenews.com/feed/",
@@ -698,14 +751,16 @@
         "https://news.google.com/rss/search?q=site%3Aithome.com%20%E5%AE%87%E7%9F%B3%E7%A9%BA%E9%97%B4%20AS-1&hl=zh-CN&gl=CN&ceid=CN:zh-Hans",
         "https://news.google.com/rss/search?q=site%3Asina.com.cn%20%E5%AE%87%E7%9F%B3%E7%A9%BA%E9%97%B4%20AS-1&hl=zh-CN&gl=CN&ceid=CN:zh-Hans"
       ],
-      "final_status": "success",
-      "finished_at": "2026-07-07T13:58:58.954543Z",
-      "item_count": 28,
+      "final_status": "failed",
+      "finished_at": "2026-07-07T19:36:27.390470Z",
+      "item_count": 0,
       "max_gdelt_queries": null,
       "merge_policy": "A5_stale_latest_merge",
       "metadata": {
         "cache_status": "not_implemented",
         "company_id": null,
+        "error_message": "https://news.google.com/rss/search?q=%E5%AE%87%E7%9F%B3%E7%A9%BA%E9%97%B4%20AS-1%20%E4%B8%8D%E9%94%88%E9%92%A2%E7%81%AB%E7%AE%AD&hl=zh-CN&gl=CN&ceid=CN:zh-Hans: HTTPError: HTTP Error 503: Service Unavailable; https://news.google.com/rss/search?q=%E5%AE%87%E7%9F%B3%E7%A9%BA%E9%97%B4%20%E7%AD%B7%E5%AD%90%E6%8D%95%E8%8E%B7%E8%87%82%20%E5%A4%AA%E7%A9%BA%E5%AE%89%E5%8D%93&hl=zh-CN&gl=CN&ceid=CN:zh-Hans: HTTPError: HTTP Error 503: Service Unavailable; https://news.google.com/rss/search?q=AstronStone%20AS-1%20reusable%20rocket&hl=en-US&gl=US&ceid=US:en: HTTPError: HTTP Error 503: Service Unavailable",
+        "error_type": "RuntimeError",
         "feed_count": 13,
         "feeds": [
           "https://spacenews.com/feed/",
@@ -726,36 +781,33 @@
         "merge_policy": "A5_stale_latest_merge",
         "partial_run": true,
         "provider_id": "rss_provider",
-        "scheduled_slot": "rss-2026-07-07T13",
-        "stale_fallback_available": false,
-        "warning_count": 1
+        "scheduled_slot": "rss-2026-07-07T19",
+        "stale_fallback_available": false
       },
       "partial_run": true,
       "provider_id": "rss_provider",
       "provider_priority": 20,
-      "provider_status": "success",
+      "provider_status": "failed",
       "provider_type": "rss",
       "query": null,
       "query_count": 0,
       "rank_group": "media",
       "rate_limited": false,
-      "reason": null,
+      "reason": "https://news.google.com/rss/search?q=%E5%AE%87%E7%9F%B3%E7%A9%BA%E9%97%B4%20AS-1%20%E4%B8%8D%E9%94%88%E9%92%A2%E7%81%AB%E7%AE%AD&hl=zh-CN&gl=CN&ceid=CN:zh-Hans: HTTPError: HTTP Error 503: Service Unavailable; https://news.google.com/rss/search?q=%E5%AE%87%E7%9F%B3%E7%A9%BA%E9%97%B4%20%E7%AD%B7%E5%AD%90%E6%8D%95%E8%8E%B7%E8%87%82%20%E5%A4%AA%E7%A9%BA%E5%AE%89%E5%8D%93&hl=zh-CN&gl=CN&ceid=CN:zh-Hans: HTTPError: HTTP Error 503: Service Unavailable; https://news.google.com/rss/search?q=AstronStone%20AS-1%20reusable%20rocket&hl=en-US&gl=US&ceid=US:en: HTTPError: HTTP Error 503: Service Unavailable",
       "retry_count": 0,
       "scheduled_company_id": null,
       "scheduled_provider_id": "rss_provider",
-      "scheduled_slot": "rss-2026-07-07T13",
-      "should_fallback": false,
+      "scheduled_slot": "rss-2026-07-07T19",
+      "should_fallback": true,
       "source_id": "rss_provider",
       "source_type": "rss",
       "started_at": null,
-      "status": "success",
+      "status": "failed",
       "successful_query_count": 0,
-      "warnings": [
-        "https://www.theregister.com/headlines.atom: ParseError: not well-formed (invalid token): line 7, column 22"
-      ]
+      "warnings": []
     },
     {
-      "article_count": 32,
+      "article_count": 2,
       "company_id": "hongqing_technology",
       "company_name": "蓝箭鸿擎",
       "error_message": null,
@@ -779,8 +831,8 @@
         "https://news.google.com/rss/search?q=site%3Alandspace.com%20%E9%B8%BF%E6%93%8E%E7%A7%91%E6%8A%80%20%E8%93%9D%E7%AE%AD%E9%B8%BF%E6%93%8E&hl=zh-CN&gl=CN&ceid=CN:zh-Hans"
       ],
       "final_status": "success",
-      "finished_at": "2026-07-07T13:59:02.197338Z",
-      "item_count": 32,
+      "finished_at": "2026-07-07T19:37:32.849608Z",
+      "item_count": 2,
       "max_gdelt_queries": null,
       "merge_policy": "A5_stale_latest_merge",
       "metadata": {
@@ -808,9 +860,9 @@
         "merge_policy": "A5_stale_latest_merge",
         "partial_run": true,
         "provider_id": "rss_provider",
-        "scheduled_slot": "rss-2026-07-07T13",
+        "scheduled_slot": "rss-2026-07-07T19",
         "stale_fallback_available": false,
-        "warning_count": 1
+        "warning_count": 8
       },
       "partial_run": true,
       "provider_id": "rss_provider",
@@ -825,7 +877,7 @@
       "retry_count": 0,
       "scheduled_company_id": null,
       "scheduled_provider_id": "rss_provider",
-      "scheduled_slot": "rss-2026-07-07T13",
+      "scheduled_slot": "rss-2026-07-07T19",
       "should_fallback": false,
       "source_id": "rss_provider",
       "source_type": "rss",
@@ -833,11 +885,18 @@
       "status": "success",
       "successful_query_count": 0,
       "warnings": [
-        "https://www.theregister.com/headlines.atom: ParseError: not well-formed (invalid token): line 7, column 22"
+        "https://news.google.com/rss/search?q=%E8%93%9D%E7%AE%AD%E9%B8%BF%E6%93%8E%20%E9%B8%BF%E6%93%8E%E7%A7%91%E6%8A%80%20%E5%8D%AB%E6%98%9F%E7%BB%84%E7%BD%91&hl=zh-CN&gl=CN&ceid=CN:zh-Hans: HTTPError: HTTP Error 503: Service Unavailable",
+        "https://news.google.com/rss/search?q=LandSpace%20Hongqing%20flat%20satellite&hl=en-US&gl=US&ceid=US:en: HTTPError: HTTP Error 503: Service Unavailable",
+        "https://news.google.com/rss/search?q=%E9%B8%BF%E6%93%8E%E7%A7%91%E6%8A%80%20%E6%98%9F%E7%AE%AD%E5%8D%8F%E5%90%8C%20%E5%B9%B3%E6%9D%BF%E5%8D%AB%E6%98%9F&hl=zh-CN&gl=CN&ceid=CN:zh-Hans: HTTPError: HTTP Error 503: Service Unavailable",
+        "https://news.google.com/rss/search?q=%E9%B8%BF%E6%93%8E%E7%A7%91%E6%8A%80%20%E5%B9%B3%E6%9D%BF%E5%8D%AB%E6%98%9F%20%E5%8D%AB%E6%98%9F%E7%BB%84%E7%BD%91&hl=zh-CN&gl=CN&ceid=CN:zh-Hans: HTTPError: HTTP Error 503: Service Unavailable",
+        "https://news.google.com/rss/search?q=site%3Ahongqing.tech%20%E9%B8%BF%E6%93%8E%E7%A7%91%E6%8A%80%20%E5%8D%AB%E6%98%9F&hl=zh-CN&gl=CN&ceid=CN:zh-Hans: HTTPError: HTTP Error 503: Service Unavailable",
+        "https://news.google.com/rss/search?q=site%3Axiongan.gov.cn%20%E9%B8%BF%E6%93%8E%E7%A7%91%E6%8A%80%20%E5%8D%AB%E6%98%9F&hl=zh-CN&gl=CN&ceid=CN:zh-Hans: HTTPError: HTTP Error 503: Service Unavailable",
+        "https://news.google.com/rss/search?q=site%3Ancsti.gov.cn%20%E9%B8%BF%E6%93%8E%E7%A7%91%E6%8A%80%20%E5%8D%AB%E6%98%9F%E4%BA%92%E8%81%94%E7%BD%91&hl=zh-CN&gl=CN&ceid=CN:zh-Hans: HTTPError: HTTP Error 503: Service Unavailable",
+        "https://news.google.com/rss/search?q=site%3Alandspace.com%20%E9%B8%BF%E6%93%8E%E7%A7%91%E6%8A%80%20%E8%93%9D%E7%AE%AD%E9%B8%BF%E6%93%8E&hl=zh-CN&gl=CN&ceid=CN:zh-Hans: HTTPError: HTTP Error 503: Service Unavailable"
       ]
     },
     {
-      "article_count": 50,
+      "article_count": 4,
       "company_id": "galaxyspace",
       "company_name": "银河航天",
       "error_message": null,
@@ -861,8 +920,8 @@
         "https://news.google.com/rss/search?q=GalaxySpace%20satellite%20internet&hl=en-US&gl=US&ceid=US:en"
       ],
       "final_status": "success",
-      "finished_at": "2026-07-07T13:59:03.323627Z",
-      "item_count": 50,
+      "finished_at": "2026-07-07T19:38:31.082466Z",
+      "item_count": 4,
       "max_gdelt_queries": null,
       "merge_policy": "A5_stale_latest_merge",
       "metadata": {
@@ -890,9 +949,9 @@
         "merge_policy": "A5_stale_latest_merge",
         "partial_run": true,
         "provider_id": "rss_provider",
-        "scheduled_slot": "rss-2026-07-07T13",
+        "scheduled_slot": "rss-2026-07-07T19",
         "stale_fallback_available": false,
-        "warning_count": 1
+        "warning_count": 8
       },
       "partial_run": true,
       "provider_id": "rss_provider",
@@ -907,7 +966,7 @@
       "retry_count": 0,
       "scheduled_company_id": null,
       "scheduled_provider_id": "rss_provider",
-      "scheduled_slot": "rss-2026-07-07T13",
+      "scheduled_slot": "rss-2026-07-07T19",
       "should_fallback": false,
       "source_id": "rss_provider",
       "source_type": "rss",
@@ -915,11 +974,18 @@
       "status": "success",
       "successful_query_count": 0,
       "warnings": [
-        "https://www.theregister.com/headlines.atom: ParseError: not well-formed (invalid token): line 7, column 22"
+        "https://news.google.com/rss/search?q=%E9%93%B6%E6%B2%B3%E8%88%AA%E5%A4%A9%20%E5%8D%AB%E6%98%9F%E4%BA%92%E8%81%94%E7%BD%91%20%E4%BD%8E%E8%BD%A8%E5%AE%BD%E5%B8%A6%E9%80%9A%E4%BF%A1%E5%8D%AB%E6%98%9F&hl=zh-CN&gl=CN&ceid=CN:zh-Hans: HTTPError: HTTP Error 503: Service Unavailable",
+        "https://news.google.com/rss/search?q=GalaxySpace%20satellite%20internet%20broadband%20satellite&hl=en-US&gl=US&ceid=US:en: HTTPError: HTTP Error 503: Service Unavailable",
+        "https://news.google.com/rss/search?q=%E9%93%B6%E6%B2%B3%E8%88%AA%E5%A4%A9%20%E9%80%9A%E4%BF%A1%E8%BD%BD%E8%8D%B7%20%E5%8D%AB%E6%98%9F%E5%88%B6%E9%80%A0&hl=zh-CN&gl=CN&ceid=CN:zh-Hans: HTTPError: HTTP Error 503: Service Unavailable",
+        "https://news.google.com/rss/search?q=site%3Ayinhehangtian.cn%20%E9%93%B6%E6%B2%B3%E8%88%AA%E5%A4%A9&hl=zh-CN&gl=CN&ceid=CN:zh-Hans: HTTPError: HTTP Error 503: Service Unavailable",
+        "https://news.google.com/rss/search?q=site%3Anews.cn%20%E9%93%B6%E6%B2%B3%E8%88%AA%E5%A4%A9%20%E5%8D%AB%E6%98%9F%E4%BA%92%E8%81%94%E7%BD%91&hl=zh-CN&gl=CN&ceid=CN:zh-Hans: HTTPError: HTTP Error 503: Service Unavailable",
+        "https://news.google.com/rss/search?q=site%3Akw.beijing.gov.cn%20%E9%93%B6%E6%B2%B3%E8%88%AA%E5%A4%A9%20%E5%8D%AB%E6%98%9F%E4%BA%92%E8%81%94%E7%BD%91&hl=zh-CN&gl=CN&ceid=CN:zh-Hans: HTTPError: HTTP Error 503: Service Unavailable",
+        "https://news.google.com/rss/search?q=site%3Akfqgw.beijing.gov.cn%20%E9%93%B6%E6%B2%B3%E8%88%AA%E5%A4%A9%20%E5%8D%AB%E6%98%9F%E4%BA%92%E8%81%94%E7%BD%91&hl=zh-CN&gl=CN&ceid=CN:zh-Hans: HTTPError: HTTP Error 503: Service Unavailable",
+        "https://news.google.com/rss/search?q=GalaxySpace%20satellite%20internet&hl=en-US&gl=US&ceid=US:en: HTTPError: HTTP Error 503: Service Unavailable"
       ]
     },
     {
-      "article_count": 43,
+      "article_count": 8,
       "company_id": "minospace",
       "company_name": "微纳星空",
       "error_message": null,
@@ -938,8 +1004,8 @@
         "https://www.bing.com/news/search?q=MinoSpace+commercial+satellite+manufacturer&format=rss"
       ],
       "final_status": "success",
-      "finished_at": "2026-07-07T13:59:05.162847Z",
-      "item_count": 43,
+      "finished_at": "2026-07-07T19:38:55.428857Z",
+      "item_count": 8,
       "max_gdelt_queries": null,
       "merge_policy": "A5_stale_latest_merge",
       "metadata": {
@@ -962,9 +1028,9 @@
         "merge_policy": "A5_stale_latest_merge",
         "partial_run": true,
         "provider_id": "rss_provider",
-        "scheduled_slot": "rss-2026-07-07T13",
+        "scheduled_slot": "rss-2026-07-07T19",
         "stale_fallback_available": false,
-        "warning_count": 1
+        "warning_count": 3
       },
       "partial_run": true,
       "provider_id": "rss_provider",
@@ -979,7 +1045,7 @@
       "retry_count": 0,
       "scheduled_company_id": null,
       "scheduled_provider_id": "rss_provider",
-      "scheduled_slot": "rss-2026-07-07T13",
+      "scheduled_slot": "rss-2026-07-07T19",
       "should_fallback": false,
       "source_id": "rss_provider",
       "source_type": "rss",
@@ -987,11 +1053,13 @@
       "status": "success",
       "successful_query_count": 0,
       "warnings": [
-        "https://www.theregister.com/headlines.atom: ParseError: not well-formed (invalid token): line 7, column 22"
+        "https://news.google.com/rss/search?q=%E5%BE%AE%E7%BA%B3%E6%98%9F%E7%A9%BA%20%E5%8D%AB%E6%98%9F%E5%88%B6%E9%80%A0%20%E6%95%B4%E6%98%9F%E7%A0%94%E5%88%B6&hl=zh-CN&gl=CN&ceid=CN:zh-Hans: HTTPError: HTTP Error 503: Service Unavailable",
+        "https://news.google.com/rss/search?q=MinoSpace%20commercial%20satellite%20manufacturer&hl=en-US&gl=US&ceid=US:en: HTTPError: HTTP Error 503: Service Unavailable",
+        "https://news.google.com/rss/search?q=%E5%BE%AE%E7%BA%B3%E6%98%9F%E7%A9%BA%20%E5%95%86%E4%B8%9A%E5%8D%AB%E6%98%9F%20%E5%8D%AB%E6%98%9F%E5%B9%B3%E5%8F%B0&hl=zh-CN&gl=CN&ceid=CN:zh-Hans: HTTPError: HTTP Error 503: Service Unavailable"
       ]
     }
   ],
-  "generated_at": "2026-07-07T13:59:05.241589Z",
-  "run_id": "e411c395-059a-45d4-9ddc-e85dfe24cf09",
+  "generated_at": "2026-07-07T19:38:55.443953Z",
+  "run_id": "20dc15ab-d4e2-46e2-93dc-42ea399733ad",
   "schema_version": "satellite_news.v1"
 }
