@@ -52,13 +52,13 @@
     {
       "company_id": "minospace",
       "company_name": "微纳星空",
-      "item_count": 42,
+      "item_count": 45,
       "status": "success"
     },
     {
       "company_id": "space_pioneer",
       "company_name": "天兵科技",
-      "item_count": 48,
+      "item_count": 46,
       "status": "success"
     },
     {
@@ -89,8 +89,8 @@
     "hongqing_technology": 31,
     "i_space": 50,
     "landspace": 50,
-    "minospace": 42,
-    "space_pioneer": 48,
+    "minospace": 45,
+    "space_pioneer": 46,
     "spacex": 50,
     "yuanxin_satellite": 48,
     "yushi_space": 29
@@ -99,18 +99,18 @@
   "dry_run": false,
   "export_count": 0,
   "fetch_status_count": 13,
-  "finished_at": "2026-07-06T19:26:49.722379Z",
-  "fresh_item_count": 588,
-  "generated_at": "2026-07-06T19:26:49.722379Z",
-  "item_count": 588,
+  "finished_at": "2026-07-07T01:43:34.649420Z",
+  "fresh_item_count": 589,
+  "generated_at": "2026-07-07T01:43:34.649420Z",
+  "item_count": 589,
   "metadata": {
     "latest_is_stale_safe": true
   },
   "output_dir": "data/news/latest",
-  "run_id": "6941d8a7-3158-4249-bef3-b1e816d4d57d",
+  "run_id": "797ece96-b797-485a-bc3f-755b0306bb0a",
   "schema_version": "satellite_news.v1",
   "stale_item_count": 0,
-  "started_at": "2026-07-06T19:26:27.910011Z",
+  "started_at": "2026-07-07T01:43:11.704391Z",
   "summary_count": 0,
   "warnings": []
 }
