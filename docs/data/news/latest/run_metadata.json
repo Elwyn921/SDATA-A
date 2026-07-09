@@ -34,7 +34,7 @@
     {
       "company_id": "hongqing_technology",
       "company_name": "蓝箭鸿擎",
-      "item_count": 32,
+      "item_count": 34,
       "status": "success"
     },
     {
@@ -86,7 +86,7 @@
     "china_satnet": 39,
     "galactic_energy": 50,
     "galaxyspace": 50,
-    "hongqing_technology": 32,
+    "hongqing_technology": 34,
     "i_space": 50,
     "landspace": 50,
     "minospace": 41,
@@ -99,18 +99,18 @@
   "dry_run": false,
   "export_count": 0,
   "fetch_status_count": 13,
-  "finished_at": "2026-07-09T01:25:25.395183Z",
-  "fresh_item_count": 589,
-  "generated_at": "2026-07-09T01:25:25.395183Z",
-  "item_count": 589,
+  "finished_at": "2026-07-09T09:03:50.193478Z",
+  "fresh_item_count": 591,
+  "generated_at": "2026-07-09T09:03:50.193478Z",
+  "item_count": 591,
   "metadata": {
     "latest_is_stale_safe": true
   },
   "output_dir": "data/news/latest",
-  "run_id": "74def2ab-75fb-489d-9b65-83464dc72ea5",
+  "run_id": "88276071-016c-40a7-8712-f3ca8fa2e440",
   "schema_version": "satellite_news.v1",
   "stale_item_count": 0,
-  "started_at": "2026-07-09T01:24:58.182288Z",
+  "started_at": "2026-07-09T09:03:32.069004Z",
   "summary_count": 0,
   "warnings": []
 }
