@@ -34,7 +34,7 @@
     {
       "company_id": "hongqing_technology",
       "company_name": "蓝箭鸿擎",
-      "item_count": 32,
+      "item_count": 31,
       "status": "success"
     },
     {
@@ -52,7 +52,7 @@
     {
       "company_id": "minospace",
       "company_name": "微纳星空",
-      "item_count": 44,
+      "item_count": 43,
       "status": "success"
     },
     {
@@ -70,7 +70,7 @@
     {
       "company_id": "yuanxin_satellite",
       "company_name": "垣信卫星",
-      "item_count": 49,
+      "item_count": 48,
       "status": "success"
     },
     {
@@ -86,31 +86,31 @@
     "china_satnet": 41,
     "galactic_energy": 50,
     "galaxyspace": 50,
-    "hongqing_technology": 32,
+    "hongqing_technology": 31,
     "i_space": 50,
     "landspace": 50,
-    "minospace": 44,
+    "minospace": 43,
     "space_pioneer": 49,
     "spacex": 50,
-    "yuanxin_satellite": 49,
+    "yuanxin_satellite": 48,
     "yushi_space": 33
   },
   "config_dir": "config",
   "dry_run": false,
   "export_count": 0,
   "fetch_status_count": 13,
-  "finished_at": "2026-07-10T13:48:43.554172Z",
-  "fresh_item_count": 598,
-  "generated_at": "2026-07-10T13:48:43.554172Z",
-  "item_count": 598,
+  "finished_at": "2026-07-10T19:11:42.753115Z",
+  "fresh_item_count": 595,
+  "generated_at": "2026-07-10T19:11:42.753115Z",
+  "item_count": 595,
   "metadata": {
     "latest_is_stale_safe": true
   },
   "output_dir": "data/news/latest",
-  "run_id": "b04e18e5-b712-4d52-a5ec-6a76c2ca561d",
+  "run_id": "0116c4e9-d9e0-4f0c-89e3-de2ac34d8cc5",
   "schema_version": "satellite_news.v1",
   "stale_item_count": 0,
-  "started_at": "2026-07-10T13:48:16.997648Z",
+  "started_at": "2026-07-10T19:11:16.846587Z",
   "summary_count": 0,
   "warnings": []
 }
