@@ -76,7 +76,7 @@
     {
       "company_id": "yushi_space",
       "company_name": "宇石空间",
-      "item_count": 33,
+      "item_count": 34,
       "status": "success"
     }
   ],
@@ -93,24 +93,24 @@
     "space_pioneer": 50,
     "spacex": 50,
     "yuanxin_satellite": 47,
-    "yushi_space": 33
+    "yushi_space": 34
   },
   "config_dir": "config",
   "dry_run": false,
   "export_count": 0,
   "fetch_status_count": 13,
-  "finished_at": "2026-07-12T01:18:06.853779Z",
-  "fresh_item_count": 597,
-  "generated_at": "2026-07-12T01:18:06.853779Z",
-  "item_count": 597,
+  "finished_at": "2026-07-12T07:52:47.813009Z",
+  "fresh_item_count": 598,
+  "generated_at": "2026-07-12T07:52:47.813009Z",
+  "item_count": 598,
   "metadata": {
     "latest_is_stale_safe": true
   },
   "output_dir": "data/news/latest",
-  "run_id": "45b2ab85-02bd-4b7b-8471-ebf0cf72e275",
+  "run_id": "0fd97a7b-4641-4f9b-a24b-96662f5befde",
   "schema_version": "satellite_news.v1",
   "stale_item_count": 0,
-  "started_at": "2026-07-12T01:17:49.211343Z",
+  "started_at": "2026-07-12T07:52:29.827524Z",
   "summary_count": 0,
   "warnings": []
 }
