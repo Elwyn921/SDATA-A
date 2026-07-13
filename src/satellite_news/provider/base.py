@@ -16,7 +16,6 @@ from satellite_news.schema import (
     Company,
     CompanyProviderConfig,
     NewsProviderConfig,
-    PipelineContext,
     RawArticle,
     SourceConfig,
     SourceType,

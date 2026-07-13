@@ -1,73 +1,102 @@
 # SDATA A
 
-SDATA A is a GitHub-native satellite news intelligence pipeline for monitoring SpaceX, Blue Origin, 垣信卫星, and 中国星网. The project has moved beyond architecture-only scaffolding and now has a first live data loop built around GDELT, JSON archive outputs, and a GitHub Pages frontend.
+SDATA A is a GitHub-native satellite news intelligence pipeline for monitoring satellite internet, launch, and space infrastructure companies. The project is now in a live RSS data-loop stage: it refreshes news data on GitHub Actions, writes JSON outputs, publishes frontend-readable data under `docs/`, and keeps archive records for later analysis.
+
+The current goal is to make the public website stable first, then add LLM daily reports and deeper company intelligence.
 
 ## Current Status
 
 Implemented:
 
-- Company and source registries for SpaceX, Blue Origin, 垣信卫星, and 中国星网.
-- GDELT live fetch support for the four-company monitoring set.
-- Unified `PipelineResult`, `NewsItem`, `RawArticle`, and fetch-status data contracts.
-- JSON outputs under `data/news/latest/`.
-- Long-lived archive structure under `data/news/archive/`.
-- GitHub Pages frontend under `docs/`.
-- Frontend data adapter that reads `docs/data/news/latest/pipeline_result.json` and falls back to mock data when real JSON is unavailable.
+- Live RSS news refresh for 13 monitored companies.
+- GitHub Actions schedule that refreshes RSS data every 6 hours.
+- Unified `PipelineResult`, `NewsItem`, `RawArticle`, and fetch-status contracts.
+- JSON latest output under `data/news/latest/`.
+- Historical archive output under `data/news/archive/`.
+- GitHub Pages data publication under `docs/data/news/`.
+- Static GitHub Pages frontend under `docs/`.
+- Observable dashboard prototype under `observable/`, built into `docs/observable/`.
+- Partial-run CLI contracts for future provider/company-specific refreshes.
+- Stale/latest merge behavior so partial updates can keep previously available company data.
+- Experimental A6 daily-report generator with OpenAI structured output and a no-secret fallback.
 
-Not enabled yet:
+Currently paused or not enabled in production:
 
-- LLM summaries, event interpretation, and importance scoring.
-- RSS fetchers.
-- Official website crawlers.
-- NewsAPI / SerpApi adapters.
-- Excel or PDF report export.
-- Fully automated live-fetch commit workflow.
+- GDELT scheduled production refresh. The adapter still exists, but frequent 429 rate limits make RSS the current production source.
+- SerpApi / Serper / NewsAPI search providers. These require API keys and should be used as fallback providers, not as the primary data loop.
+- Production scheduling and frontend integration for LLM daily reports.
+- Excel, PDF, and Markdown report exports.
+- Complex official-site crawling.
 
-## Important Runtime Note
+## Monitored Companies
 
-The GDELT API is an external public service. Live runs can return `HTTP 429 Too Many Requests` when rate-limited. A 429 is recorded as a per-company fetch status and does not mean the whole pipeline or frontend is broken.
+Current monitoring covers 13 companies:
+
+- Foreign major companies: SpaceX, Blue Origin
+- Satellite internet services: 垣信卫星, 中国星网
+- Satellite platform and spacecraft manufacturing: 银河航天, 蓝箭鸿擎 / 鸿擎科技, 微纳星空
+- Launch vehicles and launch services: 蓝箭航天 / LandSpace, 中科宇航 / CAS Space, 天兵科技 / Space Pioneer, 星际荣耀 / i-Space, 星河动力 / Galactic Energy, 宇石空间
+
+Latest local data snapshot:
+
+- Latest run id: `08e76e21-26fb-4cb9-9362-f2906920b61b`
+- Generated at: `2026-06-24T07:23:55.772959Z`
+- Total news items: 591
+- Provider used in latest snapshot: `rss_provider`
+- Company coverage: all 13 companies have data
+
+## Important Runtime Notes
+
+RSS is the current stable production path. Some individual feeds may return 0 results or become unavailable, but provider failures are recorded per source/company and should not break the whole pipeline.
+
+GDELT remains available as code, but it often returns `HTTP 429 Too Many Requests`. A 429 means the external public service is rate-limiting requests; it does not mean the SDATA A pipeline or frontend is broken. For now, GDELT should be treated as manual, low-frequency, or fallback infrastructure rather than the main scheduled source.
+
+API-backed providers such as SerpApi, Serper, or NewsAPI should be introduced only through environment variables / GitHub Secrets and should gracefully skip when keys are missing.
 
 ## Project Structure
 
 ```text
 config/
-  companies.yaml          Company registry, aliases, keywords, and industry-chain tags
-  sources.yaml            Source registry, including active GDELT query configuration
-  source_rank.yaml        Source credibility and ranking policy
-  prompt_templates.yaml   Placeholder contracts for future LLM enrichment
+  companies.yaml          Company registry, aliases, keywords, and category metadata
+  sources.yaml            Provider/source registry and per-company source configuration
+  source_rank.yaml        Source ranking, quality, and dedupe policy
+  prompt_templates.yaml   Prompt contracts for the future LLM reporting layer
 data/
   news/latest/            Latest generated JSON outputs
   news/archive/           Historical run archive and archive index
 docs/
   index.html              GitHub Pages frontend entry point
-  assets/                 Frontend JavaScript, mock data, and styles
+  assets/                 Static frontend JavaScript and styles
   data/news/latest/       Published JSON consumed by the frontend
+  observable/             Built Observable dashboard output
+observable/
+  index.md                Observable Framework dashboard source
 src/
   satellite_news/
     schema.py             Unified data structures
     config.py             YAML config loaders
-    pipeline.py           Fetch -> process -> summarize -> export orchestration
-    provider/             Multi-source NewsProvider contracts and placeholder registry
-    fetcher/gdelt.py      GDELT fetcher and HTTP transport
-    processing/           Processing interface, currently pass-through
+    pipeline.py           Fetch -> process -> summarize -> export -> store orchestration
+    provider/             NewsProvider contracts and provider adapters
+    fetcher/              External fetch helpers, including GDELT transport
+    processing/           Processing interface
     llm/                  LLM summarizer interface, currently no-op
+    reporting/            Experimental daily-report generator and archive writer
     exporter/             Export interface, currently no-op
-    storage/json_file.py  JSON latest/archive storage
+    storage/json_file.py  JSON latest/archive storage and docs publication
 tests/
-  test_imports.py
-  test_gdelt_fetcher.py
-  test_json_storage.py
-  test_prompt_templates.py
+  test_*.py               Import, provider, storage, and contract checks
 ```
 
 ## Data Flow
 
 ```text
-companies.yaml + sources.yaml
+config/companies.yaml + config/sources.yaml
         ->
-NewsProvider / fetcher layer
+NewsProvider adapters
         ->
-RawArticle / NewsItem
+RawArticle
+        ->
+NewsItem
         ->
 PipelineResult
         ->
@@ -75,20 +104,40 @@ data/news/latest/*.json + data/news/archive/**
         ->
 docs/data/news/latest/pipeline_result.json
         ->
-GitHub Pages dashboard
+GitHub Pages / Observable dashboard
 ```
 
 ## Provider Contract
 
-`config/sources.yaml` defines provider contracts for:
+Provider configuration lives in `config/sources.yaml`. Provider implementations must output unified `RawArticle` records so downstream processing can normalize them into `NewsItem`.
 
-- `official_site_provider`
-- `gdelt_provider`
-- `rss_provider`
-- `serpapi_provider`
-- `newsapi_provider`
+Current provider posture:
 
-Each provider has `priority`, `fallback`, and optional `company_overrides`. Provider implementations must output `RawArticle`; downstream modules consume normalized `NewsItem`. RSS and official-page providers now have per-company source configuration in `config/sources.yaml`; SerpApi and NewsAPI require their API key environment variables before they can run live.
+- `rss_provider`: production source, scheduled every 6 hours.
+- `official_site_provider`: available as a light official-page path, but not the main production source.
+- `gdelt_provider`: implemented, currently paused from production schedule because of 429 rate limits.
+- `serpapi_provider` / search API providers: reserved for API-key fallback.
+- `newsapi_provider`: reserved for API-key fallback.
+
+Provider failures should be isolated. One failed provider or one failed company source should not fail the entire pipeline run.
+
+## GitHub Actions
+
+The `News Intelligence Pipeline` workflow refreshes data and commits updated JSON:
+
+```text
+data/news/latest/
+docs/data/news/latest/
+```
+
+Current scheduled behavior:
+
+- Runs every 6 hours with `--provider-id rss_provider`.
+- Uses a single `news-data-writer` concurrency group to avoid simultaneous writes to `latest`.
+- Supports manual `workflow_dispatch` inputs for `company_id`, `provider_id`, `scheduled_slot`, and `max_gdelt_queries`.
+- Reads optional `SERPAPI_KEY` and `NEWSAPI_KEY` from GitHub Secrets when those providers are enabled.
+
+The `Build Observable Dashboard` workflow builds `observable/` into `docs/observable/` when dashboard source or latest data changes.
 
 ## Run Locally
 
@@ -102,50 +151,33 @@ python -m pip install --upgrade pip setuptools wheel
 python -m pip install -e ".[dev]"
 ```
 
-Dry run, no external API call:
+Dry run:
 
 ```bash
 python -m satellite_news
 ```
 
-Distributed partial dry run for one company/provider slot:
+Current production-like RSS run:
 
 ```bash
-python -m satellite_news \
+PYTHONPATH=src python3 -m satellite_news \
+  --no-dry-run \
+  --provider-id rss_provider \
+  --output-dir data/news/latest \
+  --publish-dir docs/data/news
+```
+
+Manual partial provider run:
+
+```bash
+PYTHONPATH=src python3 -m satellite_news \
+  --no-dry-run \
   --company-id spacex \
-  --provider-id gdelt_provider \
-  --scheduled-slot slot-2026-06-17T00-spacex-gdelt \
-  --max-gdelt-queries 1
+  --provider-id rss_provider \
+  --scheduled-slot manual-spacex-rss \
+  --output-dir data/news/latest \
+  --publish-dir docs/data/news
 ```
-
-Live GDELT run:
-
-```bash
-python -m satellite_news --no-dry-run
-```
-
-## GitHub Actions Schedule
-
-The `News Intelligence Pipeline` workflow writes both repository data and Pages data:
-
-```text
-data/news/latest/
-docs/data/news/latest/
-```
-
-It uses a single `news-data-writer` concurrency group so scheduled jobs do not write
-`latest` at the same time.
-
-- RSS and official-page providers run every 3 hours with `rss_provider` and
-  `official_site_provider`.
-- GDELT runs at minute 15 and 45 every hour as a partial slot.
-- Each GDELT slot runs one company only, with `--provider-id gdelt_provider` and
-  `--max-gdelt-queries 1`.
-- Company rotation order is `spacex`, `blue_origin`, `yuanxin_satellite`,
-  `china_satnet`.
-- SerpApi and NewsAPI remain optional. If `SERPAPI_KEY` or `NEWSAPI_KEY` is not
-  configured, those providers report `skipped_no_secret` instead of failing the
-  workflow.
 
 Run checks:
 
@@ -156,26 +188,25 @@ python -m pytest
 
 ## Frontend
 
-The GitHub Pages frontend lives in `docs/`.
-
-It reads:
+The public frontend reads:
 
 ```text
 docs/data/news/latest/pipeline_result.json
 ```
 
-If that file is missing or cannot be loaded, the frontend uses:
+The static frontend lives in `docs/`. The Observable Framework prototype lives in `observable/` and is built into:
 
 ```text
-docs/assets/mock-pipeline-result.js
+docs/observable/
 ```
 
-The page labels the data source as either `live JSON` or `mock fallback`.
+The frontend does not call RSS, GDELT, LLM providers, or search APIs directly. It only reads the published JSON produced by the pipeline.
 
 ## Next Milestones
 
-1. Improve GDELT rate-limit handling and query quality.
-2. Add distributed low-frequency GDELT schedules that call one `--company-id` / `--provider-id` slot at a time.
-3. Add A5 stale/latest merge so partial company runs preserve companies not updated in the current slot.
-4. Add A4 processing: URL normalization, dedupe, company-match validation, and source-rank filtering.
-5. Add A6 LLM enrichment after data quality stabilizes.
+1. Stabilize the 13-company RSS source set and reduce irrelevant matches.
+2. Add optional search API fallback using API keys, with strict quotas and graceful skip behavior.
+3. Keep GDELT paused unless used in low-frequency manual or partial slots.
+4. Improve frontend presentation and category navigation for the 13-company monitor.
+5. Validate and connect the LLM daily-report layer to production scheduling and the frontend.
+6. Add report exports after the LLM output contract is stable.

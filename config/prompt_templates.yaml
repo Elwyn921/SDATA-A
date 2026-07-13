@@ -1,134 +1,90 @@
-schema_version: prompt_templates.a6.v1
+schema_version: prompt_templates.a6_daily_report.v1
 description: >
-  A6 LLM Enrichment Agent placeholder contracts only. This file reserves the
-  future prompt and strict JSON schema shape, but it must not trigger an LLM
-  call or generate real summaries in the current phase.
+  A6 LLM Enrichment Agent prompt contracts for generating an archived daily
+  satellite news intelligence report from PipelineResult JSON.
 
 agent:
   id: A6
   name: LLM Enrichment Agent
-  stage: summarize
-  status: placeholder_only
+  stage: report
+  status: first_implementation
 
 execution_policy:
-  call_llm: false
-  generate_real_summary: false
-  templates_are_contracts_only: true
-  allowed_current_action: maintain_prompt_template_structure
+  input_artifact: docs/data/news/latest/pipeline_result.json
+  call_llm: true_when_secret_available
+  missing_secret_status: skipped_no_secret
+  missing_secret_must_fail_workflow: false
+  api_key_env: OPENAI_API_KEY
+  provider: openai
+  model_env: OPENAI_DAILY_REPORT_MODEL
+  no_forecasting: true
+  no_valuation: true
 
-event_categories:
-  - product_launch
-  - funding_finance
-  - policy_regulation
-  - security_risk
-  - research_technical
-  - supply_chain_operations
-  - company_strategy
-  - general_update
-
-output_contract:
-  schema_name: A6NewsEnrichment
+daily_report_schema:
+  schema_name: DailyReport
   strict_json: true
-  additional_properties: false
   required:
-    - item_id
-    - company_id
-    - headline
-    - llm_summary
-    - event_category
-    - importance_score
-    - priority
-    - why_it_matters
-    - recommended_action
+    - report_id
+    - generated_at
+    - source_run_id
+    - companies_covered
+    - total_items
+    - executive_summary
+    - industry_chain_sections
+    - company_updates
+    - top_news
+    - source_health_summary
+    - risks_and_watchpoints
+    - recommended_followups
+    - citations
     - source_urls
-    - confidence
-  properties:
-    item_id:
-      type: string
-      source: NewsItem.id
-    company_id:
-      type: string
-      source: NewsItem.company_id
-    headline:
-      type: string
-      placeholder_only: true
-    llm_summary:
-      type: string
-      placeholder_only: true
-      current_phase_value: ""
-    event_category:
-      type: enum
-      values_ref: event_categories
-    importance_score:
-      type: integer
-      minimum: 0
-      maximum: 100
-    priority:
-      type: enum
-      values:
-        - low
-        - medium
-        - high
-        - critical
-    why_it_matters:
-      type: string
-      placeholder_only: true
-      current_phase_value: ""
-    recommended_action:
-      type: string
-      placeholder_only: true
-      current_phase_value: ""
-    source_urls:
-      type: array
-      items: string
-      minimum_items: 1
-    confidence:
-      type: number
-      minimum: 0
-      maximum: 1
+    - frontend
+  frontend_reserved_fields:
+    - generation_status
+    - frontend.status_badge
+    - frontend.updated_at
+    - frontend.sections_order
+    - frontend.company_filter_options
+    - frontend.cards
+
+industry_chain_sections:
+  - section_id: satellite_platforms
+    title: 卫星平台与整星制造
+  - section_id: launch_services
+    title: 运载火箭与发射服务
+  - section_id: satellite_internet
+    title: 卫星互联网服务
+  - section_id: foreign_majors
+    title: 国外大厂
 
 templates:
-  enrich_news_item:
-    version: placeholder.v1
-    status: placeholder_only
-    input_schema: NewsItem
-    output_schema_ref: A6NewsEnrichment
-    system_placeholder: |
-      PLACEHOLDER ONLY.
-      Future A6 will enrich a single satellite news item and return strict JSON.
-      Current phase: do not call an LLM and do not generate real summaries.
-    user_placeholder: |
-      PLACEHOLDER ONLY.
-      Reserved future inputs:
-      - item_id: {item_id}
-      - company_id: {company_id}
-      - company_name: {company_name}
-      - title: {title}
-      - source_name: {source_name}
-      - published_at: {published_at}
-      - url: {url}
-      - normalized_text: {normalized_text}
+  daily_report:
+    version: v1
+    input_schema: PipelineResult
+    output_schema_ref: DailyReport
+    system: |
+      你是 A6 LLM Enrichment Agent，负责把卫星产业新闻 PipelineResult 汇总成每日情报日报。
+      只做每日归纳汇总，不做复杂预测，不做估值，不编造未在输入 URL 支撑的信息。
+      必须使用中文输出，保留公司英文名和专有名词。
+      返回严格 JSON，不要 Markdown 包裹。
+    user: |
+      请基于 PipelineResult 摘要生成 DailyReport 的 LLM 生成部分。
+      必须覆盖四个 industry_chain_sections：
+      - 卫星平台与整星制造
+      - 运载火箭与发射服务
+      - 卫星互联网服务
+      - 国外大厂
 
-  enrich_news_batch:
-    version: placeholder.v1
-    status: placeholder_only
-    input_schema: NewsItem[]
-    output_schema_ref: A6NewsEnrichment[]
-    system_placeholder: |
-      PLACEHOLDER ONLY.
-      Future A6 will enrich a batch of satellite news items and return a JSON
-      array of A6NewsEnrichment objects.
-      Current phase: do not call an LLM and do not generate real summaries.
-    user_placeholder: |
-      PLACEHOLDER ONLY.
-      Reserved future batch input: {items_json}
+      每条重要判断必须保留 source_urls。
+      输入 JSON: {pipeline_result_compact_json}
 
 guardrails:
   require_json_output: true
   forbid_markdown_wrapping: true
   require_source_url: true
   no_unsourced_claims: true
-  no_real_generation_in_current_phase: true
+  no_complex_forecast: true
+  no_valuation: true
   language:
     default: zh-CN
     preserve_company_names: true

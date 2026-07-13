@@ -1,41 +1,55 @@
 # GitHub-Native Satellite News Intelligence Pipeline
 
-This document records the current SDATA A architecture. The project now has a live GDELT-based data loop, JSON persistence, and a GitHub Pages frontend. Some downstream intelligence features remain intentionally disabled until the data layer is more stable.
+This document records the current SDATA A architecture. The project is now a live RSS-first news intelligence pipeline with JSON persistence, GitHub Actions refresh, GitHub Pages publishing, and an Observable dashboard prototype. GDELT remains implemented but is not the current production source because of repeated external 429 rate limits.
 
 ## Main Flow
 
 ```text
-fetch -> process -> summarize -> export -> store -> publish
+fetch -> process -> summarize -> export -> store -> publish -> visualize
 ```
 
 Current implementation:
 
-- `fetch`: implemented for GDELT.
-- `process`: pass-through placeholder.
-- `summarize`: no-op placeholder.
-- `export`: no-op placeholder.
-- `store`: JSON latest/archive storage.
+- `fetch`: production RSS provider; official-page and GDELT paths exist; API-key search providers are reserved.
+- `process`: shared normalization contract with room for dedupe and relevance scoring.
+- `summarize`: the in-pipeline summarizer remains a no-op.
+- `report`: an experimental out-of-band daily-report generator exists but is not scheduled in production.
+- `export`: no-op for now; report exports are reserved.
+- `store`: JSON latest/archive storage with partial-run merge behavior.
 - `publish`: JSON copied into `docs/data/news/` for GitHub Pages.
+- `visualize`: static `docs/` frontend and Observable dashboard prototype.
+
+## Monitoring Scope
+
+The company registry has expanded from 4 companies to 13 companies.
+
+| Category | Companies |
+| --- | --- |
+| Foreign major companies | SpaceX, Blue Origin |
+| Satellite internet services | 垣信卫星, 中国星网 |
+| Satellite platform and spacecraft manufacturing | 银河航天, 蓝箭鸿擎 / 鸿擎科技, 微纳星空 |
+| Launch vehicles and launch services | 蓝箭航天 / LandSpace, 中科宇航 / CAS Space, 天兵科技 / Space Pioneer, 星际荣耀 / i-Space, 星河动力 / Galactic Energy, 宇石空间 |
 
 ## Configuration Contracts
 
-- `config/companies.yaml`: company registry for SpaceX, Blue Origin, 垣信卫星, 中国星网, and future Mapping-table additions.
-- `config/sources.yaml`: source registry, including active GDELT query configuration and reserved RSS / official-site / search sources.
-- `config/sources.yaml.providers`: multi-source provider contracts with priority, fallback, and per-company overrides.
+- `config/companies.yaml`: company registry, aliases, keywords, and category metadata.
+- `config/sources.yaml`: provider registry, RSS feeds, official-page entries, and provider priority/fallback contracts.
 - `config/source_rank.yaml`: source credibility ranking and dedupe policy.
-- `config/prompt_templates.yaml`: placeholder contracts for future LLM summarization. No LLM call is enabled yet.
+- `config/prompt_templates.yaml`: prompt contracts for the experimental A6 daily report.
 
 ## Code Contracts
 
-- `src/satellite_news/schema.py`: shared dataclasses exchanged by every module.
+- `src/satellite_news/schema.py`: shared dataclasses exchanged by modules.
 - `src/satellite_news/config.py`: YAML config loading.
 - `src/satellite_news/pipeline.py`: pipeline orchestration and CLI entry point.
-- `src/satellite_news/provider/interface.py`: `NewsProvider` protocol, `ProviderResult`, fallback-ready registry, and no-op provider.
+- `src/satellite_news/provider/interface.py`: `NewsProvider` protocol, `ProviderResult`, registry behavior, and fallback-ready contract.
+- `src/satellite_news/provider/`: concrete provider adapters for RSS, official pages, GDELT, and API-key search providers.
 - `src/satellite_news/fetcher/gdelt.py`: GDELT request building, HTTP transport, response mapping, and fetch status recording.
-- `src/satellite_news/processing/interface.py`: processing protocol and pass-through stub.
-- `src/satellite_news/llm/interface.py`: summarizer protocol and no-op stub.
-- `src/satellite_news/exporter/interface.py`: exporter protocol and no-op stub.
-- `src/satellite_news/storage/json_file.py`: JSON latest/archive persistence and GitHub Pages data publication.
+- `src/satellite_news/processing/interface.py`: processing protocol.
+- `src/satellite_news/llm/interface.py`: summarizer protocol and no-op implementation.
+- `src/satellite_news/reporting/daily_report.py`: experimental daily-report generation and archive output.
+- `src/satellite_news/exporter/interface.py`: exporter protocol and no-op implementation.
+- `src/satellite_news/storage/json_file.py`: JSON latest/archive persistence, partial-run merge, and GitHub Pages data publication.
 
 ## Data Outputs
 
@@ -64,38 +78,76 @@ docs/data/news/latest/pipeline_result.json
 docs/data/news/archive/index.json
 ```
 
-## External Service Behavior
+## Provider Strategy
 
-GDELT is a public external service. Live runs may encounter rate limits such as `HTTP 429 Too Many Requests`. The pipeline records these conditions per company in `fetch_statuses` rather than treating a single company failure as a total system failure.
+Current production strategy:
 
-## Distributed GDELT Scheduling Contract
+1. RSS is the scheduled production provider.
+2. Official pages are kept as structured source candidates, but complex crawling is intentionally avoided.
+3. GDELT is paused from scheduled production because of frequent 429 rate limits.
+4. Search APIs such as SerpApi, Serper, or NewsAPI should be added as optional fallback providers with quota control.
+5. Missing API keys should produce a skipped status, not a failed system run.
 
-The pipeline can be invoked as a low-frequency partial run:
+Provider output must remain unified:
 
-```bash
-python -m satellite_news \
-  --company-id spacex \
-  --provider-id gdelt_provider \
-  --scheduled-slot slot-2026-06-17T00-spacex-gdelt \
-  --max-gdelt-queries 1
+```text
+provider result -> RawArticle -> NewsItem -> PipelineResult
 ```
 
-This contract is designed to reduce GDELT 429 risk by spreading requests across scheduled slots. A partial run only updates the requested company/provider pair. Other companies must be preserved by the future A5 stale/latest merge layer.
+One provider failure must not fail the entire pipeline.
 
-Every fetch status from a partial run includes:
+## GitHub Actions Schedule
 
-- `partial_run: true`
+The `News Intelligence Pipeline` workflow currently runs every 6 hours:
+
+```text
+cron: "0 */6 * * *"
+```
+
+Scheduled runs use:
+
+```text
+--provider-id rss_provider
+```
+
+The workflow writes both repository data and Pages data:
+
+```text
+data/news/latest/
+docs/data/news/latest/
+```
+
+Manual `workflow_dispatch` still supports partial-run inputs:
+
+- `company_id`
+- `provider_id`
 - `scheduled_slot`
-- `scheduled_company_id`
-- `scheduled_provider_id`
 - `max_gdelt_queries`
-- `merge_policy: A5_stale_latest_merge`
+
+This keeps the architecture ready for low-frequency provider experiments without changing the production RSS loop.
+
+## Partial-Run Merge Contract
+
+For partial runs, the storage layer merges the current run with the previous latest output:
+
+- Updated companies use current-run data.
+- Companies not touched by the partial run are retained from the previous latest output.
+- Retained items are marked in metadata so the frontend can distinguish current results from retained results.
+- Archive output still preserves the raw current run separately.
+
+This protects the frontend from appearing empty when only one company or one provider is refreshed.
+
+## External Service Behavior
+
+GDELT is a public external service. `HTTP 429 Too Many Requests` means GDELT is rate-limiting the request. The pipeline records this as provider status. It is not a repository, frontend, or GitHub Actions crash by itself.
+
+RSS source quality varies by feed. Some feeds may return old items, duplicate items, or broad topic matches. This is expected at the current stage and should be improved through source ranking, keyword tightening, and dedupe rather than by making the fetch loop brittle.
 
 ## Reserved Extensions
 
-- RSS fetcher adapter.
-- Official website fetcher adapter.
-- SerpApi and NewsAPI provider adapters.
-- LLM summary and event extraction adapter.
-- Excel, Markdown, and PDF report exporters.
-- Scheduled live fetch and automated commit/publish workflow.
+- Production scheduling and frontend integration for LLM daily reports.
+- Event extraction and importance scoring.
+- Company profile updates based on accumulated news.
+- Search API fallback with quota-aware scheduling.
+- Excel, Markdown, PDF, and website report exports.
+- More satellite industry-chain company groups.

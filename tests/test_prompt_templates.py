@@ -3,32 +3,38 @@ from pathlib import Path
 import yaml
 
 
-def test_a6_prompt_templates_are_placeholder_contracts_only():
+def test_a6_daily_report_prompt_contract():
     config = yaml.safe_load(Path("config/prompt_templates.yaml").read_text(encoding="utf-8"))
 
-    assert config["schema_version"] == "prompt_templates.a6.v1"
+    assert config["schema_version"] == "prompt_templates.a6_daily_report.v1"
     assert config["agent"]["id"] == "A6"
-    assert config["agent"]["status"] == "placeholder_only"
+    assert config["agent"]["stage"] == "report"
+    assert config["agent"]["status"] == "first_implementation"
 
     policy = config["execution_policy"]
-    assert policy["call_llm"] is False
-    assert policy["generate_real_summary"] is False
-    assert policy["templates_are_contracts_only"] is True
+    assert policy["call_llm"] == "true_when_secret_available"
+    assert policy["missing_secret_status"] == "skipped_no_secret"
+    assert policy["missing_secret_must_fail_workflow"] is False
+    assert policy["api_key_env"] == "OPENAI_API_KEY"
 
-    contract = config["output_contract"]
+    contract = config["daily_report_schema"]
     assert contract["strict_json"] is True
-    assert contract["additional_properties"] is False
     for field in (
-        "llm_summary",
-        "event_category",
-        "importance_score",
-        "why_it_matters",
-        "recommended_action",
+        "report_id",
+        "source_run_id",
+        "executive_summary",
+        "industry_chain_sections",
+        "company_updates",
+        "top_news",
+        "citations",
+        "frontend",
     ):
         assert field in contract["required"]
 
-    for template in config["templates"].values():
-        assert template["status"] == "placeholder_only"
-        assert "PLACEHOLDER ONLY" in template["system_placeholder"]
+    template = config["templates"]["daily_report"]
+    assert template["input_schema"] == "PipelineResult"
+    assert template["output_schema_ref"] == "DailyReport"
+    assert "严格 JSON" in template["system"]
 
-    assert config["guardrails"]["no_real_generation_in_current_phase"] is True
+    assert config["guardrails"]["require_source_url"] is True
+    assert config["guardrails"]["no_unsourced_claims"] is True

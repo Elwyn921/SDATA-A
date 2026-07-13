@@ -10,10 +10,19 @@ const dataEndpoints = [
 ];
 
 const companyMeta = new Map([
-  ["spacex", {name: "SpaceX", region: "美国"}],
-  ["blue_origin", {name: "Blue Origin", region: "美国"}],
-  ["yuanxin_satellite", {name: "垣信卫星", region: "中国"}],
-  ["china_satnet", {name: "中国星网", region: "中国"}]
+  ["spacex", {name: "SpaceX", region: "美国", category: "国外大厂"}],
+  ["blue_origin", {name: "Blue Origin", region: "美国", category: "国外大厂"}],
+  ["yuanxin_satellite", {name: "垣信卫星", region: "中国", category: "卫星互联网服务"}],
+  ["china_satnet", {name: "中国星网", region: "中国", category: "卫星互联网服务"}],
+  ["galaxyspace", {name: "银河航天", region: "中国", category: "卫星平台与整星制造"}],
+  ["hongqing_technology", {name: "蓝箭鸿擎 / 鸿擎科技", region: "中国", category: "卫星平台与整星制造"}],
+  ["minospace", {name: "微纳星空", region: "中国", category: "卫星平台与整星制造"}],
+  ["landspace", {name: "蓝箭航天 / LandSpace", region: "中国", category: "运载火箭与发射服务"}],
+  ["cas_space", {name: "中科宇航 / CAS Space", region: "中国", category: "运载火箭与发射服务"}],
+  ["space_pioneer", {name: "天兵科技 / Space Pioneer", region: "中国", category: "运载火箭与发射服务"}],
+  ["i_space", {name: "星际荣耀 / i-Space", region: "中国", category: "运载火箭与发射服务"}],
+  ["galactic_energy", {name: "星河动力 / Galactic Energy", region: "中国", category: "运载火箭与发射服务"}],
+  ["yushi_space", {name: "宇石空间", region: "中国", category: "运载火箭与发射服务"}]
 ]);
 
 const providerOrder = ["rss", "official_site", "gdelt", "serpapi", "newsapi"];
@@ -38,9 +47,9 @@ const statusLabels = new Map([
 ]);
 
 const staleReasonLabels = new Map([
-  ["partial_run_not_updated", "本轮未更新，沿用上一轮结果"],
-  ["partial_run_company_empty", "本轮该公司无新结果，沿用上一轮结果"],
-  ["current_run_company_empty", "本轮无结果，使用历史数据"]
+  ["partial_run_not_updated", "等待下一轮刷新"],
+  ["partial_run_company_empty", "本轮暂无新增"],
+  ["current_run_company_empty", "等待新数据"]
 ]);
 
 async function loadPipelineResult() {
@@ -119,7 +128,7 @@ function formatShortDate(value) {
 }
 
 function staleReason(reason) {
-  return staleReasonLabels.get(reason) ?? "使用历史数据";
+  return staleReasonLabels.get(reason) ?? "保留展示";
 }
 
 function shortRunId(value) {
@@ -131,6 +140,7 @@ function companyRowsFrom(items) {
     company_id: id,
     company: meta.name,
     region: meta.region,
+    category: meta.category,
     total: 0,
     fresh: 0,
     stale: 0
@@ -141,6 +151,7 @@ function companyRowsFrom(items) {
       company_id: id,
       company: companyName(id, item.company_name),
       region: "未知",
+      category: "未分类",
       total: 0,
       fresh: 0,
       stale: 0
@@ -154,6 +165,14 @@ function companyRowsFrom(items) {
 }
 
 const companyRows = companyRowsFrom(items);
+const categoryRows = Array.from(companyRows.reduce((rows, row) => {
+  const key = row.category ?? "未分类";
+  if (!rows.has(key)) rows.set(key, {category: key, companies: 0, total: 0});
+  const current = rows.get(key);
+  current.companies += 1;
+  current.total += row.total;
+  return rows;
+}, new Map()).values());
 const totalNews = items.length;
 const freshNews = items.filter((item) => !isStale(item)).length;
 const staleNews = totalNews - freshNews;
@@ -188,7 +207,7 @@ display(html`
       ["新闻总数", totalNews, "本轮可展示新闻"],
       ["覆盖公司", companyRows.length, "固定监测对象"],
       ["最新新闻", freshNews, "本轮实时结果"],
-      ["历史兜底", staleNews, "沿用历史结果"],
+      ["待刷新项", staleNews, "保留展示连续性"],
       ["数据源异常", providerIssues, "非成功状态"]
     ].map(([label, value, caption]) => html`
       <article class="of-kpi">
@@ -207,7 +226,7 @@ display(html`
     <article class="of-card of-span-7">
       <header>
         <h2>公司新闻数量</h2>
-        <p>按公司统计新闻覆盖与历史兜底占比。</p>
+        <p>按公司统计新闻覆盖与刷新状态。</p>
       </header>
       ${Plot.plot({
         height: 290,
@@ -215,10 +234,10 @@ display(html`
         marginRight: 34,
         x: {grid: true, label: "新闻数"},
         y: {domain: companyRows.map((d) => d.company), label: null},
-        color: {legend: true, domain: ["最新", "历史兜底"], range: ["#16a34a", "#9333ea"]},
+        color: {legend: true, domain: ["最新", "待刷新"], range: ["#16a34a", "#9333ea"]},
         marks: [
           Plot.barX(companyRows, {y: "company", x: "fresh", fill: "最新"}),
-          Plot.barX(companyRows, {y: "company", x: "stale", x1: "fresh", fill: "历史兜底"}),
+          Plot.barX(companyRows, {y: "company", x: "stale", x1: "fresh", fill: "待刷新"}),
           Plot.text(companyRows, {y: "company", x: "total", text: "total", dx: 8, textAnchor: "start", fill: "#475467"})
         ]
       })}
@@ -226,22 +245,22 @@ display(html`
 
     <article class="of-card of-span-5">
       <header>
-        <h2>Fresh / Stale 状态</h2>
+        <h2>刷新状态</h2>
         <p>判断当前页面可见情报的新鲜度。</p>
       </header>
       ${Plot.plot({
         height: 290,
         y: {grid: true, label: "新闻数"},
         x: {label: null},
-        color: {domain: ["最新", "历史兜底"], range: ["#16a34a", "#9333ea"]},
+        color: {domain: ["最新", "待刷新"], range: ["#16a34a", "#9333ea"]},
         marks: [
           Plot.barY([
             {state: "最新", count: freshNews},
-            {state: "历史兜底", count: staleNews}
+            {state: "待刷新", count: staleNews}
           ], {x: "state", y: "count", fill: "state"}),
           Plot.text([
             {state: "最新", count: freshNews},
-            {state: "历史兜底", count: staleNews}
+            {state: "待刷新", count: staleNews}
           ], {x: "state", y: "count", text: "count", dy: -8, fill: "#172033"})
         ]
       })}
@@ -254,7 +273,84 @@ display(html`
 display(html`
   <section class="of-card">
     <header>
-      <h2>Provider 状态矩阵</h2>
+      <h2>产业分类覆盖</h2>
+      <p>13 家公司按当前监测分组聚合。</p>
+    </header>
+    <div class="of-table-wrap">
+      <table class="of-table">
+        <thead>
+          <tr>
+            <th>分类</th>
+            <th>公司数</th>
+            <th>新闻数</th>
+          </tr>
+        </thead>
+        <tbody>
+          ${categoryRows.map((row) => html`
+            <tr>
+              <td><strong>${row.category}</strong></td>
+              <td>${row.companies}</td>
+              <td>${row.total}</td>
+            </tr>
+          `)}
+        </tbody>
+      </table>
+    </div>
+  </section>
+`);
+```
+
+```js
+display(html`
+  <section class="of-card">
+    <header>
+      <h2>本轮运行信息</h2>
+      <p>保留 run_id、generated_at 与 stale_fallback 摘要。</p>
+    </header>
+    <div class="of-run-grid">
+      <div><span>运行 ID</span><strong>${pipeline.run_id ?? "--"}</strong></div>
+      <div><span>生成时间</span><strong>${formatFullDate(pipeline.generated_at ?? pipeline.finished_at)}</strong></div>
+      <div><span>保留展示</span><strong>${staleFallback.enabled === false ? "关闭" : "开启"}</strong></div>
+      <div><span>最新 / 待刷新</span><strong>${staleFallback.fresh_item_count ?? freshNews} / ${staleFallback.stale_item_count ?? staleNews}</strong></div>
+    </div>
+  </section>
+`);
+```
+
+```js
+display(html`
+  <section class="of-card">
+    <header>
+      <h2>新闻列表</h2>
+      <p>展示最近 60 条新闻，新闻内容保持原始标题与来源，不做 LLM 改写。</p>
+    </header>
+    <div class="of-news-list">
+      ${sortedItems.slice(0, 60).map((item) => html`
+        <a class="of-news-row" href=${item.url} target="_blank" rel="noreferrer">
+          <div>
+            <div class="of-news-badges">
+              <span>${companyName(item.company_id, item.company_name)}</span>
+              <span>${providerLabel(itemProvider(item))}</span>
+              ${isStale(item)
+                ? html`<span class="of-stale" title=${`${staleReason(item.stale_reason)}；来源运行 ID：${shortRunId(item.stale_from_run_id)}`}>待刷新</span>`
+                : html`<span class="of-fresh">最新</span>`}
+            </div>
+            <h3>${item.title}</h3>
+            <p>${item.source?.source_name ?? item.source?.source_id ?? "未知来源"} · ${formatShortDate(item.published_at)}</p>
+          </div>
+          <span class="of-open">打开</span>
+        </a>
+      `)}
+    </div>
+  </section>
+`);
+```
+
+```js
+display(html`
+  <section class="of-card">
+    <header>
+      <h2>数据源健康状态</h2>
       <p>对齐现有 provider_status / fetch_statuses，不改变后端数据结构。</p>
     </header>
     <div class="of-table-wrap">
@@ -278,52 +374,6 @@ display(html`
           `)}
         </tbody>
       </table>
-    </div>
-  </section>
-`);
-```
-
-```js
-display(html`
-  <section class="of-card">
-    <header>
-      <h2>本轮运行信息</h2>
-      <p>保留 run_id、generated_at 与 stale_fallback 摘要。</p>
-    </header>
-    <div class="of-run-grid">
-      <div><span>运行 ID</span><strong>${pipeline.run_id ?? "--"}</strong></div>
-      <div><span>生成时间</span><strong>${formatFullDate(pipeline.generated_at ?? pipeline.finished_at)}</strong></div>
-      <div><span>兜底开关</span><strong>${staleFallback.enabled === false ? "已关闭" : "已启用"}</strong></div>
-      <div><span>最新 / 历史</span><strong>${staleFallback.fresh_item_count ?? freshNews} / ${staleFallback.stale_item_count ?? staleNews}</strong></div>
-    </div>
-  </section>
-`);
-```
-
-```js
-display(html`
-  <section class="of-card">
-    <header>
-      <h2>新闻列表</h2>
-      <p>展示最近 60 条新闻，新闻内容保持原始标题与来源，不做 LLM 改写。</p>
-    </header>
-    <div class="of-news-list">
-      ${sortedItems.slice(0, 60).map((item) => html`
-        <a class="of-news-row" href=${item.url} target="_blank" rel="noreferrer">
-          <div>
-            <div class="of-news-badges">
-              <span>${companyName(item.company_id, item.company_name)}</span>
-              <span>${providerLabel(itemProvider(item))}</span>
-              ${isStale(item)
-                ? html`<span class="of-stale" title=${`${staleReason(item.stale_reason)}；来源运行 ID：${shortRunId(item.stale_from_run_id)}`}>使用上一轮数据</span>`
-                : html`<span class="of-fresh">最新</span>`}
-            </div>
-            <h3>${item.title}</h3>
-            <p>${item.source?.source_name ?? item.source?.source_id ?? "未知来源"} · ${formatShortDate(item.published_at)}</p>
-          </div>
-          <span class="of-open">打开</span>
-        </a>
-      `)}
     </div>
   </section>
 `);

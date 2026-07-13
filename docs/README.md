@@ -2,27 +2,59 @@
 
 This directory is the GitHub Pages publishing root for the SDATA A satellite news dashboard.
 
-## Entry
+The frontend is now connected to live pipeline JSON produced by the RSS data loop. It does not call news providers directly; it only reads JSON files published by the pipeline.
 
-- `index.html` is the public dashboard page.
-- `assets/app.js` renders company cards, filters, latest news, timeline entries, and archive placeholders.
-- `assets/pipeline-data.js` loads real `PipelineResult` JSON first and falls back to mock data.
-- `assets/mock-pipeline-result.js` contains sample data for fallback and UI development.
+## Entry Points
 
-## Real JSON Paths
+- `index.html` is the main static dashboard page.
+- `assets/app.js` renders the dashboard UI.
+- `assets/pipeline-data.js` loads `PipelineResult` JSON.
+- `assets/mock-pipeline-result.js` remains available as a local fallback for UI development.
+- `observable/` contains the built Observable dashboard output.
+
+## Live Data Paths
 
 The frontend reads:
 
-- `data/news/latest/pipeline_result.json`
-- `data/news/archive/index.json`
+```text
+docs/data/news/latest/pipeline_result.json
+docs/data/news/archive/index.json
+```
 
-These files are published copies of pipeline outputs generated under the repository root:
+These are published copies of root pipeline outputs:
 
-- `data/news/latest/pipeline_result.json`
-- `data/news/archive/index.json`
+```text
+data/news/latest/pipeline_result.json
+data/news/archive/index.json
+```
+
+## Current Data Scope
+
+The current production data path is RSS-first and covers 13 companies:
+
+- SpaceX
+- Blue Origin
+- 垣信卫星
+- 中国星网
+- 蓝箭航天 / LandSpace
+- 中科宇航 / CAS Space
+- 天兵科技 / Space Pioneer
+- 星际荣耀 / i-Space
+- 星河动力 / Galactic Energy
+- 宇石空间
+- 蓝箭鸿擎 / 鸿擎科技
+- 银河航天 / GalaxySpace
+- 微纳星空 / MinoSpace
+
+Latest local snapshot:
+
+- Run id: `08e76e21-26fb-4cb9-9362-f2906920b61b`
+- Generated at: `2026-06-24T07:23:55.772959Z`
+- Items: 591
+- Provider: `rss_provider`
 
 ## Data Source Behavior
 
-The page attempts to load live JSON first. If it cannot load real JSON, it displays mock data and labels the source as `mock fallback`.
+The page attempts to load live JSON first. If it cannot load real JSON, it may fall back to mock data for local UI development.
 
-The frontend does not call GDELT, LLM providers, or any external API directly.
+GDELT is not called by the frontend. GDELT 429 rate limits are external service behavior and should be shown, if needed, as provider health information rather than a frontend failure.
