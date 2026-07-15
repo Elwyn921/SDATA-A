@@ -80,36 +80,16 @@
       "status": "success"
     }
   ],
-  "company_item_counts": {
-    "blue_origin": 50,
-    "cas_space": 50,
-    "china_satnet": 40,
-    "galactic_energy": 50,
-    "galaxyspace": 50,
-    "hongqing_technology": 28,
-    "i_space": 50,
-    "landspace": 50,
-    "minospace": 41,
-    "space_pioneer": 50,
-    "spacex": 50,
-    "yuanxin_satellite": 47,
-    "yushi_space": 30
-  },
   "config_dir": "config",
   "dry_run": false,
   "export_count": 0,
   "fetch_status_count": 13,
   "finished_at": "2026-07-15T07:45:31.504624Z",
-  "fresh_item_count": 586,
   "generated_at": "2026-07-15T07:45:31.504624Z",
   "item_count": 586,
-  "metadata": {
-    "latest_is_stale_safe": true
-  },
   "output_dir": "data/news/latest",
   "run_id": "c08cf098-64bc-45cd-9e41-dba8f71aff01",
   "schema_version": "satellite_news.v1",
-  "stale_item_count": 0,
   "started_at": "2026-07-15T07:45:07.257095Z",
   "summary_count": 0,
   "warnings": []
