@@ -19,7 +19,7 @@
         "https://www.bing.com/news/search?q=Falcon+9+Starlink+satellites&format=rss"
       ],
       "final_status": "success",
-      "finished_at": "2026-07-17T12:55:08.140381Z",
+      "finished_at": "2026-07-17T18:47:06.440412Z",
       "item_count": 50,
       "max_gdelt_queries": null,
       "merge_policy": "A5_stale_latest_merge",
@@ -40,7 +40,7 @@
         "merge_policy": "A5_stale_latest_merge",
         "partial_run": true,
         "provider_id": "rss_provider",
-        "scheduled_slot": "rss-2026-07-17T12",
+        "scheduled_slot": "rss-2026-07-17T18",
         "stale_fallback_available": false,
         "warning_count": 0
       },
@@ -57,7 +57,7 @@
       "retry_count": 0,
       "scheduled_company_id": null,
       "scheduled_provider_id": "rss_provider",
-      "scheduled_slot": "rss-2026-07-17T12",
+      "scheduled_slot": "rss-2026-07-17T18",
       "should_fallback": false,
       "source_id": "rss_provider",
       "source_type": "rss",
@@ -85,7 +85,7 @@
         "https://www.bing.com/news/search?q=Blue+Origin+BE-4+engine&format=rss"
       ],
       "final_status": "success",
-      "finished_at": "2026-07-17T12:55:08.670364Z",
+      "finished_at": "2026-07-17T18:47:06.918540Z",
       "item_count": 50,
       "max_gdelt_queries": null,
       "merge_policy": "A5_stale_latest_merge",
@@ -108,7 +108,7 @@
         "merge_policy": "A5_stale_latest_merge",
         "partial_run": true,
         "provider_id": "rss_provider",
-        "scheduled_slot": "rss-2026-07-17T12",
+        "scheduled_slot": "rss-2026-07-17T18",
         "stale_fallback_available": false,
         "warning_count": 0
       },
@@ -125,7 +125,7 @@
       "retry_count": 0,
       "scheduled_company_id": null,
       "scheduled_provider_id": "rss_provider",
-      "scheduled_slot": "rss-2026-07-17T12",
+      "scheduled_slot": "rss-2026-07-17T18",
       "should_fallback": false,
       "source_id": "rss_provider",
       "source_type": "rss",
@@ -165,7 +165,7 @@
         "https://www.fierce-network.com/rss/xml"
       ],
       "final_status": "success",
-      "finished_at": "2026-07-17T12:55:09.950721Z",
+      "finished_at": "2026-07-17T18:47:08.031982Z",
       "item_count": 48,
       "max_gdelt_queries": null,
       "merge_policy": "A5_stale_latest_merge",
@@ -200,7 +200,7 @@
         "merge_policy": "A5_stale_latest_merge",
         "partial_run": true,
         "provider_id": "rss_provider",
-        "scheduled_slot": "rss-2026-07-17T12",
+        "scheduled_slot": "rss-2026-07-17T18",
         "stale_fallback_available": false,
         "warning_count": 0
       },
@@ -217,7 +217,7 @@
       "retry_count": 0,
       "scheduled_company_id": null,
       "scheduled_provider_id": "rss_provider",
-      "scheduled_slot": "rss-2026-07-17T12",
+      "scheduled_slot": "rss-2026-07-17T18",
       "should_fallback": false,
       "source_id": "rss_provider",
       "source_type": "rss",
@@ -256,7 +256,7 @@
         "https://www.fierce-network.com/rss/xml"
       ],
       "final_status": "success",
-      "finished_at": "2026-07-17T12:55:11.733388Z",
+      "finished_at": "2026-07-17T18:47:09.466698Z",
       "item_count": 40,
       "max_gdelt_queries": null,
       "merge_policy": "A5_stale_latest_merge",
@@ -290,7 +290,7 @@
         "merge_policy": "A5_stale_latest_merge",
         "partial_run": true,
         "provider_id": "rss_provider",
-        "scheduled_slot": "rss-2026-07-17T12",
+        "scheduled_slot": "rss-2026-07-17T18",
         "stale_fallback_available": false,
         "warning_count": 0
       },
@@ -307,7 +307,7 @@
       "retry_count": 0,
       "scheduled_company_id": null,
       "scheduled_provider_id": "rss_provider",
-      "scheduled_slot": "rss-2026-07-17T12",
+      "scheduled_slot": "rss-2026-07-17T18",
       "should_fallback": false,
       "source_id": "rss_provider",
       "source_type": "rss",
@@ -336,7 +336,7 @@
         "https://www.bing.com/news/search?q=LandSpace+Zhuque+ZQ-2+ZQ-3&format=rss"
       ],
       "final_status": "success",
-      "finished_at": "2026-07-17T12:55:14.319477Z",
+      "finished_at": "2026-07-17T18:47:11.760951Z",
       "item_count": 50,
       "max_gdelt_queries": null,
       "merge_policy": "A5_stale_latest_merge",
@@ -360,7 +360,7 @@
         "merge_policy": "A5_stale_latest_merge",
         "partial_run": true,
         "provider_id": "rss_provider",
-        "scheduled_slot": "rss-2026-07-17T12",
+        "scheduled_slot": "rss-2026-07-17T18",
         "stale_fallback_available": false,
         "warning_count": 0
       },
@@ -377,7 +377,7 @@
       "retry_count": 0,
       "scheduled_company_id": null,
       "scheduled_provider_id": "rss_provider",
-      "scheduled_slot": "rss-2026-07-17T12",
+      "scheduled_slot": "rss-2026-07-17T18",
       "should_fallback": false,
       "source_id": "rss_provider",
       "source_type": "rss",
@@ -406,7 +406,7 @@
         "https://www.bing.com/news/search?q=CAS+Space+Lijian+Kinetica&format=rss"
       ],
       "final_status": "success",
-      "finished_at": "2026-07-17T12:55:16.172586Z",
+      "finished_at": "2026-07-17T18:47:12.714819Z",
       "item_count": 50,
       "max_gdelt_queries": null,
       "merge_policy": "A5_stale_latest_merge",
@@ -430,9 +430,9 @@
         "merge_policy": "A5_stale_latest_merge",
         "partial_run": true,
         "provider_id": "rss_provider",
-        "scheduled_slot": "rss-2026-07-17T12",
+        "scheduled_slot": "rss-2026-07-17T18",
         "stale_fallback_available": false,
-        "warning_count": 0
+        "warning_count": 1
       },
       "partial_run": true,
       "provider_id": "rss_provider",
@@ -447,14 +447,16 @@
       "retry_count": 0,
       "scheduled_company_id": null,
       "scheduled_provider_id": "rss_provider",
-      "scheduled_slot": "rss-2026-07-17T12",
+      "scheduled_slot": "rss-2026-07-17T18",
       "should_fallback": false,
       "source_id": "rss_provider",
       "source_type": "rss",
       "started_at": null,
       "status": "success",
       "successful_query_count": 0,
-      "warnings": []
+      "warnings": [
+        "https://www.theregister.com/headlines.atom: HTTPError: HTTP Error 403: Forbidden"
+      ]
     },
     {
       "article_count": 50,
@@ -476,7 +478,7 @@
         "https://www.bing.com/news/search?q=Space+Pioneer+Tianlong+TL-2+TL-3&format=rss"
       ],
       "final_status": "success",
-      "finished_at": "2026-07-17T12:55:17.923207Z",
+      "finished_at": "2026-07-17T18:47:13.808201Z",
       "item_count": 50,
       "max_gdelt_queries": null,
       "merge_policy": "A5_stale_latest_merge",
@@ -500,9 +502,9 @@
         "merge_policy": "A5_stale_latest_merge",
         "partial_run": true,
         "provider_id": "rss_provider",
-        "scheduled_slot": "rss-2026-07-17T12",
+        "scheduled_slot": "rss-2026-07-17T18",
         "stale_fallback_available": false,
-        "warning_count": 0
+        "warning_count": 1
       },
       "partial_run": true,
       "provider_id": "rss_provider",
@@ -517,14 +519,16 @@
       "retry_count": 0,
       "scheduled_company_id": null,
       "scheduled_provider_id": "rss_provider",
-      "scheduled_slot": "rss-2026-07-17T12",
+      "scheduled_slot": "rss-2026-07-17T18",
       "should_fallback": false,
       "source_id": "rss_provider",
       "source_type": "rss",
       "started_at": null,
       "status": "success",
       "successful_query_count": 0,
-      "warnings": []
+      "warnings": [
+        "https://www.theregister.com/headlines.atom: HTTPError: HTTP Error 403: Forbidden"
+      ]
     },
     {
       "article_count": 50,
@@ -546,7 +550,7 @@
         "https://www.bing.com/news/search?q=i-Space+Hyperbola+SQX&format=rss"
       ],
       "final_status": "success",
-      "finished_at": "2026-07-17T12:55:20.426771Z",
+      "finished_at": "2026-07-17T18:47:14.777614Z",
       "item_count": 50,
       "max_gdelt_queries": null,
       "merge_policy": "A5_stale_latest_merge",
@@ -570,9 +574,9 @@
         "merge_policy": "A5_stale_latest_merge",
         "partial_run": true,
         "provider_id": "rss_provider",
-        "scheduled_slot": "rss-2026-07-17T12",
+        "scheduled_slot": "rss-2026-07-17T18",
         "stale_fallback_available": false,
-        "warning_count": 0
+        "warning_count": 1
       },
       "partial_run": true,
       "provider_id": "rss_provider",
@@ -587,14 +591,16 @@
       "retry_count": 0,
       "scheduled_company_id": null,
       "scheduled_provider_id": "rss_provider",
-      "scheduled_slot": "rss-2026-07-17T12",
+      "scheduled_slot": "rss-2026-07-17T18",
       "should_fallback": false,
       "source_id": "rss_provider",
       "source_type": "rss",
       "started_at": null,
       "status": "success",
       "successful_query_count": 0,
-      "warnings": []
+      "warnings": [
+        "https://www.theregister.com/headlines.atom: HTTPError: HTTP Error 403: Forbidden"
+      ]
     },
     {
       "article_count": 50,
@@ -616,7 +622,7 @@
         "https://www.bing.com/news/search?q=Galactic+Energy+Ceres-1+Pallas-1&format=rss"
       ],
       "final_status": "success",
-      "finished_at": "2026-07-17T12:55:22.193222Z",
+      "finished_at": "2026-07-17T18:47:15.676259Z",
       "item_count": 50,
       "max_gdelt_queries": null,
       "merge_policy": "A5_stale_latest_merge",
@@ -640,9 +646,9 @@
         "merge_policy": "A5_stale_latest_merge",
         "partial_run": true,
         "provider_id": "rss_provider",
-        "scheduled_slot": "rss-2026-07-17T12",
+        "scheduled_slot": "rss-2026-07-17T18",
         "stale_fallback_available": false,
-        "warning_count": 0
+        "warning_count": 1
       },
       "partial_run": true,
       "provider_id": "rss_provider",
@@ -657,14 +663,16 @@
       "retry_count": 0,
       "scheduled_company_id": null,
       "scheduled_provider_id": "rss_provider",
-      "scheduled_slot": "rss-2026-07-17T12",
+      "scheduled_slot": "rss-2026-07-17T18",
       "should_fallback": false,
       "source_id": "rss_provider",
       "source_type": "rss",
       "started_at": null,
       "status": "success",
       "successful_query_count": 0,
-      "warnings": []
+      "warnings": [
+        "https://www.theregister.com/headlines.atom: HTTPError: HTTP Error 403: Forbidden"
+      ]
     },
     {
       "article_count": 29,
@@ -689,7 +697,7 @@
         "https://news.google.com/rss/search?q=site%3Asina.com.cn%20%E5%AE%87%E7%9F%B3%E7%A9%BA%E9%97%B4%20AS-1&hl=zh-CN&gl=CN&ceid=CN:zh-Hans"
       ],
       "final_status": "success",
-      "finished_at": "2026-07-17T12:55:26.024481Z",
+      "finished_at": "2026-07-17T18:47:18.274146Z",
       "item_count": 29,
       "max_gdelt_queries": null,
       "merge_policy": "A5_stale_latest_merge",
@@ -716,9 +724,9 @@
         "merge_policy": "A5_stale_latest_merge",
         "partial_run": true,
         "provider_id": "rss_provider",
-        "scheduled_slot": "rss-2026-07-17T12",
+        "scheduled_slot": "rss-2026-07-17T18",
         "stale_fallback_available": false,
-        "warning_count": 0
+        "warning_count": 1
       },
       "partial_run": true,
       "provider_id": "rss_provider",
@@ -733,17 +741,19 @@
       "retry_count": 0,
       "scheduled_company_id": null,
       "scheduled_provider_id": "rss_provider",
-      "scheduled_slot": "rss-2026-07-17T12",
+      "scheduled_slot": "rss-2026-07-17T18",
       "should_fallback": false,
       "source_id": "rss_provider",
       "source_type": "rss",
       "started_at": null,
       "status": "success",
       "successful_query_count": 0,
-      "warnings": []
+      "warnings": [
+        "https://www.theregister.com/headlines.atom: HTTPError: HTTP Error 403: Forbidden"
+      ]
     },
     {
-      "article_count": 32,
+      "article_count": 33,
       "company_id": "hongqing_technology",
       "company_name": "蓝箭鸿擎",
       "error_message": null,
@@ -767,8 +777,8 @@
         "https://news.google.com/rss/search?q=site%3Alandspace.com%20%E9%B8%BF%E6%93%8E%E7%A7%91%E6%8A%80%20%E8%93%9D%E7%AE%AD%E9%B8%BF%E6%93%8E&hl=zh-CN&gl=CN&ceid=CN:zh-Hans"
       ],
       "final_status": "success",
-      "finished_at": "2026-07-17T12:55:30.125554Z",
-      "item_count": 32,
+      "finished_at": "2026-07-17T18:47:21.162929Z",
+      "item_count": 33,
       "max_gdelt_queries": null,
       "merge_policy": "A5_stale_latest_merge",
       "metadata": {
@@ -796,9 +806,9 @@
         "merge_policy": "A5_stale_latest_merge",
         "partial_run": true,
         "provider_id": "rss_provider",
-        "scheduled_slot": "rss-2026-07-17T12",
+        "scheduled_slot": "rss-2026-07-17T18",
         "stale_fallback_available": false,
-        "warning_count": 0
+        "warning_count": 1
       },
       "partial_run": true,
       "provider_id": "rss_provider",
@@ -813,14 +823,16 @@
       "retry_count": 0,
       "scheduled_company_id": null,
       "scheduled_provider_id": "rss_provider",
-      "scheduled_slot": "rss-2026-07-17T12",
+      "scheduled_slot": "rss-2026-07-17T18",
       "should_fallback": false,
       "source_id": "rss_provider",
       "source_type": "rss",
       "started_at": null,
       "status": "success",
       "successful_query_count": 0,
-      "warnings": []
+      "warnings": [
+        "https://www.theregister.com/headlines.atom: HTTPError: HTTP Error 403: Forbidden"
+      ]
     },
     {
       "article_count": 50,
@@ -847,7 +859,7 @@
         "https://news.google.com/rss/search?q=GalaxySpace%20satellite%20internet&hl=en-US&gl=US&ceid=US:en"
       ],
       "final_status": "success",
-      "finished_at": "2026-07-17T12:55:31.714374Z",
+      "finished_at": "2026-07-17T18:47:22.304649Z",
       "item_count": 50,
       "max_gdelt_queries": null,
       "merge_policy": "A5_stale_latest_merge",
@@ -876,9 +888,9 @@
         "merge_policy": "A5_stale_latest_merge",
         "partial_run": true,
         "provider_id": "rss_provider",
-        "scheduled_slot": "rss-2026-07-17T12",
+        "scheduled_slot": "rss-2026-07-17T18",
         "stale_fallback_available": false,
-        "warning_count": 0
+        "warning_count": 1
       },
       "partial_run": true,
       "provider_id": "rss_provider",
@@ -893,14 +905,16 @@
       "retry_count": 0,
       "scheduled_company_id": null,
       "scheduled_provider_id": "rss_provider",
-      "scheduled_slot": "rss-2026-07-17T12",
+      "scheduled_slot": "rss-2026-07-17T18",
       "should_fallback": false,
       "source_id": "rss_provider",
       "source_type": "rss",
       "started_at": null,
       "status": "success",
       "successful_query_count": 0,
-      "warnings": []
+      "warnings": [
+        "https://www.theregister.com/headlines.atom: HTTPError: HTTP Error 403: Forbidden"
+      ]
     },
     {
       "article_count": 44,
@@ -922,7 +936,7 @@
         "https://www.bing.com/news/search?q=MinoSpace+commercial+satellite+manufacturer&format=rss"
       ],
       "final_status": "success",
-      "finished_at": "2026-07-17T12:55:34.273965Z",
+      "finished_at": "2026-07-17T18:47:23.732386Z",
       "item_count": 44,
       "max_gdelt_queries": null,
       "merge_policy": "A5_stale_latest_merge",
@@ -946,9 +960,9 @@
         "merge_policy": "A5_stale_latest_merge",
         "partial_run": true,
         "provider_id": "rss_provider",
-        "scheduled_slot": "rss-2026-07-17T12",
+        "scheduled_slot": "rss-2026-07-17T18",
         "stale_fallback_available": false,
-        "warning_count": 0
+        "warning_count": 1
       },
       "partial_run": true,
       "provider_id": "rss_provider",
@@ -963,17 +977,19 @@
       "retry_count": 0,
       "scheduled_company_id": null,
       "scheduled_provider_id": "rss_provider",
-      "scheduled_slot": "rss-2026-07-17T12",
+      "scheduled_slot": "rss-2026-07-17T18",
       "should_fallback": false,
       "source_id": "rss_provider",
       "source_type": "rss",
       "started_at": null,
       "status": "success",
       "successful_query_count": 0,
-      "warnings": []
+      "warnings": [
+        "https://www.theregister.com/headlines.atom: HTTPError: HTTP Error 403: Forbidden"
+      ]
     }
   ],
-  "generated_at": "2026-07-17T12:55:34.330496Z",
-  "run_id": "36a50552-b19f-4544-9b36-014d6eefe2ca",
+  "generated_at": "2026-07-17T18:47:23.814231Z",
+  "run_id": "0f9db2c0-98c5-4dbc-9565-50501bb31436",
   "schema_version": "satellite_news.v1"
 }
