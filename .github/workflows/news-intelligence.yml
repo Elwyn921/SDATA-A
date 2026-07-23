@@ -110,12 +110,40 @@ jobs:
             --publish-dir docs/data/reports/latest \
             --archive-root data/reports/archive
 
+      - name: Generate previous-day daily document
+        if: github.event_name == 'workflow_dispatch' || github.event.schedule == '15 1 * * *'
+        run: |
+          PYTHONPATH=src python3 -m satellite_news.reporting.periodic_documents \
+            --kind daily \
+            --catalog docs/data/news/archive/catalog.json \
+            --daily-root data/reports/daily-documents \
+            --daily-publish-root docs/data/reports/daily-documents
+
+      - name: Generate weekly document
+        if: github.event_name == 'workflow_dispatch' || github.event.schedule == '30 2 * * 1'
+        run: |
+          PYTHONPATH=src python3 -m satellite_news.reporting.periodic_documents \
+            --kind weekly \
+            --catalog docs/data/news/archive/catalog.json \
+            --event-timeline docs/data/news/latest/event_timeline.json \
+            --weekly-root data/reports/weekly \
+            --weekly-publish-root docs/data/reports/weekly
+
+      - name: Generate news and aerospace market indices
+        run: |
+          PYTHONPATH=src python3 -m satellite_news.market.index_snapshot \
+            --catalog docs/data/news/archive/catalog.json \
+            --config config/market_baskets.yaml \
+            --local-root data/indices \
+            --publish-root docs/data/indices
+
       - name: Commit refreshed data
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add data/news docs/data/news
           git add data/reports docs/data/reports
+          git add data/indices docs/data/indices
           if git diff --cached --quiet; then
             echo "No data changes to commit."
           else

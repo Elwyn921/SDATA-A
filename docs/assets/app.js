@@ -102,12 +102,15 @@ const state = {
   timeRange: "latest",
   selectedDate: null,
   visibleLimit: 120,
+  eventVisibleLimit: 40,
   eventType: "all",
+  workspaceView: initialWorkspaceView(),
   result: null,
   items: [],
   events: [],
   archiveIndex: null,
   dailyReport: null,
+  indexSnapshot: null,
 };
 
 const elements = {
@@ -141,6 +144,30 @@ const elements = {
   eventCompanyFilter: document.querySelector("#event-company-filter"),
   eventTypeTabs: document.querySelector("#event-type-tabs"),
   eventTimeline: document.querySelector("#event-timeline"),
+  indexAsOf: document.querySelector("#index-as-of"),
+  indexSourceStatus: document.querySelector("#index-source-status"),
+  newsIndexValue: document.querySelector("#news-index-value"),
+  newsIndexLabel: document.querySelector("#news-index-label"),
+  newsIndexMethod: document.querySelector("#news-index-method"),
+  newsIndexMetrics: document.querySelector("#news-index-metrics"),
+  chinaIndexValue: document.querySelector("#china-index-value"),
+  chinaIndexChange: document.querySelector("#china-index-change"),
+  chinaIndexMeta: document.querySelector("#china-index-meta"),
+  chinaStockList: document.querySelector("#china-stock-list"),
+  usIndexValue: document.querySelector("#us-index-value"),
+  usIndexChange: document.querySelector("#us-index-change"),
+  usIndexMeta: document.querySelector("#us-index-meta"),
+  usStockList: document.querySelector("#us-stock-list"),
+  indexDisclaimer: document.querySelector("#index-disclaimer"),
+  workspaceTabs: [...document.querySelectorAll("[data-workspace-tab]")],
+  workspaceSections: [...document.querySelectorAll("[data-workspace-view]")],
+  workspaceOverviewCount: document.querySelector("#workspace-overview-count"),
+  workspaceCompanyCount: document.querySelector("#workspace-company-count"),
+  workspaceEventCount: document.querySelector("#workspace-event-count"),
+  workspaceNewsCount: document.querySelector("#workspace-news-count"),
+  workspaceDiagnosticCount: document.querySelector("#workspace-diagnostic-count"),
+  workspaceContextLabel: document.querySelector("#workspace-context-label"),
+  workspaceContextMeta: document.querySelector("#workspace-context-meta"),
 };
 
 bootstrap();
@@ -154,13 +181,43 @@ async function bootstrap() {
     ? dashboard.eventTimeline.events
     : [];
   state.dailyReport = dashboard.dailyReport;
+  state.indexSnapshot = dashboard.indexSnapshot;
   state.selectedDate = latestNewsDate(state.items);
   populateFilters();
   bindEvents();
+  activateWorkspaceView(state.workspaceView, { updateHash: false });
   render();
 }
 
 function bindEvents() {
+  elements.workspaceTabs.forEach((button) => {
+    button.addEventListener("click", () => {
+      activateWorkspaceView(button.dataset.workspaceTab, { scroll: true });
+    });
+    button.addEventListener("keydown", (event) => {
+      if (!["ArrowLeft", "ArrowRight", "Home", "End"].includes(event.key)) return;
+      event.preventDefault();
+      const currentIndex = elements.workspaceTabs.indexOf(button);
+      let nextIndex = currentIndex;
+      if (event.key === "ArrowLeft") {
+        nextIndex = (currentIndex - 1 + elements.workspaceTabs.length) % elements.workspaceTabs.length;
+      } else if (event.key === "ArrowRight") {
+        nextIndex = (currentIndex + 1) % elements.workspaceTabs.length;
+      } else if (event.key === "Home") {
+        nextIndex = 0;
+      } else if (event.key === "End") {
+        nextIndex = elements.workspaceTabs.length - 1;
+      }
+      const nextButton = elements.workspaceTabs[nextIndex];
+      activateWorkspaceView(nextButton.dataset.workspaceTab);
+      nextButton.focus();
+    });
+  });
+
+  window.addEventListener("hashchange", () => {
+    activateWorkspaceView(initialWorkspaceView(), { updateHash: false });
+  });
+
   elements.companyFilter.addEventListener("change", (event) => {
     selectCompany(event.target.value);
   });
@@ -175,11 +232,59 @@ function bindEvents() {
     state.timeRange = "latest";
     state.selectedDate = latestNewsDate(state.items);
     state.visibleLimit = 120;
+    state.eventVisibleLimit = 40;
     state.eventType = "all";
     elements.companyFilter.value = "all";
     elements.eventCompanyFilter.value = "all";
     render();
   });
+}
+
+function initialWorkspaceView() {
+  const match = window.location.hash.match(/(?:^#|&)view=([a-z-]+)/);
+  const candidate = match?.[1] ?? "overview";
+  return ["overview", "companies", "events", "news", "diagnostics"].includes(candidate)
+    ? candidate
+    : "overview";
+}
+
+function activateWorkspaceView(view, options = {}) {
+  const resolved = ["overview", "companies", "events", "news", "diagnostics"].includes(view)
+    ? view
+    : "overview";
+  state.workspaceView = resolved;
+  elements.workspaceTabs.forEach((button) => {
+    const active = button.dataset.workspaceTab === resolved;
+    button.classList.toggle("active", active);
+    button.setAttribute("aria-selected", String(active));
+    button.tabIndex = active ? 0 : -1;
+  });
+  elements.workspaceSections.forEach((section) => {
+    section.hidden = section.dataset.workspaceView !== resolved;
+  });
+  if (options.updateHash !== false) {
+    history.replaceState(null, "", `#view=${resolved}`);
+  }
+  renderWorkspaceContext();
+  if (options.scroll) {
+    document.querySelector(".workspace-nav")?.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
+  }
+}
+
+function renderWorkspaceContext() {
+  const labels = {
+    overview: ["今日情报概览", "简报、新闻热度与市场指数"],
+    companies: ["公司雷达", "按产业链查看公司覆盖与最新动态"],
+    events: ["公司事件", "把零散报道聚合成连续事件"],
+    news: ["新闻档案", "按日期、分类和公司检索全部新闻"],
+    diagnostics: ["数据健康", "采集状态、质量门控与异常记录"],
+  };
+  const [label, meta] = labels[state.workspaceView] ?? labels.overview;
+  elements.workspaceContextLabel.textContent = label;
+  elements.workspaceContextMeta.textContent = meta;
 }
 
 function selectCompany(companyId) {
@@ -189,6 +294,7 @@ function selectCompany(companyId) {
     state.groupId = companyToGroup.get(state.companyId) ?? "all";
   }
   state.visibleLimit = 120;
+  state.eventVisibleLimit = 40;
   elements.companyFilter.value = companyId;
   elements.eventCompanyFilter.value = companyId;
   render();
@@ -230,8 +336,18 @@ function render() {
   elements.totalCount.textContent = String(items.length);
   elements.companyCount.textContent = String(coveredCompanies.length);
   elements.newsPanelTitle.textContent = newsPanelTitle();
+  const issueCount = (state.result.fetch_statuses ?? []).filter((status) => {
+    const label = status.provider_status ?? status.final_status ?? status.status ?? "";
+    return label !== "success" || status.reason || status.error_message;
+  }).length;
+  elements.workspaceCompanyCount.textContent = String(coveredCompanies.length);
+  elements.workspaceEventCount.textContent = String(state.events.length);
+  elements.workspaceNewsCount.textContent = String(items.length);
+  elements.workspaceDiagnosticCount.textContent = String(issueCount);
+  renderWorkspaceContext();
 
   renderDailyBriefing(items);
+  renderIndexOverview();
   renderVolumeIndex(items);
   renderTimeTabs();
   renderCategoryTabs();
@@ -241,6 +357,119 @@ function render() {
   renderProviderTable(companies, state.result.fetch_statuses ?? []);
   renderQualityGate();
   renderDiagnostics(state.result.fetch_statuses ?? [], items);
+}
+
+function renderIndexOverview() {
+  const snapshot = state.indexSnapshot;
+  if (!snapshot) {
+    elements.indexAsOf.textContent = "指数数据尚未生成";
+    elements.indexSourceStatus.textContent = "等待刷新";
+    elements.newsIndexValue.textContent = "--";
+    renderMarketIndex(null, "china");
+    renderMarketIndex(null, "united_states");
+    return;
+  }
+
+  const news = snapshot.news_activity ?? {};
+  const source = snapshot.market_data_source ?? {};
+  elements.indexAsOf.textContent =
+    `${formatDateLabel(snapshot.as_of_date)} · ${news.is_partial_day ? "当日持续累计" : "当日已归档"}`;
+  elements.indexSourceStatus.textContent =
+    source.status === "current"
+      ? `${source.source_name ?? "行情源"} · ${source.quoted_instruments ?? 0}/${source.expected_instruments ?? 0}`
+      : "行情沿用最近快照";
+  elements.indexSourceStatus.className =
+    `index-source-status ${source.status === "current" ? "is-current" : "is-stale"}`;
+  elements.newsIndexValue.textContent =
+    news.index_value == null ? "--" : Number(news.index_value).toFixed(1);
+  elements.newsIndexLabel.textContent = news.heat_label ?? "基线不足";
+  elements.newsIndexLabel.className = `index-change ${newsIndexClass(news.index_value)}`;
+  elements.newsIndexMethod.textContent =
+    `${news.methodology ?? "过去 30 个自然日日均为 100"}${news.is_partial_day ? "；今日尚未结束" : ""}`;
+  const newsMetrics = [
+    ["今日新闻", `${news.news_count ?? 0} 条`],
+    ["30 日日均", `${news.baseline_average ?? 0} 条`],
+    ["基准", String(news.base_value ?? 100)],
+  ];
+  elements.newsIndexMetrics.replaceChildren(
+    ...newsMetrics.map(([label, value]) => {
+      const block = document.createElement("div");
+      block.innerHTML = `<span>${escapeHtml(label)}</span><strong>${escapeHtml(value)}</strong>`;
+      return block;
+    }),
+  );
+
+  renderMarketIndex(snapshot.markets?.china, "china");
+  renderMarketIndex(snapshot.markets?.united_states, "united_states");
+  elements.indexDisclaimer.textContent =
+    source.delay_notice ?? "行情可能存在延迟，指数仅用于板块监测，不构成投资建议。";
+}
+
+function renderMarketIndex(market, sectorId) {
+  const isChina = sectorId === "china";
+  const valueElement = isChina ? elements.chinaIndexValue : elements.usIndexValue;
+  const changeElement = isChina ? elements.chinaIndexChange : elements.usIndexChange;
+  const metaElement = isChina ? elements.chinaIndexMeta : elements.usIndexMeta;
+  const listElement = isChina ? elements.chinaStockList : elements.usStockList;
+  if (!market) {
+    valueElement.textContent = "--";
+    changeElement.textContent = "--";
+    changeElement.className = "index-change is-flat";
+    metaElement.textContent = "等待行情数据";
+    listElement.innerHTML = '<div class="stock-list-empty">暂无股票行情</div>';
+    return;
+  }
+
+  valueElement.textContent =
+    market.index_value == null ? "--" : Number(market.index_value).toFixed(2);
+  changeElement.textContent = formatSignedPct(market.change_pct);
+  changeElement.className = `index-change ${changeClass(market.change_pct)}`;
+  const quoteTimes = (market.members ?? [])
+    .map((member) => member.source_timestamp)
+    .filter(Boolean)
+    .sort();
+  metaElement.textContent =
+    `上涨 ${market.advancers ?? 0} · 下跌 ${market.decliners ?? 0} · ${market.quoted_member_count ?? 0}/${market.member_count ?? 0} 只${quoteTimes.length ? ` · ${quoteTimes.at(-1)}` : ""}`;
+  listElement.replaceChildren(
+    ...(market.members ?? []).map((member) => {
+      const row = document.createElement("div");
+      row.className = "stock-row";
+      const price = member.price == null ? "--" : formatMarketPrice(member.price);
+      row.innerHTML = `
+        <div><strong>${escapeHtml(member.name)}</strong><span>${escapeHtml(member.ticker)}</span></div>
+        <span class="stock-price">${escapeHtml(price)}</span>
+        <span class="stock-change ${changeClass(member.change_pct)}">${escapeHtml(formatSignedPct(member.change_pct))}</span>
+      `;
+      return row;
+    }),
+  );
+}
+
+function newsIndexClass(value) {
+  if (value == null) return "is-flat";
+  if (value >= 120) return "is-positive";
+  if (value < 80) return "is-negative";
+  return "is-flat";
+}
+
+function changeClass(value) {
+  const number = Number(value);
+  if (!Number.isFinite(number) || number === 0) return "is-flat";
+  return number > 0 ? "is-positive" : "is-negative";
+}
+
+function formatSignedPct(value) {
+  const number = Number(value);
+  if (!Number.isFinite(number)) return "--";
+  return `${number > 0 ? "+" : ""}${number.toFixed(2)}%`;
+}
+
+function formatMarketPrice(value) {
+  const number = Number(value);
+  if (!Number.isFinite(number)) return "--";
+  return number >= 1000
+    ? number.toLocaleString("en-US", { maximumFractionDigits: 2 })
+    : number.toFixed(2);
 }
 
 function renderQualityGate() {
@@ -288,6 +517,7 @@ function renderTimeTabs() {
         state.timeRange = tab.id;
         state.selectedDate = tab.id === "latest" ? latestNewsDate(state.items) : null;
         state.visibleLimit = 120;
+        state.eventVisibleLimit = 40;
         render();
       });
       return button;
@@ -428,6 +658,7 @@ function selectArchiveDate(date) {
   state.selectedDate = date;
   state.timeRange = date === latestNewsDate(state.items) ? "latest" : "date";
   state.visibleLimit = 120;
+  activateWorkspaceView("news");
   render();
   document.querySelector(".news-panel")?.scrollIntoView({ behavior: "smooth", block: "start" });
 }
@@ -452,6 +683,7 @@ function renderCategoryTabs() {
         state.companyId = "all";
         state.eventType = "all";
         state.visibleLimit = 120;
+        state.eventVisibleLimit = 40;
         elements.companyFilter.value = "all";
         elements.eventCompanyFilter.value = "all";
         render();
@@ -462,7 +694,18 @@ function renderCategoryTabs() {
 }
 
 function renderIndustrySections(items) {
+  const heading = document.createElement("div");
+  heading.className = "workspace-view-heading";
+  heading.innerHTML = `
+    <div>
+      <div class="section-kicker">公司雷达</div>
+      <h2>按产业链浏览关注公司</h2>
+      <p>点击公司进入其事件时间线；点击分类进入对应新闻档案。</p>
+    </div>
+    <strong>${industryGroups.reduce((sum, group) => sum + group.companies.length, 0)} 家</strong>
+  `;
   elements.industrySections.replaceChildren(
+    heading,
     ...industryGroups.map((group) => {
       const groupItems = items.filter((item) => companyToGroup.get(item.company_id) === group.id);
       const covered = group.companies.filter((company) =>
@@ -488,7 +731,7 @@ function renderIndustrySections(items) {
         state.visibleLimit = 120;
         elements.companyFilter.value = "all";
         elements.eventCompanyFilter.value = "all";
-        document.querySelector(".news-panel")?.scrollIntoView({ behavior: "smooth", block: "start" });
+        activateWorkspaceView("news", { scroll: true });
         render();
       });
 
@@ -522,7 +765,8 @@ function companyCard(company, items) {
   `;
   card.addEventListener("click", () => {
     selectCompany(company.id);
-    document.querySelector(".event-panel")?.scrollIntoView({ behavior: "smooth", block: "start" });
+    state.eventVisibleLimit = 40;
+    activateWorkspaceView("events", { scroll: true });
   });
   return card;
 }
@@ -546,6 +790,7 @@ function renderEventTimeline() {
       button.textContent = `${eventTypeLabels[type]} ${count}`;
       button.addEventListener("click", () => {
         state.eventType = type;
+        state.eventVisibleLimit = 40;
         renderEventTimeline();
       });
       return button;
@@ -564,9 +809,23 @@ function renderEventTimeline() {
     `;
     return;
   }
-  elements.eventTimeline.replaceChildren(
-    ...filteredEvents.map((event) => eventCard(event)),
-  );
+  const visibleEvents = filteredEvents.slice(0, state.eventVisibleLimit);
+  const cards = visibleEvents.map((event) => eventCard(event));
+  if (visibleEvents.length < filteredEvents.length) {
+    const footer = document.createElement("div");
+    footer.className = "event-load-more";
+    const button = document.createElement("button");
+    button.type = "button";
+    button.className = "btn btn-outline-secondary";
+    button.textContent = `继续加载事件（剩余 ${filteredEvents.length - visibleEvents.length} 个）`;
+    button.addEventListener("click", () => {
+      state.eventVisibleLimit += 40;
+      renderEventTimeline();
+    });
+    footer.append(button);
+    cards.push(footer);
+  }
+  elements.eventTimeline.replaceChildren(...cards);
 }
 
 function eventMatchesCurrentScope(event) {

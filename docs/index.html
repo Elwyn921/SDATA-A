@@ -36,7 +36,36 @@
             <p>按整星制造、发射服务、卫星互联网与国外大厂组织新闻动态，优先呈现公司覆盖与最新情报。</p>
           </section>
 
-          <section class="briefing-panel" id="daily-briefing" aria-labelledby="briefing-title">
+          <nav class="workspace-nav" aria-label="情报工作区">
+            <div class="workspace-tabs" role="tablist" aria-label="切换工作区">
+              <button type="button" role="tab" data-workspace-tab="overview" aria-selected="true">
+                <span>概览</span><strong id="workspace-overview-count">3</strong>
+              </button>
+              <button type="button" role="tab" data-workspace-tab="companies" aria-selected="false">
+                <span>公司</span><strong id="workspace-company-count">0</strong>
+              </button>
+              <button type="button" role="tab" data-workspace-tab="events" aria-selected="false">
+                <span>事件</span><strong id="workspace-event-count">0</strong>
+              </button>
+              <button type="button" role="tab" data-workspace-tab="news" aria-selected="false">
+                <span>新闻</span><strong id="workspace-news-count">0</strong>
+              </button>
+              <button type="button" role="tab" data-workspace-tab="diagnostics" aria-selected="false">
+                <span>数据健康</span><strong id="workspace-diagnostic-count">0</strong>
+              </button>
+            </div>
+            <div class="workspace-context">
+              <span id="workspace-context-label">今日情报概览</span>
+              <small id="workspace-context-meta">加载中</small>
+            </div>
+          </nav>
+
+          <section
+            class="briefing-panel"
+            id="daily-briefing"
+            aria-labelledby="briefing-title"
+            data-workspace-view="overview"
+          >
             <div class="briefing-copy">
               <div class="section-kicker">每日简报</div>
               <div class="briefing-title-row">
@@ -45,6 +74,12 @@
               </div>
               <p class="briefing-summary" id="briefing-summary">正在读取最新新闻并整理当日重点。</p>
               <div class="briefing-stats" id="briefing-stats"></div>
+              <div class="report-downloads" aria-label="定期报告下载">
+                <a href="./data/reports/daily-documents/latest/previous_daily_report.docx">
+                  下载上一日日报
+                </a>
+                <a href="./data/reports/weekly/latest/weekly_report.docx">下载最新周报</a>
+              </div>
             </div>
             <div class="briefing-highlights">
               <span>重点动态</span>
@@ -52,7 +87,69 @@
             </div>
           </section>
 
-          <section class="volume-panel" aria-labelledby="volume-title">
+          <section
+            class="index-panel"
+            aria-labelledby="index-overview-title"
+            data-workspace-view="overview"
+          >
+            <div class="section-heading index-heading">
+              <div>
+                <div class="section-kicker">新闻与市场指数</div>
+                <h2 id="index-overview-title">今日航空航天热度</h2>
+                <p id="index-as-of">正在读取新闻和行情指数</p>
+              </div>
+              <span class="index-source-status" id="index-source-status">加载中</span>
+            </div>
+            <div class="index-grid">
+              <article class="index-card news-activity-card">
+                <div class="index-card-header">
+                  <div>
+                    <span>SDATA 新闻活跃度指数</span>
+                    <strong id="news-index-value">--</strong>
+                  </div>
+                  <span class="index-change is-flat" id="news-index-label">等待数据</span>
+                </div>
+                <p id="news-index-method">过去 30 个自然日日均为 100</p>
+                <div class="index-card-metrics" id="news-index-metrics"></div>
+                <div class="news-index-scale" aria-hidden="true">
+                  <i></i><i></i><i></i><i></i><i></i>
+                </div>
+              </article>
+
+              <article class="index-card market-index-card">
+                <div class="index-card-header">
+                  <div>
+                    <span>中国航空航天板块</span>
+                    <strong id="china-index-value">--</strong>
+                  </div>
+                  <span class="index-change is-flat" id="china-index-change">--</span>
+                </div>
+                <p id="china-index-meta">等权指数，前收盘为 1000 点</p>
+                <div class="stock-list" id="china-stock-list"></div>
+              </article>
+
+              <article class="index-card market-index-card">
+                <div class="index-card-header">
+                  <div>
+                    <span>美国航空航天板块</span>
+                    <strong id="us-index-value">--</strong>
+                  </div>
+                  <span class="index-change is-flat" id="us-index-change">--</span>
+                </div>
+                <p id="us-index-meta">等权指数，前收盘为 1000 点</p>
+                <div class="stock-list" id="us-stock-list"></div>
+              </article>
+            </div>
+            <p class="index-disclaimer" id="index-disclaimer">
+              行情可能存在延迟，指数仅用于板块监测，不构成投资建议。
+            </p>
+          </section>
+
+          <section
+            class="volume-panel"
+            aria-labelledby="volume-title"
+            data-workspace-view="overview"
+          >
             <div class="section-heading volume-heading">
               <div>
                 <div class="section-kicker">新闻数量指数</div>
@@ -73,9 +170,20 @@
             </div>
           </section>
 
-          <section class="industry-sections" id="industry-sections"></section>
+          <section
+            class="industry-sections"
+            id="industry-sections"
+            data-workspace-view="companies"
+            hidden
+          ></section>
 
-          <section class="event-panel" id="company-events" aria-labelledby="event-panel-title">
+          <section
+            class="event-panel"
+            id="company-events"
+            aria-labelledby="event-panel-title"
+            data-workspace-view="events"
+            hidden
+          >
             <div class="section-heading event-heading">
               <div>
                 <div class="section-kicker">P1 公司事件时间线</div>
@@ -93,7 +201,7 @@
             <div class="event-timeline" id="event-timeline"></div>
           </section>
 
-          <section class="news-panel">
+          <section class="news-panel" data-workspace-view="news" hidden>
             <div class="section-heading">
               <div>
                 <h2 id="news-panel-title">新闻时间线</h2>
@@ -120,8 +228,8 @@
             <div class="news-list" id="news-list"></div>
           </section>
 
-          <section class="diagnostics-panel">
-            <details>
+          <section class="diagnostics-panel" data-workspace-view="diagnostics" hidden>
+            <details open>
               <summary>
                 <span>
                   <strong>系统诊断</strong>

@@ -6,17 +6,19 @@ export const DATA_ENDPOINTS = {
   archiveCatalog: "./data/news/archive/catalog.json",
   eventTimeline: "./data/news/latest/event_timeline.json",
   dailyReport: "./data/reports/latest/daily_report.json",
+  indexSnapshot: "./data/indices/latest/aerospace_index.json",
 };
 
 export async function loadDashboardData(options = {}) {
   const result = await loadPipelineResult(options);
-  const [archiveIndex, archiveCatalog, eventTimeline, dailyReport] = await Promise.all([
+  const [archiveIndex, archiveCatalog, eventTimeline, dailyReport, indexSnapshot] = await Promise.all([
     loadOptionalJson(options.archiveUrl ?? DATA_ENDPOINTS.archiveIndex),
     loadOptionalJson(options.catalogUrl ?? DATA_ENDPOINTS.archiveCatalog),
     loadOptionalJson(options.eventTimelineUrl ?? DATA_ENDPOINTS.eventTimeline),
     loadOptionalJson(options.reportUrl ?? DATA_ENDPOINTS.dailyReport),
+    loadOptionalJson(options.indexUrl ?? DATA_ENDPOINTS.indexSnapshot),
   ]);
-  return { result, archiveIndex, archiveCatalog, eventTimeline, dailyReport };
+  return { result, archiveIndex, archiveCatalog, eventTimeline, dailyReport, indexSnapshot };
 }
 
 export async function loadPipelineResult(options = {}) {
