@@ -1,5 +1,5 @@
-schema_version: market_baskets.v1
-description: Equal-weight aerospace sector baskets used by the public index dashboard.
+schema_version: market_baskets.v3
+description: Equal-weight aerospace sector baskets reported as daily percentage changes.
 
 quote_source:
   source_id: sina_finance
@@ -11,11 +11,9 @@ quote_source:
     cache_policy: daily_archive_latest_overwrite
 
 index_methodology:
-  base_value: 1000
-  base_definition: previous_close
-  weighting: equal_weight
-  current_value_formula: base_value * (1 + arithmetic_mean_member_change_pct / 100)
-  note: The index measures current-session breadth and resets to 1000 at each previous close.
+  basket_weighting: equal_weight
+  basket_change_formula: arithmetic_mean_member_change_pct
+  note: Basket changes are arithmetic means of current-session member percentage changes; no synthetic point level is calculated.
 
 sectors:
   china:

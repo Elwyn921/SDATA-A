@@ -19,7 +19,7 @@ from typing import Any
 import yaml
 
 
-SCHEMA_VERSION = "aerospace_index_snapshot.v1"
+SCHEMA_VERSION = "aerospace_index_snapshot.v3"
 REPORT_TIMEZONE = timezone(timedelta(hours=8), name="Asia/Shanghai")
 DEFAULT_CONFIG_PATH = Path("config/market_baskets.yaml")
 DEFAULT_CATALOG_PATH = Path("docs/data/news/archive/catalog.json")
@@ -211,11 +211,14 @@ def fetch_sina_quotes(
     *,
     timeout_seconds: int | None = None,
 ) -> dict[str, dict[str, Any]]:
-    symbols = [
-        member["symbol"]
-        for sector in (config.get("sectors") or {}).values()
-        for member in sector.get("members") or []
-    ]
+    symbols = []
+    seen_symbols: set[str] = set()
+    for sector in (config.get("sectors") or {}).values():
+        for member in sector.get("members") or []:
+            symbol = member.get("symbol")
+            if symbol and symbol not in seen_symbols:
+                symbols.append(symbol)
+                seen_symbols.add(symbol)
     source = config.get("quote_source") or {}
     endpoint = source.get("endpoint") or "https://hq.sinajs.cn/list="
     timeout = timeout_seconds or int(
@@ -233,8 +236,6 @@ def build_sector_snapshot(
     sector_id: str,
     sector_config: dict[str, Any],
     quotes: dict[str, dict[str, Any]],
-    *,
-    base_value: float,
 ) -> dict[str, Any]:
     members = []
     for configured in sector_config.get("members") or []:
@@ -264,17 +265,14 @@ def build_sector_snapshot(
         if member.get("status") == "current" and member.get("change_pct") is not None
     ]
     average_change = fmean(valid_changes) if valid_changes else None
-    index_value = (
-        base_value * (1 + average_change / 100) if average_change is not None else None
-    )
+    basket_change = round(average_change, 3) if average_change is not None else None
     return {
         "sector_id": sector_id,
         "display_name": sector_config["display_name"],
         "currency": sector_config["currency"],
-        "index_name": f"SDATA {sector_config['display_name']}等权指数",
-        "index_base": base_value,
-        "index_value": round(index_value, 2) if index_value is not None else None,
-        "change_pct": round(average_change, 3) if average_change is not None else None,
+        "basket_name": f"{sector_config['display_name']}等权篮子",
+        "basket_change_pct": basket_change,
+        "change_pct": basket_change,
         "member_count": len(members),
         "quoted_member_count": len(valid_changes),
         "advancers": sum(1 for change in valid_changes if change > 0),
@@ -295,13 +293,11 @@ def build_index_snapshot(
 ) -> dict[str, Any]:
     generated = generated_at or datetime.now(timezone.utc)
     methodology = config.get("index_methodology") or {}
-    base_value = float(methodology.get("base_value") or 1000)
     markets = {
         sector_id: build_sector_snapshot(
             sector_id,
             sector_config,
             quotes,
-            base_value=base_value,
         )
         for sector_id, sector_config in (config.get("sectors") or {}).items()
     }
@@ -327,13 +323,13 @@ def build_index_snapshot(
             "quoted_instruments": quoted_count,
             "expected_instruments": expected_count,
             "request_count": 1,
-            "delay_notice": "行情可能存在延迟，指数仅用于板块监测，不构成投资建议。",
+            "delay_notice": "行情可能存在延迟，篮子涨跌仅用于板块监测，不构成投资建议。",
         },
         "methodology": {
             "news_index": "过去 30 个自然日日均=100",
-            "market_index": methodology.get("current_value_formula"),
-            "weighting": methodology.get("weighting") or "equal_weight",
-            "market_index_note": methodology.get("note"),
+            "sector_basket": methodology.get("basket_change_formula"),
+            "weighting": methodology.get("basket_weighting") or "equal_weight",
+            "sector_basket_note": methodology.get("note"),
         },
     }
 
@@ -344,7 +340,11 @@ def stale_market_snapshot(
     *,
     reason: str,
 ) -> dict[str, Any]:
-    if previous and previous.get("markets"):
+    if (
+        previous
+        and previous.get("schema_version") == SCHEMA_VERSION
+        and previous.get("markets")
+    ):
         payload["markets"] = previous["markets"]
         for market in payload["markets"].values():
             market["status"] = "stale_previous"

@@ -1,8 +1,8 @@
 {
   "as_of_date": "2026-07-23",
-  "generated_at": "2026-07-23T03:54:26.263019Z",
+  "generated_at": "2026-07-23T04:56:03.457288Z",
   "market_data_source": {
-    "delay_notice": "行情可能存在延迟，指数仅用于板块监测，不构成投资建议。",
+    "delay_notice": "行情可能存在延迟，篮子涨跌仅用于板块监测，不构成投资建议。",
     "expected_instruments": 20,
     "quoted_instruments": 20,
     "request_count": 1,
@@ -13,13 +13,12 @@
   "markets": {
     "china": {
       "advancers": 9,
+      "basket_change_pct": 1.064,
+      "basket_name": "中国航空航天板块等权篮子",
       "change_pct": 1.064,
       "currency": "CNY",
       "decliners": 1,
       "display_name": "中国航空航天板块",
-      "index_base": 1000.0,
-      "index_name": "SDATA 中国航空航天板块等权指数",
-      "index_value": 1010.64,
       "member_count": 10,
       "members": [
         {
@@ -190,13 +189,12 @@
     },
     "united_states": {
       "advancers": 8,
+      "basket_change_pct": 0.906,
+      "basket_name": "美国航空航天板块等权篮子",
       "change_pct": 0.906,
       "currency": "USD",
       "decliners": 2,
       "display_name": "美国航空航天板块",
-      "index_base": 1000.0,
-      "index_name": "SDATA 美国航空航天板块等权指数",
-      "index_value": 1009.06,
       "member_count": 10,
       "members": [
         {
@@ -367,9 +365,9 @@
     }
   },
   "methodology": {
-    "market_index": "base_value * (1 + arithmetic_mean_member_change_pct / 100)",
-    "market_index_note": "The index measures current-session breadth and resets to 1000 at each previous close.",
     "news_index": "过去 30 个自然日日均=100",
+    "sector_basket": "arithmetic_mean_member_change_pct",
+    "sector_basket_note": "Basket changes are arithmetic means of current-session member percentage changes; no synthetic point level is calculated.",
     "weighting": "equal_weight"
   },
   "news_activity": {
@@ -806,5 +804,5 @@
     "methodology": "当日去重新闻数 ÷ 前 30 个自然日日均新闻数 × 100",
     "news_count": 2
   },
-  "schema_version": "aerospace_index_snapshot.v1"
+  "schema_version": "aerospace_index_snapshot.v3"
 }

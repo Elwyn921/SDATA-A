@@ -172,11 +172,13 @@ const elements = {
   newsIndexLabel: document.querySelector("#news-index-label"),
   newsIndexMethod: document.querySelector("#news-index-method"),
   newsIndexMetrics: document.querySelector("#news-index-metrics"),
+  chinaIndexName: document.querySelector("#china-index-name"),
   chinaIndexValue: document.querySelector("#china-index-value"),
   chinaIndexChange: document.querySelector("#china-index-change"),
   chinaIndexMeta: document.querySelector("#china-index-meta"),
   chinaMarketBreadth: document.querySelector("#china-market-breadth"),
   chinaStockList: document.querySelector("#china-stock-list"),
+  usIndexName: document.querySelector("#us-index-name"),
   usIndexValue: document.querySelector("#us-index-value"),
   usIndexChange: document.querySelector("#us-index-change"),
   usIndexMeta: document.querySelector("#us-index-meta"),
@@ -490,13 +492,16 @@ function renderIndexOverview() {
 
 function renderMarketIndex(market, sectorId) {
   const isChina = sectorId === "china";
+  const nameElement = isChina ? elements.chinaIndexName : elements.usIndexName;
   const valueElement = isChina ? elements.chinaIndexValue : elements.usIndexValue;
   const changeElement = isChina ? elements.chinaIndexChange : elements.usIndexChange;
   const metaElement = isChina ? elements.chinaIndexMeta : elements.usIndexMeta;
   const breadthElement = isChina ? elements.chinaMarketBreadth : elements.usMarketBreadth;
   const listElement = isChina ? elements.chinaStockList : elements.usStockList;
   if (!market) {
+    nameElement.textContent = isChina ? "中国航空航天篮子" : "美国航空航天篮子";
     valueElement.textContent = "--";
+    valueElement.className = "";
     changeElement.textContent = "--";
     changeElement.className = "index-change is-flat";
     metaElement.textContent = "等待行情数据";
@@ -505,16 +510,19 @@ function renderMarketIndex(market, sectorId) {
     return;
   }
 
-  valueElement.textContent =
-    market.index_value == null ? "--" : Number(market.index_value).toFixed(2);
-  changeElement.textContent = formatSignedPct(market.change_pct);
-  changeElement.className = `index-change ${changeClass(market.change_pct)}`;
+  const basketChange = market.basket_change_pct ?? market.change_pct;
+  nameElement.textContent =
+    market.basket_name ?? (isChina ? "中国航空航天篮子" : "美国航空航天篮子");
+  valueElement.textContent = formatSignedPct(basketChange);
+  valueElement.className = changeClass(basketChange);
+  changeElement.textContent = `${market.advancers ?? 0} 涨 / ${market.decliners ?? 0} 跌`;
+  changeElement.className = "index-change is-flat";
   const quoteTimes = (market.members ?? [])
     .map((member) => member.source_timestamp)
     .filter(Boolean)
     .sort();
   metaElement.textContent =
-    `上涨 ${market.advancers ?? 0} · 下跌 ${market.decliners ?? 0} · ${market.quoted_member_count ?? 0}/${market.member_count ?? 0} 只${quoteTimes.length ? ` · ${quoteTimes.at(-1)}` : ""}`;
+    `当日等权涨跌 · 行情 ${market.quoted_member_count ?? 0}/${market.member_count ?? 0} 只${quoteTimes.length ? ` · ${quoteTimes.at(-1)}` : ""}`;
   const advancers = Number(market.advancers ?? 0);
   const decliners = Number(market.decliners ?? 0);
   const unchanged = Number(market.unchanged ?? 0);

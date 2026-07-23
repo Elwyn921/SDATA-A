@@ -1,9 +1,12 @@
 from datetime import date, datetime, timezone
 
 from satellite_news.market.index_snapshot import (
+    SCHEMA_VERSION,
     build_index_snapshot,
     build_news_activity,
+    fetch_sina_quotes,
     parse_sina_response,
+    stale_market_snapshot,
 )
 
 
@@ -11,9 +14,8 @@ def sample_config():
     return {
         "quote_source": {"source_id": "sina_finance", "source_name": "Sina"},
         "index_methodology": {
-            "base_value": 1000,
-            "weighting": "equal_weight",
-            "current_value_formula": "base * mean return",
+            "basket_weighting": "equal_weight",
+            "basket_change_formula": "mean return",
         },
         "sectors": {
             "china": {
@@ -89,6 +91,35 @@ def test_parse_sina_response_handles_china_and_us_formats():
     assert quotes["gb_ba"]["change_pct"] == 1.88
 
 
+def test_fetch_sina_quotes_batches_members_once(monkeypatch):
+    captured = []
+
+    class EmptyResponse:
+        def __enter__(self):
+            return self
+
+        def __exit__(self, *_args):
+            return None
+
+        def read(self):
+            return b""
+
+    def fake_urlopen(request, timeout):
+        captured.append((request.full_url, timeout))
+        return EmptyResponse()
+
+    monkeypatch.setattr("urllib.request.urlopen", fake_urlopen)
+
+    assert fetch_sina_quotes(sample_config()) == {}
+    assert len(captured) == 1
+    requested_symbols = captured[0][0].split("list=", 1)[1].split(",")
+    assert requested_symbols == [
+        "sh600118",
+        "sz000768",
+        "gb_ba",
+    ]
+
+
 def test_news_activity_uses_previous_30_calendar_day_average():
     activity = build_news_activity(sample_catalog(), as_of=date(2026, 7, 23))
 
@@ -99,7 +130,7 @@ def test_news_activity_uses_previous_30_calendar_day_average():
     assert len(activity["history"]) == 60
 
 
-def test_index_snapshot_builds_equal_weight_market_indices():
+def test_index_snapshot_reports_only_equal_weight_basket_changes():
     quotes = {
         "sh600118": {
             "symbol": "sh600118",
@@ -140,10 +171,35 @@ def test_index_snapshot_builds_equal_weight_market_indices():
 
     china = payload["markets"]["china"]
     united_states = payload["markets"]["united_states"]
-    assert china["index_value"] == 1000
+    assert payload["schema_version"] == SCHEMA_VERSION
+    assert china["basket_name"] == "中国航空航天板块等权篮子"
+    assert china["basket_change_pct"] == 0
     assert china["change_pct"] == 0
     assert china["advancers"] == 1
     assert china["decliners"] == 1
-    assert united_states["index_value"] == 1020
+    assert "index_base" not in china
+    assert "index_value" not in china
+    assert "benchmark" not in china
     assert united_states["change_pct"] == 2
+    assert united_states["basket_change_pct"] == 2
     assert payload["market_data_source"]["quoted_instruments"] == 3
+    assert payload["market_data_source"]["expected_instruments"] == 3
+
+
+def test_stale_snapshot_does_not_reuse_old_synthetic_point_schema():
+    payload = build_index_snapshot(
+        sample_catalog(),
+        sample_config(),
+        {},
+        as_of=date(2026, 7, 23),
+        generated_at=datetime(2026, 7, 23, tzinfo=timezone.utc),
+    )
+
+    previous_v2 = {
+        "schema_version": "aerospace_index_snapshot.v2",
+        "markets": {"china": {"index_value": 1000}},
+    }
+    stale = stale_market_snapshot(payload, previous_v2, reason="offline")
+    assert "index_value" not in stale["markets"]["china"]
+    assert stale["markets"]["china"]["basket_change_pct"] is None
+    assert stale["market_data_source"]["status"] == "unavailable"
