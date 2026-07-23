@@ -487,7 +487,8 @@ function renderIndexOverview() {
   renderMarketIndex(snapshot.markets?.china, "china");
   renderMarketIndex(snapshot.markets?.united_states, "united_states");
   elements.indexDisclaimer.textContent =
-    source.delay_notice ?? "行情可能存在延迟，篮子涨跌仅用于板块监测，不构成投资建议。";
+    source.delay_notice ??
+    "中国航天航空指数来自东方财富；美国板块为等权篮子。行情可能延迟，不构成投资建议。";
 }
 
 function renderMarketIndex(market, sectorId) {
@@ -499,7 +500,7 @@ function renderMarketIndex(market, sectorId) {
   const breadthElement = isChina ? elements.chinaMarketBreadth : elements.usMarketBreadth;
   const listElement = isChina ? elements.chinaStockList : elements.usStockList;
   if (!market) {
-    nameElement.textContent = isChina ? "中国航空航天篮子" : "美国航空航天篮子";
+    nameElement.textContent = isChina ? "东方财富航天航空指数" : "美国航空航天篮子";
     valueElement.textContent = "--";
     valueElement.className = "";
     changeElement.textContent = "--";
@@ -511,18 +512,45 @@ function renderMarketIndex(market, sectorId) {
   }
 
   const basketChange = market.basket_change_pct ?? market.change_pct;
-  nameElement.textContent =
-    market.basket_name ?? (isChina ? "中国航空航天篮子" : "美国航空航天篮子");
-  valueElement.textContent = formatSignedPct(basketChange);
-  valueElement.className = changeClass(basketChange);
-  changeElement.textContent = `${market.advancers ?? 0} 涨 / ${market.decliners ?? 0} 跌`;
-  changeElement.className = "index-change is-flat";
   const quoteTimes = (market.members ?? [])
     .map((member) => member.source_timestamp)
     .filter(Boolean)
     .sort();
-  metaElement.textContent =
-    `当日等权涨跌 · 行情 ${market.quoted_member_count ?? 0}/${market.member_count ?? 0} 只${quoteTimes.length ? ` · ${quoteTimes.at(-1)}` : ""}`;
+  if (isChina) {
+    const indexIsAvailable =
+      market.index_value != null &&
+      ["current", "stale_previous"].includes(market.index_status);
+    nameElement.textContent = market.index_name
+      ? `东方财富${market.index_name}`
+      : "东方财富航天航空指数";
+    valueElement.textContent = indexIsAvailable
+      ? formatMarketPrice(market.index_value)
+      : "--";
+    valueElement.className = "";
+    changeElement.textContent = indexIsAvailable
+      ? formatSignedPct(market.index_change_pct)
+      : "指数暂不可用";
+    changeElement.className = `index-change ${
+      indexIsAvailable ? changeClass(market.index_change_pct) : "is-flat"
+    }`;
+    const indexTime = market.index_source_timestamp
+      ? ` · ${market.index_source_timestamp}`
+      : "";
+    const staleLabel = market.index_status === "stale_previous" ? " · 上次可用" : "";
+    metaElement.textContent =
+      `${market.index_source_name ?? "东方财富"} · ` +
+      `${market.index_code ?? "BK0480"}${indexTime}${staleLabel}`;
+  } else {
+    nameElement.textContent = market.basket_name ?? "美国航空航天篮子";
+    valueElement.textContent = formatSignedPct(basketChange);
+    valueElement.className = changeClass(basketChange);
+    changeElement.textContent =
+      `${market.advancers ?? 0} 涨 / ${market.decliners ?? 0} 跌`;
+    changeElement.className = "index-change is-flat";
+    metaElement.textContent =
+      `当日等权涨跌 · 行情 ${market.quoted_member_count ?? 0}/${market.member_count ?? 0} 只` +
+      `${quoteTimes.length ? ` · ${quoteTimes.at(-1)}` : ""}`;
+  }
   const advancers = Number(market.advancers ?? 0);
   const decliners = Number(market.decliners ?? 0);
   const unchanged = Number(market.unchanged ?? 0);
