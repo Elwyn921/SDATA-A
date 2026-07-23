@@ -1,6 +1,6 @@
 {
   "artifact_version": 1,
-  "day_count": 291,
+  "day_count": 307,
   "days": [
     {
       "company_count": 1,
@@ -32,7 +32,7 @@
         "galactic_energy",
         "spacex"
       ],
-      "count": 17,
+      "count": 18,
       "date": "2026-07-21",
       "source_types": [
         "rss",
@@ -60,7 +60,7 @@
         "spacex",
         "yuanxin_satellite"
       ],
-      "count": 2,
+      "count": 4,
       "date": "2026-07-18",
       "source_types": [
         "rss"
@@ -118,15 +118,16 @@
       ]
     },
     {
-      "company_count": 5,
+      "company_count": 6,
       "company_ids": [
+        "blue_origin",
         "galactic_energy",
         "galaxyspace",
         "landspace",
         "space_pioneer",
         "spacex"
       ],
-      "count": 5,
+      "count": 6,
       "date": "2026-07-13",
       "source_types": [
         "rss"
@@ -219,7 +220,7 @@
         "spacex",
         "yuanxin_satellite"
       ],
-      "count": 6,
+      "count": 5,
       "date": "2026-07-06",
       "source_types": [
         "rss"
@@ -231,7 +232,7 @@
         "spacex",
         "yuanxin_satellite"
       ],
-      "count": 5,
+      "count": 6,
       "date": "2026-07-05",
       "source_types": [
         "rss"
@@ -250,14 +251,15 @@
       ]
     },
     {
-      "company_count": 4,
+      "company_count": 5,
       "company_ids": [
         "galactic_energy",
         "hongqing_technology",
         "landspace",
-        "spacex"
+        "spacex",
+        "yushi_space"
       ],
-      "count": 4,
+      "count": 5,
       "date": "2026-07-03",
       "source_types": [
         "rss"
@@ -314,7 +316,7 @@
         "space_pioneer",
         "yuanxin_satellite"
       ],
-      "count": 9,
+      "count": 10,
       "date": "2026-06-29",
       "source_types": [
         "rss"
@@ -344,12 +346,13 @@
       ]
     },
     {
-      "company_count": 2,
+      "company_count": 3,
       "company_ids": [
+        "i_space",
         "spacex",
         "yuanxin_satellite"
       ],
-      "count": 8,
+      "count": 9,
       "date": "2026-06-26",
       "source_types": [
         "rss"
@@ -360,7 +363,7 @@
       "company_ids": [
         "yuanxin_satellite"
       ],
-      "count": 2,
+      "count": 3,
       "date": "2026-06-25",
       "source_types": [
         "rss"
@@ -373,18 +376,19 @@
         "spacex",
         "yuanxin_satellite"
       ],
-      "count": 8,
+      "count": 9,
       "date": "2026-06-24",
       "source_types": [
         "rss"
       ]
     },
     {
-      "company_count": 1,
+      "company_count": 2,
       "company_ids": [
+        "china_satnet",
         "yuanxin_satellite"
       ],
-      "count": 6,
+      "count": 7,
       "date": "2026-06-23",
       "source_types": [
         "rss"
@@ -468,21 +472,33 @@
         "galactic_energy",
         "minospace"
       ],
-      "count": 17,
+      "count": 16,
       "date": "2026-06-15",
       "source_types": [
         "rss"
       ]
     },
     {
-      "company_count": 3,
+      "company_count": 4,
       "company_ids": [
         "cas_space",
+        "china_satnet",
         "landspace",
         "yushi_space"
       ],
-      "count": 3,
+      "count": 4,
       "date": "2026-06-14",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 1,
+      "company_ids": [
+        "china_satnet"
+      ],
+      "count": 1,
+      "date": "2026-06-13",
       "source_types": [
         "rss"
       ]
@@ -492,7 +508,7 @@
       "company_ids": [
         "yushi_space"
       ],
-      "count": 2,
+      "count": 3,
       "date": "2026-06-12",
       "source_types": [
         "rss"
@@ -640,7 +656,7 @@
       "company_ids": [
         "minospace"
       ],
-      "count": 3,
+      "count": 4,
       "date": "2026-05-20",
       "source_types": [
         "rss"
@@ -729,6 +745,17 @@
       ],
       "count": 5,
       "date": "2026-05-13",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 1,
+      "company_ids": [
+        "minospace"
+      ],
+      "count": 1,
+      "date": "2026-05-12",
       "source_types": [
         "rss"
       ]
@@ -859,11 +886,12 @@
       ]
     },
     {
-      "company_count": 1,
+      "company_count": 2,
       "company_ids": [
-        "i_space"
+        "i_space",
+        "space_pioneer"
       ],
-      "count": 1,
+      "count": 2,
       "date": "2026-04-12",
       "source_types": [
         "rss"
@@ -981,6 +1009,17 @@
     {
       "company_count": 1,
       "company_ids": [
+        "i_space"
+      ],
+      "count": 1,
+      "date": "2026-03-29",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 1,
+      "company_ids": [
         "galactic_energy"
       ],
       "count": 1,
@@ -1075,7 +1114,7 @@
       "company_ids": [
         "i_space"
       ],
-      "count": 2,
+      "count": 3,
       "date": "2026-03-12",
       "source_types": [
         "rss"
@@ -1223,6 +1262,17 @@
       ],
       "count": 2,
       "date": "2026-02-12",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 1,
+      "company_ids": [
+        "i_space"
+      ],
+      "count": 1,
+      "date": "2026-02-10",
       "source_types": [
         "rss"
       ]
@@ -1409,7 +1459,7 @@
         "cas_space",
         "galactic_energy"
       ],
-      "count": 2,
+      "count": 3,
       "date": "2026-01-17",
       "source_types": [
         "rss"
@@ -1637,6 +1687,17 @@
       ],
       "count": 1,
       "date": "2025-11-26",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 1,
+      "company_ids": [
+        "i_space"
+      ],
+      "count": 1,
+      "date": "2025-11-18",
       "source_types": [
         "rss"
       ]
@@ -1949,6 +2010,17 @@
     {
       "company_count": 1,
       "company_ids": [
+        "china_satnet"
+      ],
+      "count": 1,
+      "date": "2025-09-01",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 1,
+      "company_ids": [
         "i_space"
       ],
       "count": 1,
@@ -2002,12 +2074,13 @@
       ]
     },
     {
-      "company_count": 2,
+      "company_count": 3,
       "company_ids": [
+        "china_satnet",
         "hongqing_technology",
         "minospace"
       ],
-      "count": 2,
+      "count": 3,
       "date": "2025-08-17",
       "source_types": [
         "rss"
@@ -2107,7 +2180,7 @@
       "company_ids": [
         "china_satnet"
       ],
-      "count": 1,
+      "count": 3,
       "date": "2025-06-26",
       "source_types": [
         "rss"
@@ -2141,8 +2214,19 @@
         "china_satnet",
         "galaxyspace"
       ],
-      "count": 3,
+      "count": 4,
       "date": "2025-06-18",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 1,
+      "company_ids": [
+        "china_satnet"
+      ],
+      "count": 1,
+      "date": "2025-06-16",
       "source_types": [
         "rss"
       ]
@@ -2306,6 +2390,28 @@
     {
       "company_count": 1,
       "company_ids": [
+        "galactic_energy"
+      ],
+      "count": 1,
+      "date": "2025-03-20",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 1,
+      "company_ids": [
+        "galactic_energy"
+      ],
+      "count": 1,
+      "date": "2025-03-19",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 1,
+      "company_ids": [
         "yushi_space"
       ],
       "count": 1,
@@ -2355,6 +2461,17 @@
       ],
       "count": 4,
       "date": "2025-02-11",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 1,
+      "company_ids": [
+        "hongqing_technology"
+      ],
+      "count": 1,
+      "date": "2025-02-06",
       "source_types": [
         "rss"
       ]
@@ -2508,7 +2625,7 @@
       "company_ids": [
         "china_satnet"
       ],
-      "count": 1,
+      "count": 2,
       "date": "2024-12-17",
       "source_types": [
         "rss"
@@ -2583,6 +2700,17 @@
     {
       "company_count": 1,
       "company_ids": [
+        "china_satnet"
+      ],
+      "count": 1,
+      "date": "2024-10-22",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 1,
+      "company_ids": [
         "galactic_energy"
       ],
       "count": 1,
@@ -2607,8 +2735,19 @@
       "company_ids": [
         "china_satnet"
       ],
-      "count": 2,
+      "count": 3,
       "date": "2024-10-15",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 1,
+      "company_ids": [
+        "china_satnet"
+      ],
+      "count": 1,
+      "date": "2024-09-26",
       "source_types": [
         "rss"
       ]
@@ -2726,10 +2865,32 @@
     {
       "company_count": 1,
       "company_ids": [
+        "minospace"
+      ],
+      "count": 1,
+      "date": "2024-06-13",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 1,
+      "company_ids": [
         "space_pioneer"
       ],
       "count": 1,
       "date": "2024-06-07",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 1,
+      "company_ids": [
+        "china_satnet"
+      ],
+      "count": 1,
+      "date": "2024-05-31",
       "source_types": [
         "rss"
       ]
@@ -2862,6 +3023,17 @@
       ],
       "count": 1,
       "date": "2024-02-26",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 1,
+      "company_ids": [
+        "hongqing_technology"
+      ],
+      "count": 1,
+      "date": "2023-12-26",
       "source_types": [
         "rss"
       ]
@@ -3135,6 +3307,17 @@
     {
       "company_count": 1,
       "company_ids": [
+        "galactic_energy"
+      ],
+      "count": 1,
+      "date": "2022-06-30",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 1,
+      "company_ids": [
         "minospace"
       ],
       "count": 1,
@@ -3342,9 +3525,9 @@
       ]
     }
   ],
-  "generated_at": "2026-07-23T02:30:11.988288Z",
-  "run_id": "9ec458ca-3852-4b81-b8dc-fa00537e05b3",
+  "generated_at": "2026-07-23T02:55:13.862944Z",
+  "run_id": "61797261-c62f-40ff-9a54-606b1030a057",
   "schema_version": "daily_news_index.v1",
   "timezone": "Asia/Shanghai",
-  "total_items": 702
+  "total_items": 739
 }

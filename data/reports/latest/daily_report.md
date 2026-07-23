@@ -1,7 +1,7 @@
 # 每日新闻情报日报 - 2026-07-23
 
-- Report ID: daily-2026-07-23-a288bb5f
-- Source run: 9ec458ca-3852-4b81-b8dc-fa00537e05b3
+- Report ID: daily-2026-07-23-f644e657
+- Source run: 61797261-c62f-40ff-9a54-606b1030a057
 - Generation status: skipped_no_secret
 - Companies covered: 1
 - Total items: 2

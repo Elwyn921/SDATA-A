@@ -10,6 +10,7 @@ from enum import Enum
 from pathlib import Path
 from typing import Any
 
+from satellite_news.processing.events import build_event_timeline
 from satellite_news.schema import SCHEMA_VERSION, NewsSummary, PipelineContext, PipelineResult
 
 
@@ -72,6 +73,7 @@ class JsonFileStorage:
             "pipeline_result": "pipeline_result.json",
             "items": "items.json",
             "daily_index": "daily_index.json",
+            "event_timeline": "event_timeline.json",
             "summaries": "summaries.json",
             "fetch_statuses": "fetch_statuses.json",
             "run_metadata": "run_metadata.json",
@@ -104,6 +106,11 @@ class JsonFileStorage:
             run_id=context.run_id,
             generated_at=finished_at,
         )
+        event_timeline = build_event_timeline(
+            items=archive_catalog.get("items", []),
+            run_id=context.run_id,
+            generated_at=finished_at,
+        )
         summaries = summaries_payload(result=result, context=context, generated_at=finished_at)
         fetch_statuses = fetch_statuses_payload(
             result=result,
@@ -130,6 +137,7 @@ class JsonFileStorage:
             files["pipeline_result"]: latest_pipeline_result,
             files["items"]: items,
             files["daily_index"]: daily_index,
+            files["event_timeline"]: event_timeline,
             files["summaries"]: summaries,
             files["fetch_statuses"]: fetch_statuses,
             files["run_metadata"]: latest_run_metadata,
@@ -141,6 +149,11 @@ class JsonFileStorage:
             files["pipeline_result"]: pipeline_result,
             files["items"]: items_payload(result=result, context=context, generated_at=finished_at),
             files["daily_index"]: daily_news_index_payload(
+                items=pipeline_result.get("items", []),
+                run_id=context.run_id,
+                generated_at=finished_at,
+            ),
+            files["event_timeline"]: build_event_timeline(
                 items=pipeline_result.get("items", []),
                 run_id=context.run_id,
                 generated_at=finished_at,
@@ -826,6 +839,8 @@ def compact_archive_item(item: dict[str, Any]) -> dict[str, Any]:
             "source_quality_score",
             "quality_reason_codes",
             "event_id",
+            "event_type",
+            "market_match_terms",
         )
         if existing_quality.get(key) is not None
     }
@@ -838,6 +853,8 @@ def compact_archive_item(item: dict[str, Any]) -> dict[str, Any]:
             "source_quality_score",
             "quality_reason_codes",
             "event_id",
+            "event_type",
+            "market_match_terms",
         )
         if metadata.get(key) is not None
     })

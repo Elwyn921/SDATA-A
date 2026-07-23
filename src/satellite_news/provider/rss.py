@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import xml.etree.ElementTree as ET
 from typing import Any
+from urllib.parse import urlencode, urlsplit
 
 from satellite_news.provider.base import (
     ProviderHTTPClient,
@@ -145,6 +146,7 @@ def rss_feed_urls(*, company: Company, provider: NewsProviderConfig) -> tuple[st
         values.extend(url_values(override.options.get("feeds")))
         values.extend(url_values(override.options.get("feed_url")))
         values.extend(url_values(override.options.get("url")))
+    values.extend(china_market_feed_urls(company=company, provider=provider))
     values.extend(url_values(provider.options.get("global_feeds")))
     values.extend(url_values(provider.options.get("feeds")))
     values.extend(url_values(provider.options.get("feed_url")))
@@ -174,6 +176,31 @@ def url_values(value: Any) -> list[str]:
             urls.extend(url_values(row))
         return urls
     return []
+
+
+def china_market_feed_urls(
+    *,
+    company: Company,
+    provider: NewsProviderConfig,
+) -> list[str]:
+    if company.country_or_region.casefold() not in {"china", "cn", "中国", "中国大陆"}:
+        return []
+    templates = url_values(provider.options.get("china_market_query_templates"))
+    feeds = []
+    for template in templates:
+        query = template.format(company_name=company.canonical_name)
+        feeds.append(
+            "https://news.google.com/rss/search?"
+            + urlencode(
+                {
+                    "q": query,
+                    "hl": "zh-CN",
+                    "gl": "CN",
+                    "ceid": "CN:zh-Hans",
+                }
+            )
+        )
+    return feeds
 
 
 def parse_feed_items(text: str) -> list[dict[str, str]]:
@@ -260,6 +287,4 @@ def balanced_articles(*, articles, feeds: tuple[str, ...], limit: int):
 
 
 def feed_hostname(url: str) -> str:
-    from urllib.parse import urlsplit
-
     return (urlsplit(url).hostname or "RSS").removeprefix("www.")

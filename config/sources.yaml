@@ -574,6 +574,9 @@ providers:
       - https://spaceq.ca/feed/
       - https://www.spaceintelreport.com/feed/
       - https://www.space.com/feeds.xml
+    china_market_query_templates:
+      - "{company_name} 股价 概念股 IPO 估值 融资"
+      - "{company_name} 股票 上市 招股书 产业链"
     adapter_options:
       real_fetch_enabled: true
       timeout_seconds: 20

@@ -4,7 +4,7 @@
     {
       "company_id": "blue_origin",
       "company_name": "Blue Origin",
-      "item_count": 15,
+      "item_count": 16,
       "status": "success"
     },
     {
@@ -16,7 +16,7 @@
     {
       "company_id": "china_satnet",
       "company_name": "中国星网",
-      "item_count": 1,
+      "item_count": 3,
       "status": "mixed"
     },
     {
@@ -64,26 +64,26 @@
     {
       "company_id": "spacex",
       "company_name": "SpaceX",
-      "item_count": 41,
+      "item_count": 42,
       "status": "success"
     },
     {
       "company_id": "yuanxin_satellite",
       "company_name": "垣信卫星",
-      "item_count": 15,
+      "item_count": 17,
       "status": "mixed"
     },
     {
       "company_id": "yushi_space",
       "company_name": "宇石空间",
-      "item_count": 1,
+      "item_count": 3,
       "status": "mixed"
     }
   ],
   "company_item_counts": {
-    "blue_origin": 15,
+    "blue_origin": 16,
     "cas_space": 4,
-    "china_satnet": 1,
+    "china_satnet": 3,
     "galactic_energy": 5,
     "galaxyspace": 3,
     "hongqing_technology": 3,
@@ -91,26 +91,26 @@
     "landspace": 4,
     "minospace": 1,
     "space_pioneer": 4,
-    "spacex": 41,
-    "yuanxin_satellite": 15,
-    "yushi_space": 1
+    "spacex": 42,
+    "yuanxin_satellite": 17,
+    "yushi_space": 3
   },
   "config_dir": "config",
   "dry_run": false,
   "export_count": 0,
   "fetch_status_count": 26,
-  "finished_at": "2026-07-23T02:30:11.988288Z",
-  "fresh_item_count": 98,
-  "generated_at": "2026-07-23T02:30:11.988288Z",
-  "item_count": 98,
+  "finished_at": "2026-07-23T02:55:13.862944Z",
+  "fresh_item_count": 106,
+  "generated_at": "2026-07-23T02:55:13.862944Z",
+  "item_count": 106,
   "metadata": {
     "latest_is_stale_safe": true
   },
   "output_dir": "data/news/latest",
-  "run_id": "9ec458ca-3852-4b81-b8dc-fa00537e05b3",
+  "run_id": "61797261-c62f-40ff-9a54-606b1030a057",
   "schema_version": "satellite_news.v1",
   "stale_item_count": 0,
-  "started_at": "2026-07-23T02:28:19.967865Z",
+  "started_at": "2026-07-23T02:52:11.452256Z",
   "summary_count": 0,
   "warnings": []
 }

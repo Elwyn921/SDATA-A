@@ -74,6 +74,18 @@ const statusLabels = {
   missing: "无记录",
   unknown: "未知",
 };
+const eventTypeLabels = {
+  all: "全部事件",
+  launch: "发射与试验",
+  financing: "融资",
+  order: "订单与合同",
+  regulation: "监管与政策",
+  market: "股价与资本市场",
+  partnership: "合作",
+  product: "产品与产能",
+  corporate: "公司治理",
+  other: "其他动态",
+};
 
 const companyMeta = new Map();
 const companyToGroup = new Map();
@@ -90,8 +102,10 @@ const state = {
   timeRange: "latest",
   selectedDate: null,
   visibleLimit: 120,
+  eventType: "all",
   result: null,
   items: [],
+  events: [],
   archiveIndex: null,
   dailyReport: null,
 };
@@ -123,6 +137,10 @@ const elements = {
   errorAccordion: document.querySelector("#error-accordion"),
   diagnosticsSummary: document.querySelector("#diagnostics-summary"),
   qualityGateSummary: document.querySelector("#quality-gate-summary"),
+  eventSummary: document.querySelector("#event-summary"),
+  eventCompanyFilter: document.querySelector("#event-company-filter"),
+  eventTypeTabs: document.querySelector("#event-type-tabs"),
+  eventTimeline: document.querySelector("#event-timeline"),
 };
 
 bootstrap();
@@ -132,6 +150,9 @@ async function bootstrap() {
   state.result = dashboard.result;
   state.items = mergeNewsItems(state.result.items ?? [], dashboard.archiveCatalog?.items ?? []);
   state.archiveIndex = dashboard.archiveIndex;
+  state.events = Array.isArray(dashboard.eventTimeline?.events)
+    ? dashboard.eventTimeline.events
+    : [];
   state.dailyReport = dashboard.dailyReport;
   state.selectedDate = latestNewsDate(state.items);
   populateFilters();
@@ -141,12 +162,11 @@ async function bootstrap() {
 
 function bindEvents() {
   elements.companyFilter.addEventListener("change", (event) => {
-    state.companyId = event.target.value;
-    if (state.companyId !== "all") {
-      state.groupId = companyToGroup.get(state.companyId) ?? "all";
-    }
-    state.visibleLimit = 120;
-    render();
+    selectCompany(event.target.value);
+  });
+
+  elements.eventCompanyFilter.addEventListener("change", (event) => {
+    selectCompany(event.target.value);
   });
 
   elements.resetFilters.addEventListener("click", () => {
@@ -155,32 +175,46 @@ function bindEvents() {
     state.timeRange = "latest";
     state.selectedDate = latestNewsDate(state.items);
     state.visibleLimit = 120;
+    state.eventType = "all";
     elements.companyFilter.value = "all";
+    elements.eventCompanyFilter.value = "all";
     render();
   });
 }
 
+function selectCompany(companyId) {
+  state.companyId = companyId;
+  state.eventType = "all";
+  if (state.companyId !== "all") {
+    state.groupId = companyToGroup.get(state.companyId) ?? "all";
+  }
+  state.visibleLimit = 120;
+  elements.companyFilter.value = companyId;
+  elements.eventCompanyFilter.value = companyId;
+  render();
+}
+
 function populateFilters() {
   const companies = companiesFromItems(state.items);
-  const knownIds = new Set();
-
-  industryGroups.forEach((group) => {
-    const optgroup = document.createElement("optgroup");
-    optgroup.label = group.name;
-    group.companies.forEach((company) => {
-      knownIds.add(company.id);
-      optgroup.append(option(company.id, company.name));
+  [elements.companyFilter, elements.eventCompanyFilter].forEach((select) => {
+    const knownIds = new Set();
+    industryGroups.forEach((group) => {
+      const optgroup = document.createElement("optgroup");
+      optgroup.label = group.name;
+      group.companies.forEach((company) => {
+        knownIds.add(company.id);
+        optgroup.append(option(company.id, company.name));
+      });
+      select.append(optgroup);
     });
-    elements.companyFilter.append(optgroup);
+    const extraCompanies = companies.filter((company) => !knownIds.has(company.id));
+    if (extraCompanies.length) {
+      const optgroup = document.createElement("optgroup");
+      optgroup.label = "未分类公司";
+      extraCompanies.forEach((company) => optgroup.append(option(company.id, company.name)));
+      select.append(optgroup);
+    }
   });
-
-  const extraCompanies = companies.filter((company) => !knownIds.has(company.id));
-  if (extraCompanies.length) {
-    const optgroup = document.createElement("optgroup");
-    optgroup.label = "未分类公司";
-    extraCompanies.forEach((company) => optgroup.append(option(company.id, company.name)));
-    elements.companyFilter.append(optgroup);
-  }
 }
 
 function render() {
@@ -202,6 +236,7 @@ function render() {
   renderTimeTabs();
   renderCategoryTabs();
   renderIndustrySections(items);
+  renderEventTimeline();
   renderNewsList(filteredItems);
   renderProviderTable(companies, state.result.fetch_statuses ?? []);
   renderQualityGate();
@@ -222,6 +257,7 @@ function renderQualityGate() {
     ["观察区", gate.watchlist_count ?? 0],
     ["已拒绝", gate.rejected_count ?? 0],
     ["重复项", gate.duplicate_count ?? 0],
+    ["中国宽松纳入", gate.china_relaxed_published_count ?? 0],
   ];
   elements.qualityGateSummary.replaceChildren(
     ...rows.map(([label, value]) => {
@@ -414,8 +450,10 @@ function renderCategoryTabs() {
       button.addEventListener("click", () => {
         state.groupId = group.id;
         state.companyId = "all";
+        state.eventType = "all";
         state.visibleLimit = 120;
         elements.companyFilter.value = "all";
+        elements.eventCompanyFilter.value = "all";
         render();
       });
       return button;
@@ -446,8 +484,10 @@ function renderIndustrySections(items) {
       section.querySelector(".section-filter").addEventListener("click", () => {
         state.groupId = group.id;
         state.companyId = "all";
+        state.eventType = "all";
         state.visibleLimit = 120;
         elements.companyFilter.value = "all";
+        elements.eventCompanyFilter.value = "all";
         document.querySelector(".news-panel")?.scrollIntoView({ behavior: "smooth", block: "start" });
         render();
       });
@@ -481,13 +521,103 @@ function companyCard(company, items) {
     </div>
   `;
   card.addEventListener("click", () => {
-    state.companyId = company.id;
-    state.groupId = companyToGroup.get(company.id) ?? "all";
-    state.visibleLimit = 120;
-    elements.companyFilter.value = company.id;
-    document.querySelector(".news-panel")?.scrollIntoView({ behavior: "smooth", block: "start" });
-    render();
+    selectCompany(company.id);
+    document.querySelector(".event-panel")?.scrollIntoView({ behavior: "smooth", block: "start" });
   });
+  return card;
+}
+
+function renderEventTimeline() {
+  const scopedEvents = state.events.filter((event) => eventMatchesCurrentScope(event));
+  const filteredEvents = state.eventType === "all"
+    ? scopedEvents
+    : scopedEvents.filter((event) => event.event_type === state.eventType);
+  const typeRows = Object.keys(eventTypeLabels).filter((type) =>
+    type === "all" || scopedEvents.some((event) => event.event_type === type)
+  );
+  elements.eventTypeTabs.replaceChildren(
+    ...typeRows.map((type) => {
+      const count = type === "all"
+        ? scopedEvents.length
+        : scopedEvents.filter((event) => event.event_type === type).length;
+      const button = document.createElement("button");
+      button.type = "button";
+      button.className = state.eventType === type ? "active" : "";
+      button.textContent = `${eventTypeLabels[type]} ${count}`;
+      button.addEventListener("click", () => {
+        state.eventType = type;
+        renderEventTimeline();
+      });
+      return button;
+    }),
+  );
+  elements.eventSummary.textContent = state.events.length
+    ? `当前范围 ${filteredEvents.length} 个事件 · 聚合 ${filteredEvents.reduce((sum, event) => sum + (event.article_count ?? 0), 0)} 篇报道`
+    : "等待事件时间线数据生成";
+
+  if (!filteredEvents.length) {
+    elements.eventTimeline.innerHTML = `
+      <div class="empty">
+        <div class="empty-title">当前范围暂无可聚合事件</div>
+        <p class="empty-subtitle text-muted">可切换公司或事件类型。</p>
+      </div>
+    `;
+    return;
+  }
+  elements.eventTimeline.replaceChildren(
+    ...filteredEvents.slice(0, 80).map((event) => eventCard(event)),
+  );
+}
+
+function eventMatchesCurrentScope(event) {
+  const groupMatches = state.groupId === "all"
+    || companyToGroup.get(event.company_id) === state.groupId;
+  const companyMatches = state.companyId === "all" || event.company_id === state.companyId;
+  return groupMatches && companyMatches;
+}
+
+function eventCard(event) {
+  const card = document.createElement("article");
+  card.className = `event-card event-${event.event_type ?? "other"}`;
+  const sourceNames = Array.isArray(event.source_names) ? event.source_names : [];
+  const articles = Array.isArray(event.articles) ? event.articles : [];
+  const articleList = articles
+    .map((article) => `
+      <li>
+        <a href="${escapeHtml(article.url)}" target="_blank" rel="noopener noreferrer">
+          ${escapeHtml(article.title)}
+        </a>
+        <span>${escapeHtml(article.source_name)} · ${formatFullDate(article.published_at)}</span>
+      </li>
+    `)
+    .join("");
+  card.innerHTML = `
+    <div class="event-rail"><span></span></div>
+    <div class="event-card-body">
+      <div class="event-badges">
+        <span class="news-company">${escapeHtml(companyName(event.company_id, event.company_name))}</span>
+        <span class="event-type-badge">${escapeHtml(event.event_label ?? eventTypeLabels[event.event_type] ?? "其他动态")}</span>
+        ${event.event_type === "market" ? '<span class="market-badge">市场信息</span>' : ""}
+      </div>
+      <a class="event-headline" href="${escapeHtml(event.latest_url)}" target="_blank" rel="noopener noreferrer">
+        ${escapeHtml(event.headline)}
+      </a>
+      <p>${escapeHtml(event.summary)}</p>
+      <div class="event-meta">
+        <span>${formatFullDate(event.latest_at)}</span>
+        <span>${event.article_count ?? 0} 篇报道</span>
+        <span>${event.source_count ?? 0} 个来源</span>
+        <span>重要度 ${event.importance_score ?? 0}</span>
+      </div>
+      <div class="event-sources">${sourceNames.slice(0, 5).map((source) => `<span>${escapeHtml(source)}</span>`).join("")}</div>
+      ${articleList ? `
+        <details class="event-articles">
+          <summary>查看组成该事件的报道</summary>
+          <ul>${articleList}</ul>
+        </details>
+      ` : ""}
+    </div>
+  `;
   return card;
 }
 

@@ -23,6 +23,8 @@ Implemented:
 - Scheduled A6 daily-report generator with OpenAI structured output and a readable no-secret fallback.
 - Frontend daily briefing, 30-day news volume index, and date-based archive navigation.
 - Deterministic quality gate for company relevance, satellite context, recency, canonical URLs, and near-duplicate removal.
+- China-specific quality policy that also accepts company, valuation, IPO, concept-stock, and share-price context while retaining stricter foreign-company rules.
+- P1 company event timeline that clusters reporting into launch, financing, order, regulation, market, partnership, product, and corporate events.
 - Round-robin RSS balancing and per-run feed caching so one aggregator cannot crowd out specialist and official sources without multiplying network requests.
 - Keyless Spaceflight News API integration plus optional Brave News Search.
 
@@ -44,10 +46,11 @@ Current monitoring covers 13 companies:
 
 Latest local data snapshot:
 
-- Latest run id: `08e76e21-26fb-4cb9-9362-f2906920b61b`
-- Generated at: `2026-06-24T07:23:55.772959Z`
-- Total news items: 591
-- Provider used in latest snapshot: `rss_provider`
+- Latest run id: `61797261-c62f-40ff-9a54-606b1030a057`
+- Generated at: `2026-07-23T02:55:13.862944Z`
+- Current rolling news items: 106
+- Historical company events: 460
+- Providers used in latest snapshot: `rss_provider`, `spaceflight_news_provider`
 - Company coverage: all 13 companies have data
 
 ## Important Runtime Notes
@@ -104,11 +107,13 @@ RawArticle
         ->
 NewsItem
         ->
+China-aware quality gate + event classification
+        ->
 PipelineResult
         ->
-data/news/latest/*.json + data/news/archive/**
+archive catalog + company event timeline
         ->
-docs/data/news/latest/pipeline_result.json
+docs/data/news/latest/pipeline_result.json + event_timeline.json
         ->
 GitHub Pages / Observable dashboard
 ```
@@ -221,8 +226,8 @@ The frontend does not call RSS, GDELT, LLM providers, or search APIs directly. I
 
 ## Next Milestones
 
-1. Tune the quality gate with reviewed false-positive and false-negative samples.
+1. Review China-policy false positives and add source-specific trust weights.
 2. Add first-party company newsroom feeds and regional space-industry sources.
-3. Keep GDELT paused unless used in low-frequency manual or partial slots.
-4. Add topic clustering so repeated coverage becomes one event with multiple sources.
+3. Add structured stock-price snapshots for listed related companies instead of relying only on news mentions.
+4. Keep GDELT paused unless used in low-frequency manual or partial slots.
 5. Measure source coverage and missing-company rates in the diagnostics panel.

@@ -76,41 +76,21 @@
     {
       "company_id": "yushi_space",
       "company_name": "宇石空间",
-      "item_count": 3,
+      "item_count": 1,
       "status": "mixed"
     }
   ],
-  "company_item_counts": {
-    "blue_origin": 16,
-    "cas_space": 4,
-    "china_satnet": 3,
-    "galactic_energy": 5,
-    "galaxyspace": 3,
-    "hongqing_technology": 3,
-    "i_space": 1,
-    "landspace": 4,
-    "minospace": 1,
-    "space_pioneer": 4,
-    "spacex": 42,
-    "yuanxin_satellite": 17,
-    "yushi_space": 3
-  },
   "config_dir": "config",
   "dry_run": false,
   "export_count": 0,
   "fetch_status_count": 26,
-  "finished_at": "2026-07-23T02:55:13.862944Z",
-  "fresh_item_count": 106,
-  "generated_at": "2026-07-23T02:55:13.862944Z",
-  "item_count": 106,
-  "metadata": {
-    "latest_is_stale_safe": true
-  },
+  "finished_at": "2026-07-23T02:47:40.193330Z",
+  "generated_at": "2026-07-23T02:47:40.193330Z",
+  "item_count": 104,
   "output_dir": "data/news/latest",
-  "run_id": "61797261-c62f-40ff-9a54-606b1030a057",
+  "run_id": "af55898d-fb5a-468b-b370-fb871346912c",
   "schema_version": "satellite_news.v1",
-  "stale_item_count": 0,
-  "started_at": "2026-07-23T02:52:11.452256Z",
+  "started_at": "2026-07-23T02:45:58.105578Z",
   "summary_count": 0,
   "warnings": []
 }

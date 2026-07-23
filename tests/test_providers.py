@@ -2,6 +2,7 @@ from dataclasses import replace
 from datetime import datetime, timezone
 from pathlib import Path
 import urllib.error
+from urllib.parse import parse_qs, urlsplit
 
 from satellite_news.config import load_companies, load_providers
 from satellite_news.fetcher.gdelt import GDELTTransportError, GDELTFetcher
@@ -408,6 +409,37 @@ def test_rss_provider_caches_shared_feed_across_companies():
     assert first.metadata["network_feed_count"] == 1
     assert second.metadata["network_feed_count"] == 0
     assert second.metadata["cache_hit_count"] == 1
+
+
+def test_rss_provider_adds_market_queries_only_for_china_companies():
+    provider = provider_by_id("rss_provider")
+    context = PipelineContext(
+        run_id="china-market-rss-test",
+        started_at=datetime(2026, 7, 23, tzinfo=timezone.utc),
+        dry_run=True,
+    )
+    china = RSSProvider().fetch_raw_articles(
+        company=company_by_id("galactic_energy"),
+        provider=provider,
+        context=context,
+    )
+    foreign = RSSProvider().fetch_raw_articles(
+        company=company_by_id("spacex"),
+        provider=provider,
+        context=context,
+    )
+
+    china_queries = [
+        parse_qs(urlsplit(url).query).get("q", [""])[0]
+        for url in china.metadata["feeds"]
+    ]
+    foreign_queries = [
+        parse_qs(urlsplit(url).query).get("q", [""])[0]
+        for url in foreign.metadata["feeds"]
+    ]
+    assert any("股价" in query and "估值" in query for query in china_queries)
+    assert any("招股书" in query and "产业链" in query for query in china_queries)
+    assert not any("股价" in query for query in foreign_queries)
 
 
 def test_provider_orchestrator_records_failure_and_continues_to_fallback():

@@ -10,6 +10,7 @@ from dataclasses import replace
 from datetime import timezone
 from difflib import SequenceMatcher
 
+from satellite_news.processing.events import classify_event_type
 from satellite_news.schema import Company, NewsItem, PipelineContext
 
 
@@ -72,6 +73,41 @@ INDUSTRY_TERMS = (
     "董事",
     "总经理",
 )
+MARKET_TERMS = (
+    "share price",
+    "stock price",
+    "shares",
+    "market cap",
+    "valuation",
+    "public listing",
+    "ipo",
+    "股价",
+    "股票",
+    "涨停",
+    "跌停",
+    "上涨",
+    "下跌",
+    "大涨",
+    "大跌",
+    "概念股",
+    "产业链",
+    "市值",
+    "估值",
+    "a股",
+    "港股",
+    "科创板",
+    "创业板",
+    "上市",
+    "招股书",
+    "辅导备案",
+    "证券",
+    "定增",
+    "并购",
+    "持股",
+    "参股",
+    "股东",
+    "资本市场",
+)
 RANK_SCORES = {
     "official": 1.0,
     "regulator_and_filing": 0.98,
@@ -81,6 +117,14 @@ RANK_SCORES = {
     "search": 0.55,
 }
 MAX_AGE_DAYS = 45
+LOW_INFORMATION_TITLE_MARKERS = (
+    "联系我们",
+    "法律声明",
+    "关于我们",
+    "画廊",
+    "关注我们",
+    "企业新闻:",
+)
 
 
 class QualityNewsProcessor:
@@ -129,6 +173,14 @@ class QualityNewsProcessor:
             "watchlist_count": decision_counts["watchlist"],
             "rejected_count": decision_counts["rejected"],
             "duplicate_count": duplicate_count,
+            "china_relaxed_published_count": sum(
+                1
+                for item in deduplicated
+                if any(
+                    reason.startswith("china_")
+                    for reason in item.metadata.get("quality_reason_codes", ())
+                )
+            ),
             "rejected_samples": rejected[:50],
         }
         return tuple(deduplicated)
@@ -154,6 +206,7 @@ class QualityNewsProcessor:
             term for term in company_terms if term_matches(term, body_text) and term not in company_matches
         ]
         industry_matches = [term for term in INDUSTRY_TERMS if context_term_matches(term, text)]
+        market_matches = [term for term in MARKET_TERMS if context_term_matches(term, text)]
         excluded_matches = [
             term for term in (company.keywords_exclude if company else ()) if term_matches(term, text)
         ]
@@ -163,11 +216,21 @@ class QualityNewsProcessor:
             1.0,
             (0.55 if company_matches else 0.2 if body_company_matches else 0.0)
             + (0.25 if industry_matches else 0.0)
+            + (0.2 if market_matches else 0.0)
             + (0.15 if source_score >= 0.8 else 0.05)
             - (0.4 if excluded_matches else 0.0),
         )
 
-        if excluded_matches and not company_matches:
+        if low_information_title(title_text=title_text, company=company):
+            decision = "rejected"
+            reasons.append("low_information_navigation_title")
+        elif ambiguous_company_conflict(
+            company=company,
+            title_text=title_text,
+        ):
+            decision = "rejected"
+            reasons.append("ambiguous_company_name_conflict")
+        elif excluded_matches and not company_matches and not body_company_matches:
             decision = "rejected"
             reasons.append("negative_keyword_without_company_signal")
         elif (
@@ -186,6 +249,12 @@ class QualityNewsProcessor:
                 if program_matches and not industry_matches
                 else "title_company_and_industry_match"
             )
+        elif is_china_company(company) and company_matches:
+            decision = "published"
+            reasons.append("china_title_company_match")
+        elif is_china_company(company) and body_company_matches and market_matches:
+            decision = "published"
+            reasons.append("china_body_company_market_match")
         elif company_matches or body_company_matches:
             decision = "watchlist"
             reasons.append(
@@ -208,8 +277,10 @@ class QualityNewsProcessor:
                 "program_match_terms": program_matches[:8],
                 "body_company_match_terms": body_company_matches[:8],
                 "industry_match_terms": industry_matches[:8],
+                "market_match_terms": market_matches[:8],
                 "quality_reason_codes": reasons,
                 "event_id": event_id(item.title),
+                "event_type": classify_event_type(text),
             }
         )
         return replace(item, url=canonical_url, metadata=metadata), decision, reasons
@@ -245,6 +316,38 @@ def strong_program_terms(company: Company | None) -> tuple[str, ...]:
         if normalized and normalized not in GENERIC_TERMS and len(normalized) >= 3:
             terms.append(normalized)
     return tuple(dict.fromkeys(terms))
+
+
+def is_china_company(company: Company | None) -> bool:
+    if company is None:
+        return False
+    region = normalize_text(company.country_or_region)
+    return region in {"china", "cn", "中国", "中国大陆"}
+
+
+def low_information_title(*, title_text: str, company: Company | None) -> bool:
+    if any(marker in title_text for marker in LOW_INFORMATION_TITLE_MARKERS):
+        return True
+    if company is None:
+        return False
+    company_names = {
+        normalize_text(value)
+        for value in (company.canonical_name, *company.aliases)
+        if normalize_text(value)
+    }
+    return title_text in company_names or normalized_title(title_text) in company_names
+
+
+def ambiguous_company_conflict(*, company: Company | None, title_text: str) -> bool:
+    if company is None or company.id != "i_space":
+        return False
+    ambiguous_signal = term_matches("ispace", title_text) or term_matches("i-space", title_text)
+    moon_signal = term_matches("moon", title_text) or term_matches("lunar", title_text)
+    china_identity = any(
+        term_matches(term, title_text)
+        for term in ("星际荣耀", "双曲线", "hyperbola", "sqx")
+    )
+    return ambiguous_signal and moon_signal and not china_identity
 
 
 def canonicalize_url(url: str) -> str:

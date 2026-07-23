@@ -67,6 +67,7 @@ def test_json_file_storage_writes_latest_and_archive_outputs(tmp_path):
     latest_items = read_json(latest_dir / "items.json")
     latest_statuses = read_json(latest_dir / "fetch_statuses.json")
     daily_index = read_json(latest_dir / "daily_index.json")
+    event_timeline = read_json(latest_dir / "event_timeline.json")
     latest_manifest = read_json(latest_dir / "manifest.json")
     archive_run_dir = (
         tmp_path / "data" / "news" / "archive" / "runs" / "2026" / "06" / "15" / "json-run"
@@ -77,6 +78,7 @@ def test_json_file_storage_writes_latest_and_archive_outputs(tmp_path):
     published_archive_index = read_json(publish_dir / "archive" / "index.json")
     published_archive_catalog = read_json(publish_dir / "archive" / "catalog.json")
     published_daily_index = read_json(publish_dir / "latest" / "daily_index.json")
+    published_event_timeline = read_json(publish_dir / "latest" / "event_timeline.json")
 
     assert latest_result["schema_version"] == "satellite_news.v1"
     assert latest_result["run_id"] == "json-run"
@@ -95,6 +97,8 @@ def test_json_file_storage_writes_latest_and_archive_outputs(tmp_path):
             "source_types": ["gdelt"],
         }
     ]
+    assert event_timeline["event_count"] == 1
+    assert event_timeline["events"][0]["event_type"] == "launch"
     assert latest_manifest["archive_path"] == archive_run_dir.as_posix()
     assert read_json(archive_run_dir / "pipeline_result.json")["run_id"] == "json-run"
     assert archive_index["latest_run_id"] == "json-run"
@@ -106,6 +110,7 @@ def test_json_file_storage_writes_latest_and_archive_outputs(tmp_path):
     assert published_archive_index["latest_run_id"] == "json-run"
     assert published_archive_catalog == archive_catalog
     assert published_daily_index == daily_index
+    assert published_event_timeline == event_timeline
 
 
 def test_json_file_storage_defaults_to_docs_publish_dir_for_repo_latest(tmp_path, monkeypatch):
