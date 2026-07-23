@@ -6,6 +6,7 @@ from typing import Callable
 
 from satellite_news.fetcher.gdelt import GDELTHTTPTransport, GDELTFetcher
 from satellite_news.provider.gdelt import GDELTProvider
+from satellite_news.provider.brave_news import BraveNewsProvider
 from satellite_news.provider.interface import (
     NewsProvider,
     NewsProviderRegistry,
@@ -17,6 +18,7 @@ from satellite_news.provider.official_page import OfficialPageProvider
 from satellite_news.provider.orchestrator import ProviderOrchestrator
 from satellite_news.provider.rss import RSSProvider
 from satellite_news.provider.serpapi import SerpApiGoogleNewsProvider
+from satellite_news.provider.spaceflight_news import SpaceflightNewsAPIProvider
 
 
 def build_default_provider_registry(
@@ -27,6 +29,7 @@ def build_default_provider_registry(
         (
             RSSProvider(),
             OfficialPageProvider(),
+            SpaceflightNewsAPIProvider(),
             GDELTProvider(
                 fetcher=GDELTFetcher(
                     transport=GDELTHTTPTransport(
@@ -40,11 +43,13 @@ def build_default_provider_registry(
             ),
             SerpApiGoogleNewsProvider(),
             NewsAPIProvider(),
+            BraveNewsProvider(),
         )
     )
 
 __all__ = [
     "GDELTProvider",
+    "BraveNewsProvider",
     "NewsProvider",
     "NewsProviderRegistry",
     "NewsAPIProvider",
@@ -54,5 +59,6 @@ __all__ = [
     "ProviderResult",
     "RSSProvider",
     "SerpApiGoogleNewsProvider",
+    "SpaceflightNewsAPIProvider",
     "build_default_provider_registry",
 ]

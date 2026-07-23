@@ -38,6 +38,9 @@ class Company:
     aliases: tuple[str, ...] = ()
     country_or_region: str = ""
     sector_tags: tuple[str, ...] = ()
+    primary_programs: tuple[str, ...] = ()
+    keywords_include: tuple[str, ...] = ()
+    keywords_exclude: tuple[str, ...] = ()
     enabled: bool = True
     priority: Priority = "medium"
 
@@ -132,10 +135,11 @@ class RawArticle:
     metadata: dict[str, Any] = field(default_factory=dict)
 
     def to_news_item(self, source: SourceConfig, collected_at: datetime | None = None) -> NewsItem:
+        source_name = str(self.metadata.get("source_name") or source.description or source.id)
         source_record = SourceRecord(
             source_id=self.source_id,
             source_type=self.source_type,
-            source_name=source.description or source.id,
+            source_name=source_name,
             rank_group=source.rank_group,
             provider_id=self.provider_id or source.provider_id,
             provider_priority=self.provider_priority or source.provider_priority,

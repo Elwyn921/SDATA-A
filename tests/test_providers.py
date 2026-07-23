@@ -6,6 +6,7 @@ from satellite_news.config import load_companies, load_providers
 from satellite_news.fetcher.gdelt import GDELTTransportError, GDELTFetcher
 from satellite_news.pipeline import Pipeline
 from satellite_news.provider import (
+    BraveNewsProvider,
     GDELTProvider,
     NewsAPIProvider,
     NewsProviderRegistry,
@@ -13,6 +14,7 @@ from satellite_news.provider import (
     ProviderOrchestrator,
     RSSProvider,
     SerpApiGoogleNewsProvider,
+    SpaceflightNewsAPIProvider,
 )
 from satellite_news.provider.interface import ProviderResult
 from satellite_news.schema import (
@@ -129,6 +131,7 @@ def test_gdelt_provider_maps_429_to_rate_limited():
 def test_secret_providers_skip_without_api_keys(monkeypatch):
     monkeypatch.delenv("SERPAPI_KEY", raising=False)
     monkeypatch.delenv("NEWSAPI_KEY", raising=False)
+    monkeypatch.delenv("BRAVE_SEARCH_API_KEY", raising=False)
     company = company_by_id("spacex")
     context = PipelineContext(
         run_id="secret-test",
@@ -146,11 +149,129 @@ def test_secret_providers_skip_without_api_keys(monkeypatch):
         provider=provider_by_id("newsapi_provider"),
         context=context,
     )
+    brave = BraveNewsProvider().fetch_raw_articles(
+        company=company,
+        provider=provider_by_id("brave_news_provider"),
+        context=context,
+    )
 
     assert serp.status == "skipped_no_secret"
     assert newsapi.status == "skipped_no_secret"
+    assert brave.status == "skipped_no_secret"
     assert serp.should_fallback is True
     assert newsapi.should_fallback is True
+    assert brave.should_fallback is True
+
+
+def test_spaceflight_news_provider_maps_keyless_results():
+    class MockClient:
+        def get_json(self, url, *, timeout_seconds=20, headers=None):
+            assert "spaceflightnewsapi.net" in url
+            assert "search=SpaceX" in url
+            return {
+                "results": [
+                    {
+                        "title": "SpaceX launches Starlink satellites",
+                        "url": "https://example.test/spaceflight-news",
+                        "summary": "A Falcon 9 satellite launch update.",
+                        "published_at": "2026-07-22T12:00:00Z",
+                        "news_site": "Spaceflight Now",
+                    }
+                ]
+            }
+
+    result = SpaceflightNewsAPIProvider(client=MockClient()).fetch_raw_articles(
+        company=company_by_id("spacex"),
+        provider=provider_by_id("spaceflight_news_provider"),
+        context=PipelineContext(
+            run_id="spaceflight-news-test",
+            started_at=datetime(2026, 7, 23, tzinfo=timezone.utc),
+            dry_run=False,
+        ),
+    )
+
+    assert result.status == "success"
+    assert len(result.articles) == 1
+    assert result.articles[0].metadata["source_name"] == "Spaceflight Now"
+
+
+def test_brave_news_provider_maps_results_and_uses_secret(monkeypatch):
+    monkeypatch.setenv("BRAVE_SEARCH_API_KEY", "test-brave-key")
+
+    class MockClient:
+        def get_json(self, url, *, timeout_seconds=20, headers=None):
+            assert "api.search.brave.com" in url
+            assert "q=%22SpaceX%22" in url
+            assert headers["X-Subscription-Token"] == "test-brave-key"
+            return {
+                "results": [
+                    {
+                        "title": "SpaceX schedules another Starlink launch",
+                        "url": "https://example.test/brave-news",
+                        "description": "The mission will deploy broadband satellites.",
+                        "page_age": "2026-07-22T12:00:00Z",
+                        "profile": {"long_name": "Independent Space Desk"},
+                    }
+                ]
+            }
+
+    result = BraveNewsProvider(client=MockClient()).fetch_raw_articles(
+        company=company_by_id("spacex"),
+        provider=provider_by_id("brave_news_provider"),
+        context=PipelineContext(
+            run_id="brave-news-test",
+            started_at=datetime(2026, 7, 23, tzinfo=timezone.utc),
+            dry_run=False,
+        ),
+    )
+
+    assert result.status == "success"
+    assert len(result.articles) == 1
+    assert result.articles[0].metadata["source_name"] == "Independent Space Desk"
+
+
+def test_rss_provider_balances_results_across_feeds():
+    class MockClient:
+        def get_text(self, url, *, timeout_seconds=20, headers=None):
+            source = "Alpha" if url.endswith("alpha.xml") else "Beta"
+            return f"""
+            <rss><channel>
+              <item>
+                <title>SpaceX Starlink satellite update from {source}</title>
+                <link>https://example.test/{source.lower()}</link>
+                <source url="https://{source.lower()}.test">{source} News</source>
+                <pubDate>Wed, 22 Jul 2026 08:00:00 GMT</pubDate>
+              </item>
+              <item>
+                <title>SpaceX Starlink second update from {source}</title>
+                <link>https://example.test/{source.lower()}-second</link>
+              </item>
+            </channel></rss>
+            """
+
+    provider = replace(
+        provider_by_id("rss_provider"),
+        options={
+            "feeds": ["https://feed.test/alpha.xml", "https://feed.test/beta.xml"],
+            "adapter_options": {"max_items": 10, "max_items_per_feed": 1},
+        },
+    )
+    result = RSSProvider(client=MockClient()).fetch_raw_articles(
+        company=company_by_id("spacex"),
+        provider=provider,
+        context=PipelineContext(
+            run_id="balanced-rss-test",
+            started_at=datetime(2026, 7, 23, tzinfo=timezone.utc),
+            dry_run=False,
+        ),
+    )
+
+    assert len(result.articles) == 2
+    assert {article.metadata["source_name"] for article in result.articles} == {
+        "Alpha News",
+        "Beta News",
+    }
+    assert result.metadata["source_count"] == 2
 
 
 def test_provider_orchestrator_records_failure_and_continues_to_fallback():

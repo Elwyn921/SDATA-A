@@ -444,13 +444,38 @@ def test_json_file_storage_catalog_retains_items_that_roll_out_of_latest(tmp_pat
     latest = read_json(latest_dir / "pipeline_result.json")
     catalog = read_json(tmp_path / "data" / "news" / "archive" / "catalog.json")
     published = read_json(publish_dir / "archive" / "catalog.json")
+    daily_index = read_json(latest_dir / "daily_index.json")
 
     assert [item["id"] for item in latest["items"]] == ["new-feed-item"]
     assert {item["id"] for item in catalog["items"]} == {
         "old-feed-item",
         "new-feed-item",
     }
+    assert daily_index["total_items"] == 2
     assert published == catalog
+
+
+def test_compact_archive_item_preserves_existing_quality_metadata():
+    from satellite_news.storage.json_file import compact_archive_item
+
+    compact = compact_archive_item(
+        {
+            "id": "qualified-item",
+            "company_id": "spacex",
+            "title": "SpaceX launches Starlink mission",
+            "quality": {
+                "quality_decision": "published",
+                "company_relevance_score": 90,
+                "event_id": "event-123",
+            },
+        }
+    )
+
+    assert compact["quality"] == {
+        "quality_decision": "published",
+        "company_relevance_score": 90,
+        "event_id": "event-123",
+    }
 
 
 def make_item(item_id, company_id, company_name):
@@ -460,6 +485,7 @@ def make_item(item_id, company_id, company_name):
         company_name=company_name,
         title=f"{company_name} update",
         url=f"https://example.test/{item_id}",
+        published_at=datetime(2026, 6, 15, 12, 0, tzinfo=timezone.utc),
         source=SourceRecord(
             source_id="rss_provider",
             source_type=SourceType.RSS,

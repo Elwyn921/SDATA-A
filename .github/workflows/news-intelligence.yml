@@ -22,6 +22,7 @@ on:
   schedule:
     - cron: "0 */6 * * *"
     - cron: "15 1 * * *"
+    - cron: "30 2 * * 1"
 
 permissions:
   contents: write
@@ -58,6 +59,7 @@ jobs:
         env:
           SERPAPI_KEY: ${{ secrets.SERPAPI_KEY }}
           NEWSAPI_KEY: ${{ secrets.NEWSAPI_KEY }}
+          BRAVE_SEARCH_API_KEY: ${{ secrets.BRAVE_SEARCH_API_KEY }}
         run: |
           set -euo pipefail
 
@@ -78,7 +80,13 @@ jobs:
             fi
           elif [ "${{ github.event.schedule }}" = "0 */6 * * *" ]; then
             EXTRA_ARGS+=(--provider-id rss_provider)
-            EXTRA_ARGS+=(--scheduled-slot "rss-$(date -u +'%Y-%m-%dT%H')")
+            EXTRA_ARGS+=(--provider-id spaceflight_news_provider)
+            EXTRA_ARGS+=(--scheduled-slot "open-sources-$(date -u +'%Y-%m-%dT%H')")
+          elif [ "${{ github.event.schedule }}" = "30 2 * * 1" ]; then
+            EXTRA_ARGS+=(--provider-id serpapi_provider)
+            EXTRA_ARGS+=(--provider-id brave_news_provider)
+            EXTRA_ARGS+=(--provider-id newsapi_provider)
+            EXTRA_ARGS+=(--scheduled-slot "premium-search-$(date -u +'%Y-%m-%d')")
           else
             EXTRA_ARGS+=(--provider-id rss_provider)
             EXTRA_ARGS+=(--scheduled-slot "rss-manual-fallback-$(date -u +'%Y-%m-%dT%H')")

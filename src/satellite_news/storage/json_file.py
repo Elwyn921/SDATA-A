@@ -88,13 +88,19 @@ class JsonFileStorage:
             context=context,
             generated_at=finished_at,
         )
+        archive_catalog = update_news_catalog(
+            archive_dir=self.archive_dir,
+            items=pipeline_result.get("items", []),
+            run_id=context.run_id,
+            generated_at=finished_at,
+        )
         items = items_payload_from_pipeline_result(
             pipeline_result=latest_pipeline_result,
             context=context,
             generated_at=finished_at,
         )
         daily_index = daily_news_index_payload(
-            items=latest_pipeline_result.get("items", []),
+            items=archive_catalog.get("items", []),
             run_id=context.run_id,
             generated_at=finished_at,
         )
@@ -153,12 +159,6 @@ class JsonFileStorage:
             archive_run_dir=archive_run_dir,
             finished_at=finished_at,
         )
-        update_news_catalog(
-            archive_dir=self.archive_dir,
-            items=pipeline_result.get("items", []),
-            run_id=context.run_id,
-            generated_at=finished_at,
-        )
         if self.publish_dir:
             sync_publish_outputs(
                 publish_dir=self.publish_dir,
@@ -190,6 +190,7 @@ def pipeline_result_payload(
         for item in items:
             if isinstance(item, dict):
                 item.setdefault("run_id", result.run_id)
+    quality_gate = context.metadata.get("quality_gate")
     return {
         "schema_version": SCHEMA_VERSION,
         "artifact_version": ARTIFACT_VERSION,
@@ -209,6 +210,7 @@ def pipeline_result_payload(
         "exports": serialize(result.exports),
         "fetch_statuses": normalize_fetch_statuses(result.fetch_statuses),
         "warnings": list(result.warnings),
+        "metadata": {"quality_gate": serialize(quality_gate)} if quality_gate else {},
     }
 
 
@@ -733,7 +735,7 @@ def update_news_catalog(
     items: list[dict[str, Any]],
     run_id: str,
     generated_at: datetime,
-) -> None:
+) -> dict[str, Any]:
     """Maintain a de-duplicated, frontend-readable catalog across rolling fetches."""
     catalog_path = archive_dir / "catalog.json"
     existing = read_json_if_exists(catalog_path) or {}
@@ -770,18 +772,17 @@ def update_news_catalog(
         for item in archived_items
         if (published := parse_datetime_string(item.get("published_at"))) is not None
     }
-    write_json(
-        catalog_path,
-        {
-            "schema_version": "news_archive_catalog.v1",
-            "artifact_version": ARTIFACT_VERSION,
-            "generated_at": generated_at_text,
-            "latest_run_id": run_id,
-            "item_count": len(archived_items),
-            "date_count": len(dates),
-            "items": archived_items,
-        },
-    )
+    catalog = {
+        "schema_version": "news_archive_catalog.v1",
+        "artifact_version": ARTIFACT_VERSION,
+        "generated_at": generated_at_text,
+        "latest_run_id": run_id,
+        "item_count": len(archived_items),
+        "date_count": len(dates),
+        "items": archived_items,
+    }
+    write_json(catalog_path, catalog)
+    return catalog
 
 
 def archive_item_key(item: dict[str, Any]) -> str:
@@ -814,6 +815,34 @@ def compact_archive_item(item: dict[str, Any]) -> dict[str, Any]:
         if item.get(key) is not None
     }
     compact["source"] = compact_source
+    metadata = item.get("metadata") if isinstance(item.get("metadata"), dict) else {}
+    existing_quality = item.get("quality") if isinstance(item.get("quality"), dict) else {}
+    quality = {
+        key: existing_quality[key]
+        for key in (
+            "canonical_url",
+            "quality_decision",
+            "company_relevance_score",
+            "source_quality_score",
+            "quality_reason_codes",
+            "event_id",
+        )
+        if existing_quality.get(key) is not None
+    }
+    quality.update({
+        key: metadata[key]
+        for key in (
+            "canonical_url",
+            "quality_decision",
+            "company_relevance_score",
+            "source_quality_score",
+            "quality_reason_codes",
+            "event_id",
+        )
+        if metadata.get(key) is not None
+    })
+    if quality:
+        compact["quality"] = quality
     return compact
 
 

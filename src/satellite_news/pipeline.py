@@ -15,7 +15,7 @@ from satellite_news.config import load_companies, load_providers, load_sources
 from satellite_news.exporter import NewsExporter, NullExporter
 from satellite_news.fetcher import GDELTHTTPTransport, GDELTFetcher, NullFetcher, SourceFetcher
 from satellite_news.llm import NewsSummarizer, NullSummarizer
-from satellite_news.processing import NewsProcessor, NullProcessor
+from satellite_news.processing import NewsProcessor, NullProcessor, QualityNewsProcessor
 from satellite_news.provider import build_default_provider_registry
 from satellite_news.provider.orchestrator import ProviderOrchestrator
 from satellite_news.schema import (
@@ -204,6 +204,7 @@ def main(argv: tuple[str, ...] | None = None) -> PipelineResult:
     )
     result = Pipeline(
         fetcher=build_gdelt_fetcher(sources),
+        processor=QualityNewsProcessor(companies=companies),
         provider_orchestrator=ProviderOrchestrator(
             registry=provider_registry,
             providers=providers,

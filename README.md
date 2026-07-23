@@ -22,11 +22,14 @@ Implemented:
 - Stale/latest merge behavior so partial updates can keep previously available company data.
 - Scheduled A6 daily-report generator with OpenAI structured output and a readable no-secret fallback.
 - Frontend daily briefing, 30-day news volume index, and date-based archive navigation.
+- Deterministic quality gate for company relevance, satellite context, recency, canonical URLs, and near-duplicate removal.
+- Balanced per-feed RSS collection so one aggregator cannot crowd out specialist and official sources.
+- Keyless Spaceflight News API integration plus optional Brave News Search.
 
-Currently paused or not enabled in production:
+Currently paused or optional in production:
 
 - GDELT scheduled production refresh. The adapter still exists, but frequent 429 rate limits make RSS the current production source.
-- SerpApi / Serper / NewsAPI search providers. These require API keys and should be used as fallback providers, not as the primary data loop.
+- SerpApi, Brave News, and NewsAPI require API keys and run in a quota-controlled weekly search slot rather than the primary data loop.
 - Excel, PDF, and Markdown report exports.
 - Complex official-site crawling.
 
@@ -53,7 +56,7 @@ RSS is the current stable production path. Some individual feeds may return 0 re
 
 GDELT remains available as code, but it often returns `HTTP 429 Too Many Requests`. A 429 means the external public service is rate-limiting requests; it does not mean the SDATA A pipeline or frontend is broken. For now, GDELT should be treated as manual, low-frequency, or fallback infrastructure rather than the main scheduled source.
 
-API-backed providers such as SerpApi, Serper, or NewsAPI should be introduced only through environment variables / GitHub Secrets and should gracefully skip when keys are missing.
+API-backed providers such as SerpApi, Brave News, and NewsAPI use environment variables / GitHub Secrets and gracefully skip when keys are missing.
 
 ## Project Structure
 
@@ -116,11 +119,13 @@ Provider configuration lives in `config/sources.yaml`. Provider implementations 
 
 Current provider posture:
 
-- `rss_provider`: production source, scheduled every 6 hours.
+- `rss_provider`: production source, scheduled every 6 hours with per-feed balancing.
+- `spaceflight_news_provider`: keyless specialist-space aggregation, scheduled with RSS.
 - `official_site_provider`: available as a light official-page path, but not the main production source.
 - `gdelt_provider`: implemented, currently paused from production schedule because of 429 rate limits.
-- `serpapi_provider` / search API providers: reserved for API-key fallback.
-- `newsapi_provider`: reserved for API-key fallback.
+- `serpapi_provider`: Google News search coverage, enabled by `SERPAPI_KEY` in the weekly premium-search slot.
+- `brave_news_provider`: independent news index, enabled by `BRAVE_SEARCH_API_KEY` in the weekly premium-search slot.
+- `newsapi_provider`: broader media coverage, enabled by `NEWSAPI_KEY` in the weekly premium-search slot.
 
 Provider failures should be isolated. One failed provider or one failed company source should not fail the entire pipeline run.
 
@@ -135,11 +140,12 @@ docs/data/news/latest/
 
 Current scheduled behavior:
 
-- Runs every 6 hours with `--provider-id rss_provider`.
+- The six-hour open-source run combines balanced RSS with Spaceflight News API.
+- A weekly premium-search slot queries SerpApi, Brave News, and NewsAPI when their secrets are configured.
 - Runs the daily briefing at 01:15 UTC; `OPENAI_API_KEY` enables the AI summary, otherwise a rule-based summary is still published.
 - Uses a single `news-data-writer` concurrency group to avoid simultaneous writes to `latest`.
 - Supports manual `workflow_dispatch` inputs for `company_id`, `provider_id`, `scheduled_slot`, and `max_gdelt_queries`.
-- Reads optional `SERPAPI_KEY` and `NEWSAPI_KEY` from GitHub Secrets when those providers are enabled.
+- Reads optional `SERPAPI_KEY`, `BRAVE_SEARCH_API_KEY`, and `NEWSAPI_KEY` from GitHub Secrets for the weekly search slot.
 
 The `Build Observable Dashboard` workflow builds `observable/` into `docs/observable/` when dashboard source or latest data changes.
 
@@ -211,9 +217,8 @@ The frontend does not call RSS, GDELT, LLM providers, or search APIs directly. I
 
 ## Next Milestones
 
-1. Stabilize the 13-company RSS source set and reduce irrelevant matches.
-2. Add optional search API fallback using API keys, with strict quotas and graceful skip behavior.
+1. Tune the quality gate with reviewed false-positive and false-negative samples.
+2. Add first-party company newsroom feeds and regional space-industry sources.
 3. Keep GDELT paused unless used in low-frequency manual or partial slots.
-4. Improve frontend presentation and category navigation for the 13-company monitor.
-5. Validate and connect the LLM daily-report layer to production scheduling and the frontend.
-6. Add report exports after the LLM output contract is stable.
+4. Add topic clustering so repeated coverage becomes one event with multiple sources.
+5. Measure source coverage and missing-company rates in the diagnostics panel.

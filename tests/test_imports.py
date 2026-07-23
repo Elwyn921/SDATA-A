@@ -113,20 +113,24 @@ def test_provider_config_contracts_load_from_sources_yaml():
     provider_ids = {provider.id for provider in providers}
 
     assert provider_ids >= {
+        "brave_news_provider",
         "official_site_provider",
         "gdelt_provider",
         "rss_provider",
         "serpapi_provider",
         "newsapi_provider",
+        "spaceflight_news_provider",
     }
     assert [provider.priority for provider in providers] == sorted(
         provider.priority for provider in providers
     )
-    assert [provider.id for provider in providers[:5]] == [
+    assert [provider.id for provider in providers[:7]] == [
         "rss_provider",
         "official_site_provider",
+        "spaceflight_news_provider",
         "gdelt_provider",
         "serpapi_provider",
+        "brave_news_provider",
         "newsapi_provider",
     ]
 
@@ -140,6 +144,12 @@ def test_provider_config_contracts_load_from_sources_yaml():
     newsapi = next(provider for provider in providers if provider.id == "newsapi_provider")
     assert serpapi.type is SourceType.SERPAPI
     assert newsapi.type is SourceType.NEWSAPI
+    assert next(
+        provider for provider in providers if provider.id == "spaceflight_news_provider"
+    ).type is SourceType.SEARCH_API
+    assert next(
+        provider for provider in providers if provider.id == "brave_news_provider"
+    ).type is SourceType.SEARCH_API
 
 
 def test_default_pipeline_dry_run_does_not_touch_network_or_llm(monkeypatch, tmp_path):
@@ -262,9 +272,13 @@ def test_github_actions_refreshes_pages_data_on_safe_schedule():
     assert "--publish-dir docs/data/news" in workflow
     assert 'elif [ "${{ github.event.schedule }}" = "0 */6 * * *" ]; then' in workflow
     assert "EXTRA_ARGS+=(--provider-id rss_provider)" in workflow
+    assert "EXTRA_ARGS+=(--provider-id spaceflight_news_provider)" in workflow
+    assert 'cron: "30 2 * * 1"' in workflow
+    assert "EXTRA_ARGS+=(--provider-id brave_news_provider)" in workflow
     assert "--provider-id gdelt_provider" not in workflow
     assert "--max-gdelt-queries 1" not in workflow
     assert "SERPAPI_KEY: ${{ secrets.SERPAPI_KEY }}" in workflow
+    assert "BRAVE_SEARCH_API_KEY: ${{ secrets.BRAVE_SEARCH_API_KEY }}" in workflow
     assert "NEWSAPI_KEY: ${{ secrets.NEWSAPI_KEY }}" in workflow
     assert "git add data/news docs/data/news" in workflow
     assert "git push" in workflow

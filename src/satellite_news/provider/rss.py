@@ -53,7 +53,14 @@ class RSSProvider:
         warnings: list[str] = []
         timeout = provider_timeout(provider)
         limit = provider_limit(provider)
+        adapter_options = provider.options.get("adapter_options", {})
+        per_feed_limit = int(
+            adapter_options.get("max_items_per_feed", 8)
+            if isinstance(adapter_options, dict)
+            else 8
+        )
         for feed_url in feeds:
+            feed_article_count = 0
             try:
                 text = self.client.get_text(feed_url, timeout_seconds=timeout)
                 for row in parse_feed_items(text):
@@ -75,16 +82,26 @@ class RSSProvider:
                         published_at=parse_datetime(row.get("published_at")),
                         raw_text=summary or None,
                         raw_payload={**row, "feed_url": feed_url},
-                        metadata={"feed_url": feed_url},
+                        metadata={
+                            "feed_url": feed_url,
+                            "source_name": row.get("publisher_name") or feed_hostname(feed_url),
+                            "publisher_url": row.get("publisher_url"),
+                        },
                     )
                     if article:
                         articles.append(article)
-                    if len(articles) >= limit:
+                        feed_article_count += 1
+                    if feed_article_count >= per_feed_limit:
                         break
             except Exception as exc:  # pragma: no cover - exercised via provider tests
                 warnings.append(f"{feed_url}: {type(exc).__name__}: {exc}")
-            if len(articles) >= limit:
-                break
+
+        unique_articles = dedupe_articles(articles)
+        unique_articles.sort(
+            key=lambda article: article.published_at.isoformat() if article.published_at else "",
+            reverse=True,
+        )
+        unique_articles = unique_articles[:limit]
 
         if warnings and not articles:
             return failed_result(
@@ -96,12 +113,19 @@ class RSSProvider:
         return success_or_no_results_result(
             provider=provider,
             company=company,
-            articles=dedupe_articles(articles),
+            articles=unique_articles,
             warnings=tuple(warnings),
             metadata={
                 "feed_count": len(feeds),
                 "feeds": feeds,
                 "warning_count": len(warnings),
+                "per_feed_limit": per_feed_limit,
+                "source_count": len(
+                    {
+                        str(article.metadata.get("source_name") or article.metadata.get("feed_url"))
+                        for article in unique_articles
+                    }
+                ),
                 "cache_status": "not_implemented",
                 "stale_fallback_available": False,
             },
@@ -155,6 +179,8 @@ def parse_feed_items(text: str) -> list[dict[str, str]]:
                 "url": child_text(item, "link") or child_text(item, "guid"),
                 "summary": child_text(item, "description"),
                 "published_at": child_text(item, "pubDate"),
+                "publisher_name": child_text(item, "source"),
+                "publisher_url": child_attribute(item, "source", "url"),
             }
         )
     for entry in root.findall(".//{http://www.w3.org/2005/Atom}entry"):
@@ -172,6 +198,11 @@ def parse_feed_items(text: str) -> list[dict[str, str]]:
 def child_text(element: ET.Element, tag: str) -> str:
     child = element.find(tag)
     return "" if child is None or child.text is None else child.text.strip()
+
+
+def child_attribute(element: ET.Element, tag: str, attribute: str) -> str:
+    child = element.find(tag)
+    return "" if child is None else str(child.attrib.get(attribute) or "").strip()
 
 
 def namespaced_text(element: ET.Element, tag: str) -> str:
@@ -196,3 +227,9 @@ def dedupe_articles(articles):
         seen.add(article.url)
         unique.append(article)
     return unique
+
+
+def feed_hostname(url: str) -> str:
+    from urllib.parse import urlsplit
+
+    return (urlsplit(url).hostname or "RSS").removeprefix("www.")

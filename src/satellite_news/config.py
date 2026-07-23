@@ -36,6 +36,9 @@ def load_companies(path: Path = Path("config/companies.yaml")) -> tuple[Company,
     for row in rows:
         if not isinstance(row, dict):
             continue
+        keyword_rows = row.get("keywords", {})
+        if not isinstance(keyword_rows, dict):
+            keyword_rows = {}
         companies.append(
             Company(
                 id=str(row["id"]),
@@ -43,6 +46,15 @@ def load_companies(path: Path = Path("config/companies.yaml")) -> tuple[Company,
                 aliases=tuple(str(value) for value in row.get("aliases", ())),
                 country_or_region=str(row.get("country_or_region", "")),
                 sector_tags=tuple(str(value) for value in row.get("sector_tags", ())),
+                primary_programs=tuple(str(value) for value in row.get("primary_programs", ())),
+                keywords_include=tuple(
+                    str(value)
+                    for key in ("include", "zh_include")
+                    for value in keyword_rows.get(key, ())
+                ),
+                keywords_exclude=tuple(
+                    str(value) for value in keyword_rows.get("exclude_when_unqualified", ())
+                ),
                 enabled=bool(row.get("enabled", defaults.get("enabled", True))),
                 priority=row.get("priority", defaults.get("priority", "medium")),
             )

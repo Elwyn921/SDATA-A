@@ -568,6 +568,7 @@ providers:
       real_fetch_enabled: true
       timeout_seconds: 20
       max_items: 50
+      max_items_per_feed: 8
     fallback_feeds:
       - https://www.bing.com/news/search?q=%E5%9E%A3%E4%BF%A1%E5%8D%AB%E6%98%9F+%E5%8D%83%E5%B8%86%E6%98%9F%E5%BA%A7&format=rss
       - https://www.bing.com/news/search?q=%E4%B8%AD%E5%9B%BD%E6%98%9F%E7%BD%91+%E5%9B%BD%E7%BD%91%E6%98%9F%E5%BA%A7&format=rss
@@ -589,6 +590,27 @@ providers:
       - https://www.fierce-network.com/rss/xml
       - https://news.google.com/rss/search?q=%E5%9E%A3%E4%BF%A1%E5%8D%AB%E6%98%9F%20%E5%8D%83%E5%B8%86%E6%98%9F%E5%BA%A7&hl=zh-CN&gl=CN&ceid=CN:zh-Hans
       - https://news.google.com/rss/search?q=%E4%B8%AD%E5%9B%BD%E6%98%9F%E7%BD%91%20%E5%9B%BD%E7%BD%91%E6%98%9F%E5%BA%A7&hl=zh-CN&gl=CN&ceid=CN:zh-Hans
+  - id: spaceflight_news_provider
+    type: search_api
+    rank_group: wire_and_aggregator
+    description: Spaceflight News API; keyless aggregation across specialist space publications.
+    enabled: true
+    priority: 25
+    fallback:
+      mode: disabled
+      to: []
+      max_depth: 0
+    interface: satellite_news.provider.NewsProvider
+    output_schema:
+      raw: RawArticle
+      normalized: NewsItem
+    adapter_status: active_adapter
+    query_template: '"{company_name}"'
+    adapter_options:
+      real_fetch_enabled: true
+      endpoint: https://api.spaceflightnewsapi.net/v4/articles/
+      timeout_seconds: 20
+      max_items: 15
   - id: official_site_provider
     type: official_site
     rank_group: official
@@ -1033,6 +1055,29 @@ providers:
     adapter_options:
       real_fetch_enabled: true
       api_key_env: SERPAPI_KEY
+      timeout_seconds: 20
+      max_items: 10
+  - id: brave_news_provider
+    type: search_api
+    rank_group: search
+    description: Brave News Search provider backed by an independent web index.
+    enabled: true
+    priority: 45
+    fallback:
+      mode: on_empty_or_error
+      to:
+        - newsapi_provider
+      max_depth: 1
+    interface: satellite_news.provider.NewsProvider
+    output_schema:
+      raw: RawArticle
+      normalized: NewsItem
+    adapter_status: active_adapter
+    query_template: '"{company_name}" satellite OR launch OR constellation'
+    adapter_options:
+      real_fetch_enabled: true
+      endpoint: https://api.search.brave.com/res/v1/news/search
+      api_key_env: BRAVE_SEARCH_API_KEY
       timeout_seconds: 20
       max_items: 10
   - id: newsapi_provider

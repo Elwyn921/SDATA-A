@@ -44,13 +44,23 @@ const industryGroups = [
   },
 ];
 
-const providerOrder = ["rss", "official_site", "gdelt", "serpapi", "newsapi"];
+const providerOrder = [
+  "rss",
+  "official_site",
+  "spaceflight_news",
+  "gdelt",
+  "serpapi",
+  "brave_news",
+  "newsapi",
+];
 const providerLabels = {
   rss: "RSS",
   official_site: "官网页面",
   official_page: "官网页面",
   gdelt: "GDELT",
+  spaceflight_news: "航天聚合",
   serpapi: "SerpApi",
+  brave_news: "Brave",
   newsapi: "NewsAPI",
   media: "媒体",
   search: "搜索",
@@ -112,6 +122,7 @@ const elements = {
   providerTable: document.querySelector("#provider-table"),
   errorAccordion: document.querySelector("#error-accordion"),
   diagnosticsSummary: document.querySelector("#diagnostics-summary"),
+  qualityGateSummary: document.querySelector("#quality-gate-summary"),
 };
 
 bootstrap();
@@ -193,7 +204,32 @@ function render() {
   renderIndustrySections(items);
   renderNewsList(filteredItems);
   renderProviderTable(companies, state.result.fetch_statuses ?? []);
+  renderQualityGate();
   renderDiagnostics(state.result.fetch_statuses ?? [], items);
+}
+
+function renderQualityGate() {
+  const gate = state.result.metadata?.quality_gate;
+  if (!gate) {
+    elements.qualityGateSummary.innerHTML = `
+      <div><span>质量门控</span><strong>等待下一轮数据刷新</strong></div>
+    `;
+    return;
+  }
+  const rows = [
+    ["候选", gate.input_count ?? 0],
+    ["已发布", gate.published_count ?? 0],
+    ["观察区", gate.watchlist_count ?? 0],
+    ["已拒绝", gate.rejected_count ?? 0],
+    ["重复项", gate.duplicate_count ?? 0],
+  ];
+  elements.qualityGateSummary.replaceChildren(
+    ...rows.map(([label, value]) => {
+      const row = document.createElement("div");
+      row.innerHTML = `<span>${escapeHtml(label)}</span><strong>${escapeHtml(value)}</strong>`;
+      return row;
+    }),
+  );
 }
 
 function renderTimeTabs() {
@@ -521,7 +557,9 @@ function renderProviderTable(companies, statuses) {
       const cells = providerOrder
         .map((provider) => {
           const status = statuses.find(
-            (row) => row.company_id === company.id && normalizeProvider(row.provider_type ?? row.source_type) === provider,
+            (row) => row.company_id === company.id && normalizeProvider(
+              row.provider_id ?? row.provider_type ?? row.source_type,
+            ) === provider,
           );
           const label = status?.provider_status ?? status?.final_status ?? status?.status ?? "missing";
           return `<td>${statusBadge(label)}</td>`;
@@ -551,8 +589,10 @@ function renderDiagnostics(statuses, items) {
   const archivedCount = items.filter(
     (item) => daysBetween(dateKey(item.published_at), latestDate) >= 7,
   ).length;
+  const gate = state.result.metadata?.quality_gate;
+  const filteredCount = (gate?.watchlist_count ?? 0) + (gate?.rejected_count ?? 0);
   elements.diagnosticsSummary.textContent =
-    `${issueRows.length} 个数据源异常，${archivedCount} 条归档新闻`;
+    `${issueRows.length} 个数据源异常，${archivedCount} 条归档新闻，门控过滤 ${filteredCount} 条`;
 
   if (!issueRows.length) {
     elements.errorAccordion.innerHTML = `
@@ -564,7 +604,9 @@ function renderDiagnostics(statuses, items) {
   elements.errorAccordion.innerHTML = issueRows
     .map((status) => {
       const label = status.provider_status ?? status.final_status ?? status.status ?? "unknown";
-      const provider = normalizeProvider(status.provider_type ?? status.source_type);
+      const provider = normalizeProvider(
+        status.provider_id ?? status.provider_type ?? status.source_type,
+      );
       return `
         <details class="diagnostic-item">
           <summary>
@@ -653,7 +695,17 @@ function itemProvider(item) {
 
 function normalizeProvider(value) {
   const provider = String(value ?? "unknown");
-  return provider === "official_page" ? "official_site" : provider;
+  const aliases = {
+    rss_provider: "rss",
+    official_site_provider: "official_site",
+    official_page: "official_site",
+    spaceflight_news_provider: "spaceflight_news",
+    gdelt_provider: "gdelt",
+    serpapi_provider: "serpapi",
+    brave_news_provider: "brave_news",
+    newsapi_provider: "newsapi",
+  };
+  return aliases[provider] ?? provider;
 }
 
 function providerLabel(provider) {
