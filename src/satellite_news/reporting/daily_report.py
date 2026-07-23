@@ -12,7 +12,7 @@ import urllib.error
 import urllib.request
 from collections import Counter, defaultdict
 from dataclasses import dataclass
-from datetime import datetime, timezone
+from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from typing import Any
 from uuid import uuid5, NAMESPACE_URL
@@ -28,6 +28,7 @@ OPENAI_API_KEY_ENV = "OPENAI_API_KEY"
 OPENAI_MODEL_ENV = "OPENAI_DAILY_REPORT_MODEL"
 OPENAI_BASE_URL_ENV = "OPENAI_BASE_URL"
 DEFAULT_OPENAI_MODEL = "gpt-4.1-mini"
+REPORT_TIMEZONE = timezone(timedelta(hours=8), name="Asia/Shanghai")
 INDUSTRY_CHAIN_SECTIONS = (
     ("satellite_platforms", "卫星平台与整星制造"),
     ("launch_services", "运载火箭与发射服务"),
@@ -261,13 +262,35 @@ def daily_report_json_schema() -> dict[str, Any]:
     }
 
 
+def publication_date(item: dict[str, Any]) -> str | None:
+    published_at = parse_datetime(item.get("published_at"))
+    if published_at is None:
+        return None
+    return published_at.astimezone(REPORT_TIMEZONE).date().isoformat()
+
+
 def build_prompt_input(pipeline_result: dict[str, Any], *, max_items: int = 80) -> dict[str, Any]:
-    items = pipeline_result.get("items") or []
+    all_items = pipeline_result.get("items") or []
+    source_generated_at = parse_datetime(
+        pipeline_result.get("generated_at") or pipeline_result.get("finished_at")
+    )
+    report_date = (
+        source_generated_at.astimezone(REPORT_TIMEZONE).date().isoformat()
+        if source_generated_at
+        else None
+    )
+    items = [item for item in all_items if publication_date(item) == report_date]
+    if not items:
+        available_dates = [date for item in all_items if (date := publication_date(item))]
+        report_date = max(available_dates, default=report_date or utc_now().date().isoformat())
+        items = [item for item in all_items if publication_date(item) == report_date]
     top_items = select_top_news(items, limit=max_items)
     return {
         "source_run_id": pipeline_result.get("run_id"),
         "generated_at": pipeline_result.get("generated_at") or pipeline_result.get("finished_at"),
+        "report_date": report_date,
         "total_items": len(items),
+        "all_total_items": len(all_items),
         "companies_covered": company_rows(items),
         "source_health_summary": source_health(pipeline_result.get("fetch_statuses") or []),
         "required_sections": [
@@ -381,8 +404,20 @@ def skipped_llm_payload(prompt_input: dict[str, Any]) -> dict[str, Any]:
                 "source_urls": [item["url"] for item in section_items if item.get("url")],
             }
         )
+    companies = prompt_input["companies_covered"]
+    leading_companies = "、".join(
+        company["company_name"] for company in companies[:3]
+    )
+    executive_summary = (
+        f"{prompt_input['report_date']} 共收录 {prompt_input['total_items']} 条新闻，"
+        f"覆盖 {len(companies)} 家公司。"
+    )
+    if leading_companies:
+        executive_summary += f"新闻量靠前的公司包括 {leading_companies}。"
+    if not prompt_input["total_items"]:
+        executive_summary = f"{prompt_input['report_date']} 暂无新增新闻，历史新闻已保留在归档中。"
     return {
-        "executive_summary": "",
+        "executive_summary": executive_summary,
         "industry_chain_sections": sections,
         "company_updates": [
             {
@@ -424,7 +459,7 @@ def merge_report(
     input_path: Path,
 ) -> dict[str, Any]:
     source_run_id = pipeline_result.get("run_id") or "unknown"
-    report_date = generated_at.strftime("%Y-%m-%d")
+    report_date = prompt_input["report_date"]
     report_id = f"daily-{report_date}-{str(uuid5(NAMESPACE_URL, source_run_id))[:8]}"
     selected_items = select_top_news(pipeline_result.get("items") or [], limit=40)
     citations = [citation_for_item(item, index) for index, item in enumerate(selected_items, start=1)]
@@ -434,6 +469,7 @@ def merge_report(
         "schema_version": REPORT_SCHEMA_VERSION,
         "report_id": report_id,
         "generated_at": isoformat_z(generated_at),
+        "report_date": report_date,
         "source_run_id": source_run_id,
         "source_pipeline_result_path": str(input_path),
         "generation_status": generation_status,
@@ -606,7 +642,9 @@ def build_daily_report(
         latest_dir=latest_dir,
         publish_dir=publish_dir,
         archive_root=archive_root,
-        report_date=generated_at,
+        report_date=datetime.fromisoformat(prompt_input["report_date"]).replace(
+            tzinfo=REPORT_TIMEZONE
+        ),
     )
     return report, outputs
 

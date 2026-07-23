@@ -1,0 +1,3375 @@
+{
+  "artifact_version": 1,
+  "day_count": 296,
+  "days": [
+    {
+      "company_count": 4,
+      "company_ids": [
+        "cas_space",
+        "china_satnet",
+        "minospace",
+        "spacex"
+      ],
+      "count": 5,
+      "date": "2026-07-23",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 6,
+      "company_ids": [
+        "cas_space",
+        "china_satnet",
+        "galactic_energy",
+        "minospace",
+        "spacex",
+        "yuanxin_satellite"
+      ],
+      "count": 14,
+      "date": "2026-07-22",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 3,
+      "company_ids": [
+        "blue_origin",
+        "minospace",
+        "spacex"
+      ],
+      "count": 9,
+      "date": "2026-07-21",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 3,
+      "company_ids": [
+        "cas_space",
+        "galactic_energy",
+        "spacex"
+      ],
+      "count": 7,
+      "date": "2026-07-20",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 3,
+      "company_ids": [
+        "i_space",
+        "minospace",
+        "yuanxin_satellite"
+      ],
+      "count": 3,
+      "date": "2026-07-18",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 2,
+      "company_ids": [
+        "hongqing_technology",
+        "yuanxin_satellite"
+      ],
+      "count": 2,
+      "date": "2026-07-17",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 2,
+      "company_ids": [
+        "space_pioneer",
+        "spacex"
+      ],
+      "count": 2,
+      "date": "2026-07-15",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 3,
+      "company_ids": [
+        "galaxyspace",
+        "space_pioneer",
+        "yuanxin_satellite"
+      ],
+      "count": 4,
+      "date": "2026-07-14",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 4,
+      "company_ids": [
+        "galactic_energy",
+        "space_pioneer",
+        "spacex",
+        "yuanxin_satellite"
+      ],
+      "count": 4,
+      "date": "2026-07-13",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 1,
+      "company_ids": [
+        "spacex"
+      ],
+      "count": 1,
+      "date": "2026-07-12",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 1,
+      "company_ids": [
+        "yuanxin_satellite"
+      ],
+      "count": 2,
+      "date": "2026-07-10",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 1,
+      "company_ids": [
+        "spacex"
+      ],
+      "count": 1,
+      "date": "2026-07-09",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 2,
+      "company_ids": [
+        "spacex",
+        "yuanxin_satellite"
+      ],
+      "count": 3,
+      "date": "2026-07-08",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 1,
+      "company_ids": [
+        "yuanxin_satellite"
+      ],
+      "count": 2,
+      "date": "2026-07-06",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 1,
+      "company_ids": [
+        "yuanxin_satellite"
+      ],
+      "count": 1,
+      "date": "2026-07-05",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 1,
+      "company_ids": [
+        "yuanxin_satellite"
+      ],
+      "count": 1,
+      "date": "2026-07-04",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 3,
+      "company_ids": [
+        "galactic_energy",
+        "hongqing_technology",
+        "landspace"
+      ],
+      "count": 5,
+      "date": "2026-07-03",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 1,
+      "company_ids": [
+        "hongqing_technology"
+      ],
+      "count": 1,
+      "date": "2026-07-02",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 2,
+      "company_ids": [
+        "i_space",
+        "landspace"
+      ],
+      "count": 3,
+      "date": "2026-07-01",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 3,
+      "company_ids": [
+        "cas_space",
+        "landspace",
+        "spacex"
+      ],
+      "count": 5,
+      "date": "2026-06-30",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 2,
+      "company_ids": [
+        "landspace",
+        "yuanxin_satellite"
+      ],
+      "count": 5,
+      "date": "2026-06-29",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 1,
+      "company_ids": [
+        "spacex"
+      ],
+      "count": 1,
+      "date": "2026-06-28",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 2,
+      "company_ids": [
+        "i_space",
+        "yuanxin_satellite"
+      ],
+      "count": 3,
+      "date": "2026-06-26",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 2,
+      "company_ids": [
+        "spacex",
+        "yuanxin_satellite"
+      ],
+      "count": 5,
+      "date": "2026-06-24",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 1,
+      "company_ids": [
+        "yuanxin_satellite"
+      ],
+      "count": 2,
+      "date": "2026-06-23",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 3,
+      "company_ids": [
+        "galaxyspace",
+        "landspace",
+        "yuanxin_satellite"
+      ],
+      "count": 8,
+      "date": "2026-06-22",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 1,
+      "company_ids": [
+        "landspace"
+      ],
+      "count": 1,
+      "date": "2026-06-21",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 1,
+      "company_ids": [
+        "spacex"
+      ],
+      "count": 1,
+      "date": "2026-06-20",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 1,
+      "company_ids": [
+        "china_satnet"
+      ],
+      "count": 1,
+      "date": "2026-06-19",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 3,
+      "company_ids": [
+        "cas_space",
+        "galactic_energy",
+        "minospace"
+      ],
+      "count": 13,
+      "date": "2026-06-15",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 2,
+      "company_ids": [
+        "cas_space",
+        "china_satnet"
+      ],
+      "count": 2,
+      "date": "2026-06-14",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 1,
+      "company_ids": [
+        "yushi_space"
+      ],
+      "count": 2,
+      "date": "2026-06-12",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 1,
+      "company_ids": [
+        "landspace"
+      ],
+      "count": 1,
+      "date": "2026-06-11",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 2,
+      "company_ids": [
+        "galaxyspace",
+        "landspace"
+      ],
+      "count": 3,
+      "date": "2026-06-10",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 2,
+      "company_ids": [
+        "landspace",
+        "minospace"
+      ],
+      "count": 10,
+      "date": "2026-06-09",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 1,
+      "company_ids": [
+        "yuanxin_satellite"
+      ],
+      "count": 3,
+      "date": "2026-06-05",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 1,
+      "company_ids": [
+        "yuanxin_satellite"
+      ],
+      "count": 1,
+      "date": "2026-06-02",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 1,
+      "company_ids": [
+        "hongqing_technology"
+      ],
+      "count": 1,
+      "date": "2026-06-01",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 1,
+      "company_ids": [
+        "hongqing_technology"
+      ],
+      "count": 1,
+      "date": "2026-05-31",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 1,
+      "company_ids": [
+        "minospace"
+      ],
+      "count": 1,
+      "date": "2026-05-28",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 1,
+      "company_ids": [
+        "galactic_energy"
+      ],
+      "count": 1,
+      "date": "2026-05-26",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 1,
+      "company_ids": [
+        "i_space"
+      ],
+      "count": 1,
+      "date": "2026-05-25",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 1,
+      "company_ids": [
+        "spacex"
+      ],
+      "count": 1,
+      "date": "2026-05-24",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 1,
+      "company_ids": [
+        "yuanxin_satellite"
+      ],
+      "count": 1,
+      "date": "2026-05-23",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 1,
+      "company_ids": [
+        "minospace"
+      ],
+      "count": 3,
+      "date": "2026-05-20",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 4,
+      "company_ids": [
+        "galaxyspace",
+        "spacex",
+        "yuanxin_satellite",
+        "yushi_space"
+      ],
+      "count": 5,
+      "date": "2026-05-19",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 4,
+      "company_ids": [
+        "galaxyspace",
+        "i_space",
+        "yuanxin_satellite",
+        "yushi_space"
+      ],
+      "count": 7,
+      "date": "2026-05-18",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 1,
+      "company_ids": [
+        "i_space"
+      ],
+      "count": 1,
+      "date": "2026-05-17",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 1,
+      "company_ids": [
+        "cas_space"
+      ],
+      "count": 1,
+      "date": "2026-05-16",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 2,
+      "company_ids": [
+        "cas_space",
+        "minospace"
+      ],
+      "count": 8,
+      "date": "2026-05-15",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 1,
+      "company_ids": [
+        "landspace"
+      ],
+      "count": 6,
+      "date": "2026-05-14",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 3,
+      "company_ids": [
+        "landspace",
+        "minospace",
+        "yushi_space"
+      ],
+      "count": 5,
+      "date": "2026-05-13",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 1,
+      "company_ids": [
+        "minospace"
+      ],
+      "count": 1,
+      "date": "2026-05-12",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 3,
+      "company_ids": [
+        "blue_origin",
+        "galaxyspace",
+        "i_space"
+      ],
+      "count": 4,
+      "date": "2026-05-08",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 1,
+      "company_ids": [
+        "spacex"
+      ],
+      "count": 1,
+      "date": "2026-05-05",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 1,
+      "company_ids": [
+        "spacex"
+      ],
+      "count": 1,
+      "date": "2026-05-01",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 1,
+      "company_ids": [
+        "cas_space"
+      ],
+      "count": 3,
+      "date": "2026-04-28",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 1,
+      "company_ids": [
+        "galaxyspace"
+      ],
+      "count": 1,
+      "date": "2026-04-27",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 1,
+      "company_ids": [
+        "spacex"
+      ],
+      "count": 1,
+      "date": "2026-04-26",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 1,
+      "company_ids": [
+        "galaxyspace"
+      ],
+      "count": 2,
+      "date": "2026-04-24",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 1,
+      "company_ids": [
+        "blue_origin"
+      ],
+      "count": 1,
+      "date": "2026-04-23",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 1,
+      "company_ids": [
+        "blue_origin"
+      ],
+      "count": 1,
+      "date": "2026-04-21",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 2,
+      "company_ids": [
+        "blue_origin",
+        "galaxyspace"
+      ],
+      "count": 2,
+      "date": "2026-04-19",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 3,
+      "company_ids": [
+        "cas_space",
+        "galaxyspace",
+        "spacex"
+      ],
+      "count": 6,
+      "date": "2026-04-14",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 1,
+      "company_ids": [
+        "i_space"
+      ],
+      "count": 1,
+      "date": "2026-04-13",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 2,
+      "company_ids": [
+        "i_space",
+        "space_pioneer"
+      ],
+      "count": 2,
+      "date": "2026-04-12",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 1,
+      "company_ids": [
+        "hongqing_technology"
+      ],
+      "count": 1,
+      "date": "2026-04-11",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 1,
+      "company_ids": [
+        "yuanxin_satellite"
+      ],
+      "count": 1,
+      "date": "2026-04-09",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 2,
+      "company_ids": [
+        "space_pioneer",
+        "yuanxin_satellite"
+      ],
+      "count": 3,
+      "date": "2026-04-08",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 2,
+      "company_ids": [
+        "galaxyspace",
+        "yuanxin_satellite"
+      ],
+      "count": 3,
+      "date": "2026-04-07",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 1,
+      "company_ids": [
+        "space_pioneer"
+      ],
+      "count": 2,
+      "date": "2026-04-03",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 2,
+      "company_ids": [
+        "cas_space",
+        "galaxyspace"
+      ],
+      "count": 3,
+      "date": "2026-04-02",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 2,
+      "company_ids": [
+        "cas_space",
+        "galaxyspace"
+      ],
+      "count": 3,
+      "date": "2026-04-01",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 4,
+      "company_ids": [
+        "blue_origin",
+        "cas_space",
+        "galaxyspace",
+        "landspace"
+      ],
+      "count": 10,
+      "date": "2026-03-31",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 3,
+      "company_ids": [
+        "blue_origin",
+        "cas_space",
+        "galaxyspace"
+      ],
+      "count": 11,
+      "date": "2026-03-30",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 1,
+      "company_ids": [
+        "i_space"
+      ],
+      "count": 1,
+      "date": "2026-03-29",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 1,
+      "company_ids": [
+        "galactic_energy"
+      ],
+      "count": 1,
+      "date": "2026-03-28",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 1,
+      "company_ids": [
+        "galaxyspace"
+      ],
+      "count": 1,
+      "date": "2026-03-25",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 1,
+      "company_ids": [
+        "yushi_space"
+      ],
+      "count": 2,
+      "date": "2026-03-24",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 2,
+      "company_ids": [
+        "blue_origin",
+        "i_space"
+      ],
+      "count": 3,
+      "date": "2026-03-23",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 3,
+      "company_ids": [
+        "blue_origin",
+        "i_space",
+        "spacex"
+      ],
+      "count": 3,
+      "date": "2026-03-22",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 1,
+      "company_ids": [
+        "galaxyspace"
+      ],
+      "count": 1,
+      "date": "2026-03-21",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 2,
+      "company_ids": [
+        "blue_origin",
+        "spacex"
+      ],
+      "count": 3,
+      "date": "2026-03-20",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 1,
+      "company_ids": [
+        "spacex"
+      ],
+      "count": 1,
+      "date": "2026-03-17",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 3,
+      "company_ids": [
+        "galaxyspace",
+        "landspace",
+        "spacex"
+      ],
+      "count": 3,
+      "date": "2026-03-16",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 1,
+      "company_ids": [
+        "spacex"
+      ],
+      "count": 1,
+      "date": "2026-03-13",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 1,
+      "company_ids": [
+        "i_space"
+      ],
+      "count": 3,
+      "date": "2026-03-12",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 3,
+      "company_ids": [
+        "galaxyspace",
+        "landspace",
+        "yuanxin_satellite"
+      ],
+      "count": 3,
+      "date": "2026-03-11",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 1,
+      "company_ids": [
+        "galaxyspace"
+      ],
+      "count": 1,
+      "date": "2026-03-05",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 1,
+      "company_ids": [
+        "spacex"
+      ],
+      "count": 1,
+      "date": "2026-03-03",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 1,
+      "company_ids": [
+        "hongqing_technology"
+      ],
+      "count": 1,
+      "date": "2026-03-02",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 1,
+      "company_ids": [
+        "spacex"
+      ],
+      "count": 1,
+      "date": "2026-03-01",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 2,
+      "company_ids": [
+        "china_satnet",
+        "landspace"
+      ],
+      "count": 2,
+      "date": "2026-02-26",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 4,
+      "company_ids": [
+        "china_satnet",
+        "landspace",
+        "minospace",
+        "spacex"
+      ],
+      "count": 4,
+      "date": "2026-02-25",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 1,
+      "company_ids": [
+        "spacex"
+      ],
+      "count": 1,
+      "date": "2026-02-24",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 1,
+      "company_ids": [
+        "blue_origin"
+      ],
+      "count": 1,
+      "date": "2026-02-22",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 1,
+      "company_ids": [
+        "spacex"
+      ],
+      "count": 1,
+      "date": "2026-02-20",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 1,
+      "company_ids": [
+        "spacex"
+      ],
+      "count": 1,
+      "date": "2026-02-16",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 1,
+      "company_ids": [
+        "hongqing_technology"
+      ],
+      "count": 1,
+      "date": "2026-02-14",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 1,
+      "company_ids": [
+        "i_space"
+      ],
+      "count": 4,
+      "date": "2026-02-13",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 1,
+      "company_ids": [
+        "i_space"
+      ],
+      "count": 2,
+      "date": "2026-02-12",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 1,
+      "company_ids": [
+        "i_space"
+      ],
+      "count": 1,
+      "date": "2026-02-10",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 1,
+      "company_ids": [
+        "spacex"
+      ],
+      "count": 1,
+      "date": "2026-02-07",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 2,
+      "company_ids": [
+        "hongqing_technology",
+        "minospace"
+      ],
+      "count": 6,
+      "date": "2026-02-05",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 3,
+      "company_ids": [
+        "hongqing_technology",
+        "i_space",
+        "yushi_space"
+      ],
+      "count": 4,
+      "date": "2026-02-04",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 2,
+      "company_ids": [
+        "hongqing_technology",
+        "landspace"
+      ],
+      "count": 2,
+      "date": "2026-02-03",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 1,
+      "company_ids": [
+        "spacex"
+      ],
+      "count": 1,
+      "date": "2026-02-02",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 2,
+      "company_ids": [
+        "i_space",
+        "spacex"
+      ],
+      "count": 2,
+      "date": "2026-01-29",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 1,
+      "company_ids": [
+        "space_pioneer"
+      ],
+      "count": 1,
+      "date": "2026-01-28",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 4,
+      "company_ids": [
+        "blue_origin",
+        "galaxyspace",
+        "i_space",
+        "yushi_space"
+      ],
+      "count": 5,
+      "date": "2026-01-27",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 3,
+      "company_ids": [
+        "galaxyspace",
+        "hongqing_technology",
+        "yushi_space"
+      ],
+      "count": 4,
+      "date": "2026-01-26",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 1,
+      "company_ids": [
+        "landspace"
+      ],
+      "count": 1,
+      "date": "2026-01-25",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 2,
+      "company_ids": [
+        "blue_origin",
+        "i_space"
+      ],
+      "count": 2,
+      "date": "2026-01-23",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 1,
+      "company_ids": [
+        "blue_origin"
+      ],
+      "count": 3,
+      "date": "2026-01-22",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 2,
+      "company_ids": [
+        "galaxyspace",
+        "yuanxin_satellite"
+      ],
+      "count": 2,
+      "date": "2026-01-21",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 2,
+      "company_ids": [
+        "china_satnet",
+        "i_space"
+      ],
+      "count": 3,
+      "date": "2026-01-20",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 2,
+      "company_ids": [
+        "china_satnet",
+        "i_space"
+      ],
+      "count": 2,
+      "date": "2026-01-19",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 2,
+      "company_ids": [
+        "cas_space",
+        "galactic_energy"
+      ],
+      "count": 2,
+      "date": "2026-01-17",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 2,
+      "company_ids": [
+        "galactic_energy",
+        "galaxyspace"
+      ],
+      "count": 3,
+      "date": "2026-01-16",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 1,
+      "company_ids": [
+        "minospace"
+      ],
+      "count": 1,
+      "date": "2026-01-07",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 2,
+      "company_ids": [
+        "galactic_energy",
+        "galaxyspace"
+      ],
+      "count": 3,
+      "date": "2025-12-31",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 1,
+      "company_ids": [
+        "hongqing_technology"
+      ],
+      "count": 1,
+      "date": "2025-12-26",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 2,
+      "company_ids": [
+        "blue_origin",
+        "landspace"
+      ],
+      "count": 2,
+      "date": "2025-12-24",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 1,
+      "company_ids": [
+        "i_space"
+      ],
+      "count": 1,
+      "date": "2025-12-20",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 1,
+      "company_ids": [
+        "landspace"
+      ],
+      "count": 1,
+      "date": "2025-12-18",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 1,
+      "company_ids": [
+        "yushi_space"
+      ],
+      "count": 1,
+      "date": "2025-12-14",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 2,
+      "company_ids": [
+        "i_space",
+        "yushi_space"
+      ],
+      "count": 3,
+      "date": "2025-12-12",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 1,
+      "company_ids": [
+        "cas_space"
+      ],
+      "count": 1,
+      "date": "2025-12-11",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 1,
+      "company_ids": [
+        "landspace"
+      ],
+      "count": 1,
+      "date": "2025-12-08",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 1,
+      "company_ids": [
+        "landspace"
+      ],
+      "count": 1,
+      "date": "2025-12-06",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 2,
+      "company_ids": [
+        "landspace",
+        "yuanxin_satellite"
+      ],
+      "count": 4,
+      "date": "2025-12-05",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 1,
+      "company_ids": [
+        "landspace"
+      ],
+      "count": 2,
+      "date": "2025-12-04",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 1,
+      "company_ids": [
+        "landspace"
+      ],
+      "count": 3,
+      "date": "2025-12-03",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 1,
+      "company_ids": [
+        "landspace"
+      ],
+      "count": 1,
+      "date": "2025-12-01",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 1,
+      "company_ids": [
+        "landspace"
+      ],
+      "count": 1,
+      "date": "2025-11-30",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 2,
+      "company_ids": [
+        "galaxyspace",
+        "landspace"
+      ],
+      "count": 2,
+      "date": "2025-11-29",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 1,
+      "company_ids": [
+        "landspace"
+      ],
+      "count": 1,
+      "date": "2025-11-28",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 1,
+      "company_ids": [
+        "blue_origin"
+      ],
+      "count": 1,
+      "date": "2025-11-26",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 1,
+      "company_ids": [
+        "i_space"
+      ],
+      "count": 1,
+      "date": "2025-11-18",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 2,
+      "company_ids": [
+        "blue_origin",
+        "galactic_energy"
+      ],
+      "count": 2,
+      "date": "2025-11-17",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 1,
+      "company_ids": [
+        "blue_origin"
+      ],
+      "count": 1,
+      "date": "2025-11-14",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 3,
+      "company_ids": [
+        "blue_origin",
+        "galaxyspace",
+        "i_space"
+      ],
+      "count": 4,
+      "date": "2025-11-13",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 2,
+      "company_ids": [
+        "blue_origin",
+        "i_space"
+      ],
+      "count": 2,
+      "date": "2025-11-12",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 1,
+      "company_ids": [
+        "blue_origin"
+      ],
+      "count": 1,
+      "date": "2025-11-11",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 2,
+      "company_ids": [
+        "blue_origin",
+        "galactic_energy"
+      ],
+      "count": 2,
+      "date": "2025-11-10",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 1,
+      "company_ids": [
+        "i_space"
+      ],
+      "count": 1,
+      "date": "2025-11-06",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 1,
+      "company_ids": [
+        "blue_origin"
+      ],
+      "count": 2,
+      "date": "2025-10-31",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 1,
+      "company_ids": [
+        "galactic_energy"
+      ],
+      "count": 1,
+      "date": "2025-10-30",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 1,
+      "company_ids": [
+        "galactic_energy"
+      ],
+      "count": 1,
+      "date": "2025-10-24",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 1,
+      "company_ids": [
+        "galactic_energy"
+      ],
+      "count": 1,
+      "date": "2025-10-23",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 1,
+      "company_ids": [
+        "galactic_energy"
+      ],
+      "count": 1,
+      "date": "2025-10-22",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 1,
+      "company_ids": [
+        "yuanxin_satellite"
+      ],
+      "count": 1,
+      "date": "2025-10-17",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 1,
+      "company_ids": [
+        "i_space"
+      ],
+      "count": 2,
+      "date": "2025-10-10",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 2,
+      "company_ids": [
+        "i_space",
+        "space_pioneer"
+      ],
+      "count": 4,
+      "date": "2025-10-09",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 1,
+      "company_ids": [
+        "blue_origin"
+      ],
+      "count": 1,
+      "date": "2025-10-08",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 1,
+      "company_ids": [
+        "blue_origin"
+      ],
+      "count": 1,
+      "date": "2025-09-26",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 1,
+      "company_ids": [
+        "minospace"
+      ],
+      "count": 1,
+      "date": "2025-09-24",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 1,
+      "company_ids": [
+        "i_space"
+      ],
+      "count": 2,
+      "date": "2025-09-19",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 2,
+      "company_ids": [
+        "galaxyspace",
+        "yushi_space"
+      ],
+      "count": 2,
+      "date": "2025-09-18",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 1,
+      "company_ids": [
+        "minospace"
+      ],
+      "count": 1,
+      "date": "2025-09-17",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 1,
+      "company_ids": [
+        "minospace"
+      ],
+      "count": 2,
+      "date": "2025-09-16",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 1,
+      "company_ids": [
+        "space_pioneer"
+      ],
+      "count": 1,
+      "date": "2025-09-15",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 1,
+      "company_ids": [
+        "blue_origin"
+      ],
+      "count": 1,
+      "date": "2025-09-12",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 1,
+      "company_ids": [
+        "galactic_energy"
+      ],
+      "count": 3,
+      "date": "2025-09-11",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 1,
+      "company_ids": [
+        "china_satnet"
+      ],
+      "count": 1,
+      "date": "2025-09-09",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 1,
+      "company_ids": [
+        "china_satnet"
+      ],
+      "count": 1,
+      "date": "2025-09-01",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 1,
+      "company_ids": [
+        "i_space"
+      ],
+      "count": 1,
+      "date": "2025-08-29",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 1,
+      "company_ids": [
+        "minospace"
+      ],
+      "count": 1,
+      "date": "2025-08-27",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 1,
+      "company_ids": [
+        "blue_origin"
+      ],
+      "count": 1,
+      "date": "2025-08-25",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 1,
+      "company_ids": [
+        "i_space"
+      ],
+      "count": 2,
+      "date": "2025-08-24",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 1,
+      "company_ids": [
+        "china_satnet"
+      ],
+      "count": 1,
+      "date": "2025-08-20",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 1,
+      "company_ids": [
+        "china_satnet"
+      ],
+      "count": 1,
+      "date": "2025-08-19",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 3,
+      "company_ids": [
+        "china_satnet",
+        "hongqing_technology",
+        "minospace"
+      ],
+      "count": 3,
+      "date": "2025-08-17",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 1,
+      "company_ids": [
+        "blue_origin"
+      ],
+      "count": 1,
+      "date": "2025-08-15",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 1,
+      "company_ids": [
+        "blue_origin"
+      ],
+      "count": 1,
+      "date": "2025-08-14",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 1,
+      "company_ids": [
+        "space_pioneer"
+      ],
+      "count": 1,
+      "date": "2025-08-08",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 1,
+      "company_ids": [
+        "galaxyspace"
+      ],
+      "count": 1,
+      "date": "2025-08-05",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 1,
+      "company_ids": [
+        "galaxyspace"
+      ],
+      "count": 1,
+      "date": "2025-08-04",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 1,
+      "company_ids": [
+        "galactic_energy"
+      ],
+      "count": 1,
+      "date": "2025-07-30",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 1,
+      "company_ids": [
+        "i_space"
+      ],
+      "count": 1,
+      "date": "2025-07-29",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 1,
+      "company_ids": [
+        "blue_origin"
+      ],
+      "count": 2,
+      "date": "2025-07-25",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 1,
+      "company_ids": [
+        "minospace"
+      ],
+      "count": 1,
+      "date": "2025-07-24",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 1,
+      "company_ids": [
+        "blue_origin"
+      ],
+      "count": 1,
+      "date": "2025-07-19",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 1,
+      "company_ids": [
+        "china_satnet"
+      ],
+      "count": 2,
+      "date": "2025-06-26",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 1,
+      "company_ids": [
+        "china_satnet"
+      ],
+      "count": 2,
+      "date": "2025-06-25",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 1,
+      "company_ids": [
+        "yushi_space"
+      ],
+      "count": 1,
+      "date": "2025-06-22",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 2,
+      "company_ids": [
+        "china_satnet",
+        "galaxyspace"
+      ],
+      "count": 4,
+      "date": "2025-06-18",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 1,
+      "company_ids": [
+        "china_satnet"
+      ],
+      "count": 1,
+      "date": "2025-06-16",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 1,
+      "company_ids": [
+        "blue_origin"
+      ],
+      "count": 1,
+      "date": "2025-06-10",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 1,
+      "company_ids": [
+        "yushi_space"
+      ],
+      "count": 1,
+      "date": "2025-06-09",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 1,
+      "company_ids": [
+        "yushi_space"
+      ],
+      "count": 1,
+      "date": "2025-06-04",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 1,
+      "company_ids": [
+        "yushi_space"
+      ],
+      "count": 1,
+      "date": "2025-05-30",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 1,
+      "company_ids": [
+        "yushi_space"
+      ],
+      "count": 1,
+      "date": "2025-05-29",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 1,
+      "company_ids": [
+        "galaxyspace"
+      ],
+      "count": 1,
+      "date": "2025-05-28",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 1,
+      "company_ids": [
+        "minospace"
+      ],
+      "count": 1,
+      "date": "2025-05-26",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 1,
+      "company_ids": [
+        "galactic_energy"
+      ],
+      "count": 1,
+      "date": "2025-05-16",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 2,
+      "company_ids": [
+        "galactic_energy",
+        "yuanxin_satellite"
+      ],
+      "count": 2,
+      "date": "2025-05-07",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 1,
+      "company_ids": [
+        "yuanxin_satellite"
+      ],
+      "count": 1,
+      "date": "2025-04-25",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 1,
+      "company_ids": [
+        "galaxyspace"
+      ],
+      "count": 1,
+      "date": "2025-04-24",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 1,
+      "company_ids": [
+        "space_pioneer"
+      ],
+      "count": 1,
+      "date": "2025-04-15",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 1,
+      "company_ids": [
+        "galactic_energy"
+      ],
+      "count": 1,
+      "date": "2025-03-23",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 1,
+      "company_ids": [
+        "yushi_space"
+      ],
+      "count": 1,
+      "date": "2025-03-21",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 1,
+      "company_ids": [
+        "galactic_energy"
+      ],
+      "count": 1,
+      "date": "2025-03-19",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 1,
+      "company_ids": [
+        "yushi_space"
+      ],
+      "count": 1,
+      "date": "2025-03-03",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 1,
+      "company_ids": [
+        "galaxyspace"
+      ],
+      "count": 1,
+      "date": "2025-02-14",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 2,
+      "company_ids": [
+        "china_satnet",
+        "hongqing_technology"
+      ],
+      "count": 3,
+      "date": "2025-02-11",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 1,
+      "company_ids": [
+        "galaxyspace"
+      ],
+      "count": 1,
+      "date": "2025-02-10",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 1,
+      "company_ids": [
+        "hongqing_technology"
+      ],
+      "count": 1,
+      "date": "2025-02-06",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 1,
+      "company_ids": [
+        "hongqing_technology"
+      ],
+      "count": 1,
+      "date": "2025-01-24",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 1,
+      "company_ids": [
+        "galactic_energy"
+      ],
+      "count": 1,
+      "date": "2025-01-21",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 1,
+      "company_ids": [
+        "galactic_energy"
+      ],
+      "count": 1,
+      "date": "2025-01-20",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 1,
+      "company_ids": [
+        "blue_origin"
+      ],
+      "count": 4,
+      "date": "2025-01-16",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 1,
+      "company_ids": [
+        "blue_origin"
+      ],
+      "count": 1,
+      "date": "2025-01-12",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 1,
+      "company_ids": [
+        "blue_origin"
+      ],
+      "count": 2,
+      "date": "2025-01-09",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 1,
+      "company_ids": [
+        "blue_origin"
+      ],
+      "count": 1,
+      "date": "2025-01-07",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 2,
+      "company_ids": [
+        "blue_origin",
+        "yuanxin_satellite"
+      ],
+      "count": 2,
+      "date": "2025-01-03",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 1,
+      "company_ids": [
+        "galactic_energy"
+      ],
+      "count": 1,
+      "date": "2024-12-31",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 1,
+      "company_ids": [
+        "hongqing_technology"
+      ],
+      "count": 1,
+      "date": "2024-12-27",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 1,
+      "company_ids": [
+        "hongqing_technology"
+      ],
+      "count": 1,
+      "date": "2024-12-26",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 1,
+      "company_ids": [
+        "galactic_energy"
+      ],
+      "count": 1,
+      "date": "2024-12-19",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 1,
+      "company_ids": [
+        "china_satnet"
+      ],
+      "count": 2,
+      "date": "2024-12-17",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 1,
+      "company_ids": [
+        "space_pioneer"
+      ],
+      "count": 1,
+      "date": "2024-12-13",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 1,
+      "company_ids": [
+        "blue_origin"
+      ],
+      "count": 1,
+      "date": "2024-12-09",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 1,
+      "company_ids": [
+        "blue_origin"
+      ],
+      "count": 1,
+      "date": "2024-11-14",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 1,
+      "company_ids": [
+        "galactic_energy"
+      ],
+      "count": 1,
+      "date": "2024-11-11",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 1,
+      "company_ids": [
+        "china_satnet"
+      ],
+      "count": 1,
+      "date": "2024-10-24",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 1,
+      "company_ids": [
+        "china_satnet"
+      ],
+      "count": 2,
+      "date": "2024-10-16",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 1,
+      "company_ids": [
+        "china_satnet"
+      ],
+      "count": 1,
+      "date": "2024-10-15",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 1,
+      "company_ids": [
+        "china_satnet"
+      ],
+      "count": 1,
+      "date": "2024-09-26",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 1,
+      "company_ids": [
+        "hongqing_technology"
+      ],
+      "count": 1,
+      "date": "2024-08-23",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 1,
+      "company_ids": [
+        "hongqing_technology"
+      ],
+      "count": 1,
+      "date": "2024-08-05",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 1,
+      "company_ids": [
+        "yuanxin_satellite"
+      ],
+      "count": 2,
+      "date": "2024-07-09",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 1,
+      "company_ids": [
+        "minospace"
+      ],
+      "count": 1,
+      "date": "2024-07-03",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 1,
+      "company_ids": [
+        "space_pioneer"
+      ],
+      "count": 1,
+      "date": "2024-07-02",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 1,
+      "company_ids": [
+        "space_pioneer"
+      ],
+      "count": 5,
+      "date": "2024-07-01",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 1,
+      "company_ids": [
+        "space_pioneer"
+      ],
+      "count": 3,
+      "date": "2024-06-30",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 1,
+      "company_ids": [
+        "minospace"
+      ],
+      "count": 1,
+      "date": "2024-06-24",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 1,
+      "company_ids": [
+        "minospace"
+      ],
+      "count": 1,
+      "date": "2024-06-13",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 1,
+      "company_ids": [
+        "space_pioneer"
+      ],
+      "count": 1,
+      "date": "2024-06-07",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 1,
+      "company_ids": [
+        "china_satnet"
+      ],
+      "count": 1,
+      "date": "2024-05-31",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 1,
+      "company_ids": [
+        "hongqing_technology"
+      ],
+      "count": 2,
+      "date": "2024-05-30",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 1,
+      "company_ids": [
+        "hongqing_technology"
+      ],
+      "count": 1,
+      "date": "2024-05-27",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 1,
+      "company_ids": [
+        "galaxyspace"
+      ],
+      "count": 1,
+      "date": "2024-05-22",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 1,
+      "company_ids": [
+        "galaxyspace"
+      ],
+      "count": 4,
+      "date": "2024-05-21",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 1,
+      "company_ids": [
+        "galaxyspace"
+      ],
+      "count": 1,
+      "date": "2024-05-20",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 1,
+      "company_ids": [
+        "minospace"
+      ],
+      "count": 1,
+      "date": "2024-05-15",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 1,
+      "company_ids": [
+        "space_pioneer"
+      ],
+      "count": 1,
+      "date": "2024-04-20",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 1,
+      "company_ids": [
+        "space_pioneer"
+      ],
+      "count": 1,
+      "date": "2024-04-02",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 1,
+      "company_ids": [
+        "galaxyspace"
+      ],
+      "count": 1,
+      "date": "2024-03-28",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 1,
+      "company_ids": [
+        "space_pioneer"
+      ],
+      "count": 1,
+      "date": "2024-03-25",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 1,
+      "company_ids": [
+        "space_pioneer"
+      ],
+      "count": 1,
+      "date": "2024-03-22",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 1,
+      "company_ids": [
+        "space_pioneer"
+      ],
+      "count": 1,
+      "date": "2024-03-21",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 1,
+      "company_ids": [
+        "space_pioneer"
+      ],
+      "count": 1,
+      "date": "2024-03-06",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 1,
+      "company_ids": [
+        "galactic_energy"
+      ],
+      "count": 1,
+      "date": "2024-02-29",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 1,
+      "company_ids": [
+        "space_pioneer"
+      ],
+      "count": 1,
+      "date": "2024-02-26",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 1,
+      "company_ids": [
+        "hongqing_technology"
+      ],
+      "count": 1,
+      "date": "2023-12-26",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 1,
+      "company_ids": [
+        "galactic_energy"
+      ],
+      "count": 1,
+      "date": "2023-12-21",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 1,
+      "company_ids": [
+        "galactic_energy"
+      ],
+      "count": 4,
+      "date": "2023-12-18",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 1,
+      "company_ids": [
+        "galactic_energy"
+      ],
+      "count": 2,
+      "date": "2023-12-17",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 1,
+      "company_ids": [
+        "hongqing_technology"
+      ],
+      "count": 3,
+      "date": "2023-12-09",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 1,
+      "company_ids": [
+        "space_pioneer"
+      ],
+      "count": 3,
+      "date": "2023-11-08",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 2,
+      "company_ids": [
+        "i_space",
+        "space_pioneer"
+      ],
+      "count": 4,
+      "date": "2023-11-03",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 1,
+      "company_ids": [
+        "space_pioneer"
+      ],
+      "count": 1,
+      "date": "2023-10-26",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 1,
+      "company_ids": [
+        "galactic_energy"
+      ],
+      "count": 1,
+      "date": "2023-10-11",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 1,
+      "company_ids": [
+        "china_satnet"
+      ],
+      "count": 1,
+      "date": "2023-09-16",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 1,
+      "company_ids": [
+        "china_satnet"
+      ],
+      "count": 1,
+      "date": "2023-08-29",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 1,
+      "company_ids": [
+        "space_pioneer"
+      ],
+      "count": 1,
+      "date": "2023-07-24",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 1,
+      "company_ids": [
+        "space_pioneer"
+      ],
+      "count": 2,
+      "date": "2023-07-14",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 1,
+      "company_ids": [
+        "space_pioneer"
+      ],
+      "count": 3,
+      "date": "2023-07-05",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 1,
+      "company_ids": [
+        "china_satnet"
+      ],
+      "count": 1,
+      "date": "2023-04-10",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 1,
+      "company_ids": [
+        "space_pioneer"
+      ],
+      "count": 3,
+      "date": "2023-04-03",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 1,
+      "company_ids": [
+        "space_pioneer"
+      ],
+      "count": 3,
+      "date": "2023-04-02",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 1,
+      "company_ids": [
+        "space_pioneer"
+      ],
+      "count": 1,
+      "date": "2023-01-18",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 1,
+      "company_ids": [
+        "china_satnet"
+      ],
+      "count": 1,
+      "date": "2023-01-01",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 1,
+      "company_ids": [
+        "china_satnet"
+      ],
+      "count": 1,
+      "date": "2022-08-18",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 1,
+      "company_ids": [
+        "galaxyspace"
+      ],
+      "count": 1,
+      "date": "2022-07-29",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 1,
+      "company_ids": [
+        "hongqing_technology"
+      ],
+      "count": 1,
+      "date": "2022-07-01",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 1,
+      "company_ids": [
+        "galactic_energy"
+      ],
+      "count": 1,
+      "date": "2022-06-30",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 1,
+      "company_ids": [
+        "minospace"
+      ],
+      "count": 1,
+      "date": "2022-02-26",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 1,
+      "company_ids": [
+        "galactic_energy"
+      ],
+      "count": 1,
+      "date": "2022-01-24",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 1,
+      "company_ids": [
+        "galaxyspace"
+      ],
+      "count": 1,
+      "date": "2022-01-18",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 1,
+      "company_ids": [
+        "galactic_energy"
+      ],
+      "count": 4,
+      "date": "2021-12-07",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 1,
+      "company_ids": [
+        "minospace"
+      ],
+      "count": 1,
+      "date": "2021-09-13",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 1,
+      "company_ids": [
+        "minospace"
+      ],
+      "count": 3,
+      "date": "2021-08-19",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 1,
+      "company_ids": [
+        "china_satnet"
+      ],
+      "count": 1,
+      "date": "2021-07-23",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 1,
+      "company_ids": [
+        "china_satnet"
+      ],
+      "count": 1,
+      "date": "2021-04-29",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 1,
+      "company_ids": [
+        "galactic_energy"
+      ],
+      "count": 1,
+      "date": "2021-02-20",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 1,
+      "company_ids": [
+        "galactic_energy"
+      ],
+      "count": 1,
+      "date": "2020-11-07",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 1,
+      "company_ids": [
+        "galactic_energy"
+      ],
+      "count": 1,
+      "date": "2020-11-03",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 1,
+      "company_ids": [
+        "minospace"
+      ],
+      "count": 1,
+      "date": "2020-04-24",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 1,
+      "company_ids": [
+        "minospace"
+      ],
+      "count": 1,
+      "date": "2020-04-23",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 1,
+      "company_ids": [
+        "minospace"
+      ],
+      "count": 1,
+      "date": "2020-03-05",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 1,
+      "company_ids": [
+        "minospace"
+      ],
+      "count": 1,
+      "date": "2019-10-10",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 1,
+      "company_ids": [
+        "minospace"
+      ],
+      "count": 1,
+      "date": "2019-09-18",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 1,
+      "company_ids": [
+        "hongqing_technology"
+      ],
+      "count": 1,
+      "date": "2019-03-18",
+      "source_types": [
+        "rss"
+      ]
+    },
+    {
+      "company_count": 1,
+      "company_ids": [
+        "minospace"
+      ],
+      "count": 1,
+      "date": "2019-01-15",
+      "source_types": [
+        "rss"
+      ]
+    }
+  ],
+  "generated_at": "2026-07-23T01:22:08.029732Z",
+  "run_id": "b57cfc94-1137-4371-bb8b-12ab2273cee3",
+  "schema_version": "daily_news_index.v1",
+  "timezone": "Asia/Shanghai",
+  "total_items": 594
+}

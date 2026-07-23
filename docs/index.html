@@ -36,16 +36,57 @@
             <p>按整星制造、发射服务、卫星互联网与国外大厂组织新闻动态，优先呈现公司覆盖与最新情报。</p>
           </section>
 
+          <section class="briefing-panel" id="daily-briefing" aria-labelledby="briefing-title">
+            <div class="briefing-copy">
+              <div class="section-kicker">每日简报</div>
+              <div class="briefing-title-row">
+                <h2 id="briefing-title">正在生成今日摘要</h2>
+                <span class="briefing-status" id="briefing-status">加载中</span>
+              </div>
+              <p class="briefing-summary" id="briefing-summary">正在读取最新新闻并整理当日重点。</p>
+              <div class="briefing-stats" id="briefing-stats"></div>
+            </div>
+            <div class="briefing-highlights">
+              <span>重点动态</span>
+              <ol id="briefing-highlights"></ol>
+            </div>
+          </section>
+
+          <section class="volume-panel" aria-labelledby="volume-title">
+            <div class="section-heading volume-heading">
+              <div>
+                <div class="section-kicker">新闻数量指数</div>
+                <h2 id="volume-title">每日新闻量</h2>
+                <p id="volume-caption">按发布时间统计，点击柱形查看当天归档</p>
+              </div>
+              <div class="volume-summary" id="volume-summary"></div>
+            </div>
+            <div class="volume-chart-wrap">
+              <div class="volume-chart" id="volume-chart" role="list" aria-label="每日新闻数量"></div>
+            </div>
+            <div class="archive-navigator">
+              <div>
+                <strong>历史归档</strong>
+                <span id="archive-summary">正在读取归档记录</span>
+              </div>
+              <div class="archive-days" id="archive-days"></div>
+            </div>
+          </section>
+
           <section class="industry-sections" id="industry-sections"></section>
 
           <section class="news-panel">
             <div class="section-heading">
               <div>
-                <h2>最新新闻</h2>
+                <h2 id="news-panel-title">新闻时间线</h2>
                 <p id="visible-count">已显示 0 条</p>
               </div>
             </div>
             <div class="filter-bar">
+              <div>
+                <span>时间范围</span>
+                <div class="category-tabs" id="time-tabs"></div>
+              </div>
               <div>
                 <span>产业链分类</span>
                 <div class="category-tabs" id="category-tabs"></div>

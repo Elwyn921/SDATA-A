@@ -21,6 +21,7 @@ on:
         default: ""
   schedule:
     - cron: "0 */6 * * *"
+    - cron: "15 1 * * *"
 
 permissions:
   contents: write
@@ -53,6 +54,7 @@ jobs:
         run: python -m pytest
 
       - name: Refresh latest news data
+        if: github.event.schedule != '15 1 * * *'
         env:
           SERPAPI_KEY: ${{ secrets.SERPAPI_KEY }}
           NEWSAPI_KEY: ${{ secrets.NEWSAPI_KEY }}
@@ -88,11 +90,24 @@ jobs:
             --publish-dir docs/data/news \
             "${EXTRA_ARGS[@]}"
 
+      - name: Generate daily briefing
+        if: github.event_name == 'workflow_dispatch' || github.event.schedule == '15 1 * * *'
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          OPENAI_DAILY_REPORT_MODEL: ${{ vars.OPENAI_DAILY_REPORT_MODEL }}
+        run: |
+          PYTHONPATH=src python3 -m satellite_news.reporting.daily_report \
+            --input docs/data/news/latest/pipeline_result.json \
+            --latest-dir data/reports/latest \
+            --publish-dir docs/data/reports/latest \
+            --archive-root data/reports/archive
+
       - name: Commit refreshed data
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add data/news docs/data/news
+          git add data/reports docs/data/reports
           if git diff --cached --quiet; then
             echo "No data changes to commit."
           else

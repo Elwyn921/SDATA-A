@@ -3,7 +3,19 @@ import { samplePipelineResult } from "./mock-pipeline-result.js";
 export const DATA_ENDPOINTS = {
   latestPipelineResult: "./data/news/latest/pipeline_result.json",
   archiveIndex: "./data/news/archive/index.json",
+  archiveCatalog: "./data/news/archive/catalog.json",
+  dailyReport: "./data/reports/latest/daily_report.json",
 };
+
+export async function loadDashboardData(options = {}) {
+  const result = await loadPipelineResult(options);
+  const [archiveIndex, archiveCatalog, dailyReport] = await Promise.all([
+    loadOptionalJson(options.archiveUrl ?? DATA_ENDPOINTS.archiveIndex),
+    loadOptionalJson(options.catalogUrl ?? DATA_ENDPOINTS.archiveCatalog),
+    loadOptionalJson(options.reportUrl ?? DATA_ENDPOINTS.dailyReport),
+  ]);
+  return { result, archiveIndex, archiveCatalog, dailyReport };
+}
 
 export async function loadPipelineResult(options = {}) {
   const mode = options.mode ?? "auto";
@@ -43,6 +55,21 @@ async function loadJsonPipelineResult(url) {
   return withDataSource(normalizePipelineResult(await response.json()), "json");
 }
 
+async function loadOptionalJson(url) {
+  try {
+    const resolvedUrl = resolveDataUrl(url);
+    if (resolvedUrl.protocol === "file:") return await loadLocalJsonValue(resolvedUrl);
+    const response = await fetch(resolvedUrl.href, {
+      cache: "no-store",
+      headers: { accept: "application/json" },
+    });
+    if (!response.ok) return null;
+    return await response.json();
+  } catch {
+    return null;
+  }
+}
+
 function normalizePipelineResult(result) {
   return {
     schema_version: result?.schema_version,
@@ -78,7 +105,12 @@ function resolveDataUrl(url) {
 }
 
 async function loadLocalJson(fileUrl) {
-  const [{ readFile }] = await Promise.all([import("node:fs/promises")]);
+  const value = await loadLocalJsonValue(fileUrl);
+  return normalizePipelineResult(value);
+}
+
+async function loadLocalJsonValue(fileUrl) {
+  const { readFile } = await import("node:fs/promises");
   const text = await readFile(fileUrl, "utf8");
-  return normalizePipelineResult(JSON.parse(text));
+  return JSON.parse(text);
 }

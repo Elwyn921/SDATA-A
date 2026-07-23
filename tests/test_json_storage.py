@@ -66,13 +66,17 @@ def test_json_file_storage_writes_latest_and_archive_outputs(tmp_path):
     latest_result = read_json(latest_dir / "pipeline_result.json")
     latest_items = read_json(latest_dir / "items.json")
     latest_statuses = read_json(latest_dir / "fetch_statuses.json")
+    daily_index = read_json(latest_dir / "daily_index.json")
     latest_manifest = read_json(latest_dir / "manifest.json")
     archive_run_dir = (
         tmp_path / "data" / "news" / "archive" / "runs" / "2026" / "06" / "15" / "json-run"
     )
     archive_index = read_json(tmp_path / "data" / "news" / "archive" / "index.json")
+    archive_catalog = read_json(tmp_path / "data" / "news" / "archive" / "catalog.json")
     published_result = read_json(publish_dir / "latest" / "pipeline_result.json")
     published_archive_index = read_json(publish_dir / "archive" / "index.json")
+    published_archive_catalog = read_json(publish_dir / "archive" / "catalog.json")
+    published_daily_index = read_json(publish_dir / "latest" / "daily_index.json")
 
     assert latest_result["schema_version"] == "satellite_news.v1"
     assert latest_result["run_id"] == "json-run"
@@ -81,12 +85,27 @@ def test_json_file_storage_writes_latest_and_archive_outputs(tmp_path):
     assert latest_items["count"] == 1
     assert latest_statuses["fetch_statuses"][0]["error_message"] is None
     assert latest_statuses["fetch_statuses"][0]["metadata"] == {}
+    assert daily_index["timezone"] == "Asia/Shanghai"
+    assert daily_index["days"] == [
+        {
+            "company_count": 1,
+            "company_ids": ["spacex"],
+            "count": 1,
+            "date": "2026-06-15",
+            "source_types": ["gdelt"],
+        }
+    ]
     assert latest_manifest["archive_path"] == archive_run_dir.as_posix()
     assert read_json(archive_run_dir / "pipeline_result.json")["run_id"] == "json-run"
     assert archive_index["latest_run_id"] == "json-run"
+    assert archive_catalog["item_count"] == 1
+    assert archive_catalog["date_count"] == 1
+    assert archive_catalog["items"][0]["archive_last_seen_run_id"] == "json-run"
     assert archive_index["runs"][0]["companies"] == ["spacex"]
     assert published_result["run_id"] == "json-run"
     assert published_archive_index["latest_run_id"] == "json-run"
+    assert published_archive_catalog == archive_catalog
+    assert published_daily_index == daily_index
 
 
 def test_json_file_storage_defaults_to_docs_publish_dir_for_repo_latest(tmp_path, monkeypatch):
@@ -389,6 +408,49 @@ def test_json_file_storage_keeps_empty_partial_company_from_previous_latest(tmp_
     assert latest_result["fetch_statuses"][0]["reason"] == "HTTP 429"
     assert published_result["items"] == latest_result["items"]
     assert archive_result["items"] == []
+
+
+def test_json_file_storage_catalog_retains_items_that_roll_out_of_latest(tmp_path):
+    latest_dir = tmp_path / "data" / "news" / "latest"
+    publish_dir = tmp_path / "docs" / "data" / "news"
+    storage = JsonFileStorage(latest_dir=latest_dir, publish_dir=publish_dir)
+    first_context = PipelineContext(
+        run_id="catalog-first",
+        started_at=datetime(2026, 6, 15, 8, 30, tzinfo=timezone.utc),
+        output_dir=str(latest_dir),
+        dry_run=False,
+    )
+    second_context = PipelineContext(
+        run_id="catalog-second",
+        started_at=datetime(2026, 6, 16, 8, 30, tzinfo=timezone.utc),
+        output_dir=str(latest_dir),
+        dry_run=False,
+    )
+    storage.save_result(
+        result=PipelineResult(
+            run_id="catalog-first",
+            items=(make_item("old-feed-item", "spacex", "SpaceX"),),
+        ),
+        context=first_context,
+    )
+    storage.save_result(
+        result=PipelineResult(
+            run_id="catalog-second",
+            items=(make_item("new-feed-item", "spacex", "SpaceX"),),
+        ),
+        context=second_context,
+    )
+
+    latest = read_json(latest_dir / "pipeline_result.json")
+    catalog = read_json(tmp_path / "data" / "news" / "archive" / "catalog.json")
+    published = read_json(publish_dir / "archive" / "catalog.json")
+
+    assert [item["id"] for item in latest["items"]] == ["new-feed-item"]
+    assert {item["id"] for item in catalog["items"]} == {
+        "old-feed-item",
+        "new-feed-item",
+    }
+    assert published == catalog
 
 
 def make_item(item_id, company_id, company_name):

@@ -5,7 +5,7 @@ from __future__ import annotations
 import json
 import shutil
 from dataclasses import asdict, is_dataclass
-from datetime import datetime, timezone
+from datetime import datetime, timedelta, timezone
 from enum import Enum
 from pathlib import Path
 from typing import Any
@@ -71,6 +71,7 @@ class JsonFileStorage:
         files = {
             "pipeline_result": "pipeline_result.json",
             "items": "items.json",
+            "daily_index": "daily_index.json",
             "summaries": "summaries.json",
             "fetch_statuses": "fetch_statuses.json",
             "run_metadata": "run_metadata.json",
@@ -90,6 +91,11 @@ class JsonFileStorage:
         items = items_payload_from_pipeline_result(
             pipeline_result=latest_pipeline_result,
             context=context,
+            generated_at=finished_at,
+        )
+        daily_index = daily_news_index_payload(
+            items=latest_pipeline_result.get("items", []),
+            run_id=context.run_id,
             generated_at=finished_at,
         )
         summaries = summaries_payload(result=result, context=context, generated_at=finished_at)
@@ -117,6 +123,7 @@ class JsonFileStorage:
         payloads = {
             files["pipeline_result"]: latest_pipeline_result,
             files["items"]: items,
+            files["daily_index"]: daily_index,
             files["summaries"]: summaries,
             files["fetch_statuses"]: fetch_statuses,
             files["run_metadata"]: latest_run_metadata,
@@ -127,6 +134,11 @@ class JsonFileStorage:
         archive_payloads = {
             files["pipeline_result"]: pipeline_result,
             files["items"]: items_payload(result=result, context=context, generated_at=finished_at),
+            files["daily_index"]: daily_news_index_payload(
+                items=pipeline_result.get("items", []),
+                run_id=context.run_id,
+                generated_at=finished_at,
+            ),
             files["summaries"]: summaries,
             files["fetch_statuses"]: fetch_statuses,
             files["run_metadata"]: run_metadata,
@@ -140,6 +152,12 @@ class JsonFileStorage:
             context=context,
             archive_run_dir=archive_run_dir,
             finished_at=finished_at,
+        )
+        update_news_catalog(
+            archive_dir=self.archive_dir,
+            items=pipeline_result.get("items", []),
+            run_id=context.run_id,
+            generated_at=finished_at,
         )
         if self.publish_dir:
             sync_publish_outputs(
@@ -226,6 +244,62 @@ def items_payload_from_pipeline_result(
         "generated_at": isoformat(generated_at),
         "count": len(items),
         "items": items,
+    }
+
+
+def daily_news_index_payload(
+    *,
+    items: list[dict[str, Any]],
+    run_id: str,
+    generated_at: datetime,
+) -> dict[str, Any]:
+    """Build a publication-date index without conflating fetch freshness with news age."""
+    china_timezone = timezone(timedelta(hours=8))
+    days: dict[str, dict[str, Any]] = {}
+    for item in items:
+        if not isinstance(item, dict):
+            continue
+        published_at = parse_datetime_string(item.get("published_at"))
+        if published_at is None:
+            continue
+        date = published_at.astimezone(china_timezone).date().isoformat()
+        row = days.setdefault(
+            date,
+            {
+                "date": date,
+                "count": 0,
+                "company_ids": set(),
+                "source_types": set(),
+            },
+        )
+        row["count"] += 1
+        if item.get("company_id"):
+            row["company_ids"].add(str(item["company_id"]))
+        source = item.get("source") if isinstance(item.get("source"), dict) else {}
+        if source.get("source_type"):
+            row["source_types"].add(str(source["source_type"]))
+
+    daily_rows = []
+    for date in sorted(days, reverse=True):
+        row = days[date]
+        daily_rows.append(
+            {
+                "date": date,
+                "count": row["count"],
+                "company_count": len(row["company_ids"]),
+                "company_ids": sorted(row["company_ids"]),
+                "source_types": sorted(row["source_types"]),
+            }
+        )
+    return {
+        "schema_version": "daily_news_index.v1",
+        "artifact_version": ARTIFACT_VERSION,
+        "run_id": run_id,
+        "generated_at": isoformat(generated_at),
+        "timezone": "Asia/Shanghai",
+        "total_items": sum(row["count"] for row in daily_rows),
+        "day_count": len(daily_rows),
+        "days": daily_rows,
     }
 
 
@@ -653,6 +727,96 @@ def update_archive_index(
     write_json(index_path, index)
 
 
+def update_news_catalog(
+    *,
+    archive_dir: Path,
+    items: list[dict[str, Any]],
+    run_id: str,
+    generated_at: datetime,
+) -> None:
+    """Maintain a de-duplicated, frontend-readable catalog across rolling fetches."""
+    catalog_path = archive_dir / "catalog.json"
+    existing = read_json_if_exists(catalog_path) or {}
+    rows: dict[str, dict[str, Any]] = {}
+    for item in existing.get("items", []):
+        if isinstance(item, dict):
+            rows[archive_item_key(item)] = compact_archive_item(item)
+
+    generated_at_text = isoformat(generated_at)
+    for item in items:
+        if not isinstance(item, dict):
+            continue
+        key = archive_item_key(item)
+        previous = rows.get(key, {})
+        archived = compact_archive_item(item)
+        archived["archive_first_seen_at"] = previous.get(
+            "archive_first_seen_at", generated_at_text
+        )
+        archived["archive_last_seen_at"] = generated_at_text
+        archived["archive_last_seen_run_id"] = run_id
+        rows[key] = archived
+
+    archived_items = sorted(
+        rows.values(),
+        key=lambda item: (
+            str(item.get("published_at", "")),
+            str(item.get("company_id", "")),
+            str(item.get("id", "")),
+        ),
+        reverse=True,
+    )
+    dates = {
+        published.astimezone(timezone(timedelta(hours=8))).date().isoformat()
+        for item in archived_items
+        if (published := parse_datetime_string(item.get("published_at"))) is not None
+    }
+    write_json(
+        catalog_path,
+        {
+            "schema_version": "news_archive_catalog.v1",
+            "artifact_version": ARTIFACT_VERSION,
+            "generated_at": generated_at_text,
+            "latest_run_id": run_id,
+            "item_count": len(archived_items),
+            "date_count": len(dates),
+            "items": archived_items,
+        },
+    )
+
+
+def archive_item_key(item: dict[str, Any]) -> str:
+    company_id = str(item.get("company_id") or "unknown")
+    identity = item.get("id") or item.get("url") or item.get("title") or "unknown"
+    return f"{company_id}:{identity}"
+
+
+def compact_archive_item(item: dict[str, Any]) -> dict[str, Any]:
+    """Keep the durable browser catalog small and free of fetch-state fields."""
+    source = item.get("source") if isinstance(item.get("source"), dict) else {}
+    compact_source = {
+        key: source[key]
+        for key in ("source_id", "source_type", "source_name", "rank_group", "url")
+        if source.get(key) is not None
+    }
+    compact = {
+        key: item[key]
+        for key in (
+            "id",
+            "company_id",
+            "company_name",
+            "title",
+            "url",
+            "published_at",
+            "archive_first_seen_at",
+            "archive_last_seen_at",
+            "archive_last_seen_run_id",
+        )
+        if item.get(key) is not None
+    }
+    compact["source"] = compact_source
+    return compact
+
+
 def archive_index_entry(
     *,
     result: PipelineResult,
@@ -705,6 +869,9 @@ def sync_publish_outputs(
     archive_index = archive_dir / "index.json"
     if archive_index.exists():
         shutil.copy2(archive_index, publish_archive / "index.json")
+    archive_catalog = archive_dir / "catalog.json"
+    if archive_catalog.exists():
+        shutil.copy2(archive_catalog, publish_archive / "catalog.json")
 
 
 def company_rollups(

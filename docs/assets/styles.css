@@ -139,6 +139,8 @@ body {
 }
 
 .industry-section,
+.briefing-panel,
+.volume-panel,
 .news-panel,
 .diagnostics-panel {
   border: 1px solid var(--surface-line);
@@ -146,6 +148,262 @@ body {
   background: rgba(255, 255, 255, 0.84);
   box-shadow: var(--shadow);
   overflow: hidden;
+}
+
+.section-kicker {
+  color: var(--blue);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.briefing-panel {
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(320px, 0.65fr);
+  margin-bottom: 14px;
+  background: linear-gradient(135deg, #f9fbff 0%, #fff 52%, #f6fbf8 100%);
+}
+
+.briefing-copy,
+.briefing-highlights {
+  padding: 20px;
+}
+
+.briefing-highlights {
+  border-left: 1px solid var(--surface-line);
+  background: rgba(248, 250, 252, 0.7);
+}
+
+.briefing-title-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 5px;
+}
+
+.briefing-title-row h2 {
+  margin: 0;
+  font-size: 21px;
+  font-weight: 800;
+}
+
+.briefing-status {
+  border-radius: 999px;
+  padding: 4px 8px;
+  font-size: 11px;
+  font-weight: 760;
+}
+
+.briefing-status.is-ai {
+  background: #e9f7ef;
+  color: var(--green);
+}
+
+.briefing-status.is-rules {
+  background: #eef5ff;
+  color: var(--blue);
+}
+
+.briefing-summary {
+  max-width: 780px;
+  margin: 12px 0 16px;
+  color: #344054;
+  font-size: 14px;
+  line-height: 1.75;
+}
+
+.briefing-stats {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.briefing-stats div {
+  border: 1px solid #e7ebf2;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.72);
+  padding: 9px 10px;
+}
+
+.briefing-stats span,
+.briefing-highlights > span,
+.volume-summary span,
+.archive-navigator span {
+  display: block;
+  color: var(--ink-soft);
+  font-size: 11px;
+  font-weight: 720;
+}
+
+.briefing-stats strong {
+  display: block;
+  margin-top: 3px;
+  overflow: hidden;
+  font-size: 14px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.briefing-highlights ol {
+  display: grid;
+  gap: 9px;
+  margin: 10px 0 0;
+  padding-left: 20px;
+}
+
+.briefing-highlights li {
+  color: var(--ink-soft);
+  font-size: 12px;
+}
+
+.briefing-highlights a {
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  color: var(--ink);
+  font-weight: 650;
+  line-height: 1.5;
+  text-decoration: none;
+}
+
+.briefing-highlights a:hover {
+  color: var(--blue);
+}
+
+.volume-panel {
+  margin-bottom: 14px;
+}
+
+.volume-heading {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.volume-summary {
+  display: flex;
+  gap: 20px;
+  text-align: right;
+}
+
+.volume-summary strong {
+  display: block;
+  margin-top: 2px;
+  font-size: 18px;
+}
+
+.volume-chart-wrap {
+  overflow-x: auto;
+  padding: 18px 18px 12px;
+}
+
+.volume-chart {
+  display: grid;
+  grid-template-columns: repeat(30, minmax(20px, 1fr));
+  gap: 4px;
+  min-width: 760px;
+  height: 174px;
+  align-items: end;
+  border-bottom: 1px solid var(--surface-line);
+}
+
+.volume-bar {
+  display: grid;
+  grid-template-rows: 20px 116px 28px;
+  height: 164px;
+  align-items: end;
+  border: 0;
+  background: transparent;
+  padding: 0;
+  color: var(--ink-soft);
+  cursor: pointer;
+}
+
+.volume-bar i {
+  display: block;
+  width: 100%;
+  height: var(--bar-height);
+  min-height: 3px;
+  border-radius: 4px 4px 0 0;
+  background: #b9d3f6;
+  transition: background 140ms ease, height 180ms ease;
+}
+
+.volume-bar:hover i,
+.volume-bar.is-selected i {
+  background: var(--blue);
+}
+
+.volume-bar.is-selected {
+  color: var(--blue);
+}
+
+.volume-value,
+.volume-date {
+  font-size: 10px;
+  font-style: normal;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.volume-value {
+  align-self: end;
+  color: var(--ink-muted);
+}
+
+.volume-date {
+  align-self: start;
+  padding-top: 6px;
+}
+
+.archive-navigator {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  border-top: 1px solid var(--surface-line);
+  background: #fbfcfe;
+  padding: 12px 18px;
+}
+
+.archive-navigator strong {
+  display: block;
+  font-size: 13px;
+}
+
+.archive-days {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 6px;
+}
+
+.archive-select {
+  width: 180px;
+  min-height: 30px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  font-size: 11px;
+}
+
+.archive-day {
+  border: 1px solid var(--surface-line);
+  border-radius: 999px;
+  background: #fff;
+  padding: 5px 8px;
+  color: var(--ink-muted);
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.archive-day:hover,
+.archive-day.active {
+  border-color: #bfd7f7;
+  background: #eaf3ff;
+  color: var(--blue);
 }
 
 .industry-section {
@@ -267,7 +525,7 @@ body {
 
 .filter-bar {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) 230px auto;
+  grid-template-columns: minmax(280px, 0.8fr) minmax(360px, 1.2fr) 210px auto;
   gap: 12px;
   align-items: end;
   padding: 13px 18px;
@@ -310,6 +568,13 @@ body {
 
 .news-list {
   display: grid;
+}
+
+.news-load-more {
+  display: flex;
+  justify-content: center;
+  padding: 14px 18px;
+  background: #fbfcfe;
 }
 
 .news-row {
@@ -376,6 +641,16 @@ body {
 .archive-badge {
   background: #f4efff;
   color: var(--purple);
+}
+
+.recent-badge {
+  background: #fff3df;
+  color: var(--amber);
+}
+
+.stale-badge {
+  background: #fee7e7;
+  color: var(--red);
 }
 
 .news-row h3 {
@@ -529,6 +804,15 @@ body {
 }
 
 @media (max-width: 1199.98px) {
+  .briefing-panel {
+    grid-template-columns: 1fr;
+  }
+
+  .briefing-highlights {
+    border-top: 1px solid var(--surface-line);
+    border-left: 0;
+  }
+
   .industry-section {
     grid-template-columns: 1fr;
   }
@@ -565,6 +849,24 @@ body {
 
   .company-grid {
     grid-template-columns: 1fr;
+  }
+
+  .briefing-stats {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .volume-heading,
+  .archive-navigator {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .volume-summary {
+    text-align: left;
+  }
+
+  .archive-days {
+    justify-content: flex-start;
   }
 
   .news-row {

@@ -1,4 +1,4 @@
-import { loadPipelineResult } from "./pipeline-data.js";
+import { loadDashboardData } from "./pipeline-data.js";
 
 const industryGroups = [
   {
@@ -77,7 +77,13 @@ industryGroups.forEach((group) => {
 const state = {
   groupId: "all",
   companyId: "all",
+  timeRange: "latest",
+  selectedDate: null,
+  visibleLimit: 120,
   result: null,
+  items: [],
+  archiveIndex: null,
+  dailyReport: null,
 };
 
 const elements = {
@@ -90,7 +96,19 @@ const elements = {
   companyFilter: document.querySelector("#company-filter"),
   resetFilters: document.querySelector("#reset-filters"),
   visibleCount: document.querySelector("#visible-count"),
+  newsPanelTitle: document.querySelector("#news-panel-title"),
   newsList: document.querySelector("#news-list"),
+  timeTabs: document.querySelector("#time-tabs"),
+  briefingTitle: document.querySelector("#briefing-title"),
+  briefingStatus: document.querySelector("#briefing-status"),
+  briefingSummary: document.querySelector("#briefing-summary"),
+  briefingStats: document.querySelector("#briefing-stats"),
+  briefingHighlights: document.querySelector("#briefing-highlights"),
+  volumeCaption: document.querySelector("#volume-caption"),
+  volumeSummary: document.querySelector("#volume-summary"),
+  volumeChart: document.querySelector("#volume-chart"),
+  archiveSummary: document.querySelector("#archive-summary"),
+  archiveDays: document.querySelector("#archive-days"),
   providerTable: document.querySelector("#provider-table"),
   errorAccordion: document.querySelector("#error-accordion"),
   diagnosticsSummary: document.querySelector("#diagnostics-summary"),
@@ -99,7 +117,12 @@ const elements = {
 bootstrap();
 
 async function bootstrap() {
-  state.result = await loadPipelineResult();
+  const dashboard = await loadDashboardData();
+  state.result = dashboard.result;
+  state.items = mergeNewsItems(state.result.items ?? [], dashboard.archiveCatalog?.items ?? []);
+  state.archiveIndex = dashboard.archiveIndex;
+  state.dailyReport = dashboard.dailyReport;
+  state.selectedDate = latestNewsDate(state.items);
   populateFilters();
   bindEvents();
   render();
@@ -111,19 +134,23 @@ function bindEvents() {
     if (state.companyId !== "all") {
       state.groupId = companyToGroup.get(state.companyId) ?? "all";
     }
+    state.visibleLimit = 120;
     render();
   });
 
   elements.resetFilters.addEventListener("click", () => {
     state.groupId = "all";
     state.companyId = "all";
+    state.timeRange = "latest";
+    state.selectedDate = latestNewsDate(state.items);
+    state.visibleLimit = 120;
     elements.companyFilter.value = "all";
     render();
   });
 }
 
 function populateFilters() {
-  const companies = companiesFromItems(state.result.items);
+  const companies = companiesFromItems(state.items);
   const knownIds = new Set();
 
   industryGroups.forEach((group) => {
@@ -146,24 +173,198 @@ function populateFilters() {
 }
 
 function render() {
-  const items = sortedItems(state.result.items ?? []);
+  const items = sortedItems(state.items);
   const companies = companiesFromItems(items);
   const coveredCompanies = companies.filter((company) => company.total > 0);
   const filteredItems = filterItems(items);
 
-  elements.dataSource.textContent = state.result.__dataSource === "json" ? "实时数据" : "示例数据";
+  elements.dataSource.textContent = state.result.__dataSource === "json" ? "生产数据快照" : "示例数据";
   elements.updatedAt.textContent = formatFullDate(
     state.result.generated_at ?? state.result.finished_at ?? state.result.started_at,
   );
   elements.totalCount.textContent = String(items.length);
   elements.companyCount.textContent = String(coveredCompanies.length);
-  elements.visibleCount.textContent = `已显示 ${filteredItems.length} 条`;
+  elements.newsPanelTitle.textContent = newsPanelTitle();
 
+  renderDailyBriefing(items);
+  renderVolumeIndex(items);
+  renderTimeTabs();
   renderCategoryTabs();
   renderIndustrySections(items);
   renderNewsList(filteredItems);
   renderProviderTable(companies, state.result.fetch_statuses ?? []);
   renderDiagnostics(state.result.fetch_statuses ?? [], items);
+}
+
+function renderTimeTabs() {
+  const tabs = [
+    { id: "latest", name: "最近一天" },
+    { id: "week", name: "近 7 天" },
+    { id: "archive", name: "历史归档" },
+    { id: "all", name: "全部" },
+  ];
+  elements.timeTabs.replaceChildren(
+    ...tabs.map((tab) => {
+      const button = document.createElement("button");
+      button.type = "button";
+      button.className = state.timeRange === tab.id && !state.selectedDate ? "active" : "";
+      if (tab.id === "latest" && state.selectedDate === latestNewsDate(state.items)) {
+        button.className = "active";
+      }
+      button.textContent = tab.name;
+      button.addEventListener("click", () => {
+        state.timeRange = tab.id;
+        state.selectedDate = tab.id === "latest" ? latestNewsDate(state.items) : null;
+        state.visibleLimit = 120;
+        render();
+      });
+      return button;
+    }),
+  );
+}
+
+function renderDailyBriefing(items) {
+  const report = state.dailyReport;
+  const reportHasSummary = Boolean(report?.executive_summary?.trim());
+  const reportIsAi = report?.generation_status === "completed";
+  const reportDate = report?.report_date ?? dateKey(report?.generated_at);
+  const latestDate = latestNewsDate(items);
+  const briefingDate = reportHasSummary && reportDate ? reportDate : latestDate;
+  const dayItems = items.filter((item) => dateKey(item.published_at) === briefingDate);
+  const companies = new Set(dayItems.map((item) => item.company_id).filter(Boolean));
+  const previousDate = addDays(briefingDate, -1);
+  const previousCount = items.filter((item) => dateKey(item.published_at) === previousDate).length;
+  const change = dayItems.length - previousCount;
+  const comparison = previousCount
+    ? `，较前一日${change >= 0 ? "增加" : "减少"} ${Math.abs(change)} 条`
+    : "";
+
+  elements.briefingTitle.textContent = `${formatDateLabel(briefingDate)}情报简报`;
+  elements.briefingStatus.textContent = reportIsAi ? "AI 简报" : "自动简报";
+  elements.briefingStatus.className = `briefing-status ${reportIsAi ? "is-ai" : "is-rules"}`;
+  elements.briefingSummary.textContent = reportHasSummary
+    ? report.executive_summary
+    : dayItems.length
+      ? `当日收录 ${dayItems.length} 条新闻，覆盖 ${companies.size} 家公司${comparison}。简报按新闻发布时间生成，不再把历史抓取结果标记为最新。`
+      : "当日没有收录到新闻，系统保留历史归档供回看。";
+
+  const topCompanies = countBy(dayItems, (item) => companyName(item.company_id, item.company_name))
+    .slice(0, 3);
+  const stats = [
+    ["当日新闻", dayItems.length],
+    ["覆盖公司", companies.size],
+    ["前一日", previousCount],
+    ["高频公司", topCompanies[0]?.[0] ?? "--"],
+  ];
+  elements.briefingStats.replaceChildren(
+    ...stats.map(([label, value]) => {
+      const block = document.createElement("div");
+      block.innerHTML = `<span>${escapeHtml(label)}</span><strong>${escapeHtml(value)}</strong>`;
+      return block;
+    }),
+  );
+
+  const reportHighlights = reportHasSummary
+    ? (report.top_news ?? []).filter((item) => item.title).slice(0, 4)
+    : dayItems.slice(0, 4);
+  elements.briefingHighlights.replaceChildren(
+    ...reportHighlights.map((item) => {
+      const row = document.createElement("li");
+      const link = document.createElement("a");
+      link.textContent = item.title;
+      link.href = item.url || "#";
+      link.target = "_blank";
+      link.rel = "noopener noreferrer";
+      if (!item.url) link.removeAttribute("target");
+      row.append(link);
+      return row;
+    }),
+  );
+  if (!reportHighlights.length) {
+    const empty = document.createElement("li");
+    empty.textContent = "暂无当日重点动态";
+    elements.briefingHighlights.append(empty);
+  }
+}
+
+function renderVolumeIndex(items) {
+  const latestDate = latestNewsDate(items);
+  const counts = new Map(countBy(items, (item) => dateKey(item.published_at)));
+  counts.delete("");
+  const days = latestDate
+    ? Array.from({ length: 30 }, (_, index) => addDays(latestDate, index - 29))
+    : [];
+  const values = days.map((date) => ({ date, count: counts.get(date) ?? 0 }));
+  const max = Math.max(1, ...values.map((row) => row.count));
+  const total = values.reduce((sum, row) => sum + row.count, 0);
+  const average = values.length ? (total / values.length).toFixed(1) : "0";
+
+  elements.volumeCaption.textContent = latestDate
+    ? `${formatDateLabel(days[0])}—${formatDateLabel(latestDate)} · 按北京时间统计`
+    : "暂无可统计的新闻日期";
+  elements.volumeSummary.innerHTML = `
+    <div><span>最近 30 天</span><strong>${total}</strong></div>
+    <div><span>日均</span><strong>${average}</strong></div>
+    <div><span>峰值</span><strong>${max}</strong></div>
+  `;
+  elements.volumeChart.replaceChildren(
+    ...values.map((row, index) => {
+      const button = document.createElement("button");
+      button.type = "button";
+      button.className = state.selectedDate === row.date ? "volume-bar is-selected" : "volume-bar";
+      button.style.setProperty("--bar-height", `${Math.max(3, (row.count / max) * 100)}%`);
+      button.title = `${formatDateLabel(row.date)}：${row.count} 条新闻`;
+      button.setAttribute("aria-label", button.title);
+      button.innerHTML = `
+        <span class="volume-value">${row.count || ""}</span>
+        <i></i>
+        <span class="volume-date">${index % 5 === 0 || index === values.length - 1 ? row.date.slice(5).replace("-", "/") : ""}</span>
+      `;
+      button.addEventListener("click", () => selectArchiveDate(row.date));
+      return button;
+    }),
+  );
+
+  const populatedDays = [...counts.entries()]
+    .filter(([date]) => date)
+    .sort(([a], [b]) => b.localeCompare(a));
+  const runs = Array.isArray(state.archiveIndex?.runs) ? state.archiveIndex.runs : [];
+  elements.archiveSummary.textContent = `${populatedDays.length} 个新闻日期 · ${runs.length} 次采集快照`;
+
+  const select = document.createElement("select");
+  select.className = "archive-select form-select";
+  select.setAttribute("aria-label", "选择历史归档日期");
+  select.append(option("", "选择日期…"));
+  populatedDays.forEach(([date, count]) => select.append(option(date, `${date} · ${count} 条`)));
+  select.value = state.selectedDate ?? "";
+  select.addEventListener("change", (event) => {
+    if (event.target.value) selectArchiveDate(event.target.value);
+  });
+
+  const recentButtons = populatedDays.slice(0, 6).map(([date, count]) => {
+    const button = document.createElement("button");
+    button.type = "button";
+    button.className = state.selectedDate === date ? "archive-day active" : "archive-day";
+    button.textContent = `${date.slice(5).replace("-", "/")} · ${count}`;
+    button.addEventListener("click", () => selectArchiveDate(date));
+    return button;
+  });
+  elements.archiveDays.replaceChildren(select, ...recentButtons);
+}
+
+function selectArchiveDate(date) {
+  state.selectedDate = date;
+  state.timeRange = date === latestNewsDate(state.items) ? "latest" : "date";
+  state.visibleLimit = 120;
+  render();
+  document.querySelector(".news-panel")?.scrollIntoView({ behavior: "smooth", block: "start" });
+}
+
+function newsPanelTitle() {
+  if (state.selectedDate) return `${formatDateLabel(state.selectedDate)}新闻归档`;
+  if (state.timeRange === "week") return "近 7 天新闻";
+  if (state.timeRange === "archive") return "历史新闻归档";
+  return "全部新闻时间线";
 }
 
 function renderCategoryTabs() {
@@ -177,6 +378,7 @@ function renderCategoryTabs() {
       button.addEventListener("click", () => {
         state.groupId = group.id;
         state.companyId = "all";
+        state.visibleLimit = 120;
         elements.companyFilter.value = "all";
         render();
       });
@@ -208,6 +410,7 @@ function renderIndustrySections(items) {
       section.querySelector(".section-filter").addEventListener("click", () => {
         state.groupId = group.id;
         state.companyId = "all";
+        state.visibleLimit = 120;
         elements.companyFilter.value = "all";
         document.querySelector(".news-panel")?.scrollIntoView({ behavior: "smooth", block: "start" });
         render();
@@ -244,6 +447,7 @@ function companyCard(company, items) {
   card.addEventListener("click", () => {
     state.companyId = company.id;
     state.groupId = companyToGroup.get(company.id) ?? "all";
+    state.visibleLimit = 120;
     elements.companyFilter.value = company.id;
     document.querySelector(".news-panel")?.scrollIntoView({ behavior: "smooth", block: "start" });
     render();
@@ -252,6 +456,11 @@ function companyCard(company, items) {
 }
 
 function renderNewsList(items) {
+  const visibleItems = items.slice(0, state.visibleLimit);
+  const latestDate = latestNewsDate(state.items);
+  elements.visibleCount.textContent = visibleItems.length < items.length
+    ? `已显示 ${visibleItems.length} / ${items.length} 条`
+    : `已显示 ${items.length} 条`;
   if (!items.length) {
     elements.newsList.innerHTML = `
       <div class="empty">
@@ -263,7 +472,7 @@ function renderNewsList(items) {
   }
 
   elements.newsList.replaceChildren(
-    ...items.map((item) => {
+    ...visibleItems.map((item) => {
       const entry = document.createElement("article");
       entry.className = "news-row";
       entry.tabIndex = 0;
@@ -277,7 +486,7 @@ function renderNewsList(items) {
             <span class="news-company">${escapeHtml(companyName(item.company_id, item.company_name))}</span>
             <span class="news-sector">${escapeHtml(groupNameForCompany(item.company_id))}</span>
             ${providerBadge(itemProvider(item))}
-            ${freshnessBadge(item)}
+            ${freshnessBadge(item, latestDate)}
           </div>
           <h3>${escapeHtml(item.title)}</h3>
           <div class="news-meta">
@@ -290,6 +499,20 @@ function renderNewsList(items) {
       return entry;
     }),
   );
+  if (visibleItems.length < items.length) {
+    const footer = document.createElement("div");
+    footer.className = "news-load-more";
+    const button = document.createElement("button");
+    button.type = "button";
+    button.className = "btn btn-outline-secondary";
+    button.textContent = `继续加载（剩余 ${items.length - visibleItems.length} 条）`;
+    button.addEventListener("click", () => {
+      state.visibleLimit += 120;
+      render();
+    });
+    footer.append(button);
+    elements.newsList.append(footer);
+  }
 }
 
 function renderProviderTable(companies, statuses) {
@@ -324,7 +547,10 @@ function renderDiagnostics(statuses, items) {
     const label = status.provider_status ?? status.final_status ?? status.status ?? "";
     return label !== "success" || status.reason || status.error_message;
   });
-  const archivedCount = items.filter((item) => item.stale === true).length;
+  const latestDate = latestNewsDate(items);
+  const archivedCount = items.filter(
+    (item) => daysBetween(dateKey(item.published_at), latestDate) >= 7,
+  ).length;
   elements.diagnosticsSummary.textContent =
     `${issueRows.length} 个数据源异常，${archivedCount} 条归档新闻`;
 
@@ -358,10 +584,17 @@ function renderDiagnostics(statuses, items) {
 }
 
 function filterItems(items) {
+  const latestDate = latestNewsDate(state.items);
   return items.filter((item) => {
     const groupMatches = state.groupId === "all" || companyToGroup.get(item.company_id) === state.groupId;
     const companyMatches = state.companyId === "all" || item.company_id === state.companyId;
-    return groupMatches && companyMatches;
+    const itemDate = dateKey(item.published_at);
+    const age = daysBetween(itemDate, latestDate);
+    let timeMatches = true;
+    if (state.selectedDate) timeMatches = itemDate === state.selectedDate;
+    else if (state.timeRange === "week") timeMatches = age >= 0 && age < 7;
+    else if (state.timeRange === "archive") timeMatches = age >= 7;
+    return groupMatches && companyMatches && timeMatches;
   });
 }
 
@@ -431,9 +664,12 @@ function providerBadge(provider) {
   return `<span class="badge provider-badge">${escapeHtml(providerLabel(provider))}</span>`;
 }
 
-function freshnessBadge(item) {
-  if (item.stale === true) return `<span class="badge archive-badge">归档</span>`;
-  return `<span class="badge fresh-badge">最新</span>`;
+function freshnessBadge(item, latestDate) {
+  if (item.stale === true) return `<span class="badge stale-badge">待刷新</span>`;
+  const age = daysBetween(dateKey(item.published_at), latestDate);
+  if (age === 0) return `<span class="badge fresh-badge">当日</span>`;
+  if (age > 0 && age < 7) return `<span class="badge recent-badge">${age} 天前</span>`;
+  return `<span class="badge archive-badge">历史归档</span>`;
 }
 
 function statusBadge(status) {
@@ -448,6 +684,18 @@ function statusBadge(status) {
 
 function sortedItems(items) {
   return [...items].sort((a, b) => new Date(b.published_at ?? 0) - new Date(a.published_at ?? 0));
+}
+
+function mergeNewsItems(currentItems, archivedItems) {
+  const rows = new Map();
+  archivedItems.forEach((item) => rows.set(itemIdentity(item), item));
+  currentItems.forEach((item) => rows.set(itemIdentity(item), item));
+  return [...rows.values()];
+}
+
+function itemIdentity(item) {
+  const identity = item.id ?? item.url ?? item.title ?? "unknown";
+  return `${item.company_id ?? "unknown"}:${identity}`;
 }
 
 function option(value, label) {
@@ -466,6 +714,60 @@ function formatFullDate(value) {
     hour: "2-digit",
     minute: "2-digit",
   }).format(new Date(value));
+}
+
+function dateKey(value) {
+  if (!value) return "";
+  const date = new Date(value);
+  if (Number.isNaN(date.getTime())) return "";
+  const parts = new Intl.DateTimeFormat("en-CA", {
+    timeZone: "Asia/Shanghai",
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit",
+  }).formatToParts(date);
+  const values = Object.fromEntries(parts.map((part) => [part.type, part.value]));
+  return `${values.year}-${values.month}-${values.day}`;
+}
+
+function latestNewsDate(items) {
+  return items.reduce((latest, item) => {
+    const date = dateKey(item.published_at);
+    return date > latest ? date : latest;
+  }, "");
+}
+
+function addDays(date, amount) {
+  if (!date) return "";
+  const value = new Date(`${date}T12:00:00+08:00`);
+  value.setUTCDate(value.getUTCDate() + amount);
+  return dateKey(value);
+}
+
+function daysBetween(olderDate, newerDate) {
+  if (!olderDate || !newerDate) return Number.POSITIVE_INFINITY;
+  const older = new Date(`${olderDate}T00:00:00Z`);
+  const newer = new Date(`${newerDate}T00:00:00Z`);
+  return Math.round((newer - older) / 86_400_000);
+}
+
+function formatDateLabel(date) {
+  if (!date) return "暂无日期";
+  return new Intl.DateTimeFormat("zh-CN", {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+    timeZone: "Asia/Shanghai",
+  }).format(new Date(`${date}T12:00:00+08:00`));
+}
+
+function countBy(items, keyFunction) {
+  const counts = new Map();
+  items.forEach((item) => {
+    const key = keyFunction(item);
+    counts.set(key, (counts.get(key) ?? 0) + 1);
+  });
+  return [...counts.entries()].sort((a, b) => b[1] - a[1]);
 }
 
 function escapeHtml(value) {

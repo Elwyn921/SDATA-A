@@ -54,10 +54,13 @@ def test_daily_report_skips_cleanly_without_openai_secret(tmp_path, monkeypatch)
 
     assert report["generation_status"] == "skipped_no_secret"
     assert report["source_run_id"] == "report-source-run"
+    assert report["report_date"] == "2026-07-12"
     assert report["total_items"] == 1
+    assert report["executive_summary"]
     assert len(report["industry_chain_sections"]) == 4
     assert outputs.latest_json.exists()
     assert outputs.latest_markdown.exists()
     assert outputs.published_json.exists()
     assert outputs.archived_json.exists()
+    assert "2026/07/12" in outputs.archived_json.as_posix()
     assert json.loads(Path(outputs.latest_json).read_text(encoding="utf-8")) == report

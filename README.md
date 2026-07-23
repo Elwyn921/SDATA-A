@@ -13,18 +13,20 @@ Implemented:
 - Unified `PipelineResult`, `NewsItem`, `RawArticle`, and fetch-status contracts.
 - JSON latest output under `data/news/latest/`.
 - Historical archive output under `data/news/archive/`.
+- De-duplicated long-lived news catalog under `data/news/archive/catalog.json`.
+- Beijing-time daily news-count index under `data/news/latest/daily_index.json`.
 - GitHub Pages data publication under `docs/data/news/`.
 - Static GitHub Pages frontend under `docs/`.
 - Observable dashboard prototype under `observable/`, built into `docs/observable/`.
 - Partial-run CLI contracts for future provider/company-specific refreshes.
 - Stale/latest merge behavior so partial updates can keep previously available company data.
-- Experimental A6 daily-report generator with OpenAI structured output and a no-secret fallback.
+- Scheduled A6 daily-report generator with OpenAI structured output and a readable no-secret fallback.
+- Frontend daily briefing, 30-day news volume index, and date-based archive navigation.
 
 Currently paused or not enabled in production:
 
 - GDELT scheduled production refresh. The adapter still exists, but frequent 429 rate limits make RSS the current production source.
 - SerpApi / Serper / NewsAPI search providers. These require API keys and should be used as fallback providers, not as the primary data loop.
-- Production scheduling and frontend integration for LLM daily reports.
 - Excel, PDF, and Markdown report exports.
 - Complex official-site crawling.
 
@@ -63,7 +65,8 @@ config/
   prompt_templates.yaml   Prompt contracts for the future LLM reporting layer
 data/
   news/latest/            Latest generated JSON outputs
-  news/archive/           Historical run archive and archive index
+  news/archive/           Historical run snapshots and durable news catalog
+  reports/                Latest and date-archived daily briefings
 docs/
   index.html              GitHub Pages frontend entry point
   assets/                 Static frontend JavaScript and styles
@@ -80,7 +83,7 @@ src/
     fetcher/              External fetch helpers, including GDELT transport
     processing/           Processing interface
     llm/                  LLM summarizer interface, currently no-op
-    reporting/            Experimental daily-report generator and archive writer
+    reporting/            Scheduled daily-report generator and archive writer
     exporter/             Export interface, currently no-op
     storage/json_file.py  JSON latest/archive storage and docs publication
 tests/
@@ -133,6 +136,7 @@ docs/data/news/latest/
 Current scheduled behavior:
 
 - Runs every 6 hours with `--provider-id rss_provider`.
+- Runs the daily briefing at 01:15 UTC; `OPENAI_API_KEY` enables the AI summary, otherwise a rule-based summary is still published.
 - Uses a single `news-data-writer` concurrency group to avoid simultaneous writes to `latest`.
 - Supports manual `workflow_dispatch` inputs for `company_id`, `provider_id`, `scheduled_slot`, and `max_gdelt_queries`.
 - Reads optional `SERPAPI_KEY` and `NEWSAPI_KEY` from GitHub Secrets when those providers are enabled.
@@ -192,6 +196,9 @@ The public frontend reads:
 
 ```text
 docs/data/news/latest/pipeline_result.json
+docs/data/news/archive/catalog.json
+docs/data/news/archive/index.json
+docs/data/reports/latest/daily_report.json
 ```
 
 The static frontend lives in `docs/`. The Observable Framework prototype lives in `observable/` and is built into:

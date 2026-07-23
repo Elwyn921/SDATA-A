@@ -1,0 +1,742 @@
+{
+  "citations": [
+    {
+      "citation_id": "C001",
+      "company_id": "landspace",
+      "company_name": "蓝箭航天",
+      "item_id": "319c940f5f829efc",
+      "published_at": "2026-07-12T16:40:13Z",
+      "source_name": "Curated RSS provider contract.",
+      "source_type": "rss",
+      "title": "蓝箭航天IPO，五大核心合作公司梳理（最新版） - 凤凰网",
+      "url": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE1sRnhTM0FQT1AyZWFsZmo1NzQyTEM4QWtxcFVsemZnWVRKc2xFMDUwNFJoQ3lsUXU4NDFKZ3NGU0h1c0NBeDJ2M2JqRk4zaXZh?oc=5"
+    },
+    {
+      "citation_id": "C002",
+      "company_id": "yuanxin_satellite",
+      "company_name": "垣信卫星",
+      "item_id": "a81a69b95985d0de",
+      "published_at": "2026-07-12T12:05:10Z",
+      "source_name": "Curated RSS provider contract.",
+      "source_type": "rss",
+      "title": "活力中国调研行丨千帆星座加速组网 - 中国科技网",
+      "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE8wZHBtb1o3N21QbE1haWlGWUhVODVtMUhpNTlSWVk1OXd3MS1ZQnpqNEhPbkJJM0lqel9WdDhUaTcxSWMxTnhzZVVGdUJlU1NrbklWYk1wSGd0U2VSNF9qVzRwZTNPeURNVnZZSlhRQmQ?oc=5"
+    },
+    {
+      "citation_id": "C003",
+      "company_id": "spacex",
+      "company_name": "SpaceX",
+      "item_id": "c1d2cfc2da46a5d8",
+      "published_at": "2026-07-12T09:06:11Z",
+      "source_name": "Curated RSS provider contract.",
+      "source_type": "rss",
+      "title": "Falcon 9 Booster Flies 35th Mission, Deploys 29 Starlinks - KeepTrack",
+      "url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE5BQW1HQ0tBS0I0RDVVelktTXJSUkVxcjhuRW5uQ1ZOX3cwLVlxZnp6eGJpLVI2UzRsWXVCa2ZJZ0Iydnctb2VuU2stU09ZMTlIR3FSR0ZPb3NnalltRHFlczgzck92cEk?oc=5"
+    },
+    {
+      "citation_id": "C004",
+      "company_id": "galaxyspace",
+      "company_name": "银河航天",
+      "item_id": "8101c6474b016091",
+      "published_at": "2026-07-12T07:34:00Z",
+      "source_name": "Curated RSS provider contract.",
+      "source_type": "rss",
+      "title": "It's an AI web, and we're just rats in the walls",
+      "url": "https://www.theregister.com/columnists/2026/07/12/its-an-ai-web-and-were-just-rats-in-the-walls/5269760"
+    },
+    {
+      "citation_id": "C005",
+      "company_id": "yuanxin_satellite",
+      "company_name": "垣信卫星",
+      "item_id": "76c1981cf4c000c2",
+      "published_at": "2026-07-11T12:58:28Z",
+      "source_name": "Curated RSS provider contract.",
+      "source_type": "rss",
+      "title": "一箭20星刷新纪录！千帆星座第十五批极轨卫星搭乘长八甲改进型Y9火箭海南成功入轨 - 手机网易网",
+      "url": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE1BUFk0QXhtWTM4RnB6bHVaVmp6dDRha3ROWGdsU3VtajA4THh1aGFXN1oyYmdCNUN1NllrcWw1aW0yRVF2VE5BR1c3ZlNPLTRRZHpyOHZNVkVpT0RnNEpLaERB?oc=5"
+    },
+    {
+      "citation_id": "C006",
+      "company_id": "spacex",
+      "company_name": "SpaceX",
+      "item_id": "f67441c9db59d068",
+      "published_at": "2026-07-11T05:34:03Z",
+      "source_name": "Curated RSS provider contract.",
+      "source_type": "rss",
+      "title": "SpaceX launches Falcon 9 rocket from Vandenberg Space Force Base - KSBY News",
+      "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxOODBrODl0aE5GRzNOY3M0UWhCMU1paHpHeEc1Vk1XZVRqa3R5Y2tGZ09WZEJxSmtqSTA1TEFIQ3Z6cE1tV0FmTmJVYVlqMU1OMmNHQ19GSVI0eWVUWEFfOXpQdVJPcXdITmxjN2Y5U2hIYkF5SS0tOFpjUHIwUUg5aFdPWmM3akVGWXh6dUNtWE9Ia3BzNW1GZkRXcUZOWk1uOXc?oc=5"
+    },
+    {
+      "citation_id": "C007",
+      "company_id": "spacex",
+      "company_name": "SpaceX",
+      "item_id": "970aecb48d4728a0",
+      "published_at": "2026-07-11T04:07:56Z",
+      "source_name": "Curated RSS provider contract.",
+      "source_type": "rss",
+      "title": "SpaceX launches 24 Starlink satellites on Falcon 9 rocket from Vandenberg SFB - Spaceflight Now",
+      "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxQdEtlT1V3R2RhTEgtWjlBZmZvQlRsSzNMcmk3Z1ZrdW10c2ppcjFnQVhiNEttWUYtMkFPSm01bTNBUjZRMHRsRTN2a0JrQTNlTXdCcXE0bC0tRlZkTnRUZTVPMWExM094QXR3SlpnRUJkaGZKNGlZc2R1SWhjQkJZdUt6MUxISGxQLW5xZHhEcFVUVjJocjJWU3ZULUpuQ0xWTV9DSExKbDNEcHpoaVdBYk9yd09ZUWlMSGpjd3daYms2QVZsTFFjcVZwNnp2NFk?oc=5"
+    },
+    {
+      "citation_id": "C008",
+      "company_id": "cas_space",
+      "company_name": "中科宇航",
+      "item_id": "4c3cd7d0959cd5f7",
+      "published_at": "2026-07-11T00:21:13Z",
+      "source_name": "Curated RSS provider contract.",
+      "source_type": "rss",
+      "title": "中国开启可回收火箭时代，中科宇航更新招股书：三年营收复合增长率88.8%，预计2029年实现盈利 - 手机网易网",
+      "url": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE51YkJDZDRjc2l2QnYxR011bkhvNm9kUUdCNnB5U2RvcENBUWQ4VlNiZHRja2NHT2tiMzlCNjhTMU5IY1FqU0kyQnl0eGRGUFlqN0ZMR0lzeFJ4eUtVa1FUMmF3?oc=5"
+    },
+    {
+      "citation_id": "C009",
+      "company_id": "china_satnet",
+      "company_name": "中国星网",
+      "item_id": "ff8df83e7c40dbc1",
+      "published_at": "2026-07-10T17:07:56Z",
+      "source_name": "Curated RSS provider contract.",
+      "source_type": "rss",
+      "title": "China unveils members of state-backed commercial space consortium",
+      "url": "https://spacenews.com/china-unveils-members-of-state-backed-commercial-space-consortium/"
+    },
+    {
+      "citation_id": "C010",
+      "company_id": "cas_space",
+      "company_name": "中科宇航",
+      "item_id": "c1d2aa27a14983b6",
+      "published_at": "2026-07-10T17:07:56Z",
+      "source_name": "Curated RSS provider contract.",
+      "source_type": "rss",
+      "title": "China unveils members of state-backed commercial space consortium",
+      "url": "https://spacenews.com/china-unveils-members-of-state-backed-commercial-space-consortium/"
+    },
+    {
+      "citation_id": "C011",
+      "company_id": "minospace",
+      "company_name": "微纳星空",
+      "item_id": "a3f162ce818f74ad",
+      "published_at": "2026-07-10T17:07:56Z",
+      "source_name": "Curated RSS provider contract.",
+      "source_type": "rss",
+      "title": "China unveils members of state-backed commercial space consortium",
+      "url": "https://spacenews.com/china-unveils-members-of-state-backed-commercial-space-consortium/"
+    },
+    {
+      "citation_id": "C012",
+      "company_id": "minospace",
+      "company_name": "微纳星空",
+      "item_id": "12e766bbd07385ab",
+      "published_at": "2026-07-10T13:00:00Z",
+      "source_name": "Curated RSS provider contract.",
+      "source_type": "rss",
+      "title": "Space capitalism needs more than a bull market",
+      "url": "https://spacenews.com/space-capitalism-needs-more-than-a-bull-market/"
+    },
+    {
+      "citation_id": "C013",
+      "company_id": "galactic_energy",
+      "company_name": "星河动力",
+      "item_id": "3e09ce478914eaff",
+      "published_at": "2026-07-10T12:54:11Z",
+      "source_name": "Curated RSS provider contract.",
+      "source_type": "rss",
+      "title": "US Government Studying Offshore Launch Opportunities",
+      "url": "https://payloadspace.com/us-government-studying-offshore-launch-opportunities/"
+    },
+    {
+      "citation_id": "C014",
+      "company_id": "minospace",
+      "company_name": "微纳星空",
+      "item_id": "538b30f8bc17b69e",
+      "published_at": "2026-07-10T12:41:12Z",
+      "source_name": "Curated RSS provider contract.",
+      "source_type": "rss",
+      "title": "Capita hears demand for pension scheme cleanup 'loud and clear' – but won't say yes",
+      "url": "https://www.theregister.com/public-sector/2026/07/10/capita-hears-demand-for-pension-scheme-cleanup-loud-and-clear-but-wont-say-yes/5269852"
+    },
+    {
+      "citation_id": "C015",
+      "company_id": "minospace",
+      "company_name": "微纳星空",
+      "item_id": "8a7af0419e71affb",
+      "published_at": "2026-07-10T11:25:14Z",
+      "source_name": "Curated RSS provider contract.",
+      "source_type": "rss",
+      "title": "ElevationSpace advances work on commercial reentry vehicle",
+      "url": "https://spacenews.com/elevationspace-advances-work-on-commercial-reentry-vehicle/"
+    },
+    {
+      "citation_id": "C016",
+      "company_id": "landspace",
+      "company_name": "蓝箭航天",
+      "item_id": "7cbe5465fefbe02e",
+      "published_at": "2026-07-10T07:37:25Z",
+      "source_name": "Curated RSS provider contract.",
+      "source_type": "rss",
+      "title": "长征十号乙火箭发射成功，压力来到了蓝箭航天身上 - 财经号",
+      "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTE9TRVFuUnJjVWp1b1ItZFpLYl9kUEl5YmFnMUhoZE5VYTgzZTJTaFgwRGwtb3hsUnRqX0xKd0FpNWNPWU0xLWdjUExLS3NNV2RTUjA5Qm9lTjY4LWwzU0F5VmF4Zi1ackdpNU04?oc=5"
+    },
+    {
+      "citation_id": "C017",
+      "company_id": "china_satnet",
+      "company_name": "中国星网",
+      "item_id": "61c925bcecbea92a",
+      "published_at": "2026-07-10T06:55:42Z",
+      "source_name": "Curated RSS provider contract.",
+      "source_type": "rss",
+      "title": "China becomes second country to recover orbital booster with Long March 10B",
+      "url": "https://spacenews.com/china-becomes-second-country-to-recover-orbital-booster-with-long-march-10b/"
+    },
+    {
+      "citation_id": "C018",
+      "company_id": "yuanxin_satellite",
+      "company_name": "垣信卫星",
+      "item_id": "795d4c1f4f704e93",
+      "published_at": "2026-07-10T05:42:00Z",
+      "source_name": "Curated RSS provider contract.",
+      "source_type": "rss",
+      "title": "活力中国调研行｜千帆星座今年计划达到累计在轨324颗卫星 - thepaper.cn",
+      "url": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE9jR1h3b255NHJ6VGhlb2FweWh4c1kzNjdPNVl2TFVxUkhSa2l5VUVYaUhOZ0lxcUo5TXVPZXlkVmJ6THVsdFF6ZWRyR0xuSjNSR3Q3eElCZXRzV0x5dHc?oc=5"
+    },
+    {
+      "citation_id": "C019",
+      "company_id": "yuanxin_satellite",
+      "company_name": "垣信卫星",
+      "item_id": "3e76dbc1af992474",
+      "published_at": "2026-07-10T03:33:00Z",
+      "source_name": "Curated RSS provider contract.",
+      "source_type": "rss",
+      "title": "活力中国调研行丨千帆星座“一箭20星”加速组网，预计年内具备试运营能力 - 上观新闻",
+      "url": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE9zNnJqQlpaUXdmZ2M3dE5mbDZrb0VXVFlKTGlLdjJsMHViQXZpdjV4QWh1RHhWTkI0eVVQX05FU3FxaDh6WHpXNEFsVkpJa3NkSGRFWDUwOA?oc=5"
+    },
+    {
+      "citation_id": "C020",
+      "company_id": "minospace",
+      "company_name": "微纳星空",
+      "item_id": "ab9395f0d1727784",
+      "published_at": "2026-07-09T22:35:28Z",
+      "source_name": "Curated RSS provider contract.",
+      "source_type": "rss",
+      "title": "SDA TAP Lab Evolves Into BMC3I TAP Lab And In Partnership With Catalyst Campus Launches A New Multi-Phased Program To Accelerate Mission-Focused Technology Development",
+      "url": "https://spacenews.com/sda-tap-lab-evolves-into-bmc3i-tap-lab-and-in-partnership-with-catalyst-campus-launches-a-new-multi-phased-program-to-accelerate-mission-focused-technology-development/"
+    },
+    {
+      "citation_id": "C021",
+      "company_id": "galaxyspace",
+      "company_name": "银河航天",
+      "item_id": "2db8f83dfaf7df7a",
+      "published_at": "2026-07-09T21:01:04Z",
+      "source_name": "Curated RSS provider contract.",
+      "source_type": "rss",
+      "title": "AI slop writing has taken over the internet, particularly LinkedIn and X",
+      "url": "https://www.theregister.com/ai-and-ml/2026/07/09/ai-slop-writing-has-taken-over-the-internet-particularly-linkedin-and-x/5269525"
+    },
+    {
+      "citation_id": "C022",
+      "company_id": "cas_space",
+      "company_name": "中科宇航",
+      "item_id": "9408787a7dc83797",
+      "published_at": "2026-07-09T19:31:35Z",
+      "source_name": "Curated RSS provider contract.",
+      "source_type": "rss",
+      "title": "力箭二号成本有望降至SpaceX一半 商业航天爆发期或提前到来 - 富途牛牛",
+      "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxPX0cyT2ZxUUpwWkNWV0xHWERnTnVzOTFLRkctQW96TmxodFN3R253RmljbV9IV2hhLTJDSGpHTTV1RnpMN0ZOMnBaSFJnckRqYmZJcC1LeFRuazRGR1lRaHl4RlVsdHdFQ2RIWlRCQkFHMUdueTlGeUhnTFZTTW1tbGx5clVkWWVYODBJd2ZnbnN2ZmVS?oc=5"
+    },
+    {
+      "citation_id": "C023",
+      "company_id": "spacex",
+      "company_name": "SpaceX",
+      "item_id": "bd320a59fec050d4",
+      "published_at": "2026-07-09T19:28:45Z",
+      "source_name": "Curated RSS provider contract.",
+      "source_type": "rss",
+      "title": "SpaceX wants to launch 100,000 Starlink satellites to orbit - Space",
+      "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxPS2RzNkJkU3pRa2ptNHdfQm41S2tsNEtxbzlNN2JQWVVMV3Exam5LMGlBam80X0kwWGhJZWZKUVZEX05Vd0lDTGV1bHhiSDlpaGxlV3ZnS1B2Z0owMVBFUDlZdHY0THNjMUhxTUhrU1BuY3ZqVlhLSjZpODZta3lrVnluMUNMLWtydmxOMnduZU9MczdQc203T01UdVluMUVZVEZseEFjUVdQckEyWjg4?oc=5"
+    },
+    {
+      "citation_id": "C024",
+      "company_id": "minospace",
+      "company_name": "微纳星空",
+      "item_id": "3f9cadacc425a491",
+      "published_at": "2026-07-09T18:14:21Z",
+      "source_name": "Curated RSS provider contract.",
+      "source_type": "rss",
+      "title": "Principal Investigator and Quality Assessment Reports Evaluate Umbra Synthetic Aperture Radar Data",
+      "url": "https://science.nasa.gov/science-research/earth-science/principal-investigator-and-quality-assessment-reports-evaluate-umbra-synthetic-aperture-radar-data/"
+    },
+    {
+      "citation_id": "C025",
+      "company_id": "galaxyspace",
+      "company_name": "银河航天",
+      "item_id": "2cae6ba0c7355f14",
+      "published_at": "2026-07-09T17:40:00Z",
+      "source_name": "Curated RSS provider contract.",
+      "source_type": "rss",
+      "title": "AI tool scours the web for job openings, preps your resume and cover letter",
+      "url": "https://www.theregister.com/ai-and-ml/2026/07/09/ai-tool-scours-the-web-for-job-openings-preps-your-resume-and-cover-letter/5269410"
+    },
+    {
+      "citation_id": "C026",
+      "company_id": "cas_space",
+      "company_name": "中科宇航",
+      "item_id": "ecad13f3f6a50301",
+      "published_at": "2026-07-09T16:30:00Z",
+      "source_name": "Curated RSS provider contract.",
+      "source_type": "rss",
+      "title": "Outlook for Mac bug makes font choice a purely decorative feature",
+      "url": "https://www.theregister.com/applications/2026/07/09/outlook-for-mac-bug-makes-font-choice-a-purely-decorative-feature/5269242"
+    },
+    {
+      "citation_id": "C027",
+      "company_id": "spacex",
+      "company_name": "SpaceX",
+      "item_id": "b1a6307463ab1329",
+      "published_at": "2026-07-09T16:08:33Z",
+      "source_name": "Curated RSS provider contract.",
+      "source_type": "rss",
+      "title": "SpaceX launches 29 Starlink satellites on Falcon 9 rocket - upi.com",
+      "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxPeTY3Z1BtUk43NnhKQWJ0V3ByTk1QWXdHd2JBUnMxOHZOckNWUUhpNEUyQkppUkdWVnIzYlRxeHB2VHRabFFpT3lGaHdBR1pjUi1jeTJDMldCQ081QVRVbEh2MWlUejhlUHZFRDlVSGU1M0JsbmJCRWF5OFdySEpjUDdWaThaTFFlblh5bWQ1TUxfUXlKNWplYURaZHhqei110gGmAUFVX3lxTE1MWEdEcXhzUlh4ZFhFdENVa18yWWNTdDlObENEREhUeEMtQW05SkNvUDdTNmJJOXhwYnJyLXZDdlZyU2lzaDNjV21nS254bzBwSmUtaDJOckhyQmpKczhwX1FrZnJNbURCQmNTY0E1d3Vnd3BZekFzeUNoNDdZZjNqWVlrSFFfMVotRG05TTZWNTQ2MHpoeGJhMS02clVyMkc0Y0t2aXc?oc=5"
+    },
+    {
+      "citation_id": "C028",
+      "company_id": "spacex",
+      "company_name": "SpaceX",
+      "item_id": "7b1e32a090c7cc7c",
+      "published_at": "2026-07-09T15:32:25Z",
+      "source_name": "Curated RSS provider contract.",
+      "source_type": "rss",
+      "title": "SpaceX stock in focus as launch, Starlink business hit new milestones - Yahoo Finance",
+      "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxOMVVFWFVueXFwMTRTSWVfYUZZVFpZaVRWbFJDc2d6X2N3cUVNMVdab0NVOTJETXhOdTd2WFAxWHJhd0N5X3RySXYtSThKWXkyemVsRzNxUmFmUFVxWDZXNm9vckZxYUlPZGJpTUxxTjdtaFMwY2pJcEVQRXlLLWlDaXFZSUdqNjZXVG1FVjQ3d0RYRWpBV3pPZmFzSWwxdTFrZ3h5VDYyUkJkY0E2cnFVZWF3TzFxU1hiT1c2Y3FLaVAzYkVKV1hnUUk2ZGw?oc=5"
+    },
+    {
+      "citation_id": "C029",
+      "company_id": "spacex",
+      "company_name": "SpaceX",
+      "item_id": "bc3f8cd88b456284",
+      "published_at": "2026-07-09T15:31:03Z",
+      "source_name": "Curated RSS provider contract.",
+      "source_type": "rss",
+      "title": "Elon Musk Says ‘We’re Gonna Need A Bigger Rocket’ As SpaceX Asks FCC to Approve 100,000 Gen3 Starlink Satellites - Yahoo Finance",
+      "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxPOTMtWWthbXBPTnRPUUJtQ0NFbDBnLUNDY3VGLVJiallBUXhnaUNVV01JckxTZEsyNHRuU0YxQ3U5LS1ZZ3BtSUF5MkJDUHhvZUNTSkxMcHhiN2tSYWVEVW1PWjU5dkNPTWFXZUpiLXhDMWNUUkpRcHlLQ3JVN0JRWWw3RFNsSG9ISG5pNXF2OHJXd25Sdnc?oc=5"
+    },
+    {
+      "citation_id": "C030",
+      "company_id": "spacex",
+      "company_name": "SpaceX",
+      "item_id": "98d294596de8f472",
+      "published_at": "2026-07-09T15:19:20Z",
+      "source_name": "Curated RSS provider contract.",
+      "source_type": "rss",
+      "title": "SpaceX Breaks Its Own Starlink Deployment Record in H1 2026 - BASENOR - Tesla Accessories",
+      "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxOdncyR29fTVJnSER3VTRVWHU2WmZZb09TaTZ3aEFLb2tLQ0RCZXpiOW5OSV9vdE1UV3dMT1dtS0lLVHhBVXFkZGxXWmF5enhDVVh4SVIyY2R5TjlEbUVjR0ZTSGI4bmhOMXAyUHdTS2ZRSEdkMGZKaXBlVjRPR2J6ZTh3b1ZOM2VQZ0M4LWx5dllyOVI4SVZPSnlR?oc=5"
+    },
+    {
+      "citation_id": "C031",
+      "company_id": "cas_space",
+      "company_name": "中科宇航",
+      "item_id": "59cad324e640d582",
+      "published_at": "2026-07-09T14:47:03Z",
+      "source_name": "Curated RSS provider contract.",
+      "source_type": "rss",
+      "title": "Maintaining leadership in space with Victoria Coleman",
+      "url": "https://spacenews.com/maintaining-leadership-in-space-with-victoria-coleman/"
+    },
+    {
+      "citation_id": "C032",
+      "company_id": "cas_space",
+      "company_name": "中科宇航",
+      "item_id": "e1ca88b8213c7c49",
+      "published_at": "2026-07-09T14:01:00Z",
+      "source_name": "Curated RSS provider contract.",
+      "source_type": "rss",
+      "title": "UK.gov withholds £10M payment from Capita over pensions project fiasco, as dispute continues",
+      "url": "https://www.theregister.com/public-sector/2026/07/09/ukgov-withholds-10m-payment-from-capita-over-pensions-project-fiasco-as-dispute-continues/5269227"
+    },
+    {
+      "citation_id": "C033",
+      "company_id": "spacex",
+      "company_name": "SpaceX",
+      "item_id": "d1785331f05af0b2",
+      "published_at": "2026-07-09T12:38:59Z",
+      "source_name": "Curated RSS provider contract.",
+      "source_type": "rss",
+      "title": "Photo: SpaceX Launches Starlink Satellites from the Cape Canaveral Space Force Station, Florida - CCP20260709004 - upi.com",
+      "url": "https://news.google.com/rss/articles/CBMi9AFBVV95cUxNalNCNUdTMTBhaDYtbExHS0hPdkI3M0hDVGdNZkhZVUVvV04wWlFfUS1ESE1UMW53MlVIYlQ0OWVHZVVfMGFuaThlWVZKVlVoY0ZRTTFjTjlFSEpTNEJ5NTN1Z0JUMEJheXVlaldQaFJkNWJGeldjcUNvMlhsU0s2UVBkTmFBWGVDZGRqdy1UMWRhY2F3My1xallpbS1KMkd4YXI1c3BCQkowRjZCN05sLVYxM096ZGk5VjlhdFhCRklNS0pya2puUHZPa1VUNFVtRmQzTDN2SDlVcUZSa290YmcxWDdQd0NXdFo2cnllcE14UFJO?oc=5"
+    },
+    {
+      "citation_id": "C034",
+      "company_id": "cas_space",
+      "company_name": "中科宇航",
+      "item_id": "930f1d36757d6431",
+      "published_at": "2026-07-09T12:00:00Z",
+      "source_name": "Curated RSS provider contract.",
+      "source_type": "rss",
+      "title": "Auxilium Demos Tech To Enable Sustainable Bioprinting in Orbit",
+      "url": "https://payloadspace.com/auxilium-demos-tech-to-enable-sustainable-bioprinting-in-orbit/"
+    },
+    {
+      "citation_id": "C035",
+      "company_id": "spacex",
+      "company_name": "SpaceX",
+      "item_id": "cac70ee933541d91",
+      "published_at": "2026-07-09T11:51:31Z",
+      "source_name": "Curated RSS provider contract.",
+      "source_type": "rss",
+      "title": "Starlink deployments on record pace - The Verge",
+      "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxQUVkwQ25CeTd2ZWJLalNhN2RDQ05WR21uMWJIamtEalpKX3FWUVRoZzNKNFRCbi1nMDF3dGUyRmx1Yno0VGtfNFlGbGJtM1ozOUg5TnBIMUlTbWtVdnU5VmU3TXVTNHdObTI4cFFaQUY3RVV1SFNueVRoMkItcVJMTlpVR0pib2MxbmpmU3lVREVycENFMTRmVTVMdw?oc=5"
+    },
+    {
+      "citation_id": "C036",
+      "company_id": "spacex",
+      "company_name": "SpaceX",
+      "item_id": "fe2bd5bf4b23b9f2",
+      "published_at": "2026-07-09T11:10:37Z",
+      "source_name": "Curated RSS provider contract.",
+      "source_type": "rss",
+      "title": "SpaceX launches Starlink 10-42 mission from Cape Canaveral in Florida - AOL.com",
+      "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE14X1NMcGdPZHN5djQ1Ym5ibHVOOGZIakE1c2dMMXFnLXdEdTBFaTBXRTZnc3FYVHZQb1pXajllRjBEZEhNLUJGaERFQmpvQjRKdEFxWkxpWWRuNHZFYXJ3bmEtNi1Hbm56ZHZoTmFSaFJWN2hDMFJqR2JBeWFoNmM?oc=5"
+    },
+    {
+      "citation_id": "C037",
+      "company_id": "spacex",
+      "company_name": "SpaceX",
+      "item_id": "8238f2312918b717",
+      "published_at": "2026-07-09T09:36:09Z",
+      "source_name": "Curated RSS provider contract.",
+      "source_type": "rss",
+      "title": "SpaceX Falcon 9 rocket launches for record-breaking 36th time - Space",
+      "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxPWGZQS24wS2RjZ3Q4OEludVFvZVNHSUVRWHBTaDN0UUJ6TEhOUFdQeEJ2RkJwX1dVRVZES2hiSjEyaUhUNHUyLU5BcTU0SlA1dHZGZ2liWDl3Qnl1T0FvTl9XbmhZdmVFejZMbmdGSnppQlVqZGxUbnNXeHlrSXRwNG9iSXR3cXpPMS1MRnFndlNPZHMtT25mS21wcTdqUGpQRF8xYzh6OXdDM3pScDN3?oc=5"
+    },
+    {
+      "citation_id": "C038",
+      "company_id": "spacex",
+      "company_name": "SpaceX",
+      "item_id": "e3c14720025e0fe6",
+      "published_at": "2026-07-09T09:05:16Z",
+      "source_name": "Curated RSS provider contract.",
+      "source_type": "rss",
+      "title": "B1067 Flies Record 36th Mission on Starlink 10-42 - KeepTrack",
+      "url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE1faHoyYmN2OUZkYkRQUUt0WHFzLTI2NWVidXBURUJCdXJYZFdISUNodUw2R0stVDNobFg1WDk3U0p1WThhR0xjU2txTUU4YkY0ZmRpY1EzMHM4UnRNLXZWNUhBb29KMkU?oc=5"
+    },
+    {
+      "citation_id": "C039",
+      "company_id": "spacex",
+      "company_name": "SpaceX",
+      "item_id": "deacb7e8f11f42bc",
+      "published_at": "2026-07-09T08:57:09Z",
+      "source_name": "Curated RSS provider contract.",
+      "source_type": "rss",
+      "title": "SpaceX launches Falcon 9 rocket on record-breaking 36th flight - Spaceflight Now",
+      "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxOODcxNVdGdzg4V0d5ZU9ZeE5HcnJCSkNKaTlyTmk5OGxBT3p5dThaNkdQY196eENkemY4bnNpNll1NWRoOV8yQmx4TTlfM1ZwbDh6eEkyUE5wZWVMVTZvaFlfakZLQ3VTU09MZXlsc3Y1TnVFOU9NVmd2bHUwNUpnUXM3MHljMUFKYktOT0I3cnJuSm44dVFZNV92ZGZyaWhLT3k4R0VTTFFOTFhVY1VOVk1PNUlLOHc?oc=5"
+    },
+    {
+      "citation_id": "C040",
+      "company_id": "spacex",
+      "company_name": "SpaceX",
+      "item_id": "9b987da146af54dd",
+      "published_at": "2026-07-09T07:00:00Z",
+      "source_name": "Curated RSS provider contract.",
+      "source_type": "rss",
+      "title": "SpaceX - SpaceX",
+      "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTFBJbjFBTF9FczF3ZXBEUjRHRmwzQXBYYzl6TDFJTWwxVmtpMTJkbnFJQ1A5UzhMYlM0aTRVSWEtTzF5NUJ0TVBhci1iZG9aOUlZcFE?oc=5"
+    }
+  ],
+  "companies_covered": [
+    {
+      "company_id": "landspace",
+      "company_name": "蓝箭航天",
+      "fresh_count": 1,
+      "item_count": 1,
+      "latest_titles": [
+        "蓝箭航天IPO，五大核心合作公司梳理（最新版） - 凤凰网"
+      ],
+      "stale_count": 0
+    }
+  ],
+  "company_updates": [
+    {
+      "company_id": "landspace",
+      "company_name": "蓝箭航天",
+      "item_count": 1,
+      "key_news": [
+        "蓝箭航天IPO，五大核心合作公司梳理（最新版） - 凤凰网"
+      ],
+      "source_urls": [],
+      "summary": ""
+    }
+  ],
+  "executive_summary": "2026-07-13 共收录 1 条新闻，覆盖 1 家公司。新闻量靠前的公司包括 蓝箭航天。",
+  "frontend": {
+    "cards": {
+      "companies": 1,
+      "source_health": "healthy",
+      "top_news": 1,
+      "total_items": 1
+    },
+    "company_filter_options": [
+      {
+        "label": "蓝箭航天",
+        "value": "landspace"
+      }
+    ],
+    "sections_order": [
+      "satellite_platforms",
+      "launch_services",
+      "satellite_internet",
+      "foreign_majors"
+    ],
+    "status_badge": "skipped_no_secret",
+    "updated_at": "2026-07-23T01:14:09.281999Z"
+  },
+  "generated_at": "2026-07-23T01:14:09.281999Z",
+  "generation_status": "skipped_no_secret",
+  "industry_chain_sections": [
+    {
+      "key_updates": [],
+      "section_id": "satellite_platforms",
+      "source_urls": [],
+      "summary": "",
+      "title": "卫星平台与整星制造"
+    },
+    {
+      "key_updates": [
+        {
+          "company_id": "landspace",
+          "company_name": "蓝箭航天",
+          "source_urls": [
+            "https://news.google.com/rss/articles/CBMiUEFVX3lxTE1sRnhTM0FQT1AyZWFsZmo1NzQyTEM4QWtxcFVsemZnWVRKc2xFMDUwNFJoQ3lsUXU4NDFKZ3NGU0h1c0NBeDJ2M2JqRk4zaXZh?oc=5"
+          ],
+          "title": "蓝箭航天IPO，五大核心合作公司梳理（最新版） - 凤凰网"
+        }
+      ],
+      "section_id": "launch_services",
+      "source_urls": [
+        "https://news.google.com/rss/articles/CBMiUEFVX3lxTE1sRnhTM0FQT1AyZWFsZmo1NzQyTEM4QWtxcFVsemZnWVRKc2xFMDUwNFJoQ3lsUXU4NDFKZ3NGU0h1c0NBeDJ2M2JqRk4zaXZh?oc=5"
+      ],
+      "summary": "",
+      "title": "运载火箭与发射服务"
+    },
+    {
+      "key_updates": [],
+      "section_id": "satellite_internet",
+      "source_urls": [],
+      "summary": "",
+      "title": "卫星互联网服务"
+    },
+    {
+      "key_updates": [],
+      "section_id": "foreign_majors",
+      "source_urls": [],
+      "summary": "",
+      "title": "国外大厂"
+    }
+  ],
+  "llm_provider": {
+    "api_key_env": "OPENAI_API_KEY",
+    "model": "gpt-4.1-mini",
+    "provider_id": "openai",
+    "reason": "OPENAI_API_KEY is not set",
+    "status": "skipped_no_secret"
+  },
+  "recommended_followups": [],
+  "report_date": "2026-07-13",
+  "report_id": "daily-2026-07-13-e4f3bb70",
+  "risks_and_watchpoints": [],
+  "schema_version": "daily_report.v1",
+  "source_health_summary": {
+    "failed_sources": 0,
+    "overall_status": "healthy",
+    "source_statuses": [
+      {
+        "company_id": "spacex",
+        "company_name": "SpaceX",
+        "error_message": null,
+        "error_type": null,
+        "final_status": "success",
+        "item_count": 50,
+        "provider_id": "rss_provider",
+        "source_type": "rss"
+      },
+      {
+        "company_id": "blue_origin",
+        "company_name": "Blue Origin",
+        "error_message": null,
+        "error_type": null,
+        "final_status": "success",
+        "item_count": 50,
+        "provider_id": "rss_provider",
+        "source_type": "rss"
+      },
+      {
+        "company_id": "yuanxin_satellite",
+        "company_name": "垣信卫星",
+        "error_message": null,
+        "error_type": null,
+        "final_status": "success",
+        "item_count": 47,
+        "provider_id": "rss_provider",
+        "source_type": "rss"
+      },
+      {
+        "company_id": "china_satnet",
+        "company_name": "中国星网",
+        "error_message": null,
+        "error_type": null,
+        "final_status": "success",
+        "item_count": 42,
+        "provider_id": "rss_provider",
+        "source_type": "rss"
+      },
+      {
+        "company_id": "landspace",
+        "company_name": "蓝箭航天",
+        "error_message": null,
+        "error_type": null,
+        "final_status": "success",
+        "item_count": 50,
+        "provider_id": "rss_provider",
+        "source_type": "rss"
+      },
+      {
+        "company_id": "cas_space",
+        "company_name": "中科宇航",
+        "error_message": null,
+        "error_type": null,
+        "final_status": "success",
+        "item_count": 50,
+        "provider_id": "rss_provider",
+        "source_type": "rss"
+      },
+      {
+        "company_id": "space_pioneer",
+        "company_name": "天兵科技",
+        "error_message": null,
+        "error_type": null,
+        "final_status": "success",
+        "item_count": 50,
+        "provider_id": "rss_provider",
+        "source_type": "rss"
+      },
+      {
+        "company_id": "i_space",
+        "company_name": "星际荣耀",
+        "error_message": null,
+        "error_type": null,
+        "final_status": "success",
+        "item_count": 50,
+        "provider_id": "rss_provider",
+        "source_type": "rss"
+      },
+      {
+        "company_id": "galactic_energy",
+        "company_name": "星河动力",
+        "error_message": null,
+        "error_type": null,
+        "final_status": "success",
+        "item_count": 50,
+        "provider_id": "rss_provider",
+        "source_type": "rss"
+      },
+      {
+        "company_id": "yushi_space",
+        "company_name": "宇石空间",
+        "error_message": null,
+        "error_type": null,
+        "final_status": "success",
+        "item_count": 35,
+        "provider_id": "rss_provider",
+        "source_type": "rss"
+      },
+      {
+        "company_id": "hongqing_technology",
+        "company_name": "蓝箭鸿擎",
+        "error_message": null,
+        "error_type": null,
+        "final_status": "success",
+        "item_count": 34,
+        "provider_id": "rss_provider",
+        "source_type": "rss"
+      },
+      {
+        "company_id": "galaxyspace",
+        "company_name": "银河航天",
+        "error_message": null,
+        "error_type": null,
+        "final_status": "success",
+        "item_count": 50,
+        "provider_id": "rss_provider",
+        "source_type": "rss"
+      },
+      {
+        "company_id": "minospace",
+        "company_name": "微纳星空",
+        "error_message": null,
+        "error_type": null,
+        "final_status": "success",
+        "item_count": 45,
+        "provider_id": "rss_provider",
+        "source_type": "rss"
+      }
+    ],
+    "status_counts": {
+      "success": 13
+    },
+    "successful_sources": 13,
+    "total_sources": 13
+  },
+  "source_pipeline_result_path": "docs/data/news/latest/pipeline_result.json",
+  "source_run_id": "29cd4f31-7564-4445-be68-2c1980ef73e3",
+  "source_urls": [
+    "https://news.google.com/rss/articles/CBMi9AFBVV95cUxNalNCNUdTMTBhaDYtbExHS0hPdkI3M0hDVGdNZkhZVUVvV04wWlFfUS1ESE1UMW53MlVIYlQ0OWVHZVVfMGFuaThlWVZKVlVoY0ZRTTFjTjlFSEpTNEJ5NTN1Z0JUMEJheXVlaldQaFJkNWJGeldjcUNvMlhsU0s2UVBkTmFBWGVDZGRqdy1UMWRhY2F3My1xallpbS1KMkd4YXI1c3BCQkowRjZCN05sLVYxM096ZGk5VjlhdFhCRklNS0pya2puUHZPa1VUNFVtRmQzTDN2SDlVcUZSa290YmcxWDdQd0NXdFo2cnllcE14UFJO?oc=5",
+    "https://news.google.com/rss/articles/CBMiUEFVX3lxTE1sRnhTM0FQT1AyZWFsZmo1NzQyTEM4QWtxcFVsemZnWVRKc2xFMDUwNFJoQ3lsUXU4NDFKZ3NGU0h1c0NBeDJ2M2JqRk4zaXZh?oc=5",
+    "https://news.google.com/rss/articles/CBMiUkFVX3lxTFBJbjFBTF9FczF3ZXBEUjRHRmwzQXBYYzl6TDFJTWwxVmtpMTJkbnFJQ1A5UzhMYlM0aTRVSWEtTzF5NUJ0TVBhci1iZG9aOUlZcFE?oc=5",
+    "https://news.google.com/rss/articles/CBMiV0FVX3lxTE9zNnJqQlpaUXdmZ2M3dE5mbDZrb0VXVFlKTGlLdjJsMHViQXZpdjV4QWh1RHhWTkI0eVVQX05FU3FxaDh6WHpXNEFsVkpJa3NkSGRFWDUwOA?oc=5",
+    "https://news.google.com/rss/articles/CBMiXkFVX3lxTE9jR1h3b255NHJ6VGhlb2FweWh4c1kzNjdPNVl2TFVxUkhSa2l5VUVYaUhOZ0lxcUo5TXVPZXlkVmJ6THVsdFF6ZWRyR0xuSjNSR3Q3eElCZXRzV0x5dHc?oc=5",
+    "https://news.google.com/rss/articles/CBMiYkFVX3lxTE1BUFk0QXhtWTM4RnB6bHVaVmp6dDRha3ROWGdsU3VtajA4THh1aGFXN1oyYmdCNUN1NllrcWw1aW0yRVF2VE5BR1c3ZlNPLTRRZHpyOHZNVkVpT0RnNEpLaERB?oc=5",
+    "https://news.google.com/rss/articles/CBMiYkFVX3lxTE51YkJDZDRjc2l2QnYxR011bkhvNm9kUUdCNnB5U2RvcENBUWQ4VlNiZHRja2NHT2tiMzlCNjhTMU5IY1FqU0kyQnl0eGRGUFlqN0ZMR0lzeFJ4eUtVa1FUMmF3?oc=5",
+    "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE1faHoyYmN2OUZkYkRQUUt0WHFzLTI2NWVidXBURUJCdXJYZFdISUNodUw2R0stVDNobFg1WDk3U0p1WThhR0xjU2txTUU4YkY0ZmRpY1EzMHM4UnRNLXZWNUhBb29KMkU?oc=5",
+    "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE5BQW1HQ0tBS0I0RDVVelktTXJSUkVxcjhuRW5uQ1ZOX3cwLVlxZnp6eGJpLVI2UzRsWXVCa2ZJZ0Iydnctb2VuU2stU09ZMTlIR3FSR0ZPb3NnalltRHFlczgzck92cEk?oc=5",
+    "https://news.google.com/rss/articles/CBMia0FVX3lxTE9TRVFuUnJjVWp1b1ItZFpLYl9kUEl5YmFnMUhoZE5VYTgzZTJTaFgwRGwtb3hsUnRqX0xKd0FpNWNPWU0xLWdjUExLS3NNV2RTUjA5Qm9lTjY4LWwzU0F5VmF4Zi1ackdpNU04?oc=5",
+    "https://news.google.com/rss/articles/CBMicEFVX3lxTE8wZHBtb1o3N21QbE1haWlGWUhVODVtMUhpNTlSWVk1OXd3MS1ZQnpqNEhPbkJJM0lqel9WdDhUaTcxSWMxTnhzZVVGdUJlU1NrbklWYk1wSGd0U2VSNF9qVzRwZTNPeURNVnZZSlhRQmQ?oc=5",
+    "https://news.google.com/rss/articles/CBMif0FVX3lxTE14X1NMcGdPZHN5djQ1Ym5ibHVOOGZIakE1c2dMMXFnLXdEdTBFaTBXRTZnc3FYVHZQb1pXajllRjBEZEhNLUJGaERFQmpvQjRKdEFxWkxpWWRuNHZFYXJ3bmEtNi1Hbm56ZHZoTmFSaFJWN2hDMFJqR2JBeWFoNmM?oc=5",
+    "https://news.google.com/rss/articles/CBMilAFBVV95cUxPX0cyT2ZxUUpwWkNWV0xHWERnTnVzOTFLRkctQW96TmxodFN3R253RmljbV9IV2hhLTJDSGpHTTV1RnpMN0ZOMnBaSFJnckRqYmZJcC1LeFRuazRGR1lRaHl4RlVsdHdFQ2RIWlRCQkFHMUdueTlGeUhnTFZTTW1tbGx5clVkWWVYODBJd2ZnbnN2ZmVS?oc=5",
+    "https://news.google.com/rss/articles/CBMilgFBVV95cUxPOTMtWWthbXBPTnRPUUJtQ0NFbDBnLUNDY3VGLVJiallBUXhnaUNVV01JckxTZEsyNHRuU0YxQ3U5LS1ZZ3BtSUF5MkJDUHhvZUNTSkxMcHhiN2tSYWVEVW1PWjU5dkNPTWFXZUpiLXhDMWNUUkpRcHlLQ3JVN0JRWWw3RFNsSG9ISG5pNXF2OHJXd25Sdnc?oc=5",
+    "https://news.google.com/rss/articles/CBMimgFBVV95cUxOdncyR29fTVJnSER3VTRVWHU2WmZZb09TaTZ3aEFLb2tLQ0RCZXpiOW5OSV9vdE1UV3dMT1dtS0lLVHhBVXFkZGxXWmF5enhDVVh4SVIyY2R5TjlEbUVjR0ZTSGI4bmhOMXAyUHdTS2ZRSEdkMGZKaXBlVjRPR2J6ZTh3b1ZOM2VQZ0M4LWx5dllyOVI4SVZPSnlR?oc=5",
+    "https://news.google.com/rss/articles/CBMimwFBVV95cUxQUVkwQ25CeTd2ZWJLalNhN2RDQ05WR21uMWJIamtEalpKX3FWUVRoZzNKNFRCbi1nMDF3dGUyRmx1Yno0VGtfNFlGbGJtM1ozOUg5TnBIMUlTbWtVdnU5VmU3TXVTNHdObTI4cFFaQUY3RVV1SFNueVRoMkItcVJMTlpVR0pib2MxbmpmU3lVREVycENFMTRmVTVMdw?oc=5",
+    "https://news.google.com/rss/articles/CBMioAFBVV95cUxPeTY3Z1BtUk43NnhKQWJ0V3ByTk1QWXdHd2JBUnMxOHZOckNWUUhpNEUyQkppUkdWVnIzYlRxeHB2VHRabFFpT3lGaHdBR1pjUi1jeTJDMldCQ081QVRVbEh2MWlUejhlUHZFRDlVSGU1M0JsbmJCRWF5OFdySEpjUDdWaThaTFFlblh5bWQ1TUxfUXlKNWplYURaZHhqei110gGmAUFVX3lxTE1MWEdEcXhzUlh4ZFhFdENVa18yWWNTdDlObENEREhUeEMtQW05SkNvUDdTNmJJOXhwYnJyLXZDdlZyU2lzaDNjV21nS254bzBwSmUtaDJOckhyQmpKczhwX1FrZnJNbURCQmNTY0E1d3Vnd3BZekFzeUNoNDdZZjNqWVlrSFFfMVotRG05TTZWNTQ2MHpoeGJhMS02clVyMkc0Y0t2aXc?oc=5",
+    "https://news.google.com/rss/articles/CBMiogFBVV95cUxOODBrODl0aE5GRzNOY3M0UWhCMU1paHpHeEc1Vk1XZVRqa3R5Y2tGZ09WZEJxSmtqSTA1TEFIQ3Z6cE1tV0FmTmJVYVlqMU1OMmNHQ19GSVI0eWVUWEFfOXpQdVJPcXdITmxjN2Y5U2hIYkF5SS0tOFpjUHIwUUg5aFdPWmM3akVGWXh6dUNtWE9Ia3BzNW1GZkRXcUZOWk1uOXc?oc=5",
+    "https://news.google.com/rss/articles/CBMirwFBVV95cUxPS2RzNkJkU3pRa2ptNHdfQm41S2tsNEtxbzlNN2JQWVVMV3Exam5LMGlBam80X0kwWGhJZWZKUVZEX05Vd0lDTGV1bHhiSDlpaGxlV3ZnS1B2Z0owMVBFUDlZdHY0THNjMUhxTUhrU1BuY3ZqVlhLSjZpODZta3lrVnluMUNMLWtydmxOMnduZU9MczdQc203T01UdVluMUVZVEZseEFjUVdQckEyWjg4?oc=5",
+    "https://news.google.com/rss/articles/CBMirwFBVV95cUxPWGZQS24wS2RjZ3Q4OEludVFvZVNHSUVRWHBTaDN0UUJ6TEhOUFdQeEJ2RkJwX1dVRVZES2hiSjEyaUhUNHUyLU5BcTU0SlA1dHZGZ2liWDl3Qnl1T0FvTl9XbmhZdmVFejZMbmdGSnppQlVqZGxUbnNXeHlrSXRwNG9iSXR3cXpPMS1MRnFndlNPZHMtT25mS21wcTdqUGpQRF8xYzh6OXdDM3pScDN3?oc=5",
+    "https://news.google.com/rss/articles/CBMitwFBVV95cUxOODcxNVdGdzg4V0d5ZU9ZeE5HcnJCSkNKaTlyTmk5OGxBT3p5dThaNkdQY196eENkemY4bnNpNll1NWRoOV8yQmx4TTlfM1ZwbDh6eEkyUE5wZWVMVTZvaFlfakZLQ3VTU09MZXlsc3Y1TnVFOU9NVmd2bHUwNUpnUXM3MHljMUFKYktOT0I3cnJuSm44dVFZNV92ZGZyaWhLT3k4R0VTTFFOTFhVY1VOVk1PNUlLOHc?oc=5",
+    "https://news.google.com/rss/articles/CBMizAFBVV95cUxOMVVFWFVueXFwMTRTSWVfYUZZVFpZaVRWbFJDc2d6X2N3cUVNMVdab0NVOTJETXhOdTd2WFAxWHJhd0N5X3RySXYtSThKWXkyemVsRzNxUmFmUFVxWDZXNm9vckZxYUlPZGJpTUxxTjdtaFMwY2pJcEVQRXlLLWlDaXFZSUdqNjZXVG1FVjQ3d0RYRWpBV3pPZmFzSWwxdTFrZ3h5VDYyUkJkY0E2cnFVZWF3TzFxU1hiT1c2Y3FLaVAzYkVKV1hnUUk2ZGw?oc=5",
+    "https://news.google.com/rss/articles/CBMizwFBVV95cUxQdEtlT1V3R2RhTEgtWjlBZmZvQlRsSzNMcmk3Z1ZrdW10c2ppcjFnQVhiNEttWUYtMkFPSm01bTNBUjZRMHRsRTN2a0JrQTNlTXdCcXE0bC0tRlZkTnRUZTVPMWExM094QXR3SlpnRUJkaGZKNGlZc2R1SWhjQkJZdUt6MUxISGxQLW5xZHhEcFVUVjJocjJWU3ZULUpuQ0xWTV9DSExKbDNEcHpoaVdBYk9yd09ZUWlMSGpjd3daYms2QVZsTFFjcVZwNnp2NFk?oc=5",
+    "https://payloadspace.com/auxilium-demos-tech-to-enable-sustainable-bioprinting-in-orbit/",
+    "https://payloadspace.com/us-government-studying-offshore-launch-opportunities/",
+    "https://science.nasa.gov/science-research/earth-science/principal-investigator-and-quality-assessment-reports-evaluate-umbra-synthetic-aperture-radar-data/",
+    "https://spacenews.com/china-becomes-second-country-to-recover-orbital-booster-with-long-march-10b/",
+    "https://spacenews.com/china-unveils-members-of-state-backed-commercial-space-consortium/",
+    "https://spacenews.com/elevationspace-advances-work-on-commercial-reentry-vehicle/",
+    "https://spacenews.com/maintaining-leadership-in-space-with-victoria-coleman/",
+    "https://spacenews.com/sda-tap-lab-evolves-into-bmc3i-tap-lab-and-in-partnership-with-catalyst-campus-launches-a-new-multi-phased-program-to-accelerate-mission-focused-technology-development/",
+    "https://spacenews.com/space-capitalism-needs-more-than-a-bull-market/",
+    "https://www.theregister.com/ai-and-ml/2026/07/09/ai-slop-writing-has-taken-over-the-internet-particularly-linkedin-and-x/5269525",
+    "https://www.theregister.com/ai-and-ml/2026/07/09/ai-tool-scours-the-web-for-job-openings-preps-your-resume-and-cover-letter/5269410",
+    "https://www.theregister.com/applications/2026/07/09/outlook-for-mac-bug-makes-font-choice-a-purely-decorative-feature/5269242",
+    "https://www.theregister.com/columnists/2026/07/12/its-an-ai-web-and-were-just-rats-in-the-walls/5269760",
+    "https://www.theregister.com/public-sector/2026/07/09/ukgov-withholds-10m-payment-from-capita-over-pensions-project-fiasco-as-dispute-continues/5269227",
+    "https://www.theregister.com/public-sector/2026/07/10/capita-hears-demand-for-pension-scheme-cleanup-loud-and-clear-but-wont-say-yes/5269852"
+  ],
+  "top_news": [
+    {
+      "company_id": "landspace",
+      "company_name": "蓝箭航天",
+      "item_id": "319c940f5f829efc",
+      "published_at": "2026-07-12T16:40:13Z",
+      "section_id": "launch_services",
+      "title": "蓝箭航天IPO，五大核心合作公司梳理（最新版） - 凤凰网",
+      "url": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE1sRnhTM0FQT1AyZWFsZmo1NzQyTEM4QWtxcFVsemZnWVRKc2xFMDUwNFJoQ3lsUXU4NDFKZ3NGU0h1c0NBeDJ2M2JqRk4zaXZh?oc=5",
+      "why_selected": ""
+    }
+  ],
+  "total_items": 1
+}
