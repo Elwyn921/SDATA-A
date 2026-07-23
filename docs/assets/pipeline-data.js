@@ -5,20 +5,37 @@ export const DATA_ENDPOINTS = {
   archiveIndex: "./data/news/archive/index.json",
   archiveCatalog: "./data/news/archive/catalog.json",
   eventTimeline: "./data/news/latest/event_timeline.json",
+  dailyIndex: "./data/news/latest/daily_index.json",
   dailyReport: "./data/reports/latest/daily_report.json",
   indexSnapshot: "./data/indices/latest/aerospace_index.json",
 };
 
 export async function loadDashboardData(options = {}) {
   const result = await loadPipelineResult(options);
-  const [archiveIndex, archiveCatalog, eventTimeline, dailyReport, indexSnapshot] = await Promise.all([
+  const [
+    archiveIndex,
+    archiveCatalog,
+    eventTimeline,
+    dailyIndex,
+    dailyReport,
+    indexSnapshot,
+  ] = await Promise.all([
     loadOptionalJson(options.archiveUrl ?? DATA_ENDPOINTS.archiveIndex),
     loadOptionalJson(options.catalogUrl ?? DATA_ENDPOINTS.archiveCatalog),
     loadOptionalJson(options.eventTimelineUrl ?? DATA_ENDPOINTS.eventTimeline),
+    loadOptionalJson(options.dailyIndexUrl ?? DATA_ENDPOINTS.dailyIndex),
     loadOptionalJson(options.reportUrl ?? DATA_ENDPOINTS.dailyReport),
     loadOptionalJson(options.indexUrl ?? DATA_ENDPOINTS.indexSnapshot),
   ]);
-  return { result, archiveIndex, archiveCatalog, eventTimeline, dailyReport, indexSnapshot };
+  return {
+    result,
+    archiveIndex,
+    archiveCatalog,
+    eventTimeline,
+    dailyIndex,
+    dailyReport,
+    indexSnapshot,
+  };
 }
 
 export async function loadPipelineResult(options = {}) {
@@ -29,15 +46,11 @@ export async function loadPipelineResult(options = {}) {
   }
 
   if (mode === "auto") {
-    try {
-      return await loadJsonPipelineResult(options.url ?? DATA_ENDPOINTS.latestPipelineResult);
-    } catch (error) {
-      console.info(`Using mock PipelineResult fallback: ${error.message}`);
-      return withDataSource(samplePipelineResult, "mock");
-    }
+    return loadJsonPipelineResult(options.url ?? DATA_ENDPOINTS.latestPipelineResult);
   }
 
-  return withDataSource(samplePipelineResult, "mock");
+  if (mode === "mock") return withDataSource(samplePipelineResult, "mock");
+  throw new Error(`Unsupported dashboard data mode: ${mode}`);
 }
 
 async function loadJsonPipelineResult(url) {

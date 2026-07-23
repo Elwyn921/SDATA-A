@@ -55,6 +55,6 @@ Latest local snapshot:
 
 ## Data Source Behavior
 
-The page attempts to load live JSON first. If it cannot load real JSON, it may fall back to mock data for local UI development.
+The page loads published JSON directly and shows an explicit data-unavailable state if loading fails. Mock data remains available only through the explicit `mode: "mock"` development option.
 
 GDELT is not called by the frontend. GDELT 429 rate limits are external service behavior and should be shown, if needed, as provider health information rather than a frontend failure.

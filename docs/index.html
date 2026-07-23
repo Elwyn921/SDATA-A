@@ -3,7 +3,12 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>SDATA-A 卫星产业链情报看板</title>
+    <meta
+      name="description"
+      content="聚合商业航天公司动态、重大事件、新闻活跃度与中美航空航天板块表现。"
+    />
+    <meta name="theme-color" content="#0b1628" />
+    <title>SDATA-A 商业航天产业监测平台</title>
     <link rel="stylesheet" href="./assets/vendor/tabler/tabler.min.css" />
     <link rel="stylesheet" href="./assets/styles.css" />
   </head>
@@ -14,7 +19,7 @@
           <div class="brand-lockup">
             <span class="brand-mark">S</span>
             <div>
-              <div class="brand-title">SDATA-A 卫星产业链情报</div>
+              <div class="brand-title">SDATA-A 商业航天监测</div>
               <div class="brand-subtitle" id="data-source">加载中</div>
             </div>
           </div>
@@ -30,16 +35,16 @@
         <div class="container-xl">
           <section class="intro-strip">
             <div>
-              <div class="eyebrow">产业链监测</div>
-              <h1>卫星产业链情报看板</h1>
+              <div class="eyebrow">产业动态 · 资本市场 · 公司事件</div>
+              <h1>商业航天产业监测平台</h1>
             </div>
-            <p>按整星制造、发射服务、卫星互联网与国外大厂组织新闻动态，优先呈现公司覆盖与最新情报。</p>
+            <p>持续追踪卫星制造、商业发射、卫星互联网及重点企业，以可验证的数据呈现行业热度、市场表现与事件脉络。</p>
           </section>
 
-          <nav class="workspace-nav" aria-label="情报工作区">
-            <div class="workspace-tabs" role="tablist" aria-label="切换工作区">
+          <nav class="workspace-nav" aria-label="数据分析工作区">
+            <div class="workspace-tabs" role="tablist" aria-label="切换分析视图">
               <button type="button" role="tab" data-workspace-tab="overview" aria-selected="true">
-                <span>概览</span><strong id="workspace-overview-count">3</strong>
+                <span>概览</span><strong id="workspace-overview-count">4</strong>
               </button>
               <button type="button" role="tab" data-workspace-tab="companies" aria-selected="false">
                 <span>公司</span><strong id="workspace-company-count">0</strong>
@@ -51,11 +56,11 @@
                 <span>新闻</span><strong id="workspace-news-count">0</strong>
               </button>
               <button type="button" role="tab" data-workspace-tab="diagnostics" aria-selected="false">
-                <span>数据健康</span><strong id="workspace-diagnostic-count">0</strong>
+                <span>数据说明</span><strong id="workspace-diagnostic-count">0</strong>
               </button>
             </div>
             <div class="workspace-context">
-              <span id="workspace-context-label">今日情报概览</span>
+              <span id="workspace-context-label">今日概览</span>
               <small id="workspace-context-meta">加载中</small>
             </div>
           </nav>
@@ -67,7 +72,7 @@
             data-workspace-view="overview"
           >
             <div class="briefing-copy">
-              <div class="section-kicker">每日简报</div>
+              <div class="section-kicker">每日动态</div>
               <div class="briefing-title-row">
                 <h2 id="briefing-title">正在生成今日摘要</h2>
                 <span class="briefing-status" id="briefing-status">加载中</span>
@@ -94,8 +99,8 @@
           >
             <div class="section-heading index-heading">
               <div>
-                <div class="section-kicker">新闻与市场指数</div>
-                <h2 id="index-overview-title">今日航空航天热度</h2>
+                <div class="section-kicker">产业脉搏</div>
+                <h2 id="index-overview-title">新闻热度与市场表现</h2>
                 <p id="index-as-of">正在读取新闻和行情指数</p>
               </div>
               <span class="index-source-status" id="index-source-status">加载中</span>
@@ -103,17 +108,28 @@
             <div class="index-grid">
               <article class="index-card news-activity-card">
                 <div class="index-card-header">
-                  <div>
-                    <span>SDATA 新闻活跃度指数</span>
-                    <strong id="news-index-value">--</strong>
-                  </div>
+                  <span>SDATA 新闻活跃度指数</span>
                   <span class="index-change is-flat" id="news-index-label">等待数据</span>
                 </div>
-                <p id="news-index-method">过去 30 个自然日日均为 100</p>
-                <div class="index-card-metrics" id="news-index-metrics"></div>
-                <div class="news-index-scale" aria-hidden="true">
-                  <i></i><i></i><i></i><i></i><i></i>
+                <div class="news-pulse-main">
+                  <div
+                    class="news-index-gauge"
+                    id="news-index-gauge"
+                    role="img"
+                    aria-label="新闻活跃度指数等待加载"
+                  >
+                    <div>
+                      <strong id="news-index-value">--</strong>
+                      <span>指数</span>
+                    </div>
+                  </div>
+                  <div class="news-pulse-copy">
+                    <p id="news-index-method">过去 30 个自然日日均为 100</p>
+                    <div class="index-card-metrics" id="news-index-metrics"></div>
+                  </div>
                 </div>
+                <div class="mini-index-history" id="news-index-history" aria-label="近 60 日新闻活跃度走势"></div>
+                <div class="mini-index-axis" aria-hidden="true"><span>60 日前</span><span>基准 100</span><span>今日</span></div>
               </article>
 
               <article class="index-card market-index-card">
@@ -125,6 +141,7 @@
                   <span class="index-change is-flat" id="china-index-change">--</span>
                 </div>
                 <p id="china-index-meta">等权指数，前收盘为 1000 点</p>
+                <div class="market-breadth" id="china-market-breadth"></div>
                 <div class="stock-list" id="china-stock-list"></div>
               </article>
 
@@ -137,6 +154,7 @@
                   <span class="index-change is-flat" id="us-index-change">--</span>
                 </div>
                 <p id="us-index-meta">等权指数，前收盘为 1000 点</p>
+                <div class="market-breadth" id="us-market-breadth"></div>
                 <div class="stock-list" id="us-stock-list"></div>
               </article>
             </div>
@@ -146,14 +164,72 @@
           </section>
 
           <section
+            class="signal-panel"
+            aria-labelledby="signal-overview-title"
+            data-workspace-view="overview"
+          >
+            <div class="section-heading signal-heading">
+              <div>
+                <div class="section-kicker">信号结构</div>
+                <h2 id="signal-overview-title">产业关注度全景</h2>
+                <p id="signal-as-of">正在计算产业链、来源与公司活跃度</p>
+              </div>
+              <div class="signal-legend" aria-label="公司热度图例">
+                <span>低</span><i data-level="1"></i><i data-level="2"></i><i data-level="3"></i><i data-level="4"></i><i data-level="5"></i><span>高</span>
+              </div>
+            </div>
+            <div class="signal-grid">
+              <article class="signal-card sector-signal-card">
+                <div class="visual-card-heading">
+                  <div>
+                    <span>近 30 日</span>
+                    <h3>产业链关注结构</h3>
+                  </div>
+                  <strong id="sector-signal-total">0</strong>
+                </div>
+                <div class="donut-layout">
+                  <div class="sector-donut" id="sector-donut" role="img" aria-label="产业链关注结构等待加载">
+                    <div><strong>0</strong><span>篇新闻</span></div>
+                  </div>
+                  <div class="sector-legend" id="sector-legend"></div>
+                </div>
+              </article>
+
+              <article class="signal-card source-signal-card">
+                <div class="visual-card-heading">
+                  <div>
+                    <span>近 30 日</span>
+                    <h3>信息来源构成</h3>
+                  </div>
+                  <strong id="source-signal-total">0</strong>
+                </div>
+                <div class="rank-bars" id="source-signal-bars"></div>
+              </article>
+
+              <article class="signal-card heatmap-signal-card">
+                <div class="visual-card-heading">
+                  <div>
+                    <span>近 14 日</span>
+                    <h3>重点公司新闻热度</h3>
+                  </div>
+                  <small>点击色块查看对应日期新闻</small>
+                </div>
+                <div class="company-heatmap-wrap">
+                  <div class="company-heatmap" id="company-heatmap"></div>
+                </div>
+              </article>
+            </div>
+          </section>
+
+          <section
             class="volume-panel"
             aria-labelledby="volume-title"
             data-workspace-view="overview"
           >
             <div class="section-heading volume-heading">
               <div>
-                <div class="section-kicker">新闻数量指数</div>
-                <h2 id="volume-title">每日新闻量</h2>
+                <div class="section-kicker">历史趋势</div>
+                <h2 id="volume-title">每日新闻活跃度</h2>
                 <p id="volume-caption">按发布时间统计，点击柱形查看当天归档</p>
               </div>
               <div class="volume-summary" id="volume-summary"></div>
@@ -186,8 +262,8 @@
           >
             <div class="section-heading event-heading">
               <div>
-                <div class="section-kicker">P1 公司事件时间线</div>
-                <h2 id="event-panel-title">从零散新闻到公司事件</h2>
+                <div class="section-kicker">公司事件时间线</div>
+                <h2 id="event-panel-title">重大事件演进</h2>
                 <p id="event-summary">按公司、事件类型和时间窗口聚合多来源报道</p>
               </div>
               <label class="event-company-picker">
@@ -196,6 +272,29 @@
                   <option value="all">全部公司</option>
                 </select>
               </label>
+            </div>
+            <div class="event-visual-grid">
+              <article class="event-visual-card">
+                <div class="visual-card-heading">
+                  <div><span>事件构成</span><h3>类型分布</h3></div>
+                  <strong id="event-visual-total">0</strong>
+                </div>
+                <div class="rank-bars event-type-chart" id="event-type-chart"></div>
+              </article>
+              <article class="event-visual-card">
+                <div class="visual-card-heading">
+                  <div><span>公司对比</span><h3>事件活跃度</h3></div>
+                  <small>当前筛选范围</small>
+                </div>
+                <div class="rank-bars" id="event-company-chart"></div>
+              </article>
+              <article class="event-visual-card">
+                <div class="visual-card-heading">
+                  <div><span>综合判断</span><h3>重要性分布</h3></div>
+                  <strong id="event-high-importance">0</strong>
+                </div>
+                <div class="importance-distribution" id="event-importance-chart"></div>
+              </article>
             </div>
             <div class="event-type-tabs" id="event-type-tabs"></div>
             <div class="event-timeline" id="event-timeline"></div>
@@ -232,8 +331,8 @@
             <details open>
               <summary>
                 <span>
-                  <strong>系统诊断</strong>
-                  <em id="diagnostics-summary">数据源状态与访问异常</em>
+                  <strong>数据运行状态</strong>
+                  <em id="diagnostics-summary">来源覆盖、质量筛选与访问异常</em>
                 </span>
               </summary>
               <div class="diagnostics-body">
