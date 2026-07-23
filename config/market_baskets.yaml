@@ -1,5 +1,5 @@
-schema_version: market_baskets.v1
-description: Equal-weight aerospace sector baskets used by the public index dashboard.
+schema_version: market_baskets.v2
+description: Broad-market benchmark indices plus equal-weight aerospace sector baskets.
 
 quote_source:
   source_id: sina_finance
@@ -11,16 +11,19 @@ quote_source:
     cache_policy: daily_archive_latest_overwrite
 
 index_methodology:
-  base_value: 1000
-  base_definition: previous_close
-  weighting: equal_weight
-  current_value_formula: base_value * (1 + arithmetic_mean_member_change_pct / 100)
-  note: The index measures current-session breadth and resets to 1000 at each previous close.
+  market_index_formula: provider_market_index_quote.price
+  basket_weighting: equal_weight
+  basket_change_formula: arithmetic_mean_member_change_pct
+  note: Market index levels are provider quotes; aerospace basket returns are shown separately as equal-weight daily changes.
 
 sectors:
   china:
     display_name: 中国航空航天板块
     currency: CNY
+    benchmark:
+      symbol: sh000300
+      ticker: 000300.SH
+      name: 沪深 300 指数
     members:
       - symbol: sh600118
         ticker: 600118.SH
@@ -56,6 +59,10 @@ sectors:
   united_states:
     display_name: 美国航空航天板块
     currency: USD
+    benchmark:
+      symbol: gb_inx
+      ticker: SPX
+      name: 标普 500 指数
     members:
       - symbol: gb_ba
         ticker: BA

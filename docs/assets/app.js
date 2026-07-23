@@ -148,10 +148,12 @@ const elements = {
   newsIndexLabel: document.querySelector("#news-index-label"),
   newsIndexMethod: document.querySelector("#news-index-method"),
   newsIndexMetrics: document.querySelector("#news-index-metrics"),
+  chinaIndexName: document.querySelector("#china-index-name"),
   chinaIndexValue: document.querySelector("#china-index-value"),
   chinaIndexChange: document.querySelector("#china-index-change"),
   chinaIndexMeta: document.querySelector("#china-index-meta"),
   chinaStockList: document.querySelector("#china-stock-list"),
+  usIndexName: document.querySelector("#us-index-name"),
   usIndexValue: document.querySelector("#us-index-value"),
   usIndexChange: document.querySelector("#us-index-change"),
   usIndexMeta: document.querySelector("#us-index-meta"),
@@ -309,11 +311,13 @@ function renderIndexOverview() {
 
 function renderMarketIndex(market, sectorId) {
   const isChina = sectorId === "china";
+  const nameElement = isChina ? elements.chinaIndexName : elements.usIndexName;
   const valueElement = isChina ? elements.chinaIndexValue : elements.usIndexValue;
   const changeElement = isChina ? elements.chinaIndexChange : elements.usIndexChange;
   const metaElement = isChina ? elements.chinaIndexMeta : elements.usIndexMeta;
   const listElement = isChina ? elements.chinaStockList : elements.usStockList;
   if (!market) {
+    nameElement.textContent = isChina ? "沪深 300 指数" : "标普 500 指数";
     valueElement.textContent = "--";
     changeElement.textContent = "--";
     changeElement.className = "index-change is-flat";
@@ -322,16 +326,18 @@ function renderMarketIndex(market, sectorId) {
     return;
   }
 
+  nameElement.textContent =
+    market.index_name ?? (isChina ? "沪深 300 指数" : "标普 500 指数");
   valueElement.textContent =
-    market.index_value == null ? "--" : Number(market.index_value).toFixed(2);
+    market.index_value == null ? "--" : formatMarketPrice(market.index_value);
   changeElement.textContent = formatSignedPct(market.change_pct);
   changeElement.className = `index-change ${changeClass(market.change_pct)}`;
-  const quoteTimes = (market.members ?? [])
-    .map((member) => member.source_timestamp)
+  const quoteTimes = [market.benchmark, ...(market.members ?? [])]
+    .map((member) => member?.source_timestamp)
     .filter(Boolean)
     .sort();
   metaElement.textContent =
-    `上涨 ${market.advancers ?? 0} · 下跌 ${market.decliners ?? 0} · ${market.quoted_member_count ?? 0}/${market.member_count ?? 0} 只${quoteTimes.length ? ` · ${quoteTimes.at(-1)}` : ""}`;
+    `板块等权 ${formatSignedPct(market.basket_change_pct)} · 上涨 ${market.advancers ?? 0} · 下跌 ${market.decliners ?? 0} · ${market.quoted_member_count ?? 0}/${market.member_count ?? 0} 只${quoteTimes.length ? ` · ${quoteTimes.at(-1)}` : ""}`;
   listElement.replaceChildren(
     ...(market.members ?? []).map((member) => {
       const row = document.createElement("div");
