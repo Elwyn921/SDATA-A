@@ -487,7 +487,7 @@ function renderIndexOverview() {
   renderMarketIndex(snapshot.markets?.china, "china");
   renderMarketIndex(snapshot.markets?.united_states, "united_states");
   elements.indexDisclaimer.textContent =
-    source.delay_notice ?? "行情可能存在延迟，指数仅用于板块监测，不构成投资建议。";
+    source.delay_notice ?? "行情可能存在延迟，篮子涨跌仅用于板块监测，不构成投资建议。";
 }
 
 function renderMarketIndex(market, sectorId) {
@@ -499,8 +499,9 @@ function renderMarketIndex(market, sectorId) {
   const breadthElement = isChina ? elements.chinaMarketBreadth : elements.usMarketBreadth;
   const listElement = isChina ? elements.chinaStockList : elements.usStockList;
   if (!market) {
-    nameElement.textContent = isChina ? "沪深 300 指数" : "标普 500 指数";
+    nameElement.textContent = isChina ? "中国航空航天篮子" : "美国航空航天篮子";
     valueElement.textContent = "--";
+    valueElement.className = "";
     changeElement.textContent = "--";
     changeElement.className = "index-change is-flat";
     metaElement.textContent = "等待行情数据";
@@ -509,18 +510,19 @@ function renderMarketIndex(market, sectorId) {
     return;
   }
 
+  const basketChange = market.basket_change_pct ?? market.change_pct;
   nameElement.textContent =
-    market.index_name ?? (isChina ? "沪深 300 指数" : "标普 500 指数");
-  valueElement.textContent =
-    market.index_value == null ? "--" : formatMarketPrice(market.index_value);
-  changeElement.textContent = formatSignedPct(market.change_pct);
-  changeElement.className = `index-change ${changeClass(market.change_pct)}`;
-  const quoteTimes = [market.benchmark, ...(market.members ?? [])]
-    .map((member) => member?.source_timestamp)
+    market.basket_name ?? (isChina ? "中国航空航天篮子" : "美国航空航天篮子");
+  valueElement.textContent = formatSignedPct(basketChange);
+  valueElement.className = changeClass(basketChange);
+  changeElement.textContent = `${market.advancers ?? 0} 涨 / ${market.decliners ?? 0} 跌`;
+  changeElement.className = "index-change is-flat";
+  const quoteTimes = (market.members ?? [])
+    .map((member) => member.source_timestamp)
     .filter(Boolean)
     .sort();
   metaElement.textContent =
-    `板块等权 ${formatSignedPct(market.basket_change_pct)} · 上涨 ${market.advancers ?? 0} · 下跌 ${market.decliners ?? 0} · ${market.quoted_member_count ?? 0}/${market.member_count ?? 0} 只${quoteTimes.length ? ` · ${quoteTimes.at(-1)}` : ""}`;
+    `当日等权涨跌 · 行情 ${market.quoted_member_count ?? 0}/${market.member_count ?? 0} 只${quoteTimes.length ? ` · ${quoteTimes.at(-1)}` : ""}`;
   const advancers = Number(market.advancers ?? 0);
   const decliners = Number(market.decliners ?? 0);
   const unchanged = Number(market.unchanged ?? 0);

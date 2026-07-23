@@ -14,7 +14,6 @@ def sample_config():
     return {
         "quote_source": {"source_id": "sina_finance", "source_name": "Sina"},
         "index_methodology": {
-            "market_index_formula": "benchmark quote",
             "basket_weighting": "equal_weight",
             "basket_change_formula": "mean return",
         },
@@ -22,11 +21,6 @@ def sample_config():
             "china": {
                 "display_name": "中国航空航天板块",
                 "currency": "CNY",
-                "benchmark": {
-                    "symbol": "sh000300",
-                    "ticker": "000300.SH",
-                    "name": "沪深 300 指数",
-                },
                 "members": [
                     {"symbol": "sh600118", "ticker": "600118.SH", "name": "中国卫星"},
                     {"symbol": "sz000768", "ticker": "000768.SZ", "name": "中航西飞"},
@@ -35,11 +29,6 @@ def sample_config():
             "united_states": {
                 "display_name": "美国航空航天板块",
                 "currency": "USD",
-                "benchmark": {
-                    "symbol": "gb_inx",
-                    "ticker": "SPX",
-                    "name": "标普 500 指数",
-                },
                 "members": [{"symbol": "gb_ba", "ticker": "BA", "name": "Boeing"}],
             },
         },
@@ -89,36 +78,9 @@ def test_parse_sina_response_handles_china_and_us_formats():
         "0",
         "6061392",
     ]
-    china_index_fields = [
-        "沪深300",
-        "4460.0000",
-        "4450.0000",
-        "4471.2500",
-        "4480.0000",
-        "4448.0000",
-        "0",
-        "0",
-        "123456789",
-        "987654321",
-    ] + ["0"] * 20 + ["2026-07-23", "11:30:00"]
-    us_index_fields = [
-        "标普500指数",
-        "7498.9600",
-        "-0.14",
-        "2026-07-22 16:00:00",
-        "-10.5100",
-        "7511.0000",
-        "7520.0000",
-        "7470.0000",
-        "0",
-        "0",
-        "1234567",
-    ]
     payload = (
         f'var hq_str_sh600118="{",".join(china_fields)}";\n'
-        f'var hq_str_gb_ba="{",".join(us_fields)}";\n'
-        f'var hq_str_sh000300="{",".join(china_index_fields)}";\n'
-        f'var hq_str_gb_inx="{",".join(us_index_fields)}";'
+        f'var hq_str_gb_ba="{",".join(us_fields)}";'
     )
 
     quotes = parse_sina_response(payload)
@@ -127,13 +89,9 @@ def test_parse_sina_response_handles_china_and_us_formats():
     assert quotes["sh600118"]["change_pct"] == 0.856
     assert quotes["gb_ba"]["price"] == 208.65
     assert quotes["gb_ba"]["change_pct"] == 1.88
-    assert quotes["sh000300"]["price"] == 4471.25
-    assert quotes["sh000300"]["change_pct"] == 0.478
-    assert quotes["gb_inx"]["price"] == 7498.96
-    assert quotes["gb_inx"]["change_pct"] == -0.14
 
 
-def test_fetch_sina_quotes_batches_benchmarks_and_members_once(monkeypatch):
+def test_fetch_sina_quotes_batches_members_once(monkeypatch):
     captured = []
 
     class EmptyResponse:
@@ -156,10 +114,8 @@ def test_fetch_sina_quotes_batches_benchmarks_and_members_once(monkeypatch):
     assert len(captured) == 1
     requested_symbols = captured[0][0].split("list=", 1)[1].split(",")
     assert requested_symbols == [
-        "sh000300",
         "sh600118",
         "sz000768",
-        "gb_inx",
         "gb_ba",
     ]
 
@@ -174,17 +130,8 @@ def test_news_activity_uses_previous_30_calendar_day_average():
     assert len(activity["history"]) == 60
 
 
-def test_index_snapshot_uses_real_market_benchmarks_and_separate_basket_changes():
+def test_index_snapshot_reports_only_equal_weight_basket_changes():
     quotes = {
-        "sh000300": {
-            "symbol": "sh000300",
-            "source_name": "沪深300",
-            "price": 4471.25,
-            "previous_close": 4450,
-            "change_amount": 21.25,
-            "change_pct": 0.478,
-            "source_timestamp": "2026-07-23 15:00:00",
-        },
         "sh600118": {
             "symbol": "sh600118",
             "source_name": "中国卫星",
@@ -212,15 +159,6 @@ def test_index_snapshot_uses_real_market_benchmarks_and_separate_basket_changes(
             "change_pct": 2.0,
             "source_timestamp": "2026-07-23 10:00:00",
         },
-        "gb_inx": {
-            "symbol": "gb_inx",
-            "source_name": "标普500指数",
-            "price": 7498.96,
-            "previous_close": 7509.47,
-            "change_amount": -10.51,
-            "change_pct": -0.14,
-            "source_timestamp": "2026-07-22 16:00:00",
-        },
     }
 
     payload = build_index_snapshot(
@@ -234,52 +172,34 @@ def test_index_snapshot_uses_real_market_benchmarks_and_separate_basket_changes(
     china = payload["markets"]["china"]
     united_states = payload["markets"]["united_states"]
     assert payload["schema_version"] == SCHEMA_VERSION
-    assert china["index_name"] == "沪深 300 指数"
-    assert china["index_value"] == 4471.25
-    assert china["change_pct"] == 0.478
+    assert china["basket_name"] == "中国航空航天板块等权篮子"
     assert china["basket_change_pct"] == 0
+    assert china["change_pct"] == 0
     assert china["advancers"] == 1
     assert china["decliners"] == 1
     assert "index_base" not in china
-    assert united_states["index_value"] == 7498.96
-    assert united_states["change_pct"] == -0.14
+    assert "index_value" not in china
+    assert "benchmark" not in china
+    assert united_states["change_pct"] == 2
     assert united_states["basket_change_pct"] == 2
-    assert payload["market_data_source"]["quoted_instruments"] == 5
-    assert payload["market_data_source"]["expected_instruments"] == 5
+    assert payload["market_data_source"]["quoted_instruments"] == 3
+    assert payload["market_data_source"]["expected_instruments"] == 3
 
 
-def test_missing_benchmarks_do_not_recreate_synthetic_1000_point_indices():
-    quotes = {
-        "sh600118": {
-            "symbol": "sh600118",
-            "source_name": "中国卫星",
-            "price": 10.1,
-            "previous_close": 10,
-            "change_amount": 0.1,
-            "change_pct": 1.0,
-            "source_timestamp": "2026-07-23 15:00:00",
-        }
-    }
-
+def test_stale_snapshot_does_not_reuse_old_synthetic_point_schema():
     payload = build_index_snapshot(
         sample_catalog(),
         sample_config(),
-        quotes,
+        {},
         as_of=date(2026, 7, 23),
         generated_at=datetime(2026, 7, 23, tzinfo=timezone.utc),
     )
 
-    china = payload["markets"]["china"]
-    assert china["index_value"] is None
-    assert china["change_pct"] is None
-    assert china["basket_change_pct"] == 1
-    assert china["benchmark"]["status"] == "unavailable"
-    assert china["status"] == "partial"
-
-    previous_v1 = {
-        "schema_version": "aerospace_index_snapshot.v1",
+    previous_v2 = {
+        "schema_version": "aerospace_index_snapshot.v2",
         "markets": {"china": {"index_value": 1000}},
     }
-    stale = stale_market_snapshot(payload, previous_v1, reason="offline")
-    assert stale["markets"]["china"]["index_value"] is None
+    stale = stale_market_snapshot(payload, previous_v2, reason="offline")
+    assert "index_value" not in stale["markets"]["china"]
+    assert stale["markets"]["china"]["basket_change_pct"] is None
     assert stale["market_data_source"]["status"] == "unavailable"

@@ -19,7 +19,7 @@ from typing import Any
 import yaml
 
 
-SCHEMA_VERSION = "aerospace_index_snapshot.v2"
+SCHEMA_VERSION = "aerospace_index_snapshot.v3"
 REPORT_TIMEZONE = timezone(timedelta(hours=8), name="Asia/Shanghai")
 DEFAULT_CONFIG_PATH = Path("config/market_baskets.yaml")
 DEFAULT_CATALOG_PATH = Path("docs/data/news/archive/catalog.json")
@@ -214,9 +214,8 @@ def fetch_sina_quotes(
     symbols = []
     seen_symbols: set[str] = set()
     for sector in (config.get("sectors") or {}).values():
-        instruments = [sector.get("benchmark"), *(sector.get("members") or [])]
-        for instrument in instruments:
-            symbol = (instrument or {}).get("symbol")
+        for member in sector.get("members") or []:
+            symbol = member.get("symbol")
             if symbol and symbol not in seen_symbols:
                 symbols.append(symbol)
                 seen_symbols.add(symbol)
@@ -238,30 +237,6 @@ def build_sector_snapshot(
     sector_config: dict[str, Any],
     quotes: dict[str, dict[str, Any]],
 ) -> dict[str, Any]:
-    configured_benchmark = sector_config.get("benchmark") or {}
-    benchmark_quote = quotes.get(configured_benchmark.get("symbol"))
-    if benchmark_quote:
-        benchmark = {
-            **benchmark_quote,
-            "ticker": configured_benchmark.get("ticker"),
-            "name": configured_benchmark.get("name")
-            or benchmark_quote.get("source_name"),
-            "source_name": benchmark_quote.get("source_name")
-            or configured_benchmark.get("name"),
-            "instrument_type": "market_index",
-            "status": "current",
-        }
-    elif configured_benchmark:
-        benchmark = {
-            "symbol": configured_benchmark.get("symbol"),
-            "ticker": configured_benchmark.get("ticker"),
-            "name": configured_benchmark.get("name"),
-            "instrument_type": "market_index",
-            "status": "unavailable",
-        }
-    else:
-        benchmark = None
-
     members = []
     for configured in sector_config.get("members") or []:
         quote = quotes.get(configured["symbol"])
@@ -290,37 +265,21 @@ def build_sector_snapshot(
         if member.get("status") == "current" and member.get("change_pct") is not None
     ]
     average_change = fmean(valid_changes) if valid_changes else None
-    benchmark_is_current = bool(benchmark and benchmark.get("status") == "current")
-    quoted_instrument_count = len(valid_changes) + int(benchmark_is_current)
-    expected_instrument_count = len(members) + int(bool(configured_benchmark))
-    if benchmark_is_current and valid_changes:
-        status = "current"
-    elif benchmark_is_current or valid_changes:
-        status = "partial"
-    else:
-        status = "unavailable"
+    basket_change = round(average_change, 3) if average_change is not None else None
     return {
         "sector_id": sector_id,
         "display_name": sector_config["display_name"],
         "currency": sector_config["currency"],
-        "index_name": configured_benchmark.get("name") or "市场基准指数",
-        "index_value": (
-            round(benchmark["price"], 2) if benchmark_is_current else None
-        ),
-        "change_pct": benchmark.get("change_pct") if benchmark_is_current else None,
-        "benchmark": benchmark,
-        "basket_change_pct": (
-            round(average_change, 3) if average_change is not None else None
-        ),
+        "basket_name": f"{sector_config['display_name']}等权篮子",
+        "basket_change_pct": basket_change,
+        "change_pct": basket_change,
         "member_count": len(members),
         "quoted_member_count": len(valid_changes),
-        "quoted_instrument_count": quoted_instrument_count,
-        "expected_instrument_count": expected_instrument_count,
         "advancers": sum(1 for change in valid_changes if change > 0),
         "decliners": sum(1 for change in valid_changes if change < 0),
         "unchanged": sum(1 for change in valid_changes if change == 0),
         "members": members,
-        "status": status,
+        "status": "current" if valid_changes else "unavailable",
     }
 
 
@@ -344,11 +303,9 @@ def build_index_snapshot(
     }
     source = config.get("quote_source") or {}
     quoted_count = sum(
-        market["quoted_instrument_count"] for market in markets.values()
+        market["quoted_member_count"] for market in markets.values()
     )
-    expected_count = sum(
-        market["expected_instrument_count"] for market in markets.values()
-    )
+    expected_count = sum(market["member_count"] for market in markets.values())
     news_activity = build_news_activity(catalog, as_of=as_of)
     news_activity["is_partial_day"] = (
         as_of == generated.astimezone(REPORT_TIMEZONE).date()
@@ -366,14 +323,13 @@ def build_index_snapshot(
             "quoted_instruments": quoted_count,
             "expected_instruments": expected_count,
             "request_count": 1,
-            "delay_notice": "行情可能存在延迟，指数仅用于板块监测，不构成投资建议。",
+            "delay_notice": "行情可能存在延迟，篮子涨跌仅用于板块监测，不构成投资建议。",
         },
         "methodology": {
             "news_index": "过去 30 个自然日日均=100",
-            "market_index": methodology.get("market_index_formula"),
             "sector_basket": methodology.get("basket_change_formula"),
             "weighting": methodology.get("basket_weighting") or "equal_weight",
-            "market_index_note": methodology.get("note"),
+            "sector_basket_note": methodology.get("note"),
         },
     }
 
@@ -384,12 +340,12 @@ def stale_market_snapshot(
     *,
     reason: str,
 ) -> dict[str, Any]:
-    previous_markets = (previous or {}).get("markets") or {}
-    has_real_benchmarks = bool(previous_markets) and all(
-        market.get("benchmark") for market in previous_markets.values()
-    )
-    if previous and previous.get("schema_version") == SCHEMA_VERSION and has_real_benchmarks:
-        payload["markets"] = previous_markets
+    if (
+        previous
+        and previous.get("schema_version") == SCHEMA_VERSION
+        and previous.get("markets")
+    ):
+        payload["markets"] = previous["markets"]
         for market in payload["markets"].values():
             market["status"] = "stale_previous"
         payload["market_data_source"].update(
