@@ -28,7 +28,7 @@
     {
       "company_id": "galaxyspace",
       "company_name": "银河航天",
-      "item_count": 11,
+      "item_count": 10,
       "status": "mixed"
     },
     {
@@ -40,13 +40,13 @@
     {
       "company_id": "i_space",
       "company_name": "星际荣耀",
-      "item_count": 8,
+      "item_count": 7,
       "status": "mixed"
     },
     {
       "company_id": "landspace",
       "company_name": "蓝箭航天",
-      "item_count": 25,
+      "item_count": 24,
       "status": "mixed"
     },
     {
@@ -58,19 +58,19 @@
     {
       "company_id": "space_pioneer",
       "company_name": "天兵科技",
-      "item_count": 5,
+      "item_count": 4,
       "status": "mixed"
     },
     {
       "company_id": "spacex",
       "company_name": "SpaceX",
-      "item_count": 47,
+      "item_count": 46,
       "status": "success"
     },
     {
       "company_id": "yuanxin_satellite",
       "company_name": "垣信卫星",
-      "item_count": 31,
+      "item_count": 32,
       "status": "mixed"
     },
     {
@@ -85,32 +85,32 @@
     "cas_space": 13,
     "china_satnet": 2,
     "galactic_energy": 12,
-    "galaxyspace": 11,
+    "galaxyspace": 10,
     "hongqing_technology": 6,
-    "i_space": 8,
-    "landspace": 25,
+    "i_space": 7,
+    "landspace": 24,
     "minospace": 4,
-    "space_pioneer": 5,
-    "spacex": 47,
-    "yuanxin_satellite": 31,
+    "space_pioneer": 4,
+    "spacex": 46,
+    "yuanxin_satellite": 32,
     "yushi_space": 5
   },
   "config_dir": "config",
   "dry_run": false,
   "export_count": 0,
   "fetch_status_count": 26,
-  "finished_at": "2026-07-23T13:18:30.470453Z",
-  "fresh_item_count": 191,
-  "generated_at": "2026-07-23T13:18:30.470453Z",
-  "item_count": 191,
+  "finished_at": "2026-07-23T18:56:51.087754Z",
+  "fresh_item_count": 187,
+  "generated_at": "2026-07-23T18:56:51.087754Z",
+  "item_count": 187,
   "metadata": {
     "latest_is_stale_safe": true
   },
   "output_dir": "data/news/latest",
-  "run_id": "7e33b884-3d89-4f80-be76-c402439a5d9f",
+  "run_id": "af03af1e-bdcf-4d15-a72c-7396d3985983",
   "schema_version": "satellite_news.v1",
   "stale_item_count": 0,
-  "started_at": "2026-07-23T13:16:46.050284Z",
+  "started_at": "2026-07-23T18:55:16.754628Z",
   "summary_count": 0,
   "warnings": []
 }
