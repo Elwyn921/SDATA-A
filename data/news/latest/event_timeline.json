@@ -1,19 +1,19 @@
 {
-  "article_count": 1507,
+  "article_count": 1557,
   "artifact_version": 1,
   "company_count": 13,
   "earliest_at": "2017-12-29T08:00:00Z",
-  "embedded_article_count": 1507,
-  "event_count": 1026,
+  "embedded_article_count": 1557,
+  "event_count": 1031,
   "event_type_counts": {
     "corporate": 34,
     "financing": 72,
-    "launch": 439,
-    "market": 107,
+    "launch": 441,
+    "market": 108,
     "order": 7,
-    "other": 306,
+    "other": 307,
     "partnership": 12,
-    "product": 44,
+    "product": 45,
     "regulation": 5
   },
   "events": [
@@ -288,8 +288,16 @@
       "summary": "SpaceX的发射与试验事件，已汇集 1 篇报道、1 个来源。"
     },
     {
-      "article_count": 5,
+      "article_count": 6,
       "articles": [
+        {
+          "date_is_inferred": false,
+          "id": "cc12e432d42c8f3a",
+          "published_at": "2026-07-22T07:51:46Z",
+          "source_name": "bing.com",
+          "title": "Falcon 9’s rare upper stage failure left 20 Starlink satellites stranded",
+          "url": "http://www.bing.com/news/apiclick.aspx?aid=&tid=6a61cb37c8b348dfb2137722cfb84ca0&url=https%3A%2F%2Fwww.msn.com%2Fen-us%2Fnews%2Ftechnology%2Ffalcon-9-s-rare-upper-stage-failure-left-20-starlink-satellites-stranded%2Fvi-AA28sGNp&c=7058837078991706578&mkt=en-us"
+        },
         {
           "date_is_inferred": false,
           "id": "21081d4a769898e9",
@@ -339,7 +347,7 @@
       "headline": "Falcon 9’s rare upper stage failure left 20 Starlink satellites stranded",
       "importance_score": 100,
       "latest_at": "2026-07-22T07:51:46Z",
-      "latest_url": "http://www.bing.com/news/apiclick.aspx?aid=&tid=6a617c472e7549499ab29acec07ddd5b&url=https%3A%2F%2Fwww.msn.com%2Fen-us%2Fnews%2Ftechnology%2Ffalcon-9-s-rare-upper-stage-failure-left-20-starlink-satellites-stranded%2Fvi-AA28sGNp&c=7058837078991706578&mkt=en-sg",
+      "latest_url": "http://www.bing.com/news/apiclick.aspx?aid=&tid=6a61cb37c8b348dfb2137722cfb84ca0&url=https%3A%2F%2Fwww.msn.com%2Fen-us%2Fnews%2Ftechnology%2Ffalcon-9-s-rare-upper-stage-failure-left-20-starlink-satellites-stranded%2Fvi-AA28sGNp&c=7058837078991706578&mkt=en-us",
       "source_count": 4,
       "source_names": [
         "KeepTrack",
@@ -348,10 +356,10 @@
         "bing.com"
       ],
       "started_at": "2026-07-20T16:09:40Z",
-      "summary": "SpaceX的发射与试验事件，已汇集 5 篇报道、4 个来源。"
+      "summary": "SpaceX的发射与试验事件，已汇集 6 篇报道、4 个来源。"
     },
     {
-      "article_count": 69,
+      "article_count": 72,
       "articles": [
         {
           "date_is_inferred": false,
@@ -376,22 +384,6 @@
           "source_name": "NASASpaceflight",
           "title": "Falcon 9 to launch MRV-1 robotic servicing spacecraft for Northrop Grumman",
           "url": "https://www.nasaspaceflight.com/2026/07/mrv-1-launch"
-        },
-        {
-          "date_is_inferred": false,
-          "id": "b0a3ed6482eb5296",
-          "published_at": "2026-07-21T17:00:00Z",
-          "source_name": "bing.com",
-          "title": "SpaceX launches 24 Starlink satellites from California after glitch",
-          "url": "http://www.bing.com/news/apiclick.aspx?aid=&tid=6a617ba15c9f416eb1db40ab144d27c4&url=https%3A%2F%2Fwww.newsbytesapp.com%2Fnews%2Fscience%2Fspacex-launches-24-starlink-satellites-from-california-after-glitch%2Ftldr&c=14772808036943483939&mkt=en-sg"
-        },
-        {
-          "date_is_inferred": false,
-          "id": "e3a2f756b2d67bec",
-          "published_at": "2026-07-21T16:18:00Z",
-          "source_name": "Ventura County Star",
-          "title": "SpaceX carries out 50th rocket launch of 2026 at Vandenberg. See photos - Ventura County Star",
-          "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxQRXN2emRiT3FJTFNGemRKejlURzNrWGNTWnVsMVFwajRRU1FEcG5nN0RnLTZNYnVaVzB4VGRfM2RScDg3X2VOUm80S2lNNTVBVlp0NkIyT3o0WjJBa1Z0VGtnLUpjX21qdUdDYm9MdEQtaGppRUwxbDZDcGN1dGo0NjREcXY1SU1BLXpwZW9EVENTU1A5ZXFjbVUxMHhfWjZWa2dvZ0gyR1RKcTU0aDRpNU9TRTVwNzFlUDBoRkczbWY1bXNDaDhla0daeVA4UQ?oc=5"
         },
         {
           "date_is_inferred": false,
@@ -435,6 +427,14 @@
         },
         {
           "date_is_inferred": false,
+          "id": "72cea986c7915d0f",
+          "published_at": "2026-07-21T06:00:00Z",
+          "source_name": "bing.com",
+          "title": "SpaceX launches Falcon 9 on 50th California launch today. See recap",
+          "url": "http://www.bing.com/news/apiclick.aspx?aid=&tid=6a61cb37c8b348dfb2137722cfb84ca0&url=https%3A%2F%2Fwww.yahoo.com%2Fnews%2Fscience%2Farticles%2Fspacex-eyes-50th-california-rocket-130052266.html&c=6505298597567116539&mkt=en-us"
+        },
+        {
+          "date_is_inferred": false,
           "id": "6a65906a47d42d98",
           "published_at": "2026-07-20T21:06:37Z",
           "source_name": "bing.com",
@@ -443,9 +443,17 @@
         },
         {
           "date_is_inferred": false,
+          "id": "09192407b94b8a09",
+          "published_at": "2026-07-20T21:06:37Z",
+          "source_name": "bing.com",
+          "title": "SpaceX aborts a Falcon 9-Starlink launch at the last moment due to a mystery glitch",
+          "url": "http://www.bing.com/news/apiclick.aspx?aid=&tid=6a61cb3676a04cdeae760eca22876405&url=https%3A%2F%2Fwww.msn.com%2Fen-us%2Ftechnology%2Fspace-exploration%2Fspacex-aborts-a-falcon-9-starlink-launch-at-the-last-moment-due-to-a-mystery-glitch%2Far-AA28lgz6&c=7525767773022572529&mkt=en-us"
+        },
+        {
+          "date_is_inferred": false,
           "id": "e25a10807052c6a0",
           "published_at": "2026-07-20T20:23:00Z",
-          "source_name": "Curated RSS provider contract.",
+          "source_name": "Florida Today",
           "title": "SpaceX to launch Northrop Grumman satellite-repair spacecraft from Florida - Florida Today",
           "url": "https://news.google.com/rss/articles/CBMihgJBVV95cUxQLWFTdWI4OVVJRGtMdVNPQkhwbF94VV9tWm5CYm9ZOXdnMnhlcktaOUpKUUQ5SUtfRFZ6c19uVXdZaFo5bVMyaW02S3FZQTZOazJTOEQ0VXlZNk42YTFkOTRQMUdVWW9nOGg2ZFhfMzFxeElEQzF0T1VMZ1l1U0dXVy1lMFZvQUVkR2lGVFB2blpGMGRTZ2p1dDFhdjdXYU5iUm5mNi1aRWNkZGY1V1c4SFVuTlNjZk1mRkZ2cmRKdFpSeGt4TktuUnpKaDB6WjNTRURNNzloOGJOUnZSc2w1MzhMaDFrUUJ6SmhMbDlSMXRuYm9JdlVNSVA2em80S3Z6bGJvMk1R?oc=5"
         },
@@ -536,6 +544,14 @@
           "source_name": "Curated RSS provider contract.",
           "title": "Falcon 9 rocket successfully deploys latest batch of Starlink internet satellites into orbit from Florida - eciks.org",
           "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTE1DRUtuaGFPMW1FazUzQWtoRWd5a1JSZmZlaHdvVFR5eEtqcndTd2djSnFwWkF5UVpRR1ZzZ1lLa1lUMllBcDdUajRSQkZ2V19BZkZwaHVtT2U5M190OEh4Z3N6NE1OWDhXYU5DbjRCalRkOElrLUpsYloyLUlEZw?oc=5"
+        },
+        {
+          "date_is_inferred": false,
+          "id": "683b3def33c16a6f",
+          "published_at": "2026-07-14T15:00:00Z",
+          "source_name": "bing.com",
+          "title": "SpaceX launches flight-proven rocket for 600th time, sending Starlink satellites to orbit (video)",
+          "url": "http://www.bing.com/news/apiclick.aspx?aid=&tid=6a61cb3676a04cdeae760eca22876405&url=https%3A%2F%2Fwww.yahoo.com%2Fnews%2Fscience%2Farticles%2Fspacex-launches-flight-proven-rocket-220000310.html&c=6134058080012118677&mkt=en-us"
         },
         {
           "date_is_inferred": false,
@@ -635,6 +651,14 @@
         },
         {
           "date_is_inferred": false,
+          "id": "a89625962f8beaa6",
+          "published_at": "2026-07-13T03:56:00Z",
+          "source_name": "bing.com",
+          "title": "Falcon 9 launch of Starlink satellites from Vandenberg SFB scheduled for Monday evening",
+          "url": "http://www.bing.com/news/apiclick.aspx?aid=&tid=6a61cb37c8b348dfb2137722cfb84ca0&url=https%3A%2F%2Fkeyt.com%2Fvandenberg-space-base%2F2026%2F07%2F13%2Ffalcon-9-launch-of-starlink-satellites-from-vandenberg-sfb-scheduled-for-monday-evening%2F&c=1830636094995145681&mkt=en-us"
+        },
+        {
+          "date_is_inferred": false,
           "id": "bee8ab8f816aebfb",
           "published_at": "2026-07-12T14:21:00Z",
           "source_name": "Curated RSS provider contract.",
@@ -704,6 +728,14 @@
           "source_name": "bing.com",
           "title": "SpaceX wants to launch 100,000 more Starlink satellites - for 100x the bandwidth",
           "url": "http://www.bing.com/news/apiclick.aspx?aid=&tid=6a618675f7e64e78bba7f69a681f88e4&url=https%3A%2F%2Fwww.msn.com%2Fen-us%2Fnews%2Ftechnology%2Fspacex-wants-to-launch-100000-more-starlink-satellites-for-100x-the-bandwidth%2Far-AA27Gtc9&c=6049512055137726384&mkt=en-sg"
+        },
+        {
+          "date_is_inferred": false,
+          "id": "a657f2c92450cf32",
+          "published_at": "2026-07-10T07:00:00Z",
+          "source_name": "Space",
+          "title": "SpaceX Falcon 9 rocket launches for 35th time, hauls Starlink satellites to orbit (video) - Space",
+          "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxPWFFjR2UydlRocjlwalBJMTRlNkh3M2wwVWp5UWd5TV9VQTVNWUlyekhwMVd0QzFURkFld0JnTlBzR0U3TVQ0V2dOVmxyMjRoQlZWa2kybzlMaFJSY2V0WFBxZmZuZl82QWNkbU53a2ZxSzhjd3JZM1Z2LXE3YkgxeGRDUHVxbmNHYmppZ0hPQjFfaGNhOVBiRzN6M1NuWGhidjJSdlVkbVRnRmE1Mm1oVA?oc=5"
         },
         {
           "date_is_inferred": false,
@@ -918,19 +950,19 @@
       "source_count": 8,
       "source_names": [
         "Curated RSS provider contract.",
+        "Florida Today",
         "NASASpaceflight",
         "Space",
         "SpaceNews",
         "Spaceflight Now",
-        "Ventura County Star",
         "bing.com",
         "satellitetoday.com"
       ],
       "started_at": "2026-07-03T10:01:00Z",
-      "summary": "SpaceX的发射与试验事件，已汇集 69 篇报道、8 个来源。"
+      "summary": "SpaceX的发射与试验事件，已汇集 72 篇报道、8 个来源。"
     },
     {
-      "article_count": 1,
+      "article_count": 2,
       "articles": [
         {
           "date_is_inferred": false,
@@ -939,6 +971,14 @@
           "source_name": "Curated RSS provider contract.",
           "title": "SpaceX launches satellite repair drone with 10-foot robotic arms to Earth orbit (video) - Space",
           "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxNNTFrVU04V2hLYzJRcDhScFI5bE9BRUljQW42ZElzWS00STNrNzEydE5EQ2xrYkRMcWJNS1VnZFBDSFJCSWpweGdZUkQ4U0xHdVR1UVFKX3VTdFRhS2ZOMmo0TjBzdE1GVnNmS091emdoYzlWSHdwODIzMlRIbDZIT05RNWZLbGkzTERUVS1GbFJpbkhGUGVzRVhtcXVWU0J3SmY1eUp1QVRSeTlDd3p6UUNtOXRONVZQTi1BNnhVR3NmUWY0?oc=5"
+        },
+        {
+          "date_is_inferred": false,
+          "id": "c4b17904efe77b99",
+          "published_at": "2026-07-21T13:00:00Z",
+          "source_name": "space.com",
+          "title": "SpaceX launches satellite repair drone with 10-foot robotic arms to Earth orbit (video)",
+          "url": "https://www.space.com/space-exploration/launches-spacecraft/spacex-launch-northrop-grumman-mrv-mep-satellite-servicing-mission"
         }
       ],
       "company_id": "spacex",
@@ -947,18 +987,19 @@
       "event_label": "发射与试验",
       "event_type": "launch",
       "headline": "SpaceX launches satellite repair drone with 10-foot robotic arms to Earth orbit (video) - Space",
-      "importance_score": 59,
+      "importance_score": 71,
       "latest_at": "2026-07-21T21:25:08Z",
       "latest_url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxNNTFrVU04V2hLYzJRcDhScFI5bE9BRUljQW42ZElzWS00STNrNzEydE5EQ2xrYkRMcWJNS1VnZFBDSFJCSWpweGdZUkQ4U0xHdVR1UVFKX3VTdFRhS2ZOMmo0TjBzdE1GVnNmS091emdoYzlWSHdwODIzMlRIbDZIT05RNWZLbGkzTERUVS1GbFJpbkhGUGVzRVhtcXVWU0J3SmY1eUp1QVRSeTlDd3p6UUNtOXRONVZQTi1BNnhVR3NmUWY0?oc=5",
-      "source_count": 1,
+      "source_count": 2,
       "source_names": [
-        "Curated RSS provider contract."
+        "Curated RSS provider contract.",
+        "space.com"
       ],
-      "started_at": "2026-07-21T21:25:08Z",
-      "summary": "SpaceX的发射与试验事件，已汇集 1 篇报道、1 个来源。"
+      "started_at": "2026-07-21T13:00:00Z",
+      "summary": "SpaceX的发射与试验事件，已汇集 2 篇报道、2 个来源。"
     },
     {
-      "article_count": 1,
+      "article_count": 14,
       "articles": [
         {
           "date_is_inferred": false,
@@ -967,23 +1008,131 @@
           "source_name": "Curated RSS provider contract.",
           "title": "SpaceX targets July 23 for crucial Starship Flight 13 test launch after abort - Space",
           "url": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxQYnEwSnZ6bkdfSC1CYk5rZWNWaExncTdERUdmY2JLcUJseFNyQ2RFQm92d0hxYXc3S0R3WWFDZHhMc1pHX1BHdGdfTWU4TkZWZ3YzNnFmNWxjMGx5QjRuN296eUlqTlk3c2tMenVnekpodVRta3E3a3VQNkRaVzNVZnpuSE9OZ0wzNnhiQU9pUkluVkkwMFVJLS1Tb0p5MUFwTGcxeUlDNlJFcjBlTnFCNm5sUV8wVUlNeG1vVXg0Yy1sd2liODF5b20yOXZMUlUzektv?oc=5"
+        },
+        {
+          "date_is_inferred": false,
+          "id": "c6c5740038fa9ae7",
+          "published_at": "2026-07-21T17:00:00Z",
+          "source_name": "bing.com",
+          "title": "SpaceX launches 24 Starlink satellites from California after glitch",
+          "url": "http://www.bing.com/news/apiclick.aspx?aid=&tid=6a61cb37c8b348dfb2137722cfb84ca0&url=https%3A%2F%2Fwww.newsbytesapp.com%2Fnews%2Fscience%2Fspacex-launches-24-starlink-satellites-from-california-after-glitch%2Ftldr&c=14772808036943483939&mkt=en-us"
+        },
+        {
+          "date_is_inferred": false,
+          "id": "b0a3ed6482eb5296",
+          "published_at": "2026-07-21T17:00:00Z",
+          "source_name": "bing.com",
+          "title": "SpaceX launches 24 Starlink satellites from California after glitch",
+          "url": "http://www.bing.com/news/apiclick.aspx?aid=&tid=6a617ba15c9f416eb1db40ab144d27c4&url=https%3A%2F%2Fwww.newsbytesapp.com%2Fnews%2Fscience%2Fspacex-launches-24-starlink-satellites-from-california-after-glitch%2Ftldr&c=14772808036943483939&mkt=en-sg"
+        },
+        {
+          "date_is_inferred": false,
+          "id": "e3a2f756b2d67bec",
+          "published_at": "2026-07-21T16:18:00Z",
+          "source_name": "Ventura County Star",
+          "title": "SpaceX carries out 50th rocket launch of 2026 at Vandenberg. See photos - Ventura County Star",
+          "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxQRXN2emRiT3FJTFNGemRKejlURzNrWGNTWnVsMVFwajRRU1FEcG5nN0RnLTZNYnVaVzB4VGRfM2RScDg3X2VOUm80S2lNNTVBVlp0NkIyT3o0WjJBa1Z0VGtnLUpjX21qdUdDYm9MdEQtaGppRUwxbDZDcGN1dGo0NjREcXY1SU1BLXpwZW9EVENTU1A5ZXFjbVUxMHhfWjZWa2dvZ0gyR1RKcTU0aDRpNU9TRTVwNzFlUDBoRkczbWY1bXNDaDhla0daeVA4UQ?oc=5"
+        },
+        {
+          "date_is_inferred": false,
+          "id": "07ab18c9457b7a84",
+          "published_at": "2026-07-20T21:00:00Z",
+          "source_name": "space.com",
+          "title": "SpaceX targets July 23 for crucial Starship Flight 13 test launch after abort",
+          "url": "https://www.space.com/space-exploration/launches-spacecraft/spacex-targets-july-23-for-crucial-starship-flight-13-test-launch-after-abort"
+        },
+        {
+          "date_is_inferred": false,
+          "id": "e121a4b492ae4740",
+          "published_at": "2026-07-19T16:00:52Z",
+          "source_name": "The Desert Sun",
+          "title": "California to hit 50th rocket launch with SpaceX liftoff. Watch live - The Desert Sun",
+          "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxQZ3pZS3RPc2NKNDdGa2NzbGFkbjB2a3hUUnpnTDZodlhnTWRrTldOOXRiaHdPdkgzWUNYOTNucEJUUElQUVU5d0VXMmxwNjNwY0RYN19TczMyZUZmb1dfUFBneW1Ydlo1X0FiNDNyaVpaNlREWnNQNDNDeHFoekJWaHk4VFpQbjBFTldqUlg4aGt2cmFtQlhPZWRxVG5UOVdMdXFHemxGUQ?oc=5"
+        },
+        {
+          "date_is_inferred": false,
+          "id": "0a2c34d4af23bc81",
+          "published_at": "2026-07-18T12:00:00Z",
+          "source_name": "Curated RSS provider contract.",
+          "title": "How to watch in Arizona as SpaceX conducts milestone rocket launch - azcentral.com and The Arizona Republic",
+          "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxQazE1amh2NEhOVkJoVmlmQnY3WS1DZ2pYQjlkcUtHMXByemdka2tXU2t0cmxrZUJCS25JelZnMTEzZ2NOXzRiQTdRV1oyNE96d2xTa3I0MmdJR2R5aG9oOFFYSmlPRHhndEhMVXZVOFJpQWdmeXJBdnFLRTZGRUNfdWZOenFGc3E2QlVOSlBLbUNfcHkxLTFpbnN0RGdjeVMxWUdHU3gxM0JabmZ0VTNsbnBVWGF2VUpLSkE?oc=5"
+        },
+        {
+          "date_is_inferred": false,
+          "id": "e047ae6d6b421844",
+          "published_at": "2026-07-16T22:30:00Z",
+          "source_name": "Curated RSS provider contract.",
+          "title": "SpaceX to launch Starship on Flight 13, testing V3 Starlink satellite deployment for first time - Diya TV",
+          "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxPOHYzMUVUcnZ1cFFDa3JSUU1zMDREVTBkTDVqQndFOXJxMVRQU05rX29DdG9yMmpmY29iSFVRQlJmRkY4N2FkdUZtTHItSjNKSDI1THdZdWF3QVdIZ2NlNHNQeE9BaHF2Nlo3bENFaDBrMVpCY3dZRHg0NlBwNC1McWUzTkF5WTlibmxlczZocnQ2OFFMTlRDRlBwQVc3M2NfQkJBQUpTd2cySlRmZFdJV01kSW84YTFS?oc=5"
+        },
+        {
+          "date_is_inferred": false,
+          "id": "d52256af99fb0423",
+          "published_at": "2026-07-16T10:00:00Z",
+          "source_name": "Curated RSS provider contract.",
+          "title": "SpaceX will launch Starship, the world's largest rocket, on critical Flight 13 test on July 20. Here's what to expect. - Space",
+          "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxNRWV3b0hiOHhyLUNEWWkxWk41dlpQQUF1LW11VHFTd20xZ0libUc3NXBxQ2Vkb0Vlc3NGUVlEM01hOHp1dC0yMkE5V2FMTjF4V3NiUUJQZU5Xb3B6eHZPRmVyb2hoREtwdEF3WjRVenREOWp3d1BLN3hFenYza1NqTk9weE9pbDZsNkhRRHFScl9yLTh6bG1RWkQxRkdDZm1WcDRDXzkycDN6RmpQ?oc=5"
+        },
+        {
+          "date_is_inferred": false,
+          "id": "0c6c297d3ee737ff",
+          "published_at": "2026-07-15T10:00:00Z",
+          "source_name": "Curated RSS provider contract.",
+          "title": "What time is SpaceX's Starship Flight 13 launch on July 16? (Full mission timeline) - Space",
+          "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxNRmpydFoyazkyVzJwMHhMSmhtMVNVMV9TMFllWlJyWHJTd2xiNXMtd3NfdU1VaEd5QWdDZ2Z5dnZvUWVfN0RQQUxGWmZ0TmNva3VDaDg5TjdXVmczX1REYkVhbXBueW5uNGx3ME9BQUJLejR2ckNJV2UyN25pbGtaTVJlUEZCYnNONFJXY2puaUpWOERJdXlRVm5mYnF1ei03V0NMQQ?oc=5"
+        },
+        {
+          "date_is_inferred": false,
+          "id": "a56ee8719a66ff48",
+          "published_at": "2026-07-14T14:01:00Z",
+          "source_name": "Curated RSS provider contract.",
+          "title": "Starship is about to launch for 13th time. Look back at previous flights - Florida Today",
+          "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxPNnQ3XzNZbjlmbkxNVGE2Y1VGV0hmOXA5N2lfZW01VHpiQ1RweWNkR3BFd0J6aFY5MGlwTUppTmtOTWY3TUJmTEVaX0ZaZDM1bk9jN1RZS0VpWldTUzhUNWJ4V0tpdjBoUmROMDlobEFLWTRVTkxTc2RCWUdpRkJVWXZJa2FvUUhIUmhwS1RVbmVxU1BXVVg4YXBPTDdjamFEUDlSaWVjUHRGQjFfUlVsamFQWmFTSE1Hb0E?oc=5"
+        },
+        {
+          "date_is_inferred": false,
+          "id": "79cdf6955f46135d",
+          "published_at": "2026-07-14T14:01:00Z",
+          "source_name": "Curated RSS provider contract.",
+          "title": "Before SpaceX launches Starship again, look back at last 12 flights - Corpus Christi Caller-Times",
+          "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxNdWlPVVJEUnNkLVZjOGJlOGw5WVF3Q2pRT1JyRnE0ODBjeVpIT3pQemRKRjFfc0F5ZXpCSUotcllJSjJUWDltLXZRNE56NFZlNW5CSjBlOFAyUEdfRllZQUlxbHo3S0JNeklsMWZNTUNzNk9SM3g5Yl9BMVJKYnM0NjMyeFJ0MWRXYWRIUFBpM0czRE9ucmhycUZ3?oc=5"
+        },
+        {
+          "date_is_inferred": false,
+          "id": "47f25b2d007cf97a",
+          "published_at": "2026-07-14T12:00:00Z",
+          "source_name": "Curated RSS provider contract.",
+          "title": "How to watch SpaceX launch Starship Flight 13 on July 16 - Space",
+          "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxPamNNN1RwV0IyRERUUkdpQWZPSHJIbVJHbzRPLWppRlpCRmNRS1ZCM1lGa1RyZFpLR1BSVnFIbjg3Z0k2TlF0THk5SDIyWTN5el82cFZrVVZQRC1GYzVFX2RiU3J4WVJzMjNtcnlIZ0xnbXM2NlZ6Y2ttbkt6OWVmaXd2NHQyUDctdmpDSG9lTEVETVl3bEhIR2dzVjZDaUZJaHJmV3pjUmVXWWE4ZWdfdGd2cHJpeFk?oc=5"
+        },
+        {
+          "date_is_inferred": false,
+          "id": "fe329fc6dd41b279",
+          "published_at": "2026-07-13T16:00:04Z",
+          "source_name": "Curated RSS provider contract.",
+          "title": "SpaceX targets July 16 for Starship Flight 13, reveals what went wrong on previous launch - Space",
+          "url": "https://news.google.com/rss/articles/CBMi4gFBVV95cUxNcHZ3M1ozMmFmd3NydFZJVTh0a1h0dWtDT2szWUhCNVF2RDVCWWFjWEw4WlRGMDl0dHgxdGdYU3F1N3lHQ18zNFIzOVBPc1RRT1lTNzhubEw4Sk5iMmRPRDd2Xy1BbTZKdV9WMGdjcGE2YzdHdWI4RmI0R3pFRW5xaXR2TEJ5czRrR2U3S2pqQndwUVBWODJ2X3FsMWk4b2cySnJBN2FVUkU1bUZZVFZDSG82X05jTlRCdkhyQUJWb2gtLUthdThuWE1fMVBSVzFDSzRsR1J6VENZeEM4cW10UFZ3?oc=5"
         }
       ],
       "company_id": "spacex",
       "company_name": "SpaceX",
-      "event_id": "de549b3c488c64cf",
+      "event_id": "45755fcfc218e3f4",
       "event_label": "发射与试验",
       "event_type": "launch",
       "headline": "SpaceX targets July 23 for crucial Starship Flight 13 test launch after abort - Space",
-      "importance_score": 59,
+      "importance_score": 100,
       "latest_at": "2026-07-21T19:50:03Z",
       "latest_url": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxQYnEwSnZ6bkdfSC1CYk5rZWNWaExncTdERUdmY2JLcUJseFNyQ2RFQm92d0hxYXc3S0R3WWFDZHhMc1pHX1BHdGdfTWU4TkZWZ3YzNnFmNWxjMGx5QjRuN296eUlqTlk3c2tMenVnekpodVRta3E3a3VQNkRaVzNVZnpuSE9OZ0wzNnhiQU9pUkluVkkwMFVJLS1Tb0p5MUFwTGcxeUlDNlJFcjBlTnFCNm5sUV8wVUlNeG1vVXg0Yy1sd2liODF5b20yOXZMUlUzektv?oc=5",
-      "source_count": 1,
+      "source_count": 5,
       "source_names": [
-        "Curated RSS provider contract."
+        "Curated RSS provider contract.",
+        "The Desert Sun",
+        "Ventura County Star",
+        "bing.com",
+        "space.com"
       ],
-      "started_at": "2026-07-21T19:50:03Z",
-      "summary": "SpaceX的发射与试验事件，已汇集 1 篇报道、1 个来源。"
+      "started_at": "2026-07-13T16:00:04Z",
+      "summary": "SpaceX的发射与试验事件，已汇集 14 篇报道、5 个来源。"
     },
     {
       "article_count": 1,
@@ -1494,99 +1643,6 @@
       ],
       "started_at": "2026-07-19T19:58:23Z",
       "summary": "蓝箭航天的股价与资本市场事件，已汇集 1 篇报道、1 个来源。"
-    },
-    {
-      "article_count": 9,
-      "articles": [
-        {
-          "date_is_inferred": false,
-          "id": "e121a4b492ae4740",
-          "published_at": "2026-07-19T16:00:52Z",
-          "source_name": "The Desert Sun",
-          "title": "California to hit 50th rocket launch with SpaceX liftoff. Watch live - The Desert Sun",
-          "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxQZ3pZS3RPc2NKNDdGa2NzbGFkbjB2a3hUUnpnTDZodlhnTWRrTldOOXRiaHdPdkgzWUNYOTNucEJUUElQUVU5d0VXMmxwNjNwY0RYN19TczMyZUZmb1dfUFBneW1Ydlo1X0FiNDNyaVpaNlREWnNQNDNDeHFoekJWaHk4VFpQbjBFTldqUlg4aGt2cmFtQlhPZWRxVG5UOVdMdXFHemxGUQ?oc=5"
-        },
-        {
-          "date_is_inferred": false,
-          "id": "0a2c34d4af23bc81",
-          "published_at": "2026-07-18T12:00:00Z",
-          "source_name": "Curated RSS provider contract.",
-          "title": "How to watch in Arizona as SpaceX conducts milestone rocket launch - azcentral.com and The Arizona Republic",
-          "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxQazE1amh2NEhOVkJoVmlmQnY3WS1DZ2pYQjlkcUtHMXByemdka2tXU2t0cmxrZUJCS25JelZnMTEzZ2NOXzRiQTdRV1oyNE96d2xTa3I0MmdJR2R5aG9oOFFYSmlPRHhndEhMVXZVOFJpQWdmeXJBdnFLRTZGRUNfdWZOenFGc3E2QlVOSlBLbUNfcHkxLTFpbnN0RGdjeVMxWUdHU3gxM0JabmZ0VTNsbnBVWGF2VUpLSkE?oc=5"
-        },
-        {
-          "date_is_inferred": false,
-          "id": "e047ae6d6b421844",
-          "published_at": "2026-07-16T22:30:00Z",
-          "source_name": "Curated RSS provider contract.",
-          "title": "SpaceX to launch Starship on Flight 13, testing V3 Starlink satellite deployment for first time - Diya TV",
-          "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxPOHYzMUVUcnZ1cFFDa3JSUU1zMDREVTBkTDVqQndFOXJxMVRQU05rX29DdG9yMmpmY29iSFVRQlJmRkY4N2FkdUZtTHItSjNKSDI1THdZdWF3QVdIZ2NlNHNQeE9BaHF2Nlo3bENFaDBrMVpCY3dZRHg0NlBwNC1McWUzTkF5WTlibmxlczZocnQ2OFFMTlRDRlBwQVc3M2NfQkJBQUpTd2cySlRmZFdJV01kSW84YTFS?oc=5"
-        },
-        {
-          "date_is_inferred": false,
-          "id": "d52256af99fb0423",
-          "published_at": "2026-07-16T10:00:00Z",
-          "source_name": "Curated RSS provider contract.",
-          "title": "SpaceX will launch Starship, the world's largest rocket, on critical Flight 13 test on July 20. Here's what to expect. - Space",
-          "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxNRWV3b0hiOHhyLUNEWWkxWk41dlpQQUF1LW11VHFTd20xZ0libUc3NXBxQ2Vkb0Vlc3NGUVlEM01hOHp1dC0yMkE5V2FMTjF4V3NiUUJQZU5Xb3B6eHZPRmVyb2hoREtwdEF3WjRVenREOWp3d1BLN3hFenYza1NqTk9weE9pbDZsNkhRRHFScl9yLTh6bG1RWkQxRkdDZm1WcDRDXzkycDN6RmpQ?oc=5"
-        },
-        {
-          "date_is_inferred": false,
-          "id": "0c6c297d3ee737ff",
-          "published_at": "2026-07-15T10:00:00Z",
-          "source_name": "Curated RSS provider contract.",
-          "title": "What time is SpaceX's Starship Flight 13 launch on July 16? (Full mission timeline) - Space",
-          "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxNRmpydFoyazkyVzJwMHhMSmhtMVNVMV9TMFllWlJyWHJTd2xiNXMtd3NfdU1VaEd5QWdDZ2Z5dnZvUWVfN0RQQUxGWmZ0TmNva3VDaDg5TjdXVmczX1REYkVhbXBueW5uNGx3ME9BQUJLejR2ckNJV2UyN25pbGtaTVJlUEZCYnNONFJXY2puaUpWOERJdXlRVm5mYnF1ei03V0NMQQ?oc=5"
-        },
-        {
-          "date_is_inferred": false,
-          "id": "a56ee8719a66ff48",
-          "published_at": "2026-07-14T14:01:00Z",
-          "source_name": "Curated RSS provider contract.",
-          "title": "Starship is about to launch for 13th time. Look back at previous flights - Florida Today",
-          "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxPNnQ3XzNZbjlmbkxNVGE2Y1VGV0hmOXA5N2lfZW01VHpiQ1RweWNkR3BFd0J6aFY5MGlwTUppTmtOTWY3TUJmTEVaX0ZaZDM1bk9jN1RZS0VpWldTUzhUNWJ4V0tpdjBoUmROMDlobEFLWTRVTkxTc2RCWUdpRkJVWXZJa2FvUUhIUmhwS1RVbmVxU1BXVVg4YXBPTDdjamFEUDlSaWVjUHRGQjFfUlVsamFQWmFTSE1Hb0E?oc=5"
-        },
-        {
-          "date_is_inferred": false,
-          "id": "79cdf6955f46135d",
-          "published_at": "2026-07-14T14:01:00Z",
-          "source_name": "Curated RSS provider contract.",
-          "title": "Before SpaceX launches Starship again, look back at last 12 flights - Corpus Christi Caller-Times",
-          "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxNdWlPVVJEUnNkLVZjOGJlOGw5WVF3Q2pRT1JyRnE0ODBjeVpIT3pQemRKRjFfc0F5ZXpCSUotcllJSjJUWDltLXZRNE56NFZlNW5CSjBlOFAyUEdfRllZQUlxbHo3S0JNeklsMWZNTUNzNk9SM3g5Yl9BMVJKYnM0NjMyeFJ0MWRXYWRIUFBpM0czRE9ucmhycUZ3?oc=5"
-        },
-        {
-          "date_is_inferred": false,
-          "id": "47f25b2d007cf97a",
-          "published_at": "2026-07-14T12:00:00Z",
-          "source_name": "Curated RSS provider contract.",
-          "title": "How to watch SpaceX launch Starship Flight 13 on July 16 - Space",
-          "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxPamNNN1RwV0IyRERUUkdpQWZPSHJIbVJHbzRPLWppRlpCRmNRS1ZCM1lGa1RyZFpLR1BSVnFIbjg3Z0k2TlF0THk5SDIyWTN5el82cFZrVVZQRC1GYzVFX2RiU3J4WVJzMjNtcnlIZ0xnbXM2NlZ6Y2ttbkt6OWVmaXd2NHQyUDctdmpDSG9lTEVETVl3bEhIR2dzVjZDaUZJaHJmV3pjUmVXWWE4ZWdfdGd2cHJpeFk?oc=5"
-        },
-        {
-          "date_is_inferred": false,
-          "id": "fe329fc6dd41b279",
-          "published_at": "2026-07-13T16:00:04Z",
-          "source_name": "Curated RSS provider contract.",
-          "title": "SpaceX targets July 16 for Starship Flight 13, reveals what went wrong on previous launch - Space",
-          "url": "https://news.google.com/rss/articles/CBMi4gFBVV95cUxNcHZ3M1ozMmFmd3NydFZJVTh0a1h0dWtDT2szWUhCNVF2RDVCWWFjWEw4WlRGMDl0dHgxdGdYU3F1N3lHQ18zNFIzOVBPc1RRT1lTNzhubEw4Sk5iMmRPRDd2Xy1BbTZKdV9WMGdjcGE2YzdHdWI4RmI0R3pFRW5xaXR2TEJ5czRrR2U3S2pqQndwUVBWODJ2X3FsMWk4b2cySnJBN2FVUkU1bUZZVFZDSG82X05jTlRCdkhyQUJWb2gtLUthdThuWE1fMVBSVzFDSzRsR1J6VENZeEM4cW10UFZ3?oc=5"
-        }
-      ],
-      "company_id": "spacex",
-      "company_name": "SpaceX",
-      "event_id": "e4b07e5eae4df60e",
-      "event_label": "发射与试验",
-      "event_type": "launch",
-      "headline": "California to hit 50th rocket launch with SpaceX liftoff. Watch live - The Desert Sun",
-      "importance_score": 100,
-      "latest_at": "2026-07-19T16:00:52Z",
-      "latest_url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxQZ3pZS3RPc2NKNDdGa2NzbGFkbjB2a3hUUnpnTDZodlhnTWRrTldOOXRiaHdPdkgzWUNYOTNucEJUUElQUVU5d0VXMmxwNjNwY0RYN19TczMyZUZmb1dfUFBneW1Ydlo1X0FiNDNyaVpaNlREWnNQNDNDeHFoekJWaHk4VFpQbjBFTldqUlg4aGt2cmFtQlhPZWRxVG5UOVdMdXFHemxGUQ?oc=5",
-      "source_count": 2,
-      "source_names": [
-        "Curated RSS provider contract.",
-        "The Desert Sun"
-      ],
-      "started_at": "2026-07-13T16:00:04Z",
-      "summary": "SpaceX的发射与试验事件，已汇集 9 篇报道、2 个来源。"
     },
     {
       "article_count": 1,
@@ -2221,7 +2277,7 @@
       "summary": "SpaceX的产品与产能事件，已汇集 1 篇报道、1 个来源。"
     },
     {
-      "article_count": 2,
+      "article_count": 3,
       "articles": [
         {
           "date_is_inferred": false,
@@ -2230,6 +2286,14 @@
           "source_name": "东方财富",
           "title": "华力创通：公司与银河航天暂无合作，与千帆星座存在技术交流 - 东方财富",
           "url": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE1PVXR3WDNjX0pFLWdlcHNWcWNOakRyWFdIbXpOMHNOM1NtUzFiUnBnQ3BRT054S2RDUDRET09XU2xOQVN5VkRhbjZ3Z01ERGhmdWVucHpQUnM5S0xlOG1mbGRGaTcwQQ?oc=5"
+        },
+        {
+          "date_is_inferred": false,
+          "id": "36e620f15fccec9a",
+          "published_at": "2026-07-15T12:32:00Z",
+          "source_name": "新浪财经",
+          "title": "华力创通：公司与银河航天暂无合作，与千帆星座存在技术交流 - 新浪财经",
+          "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxQc3ZkQXRvdXJ0R3o0ZnhkbUFxTmpidnFzZmdDSnNnWXhGV0gxX0ZacUxDRDM5aWpzdjVjOWQzRDBiX1BQTTk5UEhDSFB6UFZodEhQQ1k0Ukh2cmc4ZkJKOWhhSTRCMHdRMkl2R28tRHNiQjJSVUdIMjJfUEdnWFhrNTlHMHVXMGY1?oc=5"
         },
         {
           "date_is_inferred": false,
@@ -2246,16 +2310,17 @@
       "event_label": "合作",
       "event_type": "partnership",
       "headline": "华力创通：公司与银河航天暂无合作，与千帆星座存在技术交流 - 东方财富",
-      "importance_score": 59,
+      "importance_score": 71,
       "latest_at": "2026-07-15T16:40:14Z",
       "latest_url": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE1PVXR3WDNjX0pFLWdlcHNWcWNOakRyWFdIbXpOMHNOM1NtUzFiUnBnQ3BRT054S2RDUDRET09XU2xOQVN5VkRhbjZ3Z01ERGhmdWVucHpQUnM5S0xlOG1mbGRGaTcwQQ?oc=5",
-      "source_count": 2,
+      "source_count": 3,
       "source_names": [
         "东方财富",
+        "新浪财经",
         "财富号"
       ],
       "started_at": "2026-07-15T06:45:00Z",
-      "summary": "银河航天的合作事件，已汇集 2 篇报道、2 个来源。"
+      "summary": "银河航天的合作事件，已汇集 3 篇报道、3 个来源。"
     },
     {
       "article_count": 1,
@@ -2676,6 +2741,34 @@
       "summary": "SpaceX的其他动态事件，已汇集 1 篇报道、1 个来源。"
     },
     {
+      "article_count": 1,
+      "articles": [
+        {
+          "date_is_inferred": false,
+          "id": "63228a683e7949ce",
+          "published_at": "2026-07-14T07:20:00Z",
+          "source_name": "bing.com",
+          "title": "Blue Origin’s New Glenn rocket exploded during a ground test, gutting its launch pad",
+          "url": "http://www.bing.com/news/apiclick.aspx?aid=&tid=6a61cb4058384e4ca6b45240c9d30bf1&url=https%3A%2F%2Fwww.msn.com%2Fen-us%2Ftechnology%2Fgeneral%2Fblue-origin-s-new-glenn-rocket-exploded-during-a-ground-test-gutting-its-launch-pad%2Far-AA27TlfK&c=17747748000299221194&mkt=en-us"
+        }
+      ],
+      "company_id": "blue_origin",
+      "company_name": "Blue Origin",
+      "event_id": "1b991ae3df5d4342",
+      "event_label": "发射与试验",
+      "event_type": "launch",
+      "headline": "Blue Origin’s New Glenn rocket exploded during a ground test, gutting its launch pad",
+      "importance_score": 59,
+      "latest_at": "2026-07-14T07:20:00Z",
+      "latest_url": "http://www.bing.com/news/apiclick.aspx?aid=&tid=6a61cb4058384e4ca6b45240c9d30bf1&url=https%3A%2F%2Fwww.msn.com%2Fen-us%2Ftechnology%2Fgeneral%2Fblue-origin-s-new-glenn-rocket-exploded-during-a-ground-test-gutting-its-launch-pad%2Far-AA27TlfK&c=17747748000299221194&mkt=en-us",
+      "source_count": 1,
+      "source_names": [
+        "bing.com"
+      ],
+      "started_at": "2026-07-14T07:20:00Z",
+      "summary": "Blue Origin的发射与试验事件，已汇集 1 篇报道、1 个来源。"
+    },
+    {
       "article_count": 2,
       "articles": [
         {
@@ -2982,7 +3075,7 @@
       "summary": "星河动力的融资事件，已汇集 1 篇报道、1 个来源。"
     },
     {
-      "article_count": 1,
+      "article_count": 2,
       "articles": [
         {
           "date_is_inferred": false,
@@ -2991,6 +3084,14 @@
           "source_name": "bing.com",
           "title": "Blue Origin has an ambitious plan to relaunch New Glenn this year",
           "url": "http://www.bing.com/news/apiclick.aspx?aid=&tid=6a6182049e3248f9b907a33be82c4583&url=https%3A%2F%2Fnewatlas.com%2Fspace-systems%2Fblue-origin-hybrid-could-allow-2026-launch%2F&c=11359742978909559407&mkt=en-sg"
+        },
+        {
+          "date_is_inferred": false,
+          "id": "211b098b5541de3a",
+          "published_at": "2026-07-12T22:09:00Z",
+          "source_name": "bing.com",
+          "title": "Blue Origin has an ambitious plan to relaunch New Glenn this year",
+          "url": "http://www.bing.com/news/apiclick.aspx?aid=&tid=6a61cb4058384e4ca6b45240c9d30bf1&url=https%3A%2F%2Fnewatlas.com%2Fspace-systems%2Fblue-origin-hybrid-could-allow-2026-launch%2F&c=11359742978909559407&mkt=en-us"
         }
       ],
       "company_id": "blue_origin",
@@ -2999,7 +3100,7 @@
       "event_label": "其他动态",
       "event_type": "other",
       "headline": "Blue Origin has an ambitious plan to relaunch New Glenn this year",
-      "importance_score": 47,
+      "importance_score": 55,
       "latest_at": "2026-07-12T22:09:00Z",
       "latest_url": "http://www.bing.com/news/apiclick.aspx?aid=&tid=6a6182049e3248f9b907a33be82c4583&url=https%3A%2F%2Fnewatlas.com%2Fspace-systems%2Fblue-origin-hybrid-could-allow-2026-launch%2F&c=11359742978909559407&mkt=en-sg",
       "source_count": 1,
@@ -3007,7 +3108,7 @@
         "bing.com"
       ],
       "started_at": "2026-07-12T22:09:00Z",
-      "summary": "Blue Origin的其他动态事件，已汇集 1 篇报道、1 个来源。"
+      "summary": "Blue Origin的其他动态事件，已汇集 2 篇报道、1 个来源。"
     },
     {
       "article_count": 1,
@@ -3262,7 +3363,7 @@
       "summary": "星际荣耀的其他动态事件，已汇集 1 篇报道、1 个来源。"
     },
     {
-      "article_count": 1,
+      "article_count": 2,
       "articles": [
         {
           "date_is_inferred": false,
@@ -3271,6 +3372,14 @@
           "source_name": "Curated RSS provider contract.",
           "title": "中国开启可回收火箭时代，中科宇航更新招股书：三年营收复合增长率88.8%，预计2029年实现盈利 - 手机网易网",
           "url": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE51YkJDZDRjc2l2QnYxR011bkhvNm9kUUdCNnB5U2RvcENBUWQ4VlNiZHRja2NHT2tiMzlCNjhTMU5IY1FqU0kyQnl0eGRGUFlqN0ZMR0lzeFJ4eUtVa1FUMmF3?oc=5"
+        },
+        {
+          "date_is_inferred": false,
+          "id": "a7a2c11d7e27b846",
+          "published_at": "2026-07-11T00:01:00Z",
+          "source_name": "新浪财经",
+          "title": "中国开启可回收火箭时代，中科宇航更新招股书：三年营收复合增长率88.8%，预计2029年实现盈利 - 新浪财经",
+          "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTE9xaXAyd2lFOWJDbHRubFp0RXBGYkFrY3NUbURMdkdOMDhHMmw5WGkzeTVFc1l3T1J0OWtfT0ppVmloVzZkdFFweWY1clhuMmtKX002bURFTFJJaHRsSzRTRXhkX2pMZktzcS1TZEZlN2FsYktO?oc=5"
         }
       ],
       "company_id": "cas_space",
@@ -3279,15 +3388,16 @@
       "event_label": "股价与资本市场",
       "event_type": "market",
       "headline": "中国开启可回收火箭时代，中科宇航更新招股书：三年营收复合增长率88.8%，预计2029年实现盈利 - 手机网易网",
-      "importance_score": 47,
+      "importance_score": 59,
       "latest_at": "2026-07-11T00:21:13Z",
       "latest_url": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE51YkJDZDRjc2l2QnYxR011bkhvNm9kUUdCNnB5U2RvcENBUWQ4VlNiZHRja2NHT2tiMzlCNjhTMU5IY1FqU0kyQnl0eGRGUFlqN0ZMR0lzeFJ4eUtVa1FUMmF3?oc=5",
-      "source_count": 1,
+      "source_count": 2,
       "source_names": [
-        "Curated RSS provider contract."
+        "Curated RSS provider contract.",
+        "新浪财经"
       ],
-      "started_at": "2026-07-11T00:21:13Z",
-      "summary": "中科宇航的股价与资本市场事件，已汇集 1 篇报道、1 个来源。"
+      "started_at": "2026-07-11T00:01:00Z",
+      "summary": "中科宇航的股价与资本市场事件，已汇集 2 篇报道、2 个来源。"
     },
     {
       "article_count": 1,
@@ -3528,6 +3638,34 @@
       ],
       "started_at": "2026-07-10T07:15:09Z",
       "summary": "中科宇航的公司治理事件，已汇集 1 篇报道、1 个来源。"
+    },
+    {
+      "article_count": 1,
+      "articles": [
+        {
+          "date_is_inferred": false,
+          "id": "9ccaf695d41ce369",
+          "published_at": "2026-07-10T07:00:00Z",
+          "source_name": "上观新闻",
+          "title": "活力中国调研行丨千帆星座“一箭20星”加速组网，预计年内具备试运营能力 - 上观新闻",
+          "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE1WYzA3Y1RMaXV1MS1KMnBST1owZ3dpbm5JZUJwMWdXdGxWMGg1WG9qQjNnM2c1UGZXOWZ6bTJfZTlCR2VSS0dSM1RzOW5HQmM1N0JxRUlVREdudw?oc=5"
+        }
+      ],
+      "company_id": "yuanxin_satellite",
+      "company_name": "垣信卫星",
+      "event_id": "c2563345f3dee215",
+      "event_label": "发射与试验",
+      "event_type": "launch",
+      "headline": "活力中国调研行丨千帆星座“一箭20星”加速组网，预计年内具备试运营能力 - 上观新闻",
+      "importance_score": 59,
+      "latest_at": "2026-07-10T07:00:00Z",
+      "latest_url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE1WYzA3Y1RMaXV1MS1KMnBST1owZ3dpbm5JZUJwMWdXdGxWMGg1WG9qQjNnM2c1UGZXOWZ6bTJfZTlCR2VSS0dSM1RzOW5HQmM1N0JxRUlVREdudw?oc=5",
+      "source_count": 1,
+      "source_names": [
+        "上观新闻"
+      ],
+      "started_at": "2026-07-10T07:00:00Z",
+      "summary": "垣信卫星的发射与试验事件，已汇集 1 篇报道、1 个来源。"
     },
     {
       "article_count": 1,
@@ -3983,7 +4121,7 @@
       "summary": "星际荣耀的发射与试验事件，已汇集 1 篇报道、1 个来源。"
     },
     {
-      "article_count": 2,
+      "article_count": 4,
       "articles": [
         {
           "date_is_inferred": false,
@@ -3995,11 +4133,27 @@
         },
         {
           "date_is_inferred": false,
+          "id": "5ca58972044ff336",
+          "published_at": "2026-07-08T13:23:00Z",
+          "source_name": "bing.com",
+          "title": "Blue Origin wants to launch New Glenn rocket by end of 2026. Can it?",
+          "url": "http://www.bing.com/news/apiclick.aspx?aid=&tid=6a61cb4058384e4ca6b45240c9d30bf1&url=https%3A%2F%2Fwww.msn.com%2Fen-us%2Fnews%2Fother%2Fblue-origin-wants-to-launch-new-glenn-rocket-by-end-of-2026-can-it%2Far-AA27tWyK&c=11745313248457799975&mkt=en-us"
+        },
+        {
+          "date_is_inferred": false,
           "id": "ced692c314964dd8",
           "published_at": "2026-07-08T09:41:00Z",
           "source_name": "bing.com",
           "title": "Inside Blue Origin's plan to fly New Glenn rocket again before 2026 ends",
           "url": "http://www.bing.com/news/apiclick.aspx?aid=&tid=6a61807b662048c7ad451854881eb0f6&url=https%3A%2F%2Fwww.jsonline.com%2Fstory%2Ftech%2Fscience%2Fspace%2F2026%2F07%2F08%2Fexplosion-blue-origin-new-glenn-return-cape-canaveral%2F90846982007%2F&c=3049306023539565463&mkt=en-sg"
+        },
+        {
+          "date_is_inferred": false,
+          "id": "a29b97ac1b0abab6",
+          "published_at": "2026-07-08T09:41:00Z",
+          "source_name": "bing.com",
+          "title": "Inside Blue Origin's plan to fly New Glenn rocket again before 2026 ends",
+          "url": "http://www.bing.com/news/apiclick.aspx?aid=&tid=6a61cb4058384e4ca6b45240c9d30bf1&url=https%3A%2F%2Fwww.dispatch.com%2Fstory%2Ftech%2Fscience%2Fspace%2F2026%2F07%2F08%2Fexplosion-blue-origin-new-glenn-return-cape-canaveral%2F90846982007%2F&c=9511108659553488509&mkt=en-us"
         }
       ],
       "company_id": "blue_origin",
@@ -4008,7 +4162,7 @@
       "event_label": "发射与试验",
       "event_type": "launch",
       "headline": "Blue Origin wants to launch New Glenn rocket by end of 2026. Can it?",
-      "importance_score": 67,
+      "importance_score": 83,
       "latest_at": "2026-07-08T13:23:00Z",
       "latest_url": "http://www.bing.com/news/apiclick.aspx?aid=&tid=6a617bb0b28146e1a941a8bfce4cd8b1&url=https%3A%2F%2Fwww.msn.com%2Fen-us%2Fnews%2Fother%2Fblue-origin-wants-to-launch-new-glenn-rocket-by-end-of-2026-can-it%2Far-AA27tWyK&c=11745313248457799975&mkt=en-sg",
       "source_count": 1,
@@ -4016,7 +4170,7 @@
         "bing.com"
       ],
       "started_at": "2026-07-08T09:41:00Z",
-      "summary": "Blue Origin的发射与试验事件，已汇集 2 篇报道、1 个来源。"
+      "summary": "Blue Origin的发射与试验事件，已汇集 4 篇报道、1 个来源。"
     },
     {
       "article_count": 1,
@@ -4787,7 +4941,7 @@
           "date_is_inferred": false,
           "id": "eb477578b7995535",
           "published_at": "2026-07-05T15:40:00Z",
-          "source_name": "Curated RSS provider contract.",
+          "source_name": "财富号",
           "title": "..一箭20星……千帆星座新纪录… - 财富号",
           "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTE1jR0JmMzBWcG16d0JEVGxMV2NmbHlneHlNWEdmMlFPLW5kc05qdWFuREYzTzdnMVRUMFMxNVlIVGE4eHEtVWhfRGNDRldBbWNYb3NJY3RsODVCSVF3bERSdTdIT3ZPTER3UWtB?oc=5"
         },
@@ -4806,16 +4960,17 @@
       "event_label": "发射与试验",
       "event_type": "launch",
       "headline": "长八甲火箭改进型首飞告捷，千帆星座迈入“一箭20星”时代 - 21财经",
-      "importance_score": 79,
+      "importance_score": 83,
       "latest_at": "2026-07-06T07:00:00Z",
       "latest_url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxOaUhJU2UxV1BVNENLNDNHS0JCMUNjYTVpRkJlX3V4NU4tMDVUWDZzUDFuOVRLaWx2dTBFTlNIY1FkZW9lTUlWX2VCeWt4NmlPZERZZ29HUTJYcjRXVkVGQkItOXdnUWV5aXFnd1kxYXpDSjFQaUlLVWVrcDRmRzVkbEFiQXdmVFRsUEFZbQ?oc=5",
-      "source_count": 2,
+      "source_count": 3,
       "source_names": [
         "21财经",
-        "Curated RSS provider contract."
+        "Curated RSS provider contract.",
+        "财富号"
       ],
       "started_at": "2026-07-04T09:31:00Z",
-      "summary": "垣信卫星的发射与试验事件，已汇集 3 篇报道、2 个来源。"
+      "summary": "垣信卫星的发射与试验事件，已汇集 3 篇报道、3 个来源。"
     },
     {
       "article_count": 1,
@@ -5042,7 +5197,7 @@
       "summary": "蓝箭航天的股价与资本市场事件，已汇集 1 篇报道、1 个来源。"
     },
     {
-      "article_count": 2,
+      "article_count": 3,
       "articles": [
         {
           "date_is_inferred": false,
@@ -5059,6 +5214,14 @@
           "source_name": "Curated RSS provider contract.",
           "title": "垣信卫星：千帆组网卫星数量增至 218 颗 - 手机新浪网",
           "url": "https://news.google.com/rss/articles/CBMisgJBVV95cUxOaU1jZkttQllsUm1BZVpKMk1RaFlpemtrUzBwSXJ5Vk8zVTdsUXAySnZiMUdsU204ZGd0eEtJY3I2VFdOOXFBWXR2enNSNlVacmVLbjhaS3Zhd2tNcXVSTjVjckZoaWZGa3B0NEdIX2tGdmpQTnhIUUFuMU56Vk83Tmt5NDRwQWVZb2huY200M0ZYSkpJTTZKZm9YY2lYYWdEQmd1emF0c3JjTDA0WENsUEpEVVBqeXBZSE54bUdLNFFhejNhb1FpNDJFWl9VX09WMGdaNUoyU05rVS1OeDkzZUlnOXc4d0VONGJPUHZoZmlfOGZHYnVBZjVaZzZUVHZ2NzhEX3hYOVowZU9QUFR2ZDZtajNxZ1h3aFpzUmt0NzZFQl9fTHlTeHRPRVZpM1VJeWc?oc=5"
+        },
+        {
+          "date_is_inferred": false,
+          "id": "9a15f26b1917c8e6",
+          "published_at": "2026-07-04T07:00:00Z",
+          "source_name": "新浪财经",
+          "title": "垣信卫星：千帆组网卫星数量增至 218 颗 - 新浪财经",
+          "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE5RZHJZMkU2bkpVX1RMcHliODVNYjdTdjMwRFRTYTlXQVRWTl9CaEpIRUlDLU1hYU5BeXhIdnVWNXlydXhSXzdEOXBRa2lyRTBkYkd4elpMV1pfcVZpSi1mT1R0T3VtSExKeWUwTW1PbUpxUlpuSnZxbVhORVlZMHc?oc=5"
         }
       ],
       "company_id": "yuanxin_satellite",
@@ -5067,15 +5230,16 @@
       "event_label": "其他动态",
       "event_type": "other",
       "headline": "垣信卫星千帆星座再扩容，增至218颗 - 见道网",
-      "importance_score": 55,
+      "importance_score": 67,
       "latest_at": "2026-07-05T02:32:00Z",
       "latest_url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE9Ld1BiRng0UDYxR01kcWNGN3BKSUhYWTRabktYUnFJMTJYZXZna2FkQ2pXVS0xMjJ3dTRZWGc0T3NqdmlQcU9PV2NEQXpwOVFETDJTMw?oc=5",
-      "source_count": 1,
+      "source_count": 2,
       "source_names": [
-        "Curated RSS provider contract."
+        "Curated RSS provider contract.",
+        "新浪财经"
       ],
-      "started_at": "2026-07-04T16:33:09Z",
-      "summary": "垣信卫星的其他动态事件，已汇集 2 篇报道、1 个来源。"
+      "started_at": "2026-07-04T07:00:00Z",
+      "summary": "垣信卫星的其他动态事件，已汇集 3 篇报道、2 个来源。"
     },
     {
       "article_count": 1,
@@ -5656,6 +5820,34 @@
       "articles": [
         {
           "date_is_inferred": false,
+          "id": "08fc99b5ec3b6017",
+          "published_at": "2026-07-03T07:00:00Z",
+          "source_name": "SpaceNews",
+          "title": "Chinese satellite manufacturer Hongqing raises $191 million - SpaceNews",
+          "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxOd1ZZbldJVFFpUlFZMGNoNGZXb0FIdzZuN2x1OU81aE1OTkM3WFFIWm1raDRZUGo3S3JBTElfSlo1WGFlbTVGQXU3WjRtZnE2T2xKbUNaOFlJMzNXOXNySVRsT05yd3REZUs3LWNub2tFU1NoVzUyM05HMUg2ZUppZmFETEJfb2Jh?oc=5"
+        }
+      ],
+      "company_id": "hongqing_technology",
+      "company_name": "蓝箭鸿擎",
+      "event_id": "35d5ffa61c7819c6",
+      "event_label": "其他动态",
+      "event_type": "other",
+      "headline": "Chinese satellite manufacturer Hongqing raises $191 million - SpaceNews",
+      "importance_score": 47,
+      "latest_at": "2026-07-03T07:00:00Z",
+      "latest_url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxOd1ZZbldJVFFpUlFZMGNoNGZXb0FIdzZuN2x1OU81aE1OTkM3WFFIWm1raDRZUGo3S3JBTElfSlo1WGFlbTVGQXU3WjRtZnE2T2xKbUNaOFlJMzNXOXNySVRsT05yd3REZUs3LWNub2tFU1NoVzUyM05HMUg2ZUppZmFETEJfb2Jh?oc=5",
+      "source_count": 1,
+      "source_names": [
+        "SpaceNews"
+      ],
+      "started_at": "2026-07-03T07:00:00Z",
+      "summary": "蓝箭鸿擎的其他动态事件，已汇集 1 篇报道、1 个来源。"
+    },
+    {
+      "article_count": 1,
+      "articles": [
+        {
+          "date_is_inferred": false,
           "id": "2da31e213b247f50",
           "published_at": "2026-07-02T20:12:23Z",
           "source_name": "Curated RSS provider contract.",
@@ -6038,7 +6230,7 @@
       "summary": "蓝箭航天的其他动态事件，已汇集 1 篇报道、1 个来源。"
     },
     {
-      "article_count": 22,
+      "article_count": 25,
       "articles": [
         {
           "date_is_inferred": false,
@@ -6063,6 +6255,14 @@
           "source_name": "Curated RSS provider contract.",
           "title": "垣信卫星启动新一轮融资 最低募资额50亿元 - 中金在线",
           "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE4yREhmREJpYVU1eWRWNmZHcnFYS01pQmI3VmlMajVEREFkb05IbnNrYzNmdjlUN3NNNHJVVkNiWVZGSlEtZUVMbkljZFJUMElXbWR6ejJtVFFrSE1HUnpOa0ZWVUhvaGlETDhiMzB3?oc=5"
+        },
+        {
+          "date_is_inferred": false,
+          "id": "1410ca9f493b344d",
+          "published_at": "2026-06-24T07:00:00Z",
+          "source_name": "财联社",
+          "title": "垣信卫星启动新一轮融资 最低募资额50亿元 - 财联社",
+          "url": "https://news.google.com/rss/articles/CBMiSEFVX3lxTFByZWI5MjViS2JfUVRmQnlCRlZiN0k4Vi16c1NueXhuOEstRzd0QXVjOXdLRXNHR1d1QUFwQ0ZMYjJ4eHFsTHpsbA?oc=5"
         },
         {
           "date_is_inferred": false,
@@ -6095,6 +6295,14 @@
           "source_name": "新浪财经",
           "title": "上海垣信启动新一轮融资：投后估值达到750亿元|募集资金|星座公司|卫星|星座|投资人_手机新浪网 - 新浪财经",
           "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE1tT3JxYlRkMkJIUW9uWF9pMmFCektZOE1ldTM1dWMxaDN3NzhSbXk2dXg1dFJqczd5ZXFWRTVocUUyWjQ4Nm5PV0VKbmpfdm9uTVlIOXVoWUtSQnVPdC0tb25pYjZLWmxlaFJ3OWh6S3dPVFNIdFphTWZIU2RVNGc?oc=5"
+        },
+        {
+          "date_is_inferred": false,
+          "id": "0eb281ff5f382ecb",
+          "published_at": "2026-06-23T07:00:00Z",
+          "source_name": "Sohu",
+          "title": "卫星数量达到200颗后，千帆星座启动新一轮融资 - Sohu",
+          "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTFBrVkFtU0hmMUhRel91bHU4ZDNRSUpMUC00ME1HY1lCQ1AtWUVNdkZkX1JMTWJYekJkaS1LYUg1SGtETFhnOVZuNldPd3V1ZlJnUFA0VFpR?oc=5"
         },
         {
           "date_is_inferred": false,
@@ -6215,6 +6423,14 @@
           "source_name": "Curated RSS provider contract.",
           "title": "中国版SpaceX：垣信卫星启动新一轮融资，目标建设千帆星座 - 搜狐网",
           "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxPRzBvcDV3NTVxd3BHT0pvdkstbVM3UE5vZThocXdoa2p6ZDdUVGdxVHNnZVh6cWlEV1E3RmtFeHV1SmRVS2RSeEJCeDY4S3RLY0VLQVVBXzlCRFVGSnZnY0VoMm54NGFoYW5vNTk4R3Fia2x4ZDNncGREbDF2RW9DVWN5WkVJcGZHdGd5bw?oc=5"
+        },
+        {
+          "date_is_inferred": false,
+          "id": "a268e73535700208",
+          "published_at": "2026-06-22T07:00:00Z",
+          "source_name": "thepaper.cn",
+          "title": "“千帆星座”建设与运营主体垣信卫星启动新一轮融资 - thepaper.cn",
+          "url": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE1hNjVjZ1htbFpUSkhaYmVuTXR3b2RoTWNjal9rdWJMNzU4T0phVDdjTk5UNjdQckpaU3BVSDVaRVd4NGxtMnkwb2t5Um52ZTVFNXR6WG1UbFNLNFBGOFE?oc=5"
         }
       ],
       "company_id": "yuanxin_satellite",
@@ -6226,15 +6442,18 @@
       "importance_score": 100,
       "latest_at": "2026-07-02T00:00:00Z",
       "latest_url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE5RMzYxNk9BdFo2OTVOQXN3U1g1QUR2TERVRmVnNTJ4aW02MS1uem40dkdEZFFUeTJrN1hvalBiX3JSUGg5RE5UMWVsbV9iRGJwdmpIRVJjY1RacmM?oc=5",
-      "source_count": 4,
+      "source_count": 7,
       "source_names": [
         "C114通信网",
         "Curated RSS provider contract.",
+        "Sohu",
         "https://cislunarspace.cn/space-news/2026/07/2026-07-02-spacesail-qianfan-funding-round",
-        "新浪财经"
+        "thepaper.cn",
+        "新浪财经",
+        "财联社"
       ],
-      "started_at": "2026-06-22T08:06:01Z",
-      "summary": "垣信卫星的融资事件，已汇集 22 篇报道、4 个来源。"
+      "started_at": "2026-06-22T07:00:00Z",
+      "summary": "垣信卫星的融资事件，已汇集 25 篇报道、7 个来源。"
     },
     {
       "article_count": 1,
@@ -6489,8 +6708,16 @@
       "summary": "蓝箭航天的股价与资本市场事件，已汇集 1 篇报道、1 个来源。"
     },
     {
-      "article_count": 1,
+      "article_count": 2,
       "articles": [
+        {
+          "date_is_inferred": false,
+          "id": "b0adc35e24f336b4",
+          "published_at": "2026-07-01T07:00:00Z",
+          "source_name": "新浪网",
+          "title": "正式回收前的“模拟考试”，星际荣耀完成 SQX-3 运载火箭回收一子级海上合练试验 - 新浪网",
+          "url": "https://news.google.com/rss/articles/CBMihAJBVV95cUxPa1RUWFZSZVc2dnB6Z1Nha3BvNTEtZUlzaHdwX2s2SDRRWUNZaXlNdlRHU0FEcS1nZElJSXE5dzJyOHl6cVR1WHV3N2J4dmZobXFEN0dYVWF4cDlKMTY0YWlVN2RQdkcwMlN6SFprLXJsM2xYbkFsZkRWc2NZX3NVOWZtYktDUGFxdVVyRGxBVmJwMlRrdjEyUjRlTDlNbjNPSHp0VFJEbzBVTVZLcTJtbzFWWGRsOEhUV1JQZko0YkFnVFZ6SXlDeVpKQWtBbGZQUXZORmF4dmstQ2g3bFdsQ3Q0akVUaEktdkxZUC1mRUg0R3Nyczd0RDVvYkpvZnlNQTBZbw?oc=5"
+        },
         {
           "date_is_inferred": false,
           "id": "1d39b8e8726247f9",
@@ -6505,16 +6732,17 @@
       "event_id": "795040c6f1078c84",
       "event_label": "发射与试验",
       "event_type": "launch",
-      "headline": "正式回收前的“模拟考试”，星际荣耀完成 SQX-3 运载火箭回收一子级海上合练试验 - news.17173.com",
-      "importance_score": 59,
+      "headline": "正式回收前的“模拟考试”，星际荣耀完成 SQX-3 运载火箭回收一子级海上合练试验 - 新浪网",
+      "importance_score": 71,
       "latest_at": "2026-07-01T07:00:00Z",
-      "latest_url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE1qeXpxTGZJQjl2UG51U1BIb2x4U0lnajQtNGVFOEdSWVc1VGx5amRSd1BNTVNXZHhLeU92UUl4N2dPaUVSc0dzYXV1eUxFWWhmRUduSHVVdVpsZWhyS0FsTEJDUXQ?oc=5",
-      "source_count": 1,
+      "latest_url": "https://news.google.com/rss/articles/CBMihAJBVV95cUxPa1RUWFZSZVc2dnB6Z1Nha3BvNTEtZUlzaHdwX2s2SDRRWUNZaXlNdlRHU0FEcS1nZElJSXE5dzJyOHl6cVR1WHV3N2J4dmZobXFEN0dYVWF4cDlKMTY0YWlVN2RQdkcwMlN6SFprLXJsM2xYbkFsZkRWc2NZX3NVOWZtYktDUGFxdVVyRGxBVmJwMlRrdjEyUjRlTDlNbjNPSHp0VFJEbzBVTVZLcTJtbzFWWGRsOEhUV1JQZko0YkFnVFZ6SXlDeVpKQWtBbGZQUXZORmF4dmstQ2g3bFdsQ3Q0akVUaEktdkxZUC1mRUg0R3Nyczd0RDVvYkpvZnlNQTBZbw?oc=5",
+      "source_count": 2,
       "source_names": [
-        "Curated RSS provider contract."
+        "Curated RSS provider contract.",
+        "新浪网"
       ],
       "started_at": "2026-07-01T07:00:00Z",
-      "summary": "星际荣耀的发射与试验事件，已汇集 1 篇报道、1 个来源。"
+      "summary": "星际荣耀的发射与试验事件，已汇集 2 篇报道、2 个来源。"
     },
     {
       "article_count": 1,
@@ -6653,7 +6881,7 @@
       "summary": "中科宇航的其他动态事件，已汇集 4 篇报道、1 个来源。"
     },
     {
-      "article_count": 3,
+      "article_count": 5,
       "articles": [
         {
           "date_is_inferred": false,
@@ -6673,11 +6901,27 @@
         },
         {
           "date_is_inferred": false,
+          "id": "5c061b9256643c64",
+          "published_at": "2026-06-30T14:00:00Z",
+          "source_name": "bing.com",
+          "title": "Blue Origin starts rebuilding launch pad damaged by New Glenn rocket explosion",
+          "url": "http://www.bing.com/news/apiclick.aspx?aid=&tid=6a61cb4058384e4ca6b45240c9d30bf1&url=https%3A%2F%2Fwww.msn.com%2Fen-us%2Fnews%2Ftechnology%2Fblue-origin-starts-rebuilding-launch-pad-damaged-by-new-glenn-rocket-explosion%2Far-AA26VbqJ&c=15002368470571094781&mkt=en-us"
+        },
+        {
+          "date_is_inferred": false,
           "id": "f0cd603f30c5b0a9",
           "published_at": "2026-06-30T12:31:00Z",
           "source_name": "Curated RSS provider contract.",
           "title": "Blue Origin reveals new launch pad design following May explosion",
           "url": "http://www.bing.com/news/apiclick.aspx?aid=&tid=6a4d53b022424611a33a4c6b215ee1ae&url=https%3A%2F%2Fwww.orlandosentinel.com%2F2026%2F06%2F30%2Fblue-origin-reveals-new-launch-pad-design-following-may-explosion%2F&c=4539306042579784563&mkt=en-us"
+        },
+        {
+          "date_is_inferred": false,
+          "id": "745501621df54bf6",
+          "published_at": "2026-06-30T12:20:00Z",
+          "source_name": "bing.com",
+          "title": "Blue Origin reveals new launch pad design following May explosion",
+          "url": "http://www.bing.com/news/apiclick.aspx?aid=&tid=6a61cb4058384e4ca6b45240c9d30bf1&url=https%3A%2F%2Fwww.orlandosentinel.com%2F2026%2F06%2F30%2Fblue-origin-reveals-new-launch-pad-design-following-may-explosion%2F&c=4539306042579784563&mkt=en-us"
         }
       ],
       "company_id": "blue_origin",
@@ -6686,7 +6930,7 @@
       "event_label": "发射与试验",
       "event_type": "launch",
       "headline": "Blue Origin redesigns launch pad destroyed in New Glenn explosion",
-      "importance_score": 79,
+      "importance_score": 95,
       "latest_at": "2026-07-01T00:49:00Z",
       "latest_url": "http://www.bing.com/news/apiclick.aspx?aid=&tid=6a61868531284a2ca3bf79bc2699e14e&url=https%3A%2F%2Fwww.msn.com%2Fen-in%2Fnews%2Fworld%2Fblue-origin-redesigns-launch-pad-destroyed-in-new-glenn-explosion%2Far-AA26Xi7T&c=10791744045286328776&mkt=en-sg",
       "source_count": 2,
@@ -6694,8 +6938,8 @@
         "Curated RSS provider contract.",
         "bing.com"
       ],
-      "started_at": "2026-06-30T12:31:00Z",
-      "summary": "Blue Origin的发射与试验事件，已汇集 3 篇报道、2 个来源。"
+      "started_at": "2026-06-30T12:20:00Z",
+      "summary": "Blue Origin的发射与试验事件，已汇集 5 篇报道、2 个来源。"
     },
     {
       "article_count": 1,
@@ -6754,7 +6998,7 @@
       "summary": "SpaceX的发射与试验事件，已汇集 1 篇报道、1 个来源。"
     },
     {
-      "article_count": 2,
+      "article_count": 3,
       "articles": [
         {
           "date_is_inferred": false,
@@ -6763,6 +7007,14 @@
           "source_name": "Spaceflight Now",
           "title": "Blue Origin outlines return to flight logistics for its New Glenn rockets",
           "url": "https://spaceflightnow.com/2026/06/30/blue-origin-outlines-return-to-flight-logistics-for-its-new-glenn-rockets"
+        },
+        {
+          "date_is_inferred": false,
+          "id": "fb3d46f094dfef19",
+          "published_at": "2026-06-30T09:09:57Z",
+          "source_name": "bing.com",
+          "title": "Blue Origin still doesn’t know why its New Glenn rocket blew up last month",
+          "url": "http://www.bing.com/news/apiclick.aspx?aid=&tid=6a61cb4058384e4ca6b45240c9d30bf1&url=https%3A%2F%2Fwww.msn.com%2Fen-us%2Fnews%2Ftechnology%2Fblue-origin-still-doesn-t-know-why-its-new-glenn-rocket-blew-up-last-month%2Far-AA26U89p&c=16895568935221366981&mkt=en-us"
         },
         {
           "date_is_inferred": false,
@@ -6779,19 +7031,20 @@
       "event_label": "其他动态",
       "event_type": "other",
       "headline": "Blue Origin outlines return to flight logistics for its New Glenn rockets",
-      "importance_score": 59,
+      "importance_score": 71,
       "latest_at": "2026-06-30T22:50:01Z",
       "latest_url": "https://spaceflightnow.com/2026/06/30/blue-origin-outlines-return-to-flight-logistics-for-its-new-glenn-rockets",
-      "source_count": 2,
+      "source_count": 3,
       "source_names": [
         "Blue Origin",
-        "Spaceflight Now"
+        "Spaceflight Now",
+        "bing.com"
       ],
       "started_at": "2026-06-30T07:00:00Z",
-      "summary": "Blue Origin的其他动态事件，已汇集 2 篇报道、2 个来源。"
+      "summary": "Blue Origin的其他动态事件，已汇集 3 篇报道、3 个来源。"
     },
     {
-      "article_count": 1,
+      "article_count": 2,
       "articles": [
         {
           "date_is_inferred": false,
@@ -6800,6 +7053,14 @@
           "source_name": "Curated RSS provider contract.",
           "title": "Blue Origin BE-4 engine failure disrupts Vulcan launch plans",
           "url": "http://www.bing.com/news/apiclick.aspx?aid=&tid=6a4d53b0e746415a9984f565e2a33698&url=https%3A%2F%2Fwww.msn.com%2Fen-us%2Ftechnology%2Faviation%2Fblue-origin-be-4-engine-failure-disrupts-vulcan-launch-plans%2Far-AA26Wkqz&c=866016934621474795&mkt=en-us"
+        },
+        {
+          "date_is_inferred": false,
+          "id": "ca23a73e12126cd1",
+          "published_at": "2026-06-30T21:33:54Z",
+          "source_name": "bing.com",
+          "title": "Blue Origin BE-4 engine failure disrupts Vulcan launch plans",
+          "url": "http://www.bing.com/news/apiclick.aspx?aid=&tid=6a61cb4072ba46dba14c76d948a665fe&url=https%3A%2F%2Fwww.msn.com%2Fen-us%2Ftechnology%2Faviation%2Fblue-origin-be-4-engine-failure-disrupts-vulcan-launch-plans%2Far-AA26Wkqz&c=866016934621474795&mkt=en-us"
         }
       ],
       "company_id": "blue_origin",
@@ -6808,15 +7069,16 @@
       "event_label": "发射与试验",
       "event_type": "launch",
       "headline": "Blue Origin BE-4 engine failure disrupts Vulcan launch plans",
-      "importance_score": 59,
+      "importance_score": 71,
       "latest_at": "2026-06-30T21:33:54Z",
       "latest_url": "http://www.bing.com/news/apiclick.aspx?aid=&tid=6a4d53b0e746415a9984f565e2a33698&url=https%3A%2F%2Fwww.msn.com%2Fen-us%2Ftechnology%2Faviation%2Fblue-origin-be-4-engine-failure-disrupts-vulcan-launch-plans%2Far-AA26Wkqz&c=866016934621474795&mkt=en-us",
-      "source_count": 1,
+      "source_count": 2,
       "source_names": [
-        "Curated RSS provider contract."
+        "Curated RSS provider contract.",
+        "bing.com"
       ],
       "started_at": "2026-06-30T21:33:54Z",
-      "summary": "Blue Origin的发射与试验事件，已汇集 1 篇报道、1 个来源。"
+      "summary": "Blue Origin的发射与试验事件，已汇集 2 篇报道、2 个来源。"
     },
     {
       "article_count": 1,
@@ -6875,7 +7137,7 @@
       "summary": "蓝箭航天的股价与资本市场事件，已汇集 1 篇报道、1 个来源。"
     },
     {
-      "article_count": 1,
+      "article_count": 2,
       "articles": [
         {
           "date_is_inferred": false,
@@ -6884,6 +7146,14 @@
           "source_name": "Curated RSS provider contract.",
           "title": "SpaceX's AI boom comes with a perk for Memphis residents: half-price for Starlink",
           "url": "http://www.bing.com/news/apiclick.aspx?aid=&tid=6a4d53800cee4f03a98d72b9ea9956b2&url=https%3A%2F%2Fwww.businessinsider.com%2Fspacex-half-price-starlink-memphis-residents-2026-6&c=6899071313186555755&mkt=en-us"
+        },
+        {
+          "date_is_inferred": false,
+          "id": "fc234792675c57b4",
+          "published_at": "2026-06-30T13:14:00Z",
+          "source_name": "bing.com",
+          "title": "SpaceX's AI boom comes with a perk for Memphis residents: half-price for Starlink",
+          "url": "http://www.bing.com/news/apiclick.aspx?aid=&tid=6a61cb3676a04cdeae760eca22876405&url=https%3A%2F%2Fwww.businessinsider.com%2Fspacex-half-price-starlink-memphis-residents-2026-6&c=6899071313186555755&mkt=en-us"
         }
       ],
       "company_id": "spacex",
@@ -6892,15 +7162,16 @@
       "event_label": "其他动态",
       "event_type": "other",
       "headline": "SpaceX's AI boom comes with a perk for Memphis residents: half-price for Starlink",
-      "importance_score": 47,
+      "importance_score": 59,
       "latest_at": "2026-06-30T13:16:00Z",
       "latest_url": "http://www.bing.com/news/apiclick.aspx?aid=&tid=6a4d53800cee4f03a98d72b9ea9956b2&url=https%3A%2F%2Fwww.businessinsider.com%2Fspacex-half-price-starlink-memphis-residents-2026-6&c=6899071313186555755&mkt=en-us",
-      "source_count": 1,
+      "source_count": 2,
       "source_names": [
-        "Curated RSS provider contract."
+        "Curated RSS provider contract.",
+        "bing.com"
       ],
-      "started_at": "2026-06-30T13:16:00Z",
-      "summary": "SpaceX的其他动态事件，已汇集 1 篇报道、1 个来源。"
+      "started_at": "2026-06-30T13:14:00Z",
+      "summary": "SpaceX的其他动态事件，已汇集 2 篇报道、2 个来源。"
     },
     {
       "article_count": 1,
@@ -6959,7 +7230,7 @@
       "summary": "SpaceX的发射与试验事件，已汇集 1 篇报道、1 个来源。"
     },
     {
-      "article_count": 1,
+      "article_count": 2,
       "articles": [
         {
           "date_is_inferred": false,
@@ -6968,6 +7239,14 @@
           "source_name": "Curated RSS provider contract.",
           "title": "营收猛增11倍！蓝箭航天IPO恢复问询，大额亏损与流动性风险待解 - QQ News",
           "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTFBNM1dOd05VSnM5X2tESzJ3d0ZZbTU5RVhQRW15YXhidlNPY2lraEtCemp5NU1QNFZwTm1XOHZuVEJMRzBOWGJoNWM1c3RfN29hWUVPRzZB?oc=5"
+        },
+        {
+          "date_is_inferred": false,
+          "id": "77fecf347030815e",
+          "published_at": "2026-06-30T07:00:00Z",
+          "source_name": "21财经",
+          "title": "营收猛增11倍！蓝箭航天IPO恢复问询，大额亏损与流动性风险待解 - 21财经",
+          "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxNQUJSRHlhTEY2X3NOWjFJOW9wVFFsVmFvNHgwWWh2MTN3dXhhWE81ejE3LXM3T2tWRVpVN1NYeThYTUZ3NVB5THBxOU9SYlBfNGt6ei1xSlk3LUhIemNia3pmTlItNkJ1dmRaZzVIeTc3algwV3phOXROX04wenZzSHpVdUJlSk9jSEcyRA?oc=5"
         }
       ],
       "company_id": "landspace",
@@ -6976,15 +7255,16 @@
       "event_label": "股价与资本市场",
       "event_type": "market",
       "headline": "营收猛增11倍！蓝箭航天IPO恢复问询，大额亏损与流动性风险待解 - QQ News",
-      "importance_score": 47,
+      "importance_score": 59,
       "latest_at": "2026-06-30T11:28:00Z",
       "latest_url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTFBNM1dOd05VSnM5X2tESzJ3d0ZZbTU5RVhQRW15YXhidlNPY2lraEtCemp5NU1QNFZwTm1XOHZuVEJMRzBOWGJoNWM1c3RfN29hWUVPRzZB?oc=5",
-      "source_count": 1,
+      "source_count": 2,
       "source_names": [
+        "21财经",
         "Curated RSS provider contract."
       ],
-      "started_at": "2026-06-30T11:28:00Z",
-      "summary": "蓝箭航天的股价与资本市场事件，已汇集 1 篇报道、1 个来源。"
+      "started_at": "2026-06-30T07:00:00Z",
+      "summary": "蓝箭航天的股价与资本市场事件，已汇集 2 篇报道、2 个来源。"
     },
     {
       "article_count": 1,
@@ -7242,6 +7522,34 @@
       "articles": [
         {
           "date_is_inferred": false,
+          "id": "b864c3536db921ad",
+          "published_at": "2026-06-30T00:36:07Z",
+          "source_name": "bing.com",
+          "title": "How satellite internet is bringing high-speed connectivity to the world’s remote regions",
+          "url": "http://www.bing.com/news/apiclick.aspx?aid=&tid=6a61cb8c747549758863652a322e4da2&url=https%3A%2F%2Fwww.msn.com%2Fen-in%2Ftechnology%2Fspace-exploration%2Fhow-satellite-internet-is-bringing-high-speed-connectivity-to-the-world-s-remote-regions%2Far-AA26RZpL&c=2931294600003180278&mkt=en-us"
+        }
+      ],
+      "company_id": "galaxyspace",
+      "company_name": "银河航天",
+      "event_id": "af9ba5546003015e",
+      "event_label": "发射与试验",
+      "event_type": "launch",
+      "headline": "How satellite internet is bringing high-speed connectivity to the world’s remote regions",
+      "importance_score": 59,
+      "latest_at": "2026-06-30T00:36:07Z",
+      "latest_url": "http://www.bing.com/news/apiclick.aspx?aid=&tid=6a61cb8c747549758863652a322e4da2&url=https%3A%2F%2Fwww.msn.com%2Fen-in%2Ftechnology%2Fspace-exploration%2Fhow-satellite-internet-is-bringing-high-speed-connectivity-to-the-world-s-remote-regions%2Far-AA26RZpL&c=2931294600003180278&mkt=en-us",
+      "source_count": 1,
+      "source_names": [
+        "bing.com"
+      ],
+      "started_at": "2026-06-30T00:36:07Z",
+      "summary": "银河航天的发射与试验事件，已汇集 1 篇报道、1 个来源。"
+    },
+    {
+      "article_count": 1,
+      "articles": [
+        {
+          "date_is_inferred": false,
           "id": "742a6cdf383ad7ac",
           "published_at": "2026-06-30T00:32:00Z",
           "source_name": "Curated RSS provider contract.",
@@ -7387,7 +7695,7 @@
       "summary": "蓝箭航天的发射与试验事件，已汇集 2 篇报道、2 个来源。"
     },
     {
-      "article_count": 1,
+      "article_count": 2,
       "articles": [
         {
           "date_is_inferred": false,
@@ -7396,6 +7704,14 @@
           "source_name": "Curated RSS provider contract.",
           "title": "蓝箭航天，IPO新情况 - 上海证券报",
           "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTFBiY0RRVjVXLUZ1X1NRelJ0a0czUEtWMy1SWWp3Ukh2N2R4YWY4RWxyd3ZRQ294WTBwNHh4RUlRazNXNlJHVzQ3SkxYaE5USHh5X3I0a1dB?oc=5"
+        },
+        {
+          "date_is_inferred": false,
+          "id": "ecfc421bcb739daa",
+          "published_at": "2026-06-29T07:00:00Z",
+          "source_name": "21财经",
+          "title": "蓝箭航天IPO，有新进展 - 21财经",
+          "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxPZTUxdVVjQmhMc1d0OEhYN3VnY2JpazU1bG1LVlVjdmlHN214NzdqODR5TTE2N0VDZTE0Rlk5X3JoWHpWV1Fic3VZR081TlprZWFTOGo5SjAtWGFpTzB4d19kV1RvZC1ZTFpWMUFvWUNaVlJhcFJtVXBLdmVuZ18wOHN3TUVURHJuU2oxUg?oc=5"
         }
       ],
       "company_id": "landspace",
@@ -7404,15 +7720,16 @@
       "event_label": "股价与资本市场",
       "event_type": "market",
       "headline": "蓝箭航天，IPO新情况 - 上海证券报",
-      "importance_score": 47,
+      "importance_score": 59,
       "latest_at": "2026-06-29T15:09:02Z",
       "latest_url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTFBiY0RRVjVXLUZ1X1NRelJ0a0czUEtWMy1SWWp3Ukh2N2R4YWY4RWxyd3ZRQ294WTBwNHh4RUlRazNXNlJHVzQ3SkxYaE5USHh5X3I0a1dB?oc=5",
-      "source_count": 1,
+      "source_count": 2,
       "source_names": [
+        "21财经",
         "Curated RSS provider contract."
       ],
-      "started_at": "2026-06-29T15:09:02Z",
-      "summary": "蓝箭航天的股价与资本市场事件，已汇集 1 篇报道、1 个来源。"
+      "started_at": "2026-06-29T07:00:00Z",
+      "summary": "蓝箭航天的股价与资本市场事件，已汇集 2 篇报道、2 个来源。"
     },
     {
       "article_count": 1,
@@ -7535,7 +7852,7 @@
       "summary": "蓝箭航天的股价与资本市场事件，已汇集 2 篇报道、1 个来源。"
     },
     {
-      "article_count": 1,
+      "article_count": 2,
       "articles": [
         {
           "date_is_inferred": false,
@@ -7544,6 +7861,14 @@
           "source_name": "Curated RSS provider contract.",
           "title": "How SpaceX Uses a Secret Launch Subsidy to Make Starlink Look Insanely Profitable - The Motley Fool",
           "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxNc3V0TVUzR2s5Q0haUXBScFd6SEhJRmp4VjVFM3diMXFuMDdyakhEWEUyLUNlLUxHS0xfUHFfSTdEZW54d0sydnhtMlcwXzIyQ2tLS3JfUDY2bXFfWTBWNnpOdHZJcWMxOHlEYklVdEVnZ1I5TC1WcDhiR1h0VWtmdE10S2tJMmR5aENmM3huQ2tOTkwyNGt6UA?oc=5"
+        },
+        {
+          "date_is_inferred": false,
+          "id": "0167c76430961047",
+          "published_at": "2026-06-29T05:07:00Z",
+          "source_name": "bing.com",
+          "title": "How SpaceX Uses a Secret Launch Subsidy to Make Starlink Look Insanely Profitable",
+          "url": "http://www.bing.com/news/apiclick.aspx?aid=&tid=6a61cb3676a04cdeae760eca22876405&url=https%3A%2F%2Fwww.msn.com%2Fen-us%2Fmoney%2Feconomy%2Fhow-spacex-uses-a-secret-launch-subsidy-to-make-starlink-look-insanely-profitable%2Far-AA26MJut&c=392537384245050513&mkt=en-us"
         }
       ],
       "company_id": "spacex",
@@ -7552,15 +7877,16 @@
       "event_label": "发射与试验",
       "event_type": "launch",
       "headline": "How SpaceX Uses a Secret Launch Subsidy to Make Starlink Look Insanely Profitable - The Motley Fool",
-      "importance_score": 59,
+      "importance_score": 71,
       "latest_at": "2026-06-29T11:22:06Z",
       "latest_url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxNc3V0TVUzR2s5Q0haUXBScFd6SEhJRmp4VjVFM3diMXFuMDdyakhEWEUyLUNlLUxHS0xfUHFfSTdEZW54d0sydnhtMlcwXzIyQ2tLS3JfUDY2bXFfWTBWNnpOdHZJcWMxOHlEYklVdEVnZ1I5TC1WcDhiR1h0VWtmdE10S2tJMmR5aENmM3huQ2tOTkwyNGt6UA?oc=5",
-      "source_count": 1,
+      "source_count": 2,
       "source_names": [
-        "Curated RSS provider contract."
+        "Curated RSS provider contract.",
+        "bing.com"
       ],
-      "started_at": "2026-06-29T11:22:06Z",
-      "summary": "SpaceX的发射与试验事件，已汇集 1 篇报道、1 个来源。"
+      "started_at": "2026-06-29T05:07:00Z",
+      "summary": "SpaceX的发射与试验事件，已汇集 2 篇报道、2 个来源。"
     },
     {
       "article_count": 1,
@@ -7591,7 +7917,7 @@
       "summary": "蓝箭航天的股价与资本市场事件，已汇集 1 篇报道、1 个来源。"
     },
     {
-      "article_count": 2,
+      "article_count": 3,
       "articles": [
         {
           "date_is_inferred": false,
@@ -7600,6 +7926,14 @@
           "source_name": "Curated RSS provider contract.",
           "title": "Musk confirms Starlink phone plan - Advanced Television",
           "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxOYUtwdm93RENQMGNGQkxUY01qcjlkdlpqdUx4VU8wY2Q3aUpDWXR0OVAtclJEcURjNWV4MHB1V0dzRkJXWDZSNWdGd0NxNUZMNW5KUG5fcUhWWnBnS05Kanp5Y1VFZ0RaYmhoaWY0Q3Fpak9fY21RNnNhTHNlaERqUEYtTHlUNC1M?oc=5"
+        },
+        {
+          "date_is_inferred": false,
+          "id": "c88610e21d5c5610",
+          "published_at": "2026-06-29T04:51:00Z",
+          "source_name": "bing.com",
+          "title": "Elon Musk says SpaceX is putting top Starship and Starlink engineers to work on Grok",
+          "url": "http://www.bing.com/news/apiclick.aspx?aid=&tid=6a61cb3676a04cdeae760eca22876405&url=https%3A%2F%2Fwww.businessinsider.com%2Fgrok-4-5-starship-starlink-engineers-elon-musk-ai-cursor-2026-6&c=5335982742300724113&mkt=en-us"
         },
         {
           "date_is_inferred": false,
@@ -7616,15 +7950,16 @@
       "event_label": "其他动态",
       "event_type": "other",
       "headline": "Musk confirms Starlink phone plan - Advanced Television",
-      "importance_score": 55,
+      "importance_score": 67,
       "latest_at": "2026-06-29T10:57:56Z",
       "latest_url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxOYUtwdm93RENQMGNGQkxUY01qcjlkdlpqdUx4VU8wY2Q3aUpDWXR0OVAtclJEcURjNWV4MHB1V0dzRkJXWDZSNWdGd0NxNUZMNW5KUG5fcUhWWnBnS05Kanp5Y1VFZ0RaYmhoaWY0Q3Fpak9fY21RNnNhTHNlaERqUEYtTHlUNC1M?oc=5",
-      "source_count": 1,
+      "source_count": 2,
       "source_names": [
-        "Curated RSS provider contract."
+        "Curated RSS provider contract.",
+        "bing.com"
       ],
       "started_at": "2026-06-29T03:52:00Z",
-      "summary": "SpaceX的其他动态事件，已汇集 2 篇报道、1 个来源。"
+      "summary": "SpaceX的其他动态事件，已汇集 3 篇报道、2 个来源。"
     },
     {
       "article_count": 3,
@@ -7672,7 +8007,7 @@
       "summary": "蓝箭航天的股价与资本市场事件，已汇集 3 篇报道、2 个来源。"
     },
     {
-      "article_count": 6,
+      "article_count": 7,
       "articles": [
         {
           "date_is_inferred": false,
@@ -7708,6 +8043,14 @@
         },
         {
           "date_is_inferred": false,
+          "id": "67cd37fd96eba687",
+          "published_at": "2026-06-26T07:00:00Z",
+          "source_name": "thepaper.cn",
+          "title": "“千帆星座”卫星终端首次亮相，普通手机无需改造即可直连卫星实现稳定通话 - thepaper.cn",
+          "url": "https://news.google.com/rss/articles/CBMiXkFVX3lxTFBPYkRBUUZWMkZXdWpNUnV4Q0FXbnZnWVN3V1lmVzZWVkxTNWN0M05iaXJSTmJiTENKUGY5cjEtUHFzaUtGOUZhODNDczZNZ2RtakdKZVhRTlJYV0dLWVE?oc=5"
+        },
+        {
+          "date_is_inferred": false,
           "id": "df19b81948d18b1c",
           "published_at": "2026-06-25T11:44:00Z",
           "source_name": "Curated RSS provider contract.",
@@ -7729,17 +8072,18 @@
       "event_label": "产品与产能",
       "event_type": "product",
       "headline": "“千帆星座”卫星终端产品首次亮相 用户未来可用普通手机连接卫星通话 - 证券时报",
-      "importance_score": 95,
+      "importance_score": 100,
       "latest_at": "2026-06-29T10:49:00Z",
       "latest_url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE5ZWmhmTUdCX0xvUGtkUWhnSWNaYWhVbTBWV0Zjamk4R0ppOUZOQ2lKSHppdjZlOEk2aUZoNmswUFZJRlhiQU5lUXcweDZzSkg5YWhKcjBTN0M0UGJE?oc=5",
-      "source_count": 3,
+      "source_count": 4,
       "source_names": [
         "Curated RSS provider contract.",
         "gzw.sh.gov.cn",
+        "thepaper.cn",
         "证券时报"
       ],
       "started_at": "2026-06-25T07:00:00Z",
-      "summary": "垣信卫星的产品与产能事件，已汇集 6 篇报道、3 个来源。"
+      "summary": "垣信卫星的产品与产能事件，已汇集 7 篇报道、4 个来源。"
     },
     {
       "article_count": 1,
@@ -7918,8 +8262,16 @@
       "summary": "SpaceX的发射与试验事件，已汇集 2 篇报道、1 个来源。"
     },
     {
-      "article_count": 1,
+      "article_count": 2,
       "articles": [
+        {
+          "date_is_inferred": false,
+          "id": "ccc85cd68c44db06",
+          "published_at": "2026-06-28T23:30:00Z",
+          "source_name": "bing.com",
+          "title": "Space Pioneer targets Falcon 9-class launch in 2024",
+          "url": "http://www.bing.com/news/apiclick.aspx?aid=&tid=6a61cb6b1e944383abaeee3deabf8675&url=https%3A%2F%2Fwww.msn.com%2Fen-us%2Fmoney%2Fother%2Fspace-pioneer-targets-falcon-9-class-launch-in-2024%2Far-AA26LE1T&c=10718621810963799113&mkt=en-us"
+        },
         {
           "date_is_inferred": false,
           "id": "631aab0b6236c397",
@@ -7935,18 +8287,19 @@
       "event_label": "发射与试验",
       "event_type": "launch",
       "headline": "Space Pioneer targets Falcon 9-class launch in 2024",
-      "importance_score": 59,
-      "latest_at": "2026-06-28T23:27:35Z",
-      "latest_url": "http://www.bing.com/news/apiclick.aspx?aid=&tid=6a4d54d461d64649a99860f0a0d765e3&url=https%3A%2F%2Fwww.msn.com%2Fen-us%2Fmoney%2Fother%2Fspace-pioneer-targets-falcon-9-class-launch-in-2024%2Far-AA26LE1T&c=10718621810963799113&mkt=en-us",
-      "source_count": 1,
+      "importance_score": 71,
+      "latest_at": "2026-06-28T23:30:00Z",
+      "latest_url": "http://www.bing.com/news/apiclick.aspx?aid=&tid=6a61cb6b1e944383abaeee3deabf8675&url=https%3A%2F%2Fwww.msn.com%2Fen-us%2Fmoney%2Fother%2Fspace-pioneer-targets-falcon-9-class-launch-in-2024%2Far-AA26LE1T&c=10718621810963799113&mkt=en-us",
+      "source_count": 2,
       "source_names": [
-        "Curated RSS provider contract."
+        "Curated RSS provider contract.",
+        "bing.com"
       ],
       "started_at": "2026-06-28T23:27:35Z",
-      "summary": "天兵科技的发射与试验事件，已汇集 1 篇报道、1 个来源。"
+      "summary": "天兵科技的发射与试验事件，已汇集 2 篇报道、2 个来源。"
     },
     {
-      "article_count": 1,
+      "article_count": 2,
       "articles": [
         {
           "date_is_inferred": false,
@@ -7955,6 +8308,14 @@
           "source_name": "Curated RSS provider contract.",
           "title": "SpaceX sends 24 Starlink satellites into Earth orbit on Falcon 9 launch from California (video) - Yahoo",
           "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxPVkRlTktJbG1kSTVJZWZ5QkhDY0QxUDRFbHVZQVduQWJzZWZIOS1XQWV5dHZCNkZBR0ZqWWJnTEpRVkN2b0toYXFJQnBsUUxXOVdkM3BsdlhKeHpodV9SbXZXam1zWkNqZXUtX1p4Z0d0d1pka1BjVm1JWFR2RG91cUQzZXVTMHYzQ2hOMm5scXFOeXk2VmhiWUln?oc=5"
+        },
+        {
+          "date_is_inferred": false,
+          "id": "9193aebb4e59c31f",
+          "published_at": "2026-06-28T09:21:56Z",
+          "source_name": "bing.com",
+          "title": "SpaceX sends 24 Starlink satellites into Earth orbit on Falcon 9 launch from California (video)",
+          "url": "http://www.bing.com/news/apiclick.aspx?aid=&tid=6a61cb3676a04cdeae760eca22876405&url=https%3A%2F%2Fwww.msn.com%2Fen-us%2Fnews%2Ftechnology%2Fspacex-sends-24-starlink-satellites-into-earth-orbit-on-falcon-9-launch-from-california-video%2Far-AA26JFRh&c=12421087748926158979&mkt=en-us"
         }
       ],
       "company_id": "spacex",
@@ -7963,15 +8324,16 @@
       "event_label": "发射与试验",
       "event_type": "launch",
       "headline": "SpaceX sends 24 Starlink satellites into Earth orbit on Falcon 9 launch from California (video) - Yahoo",
-      "importance_score": 59,
+      "importance_score": 71,
       "latest_at": "2026-06-28T16:21:56Z",
       "latest_url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxPVkRlTktJbG1kSTVJZWZ5QkhDY0QxUDRFbHVZQVduQWJzZWZIOS1XQWV5dHZCNkZBR0ZqWWJnTEpRVkN2b0toYXFJQnBsUUxXOVdkM3BsdlhKeHpodV9SbXZXam1zWkNqZXUtX1p4Z0d0d1pka1BjVm1JWFR2RG91cUQzZXVTMHYzQ2hOMm5scXFOeXk2VmhiWUln?oc=5",
-      "source_count": 1,
+      "source_count": 2,
       "source_names": [
-        "Curated RSS provider contract."
+        "Curated RSS provider contract.",
+        "bing.com"
       ],
-      "started_at": "2026-06-28T16:21:56Z",
-      "summary": "SpaceX的发射与试验事件，已汇集 1 篇报道、1 个来源。"
+      "started_at": "2026-06-28T09:21:56Z",
+      "summary": "SpaceX的发射与试验事件，已汇集 2 篇报道、2 个来源。"
     },
     {
       "article_count": 1,
@@ -8595,8 +8957,16 @@
       "summary": "星际荣耀的发射与试验事件，已汇集 1 篇报道、1 个来源。"
     },
     {
-      "article_count": 1,
+      "article_count": 2,
       "articles": [
+        {
+          "date_is_inferred": false,
+          "id": "fb3f8243bd465980",
+          "published_at": "2026-06-25T19:41:00Z",
+          "source_name": "bing.com",
+          "title": "What is China’s SpaceSail, and could it rival Elon Musk’s Starlink?",
+          "url": "http://www.bing.com/news/apiclick.aspx?aid=&tid=6a61cb490ef64159880569af35d80596&url=https%3A%2F%2Fwww.theguardian.com%2Fworld%2F2026%2Fjun%2F25%2Fchina-spacesail-rival-elon-musk-starlink-space-satelites-low-earth-orbit&c=14437446121505522548&mkt=en-us"
+        },
         {
           "date_is_inferred": false,
           "id": "489d8019465316ae",
@@ -8612,15 +8982,15 @@
       "event_label": "发射与试验",
       "event_type": "launch",
       "headline": "What is China’s SpaceSail, and could it rival Elon Musk’s Starlink?",
-      "importance_score": 59,
+      "importance_score": 67,
       "latest_at": "2026-06-25T19:41:00Z",
-      "latest_url": "http://www.bing.com/news/apiclick.aspx?aid=&tid=6a617bc0e93546338d76ed3832560e25&url=https%3A%2F%2Fwww.theguardian.com%2Fworld%2F2026%2Fjun%2F25%2Fchina-spacesail-rival-elon-musk-starlink-space-satelites-low-earth-orbit&c=14437446121505522548&mkt=en-sg",
+      "latest_url": "http://www.bing.com/news/apiclick.aspx?aid=&tid=6a61cb490ef64159880569af35d80596&url=https%3A%2F%2Fwww.theguardian.com%2Fworld%2F2026%2Fjun%2F25%2Fchina-spacesail-rival-elon-musk-starlink-space-satelites-low-earth-orbit&c=14437446121505522548&mkt=en-us",
       "source_count": 1,
       "source_names": [
         "bing.com"
       ],
       "started_at": "2026-06-25T19:41:00Z",
-      "summary": "垣信卫星的发射与试验事件，已汇集 1 篇报道、1 个来源。"
+      "summary": "垣信卫星的发射与试验事件，已汇集 2 篇报道、1 个来源。"
     },
     {
       "article_count": 3,
@@ -8695,7 +9065,7 @@
       "summary": "蓝箭航天的发射与试验事件，已汇集 1 篇报道、1 个来源。"
     },
     {
-      "article_count": 2,
+      "article_count": 3,
       "articles": [
         {
           "date_is_inferred": false,
@@ -8712,6 +9082,14 @@
           "source_name": "Curated RSS provider contract.",
           "title": "垣信卫星开启新一轮大额融资，国产卫星星座驶入扩张快车道 - 21财经",
           "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxOaGxpVjRIZ3FINFk2RWg0NGYwQklJcTZkSHZweDVsOG9uZU5YZV96MW1zV1c4Nm1nZEEwT1RtUlRLa0tOMWk1WkxZb2JhejFCNWxObmQyX2FHRFZIT1JBaHJUSmFHM2xaU1ptSl84N0o3M1BhbnRRUDV5ODJHZWNMUlB4WGV4VjZOck9FVXBRMA?oc=5"
+        },
+        {
+          "date_is_inferred": false,
+          "id": "95617b3d026d6ab2",
+          "published_at": "2026-06-24T07:00:00Z",
+          "source_name": "21财经",
+          "title": "垣信卫星开启新一轮大额融资，国产卫星星座驶入扩张快车道 - 21财经",
+          "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxNSDJhRk9FVlRUVzFPd3p1ekJBamdJWHh6cUtVOVFMaDdDNEVCUVJQSFdqWVUxeHAySlFUUTU5Si1hREd5ZDlUZ3JIRXhIRW1vQWs5cjFyZ29pZTFiZlc5Ukk2YzB0WVFDQ2hEWThtSTJiMk1SMVFGWmU2S0xGalQ1cDhEMUxLUHhrcWZKdjFTMTMtVld1?oc=5"
         }
       ],
       "company_id": "yuanxin_satellite",
@@ -8720,15 +9098,16 @@
       "event_label": "融资",
       "event_type": "financing",
       "headline": "垣信卫星开启新一轮大额融资，国产卫星星座驶入扩张快车道- 21世纪经济报道 - ZAKER新闻",
-      "importance_score": 67,
+      "importance_score": 79,
       "latest_at": "2026-06-25T09:03:59Z",
       "latest_url": "https://news.google.com/rss/articles/CBMid0FVX3lxTE5PLVBwOG5JLUliTG9yd0NQenpHRERfY2Z2bmxpSmMwa1FpcldfSXdYcGRDRXlzNzNUTkRMOFJMNlFja2ZxY2hrTURRcXlpSWhPRVgtaEw2V3pyQ0JxZjFYVHRTOEhKY1BxQ2ZWdnNlMDJuWkp5UnhZ?oc=5",
-      "source_count": 1,
+      "source_count": 2,
       "source_names": [
+        "21财经",
         "Curated RSS provider contract."
       ],
-      "started_at": "2026-06-24T12:53:00Z",
-      "summary": "垣信卫星的融资事件，已汇集 2 篇报道、1 个来源。"
+      "started_at": "2026-06-24T07:00:00Z",
+      "summary": "垣信卫星的融资事件，已汇集 3 篇报道、2 个来源。"
     },
     {
       "article_count": 1,
@@ -8737,26 +9116,54 @@
           "date_is_inferred": false,
           "id": "acdd52265a122d41",
           "published_at": "2026-06-25T07:00:00Z",
-          "source_name": "Kursiv Media Казахстан: последние новости Казахстана и мира",
-          "title": "China’s SpaceSail unveils bold plans to rival Starlink - Kursiv Media Казахстан: последние новости Казахстана и мира",
+          "source_name": "Kursiv Media",
+          "title": "China’s SpaceSail unveils bold plans to rival Starlink - Kursiv Media",
           "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxPVFJsQV9mQWp3WFduNzVUdThZdktENXRTVHZweUhTWWM2ZGJjZzNuVW5hNUUtZS1lZ1BzR2R5cnVfUnpZNUlHeTVxdURZdFc4ek5LS1BvUlhabHlreURCTWdUZTRGTGZ0U3FYNjVKQUYtdUJpRmVwR053OGZRaC1lR2RISGVVV1F5UkI5M1hZOWc2Si1mSlpKZ3lWaUFxYXZSWDJILdIB5AFBVV95cUxPaC01TnV0anp2SjFFOUxnTWVjOExuVjBSZWFJb0tQUmotSEJqSm93MDR4elVoc3d5SUxObVpmZ05VSnZmTFdNV0dKTlVRUnhuS21KSFZYY1FtdjNqM3ViTWZzNnB6YnNiR3l6YlJWM3RTeHRaNWdGczRBMnNXell0cmZvTjZsWDAydFRQblFhUWFBc2lzQ3ZDandwRVNfdkY3Zl9mNm9vb21USUVvdzBLelpBWURZQjRIcjlFNDYyRlN4UGdYa0M0RjhhcHhnREFQMlNBSE9lV0N1anpiRGxnem1xb1o?oc=5"
         }
       ],
       "company_id": "yuanxin_satellite",
       "company_name": "垣信卫星",
-      "event_id": "a6389515c3fc1bbf",
+      "event_id": "9764165e2872c0d9",
       "event_label": "产品与产能",
       "event_type": "product",
-      "headline": "China’s SpaceSail unveils bold plans to rival Starlink - Kursiv Media Казахстан: последние новости Казахстана и мира",
+      "headline": "China’s SpaceSail unveils bold plans to rival Starlink - Kursiv Media",
       "importance_score": 47,
       "latest_at": "2026-06-25T07:00:00Z",
       "latest_url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxPVFJsQV9mQWp3WFduNzVUdThZdktENXRTVHZweUhTWWM2ZGJjZzNuVW5hNUUtZS1lZ1BzR2R5cnVfUnpZNUlHeTVxdURZdFc4ek5LS1BvUlhabHlreURCTWdUZTRGTGZ0U3FYNjVKQUYtdUJpRmVwR053OGZRaC1lR2RISGVVV1F5UkI5M1hZOWc2Si1mSlpKZ3lWaUFxYXZSWDJILdIB5AFBVV95cUxPaC01TnV0anp2SjFFOUxnTWVjOExuVjBSZWFJb0tQUmotSEJqSm93MDR4elVoc3d5SUxObVpmZ05VSnZmTFdNV0dKTlVRUnhuS21KSFZYY1FtdjNqM3ViTWZzNnB6YnNiR3l6YlJWM3RTeHRaNWdGczRBMnNXell0cmZvTjZsWDAydFRQblFhUWFBc2lzQ3ZDandwRVNfdkY3Zl9mNm9vb21USUVvdzBLelpBWURZQjRIcjlFNDYyRlN4UGdYa0M0RjhhcHhnREFQMlNBSE9lV0N1anpiRGxnem1xb1o?oc=5",
       "source_count": 1,
       "source_names": [
-        "Kursiv Media Казахстан: последние новости Казахстана и мира"
+        "Kursiv Media"
       ],
       "started_at": "2026-06-25T07:00:00Z",
       "summary": "垣信卫星的产品与产能事件，已汇集 1 篇报道、1 个来源。"
+    },
+    {
+      "article_count": 1,
+      "articles": [
+        {
+          "date_is_inferred": false,
+          "id": "ed806342113a0d8c",
+          "published_at": "2026-06-25T07:00:00Z",
+          "source_name": "新浪财经",
+          "title": "国内首发！银河航天128波束ASIC化星载相控阵亮相MWC上海 - 新浪财经",
+          "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxPcjVrOGJGLWppMkxSSEMxNVVnOE1xdklrS1ZNWDQ2RnJHNkJBYjE2TEVMNHhleUZvTUVfX1NLalcwaDE1MHBETFlrWm1IUUFGcVhWWEQ0VUFkRDV3OTIzQkJyM2hOa0NGNnRuOGRDY3dYSUJoaWNzQkFlRkRaaklYTEotRGZQd2s?oc=5"
+        }
+      ],
+      "company_id": "galaxyspace",
+      "company_name": "银河航天",
+      "event_id": "da1b40b8abc56a47",
+      "event_label": "产品与产能",
+      "event_type": "product",
+      "headline": "国内首发！银河航天128波束ASIC化星载相控阵亮相MWC上海 - 新浪财经",
+      "importance_score": 47,
+      "latest_at": "2026-06-25T07:00:00Z",
+      "latest_url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxPcjVrOGJGLWppMkxSSEMxNVVnOE1xdklrS1ZNWDQ2RnJHNkJBYjE2TEVMNHhleUZvTUVfX1NLalcwaDE1MHBETFlrWm1IUUFGcVhWWEQ0VUFkRDV3OTIzQkJyM2hOa0NGNnRuOGRDY3dYSUJoaWNzQkFlRkRaaklYTEotRGZQd2s?oc=5",
+      "source_count": 1,
+      "source_names": [
+        "新浪财经"
+      ],
+      "started_at": "2026-06-25T07:00:00Z",
+      "summary": "银河航天的产品与产能事件，已汇集 1 篇报道、1 个来源。"
     },
     {
       "article_count": 1,
@@ -8951,6 +9358,43 @@
       "summary": "SpaceX的其他动态事件，已汇集 1 篇报道、1 个来源。"
     },
     {
+      "article_count": 2,
+      "articles": [
+        {
+          "date_is_inferred": false,
+          "id": "09fd735f83bbb0f7",
+          "published_at": "2026-06-24T09:58:02Z",
+          "source_name": "Advanced Television",
+          "title": "SpaceSail seeks €2bn to fund Starlink rival - Advanced Television",
+          "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxPYzd6TU40aU9GaGNnblQyX29PMjgyeElUZUJSRkpPeDZPU3JzTzREVklPRm5yV3RKd3BOVG9INU5jLWowQnRLUXZBNGZiV3U5cGlEMDZpTm9Bb2JMR2ZKTXBJOEJXMWtyT09SZy16QjRPQ2hybUtSQlNQRlZBUGpPT1YwRExfVGdPSFhkVzNZVG0zd3ZKN3c?oc=5"
+        },
+        {
+          "date_is_inferred": false,
+          "id": "af3c68bb6c07d760",
+          "published_at": "2026-06-24T02:13:00Z",
+          "source_name": "Curated RSS provider contract.",
+          "title": "SpaceSail seeks €2bn to fund Starlink rival",
+          "url": "http://www.bing.com/news/apiclick.aspx?aid=&tid=6a3c2f2cc6b347cb94e9f09aad0f4e94&url=https%3A%2F%2Fwww.advanced-television.com%2F2026%2F06%2F24%2Fspacesail-seeks-e2bn-to-fund-starlink-rival%2F&c=16382508977041989346&mkt=en-us"
+        }
+      ],
+      "company_id": "yuanxin_satellite",
+      "company_name": "垣信卫星",
+      "event_id": "8684fb99209b1e26",
+      "event_label": "其他动态",
+      "event_type": "other",
+      "headline": "SpaceSail seeks €2bn to fund Starlink rival",
+      "importance_score": 59,
+      "latest_at": "2026-06-24T09:58:02Z",
+      "latest_url": "http://www.bing.com/news/apiclick.aspx?aid=&tid=6a3c2f2cc6b347cb94e9f09aad0f4e94&url=https%3A%2F%2Fwww.advanced-television.com%2F2026%2F06%2F24%2Fspacesail-seeks-e2bn-to-fund-starlink-rival%2F&c=16382508977041989346&mkt=en-us",
+      "source_count": 2,
+      "source_names": [
+        "Advanced Television",
+        "Curated RSS provider contract."
+      ],
+      "started_at": "2026-06-24T02:13:00Z",
+      "summary": "垣信卫星的其他动态事件，已汇集 2 篇报道、2 个来源。"
+    },
+    {
       "article_count": 4,
       "articles": [
         {
@@ -9003,7 +9447,7 @@
       "summary": "蓝箭航天的其他动态事件，已汇集 4 篇报道、1 个来源。"
     },
     {
-      "article_count": 1,
+      "article_count": 2,
       "articles": [
         {
           "date_is_inferred": false,
@@ -9012,6 +9456,14 @@
           "source_name": "Curated RSS provider contract.",
           "title": "垣信卫星以投前600亿元估值开启B轮融资：预计3年内推进科创板上市进程 - 新浪网",
           "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE1mSTZLM1UySGQyZlozQmctaG85UjZlUVZTM1dhZmlwS2g3UVdNYVZqVm81cEZiay1KTW1wM2p5cS1qSGZaMEhmUjh5RmVmal82cUIzU0xJQjVTWkxYU2RBWVRwV1QyTXJ5M0dBVkVQSDlIUQ?oc=5"
+        },
+        {
+          "date_is_inferred": false,
+          "id": "a7582d2e9392c043",
+          "published_at": "2026-06-24T07:00:00Z",
+          "source_name": "泰伯网",
+          "title": "垣信卫星以投前600亿元估值开启B轮融资：预计3年内推进科创板上市进程 - 泰伯网",
+          "url": "https://news.google.com/rss/articles/CBMiQkFVX3lxTE1jakVWc21ZMnFZQ0JqVXJTaGhNYXgyYkM2eG45OXN3RFZqVktsbm1taXE3M05UTUNTc29ueENyWGU3QQ?oc=5"
         }
       ],
       "company_id": "yuanxin_satellite",
@@ -9020,15 +9472,16 @@
       "event_label": "股价与资本市场",
       "event_type": "market",
       "headline": "垣信卫星以投前600亿元估值开启B轮融资：预计3年内推进科创板上市进程 - 新浪网",
-      "importance_score": 47,
+      "importance_score": 59,
       "latest_at": "2026-06-24T07:04:34Z",
       "latest_url": "https://news.google.com/rss/articles/CBMickFVX3lxTE1mSTZLM1UySGQyZlozQmctaG85UjZlUVZTM1dhZmlwS2g3UVdNYVZqVm81cEZiay1KTW1wM2p5cS1qSGZaMEhmUjh5RmVmal82cUIzU0xJQjVTWkxYU2RBWVRwV1QyTXJ5M0dBVkVQSDlIUQ?oc=5",
-      "source_count": 1,
+      "source_count": 2,
       "source_names": [
-        "Curated RSS provider contract."
+        "Curated RSS provider contract.",
+        "泰伯网"
       ],
-      "started_at": "2026-06-24T07:04:34Z",
-      "summary": "垣信卫星的股价与资本市场事件，已汇集 1 篇报道、1 个来源。"
+      "started_at": "2026-06-24T07:00:00Z",
+      "summary": "垣信卫星的股价与资本市场事件，已汇集 2 篇报道、2 个来源。"
     },
     {
       "article_count": 1,
@@ -9113,34 +9566,6 @@
       ],
       "started_at": "2026-06-24T07:00:00Z",
       "summary": "星际荣耀的其他动态事件，已汇集 1 篇报道、1 个来源。"
-    },
-    {
-      "article_count": 1,
-      "articles": [
-        {
-          "date_is_inferred": false,
-          "id": "af3c68bb6c07d760",
-          "published_at": "2026-06-24T02:13:00Z",
-          "source_name": "Curated RSS provider contract.",
-          "title": "SpaceSail seeks €2bn to fund Starlink rival",
-          "url": "http://www.bing.com/news/apiclick.aspx?aid=&tid=6a3c2f2cc6b347cb94e9f09aad0f4e94&url=https%3A%2F%2Fwww.advanced-television.com%2F2026%2F06%2F24%2Fspacesail-seeks-e2bn-to-fund-starlink-rival%2F&c=16382508977041989346&mkt=en-us"
-        }
-      ],
-      "company_id": "yuanxin_satellite",
-      "company_name": "垣信卫星",
-      "event_id": "8684fb99209b1e26",
-      "event_label": "其他动态",
-      "event_type": "other",
-      "headline": "SpaceSail seeks €2bn to fund Starlink rival",
-      "importance_score": 47,
-      "latest_at": "2026-06-24T02:13:00Z",
-      "latest_url": "http://www.bing.com/news/apiclick.aspx?aid=&tid=6a3c2f2cc6b347cb94e9f09aad0f4e94&url=https%3A%2F%2Fwww.advanced-television.com%2F2026%2F06%2F24%2Fspacesail-seeks-e2bn-to-fund-starlink-rival%2F&c=16382508977041989346&mkt=en-us",
-      "source_count": 1,
-      "source_names": [
-        "Curated RSS provider contract."
-      ],
-      "started_at": "2026-06-24T02:13:00Z",
-      "summary": "垣信卫星的其他动态事件，已汇集 1 篇报道、1 个来源。"
     },
     {
       "article_count": 2,
@@ -9347,7 +9772,7 @@
       "summary": "蓝箭航天的其他动态事件，已汇集 1 篇报道、1 个来源。"
     },
     {
-      "article_count": 1,
+      "article_count": 2,
       "articles": [
         {
           "date_is_inferred": false,
@@ -9356,6 +9781,14 @@
           "source_name": "Curated RSS provider contract.",
           "title": "航天驭星冲刺IPO、垣信卫星启动募资 商业航天企业资本化进程提速 - QQ News",
           "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE5nYW9pNjdmVHVHdE1XS1dqSDYzN0phcnFVbUlnRFdrR0c2MWIzQUl1WFdkY3k4dmFLNWhmTzB1elIzRS1VSjdOQnJIV24tTmRadS1MMEZR?oc=5"
+        },
+        {
+          "date_is_inferred": false,
+          "id": "73687ea2f734d6e2",
+          "published_at": "2026-06-23T07:00:00Z",
+          "source_name": "证券时报",
+          "title": "航天驭星冲刺IPO、垣信卫星启动募资 商业航天企业资本化进程提速 - 证券时报",
+          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE9Fel8yYWdfdkl3NDI0Z1NZSDMyVUJTaVoxV3FYNWVKVDBQTHVEU2Z4blg3SDNfMkVLall0V2hLVFR5N0hoV0E2NjZUMzZ6anFqOVFfSC1haHZxZ3FW?oc=5"
         }
       ],
       "company_id": "yuanxin_satellite",
@@ -9364,15 +9797,16 @@
       "event_label": "股价与资本市场",
       "event_type": "market",
       "headline": "航天驭星冲刺IPO、垣信卫星启动募资 商业航天企业资本化进程提速 - QQ News",
-      "importance_score": 47,
+      "importance_score": 59,
       "latest_at": "2026-06-23T10:56:00Z",
       "latest_url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE5nYW9pNjdmVHVHdE1XS1dqSDYzN0phcnFVbUlnRFdrR0c2MWIzQUl1WFdkY3k4dmFLNWhmTzB1elIzRS1VSjdOQnJIV24tTmRadS1MMEZR?oc=5",
-      "source_count": 1,
+      "source_count": 2,
       "source_names": [
-        "Curated RSS provider contract."
+        "Curated RSS provider contract.",
+        "证券时报"
       ],
-      "started_at": "2026-06-23T10:56:00Z",
-      "summary": "垣信卫星的股价与资本市场事件，已汇集 1 篇报道、1 个来源。"
+      "started_at": "2026-06-23T07:00:00Z",
+      "summary": "垣信卫星的股价与资本市场事件，已汇集 2 篇报道、2 个来源。"
     },
     {
       "article_count": 1,
@@ -9403,8 +9837,16 @@
       "summary": "中国星网的公司治理事件，已汇集 1 篇报道、1 个来源。"
     },
     {
-      "article_count": 1,
+      "article_count": 2,
       "articles": [
+        {
+          "date_is_inferred": false,
+          "id": "a50cd45b105e1c28",
+          "published_at": "2026-06-23T04:00:00Z",
+          "source_name": "bing.com",
+          "title": "Chinese satellite company SpaceSail opens up to new investors",
+          "url": "http://www.bing.com/news/apiclick.aspx?aid=&tid=6a61cb490ef64159880569af35d80596&url=https%3A%2F%2Fwww.thedailystar.net%2Fnews%2Ftech-startup%2Fnews%2Fchinese-satellite-company-spacesail-opens-new-investors-4206006&c=5278270893828835585&mkt=en-us"
+        },
         {
           "date_is_inferred": false,
           "id": "80e91c6bd4ef3cd8",
@@ -9420,15 +9862,15 @@
       "event_label": "发射与试验",
       "event_type": "launch",
       "headline": "Chinese satellite company SpaceSail opens up to new investors",
-      "importance_score": 59,
+      "importance_score": 67,
       "latest_at": "2026-06-23T04:00:00Z",
-      "latest_url": "http://www.bing.com/news/apiclick.aspx?aid=&tid=6a617bc0e93546338d76ed3832560e25&url=https%3A%2F%2Fwww.thedailystar.net%2Fnews%2Ftech-startup%2Fnews%2Fchinese-satellite-company-spacesail-opens-new-investors-4206006&c=5278270893828835585&mkt=en-sg",
+      "latest_url": "http://www.bing.com/news/apiclick.aspx?aid=&tid=6a61cb490ef64159880569af35d80596&url=https%3A%2F%2Fwww.thedailystar.net%2Fnews%2Ftech-startup%2Fnews%2Fchinese-satellite-company-spacesail-opens-new-investors-4206006&c=5278270893828835585&mkt=en-us",
       "source_count": 1,
       "source_names": [
         "bing.com"
       ],
       "started_at": "2026-06-23T04:00:00Z",
-      "summary": "垣信卫星的发射与试验事件，已汇集 1 篇报道、1 个来源。"
+      "summary": "垣信卫星的发射与试验事件，已汇集 2 篇报道、1 个来源。"
     },
     {
       "article_count": 1,
@@ -9571,7 +10013,7 @@
       "summary": "SpaceX的发射与试验事件，已汇集 1 篇报道、1 个来源。"
     },
     {
-      "article_count": 1,
+      "article_count": 2,
       "articles": [
         {
           "date_is_inferred": false,
@@ -9580,6 +10022,14 @@
           "source_name": "Curated RSS provider contract.",
           "title": "尚处于亏损状态，蓝箭航天能否打造中国版SpaceX？ - 36Kr",
           "url": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE5XZmxUNy1HdlBiSXd2bTlKT2xUMkpHSXFnRVpwN01OSFcyajNaamdiMkhmeVlSNGpwLUhrcXE0dWVRMDY4OUkyZDVzN1R0VlJ3?oc=5"
+        },
+        {
+          "date_is_inferred": false,
+          "id": "81b1bdd22ca4a868",
+          "published_at": "2026-06-22T07:00:00Z",
+          "source_name": "36Kr",
+          "title": "尚处于亏损状态，蓝箭航天能否打造中国版SpaceX？ - 36Kr",
+          "url": "https://news.google.com/rss/articles/CBMiTkFVX3lxTE55UDNfRDhDRmNUM0w2aFRRSXRzLVZ4a3czWmpINVg4WXZTWnNqQldNN0dmNjlENGpfS3R1cVdWSF9ucFRPaFFqcUFnTER5dw?oc=5"
         }
       ],
       "company_id": "landspace",
@@ -9588,15 +10038,16 @@
       "event_label": "其他动态",
       "event_type": "other",
       "headline": "尚处于亏损状态，蓝箭航天能否打造中国版SpaceX？ - 36Kr",
-      "importance_score": 47,
+      "importance_score": 59,
       "latest_at": "2026-06-22T11:43:00Z",
       "latest_url": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE5XZmxUNy1HdlBiSXd2bTlKT2xUMkpHSXFnRVpwN01OSFcyajNaamdiMkhmeVlSNGpwLUhrcXE0dWVRMDY4OUkyZDVzN1R0VlJ3?oc=5",
-      "source_count": 1,
+      "source_count": 2,
       "source_names": [
+        "36Kr",
         "Curated RSS provider contract."
       ],
-      "started_at": "2026-06-22T11:43:00Z",
-      "summary": "蓝箭航天的其他动态事件，已汇集 1 篇报道、1 个来源。"
+      "started_at": "2026-06-22T07:00:00Z",
+      "summary": "蓝箭航天的其他动态事件，已汇集 2 篇报道、2 个来源。"
     },
     {
       "article_count": 1,
@@ -10176,8 +10627,16 @@
       "summary": "垣信卫星的其他动态事件，已汇集 1 篇报道、1 个来源。"
     },
     {
-      "article_count": 1,
+      "article_count": 2,
       "articles": [
+        {
+          "date_is_inferred": false,
+          "id": "bdf90c736bc7fb23",
+          "published_at": "2026-06-19T07:00:00Z",
+          "source_name": "京报网",
+          "title": "中国卫星网络集团有限公司发布社会招聘公告 - 京报网",
+          "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE0tV2VFeUxka0YydHFqMDkxdzQwRGw5S1lFbGJWWWJEc3Fib09JR2JVZGs4NlA5SEpHcGFiWXg3aWNJc0YzTnNRS2xqLWdQeG0yU1hkZUdzbVBQbVVQREM0d1VLS0pDV3Rla1haYjNKUEpldw?oc=5"
+        },
         {
           "date_is_inferred": false,
           "id": "3a95729cefbc1549",
@@ -10192,16 +10651,17 @@
       "event_id": "c21f4fa9b0cbfcd3",
       "event_label": "产品与产能",
       "event_type": "product",
-      "headline": "中国卫星网络集团有限公司发布社会招聘公告 - 新浪财经",
-      "importance_score": 47,
+      "headline": "中国卫星网络集团有限公司发布社会招聘公告 - 京报网",
+      "importance_score": 59,
       "latest_at": "2026-06-19T07:00:00Z",
-      "latest_url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxNOXgyWlFFaTA2VVhRWUhZMFZzTnRGUjJVMWkxUVdaYWN0ZlZ2OG54Sk11R29OUndjbEFpNi11M19IdmlWMGtZeWpESDgwZXkxU0l3UVZJbmg4cDBDZHJ6dXRRWFZKWnJ4RFhBaWE4SWV5V2trT2pYV1haUlJlWUJxcE5maGtqUXM?oc=5",
-      "source_count": 1,
+      "latest_url": "https://news.google.com/rss/articles/CBMickFVX3lxTE0tV2VFeUxka0YydHFqMDkxdzQwRGw5S1lFbGJWWWJEc3Fib09JR2JVZGs4NlA5SEpHcGFiWXg3aWNJc0YzTnNRS2xqLWdQeG0yU1hkZUdzbVBQbVVQREM0d1VLS0pDV3Rla1haYjNKUEpldw?oc=5",
+      "source_count": 2,
       "source_names": [
-        "Curated RSS provider contract."
+        "Curated RSS provider contract.",
+        "京报网"
       ],
       "started_at": "2026-06-19T07:00:00Z",
-      "summary": "中国星网的产品与产能事件，已汇集 1 篇报道、1 个来源。"
+      "summary": "中国星网的产品与产能事件，已汇集 2 篇报道、2 个来源。"
     },
     {
       "article_count": 1,
@@ -10316,7 +10776,7 @@
       "summary": "SpaceX的其他动态事件，已汇集 1 篇报道、1 个来源。"
     },
     {
-      "article_count": 11,
+      "article_count": 12,
       "articles": [
         {
           "date_is_inferred": false,
@@ -10349,6 +10809,14 @@
           "source_name": "Curated RSS provider contract.",
           "title": "SpaceX launches 3 huge BlueBird direct-to-cell satellites from Florida (video) - Space",
           "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxOUnNBM0N3eDJjU0dNNUp1b3JqU0tZaDZEb09MakFoVGU3aEtTMFJ0dTRQNnU3WGRVZU9QYzhta0NzclRqNFRwYXctREM2OUdsY3RNa19vUDE3eWsycXdVRGZ0QmVHWWEtczVSQWp6LXBKMERSQWRwQnV2bnMzZ3d5QnNGOWVqWmkyd0xPMmxfb2JIdDBrUnZIWDFDS0p1Nl9lbXRGamtKd210cm1FYkZQQUc4c1M?oc=5"
+        },
+        {
+          "date_is_inferred": false,
+          "id": "aa34e8742a9e94ee",
+          "published_at": "2026-06-16T23:59:00Z",
+          "source_name": "bing.com",
+          "title": "SpaceX launches 3 huge BlueBird direct-to-cell satellites from Florida (video)",
+          "url": "http://www.bing.com/news/apiclick.aspx?aid=&tid=6a61cb36d7174b1aa39e84e828ed5870&url=https%3A%2F%2Fwww.yahoo.com%2Fnews%2Fscience%2Farticles%2Fwatch-spacex-launch-3-huge-120000280.html&c=18209809941843530775&mkt=en-us"
         },
         {
           "date_is_inferred": false,
@@ -10416,12 +10884,13 @@
       "importance_score": 100,
       "latest_at": "2026-06-18T17:00:00Z",
       "latest_url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxPZjdlY2ZOUjg2YkVjSmpxRE4zTGY5VGhzVFUxVVpLc0d5eHhjZlFxTVVNN0NZYmhvSnJqamFnZ3VodzZHWlNyMnkzRTNhd1cwbkpWNHBnRERJaWI0OGhEcnM5NEZrakdvY2RnV1lnNVB6Slp1dE5ocmloMi1tOGhtZndWYmdLYXVkNzBoTXVfYWFKZWlJc0hWWDFNTVlvZ0tzUUE?oc=5",
-      "source_count": 1,
+      "source_count": 2,
       "source_names": [
-        "Curated RSS provider contract."
+        "Curated RSS provider contract.",
+        "bing.com"
       ],
       "started_at": "2026-06-11T07:00:00Z",
-      "summary": "SpaceX的发射与试验事件，已汇集 11 篇报道、1 个来源。"
+      "summary": "SpaceX的发射与试验事件，已汇集 12 篇报道、2 个来源。"
     },
     {
       "article_count": 1,
@@ -10564,7 +11033,7 @@
       "summary": "微纳星空的股价与资本市场事件，已汇集 1 篇报道、1 个来源。"
     },
     {
-      "article_count": 31,
+      "article_count": 32,
       "articles": [
         {
           "date_is_inferred": false,
@@ -10704,6 +11173,14 @@
         },
         {
           "date_is_inferred": false,
+          "id": "cdd54556359429d7",
+          "published_at": "2026-06-15T07:00:00Z",
+          "source_name": "央广财经",
+          "title": "“一箭8星”专车发射成功 力箭一号运载火箭加速推进年度高密度发射任务 - 央广财经",
+          "url": "https://news.google.com/rss/articles/CBMib0FVX3lxTE5SLVZ5WnRLNGZqOWFXR2tXUEd4Y2w4QlhJN1E4c0VhZ2xlOHV6UVdJRWJRQ3RmdGlHUHV6V0d5VUIyWV9WM0E5WjFpU1RBa21YM0p1ZVF4TVh5SmlPMkhod1BkT3pMM2NoMGwwaTVrYw?oc=5"
+        },
+        {
+          "date_is_inferred": false,
           "id": "cc1fb443f1bb62e6",
           "published_at": "2026-06-15T07:00:00Z",
           "source_name": "Curated RSS provider contract.",
@@ -10824,16 +11301,17 @@
       "importance_score": 100,
       "latest_at": "2026-06-17T10:21:23Z",
       "latest_url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTFBCVHppcDcxWi1iWjM2aWQ1Y2tqNU00Wjd5M3dCVUlWM1k1UjdKZTZuZ1MySVFVbXVwNU52dzJaRkE3RUp4TXhhMDZ6WDdXT2FkcW4wcklwZG1LVnBs?oc=5",
-      "source_count": 5,
+      "source_count": 6,
       "source_names": [
         "Curated RSS provider contract.",
         "cb.com.cn",
         "中国科技网",
+        "央广财经",
         "新京报",
         "财联社"
       ],
       "started_at": "2026-06-14T07:00:00Z",
-      "summary": "中科宇航的发射与试验事件，已汇集 31 篇报道、5 个来源。"
+      "summary": "中科宇航的发射与试验事件，已汇集 32 篇报道、6 个来源。"
     },
     {
       "article_count": 1,
@@ -10892,8 +11370,16 @@
       "summary": "垣信卫星的发射与试验事件，已汇集 1 篇报道、1 个来源。"
     },
     {
-      "article_count": 2,
+      "article_count": 3,
       "articles": [
+        {
+          "date_is_inferred": false,
+          "id": "d0799443d6667007",
+          "published_at": "2026-06-16T07:00:00Z",
+          "source_name": "证券时报",
+          "title": "君逸数码中标星际荣耀火箭生产基地中央空调及高效机房项目 - 证券时报",
+          "url": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE9hUEthV2d1LUE4MHA5NmRwNVltMGhmWXJrMmJKRmpYTV80cGI4cUZXVFFyT0hpdzE2Zy1mdlM3RDhIQzBHTE11OW5weFNkOFdqUmdfS19YWQ?oc=5"
+        },
         {
           "date_is_inferred": false,
           "id": "ca86eaa0a13e151b",
@@ -10916,16 +11402,17 @@
       "event_id": "6f56206e6fbfd656",
       "event_label": "订单与合同",
       "event_type": "order",
-      "headline": "君逸数码中标星际荣耀火箭生产基地中央空调及高效机房项目 - TradingView",
-      "importance_score": 67,
+      "headline": "君逸数码中标星际荣耀火箭生产基地中央空调及高效机房项目 - 证券时报",
+      "importance_score": 79,
       "latest_at": "2026-06-16T07:00:00Z",
-      "latest_url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE03am8wV3VlMjhHR09zTzkyQUxXdl8yVVFTQno1ZVBpckNRbEthckhIX1BiVEJXeU5CcDE2ck9aakttRWNfSURUaUVGRHFVbXUtS3hZTmEwOXpkQ0ItMFJVeW1Lc09QbE9OMmc?oc=5",
-      "source_count": 1,
+      "latest_url": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE9hUEthV2d1LUE4MHA5NmRwNVltMGhmWXJrMmJKRmpYTV80cGI4cUZXVFFyT0hpdzE2Zy1mdlM3RDhIQzBHTE11OW5weFNkOFdqUmdfS19YWQ?oc=5",
+      "source_count": 2,
       "source_names": [
-        "Curated RSS provider contract."
+        "Curated RSS provider contract.",
+        "证券时报"
       ],
       "started_at": "2026-06-14T06:22:00Z",
-      "summary": "星际荣耀的订单与合同事件，已汇集 2 篇报道、1 个来源。"
+      "summary": "星际荣耀的订单与合同事件，已汇集 3 篇报道、2 个来源。"
     },
     {
       "article_count": 1,
@@ -11206,6 +11693,34 @@
       ],
       "started_at": "2026-06-15T07:00:00Z",
       "summary": "星河动力的发射与试验事件，已汇集 1 篇报道、1 个来源。"
+    },
+    {
+      "article_count": 1,
+      "articles": [
+        {
+          "date_is_inferred": false,
+          "id": "293896d4a9ad1ac0",
+          "published_at": "2026-06-15T07:00:00Z",
+          "source_name": "新浪财经",
+          "title": "微纳星空叩关科创板：商业航天独角兽，亏损与商业化变现引关注 - 新浪财经",
+          "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxNbktqN0l5Vm1tLTRhRmhQZ0lYMFpJWFlvOTN1RFlqczJCRGNPWW9OUGZab21sbXZGd1VvejQxb0dwRXVlYVJnRkZ4QUtKM1g0a0o0Mzd1cTFtQ1JzQlVVc3hYYnZ2aWxlZFJ2Qm12eG1jTU5xSGNpTFhGZ1pXeE5oamt4RGQ?oc=5"
+        }
+      ],
+      "company_id": "minospace",
+      "company_name": "微纳星空",
+      "event_id": "401e383686820d4f",
+      "event_label": "股价与资本市场",
+      "event_type": "market",
+      "headline": "微纳星空叩关科创板：商业航天独角兽，亏损与商业化变现引关注 - 新浪财经",
+      "importance_score": 47,
+      "latest_at": "2026-06-15T07:00:00Z",
+      "latest_url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxNbktqN0l5Vm1tLTRhRmhQZ0lYMFpJWFlvOTN1RFlqczJCRGNPWW9OUGZab21sbXZGd1VvejQxb0dwRXVlYVJnRkZ4QUtKM1g0a0o0Mzd1cTFtQ1JzQlVVc3hYYnZ2aWxlZFJ2Qm12eG1jTU5xSGNpTFhGZ1pXeE5oamt4RGQ?oc=5",
+      "source_count": 1,
+      "source_names": [
+        "新浪财经"
+      ],
+      "started_at": "2026-06-15T07:00:00Z",
+      "summary": "微纳星空的股价与资本市场事件，已汇集 1 篇报道、1 个来源。"
     },
     {
       "article_count": 1,
@@ -11877,7 +12392,7 @@
       "summary": "SpaceX的股价与资本市场事件，已汇集 1 篇报道、1 个来源。"
     },
     {
-      "article_count": 21,
+      "article_count": 22,
       "articles": [
         {
           "date_is_inferred": false,
@@ -12046,6 +12561,14 @@
           "source_name": "Curated RSS provider contract.",
           "title": "蓝箭航天发射两颗卫星_新浪新闻 - 手机新浪网",
           "url": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE81d214NmRVLW9IWkRUNWNsejRoa3RCaUdpMDE4a1gzeVdweU1tS01UejNyMG1sOGgyOWdfQnVRM0l3MGxUUl9hSnRmTXhCSjdkdGdCWDh0cGpLNFoxVnNaZkJ5NA?oc=5"
+        },
+        {
+          "date_is_inferred": false,
+          "id": "2cec8acd462f9786",
+          "published_at": "2026-06-09T07:00:00Z",
+          "source_name": "财联社",
+          "title": "蓝箭朱雀二号遥六成功发射“一箭双星” 上海千帆星座步入组网快车道 - 财联社",
+          "url": "https://news.google.com/rss/articles/CBMiSEFVX3lxTE9HYkR6aldsYXNVcmdQTzJ2cm1ZVDB4UHJtT3BEUXE3ZHJ0QlIwNE1UUlV5UlRaUjFDaVlTa1RHT09PUTByTGlVYg?oc=5"
         }
       ],
       "company_id": "landspace",
@@ -12057,15 +12580,16 @@
       "importance_score": 100,
       "latest_at": "2026-06-11T07:00:00Z",
       "latest_url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxQSEpBdGN2eWFxc1Qzam1MUVlKTEE5TnhkUXE4bWtkQngya0pueHpBOXJLY1FvaVFSdEFOQ2FmN3VWZEhRQ2xlT1RPRDhrQXBEdVI1V1RtTHJ5azg0cklCeEFYTG5NdVpNV0V6Q0IxUlNsYzR3RzVVajhGal9tVUhzdm5hOA?oc=5",
-      "source_count": 4,
+      "source_count": 5,
       "source_names": [
         "China Daily",
         "Curated RSS provider contract.",
         "北京经济技术开发区",
-        "无锡市人民政府"
+        "无锡市人民政府",
+        "财联社"
       ],
       "started_at": "2026-06-09T07:00:00Z",
-      "summary": "蓝箭航天的发射与试验事件，已汇集 21 篇报道、4 个来源。"
+      "summary": "蓝箭航天的发射与试验事件，已汇集 22 篇报道、5 个来源。"
     },
     {
       "article_count": 1,
@@ -12328,7 +12852,7 @@
       "summary": "蓝箭航天的其他动态事件，已汇集 1 篇报道、1 个来源。"
     },
     {
-      "article_count": 1,
+      "article_count": 2,
       "articles": [
         {
           "date_is_inferred": false,
@@ -12337,6 +12861,14 @@
           "source_name": "Curated RSS provider contract.",
           "title": "Blue Origin puts Q/V-band and lasers at the center of TeraWave",
           "url": "http://www.bing.com/news/apiclick.aspx?aid=&tid=6a4d53b05c514f8987b8a2ea171d0c70&url=https%3A%2F%2Fwww.msn.com%2Fen-us%2Ftechnology%2Ftech-companies%2Fblue-origin-puts-q-v-band-and-lasers-at-the-center-of-terawave%2Far-AA25hkcA&c=12295306611673995135&mkt=en-us"
+        },
+        {
+          "date_is_inferred": false,
+          "id": "13e2060bee2c529d",
+          "published_at": "2026-06-10T03:48:00Z",
+          "source_name": "bing.com",
+          "title": "Blue Origin puts Q/V-band and lasers at the center of TeraWave",
+          "url": "http://www.bing.com/news/apiclick.aspx?aid=&tid=6a61cb40f5bf43e88700abb03b37cd73&url=https%3A%2F%2Fwww.msn.com%2Fen-us%2Fnews%2Ftechnology%2Fblue-origin-puts-qv-band-and-lasers-at-the-center-of-terawave%2Far-AA25hkcA&c=8901055434341187264&mkt=en-us"
         }
       ],
       "company_id": "blue_origin",
@@ -12345,15 +12877,16 @@
       "event_label": "其他动态",
       "event_type": "other",
       "headline": "Blue Origin puts Q/V-band and lasers at the center of TeraWave",
-      "importance_score": 47,
+      "importance_score": 59,
       "latest_at": "2026-06-10T03:50:00Z",
       "latest_url": "http://www.bing.com/news/apiclick.aspx?aid=&tid=6a4d53b05c514f8987b8a2ea171d0c70&url=https%3A%2F%2Fwww.msn.com%2Fen-us%2Ftechnology%2Ftech-companies%2Fblue-origin-puts-q-v-band-and-lasers-at-the-center-of-terawave%2Far-AA25hkcA&c=12295306611673995135&mkt=en-us",
-      "source_count": 1,
+      "source_count": 2,
       "source_names": [
-        "Curated RSS provider contract."
+        "Curated RSS provider contract.",
+        "bing.com"
       ],
-      "started_at": "2026-06-10T03:50:00Z",
-      "summary": "Blue Origin的其他动态事件，已汇集 1 篇报道、1 个来源。"
+      "started_at": "2026-06-10T03:48:00Z",
+      "summary": "Blue Origin的其他动态事件，已汇集 2 篇报道、2 个来源。"
     },
     {
       "article_count": 2,
@@ -32658,10 +33191,10 @@
       "summary": "微纳星空的产品与产能事件，已汇集 1 篇报道、1 个来源。"
     }
   ],
-  "generated_at": "2026-07-23T03:20:02.530651Z",
+  "generated_at": "2026-07-23T08:06:52.769435Z",
   "inferred_date_article_count": 1,
   "is_complete": true,
   "latest_at": "2026-07-22T18:15:42Z",
-  "run_id": "e4abdbac-8b00-4f50-a64c-2ba37dfe1c69",
+  "run_id": "783d15cc-3bbe-4571-a6a7-0d7b7570ccdb",
   "schema_version": "company_event_timeline.v2"
 }
