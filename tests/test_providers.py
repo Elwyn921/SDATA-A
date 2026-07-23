@@ -1,6 +1,7 @@
 from dataclasses import replace
 from datetime import datetime, timezone
 from pathlib import Path
+import urllib.error
 
 from satellite_news.config import load_companies, load_providers
 from satellite_news.fetcher.gdelt import GDELTTransportError, GDELTFetcher
@@ -195,6 +196,44 @@ def test_spaceflight_news_provider_maps_keyless_results():
     assert result.articles[0].metadata["source_name"] == "Spaceflight Now"
 
 
+def test_spaceflight_news_provider_retries_rate_limit():
+    class MockClient:
+        calls = 0
+
+        def get_json(self, url, *, timeout_seconds=20, headers=None):
+            self.calls += 1
+            if self.calls == 1:
+                raise urllib.error.HTTPError(url, 429, "Too Many Requests", {}, None)
+            return {"results": []}
+
+    client = MockClient()
+    provider = replace(
+        provider_by_id("spaceflight_news_provider"),
+        options={
+            "query_template": '"{company_name}"',
+            "adapter_options": {
+                "max_items": 15,
+                "retries": 1,
+                "backoff_seconds": 0,
+                "rate_limit_seconds": 0,
+            },
+        },
+    )
+    result = SpaceflightNewsAPIProvider(client=client).fetch_raw_articles(
+        company=company_by_id("spacex"),
+        provider=provider,
+        context=PipelineContext(
+            run_id="spaceflight-rate-limit-test",
+            started_at=datetime(2026, 7, 23, tzinfo=timezone.utc),
+            dry_run=False,
+        ),
+    )
+
+    assert client.calls == 2
+    assert result.status == "no_results"
+    assert result.metadata["successful_query_count"] == 1
+
+
 def test_brave_news_provider_maps_results_and_uses_secret(monkeypatch):
     monkeypatch.setenv("BRAVE_SEARCH_API_KEY", "test-brave-key")
 
@@ -272,6 +311,103 @@ def test_rss_provider_balances_results_across_feeds():
         "Beta News",
     }
     assert result.metadata["source_count"] == 2
+
+
+def test_rss_provider_round_robins_before_second_item_from_same_feed():
+    class MockClient:
+        def get_text(self, url, *, timeout_seconds=20, headers=None):
+            source = url.rsplit("/", 1)[-1].split(".")[0]
+            return f"""
+            <rss><channel>
+              <item>
+                <title>SpaceX {source} first satellite update</title>
+                <link>https://example.test/{source}-first</link>
+                <pubDate>Wed, 22 Jul 2026 09:00:00 GMT</pubDate>
+              </item>
+              <item>
+                <title>SpaceX {source} second satellite update</title>
+                <link>https://example.test/{source}-second</link>
+                <pubDate>Wed, 22 Jul 2026 08:00:00 GMT</pubDate>
+              </item>
+            </channel></rss>
+            """
+
+    provider = NewsProviderConfig(
+        id="rss_provider",
+        type=SourceType.RSS,
+        rank_group="media",
+        options={
+            "global_feeds": [
+                "https://feed.test/alpha.xml",
+                "https://feed.test/beta.xml",
+                "https://feed.test/gamma.xml",
+            ],
+            "adapter_options": {"max_items": 2, "max_items_per_feed": 2},
+        },
+    )
+    result = RSSProvider(client=MockClient()).fetch_raw_articles(
+        company=company_by_id("spacex"),
+        provider=provider,
+        context=PipelineContext(
+            run_id="round-robin-rss-test",
+            started_at=datetime(2026, 7, 23, tzinfo=timezone.utc),
+            dry_run=False,
+        ),
+    )
+
+    assert [article.url for article in result.articles] == [
+        "https://example.test/alpha-first",
+        "https://example.test/beta-first",
+    ]
+
+
+def test_rss_provider_caches_shared_feed_across_companies():
+    class CountingClient:
+        calls = 0
+
+        def get_text(self, url, *, timeout_seconds=20, headers=None):
+            self.calls += 1
+            return """
+            <rss><channel>
+              <item>
+                <title>SpaceX launches Starlink satellites</title>
+                <link>https://example.test/spacex-cache</link>
+              </item>
+              <item>
+                <title>Blue Origin launches New Glenn</title>
+                <link>https://example.test/blue-cache</link>
+              </item>
+            </channel></rss>
+            """
+
+    client = CountingClient()
+    adapter = RSSProvider(client=client)
+    provider = NewsProviderConfig(
+        id="rss_provider",
+        type=SourceType.RSS,
+        rank_group="media",
+        options={
+            "global_feeds": ["https://feed.test/shared.xml"],
+            "adapter_options": {"max_items": 5, "max_items_per_feed": 5},
+        },
+    )
+    context = PipelineContext(
+        run_id="cached-rss-test",
+        started_at=datetime(2026, 7, 23, tzinfo=timezone.utc),
+        dry_run=False,
+    )
+
+    first = adapter.fetch_raw_articles(
+        company=company_by_id("spacex"), provider=provider, context=context
+    )
+    second = adapter.fetch_raw_articles(
+        company=company_by_id("blue_origin"), provider=provider, context=context
+    )
+
+    assert client.calls == 1
+    assert first.metadata["network_feed_count"] == 1
+    assert second.metadata["network_feed_count"] == 0
+    assert second.metadata["cache_hit_count"] == 1
 
 
 def test_provider_orchestrator_records_failure_and_continues_to_fallback():

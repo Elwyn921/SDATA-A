@@ -2,6 +2,9 @@
 
 from __future__ import annotations
 
+import time
+import urllib.error
+
 from satellite_news.provider.base import (
     ProviderHTTPClient,
     build_raw_article,
@@ -26,6 +29,7 @@ class SpaceflightNewsAPIProvider:
 
     def __init__(self, client: ProviderHTTPClient | None = None) -> None:
         self.client = client or ProviderHTTPClient()
+        self._last_request_at: float | None = None
 
     def fetch_raw_articles(
         self,
@@ -50,10 +54,17 @@ class SpaceflightNewsAPIProvider:
         limit = provider_limit(provider)
         articles = []
         warnings = []
+        successful_query_count = 0
+        adapter_options = provider.options.get("adapter_options", {})
+        if not isinstance(adapter_options, dict):
+            adapter_options = {}
+        rate_limit_seconds = float(adapter_options.get("rate_limit_seconds") or 0)
+        retries = int(adapter_options.get("retries") or 0)
+        backoff_seconds = float(adapter_options.get("backoff_seconds") or 0)
         for query in queries:
             try:
-                payload = self.client.get_json(
-                    url_with_query(
+                payload = self.get_json_with_retry(
+                    url=url_with_query(
                         endpoint,
                         {
                             "search": query.replace('"', ""),
@@ -62,7 +73,11 @@ class SpaceflightNewsAPIProvider:
                         },
                     ),
                     timeout_seconds=provider_timeout(provider),
+                    rate_limit_seconds=rate_limit_seconds,
+                    retries=retries,
+                    backoff_seconds=backoff_seconds,
                 )
+                successful_query_count += 1
                 for row in payload.get("results", ()) or ():
                     if not isinstance(row, dict):
                         continue
@@ -100,11 +115,40 @@ class SpaceflightNewsAPIProvider:
             metadata={
                 "query_count": len(queries),
                 "queries": queries,
+                "successful_query_count": successful_query_count,
                 "warning_count": len(warnings),
+                "rate_limit_seconds": rate_limit_seconds,
                 "cache_status": "not_implemented",
                 "stale_fallback_available": False,
             },
         )
+
+    def get_json_with_retry(
+        self,
+        *,
+        url: str,
+        timeout_seconds: int,
+        rate_limit_seconds: float,
+        retries: int,
+        backoff_seconds: float,
+    ):
+        for attempt in range(retries + 1):
+            self.wait_for_rate_limit(rate_limit_seconds)
+            try:
+                return self.client.get_json(url, timeout_seconds=timeout_seconds)
+            except urllib.error.HTTPError as exc:
+                if exc.code != 429 or attempt >= retries:
+                    raise
+                time.sleep(backoff_seconds * (attempt + 1))
+        raise RuntimeError("Spaceflight News API retry loop exhausted.")
+
+    def wait_for_rate_limit(self, seconds: float) -> None:
+        if seconds <= 0:
+            return
+        now = time.monotonic()
+        if self._last_request_at is not None:
+            time.sleep(max(0.0, seconds - (now - self._last_request_at)))
+        self._last_request_at = time.monotonic()
 
 
 def dedupe_articles(articles):

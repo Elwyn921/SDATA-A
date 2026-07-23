@@ -58,13 +58,13 @@
     {
       "company_id": "space_pioneer",
       "company_name": "天兵科技",
-      "item_count": 4,
+      "item_count": 3,
       "status": "mixed"
     },
     {
       "company_id": "spacex",
       "company_name": "SpaceX",
-      "item_count": 41,
+      "item_count": 42,
       "status": "success"
     },
     {
@@ -80,37 +80,17 @@
       "status": "mixed"
     }
   ],
-  "company_item_counts": {
-    "blue_origin": 15,
-    "cas_space": 4,
-    "china_satnet": 1,
-    "galactic_energy": 5,
-    "galaxyspace": 3,
-    "hongqing_technology": 3,
-    "i_space": 1,
-    "landspace": 4,
-    "minospace": 1,
-    "space_pioneer": 4,
-    "spacex": 41,
-    "yuanxin_satellite": 15,
-    "yushi_space": 1
-  },
   "config_dir": "config",
   "dry_run": false,
   "export_count": 0,
   "fetch_status_count": 26,
-  "finished_at": "2026-07-23T02:30:11.988288Z",
-  "fresh_item_count": 98,
-  "generated_at": "2026-07-23T02:30:11.988288Z",
+  "finished_at": "2026-07-23T02:27:03.130208Z",
+  "generated_at": "2026-07-23T02:27:03.130208Z",
   "item_count": 98,
-  "metadata": {
-    "latest_is_stale_safe": true
-  },
   "output_dir": "data/news/latest",
-  "run_id": "9ec458ca-3852-4b81-b8dc-fa00537e05b3",
+  "run_id": "5d7c9b64-415e-450c-abe0-b43bc0608c0a",
   "schema_version": "satellite_news.v1",
-  "stale_item_count": 0,
-  "started_at": "2026-07-23T02:28:19.967865Z",
+  "started_at": "2026-07-23T02:25:32.030650Z",
   "summary_count": 0,
   "warnings": []
 }

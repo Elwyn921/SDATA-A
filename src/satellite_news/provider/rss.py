@@ -26,6 +26,7 @@ class RSSProvider:
 
     def __init__(self, client: ProviderHTTPClient | None = None) -> None:
         self.client = client or ProviderHTTPClient()
+        self._feed_cache: dict[str, str] = {}
 
     def fetch_raw_articles(
         self,
@@ -51,6 +52,8 @@ class RSSProvider:
 
         articles = []
         warnings: list[str] = []
+        cache_hit_count = 0
+        network_feed_count = 0
         timeout = provider_timeout(provider)
         limit = provider_limit(provider)
         adapter_options = provider.options.get("adapter_options", {})
@@ -62,7 +65,13 @@ class RSSProvider:
         for feed_url in feeds:
             feed_article_count = 0
             try:
-                text = self.client.get_text(feed_url, timeout_seconds=timeout)
+                if feed_url in self._feed_cache:
+                    text = self._feed_cache[feed_url]
+                    cache_hit_count += 1
+                else:
+                    text = self.client.get_text(feed_url, timeout_seconds=timeout)
+                    self._feed_cache[feed_url] = text
+                    network_feed_count += 1
                 for row in parse_feed_items(text):
                     title = str(row.get("title") or "")
                     url = str(row.get("url") or "")
@@ -96,12 +105,7 @@ class RSSProvider:
             except Exception as exc:  # pragma: no cover - exercised via provider tests
                 warnings.append(f"{feed_url}: {type(exc).__name__}: {exc}")
 
-        unique_articles = dedupe_articles(articles)
-        unique_articles.sort(
-            key=lambda article: article.published_at.isoformat() if article.published_at else "",
-            reverse=True,
-        )
-        unique_articles = unique_articles[:limit]
+        unique_articles = balanced_articles(articles=articles, feeds=feeds, limit=limit)
 
         if warnings and not articles:
             return failed_result(
@@ -120,6 +124,8 @@ class RSSProvider:
                 "feeds": feeds,
                 "warning_count": len(warnings),
                 "per_feed_limit": per_feed_limit,
+                "cache_hit_count": cache_hit_count,
+                "network_feed_count": network_feed_count,
                 "source_count": len(
                     {
                         str(article.metadata.get("source_name") or article.metadata.get("feed_url"))
@@ -139,6 +145,7 @@ def rss_feed_urls(*, company: Company, provider: NewsProviderConfig) -> tuple[st
         values.extend(url_values(override.options.get("feeds")))
         values.extend(url_values(override.options.get("feed_url")))
         values.extend(url_values(override.options.get("url")))
+    values.extend(url_values(provider.options.get("global_feeds")))
     values.extend(url_values(provider.options.get("feeds")))
     values.extend(url_values(provider.options.get("feed_url")))
     values.extend(url_values(provider.options.get("url")))
@@ -218,15 +225,38 @@ def atom_link(element: ET.Element) -> str:
     return ""
 
 
-def dedupe_articles(articles):
-    seen = set()
-    unique = []
+def balanced_articles(*, articles, feeds: tuple[str, ...], limit: int):
+    """Select one item per feed per round before taking a second from any feed."""
+    by_feed = {feed: [] for feed in feeds}
     for article in articles:
-        if article.url in seen:
-            continue
-        seen.add(article.url)
-        unique.append(article)
-    return unique
+        feed = str(article.metadata.get("feed_url") or "")
+        by_feed.setdefault(feed, []).append(article)
+    for rows in by_feed.values():
+        rows.sort(
+            key=lambda article: article.published_at.isoformat() if article.published_at else "",
+            reverse=True,
+        )
+
+    selected = []
+    seen_urls = set()
+    row_index = 0
+    while len(selected) < limit:
+        added = False
+        for feed in feeds:
+            rows = by_feed.get(feed, [])
+            if row_index >= len(rows):
+                continue
+            article = rows[row_index]
+            if article.url not in seen_urls:
+                seen_urls.add(article.url)
+                selected.append(article)
+                added = True
+                if len(selected) >= limit:
+                    break
+        if not added and all(row_index >= len(rows) - 1 for rows in by_feed.values()):
+            break
+        row_index += 1
+    return selected
 
 
 def feed_hostname(url: str) -> str:

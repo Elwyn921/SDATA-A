@@ -142,6 +142,8 @@ def test_provider_config_contracts_load_from_sources_yaml():
 
     serpapi = next(provider for provider in providers if provider.id == "serpapi_provider")
     newsapi = next(provider for provider in providers if provider.id == "newsapi_provider")
+    rss = next(provider for provider in providers if provider.id == "rss_provider")
+    assert len(rss.options["global_feeds"]) == 9
     assert serpapi.type is SourceType.SERPAPI
     assert newsapi.type is SourceType.NEWSAPI
     assert next(

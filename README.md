@@ -23,7 +23,7 @@ Implemented:
 - Scheduled A6 daily-report generator with OpenAI structured output and a readable no-secret fallback.
 - Frontend daily briefing, 30-day news volume index, and date-based archive navigation.
 - Deterministic quality gate for company relevance, satellite context, recency, canonical URLs, and near-duplicate removal.
-- Balanced per-feed RSS collection so one aggregator cannot crowd out specialist and official sources.
+- Round-robin RSS balancing and per-run feed caching so one aggregator cannot crowd out specialist and official sources without multiplying network requests.
 - Keyless Spaceflight News API integration plus optional Brave News Search.
 
 Currently paused or optional in production:
@@ -119,13 +119,17 @@ Provider configuration lives in `config/sources.yaml`. Provider implementations 
 
 Current provider posture:
 
-- `rss_provider`: production source, scheduled every 6 hours with per-feed balancing.
+- `rss_provider`: production source, scheduled every 6 hours with per-feed balancing, cross-company caching, and nine additional global space-industry feeds.
 - `spaceflight_news_provider`: keyless specialist-space aggregation, scheduled with RSS.
 - `official_site_provider`: available as a light official-page path, but not the main production source.
 - `gdelt_provider`: implemented, currently paused from production schedule because of 429 rate limits.
 - `serpapi_provider`: Google News search coverage, enabled by `SERPAPI_KEY` in the weekly premium-search slot.
 - `brave_news_provider`: independent news index, enabled by `BRAVE_SEARCH_API_KEY` in the weekly premium-search slot.
 - `newsapi_provider`: broader media coverage, enabled by `NEWSAPI_KEY` in the weekly premium-search slot.
+
+The shared RSS pool now also includes ESA Space News, Ars Technica Space, SatNews,
+Via Satellite, SpaceWatch.Global, European Spaceflight, SpaceQ, Space Intel Report,
+and Space.com. Company-specific feeds and search feeds remain in place.
 
 Provider failures should be isolated. One failed provider or one failed company source should not fail the entire pipeline run.
 

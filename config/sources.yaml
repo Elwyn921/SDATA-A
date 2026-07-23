@@ -564,6 +564,16 @@ providers:
           - https://www.geekpark.net/rss
           - https://www.huxiu.com/rss/0.xml
     feeds: []
+    global_feeds:
+      - https://www.esa.int/rssfeed/Our_Activities/Space_News
+      - https://arstechnica.com/space/feed/
+      - https://satnews.com/feed/
+      - https://www.satellitetoday.com/feed/
+      - https://spacewatch.global/feed/
+      - https://europeanspaceflight.com/feed/
+      - https://spaceq.ca/feed/
+      - https://www.spaceintelreport.com/feed/
+      - https://www.space.com/feeds.xml
     adapter_options:
       real_fetch_enabled: true
       timeout_seconds: 20
@@ -579,7 +589,7 @@ providers:
       - https://feeds.feedburner.com/36kr
       - https://www.geekpark.net/rss
       - https://www.huxiu.com/rss/0.xml
-    global_feed_policy: disabled_after_a3_validation; use company_overrides.feeds to avoid generic cross-company bleed.
+    global_feed_policy: active_with_company_filter_round_robin_balance_and_per_run_cache.
     low_priority_global_feeds:
       - https://spacenews.com/feed/
       - https://spaceflightnow.com/feed/
@@ -611,6 +621,9 @@ providers:
       endpoint: https://api.spaceflightnewsapi.net/v4/articles/
       timeout_seconds: 20
       max_items: 15
+      rate_limit_seconds: 6.2
+      retries: 2
+      backoff_seconds: 5
   - id: official_site_provider
     type: official_site
     rank_group: official
