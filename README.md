@@ -22,6 +22,7 @@ Implemented:
 - Stale/latest merge behavior so partial updates can keep previously available company data.
 - Scheduled A6 daily-report generator with OpenAI structured output and a readable no-secret fallback.
 - Frontend daily briefing, 30-day news volume index, and date-based archive navigation.
+- Daily SDATA news-activity index plus equal-weight China/U.S. aerospace market indices and member-stock moves.
 - Deterministic quality gate for company relevance, satellite context, recency, canonical URLs, and near-duplicate removal.
 - China-specific quality policy that also accepts company, valuation, IPO, concept-stock, and share-price context while retaining stricter foreign-company rules.
 - P1 company event timeline that clusters reporting into launch, financing, order, regulation, market, partnership, product, and corporate events.
@@ -73,9 +74,10 @@ config/
   source_rank.yaml        Source ranking, quality, and dedupe policy
   prompt_templates.yaml   Prompt contracts for the future LLM reporting layer
 data/
+  indices/                Latest and daily-archived news/market index snapshots
   news/latest/            Latest generated JSON outputs
   news/archive/           Historical run snapshots and durable news catalog
-  reports/                Latest and date-archived daily briefings
+  reports/                Daily briefings plus date-archived daily/weekly DOCX reports
 docs/
   index.html              GitHub Pages frontend entry point
   assets/                 Static frontend JavaScript and styles
@@ -160,6 +162,9 @@ Current scheduled behavior:
 - The six-hour open-source run combines balanced RSS with Spaceflight News API.
 - A weekly premium-search slot queries SerpApi, Brave News, and NewsAPI when their secrets are configured.
 - Runs the daily briefing at 01:15 UTC; `OPENAI_API_KEY` enables the AI summary, otherwise a rule-based summary is still published.
+- Generates a DOCX report for the previous natural day after the daily briefing.
+- Generates a rolling seven-day DOCX report every Monday after the weekly premium-search run. Related older events are mentioned only when the same company, event category, and headline theme match.
+- Refreshes the news-activity index and 20-stock China/U.S. aerospace market snapshot on every workflow run using one batched quote request.
 - Uses a single `news-data-writer` concurrency group to avoid simultaneous writes to `latest`.
 - Supports manual `workflow_dispatch` inputs for `company_id`, `provider_id`, `scheduled_slot`, and `max_gdelt_queries`.
 - Reads optional `SERPAPI_KEY`, `BRAVE_SEARCH_API_KEY`, and `NEWSAPI_KEY` from GitHub Secrets for the weekly search slot.
@@ -222,6 +227,9 @@ docs/data/news/latest/pipeline_result.json
 docs/data/news/archive/catalog.json
 docs/data/news/archive/index.json
 docs/data/reports/latest/daily_report.json
+docs/data/reports/daily-documents/latest/previous_daily_report.docx
+docs/data/reports/weekly/latest/weekly_report.docx
+docs/data/indices/latest/aerospace_index.json
 ```
 
 The static frontend lives in `docs/`. The Observable Framework prototype lives in `observable/` and is built into:
@@ -242,6 +250,6 @@ PYTHONPATH=src python3 scripts/rebuild_archive_catalog.py
 
 1. Review China-policy false positives and add source-specific trust weights.
 2. Add first-party company newsroom feeds and regional space-industry sources.
-3. Add structured stock-price snapshots for listed related companies instead of relying only on news mentions.
+3. Extend the aerospace stock baskets only after reviewing constituent relevance and survivorship changes.
 4. Keep GDELT paused unless used in low-frequency manual or partial slots.
 5. Measure source coverage and missing-company rates in the diagnostics panel.

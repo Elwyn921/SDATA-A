@@ -1,0 +1,796 @@
+{
+  "as_of_date": "2026-07-23",
+  "companies": [
+    {
+      "company_id": "spacex",
+      "company_name": "SpaceX",
+      "event_types": {
+        "launch": 38,
+        "market": 2,
+        "other": 12,
+        "product": 1,
+        "regulation": 1
+      },
+      "item_count": 54,
+      "latest_title": "SpaceX’s only problem is finding more space to work with"
+    },
+    {
+      "company_id": "yuanxin_satellite",
+      "company_name": "垣信卫星",
+      "event_types": {
+        "funding": 1,
+        "launch": 1,
+        "other": 4
+      },
+      "item_count": 6,
+      "latest_title": "【黎明将至，长夜终尽】1/垣信卫星的星链已经完成现有手机无改造联网，即将配合明珠 - 东方财富"
+    },
+    {
+      "company_id": "galactic_energy",
+      "company_name": "星河动力",
+      "event_types": {
+        "launch": 4,
+        "other": 1
+      },
+      "item_count": 5,
+      "latest_title": "智神星一号8月首飞：民营商业航天的又一次“稳健”落子 - 手机网易网"
+    },
+    {
+      "company_id": "blue_origin",
+      "company_name": "Blue Origin",
+      "event_types": {
+        "launch": 3
+      },
+      "item_count": 3,
+      "latest_title": "US Space Force Triples NSSL Phase 3 Lane 1 Capacity to $17B as Total Launch Budget Reaches $30B"
+    },
+    {
+      "company_id": "landspace",
+      "company_name": "蓝箭航天",
+      "event_types": {
+        "market": 1,
+        "other": 1
+      },
+      "item_count": 2,
+      "latest_title": "蓝箭航天IPO，新进展 - 凤凰网"
+    },
+    {
+      "company_id": "hongqing_technology",
+      "company_name": "蓝箭鸿擎",
+      "event_types": {
+        "other": 2
+      },
+      "item_count": 2,
+      "latest_title": "鸿擎科技入选中国潜在独角兽企业，卫星组网综合服务能力获关注 - hongqing.tech"
+    },
+    {
+      "company_id": "cas_space",
+      "company_name": "中科宇航",
+      "event_types": {
+        "launch": 1
+      },
+      "item_count": 1,
+      "latest_title": "中国商业航天玩大了！2026下半年月月上天，还将首次挑战海上发射！ 力箭一号又立功：首颗文物卫星发射升空！下半年挑战首次海上发射？ - 手机网易网"
+    },
+    {
+      "company_id": "minospace",
+      "company_name": "微纳星空",
+      "event_types": {
+        "launch": 1
+      },
+      "item_count": 1,
+      "latest_title": "引力一号遥四运载火箭发射成功，微纳星空“东坡”系列卫星 1.5 小时完成首批遥感影像回传 - 新浪财经"
+    },
+    {
+      "company_id": "i_space",
+      "company_name": "星际荣耀",
+      "event_types": {
+        "other": 1
+      },
+      "item_count": 1,
+      "latest_title": "四川星际荣耀航天动力有限责任公司注册资本增至1.5亿元 - 东方财富"
+    },
+    {
+      "company_id": "galaxyspace",
+      "company_name": "银河航天",
+      "event_types": {
+        "product": 1
+      },
+      "item_count": 1,
+      "latest_title": "银河航天 合肥载荷中心首套通信卫星载荷下线 年产适配50至100颗卫星 - 未来天玑"
+    }
+  ],
+  "company_count": 10,
+  "document_type": "weekly_news_report",
+  "event_count": 46,
+  "event_type_counts": {
+    "funding": 2,
+    "launch": 19,
+    "market": 3,
+    "other": 19,
+    "product": 2,
+    "regulation": 1
+  },
+  "events": [
+    {
+      "company_id": "spacex",
+      "company_name": "SpaceX",
+      "event_id": "6f5e15652049b868",
+      "event_label": "发射与试验",
+      "event_type": "launch",
+      "headline": "Falcon 9’s rare upper stage failure left 20 Starlink satellites stranded",
+      "importance_score": 100,
+      "latest_at": "2026-07-22T07:51:46Z",
+      "latest_url": "http://www.bing.com/news/apiclick.aspx?aid=&tid=6a617c472e7549499ab29acec07ddd5b&url=https%3A%2F%2Fwww.msn.com%2Fen-us%2Fnews%2Ftechnology%2Ffalcon-9-s-rare-upper-stage-failure-left-20-starlink-satellites-stranded%2Fvi-AA28sGNp&c=7058837078991706578&mkt=en-sg",
+      "source_count": 4,
+      "source_names": [
+        "KeepTrack",
+        "Space",
+        "Spaceflight Now",
+        "bing.com"
+      ],
+      "started_at": "2026-07-20T16:09:40Z",
+      "summary": "SpaceX的发射与试验事件，已汇集 5 篇报道、4 个来源。",
+      "weekly_article_count": 5
+    },
+    {
+      "company_id": "spacex",
+      "company_name": "SpaceX",
+      "event_id": "21c7d91e2550c571",
+      "event_label": "发射与试验",
+      "event_type": "launch",
+      "headline": "SpaceX launches Northrop mission to extend the life of aging satellites",
+      "importance_score": 100,
+      "latest_at": "2026-07-21T21:35:01Z",
+      "latest_url": "https://spacenews.com/spacex-launches-northrop-mission-to-extend-the-life-of-aging-satellites",
+      "source_count": 8,
+      "source_names": [
+        "Curated RSS provider contract.",
+        "NASASpaceflight",
+        "Space",
+        "SpaceNews",
+        "Spaceflight Now",
+        "Ventura County Star",
+        "bing.com",
+        "satellitetoday.com"
+      ],
+      "started_at": "2026-07-03T10:01:00Z",
+      "summary": "SpaceX的发射与试验事件，已汇集 69 篇报道、8 个来源。",
+      "weekly_article_count": 18
+    },
+    {
+      "company_id": "spacex",
+      "company_name": "SpaceX",
+      "event_id": "e4b07e5eae4df60e",
+      "event_label": "发射与试验",
+      "event_type": "launch",
+      "headline": "California to hit 50th rocket launch with SpaceX liftoff. Watch live - The Desert Sun",
+      "importance_score": 100,
+      "latest_at": "2026-07-19T16:00:52Z",
+      "latest_url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxQZ3pZS3RPc2NKNDdGa2NzbGFkbjB2a3hUUnpnTDZodlhnTWRrTldOOXRiaHdPdkgzWUNYOTNucEJUUElQUVU5d0VXMmxwNjNwY0RYN19TczMyZUZmb1dfUFBneW1Ydlo1X0FiNDNyaVpaNlREWnNQNDNDeHFoekJWaHk4VFpQbjBFTldqUlg4aGt2cmFtQlhPZWRxVG5UOVdMdXFHemxGUQ?oc=5",
+      "source_count": 2,
+      "source_names": [
+        "Curated RSS provider contract.",
+        "The Desert Sun"
+      ],
+      "started_at": "2026-07-13T16:00:04Z",
+      "summary": "SpaceX的发射与试验事件，已汇集 9 篇报道、2 个来源。",
+      "weekly_article_count": 3
+    },
+    {
+      "company_id": "galaxyspace",
+      "company_name": "银河航天",
+      "event_id": "eaf17f3a6bc597c0",
+      "event_label": "产品与产能",
+      "event_type": "product",
+      "headline": "银河航天 合肥载荷中心首套通信卫星载荷下线 年产适配50至100颗卫星 - 未来天玑",
+      "importance_score": 91,
+      "latest_at": "2026-07-17T02:09:42Z",
+      "latest_url": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE5tLVRxQkF0Z01DcXRiZGpMN2ZTeDVwU1JIbmZxaFhEUUtKRXJnblJjVXFxTzFzbXg0cVFnSHlFVVhSZzA4SzhMYVB0YzVWN3ZI?oc=5",
+      "source_count": 4,
+      "source_names": [
+        "Sohu",
+        "东方财富",
+        "新浪财经",
+        "未来天玑"
+      ],
+      "started_at": "2026-07-13T02:44:36Z",
+      "summary": "银河航天的产品与产能事件，已汇集 5 篇报道、4 个来源。",
+      "weekly_article_count": 1
+    },
+    {
+      "company_id": "galactic_energy",
+      "company_name": "星河动力",
+      "event_id": "e7cf5ff3b97bf3e1",
+      "event_label": "发射与试验",
+      "event_type": "launch",
+      "headline": "可复用国产民营中大型液体火箭！星河动力智神星一号8月下旬首飞 - 凤凰网科技",
+      "importance_score": 83,
+      "latest_at": "2026-07-20T23:14:23Z",
+      "latest_url": "https://news.google.com/rss/articles/CBMiTEFVX3lxTE9uSFlKQlVOVzlLSXc5XzV2SFZZN1F0WEhpbDI3YkxlVUtTT1d6QnU1M0hjTUFtSkRUQWZKNmhtNmRxTmVCVW1OWVc0bHo?oc=5",
+      "source_count": 3,
+      "source_names": [
+        "QQ News",
+        "凤凰网科技",
+        "新浪财经"
+      ],
+      "started_at": "2026-07-20T12:15:00Z",
+      "summary": "星河动力的发射与试验事件，已汇集 3 篇报道、3 个来源。",
+      "weekly_article_count": 3
+    },
+    {
+      "company_id": "spacex",
+      "company_name": "SpaceX",
+      "event_id": "e9454eb41108d13c",
+      "event_label": "发射与试验",
+      "event_type": "launch",
+      "headline": "Artemis III Mission to feature live 4K video powered by Starlink lasers",
+      "importance_score": 71,
+      "latest_at": "2026-07-22T17:06:30Z",
+      "latest_url": "https://spaceq.ca/artemis-iii-mission-to-feature-live-4k-video-powered-by-starlink-lasers",
+      "source_count": 2,
+      "source_names": [
+        "space.com",
+        "spaceq.ca"
+      ],
+      "started_at": "2026-07-21T17:00:00Z",
+      "summary": "SpaceX的发射与试验事件，已汇集 2 篇报道、2 个来源。",
+      "weekly_article_count": 2
+    },
+    {
+      "company_id": "spacex",
+      "company_name": "SpaceX",
+      "event_id": "0af0b86ef6074c11",
+      "event_label": "发射与试验",
+      "event_type": "launch",
+      "headline": "SpaceX aborts Starship Flight 13 launch attempt",
+      "importance_score": 71,
+      "latest_at": "2026-07-17T00:40:05Z",
+      "latest_url": "https://spacenews.com/spacex-aborts-starship-flight-13-launch-attempt",
+      "source_count": 2,
+      "source_names": [
+        "SpaceNews",
+        "arstechnica.com"
+      ],
+      "started_at": "2026-07-17T00:02:54Z",
+      "summary": "SpaceX的发射与试验事件，已汇集 2 篇报道、2 个来源。",
+      "weekly_article_count": 2
+    },
+    {
+      "company_id": "spacex",
+      "company_name": "SpaceX",
+      "event_id": "63321f0282ee4dd1",
+      "event_label": "发射与试验",
+      "event_type": "launch",
+      "headline": "Starlink launches satellite internet services in Seychelles - SatellitePro ME",
+      "importance_score": 67,
+      "latest_at": "2026-07-21T03:22:48Z",
+      "latest_url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxOejRnVzdiYkx3U0pjU2ZfNDBfNldzNnNJUzkxM1J0M1VicGtfcFlTS2w4N21qNDFWbjlPNUdnZnRzNkZoMnNHWFgyajFqbnk5cUp2dFlZUWhxVHpwTEJfYVZMWTh2RE82aEh2aWV0Nnd0TU1sYXhmaWMtNnltZjZKYmxxWlBzakpETU1oRENENXRoMHhfNnpz?oc=5",
+      "source_count": 1,
+      "source_names": [
+        "Curated RSS provider contract."
+      ],
+      "started_at": "2026-07-20T06:50:47Z",
+      "summary": "SpaceX的发射与试验事件，已汇集 2 篇报道、1 个来源。",
+      "weekly_article_count": 2
+    },
+    {
+      "company_id": "spacex",
+      "company_name": "SpaceX",
+      "event_id": "ebf73774012a7cab",
+      "event_label": "其他动态",
+      "event_type": "other",
+      "headline": "Path to Starship Flight 13 requires additional Booster 20 test",
+      "importance_score": 59,
+      "latest_at": "2026-07-22T14:57:56Z",
+      "latest_url": "https://www.nasaspaceflight.com/2026/07/path-flight-13-attempt-2-test",
+      "source_count": 2,
+      "source_names": [
+        "Curated RSS provider contract.",
+        "NASASpaceflight"
+      ],
+      "started_at": "2026-07-20T21:20:21Z",
+      "summary": "SpaceX的其他动态事件，已汇集 2 篇报道、2 个来源。",
+      "weekly_article_count": 2
+    },
+    {
+      "company_id": "minospace",
+      "company_name": "微纳星空",
+      "event_id": "78a208b07f79b640",
+      "event_label": "发射与试验",
+      "event_type": "launch",
+      "headline": "引力一号遥四运载火箭发射成功，微纳星空“东坡”系列卫星 1.5 小时完成首批遥感影像回传 - 新浪财经",
+      "importance_score": 59,
+      "latest_at": "2026-07-22T11:43:00Z",
+      "latest_url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE56YjNFN0R2Y1hYZTBYOFVwQ01VZUxvMmhPOWx1bF9BMGtMWVhpUWhDLU5tNklDaE5VYWlBMnZHbFB0WW9lODlNbTlLMl9sbzlVV05aVE1ReTA2dTdQS0lYYUlPcXRPWlB3S0cwTGZHVXZvNWhQb3MtU1JJODdPYTg?oc=5",
+      "source_count": 1,
+      "source_names": [
+        "新浪财经"
+      ],
+      "started_at": "2026-07-22T11:43:00Z",
+      "summary": "微纳星空的发射与试验事件，已汇集 1 篇报道、1 个来源。",
+      "weekly_article_count": 1
+    },
+    {
+      "company_id": "spacex",
+      "company_name": "SpaceX",
+      "event_id": "af13baf71d1a03d4",
+      "event_label": "监管与政策",
+      "event_type": "regulation",
+      "headline": "FCC Scraps Decades-Old Satellite Rules, But SpaceX's Million-Satellite AI Plan Waits in Line - Tech Times",
+      "importance_score": 59,
+      "latest_at": "2026-07-22T11:33:56Z",
+      "latest_url": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxQcEhvdUtUTUE4RTFVa2QyMExLYkczVFNGZzFiVHhxWlc1UzNmRU0tSUprRUZvcXJzNElmTzVSUkNkOXgyU3N4cWNmN3VtbEVFSnhCUU1TZWIzR3cyVEhTSzdDNU9PaXJLYzFjYVd2R09tNGcwZ3hxay1vUGJaUlBueG9PSDRLS21PMFdValE3Q1pPcHpjcnYtYUJDdlBNZ1NyTUhLaGV5MDFvbnpaMy1KTE9YWDg5MTBNWHdCaEdqX2xtOWpmSGxiNnNLS1NMMzFmUTNERA?oc=5",
+      "source_count": 1,
+      "source_names": [
+        "Curated RSS provider contract."
+      ],
+      "started_at": "2026-07-22T11:33:56Z",
+      "summary": "SpaceX的监管与政策事件，已汇集 1 篇报道、1 个来源。",
+      "weekly_article_count": 1
+    },
+    {
+      "company_id": "spacex",
+      "company_name": "SpaceX",
+      "event_id": "1fcf490e1e845b70",
+      "event_label": "发射与试验",
+      "event_type": "launch",
+      "headline": "SpaceX Starlink Mini 2 Leak Reinforces Built-In Battery And Portability Upgrade",
+      "importance_score": 59,
+      "latest_at": "2026-07-22T08:00:00Z",
+      "latest_url": "http://www.bing.com/news/apiclick.aspx?aid=&tid=6a617b9ffd3844daac658f0c55c4998d&url=https%3A%2F%2Fwww.ubergizmo.com%2F2026%2F07%2Fspacex-starlink-mini-2-leak-reinforces-built-in-battery-and-portability-upgrade%2F&c=11302686928029675079&mkt=en-sg",
+      "source_count": 1,
+      "source_names": [
+        "bing.com"
+      ],
+      "started_at": "2026-07-22T08:00:00Z",
+      "summary": "SpaceX的发射与试验事件，已汇集 1 篇报道、1 个来源。",
+      "weekly_article_count": 1
+    },
+    {
+      "company_id": "spacex",
+      "company_name": "SpaceX",
+      "event_id": "ea9956f4e2123443",
+      "event_label": "发射与试验",
+      "event_type": "launch",
+      "headline": "SpaceX launches satellite repair drone with 10-foot robotic arms to Earth orbit (video) - Space",
+      "importance_score": 59,
+      "latest_at": "2026-07-21T21:25:08Z",
+      "latest_url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxNNTFrVU04V2hLYzJRcDhScFI5bE9BRUljQW42ZElzWS00STNrNzEydE5EQ2xrYkRMcWJNS1VnZFBDSFJCSWpweGdZUkQ4U0xHdVR1UVFKX3VTdFRhS2ZOMmo0TjBzdE1GVnNmS091emdoYzlWSHdwODIzMlRIbDZIT05RNWZLbGkzTERUVS1GbFJpbkhGUGVzRVhtcXVWU0J3SmY1eUp1QVRSeTlDd3p6UUNtOXRONVZQTi1BNnhVR3NmUWY0?oc=5",
+      "source_count": 1,
+      "source_names": [
+        "Curated RSS provider contract."
+      ],
+      "started_at": "2026-07-21T21:25:08Z",
+      "summary": "SpaceX的发射与试验事件，已汇集 1 篇报道、1 个来源。",
+      "weekly_article_count": 1
+    },
+    {
+      "company_id": "spacex",
+      "company_name": "SpaceX",
+      "event_id": "de549b3c488c64cf",
+      "event_label": "发射与试验",
+      "event_type": "launch",
+      "headline": "SpaceX targets July 23 for crucial Starship Flight 13 test launch after abort - Space",
+      "importance_score": 59,
+      "latest_at": "2026-07-21T19:50:03Z",
+      "latest_url": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxQYnEwSnZ6bkdfSC1CYk5rZWNWaExncTdERUdmY2JLcUJseFNyQ2RFQm92d0hxYXc3S0R3WWFDZHhMc1pHX1BHdGdfTWU4TkZWZ3YzNnFmNWxjMGx5QjRuN296eUlqTlk3c2tMenVnekpodVRta3E3a3VQNkRaVzNVZnpuSE9OZ0wzNnhiQU9pUkluVkkwMFVJLS1Tb0p5MUFwTGcxeUlDNlJFcjBlTnFCNm5sUV8wVUlNeG1vVXg0Yy1sd2liODF5b20yOXZMUlUzektv?oc=5",
+      "source_count": 1,
+      "source_names": [
+        "Curated RSS provider contract."
+      ],
+      "started_at": "2026-07-21T19:50:03Z",
+      "summary": "SpaceX的发射与试验事件，已汇集 1 篇报道、1 个来源。",
+      "weekly_article_count": 1
+    },
+    {
+      "company_id": "blue_origin",
+      "company_name": "Blue Origin",
+      "event_id": "8b5f57290c06011e",
+      "event_label": "发射与试验",
+      "event_type": "launch",
+      "headline": "US Space Force Triples NSSL Phase 3 Lane 1 Capacity to $17B as Total Launch Budget Reaches $30B",
+      "importance_score": 59,
+      "latest_at": "2026-07-21T16:37:37Z",
+      "latest_url": "https://satnews.com/2026/07/21/us-space-force-triples-nssl-phase-3-lane-1-capacity-to-17b-as-total-launch-budget-reaches-30b",
+      "source_count": 1,
+      "source_names": [
+        "satnews.com"
+      ],
+      "started_at": "2026-07-21T16:37:37Z",
+      "summary": "Blue Origin的发射与试验事件，已汇集 1 篇报道、1 个来源。",
+      "weekly_article_count": 1
+    },
+    {
+      "company_id": "galactic_energy",
+      "company_name": "星河动力",
+      "event_id": "aa0666a16bc26a17",
+      "event_label": "发射与试验",
+      "event_type": "launch",
+      "headline": "智神星一号8月首飞：民营商业航天的又一次“稳健”落子 - 手机网易网",
+      "importance_score": 59,
+      "latest_at": "2026-07-21T03:54:23Z",
+      "latest_url": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE5UYkdZVHFzMlhIOW5HYUxvSGk0OHBlcDd3YzU5aFl5UVl3T3JmaWd2S09zbDNYb2dmQzBYQWF0b2JNdlZBa25qN1NuQzFmQUx1UGJaR0lDQUxyUi01VGpZSFJR?oc=5",
+      "source_count": 1,
+      "source_names": [
+        "手机网易网"
+      ],
+      "started_at": "2026-07-21T03:54:23Z",
+      "summary": "星河动力的发射与试验事件，已汇集 1 篇报道、1 个来源。",
+      "weekly_article_count": 1
+    },
+    {
+      "company_id": "blue_origin",
+      "company_name": "Blue Origin",
+      "event_id": "d38209732113bf45",
+      "event_label": "发射与试验",
+      "event_type": "launch",
+      "headline": "Blue Origin begins rebuilding Launch Complex 36 after New Glenn explosion - Yahoo",
+      "importance_score": 59,
+      "latest_at": "2026-07-21T01:07:00Z",
+      "latest_url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxPbEt1RGh1czFmUFFTbi1nb0Z3bGJNREMwSjVXVmhfYVN1c1oybUZZUjdMXzA5cDJnRklkWWU0eFh3R3h3ckxic2NKbjlOTFVWQzNWNDhadFRpRzJNWEJDTTFXTlJnMU1aYXdqdG5MXzVBdXgtM1F5REJLYTJaSXo1bXg2d3AtWGVkSjNUVFlpQ2FYTUZxOWl6TFFLdw?oc=5",
+      "source_count": 1,
+      "source_names": [
+        "Yahoo"
+      ],
+      "started_at": "2026-07-21T01:07:00Z",
+      "summary": "Blue Origin的发射与试验事件，已汇集 1 篇报道、1 个来源。",
+      "weekly_article_count": 1
+    },
+    {
+      "company_id": "spacex",
+      "company_name": "SpaceX",
+      "event_id": "4f90b3874d31b44c",
+      "event_label": "发射与试验",
+      "event_type": "launch",
+      "headline": "Launch Preview: Falcon 9, Starship, and Chinese rockets scheduled to launch",
+      "importance_score": 59,
+      "latest_at": "2026-07-20T20:53:25Z",
+      "latest_url": "https://www.nasaspaceflight.com/2026/07/launch-preview-072026",
+      "source_count": 1,
+      "source_names": [
+        "NASASpaceflight"
+      ],
+      "started_at": "2026-07-20T20:53:25Z",
+      "summary": "SpaceX的发射与试验事件，已汇集 1 篇报道、1 个来源。",
+      "weekly_article_count": 1
+    },
+    {
+      "company_id": "cas_space",
+      "company_name": "中科宇航",
+      "event_id": "cc2d51a77079a815",
+      "event_label": "发射与试验",
+      "event_type": "launch",
+      "headline": "中国商业航天玩大了！2026下半年月月上天，还将首次挑战海上发射！ 力箭一号又立功：首颗文物卫星发射升空！下半年挑战首次海上发射？ - 手机网易网",
+      "importance_score": 59,
+      "latest_at": "2026-07-20T15:41:46Z",
+      "latest_url": "https://news.google.com/rss/articles/CBMiYkFVX3lxTFBvaExJdEhFR25CUlRaU3AzbmYtMmN6NV8xOWh0ajk3Z3FkVEEzOUVaQ3hwaEU5ZjJiV0EwOHJoWXczc3Y1Qm9RQkVGdkZGNGJhVEN2ZkxBUllLY3hqWkJ5bWxB?oc=5",
+      "source_count": 1,
+      "source_names": [
+        "Curated RSS provider contract."
+      ],
+      "started_at": "2026-07-20T15:41:46Z",
+      "summary": "中科宇航的发射与试验事件，已汇集 1 篇报道、1 个来源。",
+      "weekly_article_count": 1
+    },
+    {
+      "company_id": "blue_origin",
+      "company_name": "Blue Origin",
+      "event_id": "56953a36ee70969f",
+      "event_label": "发射与试验",
+      "event_type": "launch",
+      "headline": "NASA says Artemis III mission on schedule as Blue Origin repairs launchpad - Reuters",
+      "importance_score": 59,
+      "latest_at": "2026-07-20T11:46:02Z",
+      "latest_url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxNTmZVOHVZTmF4azR6NngxcHJlOUJCdjFtVVlsazVaVDYyeVhTYjNoR0kyUkE2TS04QmFwaXM4b0o0RGhJZnp6LVBqelRKV0hjNk1kLXZWdWo4aVJ6OXZFdWsydDdwLXFZMTVtVEVFOWk4U2JqX3hVbTh5Z1hQWTRTSWVjU1AydzJseEJCSHJoOUhkTmZXR3kzLUx4ei1tRlhxNFlyV2x4c2hyUVdlTEFBTVFjdDFlUFBUS1IzcVFwekRWTnQxb3c?oc=5",
+      "source_count": 1,
+      "source_names": [
+        "Reuters"
+      ],
+      "started_at": "2026-07-20T11:46:02Z",
+      "summary": "Blue Origin的发射与试验事件，已汇集 1 篇报道、1 个来源。",
+      "weekly_article_count": 1
+    },
+    {
+      "company_id": "yuanxin_satellite",
+      "company_name": "垣信卫星",
+      "event_id": "42a303df52871fc7",
+      "event_label": "融资",
+      "event_type": "funding",
+      "headline": "蓝色起源首次外部融资100亿美元，估值1300亿美元，商业航天竞争加剧",
+      "importance_score": 59,
+      "latest_at": "2026-07-18T09:45:00Z",
+      "latest_url": "https://huxiu.com/article/4876340.html",
+      "source_count": 1,
+      "source_names": [
+        "https://huxiu.com/article/4876340.html"
+      ],
+      "started_at": "2026-07-18T09:45:00Z",
+      "summary": "垣信卫星的融资事件，已汇集 1 篇报道、1 个来源。",
+      "weekly_article_count": 1
+    },
+    {
+      "company_id": "yuanxin_satellite",
+      "company_name": "垣信卫星",
+      "event_id": "f99f58ef70255632",
+      "event_label": "融资",
+      "event_type": "funding",
+      "headline": "千帆星座百亿融资窗口期收官在即，东方明珠深度绑定垣信卫星，构筑算力+航天双科创价 - 财富号",
+      "importance_score": 59,
+      "latest_at": "2026-07-17T15:48:00Z",
+      "latest_url": "https://news.google.com/rss/articles/CBMia0FVX3lxTE9ZeE1TWU8wYTJRaWhOOTlLZmlRZGQxQmRCaGlaajd0RGx3Zlgydy14SFhMSVBneXFSb3V6Zkk4N1lnZzBmQWpWUmRuQUg5REN4eVFTMjJGYjdab0plS0VseXVQeDJfOFBlQnpj?oc=5",
+      "source_count": 1,
+      "source_names": [
+        "财富号"
+      ],
+      "started_at": "2026-07-17T15:48:00Z",
+      "summary": "垣信卫星的融资事件，已汇集 1 篇报道、1 个来源。",
+      "weekly_article_count": 1
+    },
+    {
+      "company_id": "spacex",
+      "company_name": "SpaceX",
+      "event_id": "1b045c689e496394",
+      "event_label": "发射与试验",
+      "event_type": "launch",
+      "headline": "No-Go For Starship Today, Next Try Maybe Next Week",
+      "importance_score": 59,
+      "latest_at": "2026-07-17T01:46:19Z",
+      "latest_url": "https://spacepolicyonline.com/news/no-go-for-starship-today-next-try-maybe-next-week",
+      "source_count": 1,
+      "source_names": [
+        "SpacePolicyOnline.com"
+      ],
+      "started_at": "2026-07-17T01:46:19Z",
+      "summary": "SpaceX的发射与试验事件，已汇集 1 篇报道、1 个来源。",
+      "weekly_article_count": 1
+    },
+    {
+      "company_id": "spacex",
+      "company_name": "SpaceX",
+      "event_id": "52f6e773d7df45a3",
+      "event_label": "发射与试验",
+      "event_type": "launch",
+      "headline": "SpaceX scrubs Starship Super Heavy's 13th test launch due to technical reasons - India Today",
+      "importance_score": 59,
+      "latest_at": "2026-07-16T22:00:00Z",
+      "latest_url": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxQN2l0WlhMcklueVZ2VzBlb0VSd1dKUldHeTJicG1zQkNCOGY1NTdUcFJCcF9EYlFTM3YzaE5lVEszTHV2OVBwcVFXNW5mWHNUcFZGdUVaLWluTEtjT1hrcklRT3ZWRXdrTFJGeGdheUNSUEI5LVJZZ2dtZUpzWGNGei1yVG9EemtkbzRfNjRrZ2prR0xQMm55Q05acTcxeW9sY2I2bTVjcVh3TThJZkRHT292cHRtdnNVTmM0RUUzMm5FdjNkb3BIdDhKTlZyUzBX0gHWAUFVX3lxTE40OTRza2pQNTNZRk5CNUdvS3kxdlBRMDB1aEZESDk4Q1MxZ1Z0X1owN2JEbFpaNmh0WUVqaldDbl96WGl1aWU1aGI5VURzd1o1NWw0YzJOdkF4aFJkZ0hhVGpGQi14dDExMzZCMGtDRTdXZThPX0FHWGJ4VUx6Tmd3Q01hUnVhaE4wbFFpcW5kRlk0eEtENFdpdlBJNjJBaVJrRzc0ZE9PUWRpN2E2NVktMTFXWGFRNFBWMlc0bGdGV29PN2J0cG9QbUtsNjZTdkxSNjR0Snc?oc=5",
+      "source_count": 1,
+      "source_names": [
+        "Curated RSS provider contract."
+      ],
+      "started_at": "2026-07-16T22:00:00Z",
+      "summary": "SpaceX的发射与试验事件，已汇集 1 篇报道、1 个来源。",
+      "weekly_article_count": 1
+    },
+    {
+      "company_id": "spacex",
+      "company_name": "SpaceX",
+      "event_id": "da81f60d0118b21d",
+      "event_label": "其他动态",
+      "event_type": "other",
+      "headline": "SpaceX Falcon 9 Engine Startup Abort Grounds Starlink 17-39 at Vandenberg Space Force Base - Tech Times",
+      "importance_score": 55,
+      "latest_at": "2026-07-20T20:01:57Z",
+      "latest_url": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxPOTFJRFlhSjliajA4cnBuZDFsVlJBVUgxTHFqZ040REhkd3RKMmE0RTBlZ2gzWG5aWENDa1Y2NHgxVzVsOU42QUNSQ0g3Y3FFQ2p5NGlGWFAzNjZ3UDdYZ0JJVFJUTi1weGZUcG1EU3ZHTmJFQzVvbF84T2pXU1lDV2FmbnNZOWxEeWNreE9rUjNUM0xYdmJrcTdWSFhTd1N6ZGFjNHlYaFdjQ1I4dVZCN1hhT1lmbHFaay1KcENDWjlobmFIUDBzR2Q5cnI4cEhac2ZWX01FM2hjUQ?oc=5",
+      "source_count": 1,
+      "source_names": [
+        "Curated RSS provider contract."
+      ],
+      "started_at": "2026-07-20T19:08:31Z",
+      "summary": "SpaceX的其他动态事件，已汇集 2 篇报道、1 个来源。",
+      "weekly_article_count": 2
+    },
+    {
+      "company_id": "spacex",
+      "company_name": "SpaceX",
+      "event_id": "df1630c577c28095",
+      "event_label": "其他动态",
+      "event_type": "other",
+      "headline": "Elon Musk’s Starlink enters one of Africa’s most connected countries as SpaceX expands to its 28th market - Business Insider Africa",
+      "importance_score": 47,
+      "latest_at": "2026-07-22T18:15:42Z",
+      "latest_url": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxPS21rd3kyTnA5alpma1hOWEVQalhYX0oyTTBkdnJGcjZaU0xJd0pQLU5HbWs3Y3RFVkFKamREcVB3cjdRQmJRN0RoQzU5dWE4aF85Um44SlM2Zl9uS21CREVvbGhoVy1paTZrbjdwMXVtU09kQlQ5OHE5RVlHM2I5ZjZhU1ZScGd4RE1KR2Zyem83blNZMjBjXzVtTk5DTkJVR0g3TFo0MzBYYlV2MkF6anlWWklSSWljeWhHYmdhM3dOeldLb2NSYW5MaGxDbVVIR2VvU05xUG0?oc=5",
+      "source_count": 1,
+      "source_names": [
+        "Business Insider Africa"
+      ],
+      "started_at": "2026-07-22T18:15:42Z",
+      "summary": "SpaceX的其他动态事件，已汇集 1 篇报道、1 个来源。",
+      "weekly_article_count": 1
+    },
+    {
+      "company_id": "spacex",
+      "company_name": "SpaceX",
+      "event_id": "9fcd3d2b48132330",
+      "event_label": "股价与资本市场",
+      "event_type": "market",
+      "headline": "Jamie Dimon Says He Has Seen the Numbers and SpaceX’s Orbital Data Centers ‘Could Actually Work’ Despite Technical, Valuation Risks",
+      "importance_score": 47,
+      "latest_at": "2026-07-22T15:00:00Z",
+      "latest_url": "http://www.bing.com/news/apiclick.aspx?aid=&tid=6a617b9ffd3844daac658f0c55c4998d&url=https%3A%2F%2Ffinance.yahoo.com%2Ftechnology%2Fai%2Farticles%2Fjamie-dimon-says-seen-numbers-220058721.html&c=6728924453056260054&mkt=en-sg",
+      "source_count": 1,
+      "source_names": [
+        "bing.com"
+      ],
+      "started_at": "2026-07-22T15:00:00Z",
+      "summary": "SpaceX的股价与资本市场事件，已汇集 1 篇报道、1 个来源。",
+      "weekly_article_count": 1
+    },
+    {
+      "company_id": "landspace",
+      "company_name": "蓝箭航天",
+      "event_id": "d7a39aef92bd4c35",
+      "event_label": "其他动态",
+      "event_type": "other",
+      "headline": "$金风科技(HK|02208)$ 蓝箭航天马上有消息，要信早信 - 股吧",
+      "importance_score": 47,
+      "latest_at": "2026-07-22T11:56:32Z",
+      "latest_url": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE1CVU55ci1NQ3N4cEY3a1R1R2xzWjRYb1hfNDQ2LXlFVEZEcmVXejJ5NWZlVkVhZVNxNWJWamh6c0FDdXZsMjFwVmVPOXQ0Nkl1QjU1VWpHUmlwaEdKXzRlY0ZhTVFudw?oc=5",
+      "source_count": 1,
+      "source_names": [
+        "股吧"
+      ],
+      "started_at": "2026-07-22T11:56:32Z",
+      "summary": "蓝箭航天的其他动态事件，已汇集 1 篇报道、1 个来源。",
+      "weekly_article_count": 1
+    },
+    {
+      "company_id": "spacex",
+      "company_name": "SpaceX",
+      "event_id": "cd5869f78ea368c4",
+      "event_label": "其他动态",
+      "event_type": "other",
+      "headline": "Charter stock might not be 'Starlink roadkill' as SpaceX threat dims",
+      "importance_score": 47,
+      "latest_at": "2026-07-22T09:35:00Z",
+      "latest_url": "http://www.bing.com/news/apiclick.aspx?aid=&tid=6a617b9ffd3844daac658f0c55c4998d&url=https%3A%2F%2Fwww.msn.com%2Fen-us%2Fmoney%2Ftop-stocks%2Fcharter-stock-might-not-be-starlink-roadkill-as-spacex-threat-dims%2Far-AA28t6RR&c=15626362329731307211&mkt=en-sg",
+      "source_count": 1,
+      "source_names": [
+        "bing.com"
+      ],
+      "started_at": "2026-07-22T09:35:00Z",
+      "summary": "SpaceX的其他动态事件，已汇集 1 篇报道、1 个来源。",
+      "weekly_article_count": 1
+    },
+    {
+      "company_id": "i_space",
+      "company_name": "星际荣耀",
+      "event_id": "97017b7ab0df41cb",
+      "event_label": "其他动态",
+      "event_type": "other",
+      "headline": "四川星际荣耀航天动力有限责任公司注册资本增至1.5亿元 - 东方财富",
+      "importance_score": 47,
+      "latest_at": "2026-07-21T14:34:04Z",
+      "latest_url": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE10RFg4ZW5zMzIySkZtLUdIbWV0OU9tckZULXpaOFZjMGtVSmt2QjkwVzU5ZnJoQVpySVVubC1HUzRoVk1pNnF4VW0zenlOMGNqTnV2cWpEUEo0WHlHNEg5Um90dGFGUQ?oc=5",
+      "source_count": 1,
+      "source_names": [
+        "东方财富"
+      ],
+      "started_at": "2026-07-21T14:34:04Z",
+      "summary": "星际荣耀的其他动态事件，已汇集 1 篇报道、1 个来源。",
+      "weekly_article_count": 1
+    }
+  ],
+  "generated_at": "2026-07-23T03:44:21.420336Z",
+  "period_end": "2026-07-23",
+  "period_start": "2026-07-17",
+  "related_history": [
+    {
+      "company_id": "spacex",
+      "company_name": "SpaceX",
+      "current_date": "2026-07-22",
+      "current_event_id": "6f5e15652049b868",
+      "current_headline": "Falcon 9’s rare upper stage failure left 20 Starlink satellites stranded",
+      "event_type": "launch",
+      "historical_date": "2026-06-24",
+      "historical_event_id": "d471492c25513910",
+      "historical_headline": "FAA grounds Falcon 9 after rare booster landing failure",
+      "relation_basis": "同公司、同事件类别且标题主题相近",
+      "relation_score": 0.231
+    },
+    {
+      "company_id": "spacex",
+      "company_name": "SpaceX",
+      "current_date": "2026-07-20",
+      "current_event_id": "e4b07e5eae4df60e",
+      "current_headline": "California to hit 50th rocket launch with SpaceX liftoff. Watch live - The Desert Sun",
+      "event_type": "launch",
+      "historical_date": "2026-06-25",
+      "historical_event_id": "fdb03c601c3c58c5",
+      "historical_headline": "SpaceX plans nighttime rocket launch in California. How to watch - The Desert Sun",
+      "relation_basis": "同公司、同事件类别且标题主题相近",
+      "relation_score": 0.333
+    },
+    {
+      "company_id": "galactic_energy",
+      "company_name": "星河动力",
+      "current_date": "2026-07-21",
+      "current_event_id": "e7cf5ff3b97bf3e1",
+      "current_headline": "可复用国产民营中大型液体火箭！星河动力智神星一号8月下旬首飞 - 凤凰网科技",
+      "event_type": "launch",
+      "historical_date": "2025-12-31",
+      "historical_event_id": "9c9ee12eaa5bce22",
+      "historical_headline": "星河动力：智神星一号中大型可重复使用液体火箭即将首飞 - Sina finance",
+      "relation_basis": "同公司、同事件类别且标题主题相近",
+      "relation_score": 0.25
+    },
+    {
+      "company_id": "spacex",
+      "company_name": "SpaceX",
+      "current_date": "2026-07-22",
+      "current_event_id": "ebf73774012a7cab",
+      "current_headline": "Path to Starship Flight 13 requires additional Booster 20 test",
+      "event_type": "other",
+      "historical_date": "2026-07-13",
+      "historical_event_id": "1d4d6577c2306094",
+      "historical_headline": "SpaceX to Briefly Test V3 Starlink Satellites on Next Starship Flight - PCMag",
+      "relation_basis": "同公司、同事件类别且标题主题相近",
+      "relation_score": 0.273
+    },
+    {
+      "company_id": "minospace",
+      "company_name": "微纳星空",
+      "current_date": "2026-07-22",
+      "current_event_id": "78a208b07f79b640",
+      "current_headline": "引力一号遥四运载火箭发射成功，微纳星空“东坡”系列卫星 1.5 小时完成首批遥感影像回传 - 新浪财经",
+      "event_type": "launch",
+      "historical_date": "2026-06-14",
+      "historical_event_id": "fb3ace79d96de920",
+      "historical_headline": "微纳星空6颗“东坡”系列卫星出征，将搭乘引力一号Y4运载火箭_手机新浪网 - 新浪财经",
+      "relation_basis": "同公司、同事件类别且标题主题相近",
+      "relation_score": 0.306
+    },
+    {
+      "company_id": "spacex",
+      "company_name": "SpaceX",
+      "current_date": "2026-07-22",
+      "current_event_id": "de549b3c488c64cf",
+      "current_headline": "SpaceX targets July 23 for crucial Starship Flight 13 test launch after abort - Space",
+      "event_type": "launch",
+      "historical_date": "2026-06-24",
+      "historical_event_id": "255a9df8d10997bb",
+      "historical_headline": "SpaceX targets booster catch and Starlink test in Starship flight",
+      "relation_basis": "同公司、同事件类别且标题主题相近",
+      "relation_score": 0.333
+    }
+  ],
+  "schema_version": "weekly_report.v1",
+  "source_count": 32,
+  "source_counts": {
+    "Business Insider Africa": 1,
+    "Curated RSS provider contract.": 21,
+    "Encyclopedia Britannica": 1,
+    "KeepTrack": 1,
+    "NASASpaceflight": 3,
+    "QQ News": 1,
+    "Reuters": 1,
+    "Space": 2,
+    "SpaceNews": 4,
+    "SpacePolicyOnline.com": 1,
+    "Spaceflight Now": 5,
+    "The Desert Sun": 1,
+    "Ventura County Star": 1,
+    "Yahoo": 1,
+    "arstechnica.com": 3,
+    "bing.com": 10,
+    "eeo.com.cn": 1,
+    "hongqing.tech": 1,
+    "https://huxiu.com/article/4876340.html": 1,
+    "satellitetoday.com": 1,
+    "satnews.com": 1,
+    "space.com": 1,
+    "spaceq.ca": 1,
+    "东方财富": 3,
+    "凤凰网科技": 1,
+    "手机网易网": 1,
+    "新浪财经": 2,
+    "未来天玑": 1,
+    "柬中時報": 1,
+    "股吧": 1,
+    "观点网": 1,
+    "财富号": 1
+  },
+  "summary": "2026-07-17 至 2026-07-23 共归档 76 条新闻，形成 46 个事件，覆盖 10 家公司和 32 个来源。 新闻量较多的公司包括 SpaceX、垣信卫星、星河动力、Blue Origin、蓝箭航天。 其中 6 项动态可与更早的同公司同类事件关联回看。",
+  "total_items": 76
+}

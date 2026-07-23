@@ -1,0 +1,156 @@
+{
+  "as_of_date": "2026-07-23",
+  "companies": [
+    {
+      "company_id": "spacex",
+      "company_name": "SpaceX",
+      "event_types": {
+        "launch": 12,
+        "market": 1,
+        "other": 2,
+        "regulation": 1
+      },
+      "item_count": 16,
+      "latest_title": "SpaceX launches Northrop mission to extend the life of aging satellites"
+    },
+    {
+      "company_id": "blue_origin",
+      "company_name": "Blue Origin",
+      "event_types": {
+        "launch": 1
+      },
+      "item_count": 1,
+      "latest_title": "US Space Force Triples NSSL Phase 3 Lane 1 Capacity to $17B as Total Launch Budget Reaches $30B"
+    },
+    {
+      "company_id": "minospace",
+      "company_name": "微纳星空",
+      "event_types": {
+        "launch": 1
+      },
+      "item_count": 1,
+      "latest_title": "引力一号遥四运载火箭发射成功，微纳星空“东坡”系列卫星 1.5 小时完成首批遥感影像回传 - 新浪财经"
+    },
+    {
+      "company_id": "landspace",
+      "company_name": "蓝箭航天",
+      "event_types": {
+        "other": 1
+      },
+      "item_count": 1,
+      "latest_title": "$金风科技(HK|02208)$ 蓝箭航天马上有消息，要信早信 - 股吧"
+    }
+  ],
+  "company_count": 4,
+  "document_type": "previous_day_daily_report",
+  "event_type_counts": {
+    "launch": 14,
+    "market": 1,
+    "other": 3,
+    "regulation": 1
+  },
+  "generated_at": "2026-07-23T03:44:21.376886Z",
+  "period_end": "2026-07-22",
+  "period_start": "2026-07-22",
+  "report_date": "2026-07-22",
+  "schema_version": "daily_document.v1",
+  "source_count": 12,
+  "source_counts": {
+    "Curated RSS provider contract.": 3,
+    "NASASpaceflight": 2,
+    "Space": 1,
+    "SpaceNews": 1,
+    "Spaceflight Now": 1,
+    "Ventura County Star": 1,
+    "bing.com": 5,
+    "satellitetoday.com": 1,
+    "satnews.com": 1,
+    "space.com": 1,
+    "新浪财经": 1,
+    "股吧": 1
+  },
+  "summary": "2026-07-22 共归档 19 条新闻，覆盖 4 家公司、12 个信息来源。 新闻量较多的公司包括 SpaceX、Blue Origin、微纳星空、蓝箭航天。",
+  "top_items": [
+    {
+      "company_id": "spacex",
+      "company_name": "SpaceX",
+      "event_type": "launch",
+      "item_id": "d4d0a376c99a7ba4",
+      "published_at": "2026-07-21T21:26:50Z",
+      "source_name": "SpaceNews",
+      "title": "SpaceX launches Northrop mission to extend the life of aging satellites",
+      "url": "https://spacenews.com/spacex-launches-northrop-mission-to-extend-the-life-of-aging-satellites"
+    },
+    {
+      "company_id": "spacex",
+      "company_name": "SpaceX",
+      "event_type": "launch",
+      "item_id": "fc30deea431c7ab8",
+      "published_at": "2026-07-21T18:30:58Z",
+      "source_name": "NASASpaceflight",
+      "title": "Falcon 9 to launch MRV-1 robotic servicing spacecraft for Northrop Grumman",
+      "url": "https://www.nasaspaceflight.com/2026/07/mrv-1-launch"
+    },
+    {
+      "company_id": "spacex",
+      "company_name": "SpaceX",
+      "event_type": "market",
+      "item_id": "a8e706f36625d5a2",
+      "published_at": "2026-07-22T15:00:00Z",
+      "source_name": "bing.com",
+      "title": "Jamie Dimon Says He Has Seen the Numbers and SpaceX’s Orbital Data Centers ‘Could Actually Work’ Despite Technical, Valuation Risks",
+      "url": "http://www.bing.com/news/apiclick.aspx?aid=&tid=6a617b9ffd3844daac658f0c55c4998d&url=https%3A%2F%2Ffinance.yahoo.com%2Ftechnology%2Fai%2Farticles%2Fjamie-dimon-says-seen-numbers-220058721.html&c=6728924453056260054&mkt=en-sg"
+    },
+    {
+      "company_id": "spacex",
+      "company_name": "SpaceX",
+      "event_type": "regulation",
+      "item_id": "ee980e8ab23fee04",
+      "published_at": "2026-07-22T11:33:56Z",
+      "source_name": "Curated RSS provider contract.",
+      "title": "FCC Scraps Decades-Old Satellite Rules, But SpaceX's Million-Satellite AI Plan Waits in Line - Tech Times",
+      "url": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxQcEhvdUtUTUE4RTFVa2QyMExLYkczVFNGZzFiVHhxWlc1UzNmRU0tSUprRUZvcXJzNElmTzVSUkNkOXgyU3N4cWNmN3VtbEVFSnhCUU1TZWIzR3cyVEhTSzdDNU9PaXJLYzFjYVd2R09tNGcwZ3hxay1vUGJaUlBueG9PSDRLS21PMFdValE3Q1pPcHpjcnYtYUJDdlBNZ1NyTUhLaGV5MDFvbnpaMy1KTE9YWDg5MTBNWHdCaEdqX2xtOWpmSGxiNnNLS1NMMzFmUTNERA?oc=5"
+    },
+    {
+      "company_id": "spacex",
+      "company_name": "SpaceX",
+      "event_type": "launch",
+      "item_id": "98543296a384c2e2",
+      "published_at": "2026-07-22T08:00:00Z",
+      "source_name": "bing.com",
+      "title": "SpaceX Starlink Mini 2 Leak Reinforces Built-In Battery And Portability Upgrade",
+      "url": "http://www.bing.com/news/apiclick.aspx?aid=&tid=6a617b9ffd3844daac658f0c55c4998d&url=https%3A%2F%2Fwww.ubergizmo.com%2F2026%2F07%2Fspacex-starlink-mini-2-leak-reinforces-built-in-battery-and-portability-upgrade%2F&c=11302686928029675079&mkt=en-sg"
+    },
+    {
+      "company_id": "blue_origin",
+      "company_name": "Blue Origin",
+      "event_type": "launch",
+      "item_id": "725e0d9d0a336839",
+      "published_at": "2026-07-21T16:37:37Z",
+      "source_name": "satnews.com",
+      "title": "US Space Force Triples NSSL Phase 3 Lane 1 Capacity to $17B as Total Launch Budget Reaches $30B",
+      "url": "https://satnews.com/2026/07/21/us-space-force-triples-nssl-phase-3-lane-1-capacity-to-17b-as-total-launch-budget-reaches-30b"
+    },
+    {
+      "company_id": "landspace",
+      "company_name": "蓝箭航天",
+      "event_type": "other",
+      "item_id": "073b0282398a816a",
+      "published_at": "2026-07-22T11:56:32Z",
+      "source_name": "股吧",
+      "title": "$金风科技(HK|02208)$ 蓝箭航天马上有消息，要信早信 - 股吧",
+      "url": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE1CVU55ci1NQ3N4cEY3a1R1R2xzWjRYb1hfNDQ2LXlFVEZEcmVXejJ5NWZlVkVhZVNxNWJWamh6c0FDdXZsMjFwVmVPOXQ0Nkl1QjU1VWpHUmlwaEdKXzRlY0ZhTVFudw?oc=5"
+    },
+    {
+      "company_id": "minospace",
+      "company_name": "微纳星空",
+      "event_type": "launch",
+      "item_id": "0d40735b8a9d84f2",
+      "published_at": "2026-07-22T11:43:00Z",
+      "source_name": "新浪财经",
+      "title": "引力一号遥四运载火箭发射成功，微纳星空“东坡”系列卫星 1.5 小时完成首批遥感影像回传 - 新浪财经",
+      "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE56YjNFN0R2Y1hYZTBYOFVwQ01VZUxvMmhPOWx1bF9BMGtMWVhpUWhDLU5tNklDaE5VYWlBMnZHbFB0WW9lODlNbTlLMl9sbzlVV05aVE1ReTA2dTdQS0lYYUlPcXRPWlB3S0cwTGZHVXZvNWhQb3MtU1JJODdPYTg?oc=5"
+    }
+  ],
+  "total_items": 19
+}

@@ -108,6 +108,7 @@ const state = {
   events: [],
   archiveIndex: null,
   dailyReport: null,
+  indexSnapshot: null,
 };
 
 const elements = {
@@ -141,6 +142,21 @@ const elements = {
   eventCompanyFilter: document.querySelector("#event-company-filter"),
   eventTypeTabs: document.querySelector("#event-type-tabs"),
   eventTimeline: document.querySelector("#event-timeline"),
+  indexAsOf: document.querySelector("#index-as-of"),
+  indexSourceStatus: document.querySelector("#index-source-status"),
+  newsIndexValue: document.querySelector("#news-index-value"),
+  newsIndexLabel: document.querySelector("#news-index-label"),
+  newsIndexMethod: document.querySelector("#news-index-method"),
+  newsIndexMetrics: document.querySelector("#news-index-metrics"),
+  chinaIndexValue: document.querySelector("#china-index-value"),
+  chinaIndexChange: document.querySelector("#china-index-change"),
+  chinaIndexMeta: document.querySelector("#china-index-meta"),
+  chinaStockList: document.querySelector("#china-stock-list"),
+  usIndexValue: document.querySelector("#us-index-value"),
+  usIndexChange: document.querySelector("#us-index-change"),
+  usIndexMeta: document.querySelector("#us-index-meta"),
+  usStockList: document.querySelector("#us-stock-list"),
+  indexDisclaimer: document.querySelector("#index-disclaimer"),
 };
 
 bootstrap();
@@ -154,6 +170,7 @@ async function bootstrap() {
     ? dashboard.eventTimeline.events
     : [];
   state.dailyReport = dashboard.dailyReport;
+  state.indexSnapshot = dashboard.indexSnapshot;
   state.selectedDate = latestNewsDate(state.items);
   populateFilters();
   bindEvents();
@@ -232,6 +249,7 @@ function render() {
   elements.newsPanelTitle.textContent = newsPanelTitle();
 
   renderDailyBriefing(items);
+  renderIndexOverview();
   renderVolumeIndex(items);
   renderTimeTabs();
   renderCategoryTabs();
@@ -241,6 +259,119 @@ function render() {
   renderProviderTable(companies, state.result.fetch_statuses ?? []);
   renderQualityGate();
   renderDiagnostics(state.result.fetch_statuses ?? [], items);
+}
+
+function renderIndexOverview() {
+  const snapshot = state.indexSnapshot;
+  if (!snapshot) {
+    elements.indexAsOf.textContent = "指数数据尚未生成";
+    elements.indexSourceStatus.textContent = "等待刷新";
+    elements.newsIndexValue.textContent = "--";
+    renderMarketIndex(null, "china");
+    renderMarketIndex(null, "united_states");
+    return;
+  }
+
+  const news = snapshot.news_activity ?? {};
+  const source = snapshot.market_data_source ?? {};
+  elements.indexAsOf.textContent =
+    `${formatDateLabel(snapshot.as_of_date)} · ${news.is_partial_day ? "当日持续累计" : "当日已归档"}`;
+  elements.indexSourceStatus.textContent =
+    source.status === "current"
+      ? `${source.source_name ?? "行情源"} · ${source.quoted_instruments ?? 0}/${source.expected_instruments ?? 0}`
+      : "行情沿用最近快照";
+  elements.indexSourceStatus.className =
+    `index-source-status ${source.status === "current" ? "is-current" : "is-stale"}`;
+  elements.newsIndexValue.textContent =
+    news.index_value == null ? "--" : Number(news.index_value).toFixed(1);
+  elements.newsIndexLabel.textContent = news.heat_label ?? "基线不足";
+  elements.newsIndexLabel.className = `index-change ${newsIndexClass(news.index_value)}`;
+  elements.newsIndexMethod.textContent =
+    `${news.methodology ?? "过去 30 个自然日日均为 100"}${news.is_partial_day ? "；今日尚未结束" : ""}`;
+  const newsMetrics = [
+    ["今日新闻", `${news.news_count ?? 0} 条`],
+    ["30 日日均", `${news.baseline_average ?? 0} 条`],
+    ["基准", String(news.base_value ?? 100)],
+  ];
+  elements.newsIndexMetrics.replaceChildren(
+    ...newsMetrics.map(([label, value]) => {
+      const block = document.createElement("div");
+      block.innerHTML = `<span>${escapeHtml(label)}</span><strong>${escapeHtml(value)}</strong>`;
+      return block;
+    }),
+  );
+
+  renderMarketIndex(snapshot.markets?.china, "china");
+  renderMarketIndex(snapshot.markets?.united_states, "united_states");
+  elements.indexDisclaimer.textContent =
+    source.delay_notice ?? "行情可能存在延迟，指数仅用于板块监测，不构成投资建议。";
+}
+
+function renderMarketIndex(market, sectorId) {
+  const isChina = sectorId === "china";
+  const valueElement = isChina ? elements.chinaIndexValue : elements.usIndexValue;
+  const changeElement = isChina ? elements.chinaIndexChange : elements.usIndexChange;
+  const metaElement = isChina ? elements.chinaIndexMeta : elements.usIndexMeta;
+  const listElement = isChina ? elements.chinaStockList : elements.usStockList;
+  if (!market) {
+    valueElement.textContent = "--";
+    changeElement.textContent = "--";
+    changeElement.className = "index-change is-flat";
+    metaElement.textContent = "等待行情数据";
+    listElement.innerHTML = '<div class="stock-list-empty">暂无股票行情</div>';
+    return;
+  }
+
+  valueElement.textContent =
+    market.index_value == null ? "--" : Number(market.index_value).toFixed(2);
+  changeElement.textContent = formatSignedPct(market.change_pct);
+  changeElement.className = `index-change ${changeClass(market.change_pct)}`;
+  const quoteTimes = (market.members ?? [])
+    .map((member) => member.source_timestamp)
+    .filter(Boolean)
+    .sort();
+  metaElement.textContent =
+    `上涨 ${market.advancers ?? 0} · 下跌 ${market.decliners ?? 0} · ${market.quoted_member_count ?? 0}/${market.member_count ?? 0} 只${quoteTimes.length ? ` · ${quoteTimes.at(-1)}` : ""}`;
+  listElement.replaceChildren(
+    ...(market.members ?? []).map((member) => {
+      const row = document.createElement("div");
+      row.className = "stock-row";
+      const price = member.price == null ? "--" : formatMarketPrice(member.price);
+      row.innerHTML = `
+        <div><strong>${escapeHtml(member.name)}</strong><span>${escapeHtml(member.ticker)}</span></div>
+        <span class="stock-price">${escapeHtml(price)}</span>
+        <span class="stock-change ${changeClass(member.change_pct)}">${escapeHtml(formatSignedPct(member.change_pct))}</span>
+      `;
+      return row;
+    }),
+  );
+}
+
+function newsIndexClass(value) {
+  if (value == null) return "is-flat";
+  if (value >= 120) return "is-positive";
+  if (value < 80) return "is-negative";
+  return "is-flat";
+}
+
+function changeClass(value) {
+  const number = Number(value);
+  if (!Number.isFinite(number) || number === 0) return "is-flat";
+  return number > 0 ? "is-positive" : "is-negative";
+}
+
+function formatSignedPct(value) {
+  const number = Number(value);
+  if (!Number.isFinite(number)) return "--";
+  return `${number > 0 ? "+" : ""}${number.toFixed(2)}%`;
+}
+
+function formatMarketPrice(value) {
+  const number = Number(value);
+  if (!Number.isFinite(number)) return "--";
+  return number >= 1000
+    ? number.toLocaleString("en-US", { maximumFractionDigits: 2 })
+    : number.toFixed(2);
 }
 
 function renderQualityGate() {
@@ -488,7 +619,10 @@ function renderIndustrySections(items) {
         state.visibleLimit = 120;
         elements.companyFilter.value = "all";
         elements.eventCompanyFilter.value = "all";
-        document.querySelector(".news-panel")?.scrollIntoView({ behavior: "smooth", block: "start" });
+        document.querySelector(".news-panel")?.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+        });
         render();
       });
 
@@ -522,7 +656,10 @@ function companyCard(company, items) {
   `;
   card.addEventListener("click", () => {
     selectCompany(company.id);
-    document.querySelector(".event-panel")?.scrollIntoView({ behavior: "smooth", block: "start" });
+    document.querySelector(".event-panel")?.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
   });
   return card;
 }
