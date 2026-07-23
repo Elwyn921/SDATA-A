@@ -577,10 +577,22 @@ providers:
     china_market_query_templates:
       - "{company_name} 股价 概念股 IPO 估值 融资"
       - "{company_name} 股票 上市 招股书 产业链"
+    china_event_query_templates:
+      - "{company_name} 发射 首飞 入轨 回收 试验"
+      - "{company_name} 融资 投资 估值 增资"
+      - "{company_name} 订单 中标 合同 采购 交付"
+      - "{company_name} 监管 政策 许可 审批 备案"
+      - "{company_name} 合作 签约 产线 工厂 产能"
+    china_source_query_templates:
+      - "{company_name} (site:news.cn OR site:people.com.cn OR site:cctv.com OR site:gov.cn)"
+      - "{company_name} (site:cls.cn OR site:stcn.com OR site:cnstock.com OR site:cs.com.cn)"
+      - "{company_name} (site:36kr.com OR site:jiemian.com OR site:thepaper.cn OR site:21jingji.com)"
+      - "{company_name} (site:finance.sina.com.cn OR site:eastmoney.com OR site:yicai.com OR site:eeo.com.cn)"
+      - "{company_name} (site:spacechina.com OR site:cnsa.gov.cn OR site:cmse.gov.cn)"
     adapter_options:
       real_fetch_enabled: true
       timeout_seconds: 20
-      max_items: 50
+      max_items: 100
       max_items_per_feed: 8
     fallback_feeds:
       - https://www.bing.com/news/search?q=%E5%9E%A3%E4%BF%A1%E5%8D%AB%E6%98%9F+%E5%8D%83%E5%B8%86%E6%98%9F%E5%BA%A7&format=rss
@@ -1089,13 +1101,57 @@ providers:
       raw: RawArticle
       normalized: NewsItem
     adapter_status: active_adapter
-    query_template: '"{company_name}" satellite OR launch OR constellation'
+    query_template: '"{company_name}" (航天 OR 卫星 OR 火箭 OR 发射 OR 融资 OR 订单 OR 监管)'
+    company_overrides:
+      spacex:
+        enabled: false
+      blue_origin:
+        enabled: false
+      yuanxin_satellite:
+        query_templates:
+          - '("垣信卫星" OR "千帆星座" OR SpaceSail) (发射 OR 卫星 OR 融资 OR 订单 OR 监管)'
+      china_satnet:
+        query_templates:
+          - '("中国星网" OR "国网星座" OR "China SatNet") (发射 OR 卫星 OR 融资 OR 订单 OR 监管)'
+      landspace:
+        query_templates:
+          - '("蓝箭航天" OR LandSpace OR 朱雀) (发射 OR 试验 OR 融资 OR 订单 OR 监管)'
+      cas_space:
+        query_templates:
+          - '("中科宇航" OR "CAS Space" OR 力箭) (发射 OR 试验 OR 融资 OR 订单 OR 监管)'
+      space_pioneer:
+        query_templates:
+          - '("天兵科技" OR "Space Pioneer" OR 天龙) (发射 OR 试验 OR 融资 OR 订单 OR 监管)'
+      i_space:
+        query_templates:
+          - '("星际荣耀" OR "i-Space" OR 双曲线) (发射 OR 试验 OR 融资 OR 订单 OR 监管)'
+      galactic_energy:
+        query_templates:
+          - '("星河动力" OR "Galactic Energy" OR 谷神星 OR 智神星) (发射 OR 试验 OR 融资 OR 订单 OR 监管)'
+      yushi_space:
+        query_templates:
+          - '("宇石空间" OR AstronStone OR ASTONE) (火箭 OR 试验 OR 融资 OR 订单 OR 监管)'
+      hongqing_technology:
+        query_templates:
+          - '("蓝箭鸿擎" OR "鸿擎科技" OR Hongqing) (卫星 OR 星座 OR 融资 OR 订单 OR 监管)'
+      galaxyspace:
+        query_templates:
+          - '("银河航天" OR GalaxySpace) (卫星 OR 星座 OR 融资 OR 订单 OR 监管)'
+      minospace:
+        query_templates:
+          - '("微纳星空" OR MinoSpace) (卫星 OR 制造 OR 融资 OR 订单 OR 监管)'
     adapter_options:
       real_fetch_enabled: true
       endpoint: https://api.search.brave.com/res/v1/news/search
       api_key_env: BRAVE_SEARCH_API_KEY
       timeout_seconds: 20
-      max_items: 10
+      max_items: 8
+      max_queries_per_company: 1
+      rate_limit_seconds: 1.1
+      freshness: pm
+      country: CN
+      search_lang: zh-hans
+      ui_lang: zh-CN
   - id: newsapi_provider
     type: newsapi
     rank_group: search

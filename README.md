@@ -25,13 +25,15 @@ Implemented:
 - Deterministic quality gate for company relevance, satellite context, recency, canonical URLs, and near-duplicate removal.
 - China-specific quality policy that also accepts company, valuation, IPO, concept-stock, and share-price context while retaining stricter foreign-company rules.
 - P1 company event timeline that clusters reporting into launch, financing, order, regulation, market, partnership, product, and corporate events.
+- Complete event-timeline v2 output with every archived article embedded, inferred dates for undated archive items, and no frontend 80-event / 12-article truncation.
 - Round-robin RSS balancing and per-run feed caching so one aggregator cannot crowd out specialist and official sources without multiplying network requests.
-- Keyless Spaceflight News API integration plus optional Brave News Search.
+- Expanded China RSS discovery across event topics plus grouped Chinese government, finance, technology, and aerospace sources.
+- Keyless Spaceflight News API integration plus quota-controlled Brave News Search for the 11 Chinese companies only.
 
 Currently paused or optional in production:
 
 - GDELT scheduled production refresh. The adapter still exists, but frequent 429 rate limits make RSS the current production source.
-- SerpApi, Brave News, and NewsAPI require API keys and run in a quota-controlled weekly search slot rather than the primary data loop.
+- SerpApi and NewsAPI require API keys. Brave News is configured as a quota-controlled weekly supplement to RSS for Chinese companies rather than the primary data loop.
 - Excel, PDF, and Markdown report exports.
 - Complex official-site crawling.
 
@@ -46,11 +48,12 @@ Current monitoring covers 13 companies:
 
 Latest local data snapshot:
 
-- Latest run id: `61797261-c62f-40ff-9a54-606b1030a057`
-- Generated at: `2026-07-23T02:55:13.862944Z`
-- Current rolling news items: 106
-- Historical company events: 460
-- Providers used in latest snapshot: `rss_provider`, `spaceflight_news_provider`
+- Latest run id: `e4abdbac-8b00-4f50-a64c-2ba37dfe1c69`
+- Generated at: `2026-07-23T03:14:15.363527Z`
+- Current rolling news items: 190
+- Durable archive items: 1,507 across 451 dates
+- Historical company events: 1,026
+- Providers used in latest snapshot: `rss_provider`, `brave_news_provider`
 - Company coverage: all 13 companies have data
 
 ## Important Runtime Notes
@@ -94,6 +97,8 @@ src/
     storage/json_file.py  JSON latest/archive storage and docs publication
 tests/
   test_*.py               Import, provider, storage, and contract checks
+scripts/
+  rebuild_archive_catalog.py  Reprocess every run snapshot into the durable catalog and timeline
 ```
 
 ## Data Flow
@@ -124,17 +129,20 @@ Provider configuration lives in `config/sources.yaml`. Provider implementations 
 
 Current provider posture:
 
-- `rss_provider`: production source, scheduled every 6 hours with per-feed balancing, cross-company caching, and nine additional global space-industry feeds.
+- `rss_provider`: production source, scheduled every 6 hours with per-feed balancing, cross-company caching, nine global space-industry feeds, five China event-topic searches, and five grouped Chinese source searches.
 - `spaceflight_news_provider`: keyless specialist-space aggregation, scheduled with RSS.
 - `official_site_provider`: available as a light official-page path, but not the main production source.
 - `gdelt_provider`: implemented, currently paused from production schedule because of 429 rate limits.
 - `serpapi_provider`: Google News search coverage, enabled by `SERPAPI_KEY` in the weekly premium-search slot.
-- `brave_news_provider`: independent news index, enabled by `BRAVE_SEARCH_API_KEY` in the weekly premium-search slot.
+- `brave_news_provider`: independent news index for the 11 Chinese companies only, enabled by `BRAVE_SEARCH_API_KEY` in the weekly premium-search slot. It uses one request and at most eight results per company, a 1.1-second request interval, a 31-day window, company-identity filtering, and URL/title deduplication.
 - `newsapi_provider`: broader media coverage, enabled by `NEWSAPI_KEY` in the weekly premium-search slot.
 
 The shared RSS pool now also includes ESA Space News, Ars Technica Space, SatNews,
 Via Satellite, SpaceWatch.Global, European Spaceflight, SpaceQ, Space Intel Report,
-and Space.com. Company-specific feeds and search feeds remain in place.
+and Space.com. China-specific search feeds additionally cover launch/testing, financing,
+orders, regulation, cooperation/capacity, government and central media, financial media,
+technology media, market media, and aerospace authorities. Company-specific feeds and
+search feeds remain in place.
 
 Provider failures should be isolated. One failed provider or one failed company source should not fail the entire pipeline run.
 
@@ -223,6 +231,12 @@ docs/observable/
 ```
 
 The frontend does not call RSS, GDELT, LLM providers, or search APIs directly. It only reads the published JSON produced by the pipeline.
+
+Rebuild the durable catalog and complete event timeline from every archived run:
+
+```bash
+PYTHONPATH=src python3 scripts/rebuild_archive_catalog.py
+```
 
 ## Next Milestones
 

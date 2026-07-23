@@ -26,6 +26,11 @@ EVENT_RULES: tuple[tuple[str, tuple[str, ...]], ...] = (
             "运载火箭",
             "试飞",
             "回收试验",
+            "回收验证",
+            "静态点火",
+            "热试车",
+            "发动机试车",
+            "总装测试",
         ),
     ),
     (
@@ -40,6 +45,10 @@ EVENT_RULES: tuple[tuple[str, tuple[str, ...]], ...] = (
             "募资",
             "投资方",
             "估值",
+            "战略投资",
+            "增资扩股",
+            "完成交割",
+            "投资人",
             "pre-a",
             "pre-b",
             "a轮",
@@ -62,6 +71,11 @@ EVENT_RULES: tuple[tuple[str, tuple[str, ...]], ...] = (
             "采购",
             "签约",
             "交付",
+            "框架合同",
+            "发射服务合同",
+            "入围",
+            "招标",
+            "集采",
         ),
     ),
     (
@@ -78,6 +92,12 @@ EVENT_RULES: tuple[tuple[str, tuple[str, ...]], ...] = (
             "审批",
             "备案",
             "政策",
+            "批复",
+            "牌照发放",
+            "管理办法",
+            "征求意见",
+            "监管规则",
+            "环评公示",
         ),
     ),
     (
@@ -101,7 +121,11 @@ EVENT_RULES: tuple[tuple[str, tuple[str, ...]], ...] = (
             "创业板",
             "上市",
             "招股书",
-            "ipo",
+            "上市辅导",
+            "问询回复",
+            "上交所",
+            "深交所",
+            "证监会",
             "a股",
             "港股",
         ),
@@ -118,6 +142,10 @@ EVENT_RULES: tuple[tuple[str, tuple[str, ...]], ...] = (
             "合作意向",
             "合资",
             "签署协议",
+            "战略合作",
+            "联合研发",
+            "达成合作",
+            "携手",
         ),
     ),
     (
@@ -134,7 +162,13 @@ EVENT_RULES: tuple[tuple[str, tuple[str, ...]], ...] = (
             "投产",
             "工厂",
             "生产线",
-            "发动机试车",
+            "研制",
+            "研发",
+            "总装",
+            "产能",
+            "生产基地",
+            "产业基地",
+            "新型号",
         ),
     ),
     (
@@ -153,6 +187,12 @@ EVENT_RULES: tuple[tuple[str, tuple[str, ...]], ...] = (
             "收购",
             "股东",
             "持股",
+            "高管",
+            "创始人",
+            "管理层",
+            "总部",
+            "迁址",
+            "工商变更",
         ),
     ),
 )
@@ -184,6 +224,8 @@ MARKET_PRIORITY_TERMS = (
     "share price",
     "stock price",
     "market cap",
+    "valuation",
+    "ipo",
     "shares rose",
     "shares fell",
     "股价",
@@ -198,6 +240,12 @@ MARKET_PRIORITY_TERMS = (
     "港股",
     "科创板",
     "创业板",
+    "上市",
+    "招股书",
+    "上市辅导",
+    "上交所",
+    "深交所",
+    "证监会",
 )
 
 
@@ -250,13 +298,23 @@ def build_event_timeline(
     )
     type_counts = Counter(str(event["event_type"]) for event in events)
     company_ids = {str(event["company_id"]) for event in events}
+    earliest_at = min((row["published_at"] for row in rows), default=None)
+    latest_at = max((row["published_at"] for row in rows), default=None)
     return {
-        "schema_version": "company_event_timeline.v1",
+        "schema_version": "company_event_timeline.v2",
         "artifact_version": 1,
         "run_id": run_id,
         "generated_at": isoformat(generated_at),
         "event_count": len(events),
+        "article_count": len(rows),
+        "embedded_article_count": sum(len(event["articles"]) for event in events),
+        "inferred_date_article_count": sum(
+            1 for row in rows if row["date_is_inferred"]
+        ),
         "company_count": len(company_ids),
+        "earliest_at": isoformat(earliest_at) if earliest_at else None,
+        "latest_at": isoformat(latest_at) if latest_at else None,
+        "is_complete": True,
         "event_type_counts": dict(sorted(type_counts.items())),
         "events": events,
     }
@@ -266,18 +324,25 @@ def event_article(item: dict[str, Any]) -> dict[str, Any]:
     source = item.get("source") if isinstance(item.get("source"), dict) else {}
     quality = item.get("quality") if isinstance(item.get("quality"), dict) else {}
     metadata = item.get("metadata") if isinstance(item.get("metadata"), dict) else {}
-    event_type = str(
+    title = str(item.get("title") or "Untitled event")
+    stored_event_type = str(
         quality.get("event_type")
         or metadata.get("event_type")
-        or classify_event_type(str(item.get("title") or ""))
+        or "other"
     )
+    title_event_type = classify_event_type(title)
+    event_type = title_event_type if title_event_type != "other" else stored_event_type
+    published_at = parse_datetime(item.get("published_at"))
+    date_is_inferred = published_at is None
+    published_at = published_at or parse_datetime(item.get("archive_first_seen_at"))
     return {
         "id": str(item.get("id") or item.get("url") or item.get("title") or "unknown"),
         "company_id": str(item.get("company_id") or "unknown"),
         "company_name": str(item.get("company_name") or item.get("company_id") or "unknown"),
-        "title": str(item.get("title") or "Untitled event"),
+        "title": title,
         "url": str(item.get("url") or ""),
-        "published_at": parse_datetime(item.get("published_at")),
+        "published_at": published_at,
+        "date_is_inferred": date_is_inferred,
         "source_name": str(source.get("source_name") or source.get("source_id") or "未知来源"),
         "event_type": event_type if event_type in EVENT_LABELS else "other",
         "source_quality_score": float(
@@ -302,24 +367,29 @@ def find_cluster(*, row: dict[str, Any], clusters: list[dict[str, Any]]):
             continue
         if row["published_at"] - cluster["latest_at"] > max_age:
             continue
-        if any(same_event(row["title"], article["title"]) for article in cluster["articles"]):
-            return cluster
-        if row["event_type"] != "other" and row["published_at"].date() == cluster["latest_at"].date():
+        if any(
+            same_event(
+                row["title"],
+                article["title"],
+                company_name=str(row["company_name"]),
+            )
+            for article in cluster["articles"]
+        ):
             return cluster
     return None
 
 
-def same_event(left: str, right: str) -> bool:
-    left_normalized = normalized_title(left)
-    right_normalized = normalized_title(right)
-    if SequenceMatcher(None, left_normalized, right_normalized).ratio() >= 0.46:
+def same_event(left: str, right: str, *, company_name: str = "") -> bool:
+    left_normalized = event_title_core(left, company_name=company_name)
+    right_normalized = event_title_core(right, company_name=company_name)
+    if SequenceMatcher(None, left_normalized, right_normalized).ratio() >= 0.52:
         return True
     left_terms = title_terms(left_normalized)
     right_terms = title_terms(right_normalized)
     if not left_terms or not right_terms:
         return False
     overlap = len(left_terms & right_terms)
-    return overlap >= 2 and overlap / min(len(left_terms), len(right_terms)) >= 0.34
+    return overlap >= 2 and overlap / min(len(left_terms), len(right_terms)) >= 0.4
 
 
 def finalize_cluster(cluster: dict[str, Any]) -> dict[str, Any]:
@@ -377,13 +447,14 @@ def finalize_cluster(cluster: dict[str, Any]) -> dict[str, Any]:
                 "title": article["title"],
                 "url": article["url"],
                 "published_at": isoformat(article["published_at"]),
+                "date_is_inferred": article["date_is_inferred"],
                 "source_name": article["source_name"],
             }
             for article in sorted(
                 articles,
                 key=lambda row: row["published_at"],
                 reverse=True,
-            )[:12]
+            )
         ],
     }
 
@@ -405,11 +476,34 @@ def normalized_title(value: str) -> str:
     return re.sub(r"[^\w\u4e00-\u9fff]+", " ", text).strip()
 
 
+def event_title_core(value: str, *, company_name: str) -> str:
+    text = normalized_title(value)
+    company = normalized_title(company_name)
+    if company:
+        text = text.replace(company, " ")
+    return " ".join(text.split())
+
+
 def title_terms(value: str) -> set[str]:
     words = {word for word in value.split() if len(word) >= 3}
     chinese = "".join(re.findall(r"[\u4e00-\u9fff]", value))
     bigrams = {chinese[index : index + 2] for index in range(max(0, len(chinese) - 1))}
-    stop = {"公司", "航天", "卫星", "火箭", "商业", "中国", "成功", "完成", "正式"}
+    stop = {
+        "公司",
+        "航天",
+        "卫星",
+        "火箭",
+        "商业",
+        "中国",
+        "成功",
+        "完成",
+        "正式",
+        "最新",
+        "消息",
+        "宣布",
+        "项目",
+        "企业",
+    }
     return (words | bigrams) - stop
 
 

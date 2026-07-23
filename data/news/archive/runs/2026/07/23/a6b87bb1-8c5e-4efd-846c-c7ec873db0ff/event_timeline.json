@@ -1,0 +1,481 @@
+{
+  "article_count": 17,
+  "artifact_version": 1,
+  "company_count": 5,
+  "earliest_at": "2026-06-22T16:33:12Z",
+  "embedded_article_count": 17,
+  "event_count": 17,
+  "event_type_counts": {
+    "financing": 3,
+    "launch": 3,
+    "market": 8,
+    "order": 1,
+    "other": 2
+  },
+  "events": [
+    {
+      "article_count": 1,
+      "articles": [
+        {
+          "id": "496c8fd7af40f052",
+          "published_at": "2026-07-18T09:45:00Z",
+          "source_name": "https://huxiu.com/article/4876340.html",
+          "title": "蓝色起源首次外部融资100亿美元，估值1300亿美元，商业航天竞争加剧",
+          "url": "https://huxiu.com/article/4876340.html"
+        }
+      ],
+      "company_id": "yuanxin_satellite",
+      "company_name": "垣信卫星",
+      "event_id": "42a303df52871fc7",
+      "event_label": "融资",
+      "event_type": "financing",
+      "headline": "蓝色起源首次外部融资100亿美元，估值1300亿美元，商业航天竞争加剧",
+      "importance_score": 59,
+      "latest_at": "2026-07-18T09:45:00Z",
+      "latest_url": "https://huxiu.com/article/4876340.html",
+      "source_count": 1,
+      "source_names": [
+        "https://huxiu.com/article/4876340.html"
+      ],
+      "started_at": "2026-07-18T09:45:00Z",
+      "summary": "垣信卫星的融资事件，已汇集 1 篇报道、1 个来源。"
+    },
+    {
+      "article_count": 1,
+      "articles": [
+        {
+          "id": "17284bf75908b3c8",
+          "published_at": "2026-07-10T13:42:00Z",
+          "source_name": "https://news.sina.com.cn/zx/gj/2026-07-10/doc-inihinfu7065477.shtml",
+          "title": "活力中国调研行｜千帆星座今年计划达到累计在轨324颗卫星_新浪新闻",
+          "url": "https://news.sina.com.cn/zx/gj/2026-07-10/doc-inihinfu7065477.shtml"
+        }
+      ],
+      "company_id": "yuanxin_satellite",
+      "company_name": "垣信卫星",
+      "event_id": "1fa58dcca4f9c27e",
+      "event_label": "其他动态",
+      "event_type": "other",
+      "headline": "活力中国调研行｜千帆星座今年计划达到累计在轨324颗卫星_新浪新闻",
+      "importance_score": 47,
+      "latest_at": "2026-07-10T13:42:00Z",
+      "latest_url": "https://news.sina.com.cn/zx/gj/2026-07-10/doc-inihinfu7065477.shtml",
+      "source_count": 1,
+      "source_names": [
+        "https://news.sina.com.cn/zx/gj/2026-07-10/doc-inihinfu7065477.shtml"
+      ],
+      "started_at": "2026-07-10T13:42:00Z",
+      "summary": "垣信卫星的其他动态事件，已汇集 1 篇报道、1 个来源。"
+    },
+    {
+      "article_count": 1,
+      "articles": [
+        {
+          "id": "01e58dd984a6b087",
+          "published_at": "2026-07-10T12:24:00Z",
+          "source_name": "https://sohu.com/a/1048665144_121948396",
+          "title": "蓝箭航天领衔，中国出现10家商业航天独角兽，总估值超过2400亿元_运载火箭_卫星_发射",
+          "url": "https://sohu.com/a/1048665144_121948396"
+        }
+      ],
+      "company_id": "landspace",
+      "company_name": "蓝箭航天",
+      "event_id": "547f157865630b4c",
+      "event_label": "发射与试验",
+      "event_type": "launch",
+      "headline": "蓝箭航天领衔，中国出现10家商业航天独角兽，总估值超过2400亿元_运载火箭_卫星_发射",
+      "importance_score": 59,
+      "latest_at": "2026-07-10T12:24:00Z",
+      "latest_url": "https://sohu.com/a/1048665144_121948396",
+      "source_count": 1,
+      "source_names": [
+        "https://sohu.com/a/1048665144_121948396"
+      ],
+      "started_at": "2026-07-10T12:24:00Z",
+      "summary": "蓝箭航天的发射与试验事件，已汇集 1 篇报道、1 个来源。"
+    },
+    {
+      "article_count": 1,
+      "articles": [
+        {
+          "id": "c44ea87fcdf4ffa6",
+          "published_at": "2026-07-07T16:01:00Z",
+          "source_name": "https://www.sohu.com/a/1047204081_121124364",
+          "title": "微小卫星/垣信/格思/银河航天/时空道宇/微纳星空/工大卫星/蓝箭鸿擎/航升卫星/妙月航天/星联体等单位邀您参与上海卫星论坛_应用_技术_科技",
+          "url": "https://www.sohu.com/a/1047204081_121124364"
+        }
+      ],
+      "company_id": "galaxyspace",
+      "company_name": "银河航天",
+      "event_id": "1a55fa8585d77b11",
+      "event_label": "其他动态",
+      "event_type": "other",
+      "headline": "微小卫星/垣信/格思/银河航天/时空道宇/微纳星空/工大卫星/蓝箭鸿擎/航升卫星/妙月航天/星联体等单位邀您参与上海卫星论坛_应用_技术_科技",
+      "importance_score": 47,
+      "latest_at": "2026-07-07T16:01:00Z",
+      "latest_url": "https://www.sohu.com/a/1047204081_121124364",
+      "source_count": 1,
+      "source_names": [
+        "https://www.sohu.com/a/1047204081_121124364"
+      ],
+      "started_at": "2026-07-07T16:01:00Z",
+      "summary": "银河航天的其他动态事件，已汇集 1 篇报道、1 个来源。"
+    },
+    {
+      "article_count": 1,
+      "articles": [
+        {
+          "id": "d716047cdd3e3e35",
+          "published_at": "2026-07-06T07:06:00Z",
+          "source_name": "https://sina.cn/news/detail/5317577783117645.html",
+          "title": "千帆星座标的分析|千帆星座|中国wx|铖昌kj|上海hx|航天dz|中国wt|航天dq|中国w t|航天d q|卫星整机|t/r射频芯片|火箭箭载_新浪新闻",
+          "url": "https://sina.cn/news/detail/5317577783117645.html"
+        }
+      ],
+      "company_id": "yuanxin_satellite",
+      "company_name": "垣信卫星",
+      "event_id": "2e98a17018813586",
+      "event_label": "订单与合同",
+      "event_type": "order",
+      "headline": "千帆星座标的分析|千帆星座|中国wx|铖昌kj|上海hx|航天dz|中国wt|航天dq|中国w t|航天d q|卫星整机|t/r射频芯片|火箭箭载_新浪新闻",
+      "importance_score": 59,
+      "latest_at": "2026-07-06T07:06:00Z",
+      "latest_url": "https://sina.cn/news/detail/5317577783117645.html",
+      "source_count": 1,
+      "source_names": [
+        "https://sina.cn/news/detail/5317577783117645.html"
+      ],
+      "started_at": "2026-07-06T07:06:00Z",
+      "summary": "垣信卫星的订单与合同事件，已汇集 1 篇报道、1 个来源。"
+    },
+    {
+      "article_count": 1,
+      "articles": [
+        {
+          "id": "5b08c94f1961711c",
+          "published_at": "2026-07-06T05:42:13Z",
+          "source_name": "https://cn.investing.com/news/stock-market-news/article-3447128",
+          "title": "谁是下一个SpaceX?商业航天争相IPO，业内预计国内火箭可回收技术将于年内落地 提供者 时代周报",
+          "url": "https://cn.investing.com/news/stock-market-news/article-3447128"
+        }
+      ],
+      "company_id": "landspace",
+      "company_name": "蓝箭航天",
+      "event_id": "22604bf4e098a2ce",
+      "event_label": "股价与资本市场",
+      "event_type": "market",
+      "headline": "谁是下一个SpaceX?商业航天争相IPO，业内预计国内火箭可回收技术将于年内落地 提供者 时代周报",
+      "importance_score": 47,
+      "latest_at": "2026-07-06T05:42:13Z",
+      "latest_url": "https://cn.investing.com/news/stock-market-news/article-3447128",
+      "source_count": 1,
+      "source_names": [
+        "https://cn.investing.com/news/stock-market-news/article-3447128"
+      ],
+      "started_at": "2026-07-06T05:42:13Z",
+      "summary": "蓝箭航天的股价与资本市场事件，已汇集 1 篇报道、1 个来源。"
+    },
+    {
+      "article_count": 1,
+      "articles": [
+        {
+          "id": "5e9c7dbb08289780",
+          "published_at": "2026-07-04T21:00:59Z",
+          "source_name": "https://sohu.com/a/1045935658_122066678",
+          "title": "千帆极轨13组卫星成功发射，垣信卫星组网数量增至218颗_服务_全球_星座",
+          "url": "https://sohu.com/a/1045935658_122066678"
+        }
+      ],
+      "company_id": "yuanxin_satellite",
+      "company_name": "垣信卫星",
+      "event_id": "70f34378835f38cc",
+      "event_label": "发射与试验",
+      "event_type": "launch",
+      "headline": "千帆极轨13组卫星成功发射，垣信卫星组网数量增至218颗_服务_全球_星座",
+      "importance_score": 59,
+      "latest_at": "2026-07-04T21:00:59Z",
+      "latest_url": "https://sohu.com/a/1045935658_122066678",
+      "source_count": 1,
+      "source_names": [
+        "https://sohu.com/a/1045935658_122066678"
+      ],
+      "started_at": "2026-07-04T21:00:59Z",
+      "summary": "垣信卫星的发射与试验事件，已汇集 1 篇报道、1 个来源。"
+    },
+    {
+      "article_count": 1,
+      "articles": [
+        {
+          "id": "f2b23543afa8dffb",
+          "published_at": "2026-07-03T20:33:49Z",
+          "source_name": "https://finance.sina.cn/stock/xg/xgzx/2026-07-03/detail-inifpusw0360903.d.html?cid=76524&node_id=76524&vt=4",
+          "title": "蛰伏三个月后冲刺IPO，谁在蓝箭航天身后站台？|蓝箭航天空间科技股份有限公司|上海证券交易所|商业航天|科创板|火箭_手机新浪网",
+          "url": "https://finance.sina.cn/stock/xg/xgzx/2026-07-03/detail-inifpusw0360903.d.html?cid=76524&node_id=76524&vt=4"
+        }
+      ],
+      "company_id": "landspace",
+      "company_name": "蓝箭航天",
+      "event_id": "2278ce5cd79b1632",
+      "event_label": "股价与资本市场",
+      "event_type": "market",
+      "headline": "蛰伏三个月后冲刺IPO，谁在蓝箭航天身后站台？|蓝箭航天空间科技股份有限公司|上海证券交易所|商业航天|科创板|火箭_手机新浪网",
+      "importance_score": 47,
+      "latest_at": "2026-07-03T20:33:49Z",
+      "latest_url": "https://finance.sina.cn/stock/xg/xgzx/2026-07-03/detail-inifpusw0360903.d.html?cid=76524&node_id=76524&vt=4",
+      "source_count": 1,
+      "source_names": [
+        "https://finance.sina.cn/stock/xg/xgzx/2026-07-03/detail-inifpusw0360903.d.html?cid=76524&node_id=76524&vt=4"
+      ],
+      "started_at": "2026-07-03T20:33:49Z",
+      "summary": "蓝箭航天的股价与资本市场事件，已汇集 1 篇报道、1 个来源。"
+    },
+    {
+      "article_count": 1,
+      "articles": [
+        {
+          "id": "a8fdd2674c9ee746",
+          "published_at": "2026-07-03T13:40:54Z",
+          "source_name": "https://huxiu.com/article/4872517.html",
+          "title": "中国商业航天何时盈利？答案藏在两家公司的招股书里-虎嗅网",
+          "url": "https://huxiu.com/article/4872517.html"
+        }
+      ],
+      "company_id": "cas_space",
+      "company_name": "中科宇航",
+      "event_id": "566ba5d3232db59a",
+      "event_label": "股价与资本市场",
+      "event_type": "market",
+      "headline": "中国商业航天何时盈利？答案藏在两家公司的招股书里-虎嗅网",
+      "importance_score": 47,
+      "latest_at": "2026-07-03T13:40:54Z",
+      "latest_url": "https://huxiu.com/article/4872517.html",
+      "source_count": 1,
+      "source_names": [
+        "https://huxiu.com/article/4872517.html"
+      ],
+      "started_at": "2026-07-03T13:40:54Z",
+      "summary": "中科宇航的股价与资本市场事件，已汇集 1 篇报道、1 个来源。"
+    },
+    {
+      "article_count": 1,
+      "articles": [
+        {
+          "id": "16df5cab955db264",
+          "published_at": "2026-07-03T13:40:54Z",
+          "source_name": "https://huxiu.com/article/4872517.html",
+          "title": "中国商业航天何时盈利？答案藏在两家公司的招股书里-虎嗅网",
+          "url": "https://huxiu.com/article/4872517.html"
+        }
+      ],
+      "company_id": "landspace",
+      "company_name": "蓝箭航天",
+      "event_id": "8bc704fc84237d52",
+      "event_label": "股价与资本市场",
+      "event_type": "market",
+      "headline": "中国商业航天何时盈利？答案藏在两家公司的招股书里-虎嗅网",
+      "importance_score": 47,
+      "latest_at": "2026-07-03T13:40:54Z",
+      "latest_url": "https://huxiu.com/article/4872517.html",
+      "source_count": 1,
+      "source_names": [
+        "https://huxiu.com/article/4872517.html"
+      ],
+      "started_at": "2026-07-03T13:40:54Z",
+      "summary": "蓝箭航天的股价与资本市场事件，已汇集 1 篇报道、1 个来源。"
+    },
+    {
+      "article_count": 1,
+      "articles": [
+        {
+          "id": "776a892db921f812",
+          "published_at": "2026-07-02T05:52:00Z",
+          "source_name": "https://news.pedaily.cn/202607/565786.shtml",
+          "title": "鸿擎科技完成超13亿元Pre-B轮融资，深耕卫星互联网核心赛道_投资界",
+          "url": "https://news.pedaily.cn/202607/565786.shtml"
+        }
+      ],
+      "company_id": "hongqing_technology",
+      "company_name": "蓝箭鸿擎",
+      "event_id": "c5330ebd467ee7a3",
+      "event_label": "融资",
+      "event_type": "financing",
+      "headline": "鸿擎科技完成超13亿元Pre-B轮融资，深耕卫星互联网核心赛道_投资界",
+      "importance_score": 59,
+      "latest_at": "2026-07-02T05:52:00Z",
+      "latest_url": "https://news.pedaily.cn/202607/565786.shtml",
+      "source_count": 1,
+      "source_names": [
+        "https://news.pedaily.cn/202607/565786.shtml"
+      ],
+      "started_at": "2026-07-02T05:52:00Z",
+      "summary": "蓝箭鸿擎的融资事件，已汇集 1 篇报道、1 个来源。"
+    },
+    {
+      "article_count": 1,
+      "articles": [
+        {
+          "id": "9e9cb2c4a73d04a3",
+          "published_at": "2026-07-02T00:40:00Z",
+          "source_name": "https://sohu.com/a/1044548669_122014422",
+          "title": "蓝箭航天更新招股书：营收猛增11倍，预计2029年实现盈利_发射_火箭_朱雀",
+          "url": "https://sohu.com/a/1044548669_122014422"
+        }
+      ],
+      "company_id": "landspace",
+      "company_name": "蓝箭航天",
+      "event_id": "8b686a3c5d3e45f1",
+      "event_label": "股价与资本市场",
+      "event_type": "market",
+      "headline": "蓝箭航天更新招股书：营收猛增11倍，预计2029年实现盈利_发射_火箭_朱雀",
+      "importance_score": 47,
+      "latest_at": "2026-07-02T00:40:00Z",
+      "latest_url": "https://sohu.com/a/1044548669_122014422",
+      "source_count": 1,
+      "source_names": [
+        "https://sohu.com/a/1044548669_122014422"
+      ],
+      "started_at": "2026-07-02T00:40:00Z",
+      "summary": "蓝箭航天的股价与资本市场事件，已汇集 1 篇报道、1 个来源。"
+    },
+    {
+      "article_count": 1,
+      "articles": [
+        {
+          "id": "6e53e5f02ee5a0cc",
+          "published_at": "2026-07-02T00:00:00Z",
+          "source_name": "https://cislunarspace.cn/space-news/2026/07/2026-07-02-spacesail-qianfan-funding-round",
+          "title": "上海垣信卫星寻求新一轮数十亿融资，千帆星座追赶星链 | 地月空间入门指南",
+          "url": "https://cislunarspace.cn/space-news/2026/07/2026-07-02-spacesail-qianfan-funding-round"
+        }
+      ],
+      "company_id": "yuanxin_satellite",
+      "company_name": "垣信卫星",
+      "event_id": "4addd4b7da749b16",
+      "event_label": "融资",
+      "event_type": "financing",
+      "headline": "上海垣信卫星寻求新一轮数十亿融资，千帆星座追赶星链 | 地月空间入门指南",
+      "importance_score": 59,
+      "latest_at": "2026-07-02T00:00:00Z",
+      "latest_url": "https://cislunarspace.cn/space-news/2026/07/2026-07-02-spacesail-qianfan-funding-round",
+      "source_count": 1,
+      "source_names": [
+        "https://cislunarspace.cn/space-news/2026/07/2026-07-02-spacesail-qianfan-funding-round"
+      ],
+      "started_at": "2026-07-02T00:00:00Z",
+      "summary": "垣信卫星的融资事件，已汇集 1 篇报道、1 个来源。"
+    },
+    {
+      "article_count": 1,
+      "articles": [
+        {
+          "id": "104a0e4776085d06",
+          "published_at": "2026-07-01T23:33:00Z",
+          "source_name": "https://www.sohu.com/a/1044448619_100034932",
+          "title": "中国版 SpaceX，重启 IPO！_火箭_航天_发射",
+          "url": "https://www.sohu.com/a/1044448619_100034932"
+        }
+      ],
+      "company_id": "yuanxin_satellite",
+      "company_name": "垣信卫星",
+      "event_id": "0bfccd5a4a4192de",
+      "event_label": "股价与资本市场",
+      "event_type": "market",
+      "headline": "中国版 SpaceX，重启 IPO！_火箭_航天_发射",
+      "importance_score": 47,
+      "latest_at": "2026-07-01T23:33:00Z",
+      "latest_url": "https://www.sohu.com/a/1044448619_100034932",
+      "source_count": 1,
+      "source_names": [
+        "https://www.sohu.com/a/1044448619_100034932"
+      ],
+      "started_at": "2026-07-01T23:33:00Z",
+      "summary": "垣信卫星的股价与资本市场事件，已汇集 1 篇报道、1 个来源。"
+    },
+    {
+      "article_count": 1,
+      "articles": [
+        {
+          "id": "050e002a95070750",
+          "published_at": "2026-07-01T23:33:00Z",
+          "source_name": "https://sohu.com/a/1044448619_100034932",
+          "title": "中国版 SpaceX，重启 IPO！_火箭_航天_发射",
+          "url": "https://sohu.com/a/1044448619_100034932"
+        }
+      ],
+      "company_id": "landspace",
+      "company_name": "蓝箭航天",
+      "event_id": "37f2a5c202f8d08a",
+      "event_label": "股价与资本市场",
+      "event_type": "market",
+      "headline": "中国版 SpaceX，重启 IPO！_火箭_航天_发射",
+      "importance_score": 47,
+      "latest_at": "2026-07-01T23:33:00Z",
+      "latest_url": "https://sohu.com/a/1044448619_100034932",
+      "source_count": 1,
+      "source_names": [
+        "https://sohu.com/a/1044448619_100034932"
+      ],
+      "started_at": "2026-07-01T23:33:00Z",
+      "summary": "蓝箭航天的股价与资本市场事件，已汇集 1 篇报道、1 个来源。"
+    },
+    {
+      "article_count": 1,
+      "articles": [
+        {
+          "id": "c51cc9fa6f3c4de5",
+          "published_at": "2026-07-01T19:51:46Z",
+          "source_name": "https://www.sohu.com/a/1044504406_122066678",
+          "title": "中科宇航与蓝箭航天更新招股书，预计2029年实现盈利_公司_火箭_技术",
+          "url": "https://www.sohu.com/a/1044504406_122066678"
+        }
+      ],
+      "company_id": "cas_space",
+      "company_name": "中科宇航",
+      "event_id": "78f1259b49887ec6",
+      "event_label": "股价与资本市场",
+      "event_type": "market",
+      "headline": "中科宇航与蓝箭航天更新招股书，预计2029年实现盈利_公司_火箭_技术",
+      "importance_score": 47,
+      "latest_at": "2026-07-01T19:51:46Z",
+      "latest_url": "https://www.sohu.com/a/1044504406_122066678",
+      "source_count": 1,
+      "source_names": [
+        "https://www.sohu.com/a/1044504406_122066678"
+      ],
+      "started_at": "2026-07-01T19:51:46Z",
+      "summary": "中科宇航的股价与资本市场事件，已汇集 1 篇报道、1 个来源。"
+    },
+    {
+      "article_count": 1,
+      "articles": [
+        {
+          "id": "ff5d0f2985500dd4",
+          "published_at": "2026-06-22T16:33:12Z",
+          "source_name": "https://finance.sina.cn/stock/jdts/2026-06-22/detail-iniehmvs0313431.d.html?oid=%E5%A4%9A%E4%BC%A6%E5%A4%9A%E9%AB%98%E7%AB%AF%E4%B8%8A%E9%97%A8%E6%9C%8D%E5%8A%A1%EF%BC%88%E6%9E%81%E9%99%90%E5%AE%9A%E5%88%B6%EF%BC%89%E7%BB%8F%E7%BA%AAV+%EF%BC%9A%28%E2%91%A7%E2%91%A7417421%29%E5%A4%9A%E4%BD%8D%E5%A4%A7%E5%92%96%E8%AE%A4%E8%AF%81%E7%BB%8F%E7%BA%AA%E4%BA%BATrM8in2gyxzJdoBYNQVR0209&vt=4",
+          "title": "消息称“中国版SpaceX”千帆星座运营主体垣信卫星启动新一轮融资|低轨卫星|投资人|低轨|港澳台|发射卫星_手机新浪网",
+          "url": "https://finance.sina.cn/stock/jdts/2026-06-22/detail-iniehmvs0313431.d.html?oid=%E5%A4%9A%E4%BC%A6%E5%A4%9A%E9%AB%98%E7%AB%AF%E4%B8%8A%E9%97%A8%E6%9C%8D%E5%8A%A1%EF%BC%88%E6%9E%81%E9%99%90%E5%AE%9A%E5%88%B6%EF%BC%89%E7%BB%8F%E7%BA%AAV+%EF%BC%9A%28%E2%91%A7%E2%91%A7417421%29%E5%A4%9A%E4%BD%8D%E5%A4%A7%E5%92%96%E8%AE%A4%E8%AF%81%E7%BB%8F%E7%BA%AA%E4%BA%BATrM8in2gyxzJdoBYNQVR0209&vt=4"
+        }
+      ],
+      "company_id": "yuanxin_satellite",
+      "company_name": "垣信卫星",
+      "event_id": "1c9526244cbee19c",
+      "event_label": "发射与试验",
+      "event_type": "launch",
+      "headline": "消息称“中国版SpaceX”千帆星座运营主体垣信卫星启动新一轮融资|低轨卫星|投资人|低轨|港澳台|发射卫星_手机新浪网",
+      "importance_score": 59,
+      "latest_at": "2026-06-22T16:33:12Z",
+      "latest_url": "https://finance.sina.cn/stock/jdts/2026-06-22/detail-iniehmvs0313431.d.html?oid=%E5%A4%9A%E4%BC%A6%E5%A4%9A%E9%AB%98%E7%AB%AF%E4%B8%8A%E9%97%A8%E6%9C%8D%E5%8A%A1%EF%BC%88%E6%9E%81%E9%99%90%E5%AE%9A%E5%88%B6%EF%BC%89%E7%BB%8F%E7%BA%AAV+%EF%BC%9A%28%E2%91%A7%E2%91%A7417421%29%E5%A4%9A%E4%BD%8D%E5%A4%A7%E5%92%96%E8%AE%A4%E8%AF%81%E7%BB%8F%E7%BA%AA%E4%BA%BATrM8in2gyxzJdoBYNQVR0209&vt=4",
+      "source_count": 1,
+      "source_names": [
+        "https://finance.sina.cn/stock/jdts/2026-06-22/detail-iniehmvs0313431.d.html?oid=%E5%A4%9A%E4%BC%A6%E5%A4%9A%E9%AB%98%E7%AB%AF%E4%B8%8A%E9%97%A8%E6%9C%8D%E5%8A%A1%EF%BC%88%E6%9E%81%E9%99%90%E5%AE%9A%E5%88%B6%EF%BC%89%E7%BB%8F%E7%BA%AAV+%EF%BC%9A%28%E2%91%A7%E2%91%A7417421%29%E5%A4%9A%E4%BD%8D%E5%A4%A7%E5%92%96%E8%AE%A4%E8%AF%81%E7%BB%8F%E7%BA%AA%E4%BA%BATrM8in2gyxzJdoBYNQVR0209&vt=4"
+      ],
+      "started_at": "2026-06-22T16:33:12Z",
+      "summary": "垣信卫星的发射与试验事件，已汇集 1 篇报道、1 个来源。"
+    }
+  ],
+  "generated_at": "2026-07-23T03:10:23.856700Z",
+  "is_complete": true,
+  "latest_at": "2026-07-18T09:45:00Z",
+  "run_id": "a6b87bb1-8c5e-4efd-846c-c7ec873db0ff",
+  "schema_version": "company_event_timeline.v2"
+}

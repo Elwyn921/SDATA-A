@@ -94,9 +94,11 @@ def test_json_file_storage_writes_latest_and_archive_outputs(tmp_path):
             "company_ids": ["spacex"],
             "count": 1,
             "date": "2026-06-15",
+            "inferred_date_count": 0,
             "source_types": ["gdelt"],
         }
     ]
+    assert daily_index["inferred_date_count"] == 0
     assert event_timeline["event_count"] == 1
     assert event_timeline["events"][0]["event_type"] == "launch"
     assert latest_manifest["archive_path"] == archive_run_dir.as_posix()

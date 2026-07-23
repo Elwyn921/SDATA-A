@@ -275,6 +275,8 @@ def daily_news_index_payload(
         if not isinstance(item, dict):
             continue
         published_at = parse_datetime_string(item.get("published_at"))
+        date_is_inferred = published_at is None
+        published_at = published_at or parse_datetime_string(item.get("archive_first_seen_at"))
         if published_at is None:
             continue
         date = published_at.astimezone(china_timezone).date().isoformat()
@@ -285,9 +287,11 @@ def daily_news_index_payload(
                 "count": 0,
                 "company_ids": set(),
                 "source_types": set(),
+                "inferred_date_count": 0,
             },
         )
         row["count"] += 1
+        row["inferred_date_count"] += int(date_is_inferred)
         if item.get("company_id"):
             row["company_ids"].add(str(item["company_id"]))
         source = item.get("source") if isinstance(item.get("source"), dict) else {}
@@ -304,6 +308,7 @@ def daily_news_index_payload(
                 "company_count": len(row["company_ids"]),
                 "company_ids": sorted(row["company_ids"]),
                 "source_types": sorted(row["source_types"]),
+                "inferred_date_count": row["inferred_date_count"],
             }
         )
     return {
@@ -313,6 +318,7 @@ def daily_news_index_payload(
         "generated_at": isoformat(generated_at),
         "timezone": "Asia/Shanghai",
         "total_items": sum(row["count"] for row in daily_rows),
+        "inferred_date_count": sum(row["inferred_date_count"] for row in daily_rows),
         "day_count": len(daily_rows),
         "days": daily_rows,
     }

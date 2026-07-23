@@ -251,7 +251,17 @@ def test_brave_news_provider_maps_results_and_uses_secret(monkeypatch):
                         "description": "The mission will deploy broadband satellites.",
                         "page_age": "2026-07-22T12:00:00Z",
                         "profile": {"long_name": "Independent Space Desk"},
-                    }
+                    },
+                    {
+                        "title": "Unrelated satellite financing update",
+                        "url": "https://example.test/unrelated",
+                        "description": "Another company raised new funding.",
+                    },
+                    {
+                        "title": "SpaceX schedules another Starlink launch",
+                        "url": "https://example.test/brave-news?utm_source=duplicate",
+                        "description": "Duplicate syndicated report.",
+                    },
                 ]
             }
 
@@ -268,6 +278,34 @@ def test_brave_news_provider_maps_results_and_uses_secret(monkeypatch):
     assert result.status == "success"
     assert len(result.articles) == 1
     assert result.articles[0].metadata["source_name"] == "Independent Space Desk"
+    assert result.metadata["successful_query_count"] == 1
+
+
+def test_brave_news_provider_is_china_only_and_quota_limited(monkeypatch):
+    monkeypatch.setenv("BRAVE_SEARCH_API_KEY", "test-brave-key")
+    provider = provider_by_id("brave_news_provider")
+    orchestrator = ProviderOrchestrator(
+        registry=NewsProviderRegistry(),
+        providers=(provider,),
+    )
+
+    assert orchestrator.providers_for_company(company_by_id("spacex")) == ()
+    assert orchestrator.providers_for_company(company_by_id("blue_origin")) == ()
+    assert [row.id for row in orchestrator.providers_for_company(company_by_id("landspace"))] == [
+        "brave_news_provider"
+    ]
+
+    dry_run = BraveNewsProvider().fetch_raw_articles(
+        company=company_by_id("landspace"),
+        provider=provider,
+        context=PipelineContext(
+            run_id="brave-china-only-test",
+            started_at=datetime(2026, 7, 23, tzinfo=timezone.utc),
+            dry_run=True,
+        ),
+    )
+    assert dry_run.metadata["query_count"] == 1
+    assert "蓝箭航天" in dry_run.metadata["queries"][0]
 
 
 def test_rss_provider_balances_results_across_feeds():
@@ -411,7 +449,7 @@ def test_rss_provider_caches_shared_feed_across_companies():
     assert second.metadata["cache_hit_count"] == 1
 
 
-def test_rss_provider_adds_market_queries_only_for_china_companies():
+def test_rss_provider_adds_market_event_and_source_queries_only_for_china_companies():
     provider = provider_by_id("rss_provider")
     context = PipelineContext(
         run_id="china-market-rss-test",
@@ -439,7 +477,13 @@ def test_rss_provider_adds_market_queries_only_for_china_companies():
     ]
     assert any("股价" in query and "估值" in query for query in china_queries)
     assert any("招股书" in query and "产业链" in query for query in china_queries)
+    assert any("发射" in query and "回收" in query for query in china_queries)
+    assert any("订单" in query and "中标" in query for query in china_queries)
+    assert any("监管" in query and "审批" in query for query in china_queries)
+    assert any("site:cls.cn" in query and "site:stcn.com" in query for query in china_queries)
+    assert any("site:36kr.com" in query and "site:thepaper.cn" in query for query in china_queries)
     assert not any("股价" in query for query in foreign_queries)
+    assert not any("site:cls.cn" in query for query in foreign_queries)
 
 
 def test_provider_orchestrator_records_failure_and_continues_to_fallback():

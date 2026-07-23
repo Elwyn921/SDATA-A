@@ -552,7 +552,7 @@ function renderEventTimeline() {
     }),
   );
   elements.eventSummary.textContent = state.events.length
-    ? `当前范围 ${filteredEvents.length} 个事件 · 聚合 ${filteredEvents.reduce((sum, event) => sum + (event.article_count ?? 0), 0)} 篇报道`
+    ? `完整历史 ${formatFullDate(filteredEvents.at(-1)?.started_at)}—${formatFullDate(filteredEvents[0]?.latest_at)} · 当前范围 ${filteredEvents.length} 个事件 · 聚合 ${filteredEvents.reduce((sum, event) => sum + (event.article_count ?? 0), 0)} 篇报道`
     : "等待事件时间线数据生成";
 
   if (!filteredEvents.length) {
@@ -565,7 +565,7 @@ function renderEventTimeline() {
     return;
   }
   elements.eventTimeline.replaceChildren(
-    ...filteredEvents.slice(0, 80).map((event) => eventCard(event)),
+    ...filteredEvents.map((event) => eventCard(event)),
   );
 }
 
@@ -604,7 +604,7 @@ function eventCard(event) {
       </a>
       <p>${escapeHtml(event.summary)}</p>
       <div class="event-meta">
-        <span>${formatFullDate(event.latest_at)}</span>
+        <span>${formatEventDateRange(event)}</span>
         <span>${event.article_count ?? 0} 篇报道</span>
         <span>${event.source_count ?? 0} 个来源</span>
         <span>重要度 ${event.importance_score ?? 0}</span>
@@ -619,6 +619,12 @@ function eventCard(event) {
     </div>
   `;
   return card;
+}
+
+function formatEventDateRange(event) {
+  const start = formatFullDate(event.started_at);
+  const latest = formatFullDate(event.latest_at);
+  return start === latest ? latest : `${start}—${latest}`;
 }
 
 function renderNewsList(items) {

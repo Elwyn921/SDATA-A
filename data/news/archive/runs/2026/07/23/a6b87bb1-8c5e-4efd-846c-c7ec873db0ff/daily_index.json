@@ -1,0 +1,116 @@
+{
+  "artifact_version": 1,
+  "day_count": 9,
+  "days": [
+    {
+      "company_count": 1,
+      "company_ids": [
+        "yuanxin_satellite"
+      ],
+      "count": 1,
+      "date": "2026-07-18",
+      "source_types": [
+        "search_api"
+      ]
+    },
+    {
+      "company_count": 2,
+      "company_ids": [
+        "landspace",
+        "yuanxin_satellite"
+      ],
+      "count": 2,
+      "date": "2026-07-10",
+      "source_types": [
+        "search_api"
+      ]
+    },
+    {
+      "company_count": 1,
+      "company_ids": [
+        "galaxyspace"
+      ],
+      "count": 1,
+      "date": "2026-07-08",
+      "source_types": [
+        "search_api"
+      ]
+    },
+    {
+      "company_count": 2,
+      "company_ids": [
+        "landspace",
+        "yuanxin_satellite"
+      ],
+      "count": 2,
+      "date": "2026-07-06",
+      "source_types": [
+        "search_api"
+      ]
+    },
+    {
+      "company_count": 1,
+      "company_ids": [
+        "yuanxin_satellite"
+      ],
+      "count": 1,
+      "date": "2026-07-05",
+      "source_types": [
+        "search_api"
+      ]
+    },
+    {
+      "company_count": 1,
+      "company_ids": [
+        "landspace"
+      ],
+      "count": 1,
+      "date": "2026-07-04",
+      "source_types": [
+        "search_api"
+      ]
+    },
+    {
+      "company_count": 2,
+      "company_ids": [
+        "cas_space",
+        "landspace"
+      ],
+      "count": 2,
+      "date": "2026-07-03",
+      "source_types": [
+        "search_api"
+      ]
+    },
+    {
+      "company_count": 4,
+      "company_ids": [
+        "cas_space",
+        "hongqing_technology",
+        "landspace",
+        "yuanxin_satellite"
+      ],
+      "count": 6,
+      "date": "2026-07-02",
+      "source_types": [
+        "search_api"
+      ]
+    },
+    {
+      "company_count": 1,
+      "company_ids": [
+        "yuanxin_satellite"
+      ],
+      "count": 1,
+      "date": "2026-06-23",
+      "source_types": [
+        "search_api"
+      ]
+    }
+  ],
+  "generated_at": "2026-07-23T03:10:23.856700Z",
+  "run_id": "a6b87bb1-8c5e-4efd-846c-c7ec873db0ff",
+  "schema_version": "daily_news_index.v1",
+  "timezone": "Asia/Shanghai",
+  "total_items": 17
+}

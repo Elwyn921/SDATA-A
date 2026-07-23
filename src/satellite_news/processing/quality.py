@@ -335,7 +335,23 @@ def low_information_title(*, title_text: str, company: Company | None) -> bool:
         for value in (company.canonical_name, *company.aliases)
         if normalize_text(value)
     }
-    return title_text in company_names or normalized_title(title_text) in company_names
+    normalized = normalized_title(title_text)
+    if title_text in company_names or normalized in company_names:
+        return True
+    compact_title = re.sub(r"[^\w\u4e00-\u9fff]+", "", title_text)
+    for name in company_names:
+        compact_name = re.sub(r"[^\w\u4e00-\u9fff]+", "", name)
+        if compact_title in {
+            f"{compact_name}com",
+            f"{compact_name}cn",
+            f"{compact_name}官网",
+            f"{compact_name}officialsite",
+            f"{compact_name}website",
+            f"{compact_name}{compact_name}com",
+            f"{compact_name}{compact_name}cn",
+        }:
+            return True
+    return False
 
 
 def ambiguous_company_conflict(*, company: Company | None, title_text: str) -> bool:

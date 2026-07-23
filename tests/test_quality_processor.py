@@ -165,3 +165,29 @@ def test_quality_gate_rejects_ambiguous_ispace_moon_company():
     assert context.metadata["quality_gate"]["rejected_samples"][0]["reason_codes"] == [
         "ambiguous_company_name_conflict"
     ]
+
+
+def test_quality_gate_rejects_company_domain_only_title():
+    company = next(company for company in load_companies() if company.id == "spacex")
+    processor = QualityNewsProcessor(companies=(company,))
+    context = PipelineContext(
+        run_id="domain-title-test",
+        started_at=datetime(2026, 7, 23, tzinfo=timezone.utc),
+        dry_run=False,
+    )
+
+    result = processor.process(
+        items=(
+            make_item(
+                "domain-only",
+                "SpaceX spacex.com",
+                raw_text="SpaceX official website",
+            ),
+        ),
+        context=context,
+    )
+
+    assert result == ()
+    assert context.metadata["quality_gate"]["rejected_samples"][0]["reason_codes"] == [
+        "low_information_navigation_title"
+    ]
