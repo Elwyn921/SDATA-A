@@ -1,5 +1,5 @@
-schema_version: market_baskets.v3
-description: Equal-weight aerospace sector baskets reported as daily percentage changes.
+schema_version: market_baskets.v4
+description: Eastmoney China aerospace industry index plus China/U.S. tracking baskets.
 
 quote_source:
   source_id: sina_finance
@@ -7,6 +7,21 @@ quote_source:
   endpoint: https://hq.sinajs.cn/list=
   request_policy:
     batch_requests_per_run: 1
+    timeout_seconds: 20
+    cache_policy: daily_archive_latest_overwrite
+
+industry_index_source:
+  source_id: eastmoney
+  source_name: 东方财富行情
+  endpoint: https://push2.eastmoney.com/api/qt/stock/get
+  fields: f43,f44,f45,f46,f47,f48,f57,f58,f59,f60,f86,f152,f169,f170
+  values_scaled: true
+  query_params:
+    fltt: 2
+    invt: 2
+  methodology: 东方财富航天航空行业板块指数实时点位
+  request_policy:
+    requests_per_run: 1
     timeout_seconds: 20
     cache_policy: daily_archive_latest_overwrite
 
@@ -19,6 +34,13 @@ sectors:
   china:
     display_name: 中国航空航天板块
     currency: CNY
+    industry_index:
+      secid: 90.BK0480
+      code: BK0480
+      name: 航天航空指数
+      provider_id: eastmoney
+      provider_name: 东方财富
+      source_url: https://quote.eastmoney.com/bk/90.BK0480.html
     members:
       - symbol: sh600118
         ticker: 600118.SH
