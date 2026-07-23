@@ -487,7 +487,7 @@ function renderIndexOverview() {
   renderMarketIndex(snapshot.markets?.china, "china");
   renderMarketIndex(snapshot.markets?.united_states, "united_states");
   elements.indexDisclaimer.textContent =
-    source.delay_notice ?? "行情可能存在延迟，指数仅用于板块监测，不构成投资建议。";
+    source.delay_notice ?? "行情可能存在延迟，篮子涨跌仅用于板块监测，不构成投资建议。";
 }
 
 function renderMarketIndex(market, sectorId) {
