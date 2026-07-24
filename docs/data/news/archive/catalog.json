@@ -1,9 +1,279 @@
 {
   "artifact_version": 1,
-  "date_count": 452,
-  "generated_at": "2026-07-24T13:11:48.353045Z",
-  "item_count": 1731,
+  "date_count": 453,
+  "generated_at": "2026-07-24T19:08:53.714588Z",
+  "item_count": 1774,
   "items": [
+    {
+      "archive_first_seen_at": "2026-07-24T19:08:53.714588Z",
+      "archive_last_seen_at": "2026-07-24T19:08:53.714588Z",
+      "archive_last_seen_run_id": "a3512350-371f-49d7-99b6-8e3c978c2473",
+      "company_id": "blue_origin",
+      "company_name": "Blue Origin",
+      "id": "9241dabd060bac47",
+      "published_at": "2026-07-24T18:32:42Z",
+      "quality": {
+        "canonical_url": "https://www.satellitetoday.com/launch/2026/07/24/nasa-to-support-new-glenn-hot-fire-testing-at-stennis-space-center",
+        "company_relevance_score": 0.85,
+        "event_id": "6848eab2fd1810b3",
+        "event_type": "launch",
+        "market_match_terms": [],
+        "quality_decision": "published",
+        "quality_reason_codes": [
+          "title_company_and_industry_match"
+        ],
+        "source_quality_score": 0.7
+      },
+      "source": {
+        "rank_group": "media",
+        "source_id": "rss_provider",
+        "source_name": "satellitetoday.com",
+        "source_type": "rss",
+        "url": "https://www.satellitetoday.com/launch/2026/07/24/nasa-to-support-new-glenn-hot-fire-testing-at-stennis-space-center/"
+      },
+      "title": "NASA to Support New Glenn Hot Fire Testing at Stennis Space Center",
+      "url": "https://www.satellitetoday.com/launch/2026/07/24/nasa-to-support-new-glenn-hot-fire-testing-at-stennis-space-center"
+    },
+    {
+      "archive_first_seen_at": "2026-07-24T19:08:53.714588Z",
+      "archive_last_seen_at": "2026-07-24T19:08:53.714588Z",
+      "archive_last_seen_run_id": "a3512350-371f-49d7-99b6-8e3c978c2473",
+      "company_id": "blue_origin",
+      "company_name": "Blue Origin",
+      "id": "9686f6f98d0b9f91",
+      "published_at": "2026-07-24T18:01:12Z",
+      "quality": {
+        "canonical_url": "https://www.nasaspaceflight.com/2026/07/blue-ng-gs2-hot-fires-stennis-b-2",
+        "company_relevance_score": 0.7,
+        "event_id": "db01e446cfca2437",
+        "event_type": "other",
+        "market_match_terms": [],
+        "quality_decision": "published",
+        "quality_reason_codes": [
+          "title_program_match"
+        ],
+        "source_quality_score": 0.8
+      },
+      "source": {
+        "rank_group": "wire_and_aggregator",
+        "source_id": "spaceflight_news_provider",
+        "source_name": "NASASpaceflight",
+        "source_type": "search_api",
+        "url": "https://www.nasaspaceflight.com/2026/07/blue-ng-gs2-hot-fires-stennis-b-2/"
+      },
+      "title": "Blue Origin to conduct New Glenn second stage hot fires on Stennis B-2 stand",
+      "url": "https://www.nasaspaceflight.com/2026/07/blue-ng-gs2-hot-fires-stennis-b-2"
+    },
+    {
+      "archive_first_seen_at": "2026-07-24T19:08:53.714588Z",
+      "archive_last_seen_at": "2026-07-24T19:08:53.714588Z",
+      "archive_last_seen_run_id": "a3512350-371f-49d7-99b6-8e3c978c2473",
+      "company_id": "cas_space",
+      "company_name": "中科宇航",
+      "id": "161c5587f7434b67",
+      "published_at": "2026-07-24T15:37:15Z",
+      "quality": {
+        "canonical_url": "https://news.google.com/rss/articles/CBMiSEFVX3lxTFBTNm92aXNGM3BhSVVWZjhia2JxQXAyQ1dJLVdwU3NmWk1iSWZ6bTZtYllieUR4SE5OaGxENktBcUN3ZHc3ejVrbg?oc=5",
+        "company_relevance_score": 0.85,
+        "event_id": "df1577224cd9313c",
+        "event_type": "launch",
+        "market_match_terms": [],
+        "quality_decision": "published",
+        "quality_reason_codes": [
+          "title_company_and_industry_match"
+        ],
+        "source_quality_score": 0.7
+      },
+      "source": {
+        "rank_group": "media",
+        "source_id": "rss_provider",
+        "source_name": "凤凰网",
+        "source_type": "rss",
+        "url": "https://news.google.com/rss/articles/CBMiSEFVX3lxTFBTNm92aXNGM3BhSVVWZjhia2JxQXAyQ1dJLVdwU3NmWk1iSWZ6bTZtYllieUR4SE5OaGxENktBcUN3ZHc3ejVrbg?oc=5"
+      },
+      "title": "力箭一号一箭5星圆满成功，下半年将逐月常态化发射 - 凤凰网",
+      "url": "https://news.google.com/rss/articles/CBMiSEFVX3lxTFBTNm92aXNGM3BhSVVWZjhia2JxQXAyQ1dJLVdwU3NmWk1iSWZ6bTZtYllieUR4SE5OaGxENktBcUN3ZHc3ejVrbg?oc=5"
+    },
+    {
+      "archive_first_seen_at": "2026-07-24T19:08:53.714588Z",
+      "archive_last_seen_at": "2026-07-24T19:08:53.714588Z",
+      "archive_last_seen_run_id": "a3512350-371f-49d7-99b6-8e3c978c2473",
+      "company_id": "landspace",
+      "company_name": "蓝箭航天",
+      "id": "860d1542ab1d0489",
+      "published_at": "2026-07-24T15:34:01Z",
+      "quality": {
+        "canonical_url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxNcDVXV1hZSGtCYkJ3cl9SZXpYenVWeXI5V25oV0RQZVlYdkNLeXdWMk5vcHlJWUpScVg4dGRLaVZpajZPaUlYeVVsZWhJaGpnWnc2VE56MnVJRlo0NmRTVUx2UzBqR2MxUURMb3J2SGxTYTduT3hRUnZZYmVDeElzTkVQcw?oc=5",
+        "company_relevance_score": 0.85,
+        "event_id": "1c42b2685c2fd2e9",
+        "event_type": "launch",
+        "market_match_terms": [],
+        "quality_decision": "published",
+        "quality_reason_codes": [
+          "title_company_and_industry_match"
+        ],
+        "source_quality_score": 0.7
+      },
+      "source": {
+        "rank_group": "media",
+        "source_id": "rss_provider",
+        "source_name": "新浪网",
+        "source_type": "rss",
+        "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxNcDVXV1hZSGtCYkJ3cl9SZXpYenVWeXI5V25oV0RQZVlYdkNLeXdWMk5vcHlJWUpScVg4dGRLaVZpajZPaUlYeVVsZWhJaGpnWnc2VE56MnVJRlo0NmRTVUx2UzBqR2MxUURMb3J2SGxTYTduT3hRUnZZYmVDeElzTkVQcw?oc=5"
+      },
+      "title": "朱雀三号遥一运载火箭飞行试验任务完成第一阶段工作『航天视窗』 - 新浪网",
+      "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxNcDVXV1hZSGtCYkJ3cl9SZXpYenVWeXI5V25oV0RQZVlYdkNLeXdWMk5vcHlJWUpScVg4dGRLaVZpajZPaUlYeVVsZWhJaGpnWnc2VE56MnVJRlo0NmRTVUx2UzBqR2MxUURMb3J2SGxTYTduT3hRUnZZYmVDeElzTkVQcw?oc=5"
+    },
+    {
+      "archive_first_seen_at": "2026-07-24T19:08:53.714588Z",
+      "archive_last_seen_at": "2026-07-24T19:08:53.714588Z",
+      "archive_last_seen_run_id": "a3512350-371f-49d7-99b6-8e3c978c2473",
+      "company_id": "blue_origin",
+      "company_name": "Blue Origin",
+      "id": "b2f74b133c912500",
+      "published_at": "2026-07-24T15:30:21Z",
+      "quality": {
+        "canonical_url": "https://www.nasa.gov/news-release/nasa-to-support-blue-origin-new-glenn-rocket-testing-advance-artemis",
+        "company_relevance_score": 0.95,
+        "event_id": "c311b2db39cec429",
+        "event_type": "other",
+        "market_match_terms": [],
+        "quality_decision": "published",
+        "quality_reason_codes": [
+          "title_company_and_industry_match"
+        ],
+        "source_quality_score": 0.8
+      },
+      "source": {
+        "rank_group": "wire_and_aggregator",
+        "source_id": "spaceflight_news_provider",
+        "source_name": "NASA",
+        "source_type": "search_api",
+        "url": "https://www.nasa.gov/news-release/nasa-to-support-blue-origin-new-glenn-rocket-testing-advance-artemis/"
+      },
+      "title": "NASA to Support Blue Origin New Glenn Rocket Testing, Advance Artemis",
+      "url": "https://www.nasa.gov/news-release/nasa-to-support-blue-origin-new-glenn-rocket-testing-advance-artemis"
+    },
+    {
+      "archive_first_seen_at": "2026-07-24T19:08:53.714588Z",
+      "archive_last_seen_at": "2026-07-24T19:08:53.714588Z",
+      "archive_last_seen_run_id": "a3512350-371f-49d7-99b6-8e3c978c2473",
+      "company_id": "spacex",
+      "company_name": "SpaceX",
+      "id": "bd439adf75aed88c",
+      "published_at": "2026-07-24T14:34:25Z",
+      "quality": {
+        "canonical_url": "https://arstechnica.com/space/2026/07/rocket-report-lightning-strikes-in-china-starship-launch-on-deck",
+        "company_relevance_score": 0.85,
+        "event_id": "84ad394358ad05b1",
+        "event_type": "launch",
+        "market_match_terms": [],
+        "quality_decision": "published",
+        "quality_reason_codes": [
+          "title_company_and_industry_match"
+        ],
+        "source_quality_score": 0.7
+      },
+      "source": {
+        "rank_group": "media",
+        "source_id": "rss_provider",
+        "source_name": "arstechnica.com",
+        "source_type": "rss",
+        "url": "https://arstechnica.com/space/2026/07/rocket-report-lightning-strikes-in-china-starship-launch-on-deck/"
+      },
+      "title": "Rocket Report: Lightning strikes in China; Starship launch on deck",
+      "url": "https://arstechnica.com/space/2026/07/rocket-report-lightning-strikes-in-china-starship-launch-on-deck"
+    },
+    {
+      "archive_first_seen_at": "2026-07-16T13:09:34.218005Z",
+      "archive_last_seen_at": "2026-07-24T19:08:53.714588Z",
+      "archive_last_seen_run_id": "a3512350-371f-49d7-99b6-8e3c978c2473",
+      "company_id": "spacex",
+      "company_name": "SpaceX",
+      "id": "d52256af99fb0423",
+      "published_at": "2026-07-24T14:26:25Z",
+      "quality": {
+        "canonical_url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxNRWV3b0hiOHhyLUNEWWkxWk41dlpQQUF1LW11VHFTd20xZ0libUc3NXBxQ2Vkb0Vlc3NGUVlEM01hOHp1dC0yMkE5V2FMTjF4V3NiUUJQZU5Xb3B6eHZPRmVyb2hoREtwdEF3WjRVenREOWp3d1BLN3hFenYza1NqTk9weE9pbDZsNkhRRHFScl9yLTh6bG1RWkQxRkdDZm1WcDRDXzkycDN6RmpQ?oc=5",
+        "company_relevance_score": 0.85,
+        "event_id": "31545d780da5549a",
+        "event_type": "launch",
+        "market_match_terms": [],
+        "quality_decision": "published",
+        "quality_reason_codes": [
+          "title_company_and_industry_match"
+        ],
+        "source_quality_score": 0.7
+      },
+      "source": {
+        "rank_group": "media",
+        "source_id": "rss_provider",
+        "source_name": "Space",
+        "source_type": "rss",
+        "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxNRWV3b0hiOHhyLUNEWWkxWk41dlpQQUF1LW11VHFTd20xZ0libUc3NXBxQ2Vkb0Vlc3NGUVlEM01hOHp1dC0yMkE5V2FMTjF4V3NiUUJQZU5Xb3B6eHZPRmVyb2hoREtwdEF3WjRVenREOWp3d1BLN3hFenYza1NqTk9weE9pbDZsNkhRRHFScl9yLTh6bG1RWkQxRkdDZm1WcDRDXzkycDN6RmpQ?oc=5"
+      },
+      "title": "SpaceX will now try to launch critical Starship Flight 13 test today after delays. Here's what to expect. - Space",
+      "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxNRWV3b0hiOHhyLUNEWWkxWk41dlpQQUF1LW11VHFTd20xZ0libUc3NXBxQ2Vkb0Vlc3NGUVlEM01hOHp1dC0yMkE5V2FMTjF4V3NiUUJQZU5Xb3B6eHZPRmVyb2hoREtwdEF3WjRVenREOWp3d1BLN3hFenYza1NqTk9weE9pbDZsNkhRRHFScl9yLTh6bG1RWkQxRkdDZm1WcDRDXzkycDN6RmpQ?oc=5"
+    },
+    {
+      "archive_first_seen_at": "2026-07-24T19:08:53.714588Z",
+      "archive_last_seen_at": "2026-07-24T19:08:53.714588Z",
+      "archive_last_seen_run_id": "a3512350-371f-49d7-99b6-8e3c978c2473",
+      "company_id": "cas_space",
+      "company_name": "中科宇航",
+      "id": "026d9756ae07a3ac",
+      "published_at": "2026-07-24T14:12:00Z",
+      "quality": {
+        "canonical_url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE54QWh3MHBfLTg2SjUzRUpQVm1vUlJ6VGZEYzZ1b1BtbWxMTUxpTUtnUXJCb3ZuMjNvdW1YWnlvdkdlZTBTdjJ3YkNnYVhLVWNkRXpyVWF3Zl80WTF2ZWJidXNSOWtxaHNSNjlfMUJqbElJcGpkVnc?oc=5",
+        "company_relevance_score": 0.85,
+        "event_id": "65b202258596aad1",
+        "event_type": "launch",
+        "market_match_terms": [],
+        "quality_decision": "published",
+        "quality_reason_codes": [
+          "title_company_and_industry_match"
+        ],
+        "source_quality_score": 0.7
+      },
+      "source": {
+        "rank_group": "media",
+        "source_id": "rss_provider",
+        "source_name": "CCTV",
+        "source_type": "rss",
+        "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE54QWh3MHBfLTg2SjUzRUpQVm1vUlJ6VGZEYzZ1b1BtbWxMTUxpTUtnUXJCb3ZuMjNvdW1YWnlvdkdlZTBTdjJ3YkNnYVhLVWNkRXpyVWF3Zl80WTF2ZWJidXNSOWtxaHNSNjlfMUJqbElJcGpkVnc?oc=5"
+      },
+      "title": "[视频]【力箭一号今天成功发射“一箭五星”】“一箭五星”如何成功“拼车”？ - CCTV",
+      "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE54QWh3MHBfLTg2SjUzRUpQVm1vUlJ6VGZEYzZ1b1BtbWxMTUxpTUtnUXJCb3ZuMjNvdW1YWnlvdkdlZTBTdjJ3YkNnYVhLVWNkRXpyVWF3Zl80WTF2ZWJidXNSOWtxaHNSNjlfMUJqbElJcGpkVnc?oc=5"
+    },
+    {
+      "archive_first_seen_at": "2026-07-24T19:08:53.714588Z",
+      "archive_last_seen_at": "2026-07-24T19:08:53.714588Z",
+      "archive_last_seen_run_id": "a3512350-371f-49d7-99b6-8e3c978c2473",
+      "company_id": "spacex",
+      "company_name": "SpaceX",
+      "id": "11f1649a72ba3b4d",
+      "published_at": "2026-07-24T13:04:00Z",
+      "quality": {
+        "canonical_url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxPUlFPY3VNdm05M1JfYXJSOEV3UGJPSXNRUnhOUkhQVVpOOFNPN3VoZFF0Y25lOTNiZWNqVmdlNHJyT1VPU3FIZWdscGo1ekVIYkNEenhJZlZpdms0bTYtX19YeGZvellKd25sQWtibUFqZmRoVTJlV190M2MtcWlYbjY4V0RJMzRTYk5GNTNXbm9Ld0tFaHc1bmVOZl82UjRsRWk4R3VrQlBYdw?oc=5",
+        "company_relevance_score": 0.85,
+        "event_id": "335c23a024a49c10",
+        "event_type": "launch",
+        "market_match_terms": [],
+        "quality_decision": "published",
+        "quality_reason_codes": [
+          "title_company_and_industry_match"
+        ],
+        "source_quality_score": 0.7
+      },
+      "source": {
+        "rank_group": "media",
+        "source_id": "rss_provider",
+        "source_name": "Ventura County Star",
+        "source_type": "rss",
+        "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxPUlFPY3VNdm05M1JfYXJSOEV3UGJPSXNRUnhOUkhQVVpOOFNPN3VoZFF0Y25lOTNiZWNqVmdlNHJyT1VPU3FIZWdscGo1ekVIYkNEenhJZlZpdms0bTYtX19YeGZvellKd25sQWtibUFqZmRoVTJlV190M2MtcWlYbjY4V0RJMzRTYk5GNTNXbm9Ld0tFaHc1bmVOZl82UjRsRWk4R3VrQlBYdw?oc=5"
+      },
+      "title": "California-launched Starlink satellites help dog owners find lost pets - Ventura County Star",
+      "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxPUlFPY3VNdm05M1JfYXJSOEV3UGJPSXNRUnhOUkhQVVpOOFNPN3VoZFF0Y25lOTNiZWNqVmdlNHJyT1VPU3FIZWdscGo1ekVIYkNEenhJZlZpdms0bTYtX19YeGZvellKd25sQWtibUFqZmRoVTJlV190M2MtcWlYbjY4V0RJMzRTYk5GNTNXbm9Ld0tFaHc1bmVOZl82UjRsRWk4R3VrQlBYdw?oc=5"
+    },
     {
       "archive_first_seen_at": "2026-07-24T13:11:48.353045Z",
       "archive_last_seen_at": "2026-07-24T13:11:48.353045Z",
@@ -35,9 +305,69 @@
       "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE0wWHBoVTNrZ2R0YmFCbm9xXy00WVhMbG1FV29Rd0s2UXcySnVRUXh4bUM4QmlDUTNlWnM5Y0IweVYxY20wY29nd1Rfc0l3elFCRng4RW5R?oc=5"
     },
     {
+      "archive_first_seen_at": "2026-07-24T19:08:53.714588Z",
+      "archive_last_seen_at": "2026-07-24T19:08:53.714588Z",
+      "archive_last_seen_run_id": "a3512350-371f-49d7-99b6-8e3c978c2473",
+      "company_id": "cas_space",
+      "company_name": "中科宇航",
+      "id": "ffa5837cab1cc85d",
+      "published_at": "2026-07-24T12:37:00Z",
+      "quality": {
+        "canonical_url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE8wdlBJN1c0dmx5bXRFTUxEbEk1cUxQaFJCZ3g4SVFENFduc2tyZnkybjVHajV1VmQwc2dqWExlMDYySmluWmRYbGdzUVhkei1Pb1N6cXAydi1pQW0x?oc=5",
+        "company_relevance_score": 0.85,
+        "event_id": "4f2f69967c0e0b55",
+        "event_type": "launch",
+        "market_match_terms": [],
+        "quality_decision": "published",
+        "quality_reason_codes": [
+          "title_company_and_industry_match"
+        ],
+        "source_quality_score": 0.7
+      },
+      "source": {
+        "rank_group": "media",
+        "source_id": "rss_provider",
+        "source_name": "shobserver.cn",
+        "source_type": "rss",
+        "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE8wdlBJN1c0dmx5bXRFTUxEbEk1cUxQaFJCZ3g4SVFENFduc2tyZnkybjVHajV1VmQwc2dqWExlMDYySmluWmRYbGdzUVhkei1Pb1N6cXAydi1pQW0x?oc=5"
+      },
+      "title": "太空多了颗“上海芯”！力箭一号“一箭五星”发射成功，国产GPU算力入轨 - shobserver.cn",
+      "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE8wdlBJN1c0dmx5bXRFTUxEbEk1cUxQaFJCZ3g4SVFENFduc2tyZnkybjVHajV1VmQwc2dqWExlMDYySmluWmRYbGdzUVhkei1Pb1N6cXAydi1pQW0x?oc=5"
+    },
+    {
+      "archive_first_seen_at": "2026-07-24T19:08:53.714588Z",
+      "archive_last_seen_at": "2026-07-24T19:08:53.714588Z",
+      "archive_last_seen_run_id": "a3512350-371f-49d7-99b6-8e3c978c2473",
+      "company_id": "blue_origin",
+      "company_name": "Blue Origin",
+      "id": "53046c2f5f8508d6",
+      "published_at": "2026-07-24T11:20:00Z",
+      "quality": {
+        "canonical_url": "http://www.bing.com/news/apiclick.aspx?aid=&tid=6a63b7e897e34f3fbf697643523860e0&url=https%3A%2F%2Fwww.wjtv.com%2Fnews%2Fstate%2Fstennis-space-center-to-host-blue-origin-rocket-tests%2F&c=9052340269393306461&mkt=en-us",
+        "company_relevance_score": 0.85,
+        "event_id": "22f18ae2e843c9c7",
+        "event_type": "other",
+        "market_match_terms": [],
+        "quality_decision": "published",
+        "quality_reason_codes": [
+          "title_company_and_industry_match"
+        ],
+        "source_quality_score": 0.7
+      },
+      "source": {
+        "rank_group": "media",
+        "source_id": "rss_provider",
+        "source_name": "bing.com",
+        "source_type": "rss",
+        "url": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6a63b7e897e34f3fbf697643523860e0&url=https%3a%2f%2fwww.wjtv.com%2fnews%2fstate%2fstennis-space-center-to-host-blue-origin-rocket-tests%2f&c=9052340269393306461&mkt=en-us"
+      },
+      "title": "Stennis Space Center to host Blue Origin rocket tests",
+      "url": "http://www.bing.com/news/apiclick.aspx?aid=&tid=6a63b7e897e34f3fbf697643523860e0&url=https%3A%2F%2Fwww.wjtv.com%2Fnews%2Fstate%2Fstennis-space-center-to-host-blue-origin-rocket-tests%2F&c=9052340269393306461&mkt=en-us"
+    },
+    {
       "archive_first_seen_at": "2026-07-24T13:11:48.353045Z",
-      "archive_last_seen_at": "2026-07-24T13:11:48.353045Z",
-      "archive_last_seen_run_id": "417467de-aae1-4f3e-997d-afc5f8e6e87c",
+      "archive_last_seen_at": "2026-07-24T19:08:53.714588Z",
+      "archive_last_seen_run_id": "a3512350-371f-49d7-99b6-8e3c978c2473",
       "company_id": "cas_space",
       "company_name": "中科宇航",
       "id": "05e2eb5863af8ad3",
@@ -57,7 +387,7 @@
       "source": {
         "rank_group": "media",
         "source_id": "rss_provider",
-        "source_name": "1?ds=true&seed=1784894679",
+        "source_name": "2?ds=true&seed=1784918227",
         "source_type": "rss",
         "url": "https://spacenews.com/lightning-strikes-long-march-3b-after-liftoff-kinetica-1-launches-5-satellites/"
       },
@@ -65,9 +395,131 @@
       "url": "https://spacenews.com/lightning-strikes-long-march-3b-after-liftoff-kinetica-1-launches-5-satellites"
     },
     {
+      "archive_first_seen_at": "2026-07-24T19:08:53.714588Z",
+      "archive_last_seen_at": "2026-07-24T19:08:53.714588Z",
+      "archive_last_seen_run_id": "a3512350-371f-49d7-99b6-8e3c978c2473",
+      "company_id": "spacex",
+      "company_name": "SpaceX",
+      "id": "75f32d5a1b5b3477",
+      "published_at": "2026-07-24T10:17:00Z",
+      "quality": {
+        "canonical_url": "http://www.bing.com/news/apiclick.aspx?aid=&tid=6a63b7e0cca84d4aa684486d82f6406b&url=https%3A%2F%2Fwww.msn.com%2Fen-us%2Fmoney%2Fgeneral%2Fspacex-is-banking-on-a-successful-starship-launch-to-stem-the-stock-s-bleeding%2Far-AA28CZQH&c=6108962314627785015&mkt=en-us",
+        "company_relevance_score": 0.85,
+        "event_id": "35508642cf4bb780",
+        "event_type": "launch",
+        "market_match_terms": [],
+        "quality_decision": "published",
+        "quality_reason_codes": [
+          "title_company_and_industry_match"
+        ],
+        "source_quality_score": 0.7
+      },
+      "source": {
+        "rank_group": "media",
+        "source_id": "rss_provider",
+        "source_name": "bing.com",
+        "source_type": "rss",
+        "url": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6a63b7e0cca84d4aa684486d82f6406b&url=https%3a%2f%2fwww.msn.com%2fen-us%2fmoney%2fgeneral%2fspacex-is-banking-on-a-successful-starship-launch-to-stem-the-stock-s-bleeding%2far-AA28CZQH&c=6108962314627785015&mkt=en-us"
+      },
+      "title": "SpaceX is banking on a successful Starship launch to stem the stock’s bleeding",
+      "url": "http://www.bing.com/news/apiclick.aspx?aid=&tid=6a63b7e0cca84d4aa684486d82f6406b&url=https%3A%2F%2Fwww.msn.com%2Fen-us%2Fmoney%2Fgeneral%2Fspacex-is-banking-on-a-successful-starship-launch-to-stem-the-stock-s-bleeding%2Far-AA28CZQH&c=6108962314627785015&mkt=en-us"
+    },
+    {
+      "archive_first_seen_at": "2026-07-24T19:08:53.714588Z",
+      "archive_last_seen_at": "2026-07-24T19:08:53.714588Z",
+      "archive_last_seen_run_id": "a3512350-371f-49d7-99b6-8e3c978c2473",
+      "company_id": "spacex",
+      "company_name": "SpaceX",
+      "id": "4207df4f34c83555",
+      "published_at": "2026-07-24T09:58:08Z",
+      "quality": {
+        "canonical_url": "http://www.bing.com/news/apiclick.aspx?aid=&tid=6a63b7e0cca84d4aa684486d82f6406b&url=https%3A%2F%2Fwww.msn.com%2Fen-in%2Fnews%2Ftechandscience%2Fwhats-riding-on-spacex-starship-test-flight-nasas-artemis-direct-to-mobile-starlink-and-a-15-billion-bet%2Far-AA28CUVf&c=2878619644331232921&mkt=en-us",
+        "company_relevance_score": 0.85,
+        "event_id": "8cd6d3c39e705dd9",
+        "event_type": "other",
+        "market_match_terms": [],
+        "quality_decision": "published",
+        "quality_reason_codes": [
+          "title_company_and_industry_match"
+        ],
+        "source_quality_score": 0.7
+      },
+      "source": {
+        "rank_group": "media",
+        "source_id": "rss_provider",
+        "source_name": "bing.com",
+        "source_type": "rss",
+        "url": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6a63b7e0cca84d4aa684486d82f6406b&url=https%3a%2f%2fwww.msn.com%2fen-in%2fnews%2ftechandscience%2fwhats-riding-on-spacex-starship-test-flight-nasas-artemis-direct-to-mobile-starlink-and-a-15-billion-bet%2far-AA28CUVf&c=2878619644331232921&mkt=en-us"
+      },
+      "title": "What's riding on SpaceX Starship test-flight: NASA's Artemis, direct-to-mobile Starlink and a $15 billion bet",
+      "url": "http://www.bing.com/news/apiclick.aspx?aid=&tid=6a63b7e0cca84d4aa684486d82f6406b&url=https%3A%2F%2Fwww.msn.com%2Fen-in%2Fnews%2Ftechandscience%2Fwhats-riding-on-spacex-starship-test-flight-nasas-artemis-direct-to-mobile-starlink-and-a-15-billion-bet%2Far-AA28CUVf&c=2878619644331232921&mkt=en-us"
+    },
+    {
+      "archive_first_seen_at": "2026-07-24T19:08:53.714588Z",
+      "archive_last_seen_at": "2026-07-24T19:08:53.714588Z",
+      "archive_last_seen_run_id": "a3512350-371f-49d7-99b6-8e3c978c2473",
+      "company_id": "spacex",
+      "company_name": "SpaceX",
+      "id": "a7f5a75c4edb3147",
+      "published_at": "2026-07-24T09:48:00Z",
+      "quality": {
+        "canonical_url": "http://www.bing.com/news/apiclick.aspx?aid=&tid=6a63b7e0cca84d4aa684486d82f6406b&url=https%3A%2F%2F247wallst.com%2Finvesting%2F2026%2F07%2F24%2Fspacex-drops-5-rocket-lab-falls-7-ast-spacemobile-slides-4-as-jittery-market-awaits-tonights-crucial-test-flight%2F&c=14580756835830884139&mkt=en-us",
+        "company_relevance_score": 0.85,
+        "event_id": "e228f7e17ceb38eb",
+        "event_type": "other",
+        "market_match_terms": [],
+        "quality_decision": "published",
+        "quality_reason_codes": [
+          "title_company_and_industry_match"
+        ],
+        "source_quality_score": 0.7
+      },
+      "source": {
+        "rank_group": "media",
+        "source_id": "rss_provider",
+        "source_name": "bing.com",
+        "source_type": "rss",
+        "url": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6a63b7e0cca84d4aa684486d82f6406b&url=https%3a%2f%2f247wallst.com%2finvesting%2f2026%2f07%2f24%2fspacex-drops-5-rocket-lab-falls-7-ast-spacemobile-slides-4-as-jittery-market-awaits-tonights-crucial-test-flight%2f&c=14580756835830884139&mkt=en-us"
+      },
+      "title": "SpaceX Drops 5%, Rocket Lab Falls 7%, AST SpaceMobile Slides 4% as Jittery Market Awaits Tonight’s Crucial Test Flight",
+      "url": "http://www.bing.com/news/apiclick.aspx?aid=&tid=6a63b7e0cca84d4aa684486d82f6406b&url=https%3A%2F%2F247wallst.com%2Finvesting%2F2026%2F07%2F24%2Fspacex-drops-5-rocket-lab-falls-7-ast-spacemobile-slides-4-as-jittery-market-awaits-tonights-crucial-test-flight%2F&c=14580756835830884139&mkt=en-us"
+    },
+    {
+      "archive_first_seen_at": "2026-07-24T19:08:53.714588Z",
+      "archive_last_seen_at": "2026-07-24T19:08:53.714588Z",
+      "archive_last_seen_run_id": "a3512350-371f-49d7-99b6-8e3c978c2473",
+      "company_id": "spacex",
+      "company_name": "SpaceX",
+      "id": "9f02c474c6c96d0b",
+      "published_at": "2026-07-24T09:45:00Z",
+      "quality": {
+        "canonical_url": "http://www.bing.com/news/apiclick.aspx?aid=&tid=6a63b7e0cca84d4aa684486d82f6406b&url=https%3A%2F%2Fseekingalpha.com%2Farticle%2F4925346-spacex-why-i-am-going-full-contrarian-rating-upgrade&c=14416812085046274632&mkt=en-us",
+        "company_relevance_score": 1.0,
+        "event_id": "1187c5fb67022c09",
+        "event_type": "market",
+        "market_match_terms": [
+          "ipo"
+        ],
+        "quality_decision": "published",
+        "quality_reason_codes": [
+          "title_company_and_industry_match"
+        ],
+        "source_quality_score": 0.7
+      },
+      "source": {
+        "rank_group": "media",
+        "source_id": "rss_provider",
+        "source_name": "bing.com",
+        "source_type": "rss",
+        "url": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6a63b7e0cca84d4aa684486d82f6406b&url=https%3a%2f%2fseekingalpha.com%2farticle%2f4925346-spacex-why-i-am-going-full-contrarian-rating-upgrade&c=14416812085046274632&mkt=en-us"
+      },
+      "title": "SpaceX: Why I Am Going Full Contrarian (Rating Upgrade)",
+      "url": "http://www.bing.com/news/apiclick.aspx?aid=&tid=6a63b7e0cca84d4aa684486d82f6406b&url=https%3A%2F%2Fseekingalpha.com%2Farticle%2F4925346-spacex-why-i-am-going-full-contrarian-rating-upgrade&c=14416812085046274632&mkt=en-us"
+    },
+    {
       "archive_first_seen_at": "2026-07-24T13:11:48.353045Z",
-      "archive_last_seen_at": "2026-07-24T13:11:48.353045Z",
-      "archive_last_seen_run_id": "417467de-aae1-4f3e-997d-afc5f8e6e87c",
+      "archive_last_seen_at": "2026-07-24T19:08:53.714588Z",
+      "archive_last_seen_run_id": "a3512350-371f-49d7-99b6-8e3c978c2473",
       "company_id": "cas_space",
       "company_name": "中科宇航",
       "id": "e72904424b932c48",
@@ -96,8 +548,8 @@
     },
     {
       "archive_first_seen_at": "2026-07-24T08:03:38.516381Z",
-      "archive_last_seen_at": "2026-07-24T13:11:48.353045Z",
-      "archive_last_seen_run_id": "417467de-aae1-4f3e-997d-afc5f8e6e87c",
+      "archive_last_seen_at": "2026-07-24T19:08:53.714588Z",
+      "archive_last_seen_run_id": "a3512350-371f-49d7-99b6-8e3c978c2473",
       "company_id": "cas_space",
       "company_name": "中科宇航",
       "id": "3ef079dc49cc651f",
@@ -125,9 +577,99 @@
       "url": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE5VQm1Ha1ZoT0o3eERCTGx6SXpwekhUUXJtQWRlS25FbldJRnRVTFNURFZpYjdSVGdxSkFianBUUzVGdWpnY0NMRXBfTHdzMExQVXVn?oc=5"
     },
     {
+      "archive_first_seen_at": "2026-07-24T19:08:53.714588Z",
+      "archive_last_seen_at": "2026-07-24T19:08:53.714588Z",
+      "archive_last_seen_run_id": "a3512350-371f-49d7-99b6-8e3c978c2473",
+      "company_id": "spacex",
+      "company_name": "SpaceX",
+      "id": "20d5a5910db61ff3",
+      "published_at": "2026-07-24T09:01:00Z",
+      "quality": {
+        "canonical_url": "http://www.bing.com/news/apiclick.aspx?aid=&tid=6a63b7e1bd5244eeb98a4b5b98998355&url=https%3A%2F%2Fwww.aol.com%2Farticles%2Fnot-just-starship-spacex-launch-160052000.html&c=10641584233287410521&mkt=en-us",
+        "company_relevance_score": 0.85,
+        "event_id": "baa6fc7eac9ba9e1",
+        "event_type": "launch",
+        "market_match_terms": [],
+        "quality_decision": "published",
+        "quality_reason_codes": [
+          "title_company_and_industry_match"
+        ],
+        "source_quality_score": 0.7
+      },
+      "source": {
+        "rank_group": "media",
+        "source_id": "rss_provider",
+        "source_name": "bing.com",
+        "source_type": "rss",
+        "url": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6a63b7e1bd5244eeb98a4b5b98998355&url=https%3a%2f%2fwww.aol.com%2farticles%2fnot-just-starship-spacex-launch-160052000.html&c=10641584233287410521&mkt=en-us"
+      },
+      "title": "Not just Starship. SpaceX to launch Falcon 9 in California again",
+      "url": "http://www.bing.com/news/apiclick.aspx?aid=&tid=6a63b7e1bd5244eeb98a4b5b98998355&url=https%3A%2F%2Fwww.aol.com%2Farticles%2Fnot-just-starship-spacex-launch-160052000.html&c=10641584233287410521&mkt=en-us"
+    },
+    {
+      "archive_first_seen_at": "2026-07-24T19:08:53.714588Z",
+      "archive_last_seen_at": "2026-07-24T19:08:53.714588Z",
+      "archive_last_seen_run_id": "a3512350-371f-49d7-99b6-8e3c978c2473",
+      "company_id": "spacex",
+      "company_name": "SpaceX",
+      "id": "a0bb6926529e5c33",
+      "published_at": "2026-07-24T08:57:00Z",
+      "quality": {
+        "canonical_url": "http://www.bing.com/news/apiclick.aspx?aid=&tid=6a63b7e0cca84d4aa684486d82f6406b&url=https%3A%2F%2Fwww.ibtimes.sg%2Fspacex-starship-flight-13-launch-scheduled-today-after-two-delays-mission-timeline-starlink-v3-90555&c=9507898452372841991&mkt=en-us",
+        "company_relevance_score": 0.85,
+        "event_id": "b594f4d513116f92",
+        "event_type": "launch",
+        "market_match_terms": [],
+        "quality_decision": "published",
+        "quality_reason_codes": [
+          "title_company_and_industry_match"
+        ],
+        "source_quality_score": 0.7
+      },
+      "source": {
+        "rank_group": "media",
+        "source_id": "rss_provider",
+        "source_name": "bing.com",
+        "source_type": "rss",
+        "url": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6a63b7e0cca84d4aa684486d82f6406b&url=https%3a%2f%2fwww.ibtimes.sg%2fspacex-starship-flight-13-launch-scheduled-today-after-two-delays-mission-timeline-starlink-v3-90555&c=9507898452372841991&mkt=en-us"
+      },
+      "title": "SpaceX Starship Flight 13 Launch Scheduled Today, After Two Delays: Mission Timeline, Starlink V3 Satellites and What to Expect",
+      "url": "http://www.bing.com/news/apiclick.aspx?aid=&tid=6a63b7e0cca84d4aa684486d82f6406b&url=https%3A%2F%2Fwww.ibtimes.sg%2Fspacex-starship-flight-13-launch-scheduled-today-after-two-delays-mission-timeline-starlink-v3-90555&c=9507898452372841991&mkt=en-us"
+    },
+    {
+      "archive_first_seen_at": "2026-07-24T19:08:53.714588Z",
+      "archive_last_seen_at": "2026-07-24T19:08:53.714588Z",
+      "archive_last_seen_run_id": "a3512350-371f-49d7-99b6-8e3c978c2473",
+      "company_id": "cas_space",
+      "company_name": "中科宇航",
+      "id": "e8263f157f655172",
+      "published_at": "2026-07-24T08:49:09Z",
+      "quality": {
+        "canonical_url": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE5fZmxHTlByc3JUcXc4UUM4dGxRTFl3ODRibmNRNC1TQkFPTEZ5UEtPQVVrbkhKWUt4dlg5X2ZnbXVSelhCQVpFRndHdFp4cmRDVWNIZTQwNjlYLTdwdHotMjRGSQ?oc=5",
+        "company_relevance_score": 0.85,
+        "event_id": "773ebc583caa7569",
+        "event_type": "launch",
+        "market_match_terms": [],
+        "quality_decision": "published",
+        "quality_reason_codes": [
+          "title_company_and_industry_match"
+        ],
+        "source_quality_score": 0.7
+      },
+      "source": {
+        "rank_group": "media",
+        "source_id": "rss_provider",
+        "source_name": "jingjiribao.cn",
+        "source_type": "rss",
+        "url": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE5fZmxHTlByc3JUcXc4UUM4dGxRTFl3ODRibmNRNC1TQkFPTEZ5UEtPQVVrbkhKWUt4dlg5X2ZnbXVSelhCQVpFRndHdFp4cmRDVWNIZTQwNjlYLTdwdHotMjRGSQ?oc=5"
+      },
+      "title": "力箭一号遥十五运载火箭圆满完成“一箭5星”发射 - jingjiribao.cn",
+      "url": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE5fZmxHTlByc3JUcXc4UUM4dGxRTFl3ODRibmNRNC1TQkFPTEZ5UEtPQVVrbkhKWUt4dlg5X2ZnbXVSelhCQVpFRndHdFp4cmRDVWNIZTQwNjlYLTdwdHotMjRGSQ?oc=5"
+    },
+    {
       "archive_first_seen_at": "2026-07-24T13:11:48.353045Z",
-      "archive_last_seen_at": "2026-07-24T13:11:48.353045Z",
-      "archive_last_seen_run_id": "417467de-aae1-4f3e-997d-afc5f8e6e87c",
+      "archive_last_seen_at": "2026-07-24T19:08:53.714588Z",
+      "archive_last_seen_run_id": "a3512350-371f-49d7-99b6-8e3c978c2473",
       "company_id": "cas_space",
       "company_name": "中科宇航",
       "id": "f5aa5d5cba543fd5",
@@ -147,12 +689,42 @@
       "source": {
         "rank_group": "media",
         "source_id": "rss_provider",
-        "source_name": "新浪财经",
+        "source_name": "新浪网",
         "source_type": "rss",
         "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE5UdVNzMVRyMEF3N1BMdWJtVDNzN2cxWUlPSmU5dXd5STUyY29TVUhrREczbXN6UnFqaTZTc25BYkhDMWhlMjlwNTNocFdNWU9iemV4Z3NCT1VYWHNFUC01a2ZpQ0tVbGlOSG5GckI1VEJjeS10TnUyQVRLWHpzZ28?oc=5"
       },
-      "title": "中科宇航：力箭一号圆满完成“一箭 5 星”任务，开启下半年逐月常态化发射 - 新浪财经",
+      "title": "中科宇航：力箭一号圆满完成“一箭 5 星”任务，开启下半年逐月常态化发射 - 新浪网",
       "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE5UdVNzMVRyMEF3N1BMdWJtVDNzN2cxWUlPSmU5dXd5STUyY29TVUhrREczbXN6UnFqaTZTc25BYkhDMWhlMjlwNTNocFdNWU9iemV4Z3NCT1VYWHNFUC01a2ZpQ0tVbGlOSG5GckI1VEJjeS10TnUyQVRLWHpzZ28?oc=5"
+    },
+    {
+      "archive_first_seen_at": "2026-07-24T19:08:53.714588Z",
+      "archive_last_seen_at": "2026-07-24T19:08:53.714588Z",
+      "archive_last_seen_run_id": "a3512350-371f-49d7-99b6-8e3c978c2473",
+      "company_id": "spacex",
+      "company_name": "SpaceX",
+      "id": "f20944607c95e9cf",
+      "published_at": "2026-07-24T07:01:00Z",
+      "quality": {
+        "canonical_url": "http://www.bing.com/news/apiclick.aspx?aid=&tid=6a63b7e0cca84d4aa684486d82f6406b&url=https%3A%2F%2Fwww.usatoday.com%2Fstory%2Fnews%2Flocal%2Fcalifornia%2F2026%2F07%2F24%2Fvandenberg-rocket-launch-spacex-today%2F91019670007%2F&c=4212903189323235483&mkt=en-us",
+        "company_relevance_score": 0.85,
+        "event_id": "61bfa56f8ae96131",
+        "event_type": "launch",
+        "market_match_terms": [],
+        "quality_decision": "published",
+        "quality_reason_codes": [
+          "title_company_and_industry_match"
+        ],
+        "source_quality_score": 0.7
+      },
+      "source": {
+        "rank_group": "media",
+        "source_id": "rss_provider",
+        "source_name": "bing.com",
+        "source_type": "rss",
+        "url": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6a63b7e0cca84d4aa684486d82f6406b&url=https%3a%2f%2fwww.usatoday.com%2fstory%2fnews%2flocal%2fcalifornia%2f2026%2f07%2f24%2fvandenberg-rocket-launch-spacex-today%2f91019670007%2f&c=4212903189323235483&mkt=en-us"
+      },
+      "title": "SpaceX targets next rocket launch after milestone Vandenberg mission",
+      "url": "http://www.bing.com/news/apiclick.aspx?aid=&tid=6a63b7e0cca84d4aa684486d82f6406b&url=https%3A%2F%2Fwww.usatoday.com%2Fstory%2Fnews%2Flocal%2Fcalifornia%2F2026%2F07%2F24%2Fvandenberg-rocket-launch-spacex-today%2F91019670007%2F&c=4212903189323235483&mkt=en-us"
     },
     {
       "archive_first_seen_at": "2026-07-24T13:11:48.353045Z",
@@ -183,6 +755,36 @@
       },
       "title": "一箭五星成功发射，力箭一号开启下半年逐月常态化发射模式 - 广州日报新花城",
       "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxNTEZvRk5yVmNrV29tQTNTN19Pb0N0UjRmX09VaW1XQWVMLUp6SUlnNmRZVS00NUpWTGpFUHd4Z3djYTFNOUhDVkNTT0lXVnBJNUQzVXYtTjMyNnFpY3E2RFZWWkRJSWhHa19hQnNsVjl5WkhKQnhpT25ralRxQy1OMzkzNzQ?oc=5"
+    },
+    {
+      "archive_first_seen_at": "2026-07-24T19:08:53.714588Z",
+      "archive_last_seen_at": "2026-07-24T19:08:53.714588Z",
+      "archive_last_seen_run_id": "a3512350-371f-49d7-99b6-8e3c978c2473",
+      "company_id": "spacex",
+      "company_name": "SpaceX",
+      "id": "30ac3be00d3f6f87",
+      "published_at": "2026-07-24T06:45:00Z",
+      "quality": {
+        "canonical_url": "http://www.bing.com/news/apiclick.aspx?aid=&tid=6a63b7e0cca84d4aa684486d82f6406b&url=https%3A%2F%2Fwww.fool.com%2Finvesting%2F2026%2F07%2F24%2Fspacex-has-a-16-trillion-opportunity-that-may-ecli%2F&c=17355402510701909018&mkt=en-us",
+        "company_relevance_score": 0.85,
+        "event_id": "043c77a217edb492",
+        "event_type": "other",
+        "market_match_terms": [],
+        "quality_decision": "published",
+        "quality_reason_codes": [
+          "title_company_and_industry_match"
+        ],
+        "source_quality_score": 0.7
+      },
+      "source": {
+        "rank_group": "media",
+        "source_id": "rss_provider",
+        "source_name": "bing.com",
+        "source_type": "rss",
+        "url": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6a63b7e0cca84d4aa684486d82f6406b&url=https%3a%2f%2fwww.fool.com%2finvesting%2f2026%2f07%2f24%2fspacex-has-a-16-trillion-opportunity-that-may-ecli%2f&c=17355402510701909018&mkt=en-us"
+      },
+      "title": "SpaceX Has a $1.6 Trillion Opportunity That May Eclipse Its AI Business",
+      "url": "http://www.bing.com/news/apiclick.aspx?aid=&tid=6a63b7e0cca84d4aa684486d82f6406b&url=https%3A%2F%2Fwww.fool.com%2Finvesting%2F2026%2F07%2F24%2Fspacex-has-a-16-trillion-opportunity-that-may-ecli%2F&c=17355402510701909018&mkt=en-us"
     },
     {
       "archive_first_seen_at": "2026-07-24T13:11:48.353045Z",
@@ -216,8 +818,8 @@
     },
     {
       "archive_first_seen_at": "2026-07-24T08:03:38.516381Z",
-      "archive_last_seen_at": "2026-07-24T13:11:48.353045Z",
-      "archive_last_seen_run_id": "417467de-aae1-4f3e-997d-afc5f8e6e87c",
+      "archive_last_seen_at": "2026-07-24T19:08:53.714588Z",
+      "archive_last_seen_run_id": "a3512350-371f-49d7-99b6-8e3c978c2473",
       "company_id": "landspace",
       "company_name": "蓝箭航天",
       "id": "b1097113d3c10d84",
@@ -305,9 +907,39 @@
       "url": "http://www.bing.com/news/apiclick.aspx?aid=&tid=6a6364605ed34b3dbd6eadc998289f62&url=https%3A%2F%2Fwww.aa.com.tr%2Fen%2Fasia-pacific%2Fchina-launches-lijian-1-rocket-carrying-5-satellites-into-orbit%2F4007829&c=17635772958374643334&mkt=en-us"
     },
     {
+      "archive_first_seen_at": "2026-07-24T19:08:53.714588Z",
+      "archive_last_seen_at": "2026-07-24T19:08:53.714588Z",
+      "archive_last_seen_run_id": "a3512350-371f-49d7-99b6-8e3c978c2473",
+      "company_id": "cas_space",
+      "company_name": "中科宇航",
+      "id": "1632efaedec3a026",
+      "published_at": "2026-07-24T03:44:00Z",
+      "quality": {
+        "canonical_url": "http://www.bing.com/news/apiclick.aspx?aid=&tid=6a63b80a846c46cbbed4320a0b47b876&url=https%3A%2F%2Fwww.aa.com.tr%2Fen%2Fasia-pacific%2Fchina-launches-lijian-1-rocket-carrying-5-satellites-into-orbit%2F4007829&c=17635772958374643334&mkt=en-us",
+        "company_relevance_score": 0.85,
+        "event_id": "5bef4dab9b0d6d66",
+        "event_type": "launch",
+        "market_match_terms": [],
+        "quality_decision": "published",
+        "quality_reason_codes": [
+          "title_company_and_industry_match"
+        ],
+        "source_quality_score": 0.7
+      },
+      "source": {
+        "rank_group": "media",
+        "source_id": "rss_provider",
+        "source_name": "bing.com",
+        "source_type": "rss",
+        "url": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6a63b80a846c46cbbed4320a0b47b876&url=https%3a%2f%2fwww.aa.com.tr%2fen%2fasia-pacific%2fchina-launches-lijian-1-rocket-carrying-5-satellites-into-orbit%2f4007829&c=17635772958374643334&mkt=en-us"
+      },
+      "title": "China launches Lijian-1 rocket carrying 5 satellites into orbit",
+      "url": "http://www.bing.com/news/apiclick.aspx?aid=&tid=6a63b80a846c46cbbed4320a0b47b876&url=https%3A%2F%2Fwww.aa.com.tr%2Fen%2Fasia-pacific%2Fchina-launches-lijian-1-rocket-carrying-5-satellites-into-orbit%2F4007829&c=17635772958374643334&mkt=en-us"
+    },
+    {
       "archive_first_seen_at": "2026-07-24T08:03:38.516381Z",
-      "archive_last_seen_at": "2026-07-24T13:11:48.353045Z",
-      "archive_last_seen_run_id": "417467de-aae1-4f3e-997d-afc5f8e6e87c",
+      "archive_last_seen_at": "2026-07-24T19:08:53.714588Z",
+      "archive_last_seen_run_id": "a3512350-371f-49d7-99b6-8e3c978c2473",
       "company_id": "cas_space",
       "company_name": "中科宇航",
       "id": "a95815671e626654",
@@ -336,8 +968,8 @@
     },
     {
       "archive_first_seen_at": "2026-07-24T13:11:48.353045Z",
-      "archive_last_seen_at": "2026-07-24T13:11:48.353045Z",
-      "archive_last_seen_run_id": "417467de-aae1-4f3e-997d-afc5f8e6e87c",
+      "archive_last_seen_at": "2026-07-24T19:08:53.714588Z",
+      "archive_last_seen_run_id": "a3512350-371f-49d7-99b6-8e3c978c2473",
       "company_id": "cas_space",
       "company_name": "中科宇航",
       "id": "f2f1db00200733eb",
@@ -366,8 +998,8 @@
     },
     {
       "archive_first_seen_at": "2026-07-24T08:03:38.516381Z",
-      "archive_last_seen_at": "2026-07-24T13:11:48.353045Z",
-      "archive_last_seen_run_id": "417467de-aae1-4f3e-997d-afc5f8e6e87c",
+      "archive_last_seen_at": "2026-07-24T19:08:53.714588Z",
+      "archive_last_seen_run_id": "a3512350-371f-49d7-99b6-8e3c978c2473",
       "company_id": "cas_space",
       "company_name": "中科宇航",
       "id": "f336a57e423d860f",
@@ -396,8 +1028,8 @@
     },
     {
       "archive_first_seen_at": "2026-07-24T13:11:48.353045Z",
-      "archive_last_seen_at": "2026-07-24T13:11:48.353045Z",
-      "archive_last_seen_run_id": "417467de-aae1-4f3e-997d-afc5f8e6e87c",
+      "archive_last_seen_at": "2026-07-24T19:08:53.714588Z",
+      "archive_last_seen_run_id": "a3512350-371f-49d7-99b6-8e3c978c2473",
       "company_id": "cas_space",
       "company_name": "中科宇航",
       "id": "2a4ad3be07dd37b0",
@@ -423,6 +1055,36 @@
       },
       "title": "力箭一号遥十五运载火箭发射成功助力具身智能模型上天 - jnzstatic.cs.com.cn",
       "url": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE5oR1lGV2RTYS1adi14Rk92dmwyYjY4TmFxaVpBT3hYLXRsdkpXeWNjTWZFV04ybERyTTFyczZhaWc1Vkk2cVQ3TzZ6T2FkQU1PQ1JxUWcwZnk2SzZ6WXF3dEln?oc=5"
+    },
+    {
+      "archive_first_seen_at": "2026-07-24T19:08:53.714588Z",
+      "archive_last_seen_at": "2026-07-24T19:08:53.714588Z",
+      "archive_last_seen_run_id": "a3512350-371f-49d7-99b6-8e3c978c2473",
+      "company_id": "cas_space",
+      "company_name": "中科宇航",
+      "id": "87bc346bd048851b",
+      "published_at": "2026-07-24T02:11:26Z",
+      "quality": {
+        "canonical_url": "https://news.google.com/rss/articles/CBMiRkFVX3lxTE10NkhiRUdmVUVlSWlvY3hrcDN5TzhqT2JhNUt5WTNqRlpHbVVRcFphdDBTOFFOLVBzXzZZamJjSUpLWVVQb2c?oc=5",
+        "company_relevance_score": 0.85,
+        "event_id": "d41269626910f65c",
+        "event_type": "launch",
+        "market_match_terms": [],
+        "quality_decision": "published",
+        "quality_reason_codes": [
+          "title_company_and_industry_match"
+        ],
+        "source_quality_score": 0.7
+      },
+      "source": {
+        "rank_group": "media",
+        "source_id": "rss_provider",
+        "source_name": "财联社",
+        "source_type": "rss",
+        "url": "https://news.google.com/rss/articles/CBMiRkFVX3lxTE10NkhiRUdmVUVlSWlvY3hrcDN5TzhqT2JhNUt5WTNqRlpHbVVRcFphdDBTOFFOLVBzXzZZamJjSUpLWVVQb2c?oc=5"
+      },
+      "title": "算力上天，组网提速：力箭一号遥十五“一箭5星”发射成功 - 财联社",
+      "url": "https://news.google.com/rss/articles/CBMiRkFVX3lxTE10NkhiRUdmVUVlSWlvY3hrcDN5TzhqT2JhNUt5WTNqRlpHbVVRcFphdDBTOFFOLVBzXzZZamJjSUpLWVVQb2c?oc=5"
     },
     {
       "archive_first_seen_at": "2026-07-24T08:03:38.516381Z",
@@ -486,8 +1148,8 @@
     },
     {
       "archive_first_seen_at": "2026-07-24T08:03:38.516381Z",
-      "archive_last_seen_at": "2026-07-24T13:11:48.353045Z",
-      "archive_last_seen_run_id": "417467de-aae1-4f3e-997d-afc5f8e6e87c",
+      "archive_last_seen_at": "2026-07-24T19:08:53.714588Z",
+      "archive_last_seen_run_id": "a3512350-371f-49d7-99b6-8e3c978c2473",
       "company_id": "cas_space",
       "company_name": "中科宇航",
       "id": "41c44bf2a549a3bd",
@@ -516,8 +1178,8 @@
     },
     {
       "archive_first_seen_at": "2026-07-24T08:03:38.516381Z",
-      "archive_last_seen_at": "2026-07-24T13:11:48.353045Z",
-      "archive_last_seen_run_id": "417467de-aae1-4f3e-997d-afc5f8e6e87c",
+      "archive_last_seen_at": "2026-07-24T19:08:53.714588Z",
+      "archive_last_seen_run_id": "a3512350-371f-49d7-99b6-8e3c978c2473",
       "company_id": "cas_space",
       "company_name": "中科宇航",
       "id": "42ab71d5d2635f32",
@@ -546,8 +1208,8 @@
     },
     {
       "archive_first_seen_at": "2026-07-24T08:03:38.516381Z",
-      "archive_last_seen_at": "2026-07-24T13:11:48.353045Z",
-      "archive_last_seen_run_id": "417467de-aae1-4f3e-997d-afc5f8e6e87c",
+      "archive_last_seen_at": "2026-07-24T19:08:53.714588Z",
+      "archive_last_seen_run_id": "a3512350-371f-49d7-99b6-8e3c978c2473",
       "company_id": "cas_space",
       "company_name": "中科宇航",
       "id": "08e04279f726e2d4",
@@ -576,8 +1238,8 @@
     },
     {
       "archive_first_seen_at": "2026-07-24T08:03:38.516381Z",
-      "archive_last_seen_at": "2026-07-24T13:11:48.353045Z",
-      "archive_last_seen_run_id": "417467de-aae1-4f3e-997d-afc5f8e6e87c",
+      "archive_last_seen_at": "2026-07-24T19:08:53.714588Z",
+      "archive_last_seen_run_id": "a3512350-371f-49d7-99b6-8e3c978c2473",
       "company_id": "landspace",
       "company_name": "蓝箭航天",
       "id": "3016108949d199d3",
@@ -636,8 +1298,8 @@
     },
     {
       "archive_first_seen_at": "2026-07-24T01:19:24.294597Z",
-      "archive_last_seen_at": "2026-07-24T13:11:48.353045Z",
-      "archive_last_seen_run_id": "417467de-aae1-4f3e-997d-afc5f8e6e87c",
+      "archive_last_seen_at": "2026-07-24T19:08:53.714588Z",
+      "archive_last_seen_run_id": "a3512350-371f-49d7-99b6-8e3c978c2473",
       "company_id": "cas_space",
       "company_name": "中科宇航",
       "id": "6183fcfc15667ab9",
@@ -657,11 +1319,11 @@
       "source": {
         "rank_group": "media",
         "source_id": "rss_provider",
-        "source_name": "新浪财经",
+        "source_name": "新浪网",
         "source_type": "rss",
         "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTFBTdG1YcU1BalJhd3kxRGlRRWFZUGV1RjF3Sk1ZOTc2WUcxUEI1amdNUDM2SGF5MVM0YWs1Z19aLS1mZVdvaHFxTE8xYnZybFdKR0w1M2JwaS1IX2RTZkxFOV84dlZIbmdndzIwNGxQUEt4bGJOa2xubQ?oc=5"
       },
-      "title": "力箭一号“一箭五星”发射成功 年内4次履约验证逐月发射能力 - 新浪财经",
+      "title": "力箭一号“一箭五星”发射成功 年内4次履约验证逐月发射能力 - 新浪网",
       "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTFBTdG1YcU1BalJhd3kxRGlRRWFZUGV1RjF3Sk1ZOTc2WUcxUEI1amdNUDM2SGF5MVM0YWs1Z19aLS1mZVdvaHFxTE8xYnZybFdKR0w1M2JwaS1IX2RTZkxFOV84dlZIbmdndzIwNGxQUEt4bGJOa2xubQ?oc=5"
     },
     {
@@ -726,8 +1388,8 @@
     },
     {
       "archive_first_seen_at": "2026-07-24T01:19:24.294597Z",
-      "archive_last_seen_at": "2026-07-24T13:11:48.353045Z",
-      "archive_last_seen_run_id": "417467de-aae1-4f3e-997d-afc5f8e6e87c",
+      "archive_last_seen_at": "2026-07-24T19:08:53.714588Z",
+      "archive_last_seen_run_id": "a3512350-371f-49d7-99b6-8e3c978c2473",
       "company_id": "cas_space",
       "company_name": "中科宇航",
       "id": "f8d4e0cf21c039f2",
@@ -906,8 +1568,8 @@
     },
     {
       "archive_first_seen_at": "2026-07-24T08:03:38.516381Z",
-      "archive_last_seen_at": "2026-07-24T13:11:48.353045Z",
-      "archive_last_seen_run_id": "417467de-aae1-4f3e-997d-afc5f8e6e87c",
+      "archive_last_seen_at": "2026-07-24T19:08:53.714588Z",
+      "archive_last_seen_run_id": "a3512350-371f-49d7-99b6-8e3c978c2473",
       "company_id": "cas_space",
       "company_name": "中科宇航",
       "id": "e9e973cda7d14c2d",
@@ -936,8 +1598,8 @@
     },
     {
       "archive_first_seen_at": "2026-07-24T08:03:38.516381Z",
-      "archive_last_seen_at": "2026-07-24T13:11:48.353045Z",
-      "archive_last_seen_run_id": "417467de-aae1-4f3e-997d-afc5f8e6e87c",
+      "archive_last_seen_at": "2026-07-24T19:08:53.714588Z",
+      "archive_last_seen_run_id": "a3512350-371f-49d7-99b6-8e3c978c2473",
       "company_id": "cas_space",
       "company_name": "中科宇航",
       "id": "e5323b271e970a8a",
@@ -966,8 +1628,8 @@
     },
     {
       "archive_first_seen_at": "2026-07-24T08:03:38.516381Z",
-      "archive_last_seen_at": "2026-07-24T13:11:48.353045Z",
-      "archive_last_seen_run_id": "417467de-aae1-4f3e-997d-afc5f8e6e87c",
+      "archive_last_seen_at": "2026-07-24T19:08:53.714588Z",
+      "archive_last_seen_run_id": "a3512350-371f-49d7-99b6-8e3c978c2473",
       "company_id": "cas_space",
       "company_name": "中科宇航",
       "id": "9f9be08cc45a9d4e",
@@ -987,17 +1649,17 @@
       "source": {
         "rank_group": "media",
         "source_id": "rss_provider",
-        "source_name": "新浪财经",
+        "source_name": "新浪网",
         "source_type": "rss",
         "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxQenJYLTlrRzFvdUtEaWNyQ1RkRmhKdzYtTi1seUp4azBYWVFxcGI4LTVjTG1OT2dpd0tyNUxWODZUTmswWEI0UV92WW1IOU9ka25JM0JXN09xN3dHVUdTX3BXOFREdThWQjN4WHpPSTdka2lnSFB2RUZ0SHdSSHpmejVaR3I3WlpJR19LVC1vNWJnOXNOdldMY2FYd240Q04xd2wwTl9qTGFVZ0JKMGk1T2RhZHMyRGZqRjBUYw?oc=5"
       },
-      "title": "力箭一号送GPU上天、算力入轨商业航天产业化持续提速_手机新浪网 - 新浪财经",
+      "title": "力箭一号送GPU上天、算力入轨商业航天产业化持续提速_手机新浪网 - 新浪网",
       "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxQenJYLTlrRzFvdUtEaWNyQ1RkRmhKdzYtTi1seUp4azBYWVFxcGI4LTVjTG1OT2dpd0tyNUxWODZUTmswWEI0UV92WW1IOU9ka25JM0JXN09xN3dHVUdTX3BXOFREdThWQjN4WHpPSTdka2lnSFB2RUZ0SHdSSHpmejVaR3I3WlpJR19LVC1vNWJnOXNOdldMY2FYd240Q04xd2wwTl9qTGFVZ0JKMGk1T2RhZHMyRGZqRjBUYw?oc=5"
     },
     {
       "archive_first_seen_at": "2026-07-24T01:19:24.294597Z",
-      "archive_last_seen_at": "2026-07-24T13:11:48.353045Z",
-      "archive_last_seen_run_id": "417467de-aae1-4f3e-997d-afc5f8e6e87c",
+      "archive_last_seen_at": "2026-07-24T19:08:53.714588Z",
+      "archive_last_seen_run_id": "a3512350-371f-49d7-99b6-8e3c978c2473",
       "company_id": "cas_space",
       "company_name": "中科宇航",
       "id": "1ff8125c1aad18a2",
@@ -1025,39 +1687,9 @@
       "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE1NZThGTV9WdUpNcUpQZ0padXVsSzFtTHJ0RjNIaHNtUmdBMm5Cajh5LWI3QW55M1lxRXRuUEVyaUNfZmVJSEVqamdkTWhQSzZYaUJZc0h3?oc=5"
     },
     {
-      "archive_first_seen_at": "2026-07-16T13:09:34.218005Z",
-      "archive_last_seen_at": "2026-07-24T13:11:48.353045Z",
-      "archive_last_seen_run_id": "417467de-aae1-4f3e-997d-afc5f8e6e87c",
-      "company_id": "spacex",
-      "company_name": "SpaceX",
-      "id": "d52256af99fb0423",
-      "published_at": "2026-07-23T21:19:00Z",
-      "quality": {
-        "canonical_url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxNRWV3b0hiOHhyLUNEWWkxWk41dlpQQUF1LW11VHFTd20xZ0libUc3NXBxQ2Vkb0Vlc3NGUVlEM01hOHp1dC0yMkE5V2FMTjF4V3NiUUJQZU5Xb3B6eHZPRmVyb2hoREtwdEF3WjRVenREOWp3d1BLN3hFenYza1NqTk9weE9pbDZsNkhRRHFScl9yLTh6bG1RWkQxRkdDZm1WcDRDXzkycDN6RmpQ?oc=5",
-        "company_relevance_score": 0.85,
-        "event_id": "7c0690c06fb04f7e",
-        "event_type": "launch",
-        "market_match_terms": [],
-        "quality_decision": "published",
-        "quality_reason_codes": [
-          "title_company_and_industry_match"
-        ],
-        "source_quality_score": 0.7
-      },
-      "source": {
-        "rank_group": "media",
-        "source_id": "rss_provider",
-        "source_name": "Space",
-        "source_type": "rss",
-        "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxNRWV3b0hiOHhyLUNEWWkxWk41dlpQQUF1LW11VHFTd20xZ0libUc3NXBxQ2Vkb0Vlc3NGUVlEM01hOHp1dC0yMkE5V2FMTjF4V3NiUUJQZU5Xb3B6eHZPRmVyb2hoREtwdEF3WjRVenREOWp3d1BLN3hFenYza1NqTk9weE9pbDZsNkhRRHFScl9yLTh6bG1RWkQxRkdDZm1WcDRDXzkycDN6RmpQ?oc=5"
-      },
-      "title": "SpaceX will now try to launch critical Starship Flight 13 test on July 24 after delays. Here's what to expect. - Space",
-      "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxNRWV3b0hiOHhyLUNEWWkxWk41dlpQQUF1LW11VHFTd20xZ0libUc3NXBxQ2Vkb0Vlc3NGUVlEM01hOHp1dC0yMkE5V2FMTjF4V3NiUUJQZU5Xb3B6eHZPRmVyb2hoREtwdEF3WjRVenREOWp3d1BLN3hFenYza1NqTk9weE9pbDZsNkhRRHFScl9yLTh6bG1RWkQxRkdDZm1WcDRDXzkycDN6RmpQ?oc=5"
-    },
-    {
       "archive_first_seen_at": "2026-07-24T01:19:24.294597Z",
-      "archive_last_seen_at": "2026-07-24T13:11:48.353045Z",
-      "archive_last_seen_run_id": "417467de-aae1-4f3e-997d-afc5f8e6e87c",
+      "archive_last_seen_at": "2026-07-24T19:08:53.714588Z",
+      "archive_last_seen_run_id": "a3512350-371f-49d7-99b6-8e3c978c2473",
       "company_id": "spacex",
       "company_name": "SpaceX",
       "id": "0e62a422f8c6bc66",
@@ -1116,8 +1748,8 @@
     },
     {
       "archive_first_seen_at": "2026-07-24T01:19:24.294597Z",
-      "archive_last_seen_at": "2026-07-24T13:11:48.353045Z",
-      "archive_last_seen_run_id": "417467de-aae1-4f3e-997d-afc5f8e6e87c",
+      "archive_last_seen_at": "2026-07-24T19:08:53.714588Z",
+      "archive_last_seen_run_id": "a3512350-371f-49d7-99b6-8e3c978c2473",
       "company_id": "spacex",
       "company_name": "SpaceX",
       "id": "816120f8f9e70980",
@@ -1266,8 +1898,8 @@
     },
     {
       "archive_first_seen_at": "2026-07-23T13:18:30.470453Z",
-      "archive_last_seen_at": "2026-07-24T13:11:48.353045Z",
-      "archive_last_seen_run_id": "417467de-aae1-4f3e-997d-afc5f8e6e87c",
+      "archive_last_seen_at": "2026-07-24T19:08:53.714588Z",
+      "archive_last_seen_run_id": "a3512350-371f-49d7-99b6-8e3c978c2473",
       "company_id": "blue_origin",
       "company_name": "Blue Origin",
       "id": "09db26c6507ac3db",
@@ -1356,8 +1988,8 @@
     },
     {
       "archive_first_seen_at": "2026-07-23T13:18:30.470453Z",
-      "archive_last_seen_at": "2026-07-24T13:11:48.353045Z",
-      "archive_last_seen_run_id": "417467de-aae1-4f3e-997d-afc5f8e6e87c",
+      "archive_last_seen_at": "2026-07-24T19:08:53.714588Z",
+      "archive_last_seen_run_id": "a3512350-371f-49d7-99b6-8e3c978c2473",
       "company_id": "blue_origin",
       "company_name": "Blue Origin",
       "id": "733781bc35b3db4c",
@@ -1535,6 +2167,36 @@
       "url": "http://www.bing.com/news/apiclick.aspx?aid=&tid=6a626396717842759dfa8b4198d7000e&url=https%3A%2F%2Fwww.msn.com%2Fen-us%2Fnews%2Ftechnology%2Fstarship-carries-starlink-satellites-on-key-spacex-test-mission%2Far-AA28wNed&c=12809190225147399778&mkt=en-us"
     },
     {
+      "archive_first_seen_at": "2026-07-24T19:08:53.714588Z",
+      "archive_last_seen_at": "2026-07-24T19:08:53.714588Z",
+      "archive_last_seen_run_id": "a3512350-371f-49d7-99b6-8e3c978c2473",
+      "company_id": "landspace",
+      "company_name": "蓝箭航天",
+      "id": "33096f8ef8e44e36",
+      "published_at": "2026-07-22T19:43:04Z",
+      "quality": {
+        "canonical_url": "https://news.google.com/rss/articles/CBMibEFVX3lxTE9HZENnOFgwMUNvejJnaVlxV296cUNRejBwbFRJazhjMUd5eFFQdU1sVEVydXQtdEhKeVZQT0ZXX2t5NTRKV0hYYmNkRUtlOU15SUVqOVFfenpxV2NsRnBQUkdKQS1wWU15aW96Ug?oc=5",
+        "company_relevance_score": 0.45,
+        "event_id": "0eb275899c3aa6af",
+        "event_type": "other",
+        "market_match_terms": [],
+        "quality_decision": "published",
+        "quality_reason_codes": [
+          "title_company_and_industry_match"
+        ],
+        "source_quality_score": 0.7
+      },
+      "source": {
+        "rank_group": "media",
+        "source_id": "rss_provider",
+        "source_name": "股吧",
+        "source_type": "rss",
+        "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTE9HZENnOFgwMUNvejJnaVlxV296cUNRejBwbFRJazhjMUd5eFFQdU1sVEVydXQtdEhKeVZQT0ZXX2t5NTRKV0hYYmNkRUtlOU15SUVqOVFfenpxV2NsRnBQUkdKQS1wWU15aW96Ug?oc=5"
+      },
+      "title": "2025年12月3日，中国商业航天迎来一个里程碑与遗憾交织的时刻。蓝箭航天自主研 - 股吧",
+      "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTE9HZENnOFgwMUNvejJnaVlxV296cUNRejBwbFRJazhjMUd5eFFQdU1sVEVydXQtdEhKeVZQT0ZXX2t5NTRKV0hYYmNkRUtlOU15SUVqOVFfenpxV2NsRnBQUkdKQS1wWU15aW96Ug?oc=5"
+    },
+    {
       "archive_first_seen_at": "2026-07-22T18:52:26.301505Z",
       "archive_last_seen_at": "2026-07-23T13:18:30.470453Z",
       "archive_last_seen_run_id": "7e33b884-3d89-4f80-be76-c402439a5d9f",
@@ -1566,8 +2228,8 @@
     },
     {
       "archive_first_seen_at": "2026-07-23T02:25:32.030650Z",
-      "archive_last_seen_at": "2026-07-24T13:11:48.353045Z",
-      "archive_last_seen_run_id": "417467de-aae1-4f3e-997d-afc5f8e6e87c",
+      "archive_last_seen_at": "2026-07-24T19:08:53.714588Z",
+      "archive_last_seen_run_id": "a3512350-371f-49d7-99b6-8e3c978c2473",
       "company_id": "spacex",
       "company_name": "SpaceX",
       "id": "ebe1be0caa04aea7",
@@ -1628,8 +2290,8 @@
     },
     {
       "archive_first_seen_at": "2026-07-23T02:25:32.030650Z",
-      "archive_last_seen_at": "2026-07-24T13:11:48.353045Z",
-      "archive_last_seen_run_id": "417467de-aae1-4f3e-997d-afc5f8e6e87c",
+      "archive_last_seen_at": "2026-07-24T19:08:53.714588Z",
+      "archive_last_seen_run_id": "a3512350-371f-49d7-99b6-8e3c978c2473",
       "company_id": "spacex",
       "company_name": "SpaceX",
       "id": "2188e655ddd0f0be",
@@ -1688,8 +2350,8 @@
     },
     {
       "archive_first_seen_at": "2026-07-24T08:03:38.516381Z",
-      "archive_last_seen_at": "2026-07-24T13:11:48.353045Z",
-      "archive_last_seen_run_id": "417467de-aae1-4f3e-997d-afc5f8e6e87c",
+      "archive_last_seen_at": "2026-07-24T19:08:53.714588Z",
+      "archive_last_seen_run_id": "a3512350-371f-49d7-99b6-8e3c978c2473",
       "company_id": "minospace",
       "company_name": "微纳星空",
       "id": "7b021450510cc6ba",
@@ -1709,11 +2371,11 @@
       "source": {
         "rank_group": "media",
         "source_id": "rss_provider",
-        "source_name": "新浪财经",
+        "source_name": "新浪网",
         "source_type": "rss",
         "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxNUkd5Y2V6RnRVcm5fNXdnYXVveGpxTXdSTkx2T1dsbHB1eTlKeWtkSHNyREVNT3RycVMyRVN6WVFiRXl0azJCN0lyRlllZWJMUE8zQzM2MzVxN1dQS2dNWUFZc19XX3RQZzNPWXlHaEFvcENaeC1DU2xiMHBBamU5ck03TXB0SWNSYUN0a2xR?oc=5"
       },
-      "title": "引力一号遥四运载火箭发射成功，微纳星空“东坡”系列卫星 1.5 小时完成首批遥感影像回传 - 新浪财经",
+      "title": "引力一号遥四运载火箭发射成功，微纳星空“东坡”系列卫星 1.5 小时完成首批遥感影像回传 - 新浪网",
       "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxNUkd5Y2V6RnRVcm5fNXdnYXVveGpxTXdSTkx2T1dsbHB1eTlKeWtkSHNyREVNT3RycVMyRVN6WVFiRXl0azJCN0lyRlllZWJMUE8zQzM2MzVxN1dQS2dNWUFZc19XX3RQZzNPWXlHaEFvcENaeC1DU2xiMHBBamU5ck03TXB0SWNSYUN0a2xR?oc=5"
     },
     {
@@ -1957,6 +2619,36 @@
       "url": "http://www.bing.com/news/apiclick.aspx?aid=&tid=6a617c472e7549499ab29acec07ddd5b&url=https%3A%2F%2Fwww.msn.com%2Fen-us%2Fnews%2Ftechnology%2Ffalcon-9-s-rare-upper-stage-failure-left-20-starlink-satellites-stranded%2Fvi-AA28sGNp&c=7058837078991706578&mkt=en-sg"
     },
     {
+      "archive_first_seen_at": "2026-07-24T19:08:53.714588Z",
+      "archive_last_seen_at": "2026-07-24T19:08:53.714588Z",
+      "archive_last_seen_run_id": "a3512350-371f-49d7-99b6-8e3c978c2473",
+      "company_id": "i_space",
+      "company_name": "星际荣耀",
+      "id": "f5a83ae6d75085bb",
+      "published_at": "2026-07-22T07:38:09Z",
+      "quality": {
+        "canonical_url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE1QOFZsZ21vcjhKMnZRaFpyX0NtWk1pZ2lMYjdKLVh3S2JFMl96UGdiWGZJbXE2TkNfSks1NGtDM1hPOHFlWnRkZGdZeFVCTnY4WDY3RFRKN18wYkJRdzUwOA?oc=5",
+        "company_relevance_score": 0.85,
+        "event_id": "7d18ebb295ff4f26",
+        "event_type": "other",
+        "market_match_terms": [],
+        "quality_decision": "published",
+        "quality_reason_codes": [
+          "title_company_and_industry_match"
+        ],
+        "source_quality_score": 0.7
+      },
+      "source": {
+        "rank_group": "media",
+        "source_id": "rss_provider",
+        "source_name": "东方财富",
+        "source_type": "rss",
+        "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE1QOFZsZ21vcjhKMnZRaFpyX0NtWk1pZ2lMYjdKLVh3S2JFMl96UGdiWGZJbXE2TkNfSks1NGtDM1hPOHFlWnRkZGdZeFVCTnY4WDY3RFRKN18wYkJRdzUwOA?oc=5"
+      },
+      "title": "四川星际荣耀航天动力有限责任公司注册资本增至1.5亿元 - 东方财富",
+      "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE1QOFZsZ21vcjhKMnZRaFpyX0NtWk1pZ2lMYjdKLVh3S2JFMl96UGdiWGZJbXE2TkNfSks1NGtDM1hPOHFlWnRkZGdZeFVCTnY4WDY3RFRKN18wYkJRdzUwOA?oc=5"
+    },
+    {
       "archive_first_seen_at": "2026-07-24T08:03:38.516381Z",
       "archive_last_seen_at": "2026-07-24T08:03:38.516381Z",
       "archive_last_seen_run_id": "de454d37-0551-4ad9-b8d3-846aa213c00c",
@@ -2018,8 +2710,8 @@
     },
     {
       "archive_first_seen_at": "2026-07-23T02:25:32.030650Z",
-      "archive_last_seen_at": "2026-07-24T13:11:48.353045Z",
-      "archive_last_seen_run_id": "417467de-aae1-4f3e-997d-afc5f8e6e87c",
+      "archive_last_seen_at": "2026-07-24T19:08:53.714588Z",
+      "archive_last_seen_run_id": "a3512350-371f-49d7-99b6-8e3c978c2473",
       "company_id": "spacex",
       "company_name": "SpaceX",
       "id": "d4d0a376c99a7ba4",
@@ -2108,8 +2800,8 @@
     },
     {
       "archive_first_seen_at": "2026-07-23T02:25:32.030650Z",
-      "archive_last_seen_at": "2026-07-24T13:11:48.353045Z",
-      "archive_last_seen_run_id": "417467de-aae1-4f3e-997d-afc5f8e6e87c",
+      "archive_last_seen_at": "2026-07-24T19:08:53.714588Z",
+      "archive_last_seen_run_id": "a3512350-371f-49d7-99b6-8e3c978c2473",
       "company_id": "spacex",
       "company_name": "SpaceX",
       "id": "fc30deea431c7ab8",
@@ -2138,8 +2830,8 @@
     },
     {
       "archive_first_seen_at": "2026-07-21T18:59:49.422836Z",
-      "archive_last_seen_at": "2026-07-24T13:11:48.353045Z",
-      "archive_last_seen_run_id": "417467de-aae1-4f3e-997d-afc5f8e6e87c",
+      "archive_last_seen_at": "2026-07-24T19:08:53.714588Z",
+      "archive_last_seen_run_id": "a3512350-371f-49d7-99b6-8e3c978c2473",
       "company_id": "spacex",
       "company_name": "SpaceX",
       "id": "8b163b31a9119b6c",
@@ -2378,8 +3070,8 @@
     },
     {
       "archive_first_seen_at": "2026-07-23T02:25:32.030650Z",
-      "archive_last_seen_at": "2026-07-24T13:11:48.353045Z",
-      "archive_last_seen_run_id": "417467de-aae1-4f3e-997d-afc5f8e6e87c",
+      "archive_last_seen_at": "2026-07-24T19:08:53.714588Z",
+      "archive_last_seen_run_id": "a3512350-371f-49d7-99b6-8e3c978c2473",
       "company_id": "spacex",
       "company_name": "SpaceX",
       "id": "087159fa12dd95d0",
@@ -2468,8 +3160,8 @@
     },
     {
       "archive_first_seen_at": "2026-07-21T18:59:49.422836Z",
-      "archive_last_seen_at": "2026-07-24T13:11:48.353045Z",
-      "archive_last_seen_run_id": "417467de-aae1-4f3e-997d-afc5f8e6e87c",
+      "archive_last_seen_at": "2026-07-24T19:08:53.714588Z",
+      "archive_last_seen_run_id": "a3512350-371f-49d7-99b6-8e3c978c2473",
       "company_id": "spacex",
       "company_name": "SpaceX",
       "id": "632739fe88a15580",
@@ -2498,8 +3190,8 @@
     },
     {
       "archive_first_seen_at": "2026-07-24T01:19:24.294597Z",
-      "archive_last_seen_at": "2026-07-24T13:11:48.353045Z",
-      "archive_last_seen_run_id": "417467de-aae1-4f3e-997d-afc5f8e6e87c",
+      "archive_last_seen_at": "2026-07-24T19:08:53.714588Z",
+      "archive_last_seen_run_id": "a3512350-371f-49d7-99b6-8e3c978c2473",
       "company_id": "yuanxin_satellite",
       "company_name": "垣信卫星",
       "id": "5619d7f01e76d159",
@@ -2558,8 +3250,8 @@
     },
     {
       "archive_first_seen_at": "2026-07-23T08:06:52.769435Z",
-      "archive_last_seen_at": "2026-07-24T13:11:48.353045Z",
-      "archive_last_seen_run_id": "417467de-aae1-4f3e-997d-afc5f8e6e87c",
+      "archive_last_seen_at": "2026-07-24T19:08:53.714588Z",
+      "archive_last_seen_run_id": "a3512350-371f-49d7-99b6-8e3c978c2473",
       "company_id": "spacex",
       "company_name": "SpaceX",
       "id": "c4b17904efe77b99",
@@ -2618,8 +3310,8 @@
     },
     {
       "archive_first_seen_at": "2026-07-23T02:25:32.030650Z",
-      "archive_last_seen_at": "2026-07-24T13:11:48.353045Z",
-      "archive_last_seen_run_id": "417467de-aae1-4f3e-997d-afc5f8e6e87c",
+      "archive_last_seen_at": "2026-07-24T19:08:53.714588Z",
+      "archive_last_seen_run_id": "a3512350-371f-49d7-99b6-8e3c978c2473",
       "company_id": "spacex",
       "company_name": "SpaceX",
       "id": "60e5b66f289a257a",
@@ -2648,8 +3340,8 @@
     },
     {
       "archive_first_seen_at": "2026-07-23T02:25:32.030650Z",
-      "archive_last_seen_at": "2026-07-24T13:11:48.353045Z",
-      "archive_last_seen_run_id": "417467de-aae1-4f3e-997d-afc5f8e6e87c",
+      "archive_last_seen_at": "2026-07-24T19:08:53.714588Z",
+      "archive_last_seen_run_id": "a3512350-371f-49d7-99b6-8e3c978c2473",
       "company_id": "spacex",
       "company_name": "SpaceX",
       "id": "bfc811bdf8dd1a26",
@@ -2738,8 +3430,8 @@
     },
     {
       "archive_first_seen_at": "2026-07-23T03:11:46.810306Z",
-      "archive_last_seen_at": "2026-07-24T13:11:48.353045Z",
-      "archive_last_seen_run_id": "417467de-aae1-4f3e-997d-afc5f8e6e87c",
+      "archive_last_seen_at": "2026-07-24T19:08:53.714588Z",
+      "archive_last_seen_run_id": "a3512350-371f-49d7-99b6-8e3c978c2473",
       "company_id": "hongqing_technology",
       "company_name": "蓝箭鸿擎",
       "id": "9a51b6c5e8abde16",
@@ -2825,6 +3517,36 @@
       },
       "title": "SpaceX launches Falcon 9 on 50th California launch today. See recap",
       "url": "http://www.bing.com/news/apiclick.aspx?aid=&tid=6a631bff603a49e38a8566efa5cc6408&url=https%3A%2F%2Fwww.yahoo.com%2Fnews%2Fscience%2Farticles%2Fspacex-eyes-50th-california-rocket-130052266.html&c=6505298597567116539&mkt=en-us"
+    },
+    {
+      "archive_first_seen_at": "2026-07-24T19:08:53.714588Z",
+      "archive_last_seen_at": "2026-07-24T19:08:53.714588Z",
+      "archive_last_seen_run_id": "a3512350-371f-49d7-99b6-8e3c978c2473",
+      "company_id": "spacex",
+      "company_name": "SpaceX",
+      "id": "899d07970e3854ce",
+      "published_at": "2026-07-21T06:00:00Z",
+      "quality": {
+        "canonical_url": "http://www.bing.com/news/apiclick.aspx?aid=&tid=6a63b7e1bd5244eeb98a4b5b98998355&url=https%3A%2F%2Fwww.yahoo.com%2Fnews%2Fscience%2Farticles%2Fspacex-eyes-50th-california-rocket-130052266.html&c=6505298597567116539&mkt=en-us",
+        "company_relevance_score": 0.85,
+        "event_id": "8133ed448e5227e9",
+        "event_type": "launch",
+        "market_match_terms": [],
+        "quality_decision": "published",
+        "quality_reason_codes": [
+          "title_company_and_industry_match"
+        ],
+        "source_quality_score": 0.7
+      },
+      "source": {
+        "rank_group": "media",
+        "source_id": "rss_provider",
+        "source_name": "bing.com",
+        "source_type": "rss",
+        "url": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6a63b7e1bd5244eeb98a4b5b98998355&url=https%3a%2f%2fwww.yahoo.com%2fnews%2fscience%2farticles%2fspacex-eyes-50th-california-rocket-130052266.html&c=6505298597567116539&mkt=en-us"
+      },
+      "title": "SpaceX launches Falcon 9 on 50th California launch today. See recap",
+      "url": "http://www.bing.com/news/apiclick.aspx?aid=&tid=6a63b7e1bd5244eeb98a4b5b98998355&url=https%3A%2F%2Fwww.yahoo.com%2Fnews%2Fscience%2Farticles%2Fspacex-eyes-50th-california-rocket-130052266.html&c=6505298597567116539&mkt=en-us"
     },
     {
       "archive_first_seen_at": "2026-07-23T08:06:52.769435Z",
@@ -2948,8 +3670,8 @@
     },
     {
       "archive_first_seen_at": "2026-07-23T02:25:32.030650Z",
-      "archive_last_seen_at": "2026-07-24T13:11:48.353045Z",
-      "archive_last_seen_run_id": "417467de-aae1-4f3e-997d-afc5f8e6e87c",
+      "archive_last_seen_at": "2026-07-24T19:08:53.714588Z",
+      "archive_last_seen_run_id": "a3512350-371f-49d7-99b6-8e3c978c2473",
       "company_id": "galactic_energy",
       "company_name": "星河动力",
       "id": "5f2c44c6656ce87e",
@@ -3217,6 +3939,36 @@
       "url": "http://www.bing.com/news/apiclick.aspx?aid=&tid=6a626396717842759dfa8b4198d7000e&url=https%3A%2F%2Fwww.msn.com%2Fen-us%2Ftechnology%2Fspace-exploration%2Fspacex-aborts-a-falcon-9-starlink-launch-at-the-last-moment-due-to-a-mystery-glitch%2Far-AA28lgz6&c=7525767773022572529&mkt=en-us"
     },
     {
+      "archive_first_seen_at": "2026-07-24T19:08:53.714588Z",
+      "archive_last_seen_at": "2026-07-24T19:08:53.714588Z",
+      "archive_last_seen_run_id": "a3512350-371f-49d7-99b6-8e3c978c2473",
+      "company_id": "spacex",
+      "company_name": "SpaceX",
+      "id": "4ae26c5d982102ff",
+      "published_at": "2026-07-20T21:06:37Z",
+      "quality": {
+        "canonical_url": "http://www.bing.com/news/apiclick.aspx?aid=&tid=6a63b7e1bd5244eeb98a4b5b98998355&url=https%3A%2F%2Fwww.msn.com%2Fen-us%2Ftechnology%2Fspace-exploration%2Fspacex-aborts-a-falcon-9-starlink-launch-at-the-last-moment-due-to-a-mystery-glitch%2Far-AA28lgz6&c=7525767773022572529&mkt=en-us",
+        "company_relevance_score": 0.85,
+        "event_id": "fadc7eec1ea71e96",
+        "event_type": "launch",
+        "market_match_terms": [],
+        "quality_decision": "published",
+        "quality_reason_codes": [
+          "title_company_and_industry_match"
+        ],
+        "source_quality_score": 0.7
+      },
+      "source": {
+        "rank_group": "media",
+        "source_id": "rss_provider",
+        "source_name": "bing.com",
+        "source_type": "rss",
+        "url": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6a63b7e1bd5244eeb98a4b5b98998355&url=https%3a%2f%2fwww.msn.com%2fen-us%2ftechnology%2fspace-exploration%2fspacex-aborts-a-falcon-9-starlink-launch-at-the-last-moment-due-to-a-mystery-glitch%2far-AA28lgz6&c=7525767773022572529&mkt=en-us"
+      },
+      "title": "SpaceX aborts a Falcon 9-Starlink launch at the last moment due to a mystery glitch",
+      "url": "http://www.bing.com/news/apiclick.aspx?aid=&tid=6a63b7e1bd5244eeb98a4b5b98998355&url=https%3A%2F%2Fwww.msn.com%2Fen-us%2Ftechnology%2Fspace-exploration%2Fspacex-aborts-a-falcon-9-starlink-launch-at-the-last-moment-due-to-a-mystery-glitch%2Far-AA28lgz6&c=7525767773022572529&mkt=en-us"
+    },
+    {
       "archive_first_seen_at": "2026-07-24T08:03:38.516381Z",
       "archive_last_seen_at": "2026-07-24T08:03:38.516381Z",
       "archive_last_seen_run_id": "de454d37-0551-4ad9-b8d3-846aa213c00c",
@@ -3308,8 +4060,8 @@
     },
     {
       "archive_first_seen_at": "2026-07-23T08:06:52.769435Z",
-      "archive_last_seen_at": "2026-07-24T13:11:48.353045Z",
-      "archive_last_seen_run_id": "417467de-aae1-4f3e-997d-afc5f8e6e87c",
+      "archive_last_seen_at": "2026-07-24T19:08:53.714588Z",
+      "archive_last_seen_run_id": "a3512350-371f-49d7-99b6-8e3c978c2473",
       "company_id": "spacex",
       "company_name": "SpaceX",
       "id": "07ab18c9457b7a84",
@@ -3338,8 +4090,8 @@
     },
     {
       "archive_first_seen_at": "2026-07-23T02:25:32.030650Z",
-      "archive_last_seen_at": "2026-07-24T13:11:48.353045Z",
-      "archive_last_seen_run_id": "417467de-aae1-4f3e-997d-afc5f8e6e87c",
+      "archive_last_seen_at": "2026-07-24T19:08:53.714588Z",
+      "archive_last_seen_run_id": "a3512350-371f-49d7-99b6-8e3c978c2473",
       "company_id": "spacex",
       "company_name": "SpaceX",
       "id": "76a486bb4b525402",
@@ -3488,8 +4240,8 @@
     },
     {
       "archive_first_seen_at": "2026-07-20T13:40:40.961385Z",
-      "archive_last_seen_at": "2026-07-24T13:11:48.353045Z",
-      "archive_last_seen_run_id": "417467de-aae1-4f3e-997d-afc5f8e6e87c",
+      "archive_last_seen_at": "2026-07-24T19:08:53.714588Z",
+      "archive_last_seen_run_id": "a3512350-371f-49d7-99b6-8e3c978c2473",
       "company_id": "spacex",
       "company_name": "SpaceX",
       "id": "f0b83b5e75bdcfbd",
@@ -3518,8 +4270,8 @@
     },
     {
       "archive_first_seen_at": "2026-07-20T19:19:38.236163Z",
-      "archive_last_seen_at": "2026-07-24T13:11:48.353045Z",
-      "archive_last_seen_run_id": "417467de-aae1-4f3e-997d-afc5f8e6e87c",
+      "archive_last_seen_at": "2026-07-24T19:08:53.714588Z",
+      "archive_last_seen_run_id": "a3512350-371f-49d7-99b6-8e3c978c2473",
       "company_id": "spacex",
       "company_name": "SpaceX",
       "id": "10bdf58c06a35416",
@@ -3638,8 +4390,8 @@
     },
     {
       "archive_first_seen_at": "2026-07-23T13:18:30.470453Z",
-      "archive_last_seen_at": "2026-07-24T13:11:48.353045Z",
-      "archive_last_seen_run_id": "417467de-aae1-4f3e-997d-afc5f8e6e87c",
+      "archive_last_seen_at": "2026-07-24T19:08:53.714588Z",
+      "archive_last_seen_run_id": "a3512350-371f-49d7-99b6-8e3c978c2473",
       "company_id": "galactic_energy",
       "company_name": "星河动力",
       "id": "ab8956f892cda76f",
@@ -3659,17 +4411,17 @@
       "source": {
         "rank_group": "media",
         "source_id": "rss_provider",
-        "source_name": "新浪财经",
+        "source_name": "新浪网",
         "source_type": "rss",
         "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE5RWVZPNTNMdkVyOV9kdmNKM0Qxdlo0UEU5ZkdoVVk1Ui0ycXVCVV8yeG45MjhnN0R0dlJ0QmdKZlN4a212Q0V3WjJ2RFJmWXFuSTJCdnF0dVBsRW4ycWlsc09yNy1nb1VEZlZpUW5nS0pfNlVWZ0tZbFEtMXBEVm8?oc=5"
       },
-      "title": "可复用国产民营中大型液体火箭！星河动力智神星一号8月下旬首飞 - 新浪财经",
+      "title": "可复用国产民营中大型液体火箭！星河动力智神星一号8月下旬首飞 - 新浪网",
       "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE5RWVZPNTNMdkVyOV9kdmNKM0Qxdlo0UEU5ZkdoVVk1Ui0ycXVCVV8yeG45MjhnN0R0dlJ0QmdKZlN4a212Q0V3WjJ2RFJmWXFuSTJCdnF0dVBsRW4ycWlsc09yNy1nb1VEZlZpUW5nS0pfNlVWZ0tZbFEtMXBEVm8?oc=5"
     },
     {
       "archive_first_seen_at": "2026-07-23T02:25:32.030650Z",
-      "archive_last_seen_at": "2026-07-24T13:11:48.353045Z",
-      "archive_last_seen_run_id": "417467de-aae1-4f3e-997d-afc5f8e6e87c",
+      "archive_last_seen_at": "2026-07-24T19:08:53.714588Z",
+      "archive_last_seen_run_id": "a3512350-371f-49d7-99b6-8e3c978c2473",
       "company_id": "spacex",
       "company_name": "SpaceX",
       "id": "1fee4e3c8a0bdc74",
@@ -3698,8 +4450,8 @@
     },
     {
       "archive_first_seen_at": "2026-07-23T03:11:46.810306Z",
-      "archive_last_seen_at": "2026-07-24T13:11:48.353045Z",
-      "archive_last_seen_run_id": "417467de-aae1-4f3e-997d-afc5f8e6e87c",
+      "archive_last_seen_at": "2026-07-24T19:08:53.714588Z",
+      "archive_last_seen_run_id": "a3512350-371f-49d7-99b6-8e3c978c2473",
       "company_id": "galactic_energy",
       "company_name": "星河动力",
       "id": "7e6edea6277a0152",
@@ -3728,8 +4480,8 @@
     },
     {
       "archive_first_seen_at": "2026-07-23T03:11:46.810306Z",
-      "archive_last_seen_at": "2026-07-24T13:11:48.353045Z",
-      "archive_last_seen_run_id": "417467de-aae1-4f3e-997d-afc5f8e6e87c",
+      "archive_last_seen_at": "2026-07-24T19:08:53.714588Z",
+      "archive_last_seen_run_id": "a3512350-371f-49d7-99b6-8e3c978c2473",
       "company_id": "galactic_energy",
       "company_name": "星河动力",
       "id": "0f307f93d9624755",
@@ -3749,11 +4501,11 @@
       "source": {
         "rank_group": "media",
         "source_id": "rss_provider",
-        "source_name": "新浪财经",
+        "source_name": "新浪网",
         "source_type": "rss",
         "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE5rOUx3ZG1fbHIzQVBDbDJxMHBGWHR6U2FUMlRvNkp3Uy1GOFIxNE1pVFU2TEp3Nmxray04NGstV1ZpU1NCU0g2MDlBTHY1dXg5alFxMjVvMThTTzg5NkZHTkZUdUV5NTJjNF9fNFdqTXVNS2JNVGwweEpyVGJtZ3M?oc=5"
       },
-      "title": "星河动力“智神星一号”中大型可重复使用液体运载火箭计划 8 月中下旬首飞 - 新浪财经",
+      "title": "星河动力“智神星一号”中大型可重复使用液体运载火箭计划 8 月中下旬首飞 - 新浪网",
       "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE5rOUx3ZG1fbHIzQVBDbDJxMHBGWHR6U2FUMlRvNkp3Uy1GOFIxNE1pVFU2TEp3Nmxray04NGstV1ZpU1NCU0g2MDlBTHY1dXg5alFxMjVvMThTTzg5NkZHTkZUdUV5NTJjNF9fNFdqTXVNS2JNVGwweEpyVGJtZ3M?oc=5"
     },
     {
@@ -3788,8 +4540,8 @@
     },
     {
       "archive_first_seen_at": "2026-07-24T13:11:48.353045Z",
-      "archive_last_seen_at": "2026-07-24T13:11:48.353045Z",
-      "archive_last_seen_run_id": "417467de-aae1-4f3e-997d-afc5f8e6e87c",
+      "archive_last_seen_at": "2026-07-24T19:08:53.714588Z",
+      "archive_last_seen_run_id": "a3512350-371f-49d7-99b6-8e3c978c2473",
       "company_id": "galactic_energy",
       "company_name": "星河动力",
       "id": "b94de040c36f5acc",
@@ -4182,8 +4934,8 @@
     },
     {
       "archive_first_seen_at": "2026-07-23T03:11:46.810306Z",
-      "archive_last_seen_at": "2026-07-24T13:11:48.353045Z",
-      "archive_last_seen_run_id": "417467de-aae1-4f3e-997d-afc5f8e6e87c",
+      "archive_last_seen_at": "2026-07-24T19:08:53.714588Z",
+      "archive_last_seen_run_id": "a3512350-371f-49d7-99b6-8e3c978c2473",
       "company_id": "yuanxin_satellite",
       "company_name": "垣信卫星",
       "id": "b8725d6a43006e27",
@@ -4242,8 +4994,8 @@
     },
     {
       "archive_first_seen_at": "2026-07-23T02:25:32.030650Z",
-      "archive_last_seen_at": "2026-07-24T13:11:48.353045Z",
-      "archive_last_seen_run_id": "417467de-aae1-4f3e-997d-afc5f8e6e87c",
+      "archive_last_seen_at": "2026-07-24T19:08:53.714588Z",
+      "archive_last_seen_run_id": "a3512350-371f-49d7-99b6-8e3c978c2473",
       "company_id": "spacex",
       "company_name": "SpaceX",
       "id": "ced0f2e35e297a06",
@@ -4272,8 +5024,8 @@
     },
     {
       "archive_first_seen_at": "2026-07-20T08:31:36.693645Z",
-      "archive_last_seen_at": "2026-07-24T13:11:48.353045Z",
-      "archive_last_seen_run_id": "417467de-aae1-4f3e-997d-afc5f8e6e87c",
+      "archive_last_seen_at": "2026-07-24T19:08:53.714588Z",
+      "archive_last_seen_run_id": "a3512350-371f-49d7-99b6-8e3c978c2473",
       "company_id": "yuanxin_satellite",
       "company_name": "垣信卫星",
       "id": "1974d2b7f1ba0402",
@@ -4302,8 +5054,8 @@
     },
     {
       "archive_first_seen_at": "2026-07-23T02:25:32.030650Z",
-      "archive_last_seen_at": "2026-07-24T13:11:48.353045Z",
-      "archive_last_seen_run_id": "417467de-aae1-4f3e-997d-afc5f8e6e87c",
+      "archive_last_seen_at": "2026-07-24T19:08:53.714588Z",
+      "archive_last_seen_run_id": "a3512350-371f-49d7-99b6-8e3c978c2473",
       "company_id": "spacex",
       "company_name": "SpaceX",
       "id": "a956f6aee43717ff",
@@ -4334,8 +5086,8 @@
     },
     {
       "archive_first_seen_at": "2026-07-23T03:11:46.810306Z",
-      "archive_last_seen_at": "2026-07-24T13:11:48.353045Z",
-      "archive_last_seen_run_id": "417467de-aae1-4f3e-997d-afc5f8e6e87c",
+      "archive_last_seen_at": "2026-07-24T19:08:53.714588Z",
+      "archive_last_seen_run_id": "a3512350-371f-49d7-99b6-8e3c978c2473",
       "company_id": "yuanxin_satellite",
       "company_name": "垣信卫星",
       "id": "ec69d6fc63f1da7f",
@@ -4394,8 +5146,8 @@
     },
     {
       "archive_first_seen_at": "2026-07-23T02:25:32.030650Z",
-      "archive_last_seen_at": "2026-07-24T13:11:48.353045Z",
-      "archive_last_seen_run_id": "417467de-aae1-4f3e-997d-afc5f8e6e87c",
+      "archive_last_seen_at": "2026-07-24T19:08:53.714588Z",
+      "archive_last_seen_run_id": "a3512350-371f-49d7-99b6-8e3c978c2473",
       "company_id": "galaxyspace",
       "company_name": "银河航天",
       "id": "2f87bb71cc60fd08",
@@ -4424,8 +5176,8 @@
     },
     {
       "archive_first_seen_at": "2026-07-23T02:25:32.030650Z",
-      "archive_last_seen_at": "2026-07-24T13:11:48.353045Z",
-      "archive_last_seen_run_id": "417467de-aae1-4f3e-997d-afc5f8e6e87c",
+      "archive_last_seen_at": "2026-07-24T19:08:53.714588Z",
+      "archive_last_seen_run_id": "a3512350-371f-49d7-99b6-8e3c978c2473",
       "company_id": "spacex",
       "company_name": "SpaceX",
       "id": "40d7192676a6a482",
@@ -4454,8 +5206,8 @@
     },
     {
       "archive_first_seen_at": "2026-07-23T02:25:32.030650Z",
-      "archive_last_seen_at": "2026-07-24T13:11:48.353045Z",
-      "archive_last_seen_run_id": "417467de-aae1-4f3e-997d-afc5f8e6e87c",
+      "archive_last_seen_at": "2026-07-24T19:08:53.714588Z",
+      "archive_last_seen_run_id": "a3512350-371f-49d7-99b6-8e3c978c2473",
       "company_id": "spacex",
       "company_name": "SpaceX",
       "id": "23c5bdeaf10e7c93",
@@ -4484,8 +5236,8 @@
     },
     {
       "archive_first_seen_at": "2026-07-24T08:03:38.516381Z",
-      "archive_last_seen_at": "2026-07-24T13:11:48.353045Z",
-      "archive_last_seen_run_id": "417467de-aae1-4f3e-997d-afc5f8e6e87c",
+      "archive_last_seen_at": "2026-07-24T19:08:53.714588Z",
+      "archive_last_seen_run_id": "a3512350-371f-49d7-99b6-8e3c978c2473",
       "company_id": "hongqing_technology",
       "company_name": "蓝箭鸿擎",
       "id": "742a224083cb30d8",
@@ -4514,8 +5266,8 @@
     },
     {
       "archive_first_seen_at": "2026-07-23T02:25:32.030650Z",
-      "archive_last_seen_at": "2026-07-24T13:11:48.353045Z",
-      "archive_last_seen_run_id": "417467de-aae1-4f3e-997d-afc5f8e6e87c",
+      "archive_last_seen_at": "2026-07-24T19:08:53.714588Z",
+      "archive_last_seen_run_id": "a3512350-371f-49d7-99b6-8e3c978c2473",
       "company_id": "spacex",
       "company_name": "SpaceX",
       "id": "2a3cbd31f3f1fe0b",
@@ -4604,8 +5356,8 @@
     },
     {
       "archive_first_seen_at": "2026-07-23T02:25:32.030650Z",
-      "archive_last_seen_at": "2026-07-24T13:11:48.353045Z",
-      "archive_last_seen_run_id": "417467de-aae1-4f3e-997d-afc5f8e6e87c",
+      "archive_last_seen_at": "2026-07-24T19:08:53.714588Z",
+      "archive_last_seen_run_id": "a3512350-371f-49d7-99b6-8e3c978c2473",
       "company_id": "spacex",
       "company_name": "SpaceX",
       "id": "431f258551428ea9",
@@ -4634,8 +5386,8 @@
     },
     {
       "archive_first_seen_at": "2026-07-18T01:10:28.902546Z",
-      "archive_last_seen_at": "2026-07-24T13:11:48.353045Z",
-      "archive_last_seen_run_id": "417467de-aae1-4f3e-997d-afc5f8e6e87c",
+      "archive_last_seen_at": "2026-07-24T19:08:53.714588Z",
+      "archive_last_seen_run_id": "a3512350-371f-49d7-99b6-8e3c978c2473",
       "company_id": "hongqing_technology",
       "company_name": "蓝箭鸿擎",
       "id": "d424953d57596852",
@@ -4694,8 +5446,8 @@
     },
     {
       "archive_first_seen_at": "2026-07-23T02:25:32.030650Z",
-      "archive_last_seen_at": "2026-07-24T13:11:48.353045Z",
-      "archive_last_seen_run_id": "417467de-aae1-4f3e-997d-afc5f8e6e87c",
+      "archive_last_seen_at": "2026-07-24T19:08:53.714588Z",
+      "archive_last_seen_run_id": "a3512350-371f-49d7-99b6-8e3c978c2473",
       "company_id": "spacex",
       "company_name": "SpaceX",
       "id": "dc0e303f2945c2d3",
@@ -4724,8 +5476,8 @@
     },
     {
       "archive_first_seen_at": "2026-07-23T03:11:46.810306Z",
-      "archive_last_seen_at": "2026-07-24T13:11:48.353045Z",
-      "archive_last_seen_run_id": "417467de-aae1-4f3e-997d-afc5f8e6e87c",
+      "archive_last_seen_at": "2026-07-24T19:08:53.714588Z",
+      "archive_last_seen_run_id": "a3512350-371f-49d7-99b6-8e3c978c2473",
       "company_id": "landspace",
       "company_name": "蓝箭航天",
       "id": "5a7d97927a6d5d8a",
@@ -4745,11 +5497,11 @@
       "source": {
         "rank_group": "media",
         "source_id": "rss_provider",
-        "source_name": "新浪财经",
+        "source_name": "新浪网",
         "source_type": "rss",
         "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTE4za1dWdVQxYzBVRUdZbldFbmlHaVV1c1NoSFdmZzNQSWZITWZ1aGF2cEVKUGxMQ3ZfLTE5ZXItTElfbVVudnM3dS1Rd012Q3dONXhEd0pWeGNobG12cUlDNnFrbmFuTnlCdjZXb2YzSU43OWZrQUdybA?oc=5"
       },
-      "title": "公司与蓝箭航天有没业务合作？中简科技回应 - 新浪财经",
+      "title": "公司与蓝箭航天有没业务合作？中简科技回应 - 新浪网",
       "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTE4za1dWdVQxYzBVRUdZbldFbmlHaVV1c1NoSFdmZzNQSWZITWZ1aGF2cEVKUGxMQ3ZfLTE5ZXItTElfbVVudnM3dS1Rd012Q3dONXhEd0pWeGNobG12cUlDNnFrbmFuTnlCdjZXb2YzSU43OWZrQUdybA?oc=5"
     },
     {
@@ -4996,8 +5748,8 @@
     },
     {
       "archive_first_seen_at": "2026-07-23T03:11:46.810306Z",
-      "archive_last_seen_at": "2026-07-24T13:11:48.353045Z",
-      "archive_last_seen_run_id": "417467de-aae1-4f3e-997d-afc5f8e6e87c",
+      "archive_last_seen_at": "2026-07-24T19:08:53.714588Z",
+      "archive_last_seen_run_id": "a3512350-371f-49d7-99b6-8e3c978c2473",
       "company_id": "galaxyspace",
       "company_name": "银河航天",
       "id": "0b9a566e8e5d6e77",
@@ -5026,8 +5778,8 @@
     },
     {
       "archive_first_seen_at": "2026-07-23T03:11:46.810306Z",
-      "archive_last_seen_at": "2026-07-24T13:11:48.353045Z",
-      "archive_last_seen_run_id": "417467de-aae1-4f3e-997d-afc5f8e6e87c",
+      "archive_last_seen_at": "2026-07-24T19:08:53.714588Z",
+      "archive_last_seen_run_id": "a3512350-371f-49d7-99b6-8e3c978c2473",
       "company_id": "cas_space",
       "company_name": "中科宇航",
       "id": "b09fe8483aef7bf9",
@@ -5050,11 +5802,11 @@
       "source": {
         "rank_group": "media",
         "source_id": "rss_provider",
-        "source_name": "凤凰网财经",
+        "source_name": "凤凰网",
         "source_type": "rss",
         "url": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE4zMHN3NFJYZEduQ1RwY1FjTUotdjBrT3NGRV9ROGlMYXQxR2JyQTU4VzM4dE1YMTdVeHRnSXJoNnhYU2V6RDRyTm1fVnQ5bUZJ?oc=5"
       },
-      "title": "中科宇航冲科创板：四年亏掉42.53亿，毛利率-549%，估值150亿，值吗？ - 凤凰网财经",
+      "title": "中科宇航冲科创板：四年亏掉42.53亿，毛利率-549%，估值150亿，值吗？ - 凤凰网",
       "url": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE4zMHN3NFJYZEduQ1RwY1FjTUotdjBrT3NGRV9ROGlMYXQxR2JyQTU4VzM4dE1YMTdVeHRnSXJoNnhYU2V6RDRyTm1fVnQ5bUZJ?oc=5"
     },
     {
@@ -5086,38 +5838,6 @@
       },
       "title": "German Defense Minister: Schedule is crucial in space buildup; Sparrow milsatcom satellite on track for 2027 SpaceX launch",
       "url": "https://www.spaceintelreport.com/german-defense-minister-schedule-is-crucial-in-space-buildup-sparrow-milsatcom-satellite-on-track-for-2027-spacex-launch"
-    },
-    {
-      "archive_first_seen_at": "2026-07-16T01:14:35.295296Z",
-      "archive_last_seen_at": "2026-07-24T13:11:48.353045Z",
-      "archive_last_seen_run_id": "417467de-aae1-4f3e-997d-afc5f8e6e87c",
-      "company_id": "space_pioneer",
-      "company_name": "天兵科技",
-      "id": "de8bc2f902f10a6a",
-      "published_at": "2026-07-15T13:25:23Z",
-      "quality": {
-        "canonical_url": "https://news.google.com/rss/articles/CBMiYkFVX3lxTFAzLURvZV9BM18zYlhGOWhabzNlNm5tekI1RW5MTWF2dTZBb2Z5dmR4UGpIczVKelRDZjNZWGVDbkdwN185eENud1hTV3lZQmFVU0xEUVl0dllzNEROd1RYbV9R?oc=5",
-        "company_relevance_score": 0.65,
-        "event_id": "a55c7193a1106514",
-        "event_type": "financing",
-        "market_match_terms": [
-          "估值"
-        ],
-        "quality_decision": "published",
-        "quality_reason_codes": [
-          "title_company_and_industry_match"
-        ],
-        "source_quality_score": 0.7
-      },
-      "source": {
-        "rank_group": "media",
-        "source_id": "rss_provider",
-        "source_name": "手机网易网",
-        "source_type": "rss",
-        "url": "https://news.google.com/rss/articles/CBMiYkFVX3lxTFAzLURvZV9BM18zYlhGOWhabzNlNm5tekI1RW5MTWF2dTZBb2Z5dmR4UGpIczVKelRDZjNZWGVDbkdwN185eENud1hTV3lZQmFVU0xEUVl0dllzNEROd1RYbV9R?oc=5"
-      },
-      "title": "天兵科技新一轮大额融资即将落地！估值不到一年再上新台阶 - 手机网易网",
-      "url": "https://news.google.com/rss/articles/CBMiYkFVX3lxTFAzLURvZV9BM18zYlhGOWhabzNlNm5tekI1RW5MTWF2dTZBb2Z5dmR4UGpIczVKelRDZjNZWGVDbkdwN185eENud1hTV3lZQmFVU0xEUVl0dllzNEROd1RYbV9R?oc=5"
     },
     {
       "archive_first_seen_at": "2026-07-15T18:49:42.281936Z",
@@ -5180,39 +5900,9 @@
       "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxQc3ZkQXRvdXJ0R3o0ZnhkbUFxTmpidnFzZmdDSnNnWXhGV0gxX0ZacUxDRDM5aWpzdjVjOWQzRDBiX1BQTTk5UEhDSFB6UFZodEhQQ1k0Ukh2cmc4ZkJKOWhhSTRCMHdRMkl2R28tRHNiQjJSVUdIMjJfUEdnWFhrNTlHMHVXMGY1?oc=5"
     },
     {
-      "archive_first_seen_at": "2026-07-15T13:01:42.720459Z",
-      "archive_last_seen_at": "2026-07-23T01:22:08.029732Z",
-      "archive_last_seen_run_id": "b57cfc94-1137-4371-bb8b-12ab2273cee3",
-      "company_id": "spacex",
-      "company_name": "SpaceX",
-      "id": "e362cc7ac9a7f529",
-      "published_at": "2026-07-15T12:00:00Z",
-      "quality": {
-        "canonical_url": "https://news.google.com/rss/articles/CBMi4gFBVV95cUxNM3g5MUViZFpHaGp0WGMxZHlNR3RXQWxJenJ2Nm1YeHp1ZWhxaDRSSWRFYVdTbzZHMk9fUmF4XzNncWJuN3Z5NHotR2pNamxDNVZOdHdhTFlaTzRUQm8zbDNpWEdDTm5FdTFpVnI4VEVYZjJlTlhDUlJiZHR1b0FxM0txRnZiT2IxaVI0VUlXM2dkdzYyNURkVlVpYk5URTM2aHlicnNvMHVWdi0zd0RzZTZTOVJwdjVGZ19TT2FUT3loVVJlYjBCRjQ0djhzWFZFVmd6bkp1U3hEaExrRVlSV1dn?oc=5",
-        "company_relevance_score": 0.85,
-        "event_id": "53cfaff604287979",
-        "event_type": "other",
-        "market_match_terms": [],
-        "quality_decision": "published",
-        "quality_reason_codes": [
-          "title_company_and_industry_match"
-        ],
-        "source_quality_score": 0.7
-      },
-      "source": {
-        "rank_group": "media",
-        "source_id": "rss_provider",
-        "source_name": "Curated RSS provider contract.",
-        "source_type": "rss",
-        "url": "https://news.google.com/rss/articles/CBMi4gFBVV95cUxNM3g5MUViZFpHaGp0WGMxZHlNR3RXQWxJenJ2Nm1YeHp1ZWhxaDRSSWRFYVdTbzZHMk9fUmF4XzNncWJuN3Z5NHotR2pNamxDNVZOdHdhTFlaTzRUQm8zbDNpWEdDTm5FdTFpVnI4VEVYZjJlTlhDUlJiZHR1b0FxM0txRnZiT2IxaVI0VUlXM2dkdzYyNURkVlVpYk5URTM2aHlicnNvMHVWdi0zd0RzZTZTOVJwdjVGZ19TT2FUT3loVVJlYjBCRjQ0djhzWFZFVmd6bkp1U3hEaExrRVlSV1dn?oc=5"
-      },
-      "title": "Every SpaceX Starlink satellite has to dodge a collision almost weekly, and experts fear the worst - Space",
-      "url": "https://news.google.com/rss/articles/CBMi4gFBVV95cUxNM3g5MUViZFpHaGp0WGMxZHlNR3RXQWxJenJ2Nm1YeHp1ZWhxaDRSSWRFYVdTbzZHMk9fUmF4XzNncWJuN3Z5NHotR2pNamxDNVZOdHdhTFlaTzRUQm8zbDNpWEdDTm5FdTFpVnI4VEVYZjJlTlhDUlJiZHR1b0FxM0txRnZiT2IxaVI0VUlXM2dkdzYyNURkVlVpYk5URTM2aHlicnNvMHVWdi0zd0RzZTZTOVJwdjVGZ19TT2FUT3loVVJlYjBCRjQ0djhzWFZFVmd6bkp1U3hEaExrRVlSV1dn?oc=5"
-    },
-    {
       "archive_first_seen_at": "2026-07-23T03:11:46.810306Z",
-      "archive_last_seen_at": "2026-07-24T13:11:48.353045Z",
-      "archive_last_seen_run_id": "417467de-aae1-4f3e-997d-afc5f8e6e87c",
+      "archive_last_seen_at": "2026-07-24T19:08:53.714588Z",
+      "archive_last_seen_run_id": "a3512350-371f-49d7-99b6-8e3c978c2473",
       "company_id": "minospace",
       "company_name": "微纳星空",
       "id": "9da6b8af6a6d2262",
@@ -5238,6 +5928,36 @@
       },
       "title": "“引力一号”遥四火箭预计搭载微纳星空6颗“拼车”卫星 - 东方财富",
       "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTFBzVEYwWXlxWmFKVkZNbVJWWWVKU3lMQThKbjJ0SFpHZzM5aW1JLTJKZVZWVWJ6aEhTSkVLUVBzUHFDZ19Zb3oxVXNZRE5wYVlHdjItYXlCbDlSNEVzdGNmeQ?oc=5"
+    },
+    {
+      "archive_first_seen_at": "2026-07-24T19:08:53.714588Z",
+      "archive_last_seen_at": "2026-07-24T19:08:53.714588Z",
+      "archive_last_seen_run_id": "a3512350-371f-49d7-99b6-8e3c978c2473",
+      "company_id": "spacex",
+      "company_name": "SpaceX",
+      "id": "d7289189715e9e4e",
+      "published_at": "2026-07-15T10:00:38Z",
+      "quality": {
+        "canonical_url": "http://www.bing.com/news/apiclick.aspx?aid=&tid=6a63b7e1317c4a079e78dfff0ea987d1&url=https%3A%2F%2Fwww.msn.com%2Fen-us%2Ftechnology%2Faviation%2Fwhy-the-us-air-force-is-bolting-spacex-starshield-antennas-onto-its-65-year-old-kc-135-tankers%2Far-AA281h56&c=4626293578533765208&mkt=en-us",
+        "company_relevance_score": 0.6,
+        "event_id": "b843d4c7dd463613",
+        "event_type": "other",
+        "market_match_terms": [],
+        "quality_decision": "published",
+        "quality_reason_codes": [
+          "title_program_match"
+        ],
+        "source_quality_score": 0.7
+      },
+      "source": {
+        "rank_group": "media",
+        "source_id": "rss_provider",
+        "source_name": "bing.com",
+        "source_type": "rss",
+        "url": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6a63b7e1317c4a079e78dfff0ea987d1&url=https%3a%2f%2fwww.msn.com%2fen-us%2ftechnology%2faviation%2fwhy-the-us-air-force-is-bolting-spacex-starshield-antennas-onto-its-65-year-old-kc-135-tankers%2far-AA281h56&c=4626293578533765208&mkt=en-us"
+      },
+      "title": "Why the US Air Force is bolting SpaceX Starshield antennas onto its 65-year-old KC-135 tankers",
+      "url": "http://www.bing.com/news/apiclick.aspx?aid=&tid=6a63b7e1317c4a079e78dfff0ea987d1&url=https%3A%2F%2Fwww.msn.com%2Fen-us%2Ftechnology%2Faviation%2Fwhy-the-us-air-force-is-bolting-spacex-starshield-antennas-onto-its-65-year-old-kc-135-tankers%2Far-AA281h56&c=4626293578533765208&mkt=en-us"
     },
     {
       "archive_first_seen_at": "2026-07-15T18:49:42.281936Z",
@@ -5271,8 +5991,8 @@
     },
     {
       "archive_first_seen_at": "2026-07-23T03:11:46.810306Z",
-      "archive_last_seen_at": "2026-07-24T13:11:48.353045Z",
-      "archive_last_seen_run_id": "417467de-aae1-4f3e-997d-afc5f8e6e87c",
+      "archive_last_seen_at": "2026-07-24T19:08:53.714588Z",
+      "archive_last_seen_run_id": "a3512350-371f-49d7-99b6-8e3c978c2473",
       "company_id": "i_space",
       "company_name": "星际荣耀",
       "id": "873a597c5066fe24",
@@ -5330,9 +6050,103 @@
       "url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE5aSzFGcWVIaDhacFl4MFRpRWtTNFdaV0dFeVVSV2FIUUJITWx1eHB6VnpxUmtvZWVicmdRUFl4MTFEUUs0NFJwbkY2SlE0LXV3MTBtcW5kNTVUa3ZKT3M5OGtGTkN3YzA?oc=5"
     },
     {
+      "archive_first_seen_at": "2026-07-15T13:01:42.720459Z",
+      "archive_last_seen_at": "2026-07-24T19:08:53.714588Z",
+      "archive_last_seen_run_id": "a3512350-371f-49d7-99b6-8e3c978c2473",
+      "company_id": "spacex",
+      "company_name": "SpaceX",
+      "id": "e362cc7ac9a7f529",
+      "published_at": "2026-07-15T07:00:00Z",
+      "quality": {
+        "canonical_url": "https://news.google.com/rss/articles/CBMi4gFBVV95cUxNM3g5MUViZFpHaGp0WGMxZHlNR3RXQWxJenJ2Nm1YeHp1ZWhxaDRSSWRFYVdTbzZHMk9fUmF4XzNncWJuN3Z5NHotR2pNamxDNVZOdHdhTFlaTzRUQm8zbDNpWEdDTm5FdTFpVnI4VEVYZjJlTlhDUlJiZHR1b0FxM0txRnZiT2IxaVI0VUlXM2dkdzYyNURkVlVpYk5URTM2aHlicnNvMHVWdi0zd0RzZTZTOVJwdjVGZ19TT2FUT3loVVJlYjBCRjQ0djhzWFZFVmd6bkp1U3hEaExrRVlSV1dn?oc=5",
+        "company_relevance_score": 0.85,
+        "event_id": "53cfaff604287979",
+        "event_type": "other",
+        "market_match_terms": [],
+        "quality_decision": "published",
+        "quality_reason_codes": [
+          "title_company_and_industry_match"
+        ],
+        "source_quality_score": 0.7
+      },
+      "source": {
+        "rank_group": "media",
+        "source_id": "rss_provider",
+        "source_name": "Space",
+        "source_type": "rss",
+        "url": "https://news.google.com/rss/articles/CBMi4gFBVV95cUxNM3g5MUViZFpHaGp0WGMxZHlNR3RXQWxJenJ2Nm1YeHp1ZWhxaDRSSWRFYVdTbzZHMk9fUmF4XzNncWJuN3Z5NHotR2pNamxDNVZOdHdhTFlaTzRUQm8zbDNpWEdDTm5FdTFpVnI4VEVYZjJlTlhDUlJiZHR1b0FxM0txRnZiT2IxaVI0VUlXM2dkdzYyNURkVlVpYk5URTM2aHlicnNvMHVWdi0zd0RzZTZTOVJwdjVGZ19TT2FUT3loVVJlYjBCRjQ0djhzWFZFVmd6bkp1U3hEaExrRVlSV1dn?oc=5"
+      },
+      "title": "Every SpaceX Starlink satellite has to dodge a collision almost weekly, and experts fear the worst - Space",
+      "url": "https://news.google.com/rss/articles/CBMi4gFBVV95cUxNM3g5MUViZFpHaGp0WGMxZHlNR3RXQWxJenJ2Nm1YeHp1ZWhxaDRSSWRFYVdTbzZHMk9fUmF4XzNncWJuN3Z5NHotR2pNamxDNVZOdHdhTFlaTzRUQm8zbDNpWEdDTm5FdTFpVnI4VEVYZjJlTlhDUlJiZHR1b0FxM0txRnZiT2IxaVI0VUlXM2dkdzYyNURkVlVpYk5URTM2aHlicnNvMHVWdi0zd0RzZTZTOVJwdjVGZ19TT2FUT3loVVJlYjBCRjQ0djhzWFZFVmd6bkp1U3hEaExrRVlSV1dn?oc=5"
+    },
+    {
+      "archive_first_seen_at": "2026-07-16T01:14:35.295296Z",
+      "archive_last_seen_at": "2026-07-24T19:08:53.714588Z",
+      "archive_last_seen_run_id": "a3512350-371f-49d7-99b6-8e3c978c2473",
+      "company_id": "space_pioneer",
+      "company_name": "天兵科技",
+      "id": "de8bc2f902f10a6a",
+      "published_at": "2026-07-15T07:00:00Z",
+      "quality": {
+        "canonical_url": "https://news.google.com/rss/articles/CBMiYkFVX3lxTFAzLURvZV9BM18zYlhGOWhabzNlNm5tekI1RW5MTWF2dTZBb2Z5dmR4UGpIczVKelRDZjNZWGVDbkdwN185eENud1hTV3lZQmFVU0xEUVl0dllzNEROd1RYbV9R?oc=5",
+        "company_relevance_score": 0.65,
+        "event_id": "a55c7193a1106514",
+        "event_type": "financing",
+        "market_match_terms": [
+          "估值"
+        ],
+        "quality_decision": "published",
+        "quality_reason_codes": [
+          "title_company_and_industry_match"
+        ],
+        "source_quality_score": 0.7
+      },
+      "source": {
+        "rank_group": "media",
+        "source_id": "rss_provider",
+        "source_name": "手机网易网",
+        "source_type": "rss",
+        "url": "https://news.google.com/rss/articles/CBMiYkFVX3lxTFAzLURvZV9BM18zYlhGOWhabzNlNm5tekI1RW5MTWF2dTZBb2Z5dmR4UGpIczVKelRDZjNZWGVDbkdwN185eENud1hTV3lZQmFVU0xEUVl0dllzNEROd1RYbV9R?oc=5"
+      },
+      "title": "天兵科技新一轮大额融资即将落地！估值不到一年再上新台阶 - 手机网易网",
+      "url": "https://news.google.com/rss/articles/CBMiYkFVX3lxTFAzLURvZV9BM18zYlhGOWhabzNlNm5tekI1RW5MTWF2dTZBb2Z5dmR4UGpIczVKelRDZjNZWGVDbkdwN185eENud1hTV3lZQmFVU0xEUVl0dllzNEROd1RYbV9R?oc=5"
+    },
+    {
+      "archive_first_seen_at": "2026-07-24T19:08:53.714588Z",
+      "archive_last_seen_at": "2026-07-24T19:08:53.714588Z",
+      "archive_last_seen_run_id": "a3512350-371f-49d7-99b6-8e3c978c2473",
+      "company_id": "minospace",
+      "company_name": "微纳星空",
+      "id": "1da92cfa0653c03d",
+      "published_at": "2026-07-15T07:00:00Z",
+      "quality": {
+        "canonical_url": "https://news.google.com/rss/articles/CBMia0FVX3lxTE1aTmRmUGZuQ2pfRmVfTUlGbXd4Zk4yLU9HbmZxdnh0VDJHeXRSZDM0SlVyM3VxSWlqS0hRclY5Y01zcXA3ZXlVQVNwd2Ria1ZiOGtjWUd6OTA5VHlmUExwOW51cHRuVkUyZ1kw?oc=5",
+        "company_relevance_score": 0.65,
+        "event_id": "c28e8167bf42fd1d",
+        "event_type": "market",
+        "market_match_terms": [
+          "科创板"
+        ],
+        "quality_decision": "published",
+        "quality_reason_codes": [
+          "title_company_and_industry_match"
+        ],
+        "source_quality_score": 0.7
+      },
+      "source": {
+        "rank_group": "media",
+        "source_id": "rss_provider",
+        "source_name": "财富号",
+        "source_type": "rss",
+        "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTE1aTmRmUGZuQ2pfRmVfTUlGbXd4Zk4yLU9HbmZxdnh0VDJHeXRSZDM0SlVyM3VxSWlqS0hRclY5Y01zcXA3ZXlVQVNwd2Ria1ZiOGtjWUd6OTA5VHlmUExwOW51cHRuVkUyZ1kw?oc=5"
+      },
+      "title": "“引力一号”遥四火箭预计搭载微纳星空6颗“拼车”卫星7月22日发射。科创板日报1 - 财富号",
+      "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTE1aTmRmUGZuQ2pfRmVfTUlGbXd4Zk4yLU9HbmZxdnh0VDJHeXRSZDM0SlVyM3VxSWlqS0hRclY5Y01zcXA3ZXlVQVNwd2Ria1ZiOGtjWUd6OTA5VHlmUExwOW51cHRuVkUyZ1kw?oc=5"
+    },
+    {
       "archive_first_seen_at": "2026-07-23T03:11:46.810306Z",
-      "archive_last_seen_at": "2026-07-24T13:11:48.353045Z",
-      "archive_last_seen_run_id": "417467de-aae1-4f3e-997d-afc5f8e6e87c",
+      "archive_last_seen_at": "2026-07-24T19:08:53.714588Z",
+      "archive_last_seen_run_id": "a3512350-371f-49d7-99b6-8e3c978c2473",
       "company_id": "landspace",
       "company_name": "蓝箭航天",
       "id": "14dcf28e4305f610",
@@ -5361,8 +6175,8 @@
     },
     {
       "archive_first_seen_at": "2026-07-23T03:11:46.810306Z",
-      "archive_last_seen_at": "2026-07-24T13:11:48.353045Z",
-      "archive_last_seen_run_id": "417467de-aae1-4f3e-997d-afc5f8e6e87c",
+      "archive_last_seen_at": "2026-07-24T19:08:53.714588Z",
+      "archive_last_seen_run_id": "a3512350-371f-49d7-99b6-8e3c978c2473",
       "company_id": "i_space",
       "company_name": "星际荣耀",
       "id": "b8395596f50399c5",
@@ -5393,8 +6207,8 @@
     },
     {
       "archive_first_seen_at": "2026-07-23T03:11:46.810306Z",
-      "archive_last_seen_at": "2026-07-24T13:11:48.353045Z",
-      "archive_last_seen_run_id": "417467de-aae1-4f3e-997d-afc5f8e6e87c",
+      "archive_last_seen_at": "2026-07-24T19:08:53.714588Z",
+      "archive_last_seen_run_id": "a3512350-371f-49d7-99b6-8e3c978c2473",
       "company_id": "galaxyspace",
       "company_name": "银河航天",
       "id": "e5b55a36a36e57cf",
@@ -5423,8 +6237,8 @@
     },
     {
       "archive_first_seen_at": "2026-07-23T03:11:46.810306Z",
-      "archive_last_seen_at": "2026-07-24T13:11:48.353045Z",
-      "archive_last_seen_run_id": "417467de-aae1-4f3e-997d-afc5f8e6e87c",
+      "archive_last_seen_at": "2026-07-24T19:08:53.714588Z",
+      "archive_last_seen_run_id": "a3512350-371f-49d7-99b6-8e3c978c2473",
       "company_id": "i_space",
       "company_name": "星际荣耀",
       "id": "b1c969297e6e14f4",
@@ -5444,11 +6258,11 @@
       "source": {
         "rank_group": "media",
         "source_id": "rss_provider",
-        "source_name": "新浪财经",
+        "source_name": "新浪网",
         "source_type": "rss",
         "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxPV0U3WjA1djBHMjFrOERaUTNjWXZIVUZPT2pDTzBTLWw5MkxiRU4zSm5La1l3Sl9QVm02SHBXZlBBOXRBdUFlSGZFaEp3NmRtdFhWRXRfa0hjTThzWVg0RU9hTlYtSHNWbGlPT3ZBS1lyajVMWklKbHk4YWVLbEhRMkEySXA3QWM?oc=5"
       },
-      "title": "星际荣耀旗下航天动力公司增资，增幅达200% - 新浪财经",
+      "title": "星际荣耀旗下航天动力公司增资，增幅达200% - 新浪网",
       "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxPV0U3WjA1djBHMjFrOERaUTNjWXZIVUZPT2pDTzBTLWw5MkxiRU4zSm5La1l3Sl9QVm02SHBXZlBBOXRBdUFlSGZFaEp3NmRtdFhWRXRfa0hjTThzWVg0RU9hTlYtSHNWbGlPT3ZBS1lyajVMWklKbHk4YWVLbEhRMkEySXA3QWM?oc=5"
     },
     {
@@ -5783,8 +6597,8 @@
     },
     {
       "archive_first_seen_at": "2026-07-15T01:05:54.257936Z",
-      "archive_last_seen_at": "2026-07-24T13:11:48.353045Z",
-      "archive_last_seen_run_id": "417467de-aae1-4f3e-997d-afc5f8e6e87c",
+      "archive_last_seen_at": "2026-07-24T19:08:53.714588Z",
+      "archive_last_seen_run_id": "a3512350-371f-49d7-99b6-8e3c978c2473",
       "company_id": "space_pioneer",
       "company_name": "天兵科技",
       "id": "094bf04f87244ab4",
@@ -5962,6 +6776,36 @@
       },
       "title": "SpaceX's Falcon 9 rocket lifts off from Florida carrying 29 Starlink internet satellites to orbit - eciks.org",
       "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxQa1k5ODJEMDlxX2pYMnRueVA3MDg4a0llZkVfYzM2TU95UmxkWDl5YzNNRmsyNDNTNmhHTHNST3RJS25sNUg1b2pQUkYyM3dPSGRVc3BoZHRsaElNbjNrZ3F0bjZ4bzBfMldyaG1tZGl2NzZ5VENWV2pRdnpfbnZNaEN3?oc=5"
+    },
+    {
+      "archive_first_seen_at": "2026-07-24T19:08:53.714588Z",
+      "archive_last_seen_at": "2026-07-24T19:08:53.714588Z",
+      "archive_last_seen_run_id": "a3512350-371f-49d7-99b6-8e3c978c2473",
+      "company_id": "blue_origin",
+      "company_name": "Blue Origin",
+      "id": "eee2e5b359c43180",
+      "published_at": "2026-07-14T07:20:00Z",
+      "quality": {
+        "canonical_url": "http://www.bing.com/news/apiclick.aspx?aid=&tid=6a63b7e897e34f3fbf697643523860e0&url=https%3A%2F%2Fwww.msn.com%2Fen-us%2Ftechnology%2Fgeneral%2Fblue-origin-s-new-glenn-rocket-exploded-during-a-ground-test-gutting-its-launch-pad%2Far-AA27TlfK&c=17747748000299221194&mkt=en-us",
+        "company_relevance_score": 0.85,
+        "event_id": "4f4d03d2fe05061d",
+        "event_type": "launch",
+        "market_match_terms": [],
+        "quality_decision": "published",
+        "quality_reason_codes": [
+          "title_company_and_industry_match"
+        ],
+        "source_quality_score": 0.7
+      },
+      "source": {
+        "rank_group": "media",
+        "source_id": "rss_provider",
+        "source_name": "bing.com",
+        "source_type": "rss",
+        "url": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6a63b7e897e34f3fbf697643523860e0&url=https%3a%2f%2fwww.msn.com%2fen-us%2ftechnology%2fgeneral%2fblue-origin-s-new-glenn-rocket-exploded-during-a-ground-test-gutting-its-launch-pad%2far-AA27TlfK&c=17747748000299221194&mkt=en-us"
+      },
+      "title": "Blue Origin’s New Glenn rocket exploded during a ground test, gutting its launch pad",
+      "url": "http://www.bing.com/news/apiclick.aspx?aid=&tid=6a63b7e897e34f3fbf697643523860e0&url=https%3A%2F%2Fwww.msn.com%2Fen-us%2Ftechnology%2Fgeneral%2Fblue-origin-s-new-glenn-rocket-exploded-during-a-ground-test-gutting-its-launch-pad%2Far-AA27TlfK&c=17747748000299221194&mkt=en-us"
     },
     {
       "archive_first_seen_at": "2026-07-24T13:11:48.353045Z",
@@ -6205,8 +7049,8 @@
     },
     {
       "archive_first_seen_at": "2026-07-20T19:19:38.236163Z",
-      "archive_last_seen_at": "2026-07-24T13:11:48.353045Z",
-      "archive_last_seen_run_id": "417467de-aae1-4f3e-997d-afc5f8e6e87c",
+      "archive_last_seen_at": "2026-07-24T19:08:53.714588Z",
+      "archive_last_seen_run_id": "a3512350-371f-49d7-99b6-8e3c978c2473",
       "company_id": "yuanxin_satellite",
       "company_name": "垣信卫星",
       "id": "062114733c159a83",
@@ -6235,8 +7079,8 @@
     },
     {
       "archive_first_seen_at": "2026-07-23T02:25:32.030650Z",
-      "archive_last_seen_at": "2026-07-24T13:11:48.353045Z",
-      "archive_last_seen_run_id": "417467de-aae1-4f3e-997d-afc5f8e6e87c",
+      "archive_last_seen_at": "2026-07-24T19:08:53.714588Z",
+      "archive_last_seen_run_id": "a3512350-371f-49d7-99b6-8e3c978c2473",
       "company_id": "spacex",
       "company_name": "SpaceX",
       "id": "ec1774db2e2581da",
@@ -6627,8 +7471,8 @@
     },
     {
       "archive_first_seen_at": "2026-07-23T02:25:32.030650Z",
-      "archive_last_seen_at": "2026-07-24T13:11:48.353045Z",
-      "archive_last_seen_run_id": "417467de-aae1-4f3e-997d-afc5f8e6e87c",
+      "archive_last_seen_at": "2026-07-24T19:08:53.714588Z",
+      "archive_last_seen_run_id": "a3512350-371f-49d7-99b6-8e3c978c2473",
       "company_id": "galaxyspace",
       "company_name": "银河航天",
       "id": "5a5c5152a95c869f",
@@ -6648,17 +7492,17 @@
       "source": {
         "rank_group": "media",
         "source_id": "rss_provider",
-        "source_name": "搜狐网",
+        "source_name": "Sohu",
         "source_type": "rss",
         "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE1iaU84dktlNVQzSUVqUDFSYVUxY0h6VkhXOGNoaWpTVHRYVzNJX3pHWlk1MUNqcERUY1hHb0hOOEJSZTBBNGlROHdxYzRmRzBrQ3c?oc=5"
       },
-      "title": "正式投产！银河航天合肥载荷中心首套通信卫星载荷官宣下线 - 搜狐网",
+      "title": "正式投产！银河航天合肥载荷中心首套通信卫星载荷官宣下线 - Sohu",
       "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE1iaU84dktlNVQzSUVqUDFSYVUxY0h6VkhXOGNoaWpTVHRYVzNJX3pHWlk1MUNqcERUY1hHb0hOOEJSZTBBNGlROHdxYzRmRzBrQ3c?oc=5"
     },
     {
       "archive_first_seen_at": "2026-07-23T03:11:46.810306Z",
-      "archive_last_seen_at": "2026-07-24T13:11:48.353045Z",
-      "archive_last_seen_run_id": "417467de-aae1-4f3e-997d-afc5f8e6e87c",
+      "archive_last_seen_at": "2026-07-24T19:08:53.714588Z",
+      "archive_last_seen_run_id": "a3512350-371f-49d7-99b6-8e3c978c2473",
       "company_id": "galaxyspace",
       "company_name": "银河航天",
       "id": "01dc397eacceea74",
@@ -6678,11 +7522,11 @@
       "source": {
         "rank_group": "media",
         "source_id": "rss_provider",
-        "source_name": "新浪财经",
+        "source_name": "新浪网",
         "source_type": "rss",
         "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE1XZ1FkdGk0OGJFR19WWGxXckVmaHpRanZDT0p6WjFmRTVvSmY1aGc5ZlhkVHlDXzlLTDNXa1FZYUg5ZUN5b09CQTcyLVozU1U5RWFoTTRXTmtqcGwzVFZZQ3RsRUdvRTFwZUhkelY1aE4zWHhmVG9wTVo3U1hmdzg?oc=5"
       },
-      "title": "为 6G 通导感算一体化太空基础设施铺路，银河航天合肥载荷中心首套通信卫星载荷正式下线 - 新浪财经",
+      "title": "为 6G 通导感算一体化太空基础设施铺路，银河航天合肥载荷中心首套通信卫星载荷正式下线 - 新浪网",
       "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE1XZ1FkdGk0OGJFR19WWGxXckVmaHpRanZDT0p6WjFmRTVvSmY1aGc5ZlhkVHlDXzlLTDNXa1FZYUg5ZUN5b09CQTcyLVozU1U5RWFoTTRXTmtqcGwzVFZZQ3RsRUdvRTFwZUhkelY1aE4zWHhmVG9wTVo3U1hmdzg?oc=5"
     },
     {
@@ -6749,8 +7593,8 @@
     },
     {
       "archive_first_seen_at": "2026-07-23T13:18:30.470453Z",
-      "archive_last_seen_at": "2026-07-24T13:11:48.353045Z",
-      "archive_last_seen_run_id": "417467de-aae1-4f3e-997d-afc5f8e6e87c",
+      "archive_last_seen_at": "2026-07-24T19:08:53.714588Z",
+      "archive_last_seen_run_id": "a3512350-371f-49d7-99b6-8e3c978c2473",
       "company_id": "landspace",
       "company_name": "蓝箭航天",
       "id": "98334f45326b0a72",
@@ -6770,17 +7614,17 @@
       "source": {
         "rank_group": "media",
         "source_id": "rss_provider",
-        "source_name": "新浪财经",
+        "source_name": "新浪网",
         "source_type": "rss",
         "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxORjVTclRmUG5ZTVJCSklJTU1mclhmUExmdGhGeDlYVS04bWNVOERrYVB2UFdxNXYxTzBFbzJ4QldpQkVIRVJ6Z1h2cnk0SXRpMGlsSG9LUFhFdWlEaTN4X0hEQWplQjNjdXFpYU5WQjZ3a2ljVmpIR3JTbmloZ2wwWTBhN1F5Ykk?oc=5"
       },
-      "title": "大唐电信是否是蓝箭航天的供应商？大唐电信回应 - 新浪财经",
+      "title": "大唐电信是否是蓝箭航天的供应商？大唐电信回应 - 新浪网",
       "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxORjVTclRmUG5ZTVJCSklJTU1mclhmUExmdGhGeDlYVS04bWNVOERrYVB2UFdxNXYxTzBFbzJ4QldpQkVIRVJ6Z1h2cnk0SXRpMGlsSG9LUFhFdWlEaTN4X0hEQWplQjNjdXFpYU5WQjZ3a2ljVmpIR3JTbmloZ2wwWTBhN1F5Ykk?oc=5"
     },
     {
       "archive_first_seen_at": "2026-07-23T03:11:46.810306Z",
-      "archive_last_seen_at": "2026-07-24T13:11:48.353045Z",
-      "archive_last_seen_run_id": "417467de-aae1-4f3e-997d-afc5f8e6e87c",
+      "archive_last_seen_at": "2026-07-24T19:08:53.714588Z",
+      "archive_last_seen_run_id": "a3512350-371f-49d7-99b6-8e3c978c2473",
       "company_id": "galaxyspace",
       "company_name": "银河航天",
       "id": "b6cdab684b31bc74",
@@ -6800,11 +7644,11 @@
       "source": {
         "rank_group": "media",
         "source_id": "rss_provider",
-        "source_name": "新浪财经",
+        "source_name": "新浪网",
         "source_type": "rss",
         "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxQVkNqN0VFeXpxUUlhZjdoMHpOLWxNQndCSGU1Nm9BZm9ENWJCZF8taDdFWk1sWmdJalVTbEc0ZEQwaXBicmpOVlNPU3FKQ0Z6Q0czN2owWWZ3djYzQ1Q4X0F1YXg0WlZwSHMtUmJrTTA1aEdvcFdxeGJ0ejU5MEJIbmxWZEkwMFBCdHV1dXp1YjZRMEU?oc=5"
       },
-      "title": "银河航天合肥载荷中心首套通信卫星载荷下线 年产可达50至100颗 - 新浪财经",
+      "title": "银河航天合肥载荷中心首套通信卫星载荷下线 年产可达50至100颗 - 新浪网",
       "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxQVkNqN0VFeXpxUUlhZjdoMHpOLWxNQndCSGU1Nm9BZm9ENWJCZF8taDdFWk1sWmdJalVTbEc0ZEQwaXBicmpOVlNPU3FKQ0Z6Q0czN2owWWZ3djYzQ1Q4X0F1YXg0WlZwSHMtUmJrTTA1aEdvcFdxeGJ0ejU5MEJIbmxWZEkwMFBCdHV1dXp1YjZRMEU?oc=5"
     },
     {
@@ -6958,6 +7802,36 @@
       "url": "http://www.bing.com/news/apiclick.aspx?aid=&tid=6a62144465ae4644ab3b431c32bf06d0&url=https%3A%2F%2Fkeyt.com%2Fvandenberg-space-base%2F2026%2F07%2F13%2Ffalcon-9-launch-of-starlink-satellites-from-vandenberg-sfb-scheduled-for-monday-evening%2F&c=1830636094995145681&mkt=en-us"
     },
     {
+      "archive_first_seen_at": "2026-07-24T19:08:53.714588Z",
+      "archive_last_seen_at": "2026-07-24T19:08:53.714588Z",
+      "archive_last_seen_run_id": "a3512350-371f-49d7-99b6-8e3c978c2473",
+      "company_id": "spacex",
+      "company_name": "SpaceX",
+      "id": "236ca612a768200f",
+      "published_at": "2026-07-13T03:56:00Z",
+      "quality": {
+        "canonical_url": "http://www.bing.com/news/apiclick.aspx?aid=&tid=6a63b7e1bd5244eeb98a4b5b98998355&url=https%3A%2F%2Fkeyt.com%2Fvandenberg-space-base%2F2026%2F07%2F13%2Ffalcon-9-launch-of-starlink-satellites-from-vandenberg-sfb-scheduled-for-monday-evening%2F&c=1830636094995145681&mkt=en-us",
+        "company_relevance_score": 0.85,
+        "event_id": "b59af7fdf20b83f9",
+        "event_type": "launch",
+        "market_match_terms": [],
+        "quality_decision": "published",
+        "quality_reason_codes": [
+          "title_company_and_industry_match"
+        ],
+        "source_quality_score": 0.7
+      },
+      "source": {
+        "rank_group": "media",
+        "source_id": "rss_provider",
+        "source_name": "bing.com",
+        "source_type": "rss",
+        "url": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6a63b7e1bd5244eeb98a4b5b98998355&url=https%3a%2f%2fkeyt.com%2fvandenberg-space-base%2f2026%2f07%2f13%2ffalcon-9-launch-of-starlink-satellites-from-vandenberg-sfb-scheduled-for-monday-evening%2f&c=1830636094995145681&mkt=en-us"
+      },
+      "title": "Falcon 9 launch of Starlink satellites from Vandenberg SFB scheduled for Monday evening",
+      "url": "http://www.bing.com/news/apiclick.aspx?aid=&tid=6a63b7e1bd5244eeb98a4b5b98998355&url=https%3A%2F%2Fkeyt.com%2Fvandenberg-space-base%2F2026%2F07%2F13%2Ffalcon-9-launch-of-starlink-satellites-from-vandenberg-sfb-scheduled-for-monday-evening%2F&c=1830636094995145681&mkt=en-us"
+    },
+    {
       "archive_first_seen_at": "2026-07-24T01:19:24.294597Z",
       "archive_last_seen_at": "2026-07-24T01:19:24.294597Z",
       "archive_last_seen_run_id": "fe5b07e5-8146-499b-bbcd-04e781ae4bad",
@@ -7019,8 +7893,8 @@
     },
     {
       "archive_first_seen_at": "2026-07-23T03:11:46.810306Z",
-      "archive_last_seen_at": "2026-07-24T13:11:48.353045Z",
-      "archive_last_seen_run_id": "417467de-aae1-4f3e-997d-afc5f8e6e87c",
+      "archive_last_seen_at": "2026-07-24T19:08:53.714588Z",
+      "archive_last_seen_run_id": "a3512350-371f-49d7-99b6-8e3c978c2473",
       "company_id": "galaxyspace",
       "company_name": "银河航天",
       "id": "3ebfceb19a9189b3",
@@ -7079,8 +7953,8 @@
     },
     {
       "archive_first_seen_at": "2026-07-23T03:11:46.810306Z",
-      "archive_last_seen_at": "2026-07-24T13:11:48.353045Z",
-      "archive_last_seen_run_id": "417467de-aae1-4f3e-997d-afc5f8e6e87c",
+      "archive_last_seen_at": "2026-07-24T19:08:53.714588Z",
+      "archive_last_seen_run_id": "a3512350-371f-49d7-99b6-8e3c978c2473",
       "company_id": "galactic_energy",
       "company_name": "星河动力",
       "id": "e418bd4f937aa6f4",
@@ -7100,12 +7974,42 @@
       "source": {
         "rank_group": "media",
         "source_id": "rss_provider",
-        "source_name": "新浪财经",
+        "source_name": "新浪网",
         "source_type": "rss",
         "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTFBSdHp2cU1TZ2ozVmdaaEZOYlYyWEotMEktV3BobW9UTTZiSDAyQWNLZnZaUThpdTFVd3BaQUJFREhoZUxqT3Z0MklYYzB5V1YyRzZTZDNUX2RWa2k5cFR3Ym43LVdrMEtjYnNSLWZZZmFHQldwUWViYg?oc=5"
       },
-      "title": "汽车早报｜赛力斯上半年由盈转亏 广汽资本宣布战略投资星河动力 - 新浪财经",
+      "title": "汽车早报｜赛力斯上半年由盈转亏 广汽资本宣布战略投资星河动力 - 新浪网",
       "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTFBSdHp2cU1TZ2ozVmdaaEZOYlYyWEotMEktV3BobW9UTTZiSDAyQWNLZnZaUThpdTFVd3BaQUJFREhoZUxqT3Z0MklYYzB5V1YyRzZTZDNUX2RWa2k5cFR3Ym43LVdrMEtjYnNSLWZZZmFHQldwUWViYg?oc=5"
+    },
+    {
+      "archive_first_seen_at": "2026-07-24T19:08:53.714588Z",
+      "archive_last_seen_at": "2026-07-24T19:08:53.714588Z",
+      "archive_last_seen_run_id": "a3512350-371f-49d7-99b6-8e3c978c2473",
+      "company_id": "blue_origin",
+      "company_name": "Blue Origin",
+      "id": "f0cc6480231fbd73",
+      "published_at": "2026-07-12T22:09:00Z",
+      "quality": {
+        "canonical_url": "http://www.bing.com/news/apiclick.aspx?aid=&tid=6a63b7e897e34f3fbf697643523860e0&url=https%3A%2F%2Fnewatlas.com%2Fspace-systems%2Fblue-origin-hybrid-could-allow-2026-launch%2F&c=11359742978909559407&mkt=en-us",
+        "company_relevance_score": 0.85,
+        "event_id": "137ef1877bf90130",
+        "event_type": "other",
+        "market_match_terms": [],
+        "quality_decision": "published",
+        "quality_reason_codes": [
+          "title_company_and_industry_match"
+        ],
+        "source_quality_score": 0.7
+      },
+      "source": {
+        "rank_group": "media",
+        "source_id": "rss_provider",
+        "source_name": "bing.com",
+        "source_type": "rss",
+        "url": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6a63b7e897e34f3fbf697643523860e0&url=https%3a%2f%2fnewatlas.com%2fspace-systems%2fblue-origin-hybrid-could-allow-2026-launch%2f&c=11359742978909559407&mkt=en-us"
+      },
+      "title": "Blue Origin has an ambitious plan to relaunch New Glenn this year",
+      "url": "http://www.bing.com/news/apiclick.aspx?aid=&tid=6a63b7e897e34f3fbf697643523860e0&url=https%3A%2F%2Fnewatlas.com%2Fspace-systems%2Fblue-origin-hybrid-could-allow-2026-launch%2F&c=11359742978909559407&mkt=en-us"
     },
     {
       "archive_first_seen_at": "2026-07-23T02:52:11.452256Z",
@@ -7349,8 +8253,8 @@
     },
     {
       "archive_first_seen_at": "2026-07-23T03:11:46.810306Z",
-      "archive_last_seen_at": "2026-07-24T13:11:48.353045Z",
-      "archive_last_seen_run_id": "417467de-aae1-4f3e-997d-afc5f8e6e87c",
+      "archive_last_seen_at": "2026-07-24T19:08:53.714588Z",
+      "archive_last_seen_run_id": "a3512350-371f-49d7-99b6-8e3c978c2473",
       "company_id": "galaxyspace",
       "company_name": "银河航天",
       "id": "b2fe6e02a6010ff8",
@@ -7409,8 +8313,8 @@
     },
     {
       "archive_first_seen_at": "2026-07-13T19:07:29.814480Z",
-      "archive_last_seen_at": "2026-07-24T13:11:48.353045Z",
-      "archive_last_seen_run_id": "417467de-aae1-4f3e-997d-afc5f8e6e87c",
+      "archive_last_seen_at": "2026-07-24T19:08:53.714588Z",
+      "archive_last_seen_run_id": "a3512350-371f-49d7-99b6-8e3c978c2473",
       "company_id": "spacex",
       "company_name": "SpaceX",
       "id": "62f978b79154c7a8",
@@ -7469,8 +8373,8 @@
     },
     {
       "archive_first_seen_at": "2026-07-24T13:11:48.353045Z",
-      "archive_last_seen_at": "2026-07-24T13:11:48.353045Z",
-      "archive_last_seen_run_id": "417467de-aae1-4f3e-997d-afc5f8e6e87c",
+      "archive_last_seen_at": "2026-07-24T19:08:53.714588Z",
+      "archive_last_seen_run_id": "a3512350-371f-49d7-99b6-8e3c978c2473",
       "company_id": "landspace",
       "company_name": "蓝箭航天",
       "id": "5a399039ea14f255",
@@ -7649,8 +8553,8 @@
     },
     {
       "archive_first_seen_at": "2026-07-23T03:11:46.810306Z",
-      "archive_last_seen_at": "2026-07-24T13:11:48.353045Z",
-      "archive_last_seen_run_id": "417467de-aae1-4f3e-997d-afc5f8e6e87c",
+      "archive_last_seen_at": "2026-07-24T19:08:53.714588Z",
+      "archive_last_seen_run_id": "a3512350-371f-49d7-99b6-8e3c978c2473",
       "company_id": "galactic_energy",
       "company_name": "星河动力",
       "id": "afb44c6923c62ffc",
@@ -7679,8 +8583,8 @@
     },
     {
       "archive_first_seen_at": "2026-07-23T03:11:46.810306Z",
-      "archive_last_seen_at": "2026-07-24T13:11:48.353045Z",
-      "archive_last_seen_run_id": "417467de-aae1-4f3e-997d-afc5f8e6e87c",
+      "archive_last_seen_at": "2026-07-24T19:08:53.714588Z",
+      "archive_last_seen_run_id": "a3512350-371f-49d7-99b6-8e3c978c2473",
       "company_id": "i_space",
       "company_name": "星际荣耀",
       "id": "dbc94e20fee55ed8",
@@ -8348,8 +9252,8 @@
     },
     {
       "archive_first_seen_at": "2026-07-23T08:06:52.769435Z",
-      "archive_last_seen_at": "2026-07-24T13:11:48.353045Z",
-      "archive_last_seen_run_id": "417467de-aae1-4f3e-997d-afc5f8e6e87c",
+      "archive_last_seen_at": "2026-07-24T19:08:53.714588Z",
+      "archive_last_seen_run_id": "a3512350-371f-49d7-99b6-8e3c978c2473",
       "company_id": "yuanxin_satellite",
       "company_name": "垣信卫星",
       "id": "9ccaf695d41ce369",
@@ -8378,8 +9282,8 @@
     },
     {
       "archive_first_seen_at": "2026-07-23T08:06:52.769435Z",
-      "archive_last_seen_at": "2026-07-24T08:03:38.516381Z",
-      "archive_last_seen_run_id": "de454d37-0551-4ad9-b8d3-846aa213c00c",
+      "archive_last_seen_at": "2026-07-24T19:08:53.714588Z",
+      "archive_last_seen_run_id": "a3512350-371f-49d7-99b6-8e3c978c2473",
       "company_id": "spacex",
       "company_name": "SpaceX",
       "id": "a657f2c92450cf32",
@@ -8408,8 +9312,8 @@
     },
     {
       "archive_first_seen_at": "2026-07-23T03:11:46.810306Z",
-      "archive_last_seen_at": "2026-07-24T13:11:48.353045Z",
-      "archive_last_seen_run_id": "417467de-aae1-4f3e-997d-afc5f8e6e87c",
+      "archive_last_seen_at": "2026-07-24T19:08:53.714588Z",
+      "archive_last_seen_run_id": "a3512350-371f-49d7-99b6-8e3c978c2473",
       "company_id": "hongqing_technology",
       "company_name": "蓝箭鸿擎",
       "id": "9ce766d78aaaaa8a",
@@ -8438,8 +9342,8 @@
     },
     {
       "archive_first_seen_at": "2026-07-23T02:25:32.030650Z",
-      "archive_last_seen_at": "2026-07-24T13:11:48.353045Z",
-      "archive_last_seen_run_id": "417467de-aae1-4f3e-997d-afc5f8e6e87c",
+      "archive_last_seen_at": "2026-07-24T19:08:53.714588Z",
+      "archive_last_seen_run_id": "a3512350-371f-49d7-99b6-8e3c978c2473",
       "company_id": "blue_origin",
       "company_name": "Blue Origin",
       "id": "29f1b31da47c49c0",
@@ -8770,8 +9674,8 @@
     },
     {
       "archive_first_seen_at": "2026-07-23T02:25:32.030650Z",
-      "archive_last_seen_at": "2026-07-24T13:11:48.353045Z",
-      "archive_last_seen_run_id": "417467de-aae1-4f3e-997d-afc5f8e6e87c",
+      "archive_last_seen_at": "2026-07-24T19:08:53.714588Z",
+      "archive_last_seen_run_id": "a3512350-371f-49d7-99b6-8e3c978c2473",
       "company_id": "blue_origin",
       "company_name": "Blue Origin",
       "id": "95afb5466cb39f84",
@@ -8920,8 +9824,8 @@
     },
     {
       "archive_first_seen_at": "2026-07-10T01:22:13.080477Z",
-      "archive_last_seen_at": "2026-07-23T18:56:51.087754Z",
-      "archive_last_seen_run_id": "af03af1e-bdcf-4d15-a72c-7396d3985983",
+      "archive_last_seen_at": "2026-07-24T19:08:53.714588Z",
+      "archive_last_seen_run_id": "a3512350-371f-49d7-99b6-8e3c978c2473",
       "company_id": "spacex",
       "company_name": "SpaceX",
       "id": "bd320a59fec050d4",
@@ -9429,6 +10333,36 @@
       "url": "http://www.bing.com/news/apiclick.aspx?aid=&tid=6a631c0638fc45d4afb9a1d628ba84bd&url=https%3A%2F%2Fwww.msn.com%2Fen-us%2Fnews%2Ftechnology%2Fblue-origin-wants-to-launch-new-glenn-rocket-by-end-of-2026-can-it%2Far-AA27tWyK&c=16039241118937337009&mkt=en-us"
     },
     {
+      "archive_first_seen_at": "2026-07-24T19:08:53.714588Z",
+      "archive_last_seen_at": "2026-07-24T19:08:53.714588Z",
+      "archive_last_seen_run_id": "a3512350-371f-49d7-99b6-8e3c978c2473",
+      "company_id": "blue_origin",
+      "company_name": "Blue Origin",
+      "id": "911ce7ccf1a96e97",
+      "published_at": "2026-07-08T12:24:32Z",
+      "quality": {
+        "canonical_url": "http://www.bing.com/news/apiclick.aspx?aid=&tid=6a63b7e897e34f3fbf697643523860e0&url=https%3A%2F%2Fwww.msn.com%2Fen-us%2Fnews%2Ftechnology%2Fblue-origin-wants-to-launch-new-glenn-rocket-by-end-of-2026-can-it%2Far-AA27tWyK&c=16039241118937337009&mkt=en-us",
+        "company_relevance_score": 0.85,
+        "event_id": "c5cb5f76d1c5e9b8",
+        "event_type": "launch",
+        "market_match_terms": [],
+        "quality_decision": "published",
+        "quality_reason_codes": [
+          "title_company_and_industry_match"
+        ],
+        "source_quality_score": 0.7
+      },
+      "source": {
+        "rank_group": "media",
+        "source_id": "rss_provider",
+        "source_name": "bing.com",
+        "source_type": "rss",
+        "url": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6a63b7e897e34f3fbf697643523860e0&url=https%3a%2f%2fwww.msn.com%2fen-us%2fnews%2ftechnology%2fblue-origin-wants-to-launch-new-glenn-rocket-by-end-of-2026-can-it%2far-AA27tWyK&c=16039241118937337009&mkt=en-us"
+      },
+      "title": "Blue Origin wants to launch New Glenn rocket by end of 2026. Can it?",
+      "url": "http://www.bing.com/news/apiclick.aspx?aid=&tid=6a63b7e897e34f3fbf697643523860e0&url=https%3A%2F%2Fwww.msn.com%2Fen-us%2Fnews%2Ftechnology%2Fblue-origin-wants-to-launch-new-glenn-rocket-by-end-of-2026-can-it%2Far-AA27tWyK&c=16039241118937337009&mkt=en-us"
+    },
+    {
       "archive_first_seen_at": "2026-07-24T01:19:24.294597Z",
       "archive_last_seen_at": "2026-07-24T01:19:24.294597Z",
       "archive_last_seen_run_id": "fe5b07e5-8146-499b-bbcd-04e781ae4bad",
@@ -9547,6 +10481,36 @@
       },
       "title": "Inside Blue Origin's plan to fly New Glenn rocket again before 2026 ends",
       "url": "http://www.bing.com/news/apiclick.aspx?aid=&tid=6a61807b662048c7ad451854881eb0f6&url=https%3A%2F%2Fwww.jsonline.com%2Fstory%2Ftech%2Fscience%2Fspace%2F2026%2F07%2F08%2Fexplosion-blue-origin-new-glenn-return-cape-canaveral%2F90846982007%2F&c=3049306023539565463&mkt=en-sg"
+    },
+    {
+      "archive_first_seen_at": "2026-07-24T19:08:53.714588Z",
+      "archive_last_seen_at": "2026-07-24T19:08:53.714588Z",
+      "archive_last_seen_run_id": "a3512350-371f-49d7-99b6-8e3c978c2473",
+      "company_id": "blue_origin",
+      "company_name": "Blue Origin",
+      "id": "c6fc3a05cf5ad335",
+      "published_at": "2026-07-08T09:41:00Z",
+      "quality": {
+        "canonical_url": "http://www.bing.com/news/apiclick.aspx?aid=&tid=6a63b7e897e34f3fbf697643523860e0&url=https%3A%2F%2Fwww.dispatch.com%2Fstory%2Ftech%2Fscience%2Fspace%2F2026%2F07%2F08%2Fexplosion-blue-origin-new-glenn-return-cape-canaveral%2F90846982007%2F&c=9511108659553488509&mkt=en-us",
+        "company_relevance_score": 0.85,
+        "event_id": "d7507f4ba3885349",
+        "event_type": "launch",
+        "market_match_terms": [],
+        "quality_decision": "published",
+        "quality_reason_codes": [
+          "title_company_and_industry_match"
+        ],
+        "source_quality_score": 0.7
+      },
+      "source": {
+        "rank_group": "media",
+        "source_id": "rss_provider",
+        "source_name": "bing.com",
+        "source_type": "rss",
+        "url": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6a63b7e897e34f3fbf697643523860e0&url=https%3a%2f%2fwww.dispatch.com%2fstory%2ftech%2fscience%2fspace%2f2026%2f07%2f08%2fexplosion-blue-origin-new-glenn-return-cape-canaveral%2f90846982007%2f&c=9511108659553488509&mkt=en-us"
+      },
+      "title": "Inside Blue Origin's plan to fly New Glenn rocket again before 2026 ends",
+      "url": "http://www.bing.com/news/apiclick.aspx?aid=&tid=6a63b7e897e34f3fbf697643523860e0&url=https%3A%2F%2Fwww.dispatch.com%2Fstory%2Ftech%2Fscience%2Fspace%2F2026%2F07%2F08%2Fexplosion-blue-origin-new-glenn-return-cape-canaveral%2F90846982007%2F&c=9511108659553488509&mkt=en-us"
     },
     {
       "archive_first_seen_at": "2026-07-23T08:06:52.769435Z",
@@ -10216,8 +11180,8 @@
     },
     {
       "archive_first_seen_at": "2026-07-23T03:11:46.810306Z",
-      "archive_last_seen_at": "2026-07-24T13:11:48.353045Z",
-      "archive_last_seen_run_id": "417467de-aae1-4f3e-997d-afc5f8e6e87c",
+      "archive_last_seen_at": "2026-07-24T19:08:53.714588Z",
+      "archive_last_seen_run_id": "a3512350-371f-49d7-99b6-8e3c978c2473",
       "company_id": "space_pioneer",
       "company_name": "天兵科技",
       "id": "b9dbb609a1598e6e",
@@ -10366,8 +11330,8 @@
     },
     {
       "archive_first_seen_at": "2026-07-23T02:25:32.030650Z",
-      "archive_last_seen_at": "2026-07-24T13:11:48.353045Z",
-      "archive_last_seen_run_id": "417467de-aae1-4f3e-997d-afc5f8e6e87c",
+      "archive_last_seen_at": "2026-07-24T19:08:53.714588Z",
+      "archive_last_seen_run_id": "a3512350-371f-49d7-99b6-8e3c978c2473",
       "company_id": "blue_origin",
       "company_name": "Blue Origin",
       "id": "d3be130f6488fb72",
@@ -10546,8 +11510,8 @@
     },
     {
       "archive_first_seen_at": "2026-07-23T02:25:32.030650Z",
-      "archive_last_seen_at": "2026-07-24T13:11:48.353045Z",
-      "archive_last_seen_run_id": "417467de-aae1-4f3e-997d-afc5f8e6e87c",
+      "archive_last_seen_at": "2026-07-24T19:08:53.714588Z",
+      "archive_last_seen_run_id": "a3512350-371f-49d7-99b6-8e3c978c2473",
       "company_id": "spacex",
       "company_name": "SpaceX",
       "id": "4d13796009bc628c",
@@ -10668,8 +11632,8 @@
     },
     {
       "archive_first_seen_at": "2026-07-24T08:03:38.516381Z",
-      "archive_last_seen_at": "2026-07-24T08:03:38.516381Z",
-      "archive_last_seen_run_id": "de454d37-0551-4ad9-b8d3-846aa213c00c",
+      "archive_last_seen_at": "2026-07-24T19:08:53.714588Z",
+      "archive_last_seen_run_id": "a3512350-371f-49d7-99b6-8e3c978c2473",
       "company_id": "yuanxin_satellite",
       "company_name": "垣信卫星",
       "id": "f55e080833ae0092",
@@ -10760,8 +11724,8 @@
     },
     {
       "archive_first_seen_at": "2026-07-23T03:11:46.810306Z",
-      "archive_last_seen_at": "2026-07-24T13:11:48.353045Z",
-      "archive_last_seen_run_id": "417467de-aae1-4f3e-997d-afc5f8e6e87c",
+      "archive_last_seen_at": "2026-07-24T19:08:53.714588Z",
+      "archive_last_seen_run_id": "a3512350-371f-49d7-99b6-8e3c978c2473",
       "company_id": "galactic_energy",
       "company_name": "星河动力",
       "id": "f8672710e401cedc",
@@ -10790,8 +11754,8 @@
     },
     {
       "archive_first_seen_at": "2026-07-23T02:25:32.030650Z",
-      "archive_last_seen_at": "2026-07-24T13:11:48.353045Z",
-      "archive_last_seen_run_id": "417467de-aae1-4f3e-997d-afc5f8e6e87c",
+      "archive_last_seen_at": "2026-07-24T19:08:53.714588Z",
+      "archive_last_seen_run_id": "a3512350-371f-49d7-99b6-8e3c978c2473",
       "company_id": "galactic_energy",
       "company_name": "星河动力",
       "id": "d27fab2e7d5733bd",
@@ -10811,11 +11775,11 @@
       "source": {
         "rank_group": "media",
         "source_id": "rss_provider",
-        "source_name": "新浪财经",
+        "source_name": "新浪网",
         "source_type": "rss",
         "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE1ITEt4ZWhMZEhfQ1lhOGV6eVA3VXRzeTYxalRucjRNNW42Z3EwbHBDWWFSNlBPSFU1NTlTbnRtanJmckVzV2wtcWt2ZU96WFB2TmRsUjR4MWNFVWZ5RHlMX29OVjNwOTAwRjdvU2tjOHhhZDEyd2VpcHpQbVJudVU?oc=5"
       },
-      "title": "星河动力航天智神星一号中大型可重复使用液体运载火箭将迎首飞，以苍穹-50 为主动力系统 - 新浪财经",
+      "title": "星河动力航天智神星一号中大型可重复使用液体运载火箭将迎首飞，以苍穹-50 为主动力系统 - 新浪网",
       "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE1ITEt4ZWhMZEhfQ1lhOGV6eVA3VXRzeTYxalRucjRNNW42Z3EwbHBDWWFSNlBPSFU1NTlTbnRtanJmckVzV2wtcWt2ZU96WFB2TmRsUjR4MWNFVWZ5RHlMX29OVjNwOTAwRjdvU2tjOHhhZDEyd2VpcHpQbVJudVU?oc=5"
     },
     {
@@ -11033,8 +11997,8 @@
     },
     {
       "archive_first_seen_at": "2026-07-17T07:48:05.340355Z",
-      "archive_last_seen_at": "2026-07-24T13:11:48.353045Z",
-      "archive_last_seen_run_id": "417467de-aae1-4f3e-997d-afc5f8e6e87c",
+      "archive_last_seen_at": "2026-07-24T19:08:53.714588Z",
+      "archive_last_seen_run_id": "a3512350-371f-49d7-99b6-8e3c978c2473",
       "company_id": "yuanxin_satellite",
       "company_name": "垣信卫星",
       "id": "eb477578b7995535",
@@ -11063,8 +12027,8 @@
     },
     {
       "archive_first_seen_at": "2026-07-23T02:45:58.105578Z",
-      "archive_last_seen_at": "2026-07-24T13:11:48.353045Z",
-      "archive_last_seen_run_id": "417467de-aae1-4f3e-997d-afc5f8e6e87c",
+      "archive_last_seen_at": "2026-07-24T19:08:53.714588Z",
+      "archive_last_seen_run_id": "a3512350-371f-49d7-99b6-8e3c978c2473",
       "company_id": "yuanxin_satellite",
       "company_name": "垣信卫星",
       "id": "250c0d084871d789",
@@ -11245,8 +12209,8 @@
     },
     {
       "archive_first_seen_at": "2026-07-05T08:34:50.382541Z",
-      "archive_last_seen_at": "2026-07-24T13:11:48.353045Z",
-      "archive_last_seen_run_id": "417467de-aae1-4f3e-997d-afc5f8e6e87c",
+      "archive_last_seen_at": "2026-07-24T19:08:53.714588Z",
+      "archive_last_seen_run_id": "a3512350-371f-49d7-99b6-8e3c978c2473",
       "company_id": "yuanxin_satellite",
       "company_name": "垣信卫星",
       "id": "8bce03b5c538d488",
@@ -11577,8 +12541,8 @@
     },
     {
       "archive_first_seen_at": "2026-07-23T03:11:46.810306Z",
-      "archive_last_seen_at": "2026-07-24T13:11:48.353045Z",
-      "archive_last_seen_run_id": "417467de-aae1-4f3e-997d-afc5f8e6e87c",
+      "archive_last_seen_at": "2026-07-24T19:08:53.714588Z",
+      "archive_last_seen_run_id": "a3512350-371f-49d7-99b6-8e3c978c2473",
       "company_id": "yushi_space",
       "company_name": "宇石空间",
       "id": "66800a2093c1e172",
@@ -11667,8 +12631,8 @@
     },
     {
       "archive_first_seen_at": "2026-07-23T03:11:46.810306Z",
-      "archive_last_seen_at": "2026-07-24T13:11:48.353045Z",
-      "archive_last_seen_run_id": "417467de-aae1-4f3e-997d-afc5f8e6e87c",
+      "archive_last_seen_at": "2026-07-24T19:08:53.714588Z",
+      "archive_last_seen_run_id": "a3512350-371f-49d7-99b6-8e3c978c2473",
       "company_id": "landspace",
       "company_name": "蓝箭航天",
       "id": "cb74043996217bff",
@@ -11688,17 +12652,17 @@
       "source": {
         "rank_group": "media",
         "source_id": "rss_provider",
-        "source_name": "新浪财经",
+        "source_name": "新浪网",
         "source_type": "rss",
         "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTE5jSGh5bUpHTW5vcTlTUklucmNIWHdOVkNqQmlkazJ6X01ZTDlWb3QxWnRtelM1ZDdBYnRWVk0tbE4xRk9vUmZyaFl0V29waDRWdDhESlJaLS1DWUlQdk95eEpoc3BNNDlXOVBpdHVsUjBjbmwtVGRNag?oc=5"
       },
-      "title": "中科宇航、蓝箭航天竞逐“商业航天第一股” 万亿赛道迎拐点 - 新浪财经",
+      "title": "中科宇航、蓝箭航天竞逐“商业航天第一股” 万亿赛道迎拐点 - 新浪网",
       "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTE5jSGh5bUpHTW5vcTlTUklucmNIWHdOVkNqQmlkazJ6X01ZTDlWb3QxWnRtelM1ZDdBYnRWVk0tbE4xRk9vUmZyaFl0V29waDRWdDhESlJaLS1DWUlQdk95eEpoc3BNNDlXOVBpdHVsUjBjbmwtVGRNag?oc=5"
     },
     {
       "archive_first_seen_at": "2026-07-23T03:11:46.810306Z",
-      "archive_last_seen_at": "2026-07-24T13:11:48.353045Z",
-      "archive_last_seen_run_id": "417467de-aae1-4f3e-997d-afc5f8e6e87c",
+      "archive_last_seen_at": "2026-07-24T19:08:53.714588Z",
+      "archive_last_seen_run_id": "a3512350-371f-49d7-99b6-8e3c978c2473",
       "company_id": "cas_space",
       "company_name": "中科宇航",
       "id": "f705e828bb3c28b5",
@@ -11718,11 +12682,11 @@
       "source": {
         "rank_group": "media",
         "source_id": "rss_provider",
-        "source_name": "新浪财经",
+        "source_name": "新浪网",
         "source_type": "rss",
         "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTE5jSGh5bUpHTW5vcTlTUklucmNIWHdOVkNqQmlkazJ6X01ZTDlWb3QxWnRtelM1ZDdBYnRWVk0tbE4xRk9vUmZyaFl0V29waDRWdDhESlJaLS1DWUlQdk95eEpoc3BNNDlXOVBpdHVsUjBjbmwtVGRNag?oc=5"
       },
-      "title": "中科宇航、蓝箭航天竞逐“商业航天第一股” 万亿赛道迎拐点 - 新浪财经",
+      "title": "中科宇航、蓝箭航天竞逐“商业航天第一股” 万亿赛道迎拐点 - 新浪网",
       "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTE5jSGh5bUpHTW5vcTlTUklucmNIWHdOVkNqQmlkazJ6X01ZTDlWb3QxWnRtelM1ZDdBYnRWVk0tbE4xRk9vUmZyaFl0V29waDRWdDhESlJaLS1DWUlQdk95eEpoc3BNNDlXOVBpdHVsUjBjbmwtVGRNag?oc=5"
     },
     {
@@ -12279,8 +13243,8 @@
     },
     {
       "archive_first_seen_at": "2026-07-23T03:11:46.810306Z",
-      "archive_last_seen_at": "2026-07-24T13:11:48.353045Z",
-      "archive_last_seen_run_id": "417467de-aae1-4f3e-997d-afc5f8e6e87c",
+      "archive_last_seen_at": "2026-07-24T19:08:53.714588Z",
+      "archive_last_seen_run_id": "a3512350-371f-49d7-99b6-8e3c978c2473",
       "company_id": "landspace",
       "company_name": "蓝箭航天",
       "id": "fd7bd42bc4a88726",
@@ -12311,8 +13275,8 @@
     },
     {
       "archive_first_seen_at": "2026-07-23T03:11:46.810306Z",
-      "archive_last_seen_at": "2026-07-24T13:11:48.353045Z",
-      "archive_last_seen_run_id": "417467de-aae1-4f3e-997d-afc5f8e6e87c",
+      "archive_last_seen_at": "2026-07-24T19:08:53.714588Z",
+      "archive_last_seen_run_id": "a3512350-371f-49d7-99b6-8e3c978c2473",
       "company_id": "landspace",
       "company_name": "蓝箭航天",
       "id": "26ad9cb11862456e",
@@ -12343,8 +13307,8 @@
     },
     {
       "archive_first_seen_at": "2026-07-23T08:06:52.769435Z",
-      "archive_last_seen_at": "2026-07-24T13:11:48.353045Z",
-      "archive_last_seen_run_id": "417467de-aae1-4f3e-997d-afc5f8e6e87c",
+      "archive_last_seen_at": "2026-07-24T19:08:53.714588Z",
+      "archive_last_seen_run_id": "a3512350-371f-49d7-99b6-8e3c978c2473",
       "company_id": "hongqing_technology",
       "company_name": "蓝箭鸿擎",
       "id": "08fc99b5ec3b6017",
@@ -12373,8 +13337,8 @@
     },
     {
       "archive_first_seen_at": "2026-07-23T03:11:46.810306Z",
-      "archive_last_seen_at": "2026-07-24T13:11:48.353045Z",
-      "archive_last_seen_run_id": "417467de-aae1-4f3e-997d-afc5f8e6e87c",
+      "archive_last_seen_at": "2026-07-24T19:08:53.714588Z",
+      "archive_last_seen_run_id": "a3512350-371f-49d7-99b6-8e3c978c2473",
       "company_id": "galactic_energy",
       "company_name": "星河动力",
       "id": "9bf3fa9650e84e34",
@@ -12394,11 +13358,11 @@
       "source": {
         "rank_group": "media",
         "source_id": "rss_provider",
-        "source_name": "新浪财经",
+        "source_name": "新浪网",
         "source_type": "rss",
         "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTE1ldVZXZFQ2bUh5Tl8xU05pVy1yUllHS1VkWk1hOG5ILTlUSmpaWUpGOThqZFI0SU54a1MzOE1ra0RxWkVwTU5VREN3c0pRd05iRi0xb0d2STB6d29XZmp6YXJXcmI0YWc5ckpXNG1KMTZZQ1Nnc2xwZA?oc=5"
       },
-      "title": "星河动力航天增资至5.2亿元 增幅约21% - 新浪财经",
+      "title": "星河动力航天增资至5.2亿元 增幅约21% - 新浪网",
       "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTE1ldVZXZFQ2bUh5Tl8xU05pVy1yUllHS1VkWk1hOG5ILTlUSmpaWUpGOThqZFI0SU54a1MzOE1ra0RxWkVwTU5VREN3c0pRd05iRi0xb0d2STB6d29XZmp6YXJXcmI0YWc5ckpXNG1KMTZZQ1Nnc2xwZA?oc=5"
     },
     {
@@ -12433,8 +13397,8 @@
     },
     {
       "archive_first_seen_at": "2026-07-23T03:11:46.810306Z",
-      "archive_last_seen_at": "2026-07-24T13:11:48.353045Z",
-      "archive_last_seen_run_id": "417467de-aae1-4f3e-997d-afc5f8e6e87c",
+      "archive_last_seen_at": "2026-07-24T19:08:53.714588Z",
+      "archive_last_seen_run_id": "a3512350-371f-49d7-99b6-8e3c978c2473",
       "company_id": "galactic_energy",
       "company_name": "星河动力",
       "id": "99cad3cf161ee734",
@@ -12552,6 +13516,36 @@
       },
       "title": "260 Starlink Satellites Burn Up in Earth's Atmosphere As More Head for Fiery Ends - PCMag",
       "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxOV2NMV2tDZVp6aWxuaVlVV0p0a0xHLVVmVEtHQllLZm4yT0xyajlfZ3RhdWhZajR0TTUyR0V1bElIekM4TnVxNXZEMTFsSFdVS0FTTUc1TnlJa1ZZc2dURk9hWGZWSjVLYXU4dlg2Szdzd2h0dnFHUE16WG5FdWV0bVlYZWlMaU9nUFp5b0ZpT3FjS0NWQjU5UFJLa1FKODhUSHVhdg?oc=5"
+    },
+    {
+      "archive_first_seen_at": "2026-07-24T19:08:53.714588Z",
+      "archive_last_seen_at": "2026-07-24T19:08:53.714588Z",
+      "archive_last_seen_run_id": "a3512350-371f-49d7-99b6-8e3c978c2473",
+      "company_id": "spacex",
+      "company_name": "SpaceX",
+      "id": "3002b88985b52479",
+      "published_at": "2026-07-02T15:32:50Z",
+      "quality": {
+        "canonical_url": "http://www.bing.com/news/apiclick.aspx?aid=&tid=6a63b7e1bd5244eeb98a4b5b98998355&url=https%3A%2F%2Fwww.msn.com%2Fen-gb%2Fmoney%2Ftechnology%2Fspacex-falcon-9-rocket-launches-24-starlink-satellites-from-california%2Far-AA276bOH&c=155708502450086113&mkt=en-us",
+        "company_relevance_score": 0.85,
+        "event_id": "b78f6a668f2f7971",
+        "event_type": "launch",
+        "market_match_terms": [],
+        "quality_decision": "published",
+        "quality_reason_codes": [
+          "title_company_and_industry_match"
+        ],
+        "source_quality_score": 0.7
+      },
+      "source": {
+        "rank_group": "media",
+        "source_id": "rss_provider",
+        "source_name": "bing.com",
+        "source_type": "rss",
+        "url": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6a63b7e1bd5244eeb98a4b5b98998355&url=https%3a%2f%2fwww.msn.com%2fen-gb%2fmoney%2ftechnology%2fspacex-falcon-9-rocket-launches-24-starlink-satellites-from-california%2far-AA276bOH&c=155708502450086113&mkt=en-us"
+      },
+      "title": "SpaceX Falcon 9 rocket launches 24 Starlink satellites from California",
+      "url": "http://www.bing.com/news/apiclick.aspx?aid=&tid=6a63b7e1bd5244eeb98a4b5b98998355&url=https%3A%2F%2Fwww.msn.com%2Fen-gb%2Fmoney%2Ftechnology%2Fspacex-falcon-9-rocket-launches-24-starlink-satellites-from-california%2Far-AA276bOH&c=155708502450086113&mkt=en-us"
     },
     {
       "archive_first_seen_at": "2026-07-02T19:04:06.332626Z",
@@ -12767,8 +13761,8 @@
     },
     {
       "archive_first_seen_at": "2026-07-23T18:56:51.087754Z",
-      "archive_last_seen_at": "2026-07-24T13:11:48.353045Z",
-      "archive_last_seen_run_id": "417467de-aae1-4f3e-997d-afc5f8e6e87c",
+      "archive_last_seen_at": "2026-07-24T19:08:53.714588Z",
+      "archive_last_seen_run_id": "a3512350-371f-49d7-99b6-8e3c978c2473",
       "company_id": "landspace",
       "company_name": "蓝箭航天",
       "id": "237e230ed5cf3e3e",
@@ -12799,8 +13793,8 @@
     },
     {
       "archive_first_seen_at": "2026-07-23T03:11:46.810306Z",
-      "archive_last_seen_at": "2026-07-24T13:11:48.353045Z",
-      "archive_last_seen_run_id": "417467de-aae1-4f3e-997d-afc5f8e6e87c",
+      "archive_last_seen_at": "2026-07-24T19:08:53.714588Z",
+      "archive_last_seen_run_id": "a3512350-371f-49d7-99b6-8e3c978c2473",
       "company_id": "hongqing_technology",
       "company_name": "蓝箭鸿擎",
       "id": "e79251067499e713",
@@ -12829,8 +13823,8 @@
     },
     {
       "archive_first_seen_at": "2026-07-02T08:37:06.326579Z",
-      "archive_last_seen_at": "2026-07-24T13:11:48.353045Z",
-      "archive_last_seen_run_id": "417467de-aae1-4f3e-997d-afc5f8e6e87c",
+      "archive_last_seen_at": "2026-07-24T19:08:53.714588Z",
+      "archive_last_seen_run_id": "a3512350-371f-49d7-99b6-8e3c978c2473",
       "company_id": "hongqing_technology",
       "company_name": "蓝箭鸿擎",
       "id": "85f601bddd409441",
@@ -12891,8 +13885,8 @@
     },
     {
       "archive_first_seen_at": "2026-07-23T03:11:46.810306Z",
-      "archive_last_seen_at": "2026-07-24T13:11:48.353045Z",
-      "archive_last_seen_run_id": "417467de-aae1-4f3e-997d-afc5f8e6e87c",
+      "archive_last_seen_at": "2026-07-24T19:08:53.714588Z",
+      "archive_last_seen_run_id": "a3512350-371f-49d7-99b6-8e3c978c2473",
       "company_id": "yushi_space",
       "company_name": "宇石空间",
       "id": "3e40ab974b6008c3",
@@ -13266,8 +14260,8 @@
     },
     {
       "archive_first_seen_at": "2026-07-23T02:25:32.030650Z",
-      "archive_last_seen_at": "2026-07-24T13:11:48.353045Z",
-      "archive_last_seen_run_id": "417467de-aae1-4f3e-997d-afc5f8e6e87c",
+      "archive_last_seen_at": "2026-07-24T19:08:53.714588Z",
+      "archive_last_seen_run_id": "a3512350-371f-49d7-99b6-8e3c978c2473",
       "company_id": "blue_origin",
       "company_name": "Blue Origin",
       "id": "f0923c855f5cbf70",
@@ -13328,8 +14322,8 @@
     },
     {
       "archive_first_seen_at": "2026-07-23T02:25:32.030650Z",
-      "archive_last_seen_at": "2026-07-24T13:11:48.353045Z",
-      "archive_last_seen_run_id": "417467de-aae1-4f3e-997d-afc5f8e6e87c",
+      "archive_last_seen_at": "2026-07-24T19:08:53.714588Z",
+      "archive_last_seen_run_id": "a3512350-371f-49d7-99b6-8e3c978c2473",
       "company_id": "blue_origin",
       "company_name": "Blue Origin",
       "id": "2f1e994dd2d08cb1",
@@ -13358,8 +14352,8 @@
     },
     {
       "archive_first_seen_at": "2026-07-23T02:25:32.030650Z",
-      "archive_last_seen_at": "2026-07-24T13:11:48.353045Z",
-      "archive_last_seen_run_id": "417467de-aae1-4f3e-997d-afc5f8e6e87c",
+      "archive_last_seen_at": "2026-07-24T19:08:53.714588Z",
+      "archive_last_seen_run_id": "a3512350-371f-49d7-99b6-8e3c978c2473",
       "company_id": "blue_origin",
       "company_name": "Blue Origin",
       "id": "e356005e0fc5c72f",
@@ -13418,8 +14412,8 @@
     },
     {
       "archive_first_seen_at": "2026-07-23T03:11:46.810306Z",
-      "archive_last_seen_at": "2026-07-24T13:11:48.353045Z",
-      "archive_last_seen_run_id": "417467de-aae1-4f3e-997d-afc5f8e6e87c",
+      "archive_last_seen_at": "2026-07-24T19:08:53.714588Z",
+      "archive_last_seen_run_id": "a3512350-371f-49d7-99b6-8e3c978c2473",
       "company_id": "landspace",
       "company_name": "蓝箭航天",
       "id": "417e5ead2d51b4d3",
@@ -13511,8 +14505,8 @@
     },
     {
       "archive_first_seen_at": "2026-07-23T03:11:46.810306Z",
-      "archive_last_seen_at": "2026-07-24T13:11:48.353045Z",
-      "archive_last_seen_run_id": "417467de-aae1-4f3e-997d-afc5f8e6e87c",
+      "archive_last_seen_at": "2026-07-24T19:08:53.714588Z",
+      "archive_last_seen_run_id": "a3512350-371f-49d7-99b6-8e3c978c2473",
       "company_id": "yushi_space",
       "company_name": "宇石空间",
       "id": "7d46ba95d0771013",
@@ -13543,8 +14537,8 @@
     },
     {
       "archive_first_seen_at": "2026-07-24T01:19:24.294597Z",
-      "archive_last_seen_at": "2026-07-24T13:11:48.353045Z",
-      "archive_last_seen_run_id": "417467de-aae1-4f3e-997d-afc5f8e6e87c",
+      "archive_last_seen_at": "2026-07-24T19:08:53.714588Z",
+      "archive_last_seen_run_id": "a3512350-371f-49d7-99b6-8e3c978c2473",
       "company_id": "space_pioneer",
       "company_name": "天兵科技",
       "id": "271d8a8a1454d5f7",
@@ -13575,8 +14569,8 @@
     },
     {
       "archive_first_seen_at": "2026-07-24T08:03:38.516381Z",
-      "archive_last_seen_at": "2026-07-24T13:11:48.353045Z",
-      "archive_last_seen_run_id": "417467de-aae1-4f3e-997d-afc5f8e6e87c",
+      "archive_last_seen_at": "2026-07-24T19:08:53.714588Z",
+      "archive_last_seen_run_id": "a3512350-371f-49d7-99b6-8e3c978c2473",
       "company_id": "landspace",
       "company_name": "蓝箭航天",
       "id": "d1a277ad35a0db03",
@@ -13609,8 +14603,8 @@
     },
     {
       "archive_first_seen_at": "2026-07-01T09:24:02.511211Z",
-      "archive_last_seen_at": "2026-07-24T08:03:38.516381Z",
-      "archive_last_seen_run_id": "de454d37-0551-4ad9-b8d3-846aa213c00c",
+      "archive_last_seen_at": "2026-07-24T19:08:53.714588Z",
+      "archive_last_seen_run_id": "a3512350-371f-49d7-99b6-8e3c978c2473",
       "company_id": "landspace",
       "company_name": "蓝箭航天",
       "id": "3fd500da1b193878",
@@ -13675,8 +14669,8 @@
     },
     {
       "archive_first_seen_at": "2026-07-23T08:06:52.769435Z",
-      "archive_last_seen_at": "2026-07-24T13:11:48.353045Z",
-      "archive_last_seen_run_id": "417467de-aae1-4f3e-997d-afc5f8e6e87c",
+      "archive_last_seen_at": "2026-07-24T19:08:53.714588Z",
+      "archive_last_seen_run_id": "a3512350-371f-49d7-99b6-8e3c978c2473",
       "company_id": "i_space",
       "company_name": "星际荣耀",
       "id": "b0adc35e24f336b4",
@@ -13735,8 +14729,8 @@
     },
     {
       "archive_first_seen_at": "2026-07-23T03:11:46.810306Z",
-      "archive_last_seen_at": "2026-07-24T13:11:48.353045Z",
-      "archive_last_seen_run_id": "417467de-aae1-4f3e-997d-afc5f8e6e87c",
+      "archive_last_seen_at": "2026-07-24T19:08:53.714588Z",
+      "archive_last_seen_run_id": "a3512350-371f-49d7-99b6-8e3c978c2473",
       "company_id": "cas_space",
       "company_name": "中科宇航",
       "id": "abb1aecd8e9335ac",
@@ -13767,8 +14761,8 @@
     },
     {
       "archive_first_seen_at": "2026-07-24T01:19:24.294597Z",
-      "archive_last_seen_at": "2026-07-24T13:11:48.353045Z",
-      "archive_last_seen_run_id": "417467de-aae1-4f3e-997d-afc5f8e6e87c",
+      "archive_last_seen_at": "2026-07-24T19:08:53.714588Z",
+      "archive_last_seen_run_id": "a3512350-371f-49d7-99b6-8e3c978c2473",
       "company_id": "cas_space",
       "company_name": "中科宇航",
       "id": "18fb91abd81eb050",
@@ -14083,8 +15077,8 @@
     },
     {
       "archive_first_seen_at": "2026-07-23T02:25:32.030650Z",
-      "archive_last_seen_at": "2026-07-24T13:11:48.353045Z",
-      "archive_last_seen_run_id": "417467de-aae1-4f3e-997d-afc5f8e6e87c",
+      "archive_last_seen_at": "2026-07-24T19:08:53.714588Z",
+      "archive_last_seen_run_id": "a3512350-371f-49d7-99b6-8e3c978c2473",
       "company_id": "blue_origin",
       "company_name": "Blue Origin",
       "id": "c9398f62d5ef4040",
@@ -14292,6 +15286,36 @@
       "url": "http://www.bing.com/news/apiclick.aspx?aid=&tid=6a6364402e1e48cc8c9ddd1f0bebd1b2&url=https%3A%2F%2Fwww.msn.com%2Fen-us%2Ftechnology%2Faviation%2Fblue-origin-be-4-engine-failure-disrupts-vulcan-launch-plans%2Far-AA26Wkqz&c=866016934621474795&mkt=en-us"
     },
     {
+      "archive_first_seen_at": "2026-07-24T19:08:53.714588Z",
+      "archive_last_seen_at": "2026-07-24T19:08:53.714588Z",
+      "archive_last_seen_run_id": "a3512350-371f-49d7-99b6-8e3c978c2473",
+      "company_id": "blue_origin",
+      "company_name": "Blue Origin",
+      "id": "454f8fa1a9a28a84",
+      "published_at": "2026-06-30T21:33:54Z",
+      "quality": {
+        "canonical_url": "http://www.bing.com/news/apiclick.aspx?aid=&tid=6a63b7e9ef0e46359692e821dd8f4d90&url=https%3A%2F%2Fwww.msn.com%2Fen-us%2Ftechnology%2Faviation%2Fblue-origin-be-4-engine-failure-disrupts-vulcan-launch-plans%2Far-AA26Wkqz&c=866016934621474795&mkt=en-us",
+        "company_relevance_score": 0.85,
+        "event_id": "708880882d760d49",
+        "event_type": "launch",
+        "market_match_terms": [],
+        "quality_decision": "published",
+        "quality_reason_codes": [
+          "title_company_and_industry_match"
+        ],
+        "source_quality_score": 0.7
+      },
+      "source": {
+        "rank_group": "media",
+        "source_id": "rss_provider",
+        "source_name": "bing.com",
+        "source_type": "rss",
+        "url": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6a63b7e9ef0e46359692e821dd8f4d90&url=https%3a%2f%2fwww.msn.com%2fen-us%2ftechnology%2faviation%2fblue-origin-be-4-engine-failure-disrupts-vulcan-launch-plans%2far-AA26Wkqz&c=866016934621474795&mkt=en-us"
+      },
+      "title": "Blue Origin BE-4 engine failure disrupts Vulcan launch plans",
+      "url": "http://www.bing.com/news/apiclick.aspx?aid=&tid=6a63b7e9ef0e46359692e821dd8f4d90&url=https%3A%2F%2Fwww.msn.com%2Fen-us%2Ftechnology%2Faviation%2Fblue-origin-be-4-engine-failure-disrupts-vulcan-launch-plans%2Far-AA26Wkqz&c=866016934621474795&mkt=en-us"
+    },
+    {
       "archive_first_seen_at": "2026-07-24T01:19:24.294597Z",
       "archive_last_seen_at": "2026-07-24T01:19:24.294597Z",
       "archive_last_seen_run_id": "fe5b07e5-8146-499b-bbcd-04e781ae4bad",
@@ -14412,6 +15436,36 @@
       },
       "title": "Blue Origin starts rebuilding launch pad damaged by New Glenn rocket explosion",
       "url": "http://www.bing.com/news/apiclick.aspx?aid=&tid=6a62bd4211c94f539a86e7500afb1366&url=https%3A%2F%2Fwww.msn.com%2Fen-us%2Fnews%2Ftechnology%2Fblue-origin-starts-rebuilding-launch-pad-damaged-by-new-glenn-rocket-explosion%2Far-AA26VbqJ&c=15002368470571094781&mkt=en-us"
+    },
+    {
+      "archive_first_seen_at": "2026-07-24T19:08:53.714588Z",
+      "archive_last_seen_at": "2026-07-24T19:08:53.714588Z",
+      "archive_last_seen_run_id": "a3512350-371f-49d7-99b6-8e3c978c2473",
+      "company_id": "blue_origin",
+      "company_name": "Blue Origin",
+      "id": "a158a64e120ae3e6",
+      "published_at": "2026-06-30T14:00:00Z",
+      "quality": {
+        "canonical_url": "http://www.bing.com/news/apiclick.aspx?aid=&tid=6a63b7e897e34f3fbf697643523860e0&url=https%3A%2F%2Fwww.msn.com%2Fen-us%2Fnews%2Ftechnology%2Fblue-origin-starts-rebuilding-launch-pad-damaged-by-new-glenn-rocket-explosion%2Far-AA26VbqJ&c=15002368470571094781&mkt=en-us",
+        "company_relevance_score": 0.85,
+        "event_id": "86729e37b9d7531a",
+        "event_type": "launch",
+        "market_match_terms": [],
+        "quality_decision": "published",
+        "quality_reason_codes": [
+          "title_company_and_industry_match"
+        ],
+        "source_quality_score": 0.7
+      },
+      "source": {
+        "rank_group": "media",
+        "source_id": "rss_provider",
+        "source_name": "bing.com",
+        "source_type": "rss",
+        "url": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6a63b7e897e34f3fbf697643523860e0&url=https%3a%2f%2fwww.msn.com%2fen-us%2fnews%2ftechnology%2fblue-origin-starts-rebuilding-launch-pad-damaged-by-new-glenn-rocket-explosion%2far-AA26VbqJ&c=15002368470571094781&mkt=en-us"
+      },
+      "title": "Blue Origin starts rebuilding launch pad damaged by New Glenn rocket explosion",
+      "url": "http://www.bing.com/news/apiclick.aspx?aid=&tid=6a63b7e897e34f3fbf697643523860e0&url=https%3A%2F%2Fwww.msn.com%2Fen-us%2Fnews%2Ftechnology%2Fblue-origin-starts-rebuilding-launch-pad-damaged-by-new-glenn-rocket-explosion%2Far-AA26VbqJ&c=15002368470571094781&mkt=en-us"
     },
     {
       "archive_first_seen_at": "2026-07-23T13:18:30.470453Z",
@@ -15229,8 +16283,8 @@
     },
     {
       "archive_first_seen_at": "2026-07-23T03:11:46.810306Z",
-      "archive_last_seen_at": "2026-07-24T13:11:48.353045Z",
-      "archive_last_seen_run_id": "417467de-aae1-4f3e-997d-afc5f8e6e87c",
+      "archive_last_seen_at": "2026-07-24T19:08:53.714588Z",
+      "archive_last_seen_run_id": "a3512350-371f-49d7-99b6-8e3c978c2473",
       "company_id": "landspace",
       "company_name": "蓝箭航天",
       "id": "bd855d50cf5777ef",
@@ -15291,8 +16345,8 @@
     },
     {
       "archive_first_seen_at": "2026-07-23T02:25:32.030650Z",
-      "archive_last_seen_at": "2026-07-24T13:11:48.353045Z",
-      "archive_last_seen_run_id": "417467de-aae1-4f3e-997d-afc5f8e6e87c",
+      "archive_last_seen_at": "2026-07-24T19:08:53.714588Z",
+      "archive_last_seen_run_id": "a3512350-371f-49d7-99b6-8e3c978c2473",
       "company_id": "blue_origin",
       "company_name": "Blue Origin",
       "id": "069c2ab2b560eb30",
@@ -15321,8 +16375,8 @@
     },
     {
       "archive_first_seen_at": "2026-07-23T03:11:46.810306Z",
-      "archive_last_seen_at": "2026-07-24T13:11:48.353045Z",
-      "archive_last_seen_run_id": "417467de-aae1-4f3e-997d-afc5f8e6e87c",
+      "archive_last_seen_at": "2026-07-24T19:08:53.714588Z",
+      "archive_last_seen_run_id": "a3512350-371f-49d7-99b6-8e3c978c2473",
       "company_id": "landspace",
       "company_name": "蓝箭航天",
       "id": "c3e0d0da9b69eae2",
@@ -15558,6 +16612,36 @@
       },
       "title": "How satellite internet is bringing high-speed connectivity to the world’s remote regions",
       "url": "http://www.bing.com/news/apiclick.aspx?aid=&tid=6a62bd8e435e44aca3782d8e8c9d41ff&url=https%3A%2F%2Fwww.msn.com%2Fen-in%2Ftechnology%2Fspace-exploration%2Fhow-satellite-internet-is-bringing-high-speed-connectivity-to-the-world-s-remote-regions%2Far-AA26RZpL&c=2931294600003180278&mkt=en-us"
+    },
+    {
+      "archive_first_seen_at": "2026-07-24T19:08:53.714588Z",
+      "archive_last_seen_at": "2026-07-24T19:08:53.714588Z",
+      "archive_last_seen_run_id": "a3512350-371f-49d7-99b6-8e3c978c2473",
+      "company_id": "galaxyspace",
+      "company_name": "银河航天",
+      "id": "0aca53ced5ee2b8d",
+      "published_at": "2026-06-30T00:36:07Z",
+      "quality": {
+        "canonical_url": "http://www.bing.com/news/apiclick.aspx?aid=&tid=6a63b831b11545acb31192f2e20b0c53&url=https%3A%2F%2Fwww.msn.com%2Fen-in%2Ftechnology%2Fspace-exploration%2Fhow-satellite-internet-is-bringing-high-speed-connectivity-to-the-world-s-remote-regions%2Far-AA26RZpL&c=2931294600003180278&mkt=en-us",
+        "company_relevance_score": 0.85,
+        "event_id": "7e2b840c1b8d3425",
+        "event_type": "launch",
+        "market_match_terms": [],
+        "quality_decision": "published",
+        "quality_reason_codes": [
+          "title_company_and_industry_match"
+        ],
+        "source_quality_score": 0.7
+      },
+      "source": {
+        "rank_group": "media",
+        "source_id": "rss_provider",
+        "source_name": "bing.com",
+        "source_type": "rss",
+        "url": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6a63b831b11545acb31192f2e20b0c53&url=https%3a%2f%2fwww.msn.com%2fen-in%2ftechnology%2fspace-exploration%2fhow-satellite-internet-is-bringing-high-speed-connectivity-to-the-world-s-remote-regions%2far-AA26RZpL&c=2931294600003180278&mkt=en-us"
+      },
+      "title": "How satellite internet is bringing high-speed connectivity to the world’s remote regions",
+      "url": "http://www.bing.com/news/apiclick.aspx?aid=&tid=6a63b831b11545acb31192f2e20b0c53&url=https%3A%2F%2Fwww.msn.com%2Fen-in%2Ftechnology%2Fspace-exploration%2Fhow-satellite-internet-is-bringing-high-speed-connectivity-to-the-world-s-remote-regions%2Far-AA26RZpL&c=2931294600003180278&mkt=en-us"
     },
     {
       "archive_first_seen_at": "2026-07-23T13:18:30.470453Z",
@@ -15868,8 +16952,8 @@
     },
     {
       "archive_first_seen_at": "2026-07-23T03:11:46.810306Z",
-      "archive_last_seen_at": "2026-07-24T13:11:48.353045Z",
-      "archive_last_seen_run_id": "417467de-aae1-4f3e-997d-afc5f8e6e87c",
+      "archive_last_seen_at": "2026-07-24T19:08:53.714588Z",
+      "archive_last_seen_run_id": "a3512350-371f-49d7-99b6-8e3c978c2473",
       "company_id": "landspace",
       "company_name": "蓝箭航天",
       "id": "3952d6aa4da4b3e0",
@@ -15988,8 +17072,8 @@
     },
     {
       "archive_first_seen_at": "2026-07-23T03:11:46.810306Z",
-      "archive_last_seen_at": "2026-07-24T13:11:48.353045Z",
-      "archive_last_seen_run_id": "417467de-aae1-4f3e-997d-afc5f8e6e87c",
+      "archive_last_seen_at": "2026-07-24T19:08:53.714588Z",
+      "archive_last_seen_run_id": "a3512350-371f-49d7-99b6-8e3c978c2473",
       "company_id": "landspace",
       "company_name": "蓝箭航天",
       "id": "04bad36da4213afe",
@@ -16176,8 +17260,8 @@
     },
     {
       "archive_first_seen_at": "2026-07-23T03:11:46.810306Z",
-      "archive_last_seen_at": "2026-07-24T13:11:48.353045Z",
-      "archive_last_seen_run_id": "417467de-aae1-4f3e-997d-afc5f8e6e87c",
+      "archive_last_seen_at": "2026-07-24T19:08:53.714588Z",
+      "archive_last_seen_run_id": "a3512350-371f-49d7-99b6-8e3c978c2473",
       "company_id": "landspace",
       "company_name": "蓝箭航天",
       "id": "650077bb8e1fd4d0",
@@ -16365,8 +17449,8 @@
     },
     {
       "archive_first_seen_at": "2026-07-23T03:11:46.810306Z",
-      "archive_last_seen_at": "2026-07-24T13:11:48.353045Z",
-      "archive_last_seen_run_id": "417467de-aae1-4f3e-997d-afc5f8e6e87c",
+      "archive_last_seen_at": "2026-07-24T19:08:53.714588Z",
+      "archive_last_seen_run_id": "a3512350-371f-49d7-99b6-8e3c978c2473",
       "company_id": "landspace",
       "company_name": "蓝箭航天",
       "id": "4d803b6dd4da259c",
@@ -16425,8 +17509,8 @@
     },
     {
       "archive_first_seen_at": "2026-07-21T01:15:55.685866Z",
-      "archive_last_seen_at": "2026-07-24T13:11:48.353045Z",
-      "archive_last_seen_run_id": "417467de-aae1-4f3e-997d-afc5f8e6e87c",
+      "archive_last_seen_at": "2026-07-24T19:08:53.714588Z",
+      "archive_last_seen_run_id": "a3512350-371f-49d7-99b6-8e3c978c2473",
       "company_id": "yuanxin_satellite",
       "company_name": "垣信卫星",
       "id": "8733890a2cd326f2",
@@ -16457,8 +17541,8 @@
     },
     {
       "archive_first_seen_at": "2026-06-29T02:02:12.694107Z",
-      "archive_last_seen_at": "2026-07-24T13:11:48.353045Z",
-      "archive_last_seen_run_id": "417467de-aae1-4f3e-997d-afc5f8e6e87c",
+      "archive_last_seen_at": "2026-07-24T19:08:53.714588Z",
+      "archive_last_seen_run_id": "a3512350-371f-49d7-99b6-8e3c978c2473",
       "company_id": "yuanxin_satellite",
       "company_name": "垣信卫星",
       "id": "4014d7dbb69d12de",
@@ -16517,8 +17601,8 @@
     },
     {
       "archive_first_seen_at": "2026-07-23T08:06:52.769435Z",
-      "archive_last_seen_at": "2026-07-24T13:11:48.353045Z",
-      "archive_last_seen_run_id": "417467de-aae1-4f3e-997d-afc5f8e6e87c",
+      "archive_last_seen_at": "2026-07-24T19:08:53.714588Z",
+      "archive_last_seen_run_id": "a3512350-371f-49d7-99b6-8e3c978c2473",
       "company_id": "landspace",
       "company_name": "蓝箭航天",
       "id": "ecfc421bcb739daa",
@@ -16672,8 +17756,8 @@
     },
     {
       "archive_first_seen_at": "2026-07-02T08:37:06.326579Z",
-      "archive_last_seen_at": "2026-07-24T13:11:48.353045Z",
-      "archive_last_seen_run_id": "417467de-aae1-4f3e-997d-afc5f8e6e87c",
+      "archive_last_seen_at": "2026-07-24T19:08:53.714588Z",
+      "archive_last_seen_run_id": "a3512350-371f-49d7-99b6-8e3c978c2473",
       "company_id": "landspace",
       "company_name": "蓝箭航天",
       "id": "1624c996adb29f71",
@@ -17154,6 +18238,36 @@
       "url": "http://www.bing.com/news/apiclick.aspx?aid=&tid=6a6263c5e39f43bcad6d185a00c4a2da&url=https%3A%2F%2Fwww.msn.com%2Fen-us%2Fmoney%2Fother%2Fspace-pioneer-targets-falcon-9-class-launch-in-2024%2Far-AA26LE1T&c=10718621810963799113&mkt=en-us"
     },
     {
+      "archive_first_seen_at": "2026-07-24T19:08:53.714588Z",
+      "archive_last_seen_at": "2026-07-24T19:08:53.714588Z",
+      "archive_last_seen_run_id": "a3512350-371f-49d7-99b6-8e3c978c2473",
+      "company_id": "space_pioneer",
+      "company_name": "天兵科技",
+      "id": "1a9e53df6ba9529c",
+      "published_at": "2026-06-28T23:30:00Z",
+      "quality": {
+        "canonical_url": "http://www.bing.com/news/apiclick.aspx?aid=&tid=6a63b8102df64ae892db4b04c04e5fc9&url=https%3A%2F%2Fwww.msn.com%2Fen-us%2Fmoney%2Fother%2Fspace-pioneer-targets-falcon-9-class-launch-in-2024%2Far-AA26LE1T&c=10718621810963799113&mkt=en-us",
+        "company_relevance_score": 0.85,
+        "event_id": "da027e87116a0387",
+        "event_type": "launch",
+        "market_match_terms": [],
+        "quality_decision": "published",
+        "quality_reason_codes": [
+          "title_company_and_industry_match"
+        ],
+        "source_quality_score": 0.7
+      },
+      "source": {
+        "rank_group": "media",
+        "source_id": "rss_provider",
+        "source_name": "bing.com",
+        "source_type": "rss",
+        "url": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6a63b8102df64ae892db4b04c04e5fc9&url=https%3a%2f%2fwww.msn.com%2fen-us%2fmoney%2fother%2fspace-pioneer-targets-falcon-9-class-launch-in-2024%2far-AA26LE1T&c=10718621810963799113&mkt=en-us"
+      },
+      "title": "Space Pioneer targets Falcon 9-class launch in 2024",
+      "url": "http://www.bing.com/news/apiclick.aspx?aid=&tid=6a63b8102df64ae892db4b04c04e5fc9&url=https%3A%2F%2Fwww.msn.com%2Fen-us%2Fmoney%2Fother%2Fspace-pioneer-targets-falcon-9-class-launch-in-2024%2Far-AA26LE1T&c=10718621810963799113&mkt=en-us"
+    },
+    {
       "archive_first_seen_at": "2026-07-24T01:19:24.294597Z",
       "archive_last_seen_at": "2026-07-24T01:19:24.294597Z",
       "archive_last_seen_run_id": "fe5b07e5-8146-499b-bbcd-04e781ae4bad",
@@ -17332,6 +18446,36 @@
       },
       "title": "SpaceX sends 24 Starlink satellites into Earth orbit on Falcon 9 launch from California (video)",
       "url": "http://www.bing.com/news/apiclick.aspx?aid=&tid=6a62bd3b48a140b487972b60bfccc6f1&url=https%3A%2F%2Fwww.msn.com%2Fen-us%2Fnews%2Ftechnology%2Fspacex-sends-24-starlink-satellites-into-earth-orbit-on-falcon-9-launch-from-california-video%2Far-AA26JFRh&c=12421087748926158979&mkt=en-us"
+    },
+    {
+      "archive_first_seen_at": "2026-07-24T19:08:53.714588Z",
+      "archive_last_seen_at": "2026-07-24T19:08:53.714588Z",
+      "archive_last_seen_run_id": "a3512350-371f-49d7-99b6-8e3c978c2473",
+      "company_id": "spacex",
+      "company_name": "SpaceX",
+      "id": "9a1c33b8eb142c36",
+      "published_at": "2026-06-28T09:21:56Z",
+      "quality": {
+        "canonical_url": "http://www.bing.com/news/apiclick.aspx?aid=&tid=6a63b7e1bd5244eeb98a4b5b98998355&url=https%3A%2F%2Fwww.msn.com%2Fen-us%2Fnews%2Ftechnology%2Fspacex-sends-24-starlink-satellites-into-earth-orbit-on-falcon-9-launch-from-california-video%2Far-AA26JFRh&c=12421087748926158979&mkt=en-us",
+        "company_relevance_score": 0.85,
+        "event_id": "a99f0ad673f5ec34",
+        "event_type": "launch",
+        "market_match_terms": [],
+        "quality_decision": "published",
+        "quality_reason_codes": [
+          "title_company_and_industry_match"
+        ],
+        "source_quality_score": 0.7
+      },
+      "source": {
+        "rank_group": "media",
+        "source_id": "rss_provider",
+        "source_name": "bing.com",
+        "source_type": "rss",
+        "url": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6a63b7e1bd5244eeb98a4b5b98998355&url=https%3a%2f%2fwww.msn.com%2fen-us%2fnews%2ftechnology%2fspacex-sends-24-starlink-satellites-into-earth-orbit-on-falcon-9-launch-from-california-video%2far-AA26JFRh&c=12421087748926158979&mkt=en-us"
+      },
+      "title": "SpaceX sends 24 Starlink satellites into Earth orbit on Falcon 9 launch from California (video)",
+      "url": "http://www.bing.com/news/apiclick.aspx?aid=&tid=6a63b7e1bd5244eeb98a4b5b98998355&url=https%3A%2F%2Fwww.msn.com%2Fen-us%2Fnews%2Ftechnology%2Fspacex-sends-24-starlink-satellites-into-earth-orbit-on-falcon-9-launch-from-california-video%2Far-AA26JFRh&c=12421087748926158979&mkt=en-us"
     },
     {
       "archive_first_seen_at": "2026-07-23T08:06:52.769435Z",
@@ -18088,8 +19232,8 @@
     },
     {
       "archive_first_seen_at": "2026-07-23T03:11:46.810306Z",
-      "archive_last_seen_at": "2026-07-24T13:11:48.353045Z",
-      "archive_last_seen_run_id": "417467de-aae1-4f3e-997d-afc5f8e6e87c",
+      "archive_last_seen_at": "2026-07-24T19:08:53.714588Z",
+      "archive_last_seen_run_id": "a3512350-371f-49d7-99b6-8e3c978c2473",
       "company_id": "yuanxin_satellite",
       "company_name": "垣信卫星",
       "id": "9cab4f94251281f9",
@@ -18120,8 +19264,8 @@
     },
     {
       "archive_first_seen_at": "2026-07-23T08:06:52.769435Z",
-      "archive_last_seen_at": "2026-07-24T13:11:48.353045Z",
-      "archive_last_seen_run_id": "417467de-aae1-4f3e-997d-afc5f8e6e87c",
+      "archive_last_seen_at": "2026-07-24T19:08:53.714588Z",
+      "archive_last_seen_run_id": "a3512350-371f-49d7-99b6-8e3c978c2473",
       "company_id": "yuanxin_satellite",
       "company_name": "垣信卫星",
       "id": "67cd37fd96eba687",
@@ -18571,6 +19715,36 @@
       "url": "http://www.bing.com/news/apiclick.aspx?aid=&tid=6a6263a719d04aecadc8f6ab6afe2679&url=https%3A%2F%2Fwww.theguardian.com%2Fworld%2F2026%2Fjun%2F25%2Fchina-spacesail-rival-elon-musk-starlink-space-satelites-low-earth-orbit&c=14437446121505522548&mkt=en-us"
     },
     {
+      "archive_first_seen_at": "2026-07-24T19:08:53.714588Z",
+      "archive_last_seen_at": "2026-07-24T19:08:53.714588Z",
+      "archive_last_seen_run_id": "a3512350-371f-49d7-99b6-8e3c978c2473",
+      "company_id": "yuanxin_satellite",
+      "company_name": "垣信卫星",
+      "id": "8da0fe5a8b40926f",
+      "published_at": "2026-06-25T19:41:00Z",
+      "quality": {
+        "canonical_url": "http://www.bing.com/news/apiclick.aspx?aid=&tid=6a63b7f1e26b43e99ec09c3cbb5cbd06&url=https%3A%2F%2Fwww.theguardian.com%2Fworld%2F2026%2Fjun%2F25%2Fchina-spacesail-rival-elon-musk-starlink-space-satelites-low-earth-orbit&c=14437446121505522548&mkt=en-us",
+        "company_relevance_score": 0.85,
+        "event_id": "fc980321658e5e97",
+        "event_type": "launch",
+        "market_match_terms": [],
+        "quality_decision": "published",
+        "quality_reason_codes": [
+          "title_company_and_industry_match"
+        ],
+        "source_quality_score": 0.7
+      },
+      "source": {
+        "rank_group": "media",
+        "source_id": "rss_provider",
+        "source_name": "bing.com",
+        "source_type": "rss",
+        "url": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6a63b7f1e26b43e99ec09c3cbb5cbd06&url=https%3a%2f%2fwww.theguardian.com%2fworld%2f2026%2fjun%2f25%2fchina-spacesail-rival-elon-musk-starlink-space-satelites-low-earth-orbit&c=14437446121505522548&mkt=en-us"
+      },
+      "title": "What is China’s SpaceSail, and could it rival Elon Musk’s Starlink?",
+      "url": "http://www.bing.com/news/apiclick.aspx?aid=&tid=6a63b7f1e26b43e99ec09c3cbb5cbd06&url=https%3A%2F%2Fwww.theguardian.com%2Fworld%2F2026%2Fjun%2F25%2Fchina-spacesail-rival-elon-musk-starlink-space-satelites-low-earth-orbit&c=14437446121505522548&mkt=en-us"
+    },
+    {
       "archive_first_seen_at": "2026-07-23T13:18:30.470453Z",
       "archive_last_seen_at": "2026-07-23T13:18:30.470453Z",
       "archive_last_seen_run_id": "7e33b884-3d89-4f80-be76-c402439a5d9f",
@@ -18842,8 +20016,8 @@
     },
     {
       "archive_first_seen_at": "2026-07-23T02:45:58.105578Z",
-      "archive_last_seen_at": "2026-07-24T13:11:48.353045Z",
-      "archive_last_seen_run_id": "417467de-aae1-4f3e-997d-afc5f8e6e87c",
+      "archive_last_seen_at": "2026-07-24T19:08:53.714588Z",
+      "archive_last_seen_run_id": "a3512350-371f-49d7-99b6-8e3c978c2473",
       "company_id": "yuanxin_satellite",
       "company_name": "垣信卫星",
       "id": "acdd52265a122d41",
@@ -18872,8 +20046,8 @@
     },
     {
       "archive_first_seen_at": "2026-07-23T02:25:32.030650Z",
-      "archive_last_seen_at": "2026-07-24T13:11:48.353045Z",
-      "archive_last_seen_run_id": "417467de-aae1-4f3e-997d-afc5f8e6e87c",
+      "archive_last_seen_at": "2026-07-24T19:08:53.714588Z",
+      "archive_last_seen_run_id": "a3512350-371f-49d7-99b6-8e3c978c2473",
       "company_id": "yuanxin_satellite",
       "company_name": "垣信卫星",
       "id": "6d26e6520e10987b",
@@ -19021,6 +20195,36 @@
       },
       "title": "东坡卫星|微纳星空|引力一号y4运载火箭|山东海阳 - 新浪网",
       "url": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE16ZzRIcUhSOU5ydTRIeEFmeS02Q1RFcWNMTmlWVzZrWGlzM3ZuMGF5bzBVYjV3OExEWDdVcUVYTmdIbkR1TTkyeEFWN2tyYmREbGFLWUFFWC1NR2dFeDRiSW80bw?oc=5"
+    },
+    {
+      "archive_first_seen_at": "2026-07-24T19:08:53.714588Z",
+      "archive_last_seen_at": "2026-07-24T19:08:53.714588Z",
+      "archive_last_seen_run_id": "a3512350-371f-49d7-99b6-8e3c978c2473",
+      "company_id": "yuanxin_satellite",
+      "company_name": "垣信卫星",
+      "id": "b5188d38fe4892e5",
+      "published_at": "2026-06-24T17:00:00Z",
+      "quality": {
+        "canonical_url": "http://www.bing.com/news/apiclick.aspx?aid=&tid=6a63b7f1e26b43e99ec09c3cbb5cbd06&url=https%3A%2F%2Fwww.msn.com%2Fen-in%2Fnews%2Fworld%2Fchina-s-spacesail-challenges-starlink-with-ambitious-10-000-satellite-plan%2Fvi-AA26wL8e&c=13351253708811036496&mkt=en-us",
+        "company_relevance_score": 0.85,
+        "event_id": "29868580618a4468",
+        "event_type": "other",
+        "market_match_terms": [],
+        "quality_decision": "published",
+        "quality_reason_codes": [
+          "title_company_and_industry_match"
+        ],
+        "source_quality_score": 0.7
+      },
+      "source": {
+        "rank_group": "media",
+        "source_id": "rss_provider",
+        "source_name": "bing.com",
+        "source_type": "rss",
+        "url": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6a63b7f1e26b43e99ec09c3cbb5cbd06&url=https%3a%2f%2fwww.msn.com%2fen-in%2fnews%2fworld%2fchina-s-spacesail-challenges-starlink-with-ambitious-10-000-satellite-plan%2fvi-AA26wL8e&c=13351253708811036496&mkt=en-us"
+      },
+      "title": "China's Spacesail challenges Starlink with ambitious 10,000-satellite plan",
+      "url": "http://www.bing.com/news/apiclick.aspx?aid=&tid=6a63b7f1e26b43e99ec09c3cbb5cbd06&url=https%3A%2F%2Fwww.msn.com%2Fen-in%2Fnews%2Fworld%2Fchina-s-spacesail-challenges-starlink-with-ambitious-10-000-satellite-plan%2Fvi-AA26wL8e&c=13351253708811036496&mkt=en-us"
     },
     {
       "archive_first_seen_at": "2026-07-24T13:11:48.353045Z",
@@ -19204,8 +20408,8 @@
     },
     {
       "archive_first_seen_at": "2026-07-23T08:06:52.769435Z",
-      "archive_last_seen_at": "2026-07-24T13:11:48.353045Z",
-      "archive_last_seen_run_id": "417467de-aae1-4f3e-997d-afc5f8e6e87c",
+      "archive_last_seen_at": "2026-07-24T19:08:53.714588Z",
+      "archive_last_seen_run_id": "a3512350-371f-49d7-99b6-8e3c978c2473",
       "company_id": "yuanxin_satellite",
       "company_name": "垣信卫星",
       "id": "09fd735f83bbb0f7",
@@ -19358,8 +20562,8 @@
     },
     {
       "archive_first_seen_at": "2026-07-23T08:06:52.769435Z",
-      "archive_last_seen_at": "2026-07-24T13:11:48.353045Z",
-      "archive_last_seen_run_id": "417467de-aae1-4f3e-997d-afc5f8e6e87c",
+      "archive_last_seen_at": "2026-07-24T19:08:53.714588Z",
+      "archive_last_seen_run_id": "a3512350-371f-49d7-99b6-8e3c978c2473",
       "company_id": "yuanxin_satellite",
       "company_name": "垣信卫星",
       "id": "a7582d2e9392c043",
@@ -19392,8 +20596,8 @@
     },
     {
       "archive_first_seen_at": "2026-07-23T08:06:52.769435Z",
-      "archive_last_seen_at": "2026-07-24T13:11:48.353045Z",
-      "archive_last_seen_run_id": "417467de-aae1-4f3e-997d-afc5f8e6e87c",
+      "archive_last_seen_at": "2026-07-24T19:08:53.714588Z",
+      "archive_last_seen_run_id": "a3512350-371f-49d7-99b6-8e3c978c2473",
       "company_id": "yuanxin_satellite",
       "company_name": "垣信卫星",
       "id": "95617b3d026d6ab2",
@@ -19422,8 +20626,8 @@
     },
     {
       "archive_first_seen_at": "2026-07-23T08:06:52.769435Z",
-      "archive_last_seen_at": "2026-07-24T13:11:48.353045Z",
-      "archive_last_seen_run_id": "417467de-aae1-4f3e-997d-afc5f8e6e87c",
+      "archive_last_seen_at": "2026-07-24T19:08:53.714588Z",
+      "archive_last_seen_run_id": "a3512350-371f-49d7-99b6-8e3c978c2473",
       "company_id": "yuanxin_satellite",
       "company_name": "垣信卫星",
       "id": "1410ca9f493b344d",
@@ -20056,8 +21260,8 @@
     },
     {
       "archive_first_seen_at": "2026-06-29T10:15:10.415954Z",
-      "archive_last_seen_at": "2026-07-24T13:11:48.353045Z",
-      "archive_last_seen_run_id": "417467de-aae1-4f3e-997d-afc5f8e6e87c",
+      "archive_last_seen_at": "2026-07-24T19:08:53.714588Z",
+      "archive_last_seen_run_id": "a3512350-371f-49d7-99b6-8e3c978c2473",
       "company_id": "yuanxin_satellite",
       "company_name": "垣信卫星",
       "id": "b93ba1060ba14d5d",
@@ -20079,17 +21283,17 @@
       "source": {
         "rank_group": "media",
         "source_id": "rss_provider",
-        "source_name": "新浪财经",
+        "source_name": "新浪网",
         "source_type": "rss",
         "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE1tT3JxYlRkMkJIUW9uWF9pMmFCektZOE1ldTM1dWMxaDN3NzhSbXk2dXg1dFJqczd5ZXFWRTVocUUyWjQ4Nm5PV0VKbmpfdm9uTVlIOXVoWUtSQnVPdC0tb25pYjZLWmxlaFJ3OWh6S3dPVFNIdFphTWZIU2RVNGc?oc=5"
       },
-      "title": "上海垣信启动新一轮融资：投后估值达到750亿元|募集资金|星座公司|卫星|星座|投资人_手机新浪网 - 新浪财经",
+      "title": "上海垣信启动新一轮融资：投后估值达到750亿元|募集资金|星座公司|卫星|星座|投资人_手机新浪网 - 新浪网",
       "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE1tT3JxYlRkMkJIUW9uWF9pMmFCektZOE1ldTM1dWMxaDN3NzhSbXk2dXg1dFJqczd5ZXFWRTVocUUyWjQ4Nm5PV0VKbmpfdm9uTVlIOXVoWUtSQnVPdC0tb25pYjZLWmxlaFJ3OWh6S3dPVFNIdFphTWZIU2RVNGc?oc=5"
     },
     {
       "archive_first_seen_at": "2026-07-23T08:06:52.769435Z",
-      "archive_last_seen_at": "2026-07-24T13:11:48.353045Z",
-      "archive_last_seen_run_id": "417467de-aae1-4f3e-997d-afc5f8e6e87c",
+      "archive_last_seen_at": "2026-07-24T19:08:53.714588Z",
+      "archive_last_seen_run_id": "a3512350-371f-49d7-99b6-8e3c978c2473",
       "company_id": "yuanxin_satellite",
       "company_name": "垣信卫星",
       "id": "73687ea2f734d6e2",
@@ -20121,8 +21325,8 @@
     },
     {
       "archive_first_seen_at": "2026-07-23T08:06:52.769435Z",
-      "archive_last_seen_at": "2026-07-24T13:11:48.353045Z",
-      "archive_last_seen_run_id": "417467de-aae1-4f3e-997d-afc5f8e6e87c",
+      "archive_last_seen_at": "2026-07-24T19:08:53.714588Z",
+      "archive_last_seen_run_id": "a3512350-371f-49d7-99b6-8e3c978c2473",
       "company_id": "yuanxin_satellite",
       "company_name": "垣信卫星",
       "id": "0eb281ff5f382ecb",
@@ -20142,11 +21346,11 @@
       "source": {
         "rank_group": "media",
         "source_id": "rss_provider",
-        "source_name": "搜狐网",
+        "source_name": "Sohu",
         "source_type": "rss",
         "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTFBrVkFtU0hmMUhRel91bHU4ZDNRSUpMUC00ME1HY1lCQ1AtWUVNdkZkX1JMTWJYekJkaS1LYUg1SGtETFhnOVZuNldPd3V1ZlJnUFA0VFpR?oc=5"
       },
-      "title": "卫星数量达到200颗后，千帆星座启动新一轮融资 - 搜狐网",
+      "title": "卫星数量达到200颗后，千帆星座启动新一轮融资 - Sohu",
       "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTFBrVkFtU0hmMUhRel91bHU4ZDNRSUpMUC00ME1HY1lCQ1AtWUVNdkZkX1JMTWJYekJkaS1LYUg1SGtETFhnOVZuNldPd3V1ZlJnUFA0VFpR?oc=5"
     },
     {
@@ -20268,6 +21472,36 @@
       },
       "title": "Chinese satellite company SpaceSail opens up to new investors",
       "url": "http://www.bing.com/news/apiclick.aspx?aid=&tid=6a6263a719d04aecadc8f6ab6afe2679&url=https%3A%2F%2Fwww.thedailystar.net%2Fnews%2Ftech-startup%2Fnews%2Fchinese-satellite-company-spacesail-opens-new-investors-4206006&c=5278270893828835585&mkt=en-us"
+    },
+    {
+      "archive_first_seen_at": "2026-07-24T19:08:53.714588Z",
+      "archive_last_seen_at": "2026-07-24T19:08:53.714588Z",
+      "archive_last_seen_run_id": "a3512350-371f-49d7-99b6-8e3c978c2473",
+      "company_id": "yuanxin_satellite",
+      "company_name": "垣信卫星",
+      "id": "cc7727daeffbdcf6",
+      "published_at": "2026-06-23T04:00:00Z",
+      "quality": {
+        "canonical_url": "http://www.bing.com/news/apiclick.aspx?aid=&tid=6a63b7f1e26b43e99ec09c3cbb5cbd06&url=https%3A%2F%2Fwww.thedailystar.net%2Fnews%2Ftech-startup%2Fnews%2Fchinese-satellite-company-spacesail-opens-new-investors-4206006&c=5278270893828835585&mkt=en-us",
+        "company_relevance_score": 0.85,
+        "event_id": "33096bcc23881055",
+        "event_type": "launch",
+        "market_match_terms": [],
+        "quality_decision": "published",
+        "quality_reason_codes": [
+          "title_company_and_industry_match"
+        ],
+        "source_quality_score": 0.7
+      },
+      "source": {
+        "rank_group": "media",
+        "source_id": "rss_provider",
+        "source_name": "bing.com",
+        "source_type": "rss",
+        "url": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6a63b7f1e26b43e99ec09c3cbb5cbd06&url=https%3a%2f%2fwww.thedailystar.net%2fnews%2ftech-startup%2fnews%2fchinese-satellite-company-spacesail-opens-new-investors-4206006&c=5278270893828835585&mkt=en-us"
+      },
+      "title": "Chinese satellite company SpaceSail opens up to new investors",
+      "url": "http://www.bing.com/news/apiclick.aspx?aid=&tid=6a63b7f1e26b43e99ec09c3cbb5cbd06&url=https%3A%2F%2Fwww.thedailystar.net%2Fnews%2Ftech-startup%2Fnews%2Fchinese-satellite-company-spacesail-opens-new-investors-4206006&c=5278270893828835585&mkt=en-us"
     },
     {
       "archive_first_seen_at": "2026-07-23T08:06:52.769435Z",
@@ -21088,8 +22322,8 @@
     },
     {
       "archive_first_seen_at": "2026-07-23T08:06:52.769435Z",
-      "archive_last_seen_at": "2026-07-24T13:11:48.353045Z",
-      "archive_last_seen_run_id": "417467de-aae1-4f3e-997d-afc5f8e6e87c",
+      "archive_last_seen_at": "2026-07-24T19:08:53.714588Z",
+      "archive_last_seen_run_id": "a3512350-371f-49d7-99b6-8e3c978c2473",
       "company_id": "yuanxin_satellite",
       "company_name": "垣信卫星",
       "id": "a268e73535700208",
@@ -21118,8 +22352,8 @@
     },
     {
       "archive_first_seen_at": "2026-07-23T08:06:52.769435Z",
-      "archive_last_seen_at": "2026-07-24T13:11:48.353045Z",
-      "archive_last_seen_run_id": "417467de-aae1-4f3e-997d-afc5f8e6e87c",
+      "archive_last_seen_at": "2026-07-24T19:08:53.714588Z",
+      "archive_last_seen_run_id": "a3512350-371f-49d7-99b6-8e3c978c2473",
       "company_id": "landspace",
       "company_name": "蓝箭航天",
       "id": "81b1bdd22ca4a868",
@@ -21478,8 +22712,8 @@
     },
     {
       "archive_first_seen_at": "2026-07-23T02:25:32.030650Z",
-      "archive_last_seen_at": "2026-07-24T13:11:48.353045Z",
-      "archive_last_seen_run_id": "417467de-aae1-4f3e-997d-afc5f8e6e87c",
+      "archive_last_seen_at": "2026-07-24T19:08:53.714588Z",
+      "archive_last_seen_run_id": "a3512350-371f-49d7-99b6-8e3c978c2473",
       "company_id": "yuanxin_satellite",
       "company_name": "垣信卫星",
       "id": "f39a0d8e4c4ae319",
@@ -21508,8 +22742,8 @@
     },
     {
       "archive_first_seen_at": "2026-07-23T03:11:46.810306Z",
-      "archive_last_seen_at": "2026-07-24T13:11:48.353045Z",
-      "archive_last_seen_run_id": "417467de-aae1-4f3e-997d-afc5f8e6e87c",
+      "archive_last_seen_at": "2026-07-24T19:08:53.714588Z",
+      "archive_last_seen_run_id": "a3512350-371f-49d7-99b6-8e3c978c2473",
       "company_id": "yuanxin_satellite",
       "company_name": "垣信卫星",
       "id": "a67f50ac4d65085d",
@@ -21778,8 +23012,8 @@
     },
     {
       "archive_first_seen_at": "2026-07-23T08:06:52.769435Z",
-      "archive_last_seen_at": "2026-07-24T13:11:48.353045Z",
-      "archive_last_seen_run_id": "417467de-aae1-4f3e-997d-afc5f8e6e87c",
+      "archive_last_seen_at": "2026-07-24T19:08:53.714588Z",
+      "archive_last_seen_run_id": "a3512350-371f-49d7-99b6-8e3c978c2473",
       "company_id": "china_satnet",
       "company_name": "中国星网",
       "id": "bdf90c736bc7fb23",
@@ -22048,8 +23282,8 @@
     },
     {
       "archive_first_seen_at": "2026-07-23T02:25:32.030650Z",
-      "archive_last_seen_at": "2026-07-24T13:11:48.353045Z",
-      "archive_last_seen_run_id": "417467de-aae1-4f3e-997d-afc5f8e6e87c",
+      "archive_last_seen_at": "2026-07-24T19:08:53.714588Z",
+      "archive_last_seen_run_id": "a3512350-371f-49d7-99b6-8e3c978c2473",
       "company_id": "blue_origin",
       "company_name": "Blue Origin",
       "id": "546c85ae20e83160",
@@ -22922,8 +24156,8 @@
     },
     {
       "archive_first_seen_at": "2026-07-23T03:11:46.810306Z",
-      "archive_last_seen_at": "2026-07-24T13:11:48.353045Z",
-      "archive_last_seen_run_id": "417467de-aae1-4f3e-997d-afc5f8e6e87c",
+      "archive_last_seen_at": "2026-07-24T19:08:53.714588Z",
+      "archive_last_seen_run_id": "a3512350-371f-49d7-99b6-8e3c978c2473",
       "company_id": "minospace",
       "company_name": "微纳星空",
       "id": "5e545686bb9e248e",
@@ -22945,11 +24179,11 @@
       "source": {
         "rank_group": "media",
         "source_id": "rss_provider",
-        "source_name": "凤凰网财经",
+        "source_name": "凤凰网",
         "source_type": "rss",
         "url": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE9rVElkTE9Fb3ZuZ1UzUDRaNUp5S3ZhOTYzdk5sQk5WRVZyLWlfdTRnYnhrWnZDV011VGw1VEZpMHJ5NHZNd2FTYVprbDhFOFd0?oc=5"
       },
-      "title": "军采占比超75%却涉围标，微纳星空50亿IPO会否中断？ - 凤凰网财经",
+      "title": "军采占比超75%却涉围标，微纳星空50亿IPO会否中断？ - 凤凰网",
       "url": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE9rVElkTE9Fb3ZuZ1UzUDRaNUp5S3ZhOTYzdk5sQk5WRVZyLWlfdTRnYnhrWnZDV011VGw1VEZpMHJ5NHZNd2FTYVprbDhFOFd0?oc=5"
     },
     {
@@ -24072,8 +25306,8 @@
     },
     {
       "archive_first_seen_at": "2026-07-10T13:48:16.997648Z",
-      "archive_last_seen_at": "2026-07-24T13:11:48.353045Z",
-      "archive_last_seen_run_id": "417467de-aae1-4f3e-997d-afc5f8e6e87c",
+      "archive_last_seen_at": "2026-07-24T19:08:53.714588Z",
+      "archive_last_seen_run_id": "a3512350-371f-49d7-99b6-8e3c978c2473",
       "company_id": "yushi_space",
       "company_name": "宇石空间",
       "id": "0b86c7c8d2e73fe3",
@@ -24162,8 +25396,8 @@
     },
     {
       "archive_first_seen_at": "2026-06-17T05:17:04.416981Z",
-      "archive_last_seen_at": "2026-07-24T13:11:48.353045Z",
-      "archive_last_seen_run_id": "417467de-aae1-4f3e-997d-afc5f8e6e87c",
+      "archive_last_seen_at": "2026-07-24T19:08:53.714588Z",
+      "archive_last_seen_run_id": "a3512350-371f-49d7-99b6-8e3c978c2473",
       "company_id": "china_satnet",
       "company_name": "中国星网",
       "id": "df50963d02fdaf8d",
@@ -24183,11 +25417,11 @@
       "source": {
         "rank_group": "media",
         "source_id": "rss_provider",
-        "source_name": "新浪财经",
+        "source_name": "新浪网",
         "source_type": "rss",
         "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTFB6bERiaURIWlhnRzdtZFVObmZxbUpnbGk2WGliUTEyY1FMSzBPalllNnIyWXpTWFQzclFxQV90UWpNN0xHUGpJYm1GVFNRNGJtaFFFVms3QW1FbXVGcFFpQjBTR0ZaRzQ5TFVnQ1ZfTTk?oc=5"
       },
-      "title": "中国星网会是更大号中国铁塔还是第四大运营商？ - 新浪财经",
+      "title": "中国星网会是更大号中国铁塔还是第四大运营商？ - 新浪网",
       "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTFB6bERiaURIWlhnRzdtZFVObmZxbUpnbGk2WGliUTEyY1FMSzBPalllNnIyWXpTWFQzclFxQV90UWpNN0xHUGpJYm1GVFNRNGJtaFFFVms3QW1FbXVGcFFpQjBTR0ZaRzQ5TFVnQ1ZfTTk?oc=5"
     },
     {
@@ -24527,8 +25761,8 @@
     },
     {
       "archive_first_seen_at": "2026-06-23T08:08:30.838923Z",
-      "archive_last_seen_at": "2026-07-24T13:11:48.353045Z",
-      "archive_last_seen_run_id": "417467de-aae1-4f3e-997d-afc5f8e6e87c",
+      "archive_last_seen_at": "2026-07-24T19:08:53.714588Z",
+      "archive_last_seen_run_id": "a3512350-371f-49d7-99b6-8e3c978c2473",
       "company_id": "yushi_space",
       "company_name": "宇石空间",
       "id": "26b9865b4c1486de",
@@ -24840,8 +26074,8 @@
     },
     {
       "archive_first_seen_at": "2026-06-19T04:10:16.797331Z",
-      "archive_last_seen_at": "2026-07-24T13:11:48.353045Z",
-      "archive_last_seen_run_id": "417467de-aae1-4f3e-997d-afc5f8e6e87c",
+      "archive_last_seen_at": "2026-07-24T19:08:53.714588Z",
+      "archive_last_seen_run_id": "a3512350-371f-49d7-99b6-8e3c978c2473",
       "company_id": "yuanxin_satellite",
       "company_name": "垣信卫星",
       "id": "3994cdeea949232d",
@@ -24870,8 +26104,8 @@
     },
     {
       "archive_first_seen_at": "2026-06-19T04:10:16.797331Z",
-      "archive_last_seen_at": "2026-07-24T13:11:48.353045Z",
-      "archive_last_seen_run_id": "417467de-aae1-4f3e-997d-afc5f8e6e87c",
+      "archive_last_seen_at": "2026-07-24T19:08:53.714588Z",
+      "archive_last_seen_run_id": "a3512350-371f-49d7-99b6-8e3c978c2473",
       "company_id": "yuanxin_satellite",
       "company_name": "垣信卫星",
       "id": "27a6fdd223ab67d8",
@@ -25172,8 +26406,8 @@
     },
     {
       "archive_first_seen_at": "2026-07-23T03:11:46.810306Z",
-      "archive_last_seen_at": "2026-07-24T13:11:48.353045Z",
-      "archive_last_seen_run_id": "417467de-aae1-4f3e-997d-afc5f8e6e87c",
+      "archive_last_seen_at": "2026-07-24T19:08:53.714588Z",
+      "archive_last_seen_run_id": "a3512350-371f-49d7-99b6-8e3c978c2473",
       "company_id": "yuanxin_satellite",
       "company_name": "垣信卫星",
       "id": "c2c64745a33ecba3",
@@ -25202,8 +26436,8 @@
     },
     {
       "archive_first_seen_at": "2026-06-23T08:08:30.838923Z",
-      "archive_last_seen_at": "2026-07-24T13:11:48.353045Z",
-      "archive_last_seen_run_id": "417467de-aae1-4f3e-997d-afc5f8e6e87c",
+      "archive_last_seen_at": "2026-07-24T19:08:53.714588Z",
+      "archive_last_seen_run_id": "a3512350-371f-49d7-99b6-8e3c978c2473",
       "company_id": "landspace",
       "company_name": "蓝箭航天",
       "id": "faff140c2a8f679e",
@@ -25713,6 +26947,36 @@
       "url": "http://www.bing.com/news/apiclick.aspx?aid=&tid=6a62144fa8bb4ffdb992ad511d83b2c6&url=https%3A%2F%2Fwww.msn.com%2Fen-us%2Fnews%2Ftechnology%2Fblue-origin-puts-qv-band-and-lasers-at-the-center-of-terawave%2Far-AA25hkcA&c=8901055434341187264&mkt=en-us"
     },
     {
+      "archive_first_seen_at": "2026-07-24T19:08:53.714588Z",
+      "archive_last_seen_at": "2026-07-24T19:08:53.714588Z",
+      "archive_last_seen_run_id": "a3512350-371f-49d7-99b6-8e3c978c2473",
+      "company_id": "blue_origin",
+      "company_name": "Blue Origin",
+      "id": "7a87202612b19a61",
+      "published_at": "2026-06-10T03:48:00Z",
+      "quality": {
+        "canonical_url": "http://www.bing.com/news/apiclick.aspx?aid=&tid=6a63b7e867e240d9acaa9f92a36e4de0&url=https%3A%2F%2Fwww.msn.com%2Fen-us%2Fnews%2Ftechnology%2Fblue-origin-puts-qv-band-and-lasers-at-the-center-of-terawave%2Far-AA25hkcA&c=8901055434341187264&mkt=en-us",
+        "company_relevance_score": 0.85,
+        "event_id": "62c0672f29622835",
+        "event_type": "other",
+        "market_match_terms": [],
+        "quality_decision": "published",
+        "quality_reason_codes": [
+          "title_company_and_industry_match"
+        ],
+        "source_quality_score": 0.7
+      },
+      "source": {
+        "rank_group": "media",
+        "source_id": "rss_provider",
+        "source_name": "bing.com",
+        "source_type": "rss",
+        "url": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6a63b7e867e240d9acaa9f92a36e4de0&url=https%3a%2f%2fwww.msn.com%2fen-us%2fnews%2ftechnology%2fblue-origin-puts-qv-band-and-lasers-at-the-center-of-terawave%2far-AA25hkcA&c=8901055434341187264&mkt=en-us"
+      },
+      "title": "Blue Origin puts Q/V-band and lasers at the center of TeraWave",
+      "url": "http://www.bing.com/news/apiclick.aspx?aid=&tid=6a63b7e867e240d9acaa9f92a36e4de0&url=https%3A%2F%2Fwww.msn.com%2Fen-us%2Fnews%2Ftechnology%2Fblue-origin-puts-qv-band-and-lasers-at-the-center-of-terawave%2Far-AA25hkcA&c=8901055434341187264&mkt=en-us"
+    },
+    {
       "archive_first_seen_at": "2026-07-24T13:11:48.353045Z",
       "archive_last_seen_at": "2026-07-24T13:11:48.353045Z",
       "archive_last_seen_run_id": "417467de-aae1-4f3e-997d-afc5f8e6e87c",
@@ -26076,6 +27340,39 @@
       "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE5JdG5zVGRGbko4VEVlX3BuSXJPSDFNQXV1Y1U2U0ZNTFh6eEZ1MWZGNElRZ0RlTVpFeG53MXR0Y08wbWlTaEZCQzd2b0EtYmkxSjhEMy1B?oc=5"
     },
     {
+      "archive_first_seen_at": "2026-07-24T19:08:53.714588Z",
+      "archive_last_seen_at": "2026-07-24T19:08:53.714588Z",
+      "archive_last_seen_run_id": "a3512350-371f-49d7-99b6-8e3c978c2473",
+      "company_id": "minospace",
+      "company_name": "微纳星空",
+      "id": "766074cde9e56f9d",
+      "published_at": "2026-06-09T07:00:00Z",
+      "quality": {
+        "canonical_url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE5faEJRZGJRMTdmcndtYXZrbTl3bHFfOVMtT0lleUZzX2lXR1ZoM3ZQLVZRSThDTTFUcVFKOFo2WlJpOTRVZGplMTZLNnA2SjBJMHc?oc=5",
+        "company_relevance_score": 0.65,
+        "event_id": "cceefe869c6cb069",
+        "event_type": "market",
+        "market_match_terms": [
+          "ipo",
+          "股东"
+        ],
+        "quality_decision": "published",
+        "quality_reason_codes": [
+          "title_company_and_industry_match"
+        ],
+        "source_quality_score": 0.7
+      },
+      "source": {
+        "rank_group": "media",
+        "source_id": "rss_provider",
+        "source_name": "维科号",
+        "source_type": "rss",
+        "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE5faEJRZGJRMTdmcndtYXZrbTl3bHFfOVMtT0lleUZzX2lXR1ZoM3ZQLVZRSThDTTFUcVFKOFo2WlJpOTRVZGplMTZLNnA2SjBJMHc?oc=5"
+      },
+      "title": "上交大航天博导代持开局，微纳星空IPO募资50亿，高恩宇带创始股东变现4396万元 - 维科号",
+      "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE5faEJRZGJRMTdmcndtYXZrbTl3bHFfOVMtT0lleUZzX2lXR1ZoM3ZQLVZRSThDTTFUcVFKOFo2WlJpOTRVZGplMTZLNnA2SjBJMHc?oc=5"
+    },
+    {
       "archive_first_seen_at": "2026-06-24T07:22:56.716423Z",
       "archive_last_seen_at": "2026-06-29T19:28:49.307429Z",
       "archive_last_seen_run_id": "afae2fdb-33f5-4ad2-866f-da7ef3882164",
@@ -26197,8 +27494,8 @@
     },
     {
       "archive_first_seen_at": "2026-06-23T08:08:30.838923Z",
-      "archive_last_seen_at": "2026-07-24T13:11:48.353045Z",
-      "archive_last_seen_run_id": "417467de-aae1-4f3e-997d-afc5f8e6e87c",
+      "archive_last_seen_at": "2026-07-24T19:08:53.714588Z",
+      "archive_last_seen_run_id": "a3512350-371f-49d7-99b6-8e3c978c2473",
       "company_id": "landspace",
       "company_name": "蓝箭航天",
       "id": "ad6be99d8aa4bc21",
@@ -26407,8 +27704,8 @@
     },
     {
       "archive_first_seen_at": "2026-07-23T08:06:52.769435Z",
-      "archive_last_seen_at": "2026-07-24T08:03:38.516381Z",
-      "archive_last_seen_run_id": "de454d37-0551-4ad9-b8d3-846aa213c00c",
+      "archive_last_seen_at": "2026-07-24T19:08:53.714588Z",
+      "archive_last_seen_run_id": "a3512350-371f-49d7-99b6-8e3c978c2473",
       "company_id": "landspace",
       "company_name": "蓝箭航天",
       "id": "2cec8acd462f9786",
@@ -26437,8 +27734,8 @@
     },
     {
       "archive_first_seen_at": "2026-07-12T01:17:49.211343Z",
-      "archive_last_seen_at": "2026-07-24T13:11:48.353045Z",
-      "archive_last_seen_run_id": "417467de-aae1-4f3e-997d-afc5f8e6e87c",
+      "archive_last_seen_at": "2026-07-24T19:08:53.714588Z",
+      "archive_last_seen_run_id": "a3512350-371f-49d7-99b6-8e3c978c2473",
       "company_id": "landspace",
       "company_name": "蓝箭航天",
       "id": "24b5d745d0cb0ba0",
@@ -26527,8 +27824,8 @@
     },
     {
       "archive_first_seen_at": "2026-07-23T02:25:32.030650Z",
-      "archive_last_seen_at": "2026-07-24T13:11:48.353045Z",
-      "archive_last_seen_run_id": "417467de-aae1-4f3e-997d-afc5f8e6e87c",
+      "archive_last_seen_at": "2026-07-24T19:08:53.714588Z",
+      "archive_last_seen_run_id": "a3512350-371f-49d7-99b6-8e3c978c2473",
       "company_id": "galaxyspace",
       "company_name": "银河航天",
       "id": "a09ea5d21b8ede97",
@@ -52379,6 +53676,6 @@
       "url": "https://www.cnsa.gov.cn/n6758823/n6758838/c10752498/content.html"
     }
   ],
-  "latest_run_id": "417467de-aae1-4f3e-997d-afc5f8e6e87c",
+  "latest_run_id": "a3512350-371f-49d7-99b6-8e3c978c2473",
   "schema_version": "news_archive_catalog.v1"
 }
