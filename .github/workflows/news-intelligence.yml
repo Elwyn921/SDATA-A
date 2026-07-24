@@ -99,7 +99,6 @@ jobs:
             "${EXTRA_ARGS[@]}"
 
       - name: Generate daily briefing
-        if: github.event_name == 'workflow_dispatch' || github.event.schedule == '15 1 * * *'
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           OPENAI_DAILY_REPORT_MODEL: ${{ vars.OPENAI_DAILY_REPORT_MODEL }}

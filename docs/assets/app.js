@@ -778,11 +778,15 @@ function renderTimeTabs() {
 
 function renderDailyBriefing(items) {
   const report = state.dailyReport;
-  const reportHasSummary = Boolean(report?.executive_summary?.trim());
-  const reportIsAi = report?.generation_status === "completed";
   const reportDate = report?.report_date ?? dateKey(report?.generated_at);
   const latestDate = latestNewsDate(items);
-  const briefingDate = reportHasSummary && reportDate ? reportDate : latestDate;
+  const reportMatchesCurrentRun =
+    Boolean(report?.executive_summary?.trim()) &&
+    report?.source_run_id === state.result.run_id &&
+    reportDate === latestDate;
+  const reportIsAi =
+    reportMatchesCurrentRun && report?.generation_status === "completed";
+  const briefingDate = latestDate || reportDate;
   const dayItems = items.filter((item) => dateKey(item.published_at) === briefingDate);
   const companies = new Set(dayItems.map((item) => item.company_id).filter(Boolean));
   const previousDate = addDays(briefingDate, -1);
@@ -793,9 +797,13 @@ function renderDailyBriefing(items) {
     : "";
 
   elements.briefingTitle.textContent = `${formatDateLabel(briefingDate)}产业动态日报`;
-  elements.briefingStatus.textContent = reportIsAi ? "内容已更新" : "自动汇总";
+  elements.briefingStatus.textContent = reportIsAi
+    ? "内容已更新"
+    : reportMatchesCurrentRun
+      ? "自动汇总"
+      : "实时汇总";
   elements.briefingStatus.className = `briefing-status ${reportIsAi ? "is-ai" : "is-rules"}`;
-  elements.briefingSummary.textContent = reportHasSummary
+  elements.briefingSummary.textContent = reportMatchesCurrentRun
     ? report.executive_summary
     : dayItems.length
       ? `当日收录 ${dayItems.length} 条新闻，覆盖 ${companies.size} 家公司${comparison}。日报按新闻发布时间生成，并保留完整历史记录。`
@@ -817,7 +825,7 @@ function renderDailyBriefing(items) {
     }),
   );
 
-  const reportHighlights = reportHasSummary
+  const reportHighlights = reportMatchesCurrentRun
     ? (report.top_news ?? []).filter((item) => item.title).slice(0, 4)
     : dayItems.slice(0, 4);
   elements.briefingHighlights.replaceChildren(

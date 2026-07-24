@@ -101,6 +101,7 @@ def test_parse_sina_response_handles_china_and_us_formats():
     ]
     payload = (
         f'var hq_str_sh600118="{",".join(china_fields)}";\n'
+        f'var hq_str_sz000768="{",".join([china_fields[0], china_fields[1], china_fields[2], "0", *china_fields[4:]])}";\n'
         f'var hq_str_gb_ba="{",".join(us_fields)}";'
     )
 
@@ -108,6 +109,7 @@ def test_parse_sina_response_handles_china_and_us_formats():
 
     assert quotes["sh600118"]["price"] == 60.12
     assert quotes["sh600118"]["change_pct"] == 0.856
+    assert "sz000768" not in quotes
     assert quotes["gb_ba"]["price"] == 208.65
     assert quotes["gb_ba"]["change_pct"] == 1.88
 

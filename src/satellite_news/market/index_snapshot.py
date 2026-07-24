@@ -165,7 +165,7 @@ def parse_china_quote(symbol: str, fields: list[str]) -> dict[str, Any] | None:
         return None
     current = finite_number(fields[3])
     previous_close = finite_number(fields[2])
-    if current is None or previous_close in (None, 0):
+    if current is None or current <= 0 or previous_close in (None, 0):
         return None
     change_amount = current - previous_close
     change_pct = (change_amount / previous_close) * 100

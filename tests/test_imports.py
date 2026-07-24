@@ -269,6 +269,11 @@ def test_github_actions_refreshes_pages_data_on_safe_schedule():
     assert "python -m compileall -q src tests" in workflow
     assert "python -m pytest" in workflow
     assert "PYTHONPATH=src python3 -m satellite_news" in workflow
+    daily_briefing_step = workflow.split("- name: Generate daily briefing", 1)[1].split(
+        "- name:", 1
+    )[0]
+    assert "\n        if:" not in daily_briefing_step
+    assert "satellite_news.reporting.daily_report" in daily_briefing_step
     assert "--no-dry-run" in workflow
     assert "--output-dir data/news/latest" in workflow
     assert "--publish-dir docs/data/news" in workflow

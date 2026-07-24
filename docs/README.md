@@ -11,7 +11,8 @@ The frontend is now connected to live pipeline JSON produced by the RSS data loo
 - `assets/pipeline-data.js` validates the latest run manifest, loads current data first,
   and defers the large archive catalog and event timeline.
 - `assets/mock-pipeline-result.js` is only loaded when mock mode is explicitly requested.
-- `demo/index.html` redirects old demo links to the main page.
+- `demo/index.html` keeps the original demo URL and redirects to the new visual
+  exploration frontend in `demo-next/`.
 - The retired frontend is preserved outside the Pages root at
   `frontend-disabled/legacy-main/`.
 - `observable/` contains the built Observable dashboard output.

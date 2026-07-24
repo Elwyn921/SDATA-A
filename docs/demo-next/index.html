@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="SDATA-A 商业航天产业信号视觉探索版，聚合新闻活跃度、市场表现与公司事件。"
+    />
+    <meta name="theme-color" content="#07111f" />
+    <title>SDATA-A · 产业信号视觉探索版</title>
+    <link rel="stylesheet" href="./assets/styles.css" />
+  </head>
+  <body>
+    <div class="ambient-grid" aria-hidden="true"></div>
+    <header class="topbar">
+      <a class="brand" href="../">
+        <span class="brand-symbol">S</span>
+        <span><strong>SDATA-A</strong><small>商业航天产业信号</small></span>
+      </a>
+      <div class="live-state">
+        <i></i>
+        <span id="live-label">正在连接最新数据</span>
+      </div>
+      <nav>
+        <a href="#pulse">脉搏</a>
+        <a href="#companies">公司</a>
+        <a href="#events">事件</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero" id="pulse">
+        <div class="hero-copy">
+          <p class="eyebrow">SATELLITE · LAUNCH · CONNECTIVITY</p>
+          <h1>看见商业航天<br /><em>正在发生的变化</em></h1>
+          <p class="hero-intro" id="hero-summary">
+            正在把最新新闻、市场行情与公司事件组织成清晰的产业信号。
+          </p>
+          <div class="hero-meta">
+            <span>数据更新 <strong id="updated-at">--</strong></span>
+            <span>覆盖公司 <strong id="company-count">--</strong></span>
+          </div>
+        </div>
+
+        <div class="orbit-stage" aria-label="当日新闻活跃度">
+          <div class="orbit orbit-one"></div>
+          <div class="orbit orbit-two"></div>
+          <div class="orbit orbit-three"></div>
+          <div class="satellite-dot dot-one"></div>
+          <div class="satellite-dot dot-two"></div>
+          <div class="pulse-core">
+            <span>今日新闻</span>
+            <strong id="today-count">--</strong>
+            <small id="pulse-label">等待数据</small>
+          </div>
+        </div>
+      </section>
+
+      <section class="metric-rail" aria-label="今日核心指标">
+        <article>
+          <span>新闻活跃度指数</span>
+          <strong id="news-index">--</strong>
+          <small id="news-index-meta">30 日均值 = 100</small>
+        </article>
+        <article>
+          <span>东方财富航天航空指数</span>
+          <strong id="china-index">--</strong>
+          <small id="china-change">BK0480</small>
+        </article>
+        <article>
+          <span>美国航空航天篮子</span>
+          <strong id="us-change">--</strong>
+          <small id="us-breadth">等权涨跌</small>
+        </article>
+        <article>
+          <span>已组织事件</span>
+          <strong id="event-count">--</strong>
+          <small>发射 · 融资 · 订单 · 监管</small>
+        </article>
+      </section>
+
+      <section class="brief-panel">
+        <div class="section-heading">
+          <div>
+            <p>DAILY BRIEF</p>
+            <h2 id="brief-title">每日产业动态</h2>
+          </div>
+          <span class="freshness" id="brief-status">实时生成</span>
+        </div>
+        <div class="brief-layout">
+          <p class="brief-summary" id="brief-summary">正在整理当日重点。</p>
+          <ol class="brief-highlights" id="brief-highlights"></ol>
+        </div>
+      </section>
+
+      <section class="visual-grid">
+        <article class="panel trend-panel">
+          <div class="panel-heading">
+            <div><span>60 DAYS</span><h3>新闻活跃度轨迹</h3></div>
+            <strong id="trend-total">--</strong>
+          </div>
+          <div class="line-chart" id="news-trend"></div>
+          <div class="chart-axis"><span>60 日前</span><span>产业基线</span><span>今天</span></div>
+        </article>
+
+        <article class="panel sector-panel">
+          <div class="panel-heading">
+            <div><span>30 DAYS</span><h3>产业关注结构</h3></div>
+          </div>
+          <div class="donut-layout">
+            <div class="sector-donut" id="sector-donut">
+              <span><strong id="sector-total">--</strong><small>篇新闻</small></span>
+            </div>
+            <div class="sector-legend" id="sector-legend"></div>
+          </div>
+        </article>
+
+        <article class="panel market-panel">
+          <div class="panel-heading">
+            <div><span>MARKET</span><h3>航空航天市场温度</h3></div>
+            <small id="market-time">--</small>
+          </div>
+          <div class="market-bars" id="market-bars"></div>
+        </article>
+      </section>
+
+      <section class="panel heatmap-panel" id="companies">
+        <div class="panel-heading">
+          <div><span>14 DAYS × COMPANIES</span><h3>重点公司新闻热力</h3></div>
+          <small>颜色越亮，新闻越密集</small>
+        </div>
+        <div class="heatmap-wrap"><div class="heatmap" id="company-heatmap"></div></div>
+      </section>
+
+      <section class="event-section" id="events">
+        <div class="section-heading">
+          <div><p>EVENT STREAM</p><h2>重要事件正在演进</h2></div>
+          <span id="event-range">载入完整时间线</span>
+        </div>
+        <div class="event-stream" id="event-stream">
+          <div class="loading-card">正在组织事件脉络…</div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <span>SDATA-A · Visual Exploration</span>
+      <span>行情可能延迟，不构成投资建议</span>
+    </footer>
+
+    <nav class="mobile-dock" aria-label="移动端导航">
+      <a href="#pulse">脉搏</a><a href="#companies">公司</a><a href="#events">事件</a>
+    </nav>
+
+    <script type="module" src="./assets/app.js"></script>
+  </body>
+</html>
