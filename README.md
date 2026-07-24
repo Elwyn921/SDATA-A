@@ -1,6 +1,10 @@
-# SDATA A
+# Commercial Space Intelligence
 
-SDATA A is a GitHub-native satellite news intelligence pipeline for monitoring satellite internet, launch, and space infrastructure companies. The project is now in a live RSS data-loop stage: it refreshes news data on GitHub Actions, writes JSON outputs, publishes frontend-readable data under `docs/`, and keeps archive records for later analysis.
+Commercial Space Intelligence is a GitHub-native aerospace news and company-event
+monitoring platform focused on commercial launch, satellite manufacturing, satellite
+internet, financing, orders, regulation, and aerospace market signals in China and
+the United States. It refreshes RSS and search data on GitHub Actions, publishes a
+mobile-friendly GitHub Pages frontend, and preserves a deduplicated historical archive.
 
 The current goal is to make the public website stable first, then add LLM daily reports and deeper company intelligence.
 

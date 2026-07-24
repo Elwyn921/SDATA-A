@@ -5,18 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta
       name="description"
-      content="SDATA-A 商业航天产业信号视觉探索版，聚合新闻活跃度、市场表现与公司事件。"
+      content="Commercial Space Intelligence 商业航天产业信号视觉探索版，聚合新闻活跃度、市场表现与公司事件。"
     />
     <meta name="theme-color" content="#07111f" />
-    <title>SDATA-A · 产业信号视觉探索版</title>
+    <title>Commercial Space Intelligence · 产业信号视觉探索版</title>
     <link rel="stylesheet" href="./assets/styles.css" />
   </head>
   <body>
     <div class="ambient-grid" aria-hidden="true"></div>
     <header class="topbar">
       <a class="brand" href="../">
-        <span class="brand-symbol">S</span>
-        <span><strong>SDATA-A</strong><small>商业航天产业信号</small></span>
+        <span class="brand-symbol">C</span>
+        <span><strong>COMMERCIAL SPACE</strong><small>商业航天产业信号</small></span>
       </a>
       <div class="live-state">
         <i></i>
@@ -145,7 +145,7 @@
     </main>
 
     <footer>
-      <span>SDATA-A · Visual Exploration</span>
+      <span>Commercial Space Intelligence · Visual Exploration</span>
       <span>行情可能延迟，不构成投资建议</span>
     </footer>
 
@@ -153,13 +153,21 @@
       <a href="#pulse">脉搏</a><a href="#companies">公司</a><a href="#events">事件</a>
     </nav>
 
-    <button class="search-fab" id="search-fab" type="button" aria-label="搜索公司、新闻和事件">
-      <svg viewBox="0 0 24 24" aria-hidden="true">
-        <circle cx="11" cy="11" r="6.5"></circle>
-        <path d="m16 16 4 4"></path>
+    <button class="search-fab seal-assistant" id="search-fab" type="button" aria-label="有问题可以问我，搜索公司、新闻和事件">
+      <span class="seal-message">有问题可以问我</span>
+      <svg class="seal-mascot" viewBox="0 0 120 92" aria-hidden="true">
+        <ellipse class="seal-shadow" cx="61" cy="82" rx="43" ry="7"></ellipse>
+        <path class="seal-flipper" d="M28 64C13 66 7 77 13 82c7 5 23-1 32-9"></path>
+        <path class="seal-body" d="M28 60c1-23 15-39 37-39 22 0 38 14 39 35 1 21-17 29-42 29-25 0-35-8-34-25Z"></path>
+        <path class="seal-head" d="M37 38C38 18 50 7 67 7c18 0 30 12 30 31 0 17-11 26-30 26-19 0-31-9-30-26Z"></path>
+        <ellipse class="seal-muzzle" cx="67" cy="47" rx="19" ry="12"></ellipse>
+        <circle class="seal-eye" cx="53" cy="35" r="3.2"></circle>
+        <circle class="seal-eye" cx="81" cy="35" r="3.2"></circle>
+        <path class="seal-nose" d="M62 44c2-3 8-3 10 0-1 4-3 5-5 5s-4-1-5-5Z"></path>
+        <path class="seal-mouth" d="M67 49c0 4-3 6-7 6m7-6c0 4 3 6 7 6"></path>
+        <path class="seal-whisker" d="M51 48 34 45m18 9-18 3m49-9 17-3m-17 9 18 3"></path>
+        <path class="seal-flipper" d="M91 64c14 3 20 14 14 18-7 5-21-2-29-10"></path>
       </svg>
-      <span>搜索</span>
-      <kbd>/</kbd>
     </button>
 
     <div class="overlay search-overlay" id="search-overlay" hidden>

@@ -213,6 +213,10 @@ const elements = {
   workspaceDiagnosticCount: document.querySelector("#workspace-diagnostic-count"),
   workspaceContextLabel: document.querySelector("#workspace-context-label"),
   workspaceContextMeta: document.querySelector("#workspace-context-meta"),
+  globalSearchTrigger: document.querySelector("#global-search-trigger"),
+  globalSearchOverlay: document.querySelector("#formal-search-overlay"),
+  globalSearchInput: document.querySelector("#formal-search-input"),
+  globalSearchResults: document.querySelector("#formal-search-results"),
 };
 
 bootstrap();
@@ -301,7 +305,130 @@ function renderDataLoadError(error) {
   document.querySelector(".workspace-nav")?.after(panel);
 }
 
+function openGlobalSearch() {
+  elements.globalSearchOverlay.hidden = false;
+  document.body.classList.add("formal-search-open");
+  elements.globalSearchInput.value = "";
+  renderGlobalSearchResults();
+  void ensureDeferredDataLoaded();
+  window.setTimeout(() => elements.globalSearchInput.focus(), 20);
+}
+
+function closeGlobalSearch() {
+  elements.globalSearchOverlay.hidden = true;
+  document.body.classList.remove("formal-search-open");
+  elements.globalSearchTrigger.focus();
+}
+
+function renderGlobalSearchResults() {
+  if (!state.result) return;
+  const query = normalizeGlobalSearch(elements.globalSearchInput.value);
+  const matches = (value) => {
+    if (!query) return true;
+    const corpus = normalizeGlobalSearch(value);
+    return query.split(/\s+/).filter(Boolean).every((token) => corpus.includes(token));
+  };
+  const companyRows = industryGroups
+    .flatMap((group) => group.companies.map((company) => ({
+      ...company,
+      groupName: group.name,
+      newsCount: state.items.filter((item) => item.company_id === company.id).length,
+      eventCount: state.events.filter((event) => event.company_id === company.id).length,
+    })))
+    .filter((company) => matches(`${company.name} ${company.id} ${company.groupName}`))
+    .sort((a, b) => (b.newsCount + b.eventCount) - (a.newsCount + a.eventCount))
+    .slice(0, query ? 8 : 6);
+  const eventRows = [...state.events]
+    .filter((event) => matches(
+      `${event.headline} ${event.summary} ${event.event_label} ${event.company_name} ${companyName(event.company_id)}`,
+    ))
+    .sort((a, b) => new Date(b.latest_at ?? 0) - new Date(a.latest_at ?? 0))
+    .slice(0, query ? 6 : 4);
+  const newsRows = sortedItems(state.items)
+    .filter((item) => matches(
+      `${item.title} ${item.company_name} ${companyName(item.company_id)} ${item.source?.source_name ?? ""}`,
+    ))
+    .slice(0, query ? 8 : 4);
+  const html = [];
+  if (companyRows.length) {
+    html.push(
+      '<span class="formal-search-group">公司</span>',
+      ...companyRows.map((company) => `
+        <button class="formal-search-result" type="button" data-search-company="${escapeHtml(company.id)}">
+          <span class="formal-search-icon">企</span>
+          <span class="formal-search-copy">
+            <strong>${escapeHtml(company.name)}</strong>
+            <small>${escapeHtml(company.groupName)} · 打开公司事件时间线</small>
+          </span>
+          <span class="formal-search-meta">${company.eventCount} 事件 · ${company.newsCount} 新闻</span>
+        </button>
+      `),
+    );
+  }
+  if (eventRows.length) {
+    html.push(
+      '<span class="formal-search-group">事件</span>',
+      ...eventRows.map((event) => `
+        <a class="formal-search-result" href="${escapeHtml(event.latest_url || "#")}" target="_blank" rel="noopener noreferrer">
+          <span class="formal-search-icon">事</span>
+          <span class="formal-search-copy">
+            <strong>${escapeHtml(event.headline)}</strong>
+            <small>${escapeHtml(companyName(event.company_id, event.company_name))} · ${escapeHtml(event.event_label || "其他动态")}</small>
+          </span>
+          <span class="formal-search-meta">${formatDateLabel(dateKey(event.latest_at))}</span>
+        </a>
+      `),
+    );
+  }
+  if (newsRows.length) {
+    html.push(
+      '<span class="formal-search-group">新闻</span>',
+      ...newsRows.map((item) => `
+        <a class="formal-search-result" href="${escapeHtml(item.url || item.canonical_url || "#")}" target="_blank" rel="noopener noreferrer">
+          <span class="formal-search-icon">闻</span>
+          <span class="formal-search-copy">
+            <strong>${escapeHtml(item.title)}</strong>
+            <small>${escapeHtml(companyName(item.company_id, item.company_name))} · ${escapeHtml(item.source?.source_name ?? item.source?.source_id ?? "未知来源")}</small>
+          </span>
+          <span class="formal-search-meta">${formatDateLabel(dateKey(item.published_at))}</span>
+        </a>
+      `),
+    );
+  }
+  elements.globalSearchResults.innerHTML = html.length
+    ? html.join("")
+    : '<div class="formal-search-empty">没有找到匹配内容，请尝试公司名称或事件关键词。</div>';
+}
+
+function normalizeGlobalSearch(value) {
+  return String(value ?? "").trim().toLocaleLowerCase("zh-CN");
+}
+
 function bindEvents() {
+  elements.globalSearchTrigger.addEventListener("click", openGlobalSearch);
+  document.querySelectorAll("[data-close-global-search]").forEach((button) => {
+    button.addEventListener("click", closeGlobalSearch);
+  });
+  elements.globalSearchInput.addEventListener("input", renderGlobalSearchResults);
+  elements.globalSearchResults.addEventListener("click", (event) => {
+    const target = event.target.closest("[data-search-company]");
+    if (!target) return;
+    closeGlobalSearch();
+    selectCompany(target.dataset.searchCompany);
+    activateWorkspaceView("events", { scroll: true });
+  });
+  document.addEventListener("keydown", (event) => {
+    const isTyping = ["INPUT", "TEXTAREA", "SELECT"].includes(document.activeElement?.tagName);
+    if ((event.metaKey || event.ctrlKey) && event.key.toLowerCase() === "k") {
+      event.preventDefault();
+      openGlobalSearch();
+    } else if (event.key === "/" && !isTyping) {
+      event.preventDefault();
+      openGlobalSearch();
+    } else if (event.key === "Escape" && !elements.globalSearchOverlay.hidden) {
+      closeGlobalSearch();
+    }
+  });
   elements.workspaceTabs.forEach((button) => {
     button.addEventListener("click", () => {
       activateWorkspaceView(button.dataset.workspaceTab, { scroll: true });
@@ -484,6 +611,7 @@ function render() {
     renderQualityGate();
     renderDiagnostics(state.result.fetch_statuses ?? [], items);
   }
+  if (!elements.globalSearchOverlay.hidden) renderGlobalSearchResults();
 }
 
 function renderIndexOverview() {

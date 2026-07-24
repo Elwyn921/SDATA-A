@@ -1,4 +1,4 @@
-# SDATA A GitHub Pages Frontend
+# Commercial Space Intelligence GitHub Pages Frontend
 
 This directory is the GitHub Pages publishing root for the SDATA A satellite news dashboard.
 

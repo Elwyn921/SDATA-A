@@ -8,7 +8,7 @@
       content="聚合商业航天公司动态、重大事件、新闻活跃度与中美航空航天板块表现。"
     />
     <meta name="theme-color" content="#0b1628" />
-    <title>SDATA-A 商业航天产业监测平台</title>
+    <title>Commercial Space Intelligence · 商业航天产业监测</title>
     <link rel="stylesheet" href="./assets/vendor/tabler/tabler.min.css" />
     <link rel="stylesheet" href="./assets/styles.css" />
   </head>
@@ -17,12 +17,20 @@
       <header class="app-topbar d-print-none">
         <div class="container-xl topbar-inner">
           <div class="brand-lockup">
-            <span class="brand-mark">S</span>
+            <span class="brand-mark">C</span>
             <div>
-              <div class="brand-title">SDATA-A 商业航天监测</div>
+              <div class="brand-title">商业航天产业监测</div>
               <div class="brand-subtitle" id="data-source">加载中</div>
             </div>
           </div>
+          <button class="topbar-search" id="global-search-trigger" type="button">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <circle cx="11" cy="11" r="6.5"></circle>
+              <path d="m16 16 4 4"></path>
+            </svg>
+            <span>搜索公司、新闻和事件</span>
+            <kbd>⌘K</kbd>
+          </button>
           <div class="topbar-metrics" aria-label="数据状态">
             <span>更新时间 <strong id="updated-at">--</strong></span>
             <span>新闻 <strong id="total-count">0</strong></span>
@@ -346,6 +354,30 @@
           </section>
         </div>
       </main>
+    </div>
+
+    <div class="formal-search-overlay" id="formal-search-overlay" hidden>
+      <button class="formal-search-backdrop" type="button" data-close-global-search aria-label="关闭搜索"></button>
+      <section class="formal-search-dialog" role="dialog" aria-modal="true" aria-labelledby="formal-search-title">
+        <header>
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <circle cx="11" cy="11" r="6.5"></circle>
+            <path d="m16 16 4 4"></path>
+          </svg>
+          <input
+            id="formal-search-input"
+            type="search"
+            autocomplete="off"
+            placeholder="搜索公司、新闻、发射、融资、订单…"
+            aria-labelledby="formal-search-title"
+          />
+          <button type="button" data-close-global-search>关闭</button>
+        </header>
+        <div class="formal-search-caption" id="formal-search-title">
+          <span>全局搜索</span><small>公司 · 新闻 · 事件</small>
+        </div>
+        <div class="formal-search-results" id="formal-search-results"></div>
+      </section>
     </div>
 
     <script type="module" src="./assets/app.js"></script>
