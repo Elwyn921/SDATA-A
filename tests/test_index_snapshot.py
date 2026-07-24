@@ -8,8 +8,10 @@ from satellite_news.market.index_snapshot import (
     build_news_activity,
     fetch_eastmoney_indices,
     fetch_sina_quotes,
+    load_previous_market_snapshot,
     parse_eastmoney_index_response,
     parse_sina_response,
+    reuse_previous_industry_indices,
     stale_market_snapshot,
 )
 
@@ -365,6 +367,79 @@ def test_missing_eastmoney_index_does_not_hide_current_basket_quotes():
     assert china["index_status"] == "unavailable"
     assert china["status"] == "partial"
     assert payload["market_data_source"]["status"] == "partial"
+
+
+def test_missing_eastmoney_index_reuses_previous_real_point():
+    previous = build_index_snapshot(
+        sample_catalog(),
+        sample_config(),
+        {},
+        {
+            "china": {
+                "ticker": "BK0480",
+                "name": "航天航空指数",
+                "price": 47303.73,
+                "previous_close": 46717.05,
+                "change_amount": 586.68,
+                "change_pct": 1.26,
+                "source_timestamp": "2026-07-23 13:05:12",
+                "provider_name": "东方财富",
+                "status": "current",
+            }
+        },
+        as_of=date(2026, 7, 23),
+        generated_at=datetime(2026, 7, 23, tzinfo=timezone.utc),
+    )
+    restored = reuse_previous_industry_indices({}, previous, sample_config())
+    payload = build_index_snapshot(
+        sample_catalog(),
+        sample_config(),
+        {},
+        restored,
+        as_of=date(2026, 7, 24),
+        generated_at=datetime(2026, 7, 24, tzinfo=timezone.utc),
+    )
+
+    assert payload["markets"]["china"]["index_value"] == 47303.73
+    assert payload["markets"]["china"]["index_change_pct"] == 1.26
+    assert payload["markets"]["china"]["index_status"] == "stale_previous"
+    assert payload["market_data_source"]["quoted_instruments"] == 0
+
+
+def test_previous_market_snapshot_prefers_archived_real_index(tmp_path):
+    latest = tmp_path / "latest" / "aerospace_index.json"
+    archived = tmp_path / "archive" / "2026" / "07" / "23" / "aerospace_index.json"
+    latest.parent.mkdir(parents=True)
+    archived.parent.mkdir(parents=True)
+    latest.write_text(
+        json.dumps(
+            {
+                "schema_version": SCHEMA_VERSION,
+                "markets": {"china": {"industry_index": {"status": "unavailable"}}},
+            }
+        ),
+        encoding="utf-8",
+    )
+    archived.write_text(
+        json.dumps(
+            {
+                "schema_version": SCHEMA_VERSION,
+                "markets": {
+                    "china": {
+                        "industry_index": {
+                            "status": "current",
+                            "price": 48105.81,
+                        }
+                    }
+                },
+            }
+        ),
+        encoding="utf-8",
+    )
+
+    previous = load_previous_market_snapshot(tmp_path)
+
+    assert previous["markets"]["china"]["industry_index"]["price"] == 48105.81
 
 
 def test_stale_snapshot_does_not_reuse_old_synthetic_point_schema():

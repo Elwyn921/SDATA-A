@@ -8,8 +8,12 @@ The frontend is now connected to live pipeline JSON produced by the RSS data loo
 
 - `index.html` is the main static dashboard page.
 - `assets/app.js` renders the dashboard UI.
-- `assets/pipeline-data.js` loads `PipelineResult` JSON.
-- `assets/mock-pipeline-result.js` remains available as a local fallback for UI development.
+- `assets/pipeline-data.js` validates the latest run manifest, loads current data first,
+  and defers the large archive catalog and event timeline.
+- `assets/mock-pipeline-result.js` is only loaded when mock mode is explicitly requested.
+- `demo/index.html` redirects old demo links to the main page.
+- The retired frontend is preserved outside the Pages root at
+  `frontend-disabled/legacy-main/`.
 - `observable/` contains the built Observable dashboard output.
 
 ## Live Data Paths
@@ -18,7 +22,10 @@ The frontend reads:
 
 ```text
 docs/data/news/latest/pipeline_result.json
+docs/data/news/latest/manifest.json
 docs/data/news/archive/index.json
+docs/data/news/archive/catalog.json
+docs/data/news/latest/event_timeline.json
 ```
 
 These are published copies of root pipeline outputs:
@@ -46,15 +53,11 @@ The current production data path is RSS-first and covers 13 companies:
 - 银河航天 / GalaxySpace
 - 微纳星空 / MinoSpace
 
-Latest local snapshot:
-
-- Run id: `08e76e21-26fb-4cb9-9362-f2906920b61b`
-- Generated at: `2026-06-24T07:23:55.772959Z`
-- Items: 591
-- Provider: `rss_provider`
-
 ## Data Source Behavior
 
-The page attempts to load live JSON first. If it cannot load real JSON, it may fall back to mock data for local UI development.
+The page checks the small latest-run manifest without using a stale browser copy. The
+run id is then attached to JSON requests so a new GitHub publication is picked up
+immediately while unchanged files remain cacheable. The latest news and headline
+indices render first; archive and event data load after first paint or on demand.
 
 GDELT is not called by the frontend. GDELT 429 rate limits are external service behavior and should be shown, if needed, as provider health information rather than a frontend failure.

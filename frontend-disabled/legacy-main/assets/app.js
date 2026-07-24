@@ -1,7 +1,4 @@
-import {
-  loadDashboardData,
-  loadDeferredDashboardData,
-} from "./pipeline-data.js";
+import { loadDashboardData } from "./pipeline-data.js";
 
 const industryGroups = [
   {
@@ -65,7 +62,6 @@ const providerLabels = {
   serpapi: "SerpApi",
   brave_news: "Brave",
   newsapi: "NewsAPI",
-  search_api: "搜索补充",
   media: "媒体",
   search: "搜索",
 };
@@ -90,24 +86,6 @@ const eventTypeLabels = {
   corporate: "公司治理",
   other: "其他动态",
 };
-const eventTypeColors = {
-  launch: "#2878d0",
-  financing: "#7c5ce7",
-  order: "#d88a1d",
-  regulation: "#ce4d68",
-  market: "#d45f43",
-  partnership: "#2f9b88",
-  product: "#3d8f5b",
-  corporate: "#68788f",
-  other: "#9aa6b7",
-};
-const sectorColors = {
-  satellite_platform: "#3178c6",
-  launch_services: "#7b61d1",
-  satellite_internet: "#18a18b",
-  global_majors: "#e0893d",
-  uncategorized: "#9aa6b7",
-};
 
 const companyMeta = new Map();
 const companyToGroup = new Map();
@@ -124,20 +102,13 @@ const state = {
   timeRange: "latest",
   selectedDate: null,
   visibleLimit: 120,
-  eventVisibleLimit: 40,
   eventType: "all",
-  workspaceView: initialWorkspaceView(),
   result: null,
   items: [],
   events: [],
   archiveIndex: null,
-  dailyIndex: null,
   dailyReport: null,
   indexSnapshot: null,
-  versionToken: "",
-  deferredDataLoaded: false,
-  deferredDataLoading: null,
-  deferredDataError: false,
 };
 
 const elements = {
@@ -174,8 +145,6 @@ const elements = {
   indexAsOf: document.querySelector("#index-as-of"),
   indexSourceStatus: document.querySelector("#index-source-status"),
   newsIndexValue: document.querySelector("#news-index-value"),
-  newsIndexGauge: document.querySelector("#news-index-gauge"),
-  newsIndexHistory: document.querySelector("#news-index-history"),
   newsIndexLabel: document.querySelector("#news-index-label"),
   newsIndexMethod: document.querySelector("#news-index-method"),
   newsIndexMetrics: document.querySelector("#news-index-metrics"),
@@ -183,153 +152,34 @@ const elements = {
   chinaIndexValue: document.querySelector("#china-index-value"),
   chinaIndexChange: document.querySelector("#china-index-change"),
   chinaIndexMeta: document.querySelector("#china-index-meta"),
-  chinaMarketBreadth: document.querySelector("#china-market-breadth"),
   chinaStockList: document.querySelector("#china-stock-list"),
   usIndexName: document.querySelector("#us-index-name"),
   usIndexValue: document.querySelector("#us-index-value"),
   usIndexChange: document.querySelector("#us-index-change"),
   usIndexMeta: document.querySelector("#us-index-meta"),
-  usMarketBreadth: document.querySelector("#us-market-breadth"),
   usStockList: document.querySelector("#us-stock-list"),
   indexDisclaimer: document.querySelector("#index-disclaimer"),
-  signalAsOf: document.querySelector("#signal-as-of"),
-  sectorSignalTotal: document.querySelector("#sector-signal-total"),
-  sectorDonut: document.querySelector("#sector-donut"),
-  sectorLegend: document.querySelector("#sector-legend"),
-  sourceSignalTotal: document.querySelector("#source-signal-total"),
-  sourceSignalBars: document.querySelector("#source-signal-bars"),
-  companyHeatmap: document.querySelector("#company-heatmap"),
-  eventVisualTotal: document.querySelector("#event-visual-total"),
-  eventTypeChart: document.querySelector("#event-type-chart"),
-  eventCompanyChart: document.querySelector("#event-company-chart"),
-  eventHighImportance: document.querySelector("#event-high-importance"),
-  eventImportanceChart: document.querySelector("#event-importance-chart"),
-  workspaceTabs: [...document.querySelectorAll("[data-workspace-tab]")],
-  workspaceSections: [...document.querySelectorAll("[data-workspace-view]")],
-  workspaceOverviewCount: document.querySelector("#workspace-overview-count"),
-  workspaceCompanyCount: document.querySelector("#workspace-company-count"),
-  workspaceEventCount: document.querySelector("#workspace-event-count"),
-  workspaceNewsCount: document.querySelector("#workspace-news-count"),
-  workspaceDiagnosticCount: document.querySelector("#workspace-diagnostic-count"),
-  workspaceContextLabel: document.querySelector("#workspace-context-label"),
-  workspaceContextMeta: document.querySelector("#workspace-context-meta"),
 };
 
 bootstrap();
 
 async function bootstrap() {
-  try {
-    const dashboard = await loadDashboardData();
-    state.result = dashboard.result;
-    state.items = mergeNewsItems(state.result.items ?? [], []);
-    state.archiveIndex = dashboard.archiveIndex;
-    state.dailyIndex = dashboard.dailyIndex;
-    state.dailyReport = dashboard.dailyReport;
-    state.indexSnapshot = dashboard.indexSnapshot;
-    state.versionToken = dashboard.versionToken;
-    state.selectedDate = latestNewsDate(state.items);
-    populateFilters();
-    bindEvents();
-    activateWorkspaceView(state.workspaceView, { updateHash: false, render: false });
-    render();
-    scheduleDeferredDataLoad();
-  } catch (error) {
-    renderDataLoadError(error);
-  }
-}
-
-function scheduleDeferredDataLoad() {
-  const load = () => {
-    void ensureDeferredDataLoaded();
-  };
-  if ("requestIdleCallback" in window) {
-    window.requestIdleCallback(load, { timeout: 1800 });
-  } else {
-    window.setTimeout(load, 350);
-  }
-}
-
-async function ensureDeferredDataLoaded() {
-  if (state.deferredDataLoaded) return;
-  if (state.deferredDataLoading) return state.deferredDataLoading;
-  state.deferredDataLoading = loadDeferredDashboardData({
-    versionToken: state.versionToken,
-  })
-    .then((dashboard) => {
-      state.items = mergeNewsItems(
-        state.result.items ?? [],
-        dashboard.archiveCatalog?.items ?? [],
-      );
-      state.events = Array.isArray(dashboard.eventTimeline?.events)
-        ? dashboard.eventTimeline.events
-        : [];
-      state.deferredDataLoaded = true;
-      state.deferredDataError = false;
-      render();
-    })
-    .catch((error) => {
-      console.warn("Deferred dashboard data load failed", error);
-      state.deferredDataError = true;
-      elements.dataSource.textContent = "最新数据可用，历史归档暂不可用";
-    })
-    .finally(() => {
-      state.deferredDataLoading = null;
-    });
-  return state.deferredDataLoading;
-}
-
-function renderDataLoadError(error) {
-  console.error("Dashboard data load failed", error);
-  elements.dataSource.textContent = "数据暂不可用";
-  elements.updatedAt.textContent = "--";
-  elements.totalCount.textContent = "--";
-  elements.companyCount.textContent = "--";
-  elements.workspaceSections.forEach((section) => {
-    section.hidden = true;
-  });
-  const panel = document.createElement("section");
-  panel.className = "data-load-error";
-  panel.innerHTML = `
-    <div>
-      <span>数据连接状态</span>
-      <h2>当前数据暂时无法载入</h2>
-      <p>页面不会使用模拟内容替代正式数据。请稍后重新加载，或检查数据文件是否已完成发布。</p>
-    </div>
-    <button type="button" class="btn btn-primary">重新加载</button>
-  `;
-  panel.querySelector("button").addEventListener("click", () => window.location.reload());
-  document.querySelector(".workspace-nav")?.after(panel);
+  const dashboard = await loadDashboardData();
+  state.result = dashboard.result;
+  state.items = mergeNewsItems(state.result.items ?? [], dashboard.archiveCatalog?.items ?? []);
+  state.archiveIndex = dashboard.archiveIndex;
+  state.events = Array.isArray(dashboard.eventTimeline?.events)
+    ? dashboard.eventTimeline.events
+    : [];
+  state.dailyReport = dashboard.dailyReport;
+  state.indexSnapshot = dashboard.indexSnapshot;
+  state.selectedDate = latestNewsDate(state.items);
+  populateFilters();
+  bindEvents();
+  render();
 }
 
 function bindEvents() {
-  elements.workspaceTabs.forEach((button) => {
-    button.addEventListener("click", () => {
-      activateWorkspaceView(button.dataset.workspaceTab, { scroll: true });
-    });
-    button.addEventListener("keydown", (event) => {
-      if (!["ArrowLeft", "ArrowRight", "Home", "End"].includes(event.key)) return;
-      event.preventDefault();
-      const currentIndex = elements.workspaceTabs.indexOf(button);
-      let nextIndex = currentIndex;
-      if (event.key === "ArrowLeft") {
-        nextIndex = (currentIndex - 1 + elements.workspaceTabs.length) % elements.workspaceTabs.length;
-      } else if (event.key === "ArrowRight") {
-        nextIndex = (currentIndex + 1) % elements.workspaceTabs.length;
-      } else if (event.key === "Home") {
-        nextIndex = 0;
-      } else if (event.key === "End") {
-        nextIndex = elements.workspaceTabs.length - 1;
-      }
-      const nextButton = elements.workspaceTabs[nextIndex];
-      activateWorkspaceView(nextButton.dataset.workspaceTab);
-      nextButton.focus();
-    });
-  });
-
-  window.addEventListener("hashchange", () => {
-    activateWorkspaceView(initialWorkspaceView(), { updateHash: false });
-  });
-
   elements.companyFilter.addEventListener("change", (event) => {
     selectCompany(event.target.value);
   });
@@ -344,65 +194,11 @@ function bindEvents() {
     state.timeRange = "latest";
     state.selectedDate = latestNewsDate(state.items);
     state.visibleLimit = 120;
-    state.eventVisibleLimit = 40;
     state.eventType = "all";
     elements.companyFilter.value = "all";
     elements.eventCompanyFilter.value = "all";
     render();
   });
-}
-
-function initialWorkspaceView() {
-  const match = window.location.hash.match(/(?:^#|&)view=([a-z-]+)/);
-  const candidate = match?.[1] ?? "overview";
-  return ["overview", "companies", "events", "news", "diagnostics"].includes(candidate)
-    ? candidate
-    : "overview";
-}
-
-function activateWorkspaceView(view, options = {}) {
-  const resolved = ["overview", "companies", "events", "news", "diagnostics"].includes(view)
-    ? view
-    : "overview";
-  state.workspaceView = resolved;
-  elements.workspaceTabs.forEach((button) => {
-    const active = button.dataset.workspaceTab === resolved;
-    button.classList.toggle("active", active);
-    button.setAttribute("aria-selected", String(active));
-    button.tabIndex = active ? 0 : -1;
-  });
-  elements.workspaceSections.forEach((section) => {
-    section.hidden = section.dataset.workspaceView !== resolved;
-  });
-  if (options.updateHash !== false) {
-    history.replaceState(null, "", `#view=${resolved}`);
-  }
-  renderWorkspaceContext();
-  if (["companies", "events", "news"].includes(resolved)) {
-    void ensureDeferredDataLoaded();
-  }
-  if (state.result && options.render !== false) {
-    render();
-  }
-  if (options.scroll) {
-    document.querySelector(".workspace-nav")?.scrollIntoView({
-      behavior: "smooth",
-      block: "start",
-    });
-  }
-}
-
-function renderWorkspaceContext() {
-  const labels = {
-    overview: ["今日概览", "日报、新闻趋势、产业结构与市场表现"],
-    companies: ["公司动态", "按产业链查看公司覆盖与近期活跃度"],
-    events: ["公司事件", "把零散报道聚合成连续事件"],
-    news: ["新闻资料", "按日期、分类和公司检索全部新闻"],
-    diagnostics: ["数据说明", "来源覆盖、质量筛选与运行记录"],
-  };
-  const [label, meta] = labels[state.workspaceView] ?? labels.overview;
-  elements.workspaceContextLabel.textContent = label;
-  elements.workspaceContextMeta.textContent = meta;
 }
 
 function selectCompany(companyId) {
@@ -412,7 +208,6 @@ function selectCompany(companyId) {
     state.groupId = companyToGroup.get(state.companyId) ?? "all";
   }
   state.visibleLimit = 120;
-  state.eventVisibleLimit = 40;
   elements.companyFilter.value = companyId;
   elements.eventCompanyFilter.value = companyId;
   render();
@@ -447,43 +242,25 @@ function render() {
   const coveredCompanies = companies.filter((company) => company.total > 0);
   const filteredItems = filterItems(items);
 
-  elements.dataSource.textContent =
-    state.result.__dataSource === "json" ? "数据更新完成" : "演示数据（非正式）";
+  elements.dataSource.textContent = state.result.__dataSource === "json" ? "生产数据快照" : "示例数据";
   elements.updatedAt.textContent = formatFullDate(
     state.result.generated_at ?? state.result.finished_at ?? state.result.started_at,
   );
   elements.totalCount.textContent = String(items.length);
   elements.companyCount.textContent = String(coveredCompanies.length);
   elements.newsPanelTitle.textContent = newsPanelTitle();
-  const issueCount = (state.result.fetch_statuses ?? []).filter((status) => {
-    const label = status.provider_status ?? status.final_status ?? status.status ?? "";
-    return label !== "success" || status.reason || status.error_message;
-  }).length;
-  elements.workspaceCompanyCount.textContent = String(coveredCompanies.length);
-  elements.workspaceOverviewCount.textContent = "4";
-  elements.workspaceEventCount.textContent = String(state.events.length);
-  elements.workspaceNewsCount.textContent = String(items.length);
-  elements.workspaceDiagnosticCount.textContent = String(issueCount);
-  renderWorkspaceContext();
 
-  if (state.workspaceView === "overview") {
-    renderDailyBriefing(items);
-    renderIndexOverview();
-    renderSignalOverview(items);
-    renderVolumeIndex(items);
-  } else if (state.workspaceView === "companies") {
-    renderIndustrySections(items);
-  } else if (state.workspaceView === "events") {
-    renderEventTimeline();
-  } else if (state.workspaceView === "news") {
-    renderTimeTabs();
-    renderCategoryTabs();
-    renderNewsList(filteredItems);
-  } else if (state.workspaceView === "diagnostics") {
-    renderProviderTable(companies, state.result.fetch_statuses ?? []);
-    renderQualityGate();
-    renderDiagnostics(state.result.fetch_statuses ?? [], items);
-  }
+  renderDailyBriefing(items);
+  renderIndexOverview();
+  renderVolumeIndex(items);
+  renderTimeTabs();
+  renderCategoryTabs();
+  renderIndustrySections(items);
+  renderEventTimeline();
+  renderNewsList(filteredItems);
+  renderProviderTable(companies, state.result.fetch_statuses ?? []);
+  renderQualityGate();
+  renderDiagnostics(state.result.fetch_statuses ?? [], items);
 }
 
 function renderIndexOverview() {
@@ -492,9 +269,6 @@ function renderIndexOverview() {
     elements.indexAsOf.textContent = "指数数据尚未生成";
     elements.indexSourceStatus.textContent = "等待刷新";
     elements.newsIndexValue.textContent = "--";
-    elements.newsIndexGauge.style.setProperty("--gauge-progress", "0%");
-    elements.newsIndexGauge.setAttribute("aria-label", "新闻活跃度指数暂不可用");
-    elements.newsIndexHistory.replaceChildren();
     renderMarketIndex(null, "china");
     renderMarketIndex(null, "united_states");
     return;
@@ -507,23 +281,11 @@ function renderIndexOverview() {
   elements.indexSourceStatus.textContent =
     source.status === "current"
       ? `${source.source_name ?? "行情源"} · ${source.quoted_instruments ?? 0}/${source.expected_instruments ?? 0}`
-      : "行情数据更新稍有延迟";
+      : "行情沿用最近快照";
   elements.indexSourceStatus.className =
     `index-source-status ${source.status === "current" ? "is-current" : "is-stale"}`;
-  const newsIndexValue = Number(news.index_value);
-  const hasNewsIndex = Number.isFinite(newsIndexValue);
-  elements.newsIndexValue.textContent = hasNewsIndex ? newsIndexValue.toFixed(1) : "--";
-  elements.newsIndexGauge.style.setProperty(
-    "--gauge-progress",
-    `${hasNewsIndex ? Math.min(100, Math.max(0, newsIndexValue / 2)) : 0}%`,
-  );
-  elements.newsIndexGauge.style.setProperty("--gauge-color", newsIndexColor(newsIndexValue));
-  elements.newsIndexGauge.setAttribute(
-    "aria-label",
-    hasNewsIndex
-      ? `新闻活跃度指数 ${newsIndexValue.toFixed(1)}，${news.heat_label ?? "暂无评级"}`
-      : "新闻活跃度指数暂不可用",
-  );
+  elements.newsIndexValue.textContent =
+    news.index_value == null ? "--" : Number(news.index_value).toFixed(1);
   elements.newsIndexLabel.textContent = news.heat_label ?? "基线不足";
   elements.newsIndexLabel.className = `index-change ${newsIndexClass(news.index_value)}`;
   elements.newsIndexMethod.textContent =
@@ -540,7 +302,6 @@ function renderIndexOverview() {
       return block;
     }),
   );
-  renderNewsIndexHistory(news);
 
   renderMarketIndex(snapshot.markets?.china, "china");
   renderMarketIndex(snapshot.markets?.united_states, "united_states");
@@ -555,7 +316,6 @@ function renderMarketIndex(market, sectorId) {
   const valueElement = isChina ? elements.chinaIndexValue : elements.usIndexValue;
   const changeElement = isChina ? elements.chinaIndexChange : elements.usIndexChange;
   const metaElement = isChina ? elements.chinaIndexMeta : elements.usIndexMeta;
-  const breadthElement = isChina ? elements.chinaMarketBreadth : elements.usMarketBreadth;
   const listElement = isChina ? elements.chinaStockList : elements.usStockList;
   if (!market) {
     nameElement.textContent = isChina ? "东方财富航天航空指数" : "美国航空航天篮子";
@@ -564,7 +324,6 @@ function renderMarketIndex(market, sectorId) {
     changeElement.textContent = "--";
     changeElement.className = "index-change is-flat";
     metaElement.textContent = "等待行情数据";
-    breadthElement.innerHTML = '<div class="market-breadth-empty">涨跌分布暂不可用</div>';
     listElement.innerHTML = '<div class="stock-list-empty">暂无股票行情</div>';
     return;
   }
@@ -609,80 +368,17 @@ function renderMarketIndex(market, sectorId) {
       `当日等权涨跌 · 行情 ${market.quoted_member_count ?? 0}/${market.member_count ?? 0} 只` +
       `${quoteTimes.length ? ` · ${quoteTimes.at(-1)}` : ""}`;
   }
-  const advancers = Number(market.advancers ?? 0);
-  const decliners = Number(market.decliners ?? 0);
-  const unchanged = Number(market.unchanged ?? 0);
-  breadthElement.innerHTML = `
-    <div class="market-breadth-labels">
-      <span><i class="is-up"></i><strong>${advancers}</strong> 上涨</span>
-      <span><i class="is-flat"></i><strong>${unchanged}</strong> 平盘</span>
-      <span><i class="is-down"></i><strong>${decliners}</strong> 下跌</span>
-    </div>
-    <div class="market-breadth-track" role="img" aria-label="上涨 ${advancers} 只，平盘 ${unchanged} 只，下跌 ${decliners} 只">
-      <i class="is-up"></i><i class="is-flat"></i><i class="is-down"></i>
-    </div>
-  `;
-  const breadthSegments = [...breadthElement.querySelectorAll(".market-breadth-track i")];
-  [advancers, unchanged, decliners].forEach((value, index) => {
-    breadthSegments[index].style.flexGrow = String(value);
-    breadthSegments[index].hidden = value === 0;
-  });
-  const members = Array.isArray(market.members) ? market.members : [];
-  const maxMove = Math.max(
-    1,
-    ...members.map((member) => Math.abs(Number(member.change_pct) || 0)),
-  );
   listElement.replaceChildren(
-    ...members.map((member) => {
+    ...(market.members ?? []).map((member) => {
       const row = document.createElement("div");
       row.className = "stock-row";
       const price = member.price == null ? "--" : formatMarketPrice(member.price);
-      const move = Number(member.change_pct);
-      const moveWidth = Number.isFinite(move) ? Math.max(2, Math.abs(move) / maxMove * 100) : 0;
       row.innerHTML = `
-        <div class="stock-identity"><strong>${escapeHtml(member.name)}</strong><span>${escapeHtml(member.ticker)}</span></div>
+        <div><strong>${escapeHtml(member.name)}</strong><span>${escapeHtml(member.ticker)}</span></div>
         <span class="stock-price">${escapeHtml(price)}</span>
-        <div class="stock-move">
-          <span class="stock-change ${changeClass(member.change_pct)}">${escapeHtml(formatSignedPct(member.change_pct))}</span>
-          <i aria-hidden="true"><b class="${changeClass(member.change_pct)}" style="width:${moveWidth}%"></b></i>
-        </div>
+        <span class="stock-change ${changeClass(member.change_pct)}">${escapeHtml(formatSignedPct(member.change_pct))}</span>
       `;
       return row;
-    }),
-  );
-}
-
-function renderNewsIndexHistory(news) {
-  const history = Array.isArray(news.history) ? news.history.slice(-60) : [];
-  if (!history.length) {
-    elements.newsIndexHistory.innerHTML = '<span class="visual-empty">暂无历史指数</span>';
-    return;
-  }
-  const maxObserved = Math.max(
-    0,
-    ...history.map((row) => Number(row.index_value) || 0),
-  );
-  const scaleMax = Math.max(200, Math.min(400, Math.ceil(maxObserved / 50) * 50));
-  elements.newsIndexHistory.style.setProperty(
-    "--baseline-position",
-    `${Math.min(100, 100 / scaleMax * 100)}%`,
-  );
-  elements.newsIndexHistory.replaceChildren(
-    ...history.map((row) => {
-      const value = Number(row.index_value) || 0;
-      const button = document.createElement("button");
-      button.type = "button";
-      button.className = `mini-index-bar ${newsIndexClass(value)}`;
-      button.style.setProperty(
-        "--bar-height",
-        `${Math.max(2, Math.min(100, value / scaleMax * 100))}%`,
-      );
-      button.title =
-        `${formatDateLabel(row.date)}：指数 ${value.toFixed(1)}，${row.news_count ?? 0} 条新闻`;
-      button.setAttribute("aria-label", button.title);
-      button.innerHTML = "<i></i>";
-      button.addEventListener("click", () => selectArchiveDate(row.date));
-      return button;
     }),
   );
 }
@@ -692,15 +388,6 @@ function newsIndexClass(value) {
   if (value >= 120) return "is-positive";
   if (value < 80) return "is-negative";
   return "is-flat";
-}
-
-function newsIndexColor(value) {
-  const number = Number(value);
-  if (!Number.isFinite(number)) return "#8b98aa";
-  if (number >= 180) return "#e66f3d";
-  if (number >= 120) return "#8a63d2";
-  if (number < 80) return "#71839b";
-  return "#2878d0";
 }
 
 function changeClass(value) {
@@ -768,7 +455,6 @@ function renderTimeTabs() {
         state.timeRange = tab.id;
         state.selectedDate = tab.id === "latest" ? latestNewsDate(state.items) : null;
         state.visibleLimit = 120;
-        state.eventVisibleLimit = 40;
         render();
       });
       return button;
@@ -792,13 +478,13 @@ function renderDailyBriefing(items) {
     ? `，较前一日${change >= 0 ? "增加" : "减少"} ${Math.abs(change)} 条`
     : "";
 
-  elements.briefingTitle.textContent = `${formatDateLabel(briefingDate)}产业动态日报`;
-  elements.briefingStatus.textContent = reportIsAi ? "内容已更新" : "自动汇总";
+  elements.briefingTitle.textContent = `${formatDateLabel(briefingDate)}情报简报`;
+  elements.briefingStatus.textContent = reportIsAi ? "AI 简报" : "自动简报";
   elements.briefingStatus.className = `briefing-status ${reportIsAi ? "is-ai" : "is-rules"}`;
   elements.briefingSummary.textContent = reportHasSummary
     ? report.executive_summary
     : dayItems.length
-      ? `当日收录 ${dayItems.length} 条新闻，覆盖 ${companies.size} 家公司${comparison}。日报按新闻发布时间生成，并保留完整历史记录。`
+      ? `当日收录 ${dayItems.length} 条新闻，覆盖 ${companies.size} 家公司${comparison}。简报按新闻发布时间生成，不再把历史抓取结果标记为最新。`
       : "当日没有收录到新闻，系统保留历史归档供回看。";
 
   const topCompanies = countBy(dayItems, (item) => companyName(item.company_id, item.company_name))
@@ -840,181 +526,9 @@ function renderDailyBriefing(items) {
   }
 }
 
-function renderSignalOverview(items) {
-  const latestDate = state.dailyIndex?.days?.[0]?.date ?? latestNewsDate(items);
-  const recentItems = items.filter((item) => {
-    const age = daysBetween(dateKey(item.published_at), latestDate);
-    return age >= 0 && age < 30;
-  });
-  elements.signalAsOf.textContent = latestDate
-    ? `截至 ${formatDateLabel(latestDate)} · 基于近 30 日已收录新闻`
-    : "暂无可分析的新闻记录";
-
-  const sectorRows = industryGroups
-    .map((group) => ({
-      id: group.id,
-      name: group.name,
-      count: recentItems.filter((item) => companyToGroup.get(item.company_id) === group.id).length,
-      color: sectorColors[group.id],
-    }))
-    .filter((row) => row.count > 0);
-  const categorizedTotal = sectorRows.reduce((sum, row) => sum + row.count, 0);
-  const uncategorizedCount = Math.max(0, recentItems.length - categorizedTotal);
-  if (uncategorizedCount) {
-    sectorRows.push({
-      id: "uncategorized",
-      name: "其他",
-      count: uncategorizedCount,
-      color: sectorColors.uncategorized,
-    });
-  }
-  elements.sectorSignalTotal.textContent = `${recentItems.length} 篇`;
-  const gradientSegments = [];
-  let cursor = 0;
-  sectorRows.forEach((row) => {
-    const start = cursor;
-    cursor += recentItems.length ? row.count / recentItems.length * 100 : 0;
-    gradientSegments.push(`${row.color} ${start.toFixed(2)}% ${cursor.toFixed(2)}%`);
-  });
-  elements.sectorDonut.style.background = gradientSegments.length
-    ? `conic-gradient(${gradientSegments.join(",")})`
-    : "#e7edf5";
-  elements.sectorDonut.setAttribute(
-    "aria-label",
-    sectorRows.length
-      ? sectorRows.map((row) => `${row.name} ${row.count} 篇`).join("，")
-      : "近 30 日暂无新闻",
-  );
-  elements.sectorDonut.innerHTML = `
-    <div><strong>${recentItems.length}</strong><span>篇新闻</span></div>
-  `;
-  elements.sectorLegend.replaceChildren(
-    ...sectorRows.map((row) => {
-      const item = document.createElement("div");
-      const share = recentItems.length ? row.count / recentItems.length * 100 : 0;
-      item.innerHTML = `
-        <span><i style="background:${row.color}"></i>${escapeHtml(row.name)}</span>
-        <strong>${row.count}<small>${share.toFixed(0)}%</small></strong>
-      `;
-      return item;
-    }),
-  );
-
-  const sourceRows = countBy(recentItems, (item) => itemProvider(item))
-    .slice(0, 6)
-    .map(([provider, count]) => ({
-      label: providerLabel(provider),
-      value: count,
-    }));
-  const sourceTotal = sourceRows.reduce((sum, row) => sum + row.value, 0);
-  const sourceMax = Math.max(1, ...sourceRows.map((row) => row.value));
-  elements.sourceSignalTotal.textContent = `${sourceRows.length} 类`;
-  elements.sourceSignalBars.replaceChildren(
-    ...sourceRows.map((row) => createRankBar(
-      row.label,
-      row.value,
-      sourceMax,
-      {
-        color: "#2f8f83",
-        suffix: sourceTotal ? `${(row.value / sourceTotal * 100).toFixed(0)}%` : "0%",
-      },
-    )),
-  );
-  if (!sourceRows.length) {
-    elements.sourceSignalBars.innerHTML = '<div class="visual-empty">暂无来源数据</div>';
-  }
-
-  const heatmapDays = latestDate
-    ? Array.from({ length: 14 }, (_, index) => addDays(latestDate, index - 13))
-    : [];
-  const companies = industryGroups.flatMap((group) => group.companies);
-  const companyRows = companies
-    .map((company) => {
-      const counts = heatmapDays.map((date) =>
-        items.filter((item) => item.company_id === company.id && dateKey(item.published_at) === date)
-          .length
-      );
-      return { ...company, counts, total: counts.reduce((sum, count) => sum + count, 0) };
-    })
-    .sort((a, b) => b.total - a.total || a.name.localeCompare(b.name, "zh-CN"));
-  const maxHeat = Math.max(1, ...companyRows.flatMap((row) => row.counts));
-  elements.companyHeatmap.style.setProperty("--heatmap-days", String(heatmapDays.length));
-  const heatmapHeader = document.createElement("div");
-  heatmapHeader.className = "heatmap-row heatmap-header";
-  heatmapHeader.innerHTML = `
-    <span>公司</span>
-    ${heatmapDays.map((date, index) => `<span>${index % 2 === 0 || index === heatmapDays.length - 1 ? date.slice(5).replace("-", "/") : ""}</span>`).join("")}
-    <strong>合计</strong>
-  `;
-  const heatmapRows = companyRows.map((company) => {
-    const row = document.createElement("div");
-    row.className = "heatmap-row";
-    const companyButton = document.createElement("button");
-    companyButton.type = "button";
-    companyButton.className = "heatmap-company";
-    companyButton.textContent = company.name;
-    companyButton.title = `查看 ${company.name} 的事件时间线`;
-    companyButton.addEventListener("click", () => {
-      selectCompany(company.id);
-      activateWorkspaceView("events", { scroll: true });
-    });
-    row.append(companyButton);
-    company.counts.forEach((count, index) => {
-      const cell = document.createElement("button");
-      cell.type = "button";
-      cell.className = "heatmap-cell";
-      const level = count
-        ? Math.max(1, Math.ceil(Math.log1p(count) / Math.log1p(maxHeat) * 5))
-        : 0;
-      cell.dataset.level = String(level);
-      cell.title = `${company.name} · ${formatDateLabel(heatmapDays[index])} · ${count} 条`;
-      cell.setAttribute("aria-label", cell.title);
-      cell.disabled = count === 0;
-      cell.addEventListener("click", () => {
-        state.companyId = company.id;
-        state.groupId = companyToGroup.get(company.id) ?? "all";
-        state.selectedDate = heatmapDays[index];
-        state.timeRange = "date";
-        state.visibleLimit = 120;
-        elements.companyFilter.value = company.id;
-        elements.eventCompanyFilter.value = company.id;
-        activateWorkspaceView("news", { scroll: true });
-        render();
-      });
-      row.append(cell);
-    });
-    const total = document.createElement("strong");
-    total.textContent = String(company.total);
-    row.append(total);
-    return row;
-  });
-  elements.companyHeatmap.replaceChildren(heatmapHeader, ...heatmapRows);
-}
-
-function createRankBar(label, value, maxValue, options = {}) {
-  const element = options.onClick
-    ? document.createElement("button")
-    : document.createElement("div");
-  if (options.onClick) {
-    element.type = "button";
-    element.addEventListener("click", options.onClick);
-  }
-  element.className = `rank-bar-row${options.active ? " is-active" : ""}`;
-  const width = maxValue ? Math.max(2, Number(value) / maxValue * 100) : 0;
-  element.innerHTML = `
-    <div><span>${escapeHtml(label)}</span><strong>${escapeHtml(value)}</strong></div>
-    <i><b style="width:${width}%;background:${options.color ?? "#2878d0"}"></b></i>
-    ${options.suffix ? `<small>${escapeHtml(options.suffix)}</small>` : ""}
-  `;
-  return element;
-}
-
 function renderVolumeIndex(items) {
-  const dailyRows = Array.isArray(state.dailyIndex?.days) ? state.dailyIndex.days : [];
-  const latestDate = dailyRows[0]?.date ?? latestNewsDate(items);
-  const counts = dailyRows.length
-    ? new Map(dailyRows.map((row) => [row.date, Number(row.count) || 0]))
-    : new Map(countBy(items, (item) => dateKey(item.published_at)));
+  const latestDate = latestNewsDate(items);
+  const counts = new Map(countBy(items, (item) => dateKey(item.published_at)));
   counts.delete("");
   const days = latestDate
     ? Array.from({ length: 30 }, (_, index) => addDays(latestDate, index - 29))
@@ -1054,7 +568,7 @@ function renderVolumeIndex(items) {
     .filter(([date]) => date)
     .sort(([a], [b]) => b.localeCompare(a));
   const runs = Array.isArray(state.archiveIndex?.runs) ? state.archiveIndex.runs : [];
-  elements.archiveSummary.textContent = `${populatedDays.length} 个新闻日期 · ${runs.length} 次采集记录`;
+  elements.archiveSummary.textContent = `${populatedDays.length} 个新闻日期 · ${runs.length} 次采集快照`;
 
   const select = document.createElement("select");
   select.className = "archive-select form-select";
@@ -1081,7 +595,6 @@ function selectArchiveDate(date) {
   state.selectedDate = date;
   state.timeRange = date === latestNewsDate(state.items) ? "latest" : "date";
   state.visibleLimit = 120;
-  activateWorkspaceView("news");
   render();
   document.querySelector(".news-panel")?.scrollIntoView({ behavior: "smooth", block: "start" });
 }
@@ -1106,7 +619,6 @@ function renderCategoryTabs() {
         state.companyId = "all";
         state.eventType = "all";
         state.visibleLimit = 120;
-        state.eventVisibleLimit = 40;
         elements.companyFilter.value = "all";
         elements.eventCompanyFilter.value = "all";
         render();
@@ -1117,18 +629,7 @@ function renderCategoryTabs() {
 }
 
 function renderIndustrySections(items) {
-  const heading = document.createElement("div");
-  heading.className = "workspace-view-heading";
-  heading.innerHTML = `
-    <div>
-      <div class="section-kicker">公司雷达</div>
-      <h2>按产业链浏览关注公司</h2>
-      <p>点击公司进入其事件时间线；点击分类进入对应新闻档案。</p>
-    </div>
-    <strong>${industryGroups.reduce((sum, group) => sum + group.companies.length, 0)} 家</strong>
-  `;
   elements.industrySections.replaceChildren(
-    heading,
     ...industryGroups.map((group) => {
       const groupItems = items.filter((item) => companyToGroup.get(item.company_id) === group.id);
       const covered = group.companies.filter((company) =>
@@ -1154,7 +655,10 @@ function renderIndustrySections(items) {
         state.visibleLimit = 120;
         elements.companyFilter.value = "all";
         elements.eventCompanyFilter.value = "all";
-        activateWorkspaceView("news", { scroll: true });
+        document.querySelector(".news-panel")?.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+        });
         render();
       });
 
@@ -1170,22 +674,8 @@ function companyCard(company, items) {
   const companyItems = sortedItems(items.filter((item) => item.company_id === company.id));
   const latest = companyItems[0];
   const issues = providerIssues(state.result.fetch_statuses ?? [], company.id);
-  const latestDate = latestNewsDate(items);
-  const activityDays = latestDate
-    ? Array.from({ length: 14 }, (_, index) => addDays(latestDate, index - 13))
-    : [];
-  const activityCounts = activityDays.map((date) =>
-    companyItems.filter((item) => dateKey(item.published_at) === date).length
-  );
-  const sparkMax = Math.max(1, ...activityCounts);
-  const currentWeek = activityCounts.slice(-7).reduce((sum, count) => sum + count, 0);
-  const previousWeek = activityCounts.slice(0, 7).reduce((sum, count) => sum + count, 0);
-  const weeklyChange = currentWeek - previousWeek;
   const card = document.createElement("article");
   card.className = "company-card";
-  card.tabIndex = 0;
-  card.setAttribute("role", "button");
-  card.setAttribute("aria-label", `查看 ${company.name} 的事件时间线`);
   card.innerHTML = `
     <div class="company-card-top">
       <div>
@@ -1195,28 +685,17 @@ function companyCard(company, items) {
       <strong>${companyItems.length}</strong>
     </div>
     <p>${latest ? escapeHtml(latest.title) : "暂无新闻"}</p>
-    <div class="company-sparkline" aria-label="${escapeHtml(company.name)}近 14 日新闻数量">
-      ${activityCounts.map((count) => `<i style="height:${Math.max(8, count / sparkMax * 100)}%" title="${count} 条"></i>`).join("")}
-    </div>
     <div class="company-card-foot">
-      <span>近 7 日 ${currentWeek} 条</span>
-      <span class="${weeklyChange > 0 ? "is-rising" : weeklyChange < 0 ? "is-falling" : ""}">
-        环比 ${weeklyChange > 0 ? "+" : ""}${weeklyChange}
-      </span>
-      <span>${issues ? `${issues} 个来源需检查` : "来源运行正常"}</span>
+      <span>${latest ? formatFullDate(latest.published_at) : "--"}</span>
+      <span>${issues ? `${issues} 个异常` : "数据源正常"}</span>
     </div>
   `;
-  const openCompanyEvents = () => {
+  card.addEventListener("click", () => {
     selectCompany(company.id);
-    state.eventVisibleLimit = 40;
-    activateWorkspaceView("events", { scroll: true });
-  };
-  card.addEventListener("click", openCompanyEvents);
-  card.addEventListener("keydown", (event) => {
-    if (event.key === "Enter" || event.key === " ") {
-      event.preventDefault();
-      openCompanyEvents();
-    }
+    document.querySelector(".event-panel")?.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
   });
   return card;
 }
@@ -1226,7 +705,6 @@ function renderEventTimeline() {
   const filteredEvents = state.eventType === "all"
     ? scopedEvents
     : scopedEvents.filter((event) => event.event_type === state.eventType);
-  renderEventVisuals(scopedEvents, filteredEvents);
   const typeRows = Object.keys(eventTypeLabels).filter((type) =>
     type === "all" || scopedEvents.some((event) => event.event_type === type)
   );
@@ -1241,7 +719,6 @@ function renderEventTimeline() {
       button.textContent = `${eventTypeLabels[type]} ${count}`;
       button.addEventListener("click", () => {
         state.eventType = type;
-        state.eventVisibleLimit = 40;
         renderEventTimeline();
       });
       return button;
@@ -1260,124 +737,9 @@ function renderEventTimeline() {
     `;
     return;
   }
-  const visibleEvents = filteredEvents.slice(0, state.eventVisibleLimit);
-  const cards = visibleEvents.map((event) => eventCard(event));
-  if (visibleEvents.length < filteredEvents.length) {
-    const footer = document.createElement("div");
-    footer.className = "event-load-more";
-    const button = document.createElement("button");
-    button.type = "button";
-    button.className = "btn btn-outline-secondary";
-    button.textContent = `继续加载事件（剩余 ${filteredEvents.length - visibleEvents.length} 个）`;
-    button.addEventListener("click", () => {
-      state.eventVisibleLimit += 40;
-      renderEventTimeline();
-    });
-    footer.append(button);
-    cards.push(footer);
-  }
-  elements.eventTimeline.replaceChildren(...cards);
-}
-
-function renderEventVisuals(scopedEvents, filteredEvents) {
-  elements.eventVisualTotal.textContent = `${scopedEvents.length} 个`;
-  const typeRows = countBy(scopedEvents, (event) => event.event_type ?? "other")
-    .slice(0, 7)
-    .map(([type, count]) => ({
-      type,
-      label: eventTypeLabels[type] ?? "其他动态",
-      count,
-    }));
-  const typeMax = Math.max(1, ...typeRows.map((row) => row.count));
-  elements.eventTypeChart.replaceChildren(
-    ...typeRows.map((row) => createRankBar(
-      row.label,
-      row.count,
-      typeMax,
-      {
-        color: eventTypeColors[row.type] ?? eventTypeColors.other,
-        active: state.eventType === row.type,
-        suffix: scopedEvents.length ? `${(row.count / scopedEvents.length * 100).toFixed(0)}%` : "0%",
-        onClick: () => {
-          state.eventType = state.eventType === row.type ? "all" : row.type;
-          state.eventVisibleLimit = 40;
-          renderEventTimeline();
-        },
-      },
-    )),
+  elements.eventTimeline.replaceChildren(
+    ...filteredEvents.map((event) => eventCard(event)),
   );
-  if (!typeRows.length) {
-    elements.eventTypeChart.innerHTML = '<div class="visual-empty">暂无事件数据</div>';
-  }
-
-  const companyRows = countBy(
-    filteredEvents,
-    (event) => event.company_id ?? "unknown",
-  )
-    .slice(0, 6)
-    .map(([companyId, count]) => ({
-      companyId,
-      label: companyName(companyId),
-      count,
-    }));
-  const companyMax = Math.max(1, ...companyRows.map((row) => row.count));
-  elements.eventCompanyChart.replaceChildren(
-    ...companyRows.map((row) => createRankBar(
-      row.label,
-      row.count,
-      companyMax,
-      {
-        color: "#2878d0",
-        suffix: "事件",
-        active: state.companyId === row.companyId,
-        onClick: () => {
-          selectCompany(row.companyId);
-          state.eventVisibleLimit = 40;
-          activateWorkspaceView("events");
-        },
-      },
-    )),
-  );
-  if (!companyRows.length) {
-    elements.eventCompanyChart.innerHTML = '<div class="visual-empty">暂无公司数据</div>';
-  }
-
-  const importanceRows = [
-    {
-      id: "high",
-      label: "高重要度",
-      count: filteredEvents.filter((event) => Number(event.importance_score) >= 70).length,
-    },
-    {
-      id: "medium",
-      label: "中重要度",
-      count: filteredEvents.filter((event) => {
-        const value = Number(event.importance_score);
-        return value >= 55 && value < 70;
-      }).length,
-    },
-    {
-      id: "normal",
-      label: "一般",
-      count: filteredEvents.filter((event) => Number(event.importance_score) < 55).length,
-    },
-  ];
-  elements.eventHighImportance.textContent = `${importanceRows[0].count} 个`;
-  elements.eventImportanceChart.innerHTML = `
-    <div
-      class="importance-track"
-      role="img"
-      aria-label="${importanceRows.map((row) => `${row.label} ${row.count} 个`).join("，")}"
-    >
-      ${importanceRows.map((row) => `<i class="is-${row.id}" style="flex-grow:${row.count}" ${row.count ? "" : "hidden"}></i>`).join("")}
-    </div>
-    <div class="importance-legend">
-      ${importanceRows.map((row) => `
-        <div><span><i class="is-${row.id}"></i>${row.label}</span><strong>${row.count}</strong></div>
-      `).join("")}
-    </div>
-    <p>重要度综合事件类型、报道数量、来源覆盖与时间跨度计算。</p>
-  `;
 }
 
 function eventMatchesCurrentScope(event) {
@@ -1390,12 +752,18 @@ function eventMatchesCurrentScope(event) {
 function eventCard(event) {
   const card = document.createElement("article");
   card.className = `event-card event-${event.event_type ?? "other"}`;
-  card.style.setProperty(
-    "--event-color",
-    eventTypeColors[event.event_type] ?? eventTypeColors.other,
-  );
   const sourceNames = Array.isArray(event.source_names) ? event.source_names : [];
   const articles = Array.isArray(event.articles) ? event.articles : [];
+  const articleList = articles
+    .map((article) => `
+      <li>
+        <a href="${escapeHtml(article.url)}" target="_blank" rel="noopener noreferrer">
+          ${escapeHtml(article.title)}
+        </a>
+        <span>${escapeHtml(article.source_name)} · ${formatFullDate(article.published_at)}</span>
+      </li>
+    `)
+    .join("");
   card.innerHTML = `
     <div class="event-rail"><span></span></div>
     <div class="event-card-body">
@@ -1415,34 +783,14 @@ function eventCard(event) {
         <span>重要度 ${event.importance_score ?? 0}</span>
       </div>
       <div class="event-sources">${sourceNames.slice(0, 5).map((source) => `<span>${escapeHtml(source)}</span>`).join("")}</div>
-      ${articles.length ? `
+      ${articleList ? `
         <details class="event-articles">
           <summary>查看组成该事件的报道</summary>
-          <ul></ul>
+          <ul>${articleList}</ul>
         </details>
       ` : ""}
     </div>
   `;
-  const details = card.querySelector(".event-articles");
-  if (details) {
-    details.addEventListener("toggle", () => {
-      if (!details.open || details.dataset.loaded === "true") return;
-      const list = details.querySelector("ul");
-      list.replaceChildren(
-        ...articles.map((article) => {
-          const item = document.createElement("li");
-          item.innerHTML = `
-            <a href="${escapeHtml(article.url)}" target="_blank" rel="noopener noreferrer">
-              ${escapeHtml(article.title)}
-            </a>
-            <span>${escapeHtml(article.source_name)} · ${formatFullDate(article.published_at)}</span>
-          `;
-          return item;
-        }),
-      );
-      details.dataset.loaded = "true";
-    });
-  }
   return card;
 }
 

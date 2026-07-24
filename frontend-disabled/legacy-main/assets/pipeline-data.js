@@ -1,54 +1,24 @@
+import { samplePipelineResult } from "./mock-pipeline-result.js";
+
 export const DATA_ENDPOINTS = {
-  latestManifest: "./data/news/latest/manifest.json",
   latestPipelineResult: "./data/news/latest/pipeline_result.json",
   archiveIndex: "./data/news/archive/index.json",
   archiveCatalog: "./data/news/archive/catalog.json",
   eventTimeline: "./data/news/latest/event_timeline.json",
-  dailyIndex: "./data/news/latest/daily_index.json",
   dailyReport: "./data/reports/latest/daily_report.json",
   indexSnapshot: "./data/indices/latest/aerospace_index.json",
 };
 
 export async function loadDashboardData(options = {}) {
-  const manifest = await loadOptionalJson(
-    options.manifestUrl ?? DATA_ENDPOINTS.latestManifest,
-    { cache: "no-cache" },
-  );
-  const versionToken = manifest?.run_id ?? manifest?.generated_at ?? "";
-  const versioned = (url) => appendVersion(url, versionToken);
-  const result = await loadPipelineResult({
-    ...options,
-    url: versioned(options.url ?? DATA_ENDPOINTS.latestPipelineResult),
-  });
-  const [
-    archiveIndex,
-    dailyIndex,
-    dailyReport,
-    indexSnapshot,
-  ] = await Promise.all([
-    loadOptionalJson(versioned(options.archiveUrl ?? DATA_ENDPOINTS.archiveIndex)),
-    loadOptionalJson(versioned(options.dailyIndexUrl ?? DATA_ENDPOINTS.dailyIndex)),
-    loadOptionalJson(versioned(options.reportUrl ?? DATA_ENDPOINTS.dailyReport)),
-    loadOptionalJson(versioned(options.indexUrl ?? DATA_ENDPOINTS.indexSnapshot)),
+  const result = await loadPipelineResult(options);
+  const [archiveIndex, archiveCatalog, eventTimeline, dailyReport, indexSnapshot] = await Promise.all([
+    loadOptionalJson(options.archiveUrl ?? DATA_ENDPOINTS.archiveIndex),
+    loadOptionalJson(options.catalogUrl ?? DATA_ENDPOINTS.archiveCatalog),
+    loadOptionalJson(options.eventTimelineUrl ?? DATA_ENDPOINTS.eventTimeline),
+    loadOptionalJson(options.reportUrl ?? DATA_ENDPOINTS.dailyReport),
+    loadOptionalJson(options.indexUrl ?? DATA_ENDPOINTS.indexSnapshot),
   ]);
-  return {
-    result,
-    manifest,
-    versionToken,
-    archiveIndex,
-    dailyIndex,
-    dailyReport,
-    indexSnapshot,
-  };
-}
-
-export async function loadDeferredDashboardData(options = {}) {
-  const versioned = (url) => appendVersion(url, options.versionToken ?? "");
-  const [archiveCatalog, eventTimeline] = await Promise.all([
-    loadOptionalJson(versioned(options.catalogUrl ?? DATA_ENDPOINTS.archiveCatalog)),
-    loadOptionalJson(versioned(options.eventTimelineUrl ?? DATA_ENDPOINTS.eventTimeline)),
-  ]);
-  return { archiveCatalog, eventTimeline };
+  return { result, archiveIndex, archiveCatalog, eventTimeline, dailyReport, indexSnapshot };
 }
 
 export async function loadPipelineResult(options = {}) {
@@ -59,14 +29,15 @@ export async function loadPipelineResult(options = {}) {
   }
 
   if (mode === "auto") {
-    return loadJsonPipelineResult(options.url ?? DATA_ENDPOINTS.latestPipelineResult);
+    try {
+      return await loadJsonPipelineResult(options.url ?? DATA_ENDPOINTS.latestPipelineResult);
+    } catch (error) {
+      console.info(`Using mock PipelineResult fallback: ${error.message}`);
+      return withDataSource(samplePipelineResult, "mock");
+    }
   }
 
-  if (mode === "mock") {
-    const { samplePipelineResult } = await import("./mock-pipeline-result.js");
-    return withDataSource(samplePipelineResult, "mock");
-  }
-  throw new Error(`Unsupported dashboard data mode: ${mode}`);
+  return withDataSource(samplePipelineResult, "mock");
 }
 
 async function loadJsonPipelineResult(url) {
@@ -77,7 +48,7 @@ async function loadJsonPipelineResult(url) {
   }
 
   const response = await fetch(resolvedUrl.href, {
-    cache: "default",
+    cache: "no-store",
     headers: { accept: "application/json" },
   });
 
@@ -88,12 +59,12 @@ async function loadJsonPipelineResult(url) {
   return withDataSource(normalizePipelineResult(await response.json()), "json");
 }
 
-async function loadOptionalJson(url, requestOptions = {}) {
+async function loadOptionalJson(url) {
   try {
     const resolvedUrl = resolveDataUrl(url);
     if (resolvedUrl.protocol === "file:") return await loadLocalJsonValue(resolvedUrl);
     const response = await fetch(resolvedUrl.href, {
-      cache: requestOptions.cache ?? "default",
+      cache: "no-store",
       headers: { accept: "application/json" },
     });
     if (!response.ok) return null;
@@ -101,13 +72,6 @@ async function loadOptionalJson(url, requestOptions = {}) {
   } catch {
     return null;
   }
-}
-
-function appendVersion(url, versionToken) {
-  if (!versionToken) return url;
-  const resolvedUrl = resolveDataUrl(url);
-  resolvedUrl.searchParams.set("v", versionToken);
-  return resolvedUrl.href;
 }
 
 function normalizePipelineResult(result) {

@@ -394,8 +394,11 @@ def build_sector_snapshot(
             "provider_name": configured_index.get("provider_name") or "东方财富",
             "status": "unavailable",
         }
-    index_is_current = bool(
-        industry_index and industry_index.get("status") == "current"
+    index_is_current = bool(industry_index and industry_index.get("status") == "current")
+    index_is_available = bool(
+        industry_index
+        and industry_index.get("status") in {"current", "stale_previous"}
+        and industry_index.get("price") is not None
     )
     quoted_instrument_count = len(valid_changes) + int(index_is_current)
     expected_instrument_count = len(members) + int(bool(configured_index))
@@ -419,22 +422,22 @@ def build_sector_snapshot(
         "index_name": industry_index.get("name") if industry_index else None,
         "index_code": industry_index.get("ticker") if industry_index else None,
         "index_value": (
-            industry_index.get("price") if index_is_current else None
+            industry_index.get("price") if index_is_available else None
         ),
         "index_change_pct": (
-            industry_index.get("change_pct") if index_is_current else None
+            industry_index.get("change_pct") if index_is_available else None
         ),
         "index_change_amount": (
-            industry_index.get("change_amount") if index_is_current else None
+            industry_index.get("change_amount") if index_is_available else None
         ),
         "index_previous_close": (
-            industry_index.get("previous_close") if index_is_current else None
+            industry_index.get("previous_close") if index_is_available else None
         ),
         "index_source_name": (
             industry_index.get("provider_name") if industry_index else None
         ),
         "index_source_timestamp": (
-            industry_index.get("source_timestamp") if index_is_current else None
+            industry_index.get("source_timestamp") if index_is_available else None
         ),
         "index_source_url": (
             industry_index.get("source_url") if industry_index else None
@@ -576,6 +579,54 @@ def stale_market_snapshot(
     return payload
 
 
+def reuse_previous_industry_indices(
+    industry_indices: dict[str, dict[str, Any]],
+    previous: dict[str, Any] | None,
+    config: dict[str, Any],
+) -> dict[str, dict[str, Any]]:
+    """Keep the last real index point when only the index provider is offline."""
+    if not previous or previous.get("schema_version") != SCHEMA_VERSION:
+        return industry_indices
+    restored = dict(industry_indices)
+    previous_markets = previous.get("markets") or {}
+    for sector_id, sector in (config.get("sectors") or {}).items():
+        if sector_id in restored or not sector.get("industry_index"):
+            continue
+        previous_index = (previous_markets.get(sector_id) or {}).get("industry_index")
+        if (
+            not previous_index
+            or previous_index.get("status") not in {"current", "stale_previous"}
+            or previous_index.get("price") is None
+        ):
+            continue
+        restored[sector_id] = {**previous_index, "status": "stale_previous"}
+    return restored
+
+
+def load_previous_market_snapshot(local_root: Path) -> dict[str, Any] | None:
+    """Find the newest snapshot that still contains a real industry-index point."""
+    latest_path = local_root / "latest" / "aerospace_index.json"
+    archive_paths = sorted(
+        (local_root / "archive").glob("*/*/*/aerospace_index.json"),
+        reverse=True,
+    )
+    fallback = None
+    for path in [latest_path, *archive_paths]:
+        if not path.exists():
+            continue
+        candidate = load_json(path)
+        if candidate.get("schema_version") != SCHEMA_VERSION:
+            continue
+        if fallback is None and candidate.get("markets"):
+            fallback = candidate
+        if any(
+            (market.get("industry_index") or {}).get("price") is not None
+            for market in (candidate.get("markets") or {}).values()
+        ):
+            return candidate
+    return fallback
+
+
 def write_outputs(
     payload: dict[str, Any],
     *,
@@ -605,8 +656,7 @@ def generate_index_snapshot(
     catalog = load_json(catalog_path)
     config = load_config(config_path)
     resolved_date = as_of or datetime.now(REPORT_TIMEZONE).date()
-    previous_path = local_root / "latest" / "aerospace_index.json"
-    previous = load_json(previous_path) if previous_path.exists() else None
+    previous = load_previous_market_snapshot(local_root)
     errors: dict[str, str] = {}
     try:
         quotes = fetch_sina_quotes(config)
@@ -626,6 +676,12 @@ def generate_index_snapshot(
     )
     if expected_indices and not industry_indices and "industry_index" not in errors:
         errors["industry_index"] = "index source returned no valid instruments"
+    has_current_industry_indices = bool(industry_indices)
+    industry_indices = reuse_previous_industry_indices(
+        industry_indices,
+        previous,
+        config,
+    )
     payload = build_index_snapshot(
         catalog,
         config,
@@ -635,7 +691,7 @@ def generate_index_snapshot(
     )
     if errors:
         payload["market_data_source"]["errors"] = errors
-    if not quotes and not industry_indices:
+    if not quotes and not has_current_industry_indices:
         payload = stale_market_snapshot(
             payload,
             previous,
