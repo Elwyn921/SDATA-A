@@ -153,6 +153,78 @@
       <a href="#pulse">脉搏</a><a href="#companies">公司</a><a href="#events">事件</a>
     </nav>
 
+    <button class="search-fab" id="search-fab" type="button" aria-label="搜索公司、新闻和事件">
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <circle cx="11" cy="11" r="6.5"></circle>
+        <path d="m16 16 4 4"></path>
+      </svg>
+      <span>搜索</span>
+      <kbd>/</kbd>
+    </button>
+
+    <div class="overlay search-overlay" id="search-overlay" hidden>
+      <button class="overlay-backdrop" type="button" data-close-search aria-label="关闭搜索"></button>
+      <section class="search-dialog" role="dialog" aria-modal="true" aria-labelledby="search-title">
+        <header class="search-header">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <circle cx="11" cy="11" r="6.5"></circle>
+            <path d="m16 16 4 4"></path>
+          </svg>
+          <input
+            id="global-search"
+            type="search"
+            autocomplete="off"
+            placeholder="搜索公司、新闻、发射、融资、订单…"
+            aria-labelledby="search-title"
+          />
+          <button type="button" data-close-search>关闭</button>
+        </header>
+        <div class="search-hint" id="search-title">
+          <span>全局搜索</span>
+          <small>公司 · 新闻 · 事件</small>
+        </div>
+        <div class="search-results" id="search-results"></div>
+      </section>
+    </div>
+
+    <div class="overlay company-overlay" id="company-overlay" hidden>
+      <button class="overlay-backdrop" type="button" data-close-company aria-label="关闭公司详情"></button>
+      <aside class="company-drawer" role="dialog" aria-modal="true" aria-labelledby="company-drawer-name">
+        <header class="company-drawer-header">
+          <div>
+            <span id="company-drawer-sector">重点公司</span>
+            <h2 id="company-drawer-name">公司时间线</h2>
+            <p id="company-drawer-summary">正在组织公司新闻与事件。</p>
+          </div>
+          <button class="drawer-close" type="button" data-close-company aria-label="关闭公司时间线">×</button>
+        </header>
+        <div class="company-drawer-body">
+          <div class="company-metrics" id="company-metrics"></div>
+          <section class="company-activity">
+            <div class="drawer-section-heading">
+              <div><span>30 DAYS</span><h3>新闻活跃度</h3></div>
+              <small id="company-activity-total">--</small>
+            </div>
+            <div class="company-activity-bars" id="company-activity-bars"></div>
+          </section>
+          <section class="company-timeline-section">
+            <div class="drawer-section-heading">
+              <div><span>EVENT TIMELINE</span><h3>公司事件时间线</h3></div>
+              <small id="company-event-total">--</small>
+            </div>
+            <div class="company-timeline" id="company-timeline"></div>
+          </section>
+          <section class="company-news-section">
+            <div class="drawer-section-heading">
+              <div><span>LATEST NEWS</span><h3>相关新闻</h3></div>
+              <small id="company-news-total">--</small>
+            </div>
+            <div class="company-news-list" id="company-news-list"></div>
+          </section>
+        </div>
+      </aside>
+    </div>
+
     <script type="module" src="./assets/app.js"></script>
   </body>
 </html>

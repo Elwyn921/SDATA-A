@@ -57,8 +57,11 @@ const state = {
   items: [],
   events: [],
   versionToken: "",
+  selectedCompanyId: null,
+  companyEventLimit: 30,
 };
 
+bindInteractions();
 start();
 
 async function start() {
@@ -85,6 +88,85 @@ async function start() {
     document.querySelector("#hero-summary").textContent =
       "当前数据文件暂时无法载入，请稍后刷新页面。";
   }
+}
+
+function bindInteractions() {
+  document.querySelector("#search-fab").addEventListener("click", openSearch);
+  document.querySelectorAll("[data-close-search]").forEach((button) => {
+    button.addEventListener("click", closeSearch);
+  });
+  document.querySelectorAll("[data-close-company]").forEach((button) => {
+    button.addEventListener("click", closeCompany);
+  });
+  document.querySelector("#global-search").addEventListener("input", renderSearchResults);
+  document.querySelector("#company-heatmap").addEventListener("click", (event) => {
+    const target = event.target.closest("[data-company-id]");
+    if (target) openCompany(target.dataset.companyId);
+  });
+  document.querySelector("#event-stream").addEventListener("click", (event) => {
+    const target = event.target.closest("[data-company-id]");
+    if (target) openCompany(target.dataset.companyId);
+  });
+  document.querySelector("#search-results").addEventListener("click", (event) => {
+    const target = event.target.closest("[data-company-id]");
+    if (!target) return;
+    closeSearch();
+    openCompany(target.dataset.companyId);
+  });
+  document.querySelector("#company-timeline").addEventListener("click", (event) => {
+    if (!event.target.closest("[data-load-more-events]")) return;
+    state.companyEventLimit += 30;
+    renderCompanyDrawer(state.selectedCompanyId);
+  });
+  document.addEventListener("keydown", (event) => {
+    const isTyping = ["INPUT", "TEXTAREA"].includes(document.activeElement?.tagName);
+    if ((event.key === "/" && !isTyping) || ((event.metaKey || event.ctrlKey) && event.key.toLowerCase() === "k")) {
+      event.preventDefault();
+      openSearch();
+    } else if (event.key === "Escape") {
+      if (!document.querySelector("#search-overlay").hidden) closeSearch();
+      else if (!document.querySelector("#company-overlay").hidden) closeCompany();
+    }
+  });
+}
+
+function openSearch() {
+  const overlay = document.querySelector("#search-overlay");
+  overlay.hidden = false;
+  document.body.classList.add("overlay-open");
+  const input = document.querySelector("#global-search");
+  input.value = "";
+  renderSearchResults();
+  window.setTimeout(() => input.focus(), 20);
+}
+
+function closeSearch() {
+  document.querySelector("#search-overlay").hidden = true;
+  syncBodyOverlayState();
+  document.querySelector("#search-fab").focus();
+}
+
+function openCompany(companyId) {
+  if (!companyId) return;
+  state.selectedCompanyId = companyId;
+  state.companyEventLimit = 30;
+  document.querySelector("#company-overlay").hidden = false;
+  document.body.classList.add("overlay-open");
+  renderCompanyDrawer(companyId);
+  window.setTimeout(() => document.querySelector(".drawer-close").focus(), 20);
+}
+
+function closeCompany() {
+  state.selectedCompanyId = null;
+  document.querySelector("#company-overlay").hidden = true;
+  syncBodyOverlayState();
+}
+
+function syncBodyOverlayState() {
+  const hasOpenOverlay = [...document.querySelectorAll(".overlay")].some(
+    (overlay) => !overlay.hidden,
+  );
+  document.body.classList.toggle("overlay-open", hasOpenOverlay);
 }
 
 function render() {
@@ -116,6 +198,8 @@ function render() {
   renderMarket(us);
   renderHeatmap(latestDate);
   renderEvents();
+  if (state.selectedCompanyId) renderCompanyDrawer(state.selectedCompanyId);
+  if (!document.querySelector("#search-overlay").hidden) renderSearchResults();
 }
 
 function renderBrief(dayItems, latestDate) {
@@ -233,11 +317,11 @@ function renderHeatmap(latestDate) {
   const companies = Object.keys(companyNames);
   const cells = ['<span></span>', ...dates.map((date) => `<span class="heat-date">${date.slice(5).replace("-", "/")}</span>`)];
   for (const companyId of companies) {
-    cells.push(`<span class="heat-label">${companyNames[companyId]}</span>`);
+    cells.push(`<button type="button" class="heat-label" data-company-id="${companyId}" aria-label="打开${companyNames[companyId]}时间线">${companyNames[companyId]}</button>`);
     for (const date of dates) {
       const count = counts.get(`${companyId}|${date}`) ?? 0;
       const level = count ? Math.max(.15, count / max) : 0;
-      cells.push(`<i class="heat-cell" style="--level:${level}" title="${companyNames[companyId]} · ${date} · ${count} 条"></i>`);
+      cells.push(`<button type="button" class="heat-cell" data-company-id="${companyId}" style="--level:${level}" title="${companyNames[companyId]} · ${date} · ${count} 条" aria-label="打开${companyNames[companyId]}时间线，${date}共${count}条新闻"></button>`);
     }
   }
   document.querySelector("#company-heatmap").innerHTML = cells.join("");
@@ -250,15 +334,17 @@ function renderEvents() {
     .slice(0, 9);
   document.querySelector("#event-stream").replaceChildren(
     ...events.map((event) => {
-      const card = document.createElement("a");
+      const card = document.createElement("article");
       card.className = "event-card";
-      card.href = event.latest_url || "#";
-      card.target = "_blank";
-      card.rel = "noopener noreferrer";
       card.style.setProperty("--event-color", eventColors[event.event_type] ?? eventColors.other);
       card.innerHTML = `
-        <header><span class="event-type">${escapeHtml(event.event_label || event.event_type || "事件")}</span><span>${escapeHtml(companyNames[event.company_id] || event.company_name || event.company_id)}</span></header>
-        <h3>${escapeHtml(event.headline)}</h3>
+        <header>
+          <span class="event-type">${escapeHtml(event.event_label || event.event_type || "事件")}</span>
+          <button class="event-company" type="button" data-company-id="${escapeHtml(event.company_id)}">${escapeHtml(companyNames[event.company_id] || event.company_name || event.company_id)}</button>
+        </header>
+        <a class="event-headline" href="${escapeHtml(event.latest_url || "#")}" target="_blank" rel="noopener noreferrer">
+          <h3>${escapeHtml(event.headline)}</h3>
+        </a>
         <p>${escapeHtml(event.summary || "")}</p>
         <footer>${formatDay(dateKey(event.latest_at))} · ${event.article_count ?? 0} 篇报道 · 重要度 ${event.importance_score ?? 0}</footer>
       `;
@@ -267,6 +353,192 @@ function renderEvents() {
   );
   const newest = dateKey(events[0]?.latest_at);
   setText("#event-range", `${state.events.length} 个事件 · 更新至 ${formatDay(newest)}`);
+}
+
+function renderSearchResults() {
+  const query = normalizeSearch(document.querySelector("#global-search").value);
+  const companyRows = Object.keys(companyNames)
+    .map((companyId) => ({
+      companyId,
+      name: companyNames[companyId],
+      newsCount: state.items.filter((item) => item.company_id === companyId).length,
+      eventCount: state.events.filter((event) => event.company_id === companyId).length,
+    }))
+    .filter((row) => matchesSearch(`${row.name} ${row.companyId}`, query))
+    .sort((a, b) => (b.newsCount + b.eventCount) - (a.newsCount + a.eventCount))
+    .slice(0, query ? 8 : 6);
+  const newsRows = [...state.items]
+    .filter((item) => matchesSearch(
+      `${item.title} ${item.company_name} ${companyNames[item.company_id] ?? ""} ${itemSourceName(item)}`,
+      query,
+    ))
+    .sort((a, b) => Date.parse(b.published_at || 0) - Date.parse(a.published_at || 0))
+    .slice(0, query ? 8 : 4);
+  const eventRows = [...state.events]
+    .filter((event) => matchesSearch(
+      `${event.headline} ${event.summary} ${event.event_label} ${event.company_name} ${companyNames[event.company_id] ?? ""}`,
+      query,
+    ))
+    .sort((a, b) => Date.parse(b.latest_at || 0) - Date.parse(a.latest_at || 0))
+    .slice(0, query ? 6 : 4);
+
+  const groupsHtml = [];
+  if (companyRows.length) {
+    groupsHtml.push(
+      '<span class="search-group-label">公司</span>',
+      ...companyRows.map((row) => `
+        <button type="button" class="search-result" data-company-id="${escapeHtml(row.companyId)}">
+          <span class="search-result-icon">企</span>
+          <span class="search-result-copy">
+            <strong>${escapeHtml(row.name)}</strong>
+            <small>打开公司事件时间线与相关新闻</small>
+          </span>
+          <span class="search-result-meta">${row.eventCount} 事件 · ${row.newsCount} 新闻</span>
+        </button>
+      `),
+    );
+  }
+  if (eventRows.length) {
+    groupsHtml.push(
+      '<span class="search-group-label">事件</span>',
+      ...eventRows.map((event) => `
+        <a class="search-result" href="${escapeHtml(event.latest_url || "#")}" target="_blank" rel="noopener noreferrer">
+          <span class="search-result-icon">事</span>
+          <span class="search-result-copy">
+            <strong>${escapeHtml(event.headline)}</strong>
+            <small>${escapeHtml(companyDisplayName(event.company_id, event.company_name))} · ${escapeHtml(event.event_label || "其他动态")}</small>
+          </span>
+          <span class="search-result-meta">${formatDay(dateKey(event.latest_at))}</span>
+        </a>
+      `),
+    );
+  }
+  if (newsRows.length) {
+    groupsHtml.push(
+      '<span class="search-group-label">新闻</span>',
+      ...newsRows.map((item) => `
+        <a class="search-result" href="${escapeHtml(item.url || item.canonical_url || "#")}" target="_blank" rel="noopener noreferrer">
+          <span class="search-result-icon">闻</span>
+          <span class="search-result-copy">
+            <strong>${escapeHtml(item.title)}</strong>
+            <small>${escapeHtml(companyDisplayName(item.company_id, item.company_name))} · ${escapeHtml(itemSourceName(item))}</small>
+          </span>
+          <span class="search-result-meta">${formatDay(dateKey(item.published_at))}</span>
+        </a>
+      `),
+    );
+  }
+  document.querySelector("#search-results").innerHTML = groupsHtml.length
+    ? groupsHtml.join("")
+    : '<div class="search-empty">没有找到匹配内容，请尝试公司名称或事件关键词。</div>';
+}
+
+function renderCompanyDrawer(companyId) {
+  if (!companyId) return;
+  const companyItems = state.items
+    .filter((item) => item.company_id === companyId)
+    .sort((a, b) => Date.parse(b.published_at || 0) - Date.parse(a.published_at || 0));
+  const companyEvents = state.events
+    .filter((event) => event.company_id === companyId)
+    .sort((a, b) => Date.parse(b.latest_at || 0) - Date.parse(a.latest_at || 0));
+  const name = companyDisplayName(companyId, companyItems[0]?.company_name);
+  const group = groups.find((row) => row.companies.includes(companyId));
+  const latestDate = latestNewsDate(state.items);
+  const dates = Array.from({ length: 30 }, (_, index) => addDays(latestDate, index - 29));
+  const dailyCounts = dates.map((date) => companyItems.filter(
+    (item) => dateKey(item.published_at) === date,
+  ).length);
+  const recentCount = dailyCounts.reduce((sum, count) => sum + count, 0);
+  const sourceCount = new Set(companyItems.map(itemSourceName).filter(Boolean)).size;
+  const visibleEvents = companyEvents.slice(0, state.companyEventLimit);
+
+  setText("#company-drawer-sector", group?.name ?? "重点公司");
+  setText("#company-drawer-name", name);
+  setText(
+    "#company-drawer-summary",
+    companyItems.length || companyEvents.length
+      ? `${name}已归档 ${companyItems.length} 条新闻，并组织为 ${companyEvents.length} 个连续事件。点击标题可查看原始报道。`
+      : `${name}暂时没有可展示的新闻或事件。`,
+  );
+  const latestEventDate = dateKey(companyEvents[0]?.latest_at);
+  const metrics = [
+    ["归档新闻", companyItems.length],
+    ["近 30 日", recentCount],
+    ["聚合事件", companyEvents.length],
+    ["最近更新", latestEventDate ? formatDay(latestEventDate) : "--"],
+  ];
+  document.querySelector("#company-metrics").innerHTML = metrics.map(([label, value]) => `
+    <div><span>${label}</span><strong>${escapeHtml(value)}</strong></div>
+  `).join("");
+  setText("#company-activity-total", `${recentCount} 条 · ${sourceCount} 个来源`);
+  const activityMax = Math.max(1, ...dailyCounts);
+  document.querySelector("#company-activity-bars").innerHTML = dailyCounts.map((count, index) => `
+    <i style="--height:${count / activityMax * 100}" title="${dates[index]} · ${count} 条"></i>
+  `).join("");
+
+  setText(
+    "#company-event-total",
+    companyEvents.length
+      ? `显示 ${visibleEvents.length} / ${companyEvents.length}`
+      : state.events.length
+        ? "暂无事件"
+        : "正在载入",
+  );
+  const timeline = document.querySelector("#company-timeline");
+  timeline.innerHTML = visibleEvents.map((event) => `
+    <article class="company-timeline-item" style="--event-color:${eventColors[event.event_type] ?? eventColors.other}">
+      <div class="company-timeline-meta">
+        <span>${escapeHtml(event.event_label || "其他动态")}</span>
+        <time>${formatDay(dateKey(event.latest_at))}</time>
+        <span>${event.article_count ?? 0} 篇报道</span>
+      </div>
+      <a href="${escapeHtml(event.latest_url || "#")}" target="_blank" rel="noopener noreferrer">${escapeHtml(event.headline)}</a>
+      <p>${escapeHtml(event.summary || "")}</p>
+    </article>
+  `).join("");
+  if (!companyEvents.length) {
+    timeline.innerHTML = `<div class="drawer-empty">${state.events.length ? "当前尚未聚合出该公司的连续事件。" : "完整事件时间线正在载入，请稍候。"}</div>`;
+  } else if (visibleEvents.length < companyEvents.length) {
+    timeline.insertAdjacentHTML(
+      "beforeend",
+      `<button class="timeline-load-more" type="button" data-load-more-events>继续加载（剩余 ${companyEvents.length - visibleEvents.length} 个）</button>`,
+    );
+  }
+
+  const visibleNews = companyItems.slice(0, 20);
+  setText("#company-news-total", `${companyItems.length} 条`);
+  document.querySelector("#company-news-list").innerHTML = visibleNews.length
+    ? visibleNews.map((item) => `
+      <article class="company-news-item">
+        <time>${formatDay(dateKey(item.published_at))}</time>
+        <div>
+          <a href="${escapeHtml(item.url || item.canonical_url || "#")}" target="_blank" rel="noopener noreferrer">${escapeHtml(item.title)}</a>
+          <small>${escapeHtml(itemSourceName(item))}</small>
+        </div>
+      </article>
+    `).join("")
+    : '<div class="drawer-empty">暂无相关新闻。</div>';
+}
+
+function normalizeSearch(value) {
+  return String(value ?? "").trim().toLocaleLowerCase("zh-CN");
+}
+
+function matchesSearch(value, query) {
+  if (!query) return true;
+  const corpus = normalizeSearch(value);
+  return query.split(/\s+/).filter(Boolean).every((token) => corpus.includes(token));
+}
+
+function companyDisplayName(companyId, fallback) {
+  return companyNames[companyId] ?? fallback ?? companyId ?? "未分类公司";
+}
+
+function itemSourceName(item) {
+  return item?.source?.source_name
+    ?? item?.source_name
+    ?? item?.source?.source_id
+    ?? "未知来源";
 }
 
 function mergeItems(primary, archived) {
