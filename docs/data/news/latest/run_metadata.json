@@ -4,13 +4,13 @@
     {
       "company_id": "blue_origin",
       "company_name": "Blue Origin",
-      "item_count": 22,
+      "item_count": 19,
       "status": "success"
     },
     {
       "company_id": "cas_space",
       "company_name": "中科宇航",
-      "item_count": 13,
+      "item_count": 18,
       "status": "mixed"
     },
     {
@@ -22,7 +22,7 @@
     {
       "company_id": "galactic_energy",
       "company_name": "星河动力",
-      "item_count": 12,
+      "item_count": 11,
       "status": "mixed"
     },
     {
@@ -40,13 +40,13 @@
     {
       "company_id": "i_space",
       "company_name": "星际荣耀",
-      "item_count": 7,
+      "item_count": 6,
       "status": "mixed"
     },
     {
       "company_id": "landspace",
       "company_name": "蓝箭航天",
-      "item_count": 24,
+      "item_count": 25,
       "status": "mixed"
     },
     {
@@ -58,19 +58,19 @@
     {
       "company_id": "space_pioneer",
       "company_name": "天兵科技",
-      "item_count": 4,
+      "item_count": 5,
       "status": "mixed"
     },
     {
       "company_id": "spacex",
       "company_name": "SpaceX",
-      "item_count": 46,
+      "item_count": 48,
       "status": "success"
     },
     {
       "company_id": "yuanxin_satellite",
       "company_name": "垣信卫星",
-      "item_count": 32,
+      "item_count": 34,
       "status": "mixed"
     },
     {
@@ -81,36 +81,36 @@
     }
   ],
   "company_item_counts": {
-    "blue_origin": 22,
-    "cas_space": 13,
+    "blue_origin": 19,
+    "cas_space": 18,
     "china_satnet": 2,
-    "galactic_energy": 12,
+    "galactic_energy": 11,
     "galaxyspace": 10,
     "hongqing_technology": 6,
-    "i_space": 7,
-    "landspace": 24,
+    "i_space": 6,
+    "landspace": 25,
     "minospace": 4,
-    "space_pioneer": 4,
-    "spacex": 46,
-    "yuanxin_satellite": 32,
+    "space_pioneer": 5,
+    "spacex": 48,
+    "yuanxin_satellite": 34,
     "yushi_space": 5
   },
   "config_dir": "config",
   "dry_run": false,
   "export_count": 0,
   "fetch_status_count": 26,
-  "finished_at": "2026-07-23T18:56:51.087754Z",
-  "fresh_item_count": 187,
-  "generated_at": "2026-07-23T18:56:51.087754Z",
-  "item_count": 187,
+  "finished_at": "2026-07-24T01:19:24.294597Z",
+  "fresh_item_count": 193,
+  "generated_at": "2026-07-24T01:19:24.294597Z",
+  "item_count": 193,
   "metadata": {
     "latest_is_stale_safe": true
   },
   "output_dir": "data/news/latest",
-  "run_id": "af03af1e-bdcf-4d15-a72c-7396d3985983",
+  "run_id": "fe5b07e5-8146-499b-bbcd-04e781ae4bad",
   "schema_version": "satellite_news.v1",
   "stale_item_count": 0,
-  "started_at": "2026-07-23T18:55:16.754628Z",
+  "started_at": "2026-07-24T01:17:44.648486Z",
   "summary_count": 0,
   "warnings": []
 }
